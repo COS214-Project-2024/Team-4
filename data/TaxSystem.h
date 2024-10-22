@@ -6,30 +6,21 @@
 #include "Building.h"
 #include "GovCommand.h"
 class TaxSystem {
-
-
+private:
+    std::map<std::string, TaxType*> taxRates;
+    std::map<Citizen*, char> citizenTaxPayers;
+    std::map<Business*, char> businessTaxPayers;
+    
 public:
-	void addCitizenTaxPayer(Citizen* taxPayer, char tType);
-
-	void addBusinessTaxPayer(Business* bTaxPayer, char tType);
-
-	void setTax(double rate, char taxType);
-
-	void removeCitizenTaxPayer(Citizen* taxPayer, char tType);
-
-	void removeBusinessTaxPayer(Business* bTaxPayer, char tType);
-
-	void getTaxPayers(int t, char taxType);
-
-	void updateTaxRate(char cType);
-
-	void collectTaxes(Building* building, GovCommand* command);
-
-	TaxSystem();
-
-	void setTax(double rate);
-
-	void addTaxRate(GovCommand setTax);
+    TaxSystem();
+    void addCitizenTaxPayer(Citizen* taxPayer, char tType);
+    void addBusinessTaxPayer(Business* bTaxPayer, char tType);
+    void setTax(double rate, char taxType);
+    void removeCitizenTaxPayer(Citizen* taxPayer, char tType);
+    void removeBusinessTaxPayer(Business* bTaxPayer, char tType);
+    void updateTaxRate(char cType);
+    void collectTaxes(Building* building, GovCommand* command);
+    void checkImpact();
 };
 
 #endif
