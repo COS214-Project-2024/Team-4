@@ -54,3 +54,7 @@ void TaxSystem::addTaxRate(govCommand setTax) {
 	// TODO - implement TaxSystem::addTaxRate
 	throw "Not yet implemented";
 }
+void TaxSystem::checkImpact() {
+  // TODO - implement TaxSystem::addTaxRate
+	throw "Not yet implemented";
+}
