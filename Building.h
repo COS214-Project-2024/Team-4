@@ -6,34 +6,34 @@ using namespace std;
 
 class Building {
 
-private:
+protected:
 	string name;
 	float area;
 	int floors;
 	int capacity;
-protected:
 	float citizenSatisfaction;
 	float economicGrowth;
-	float resouceConsumption;
+	float resourceConsumption;
 
 public:
-    Building();
+    Building(const std::string& name, float area, int floors, int capacity,
+             float satisfactionImpact, float growthImpact, float consumption);
 
     void setName(string name);
     
 	virtual void construct() = 0;
 
-	float getSatisfaction();
+	virtual ~Building() = default;
 
-	float getEconomicGrowth();
+	float getSatisfaction()const;
 
-	float getResourceConsumption();
+	float getEconomicGrowth()const;
 
-private:
-	void updateImpacts();
+	float getResourceConsumption()const;
 
-public:
-	virtual string getType() = 0;
+	virtual void updateImpacts() = 0;
+
+	virtual string getType()const = 0;
 
 protected:
 	Building(int Builder);

@@ -1,24 +1,34 @@
 #include "Building.h"
 
-float Building::getSatisfaction() {
-	// TODO - implement Building::getSatisfaction
-	throw "Not yet implemented";
+//construtor
+Building::Building(const std::string& name, float area, int floors, int capacity,
+                   float satisfactionImpact, float growthImpact, float consumption)
+    {
+	this->name = name;
+	this->area = area;
+	this->floors = floors;
+	this->capacity = capacity;
+	this->citizenSatisfaction = satisfactionImpact;
+	this->economicGrowth = growthImpact;
+	this->resourceConsumption = consumption;
+
+	}
+
+
+//getters
+float Building::getSatisfaction() const{
+	return this->citizenSatisfaction;
 }
 
-float Building::getEconomicGrowth() {
+float Building::getEconomicGrowth() const{
 	return this->economicGrowth;
 }
 
-float Building::getResourceConsumption() {
-	// TODO - implement Building::getResourceConsumption
-	throw "Not yet implemented";
+float Building::getResourceConsumption()const {
+	return this->resourceConsumption;	
 }
 
-void Building::updateImpacts() {
-	// TODO - implement Building::updateImpacts
-	throw "Not yet implemented";
-}
-
+//i forgot what i needed this for
 Building::Building(int Builder) {
 	// TODO - implement Building::Building
 	throw "Not yet implemented";
