@@ -2,6 +2,7 @@
 #define LANDMARKBUILDING_H
 #include "Building.h"
 #include<string>
+#include<iostream>
 using namespace std;
 
 class LandmarkBuilding :public Building {
@@ -9,6 +10,7 @@ class LandmarkBuilding :public Building {
 private:
 	int visitorCapacity;
 	float culturalValue;
+	bool isHistoric;
 	string bType;
 
 public:

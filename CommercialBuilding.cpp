@@ -36,3 +36,11 @@ void CommercialBuilding::calculateResourceConsumption() {
 void CommercialBuilding::calculateSatisfactionImpact() {
 	citizenSatisfaction = customerTraffic * 0.1f;
 }
+
+void CommercialBuilding::construct() {
+	 std::cout << "Constructing Commercial Building: " << name << std::endl;
+    std::cout << "Area: " << area << ", Floors: " << floors << ", Capacity: " << capacity << std::endl;
+    std::cout << "Business Units: " << businessUnits << ", Customer Traffic: " << customerTraffic << std::endl;
+    std::cout << "Commercial Building constructed successfully!" << std::endl;
+
+}

@@ -24,7 +24,7 @@ void ResidentialBuilding::upgradeComfort(float comfort) {
 }
 
 void ResidentialBuilding::calculateEconomicImpact() {
-	 economicGrowth = residentialUnits * comfortLevel * 0.1f;
+	 economicGrowth = residentialUnits * comfortLevel * 0.5f;
 }
 
 void ResidentialBuilding::calculateResourceConsumption() {
@@ -32,9 +32,13 @@ void ResidentialBuilding::calculateResourceConsumption() {
 }
 
 void ResidentialBuilding::calculateSatisfactionImpact() {
-	citizenSatisfaction = comfortLevel * 0.1f;
+	citizenSatisfaction = comfortLevel * 0.2f;
 }
 
 void ResidentialBuilding::construct() {
-	
+	  std::cout << "Constructing Residential Building: " << name << std::endl;
+    std::cout << "Area: " << area << ", Floors: " << floors << ", Capacity: " << capacity << std::endl;
+    std::cout << "Residential Units: " << residentialUnits << ", Comfort Level: " << comfortLevel << std::endl;
+    std::cout << "Residential Building constructed successfully!" << std::endl;
+
 }

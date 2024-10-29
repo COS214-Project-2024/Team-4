@@ -2,6 +2,7 @@
 #define RESIDENTIALBUILDING_H
 #include "Building.h"
 //#include "Citizen.h"
+#include<iostream>
 #include<string>
 using namespace std;
 

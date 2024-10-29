@@ -2,6 +2,7 @@
 #define COMMERCIALBUILDING_H
 #include "Building.h"
 #include<string>
+#include<iostream>
 using namespace std;
 
 class CommercialBuilding :public Building {
