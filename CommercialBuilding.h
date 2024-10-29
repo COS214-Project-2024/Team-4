@@ -1,7 +1,10 @@
 #ifndef COMMERCIALBUILDING_H
 #define COMMERCIALBUILDING_H
+#include "Building.h"
+#include<string>
+using namespace std;
 
-class CommercialBuilding : Building {
+class CommercialBuilding :public Building {
 
 private:
 	int businessUnits;
@@ -17,6 +20,8 @@ public:
 	void updateImpacts();
 
 	void updateCustomer(int traffic);
+
+    void construct() override;
 
 protected:
 	void calculateEconomicImpact();

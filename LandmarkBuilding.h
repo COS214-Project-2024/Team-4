@@ -1,7 +1,10 @@
 #ifndef LANDMARKBUILDING_H
 #define LANDMARKBUILDING_H
+#include "Building.h"
+#include<string>
+using namespace std;
 
-class LandmarkBuilding : Building {
+class LandmarkBuilding :public Building {
 
 private:
 	int visitorCapacity;
@@ -15,7 +18,7 @@ public:
 
 public:
 	void updateImpacts();
-
+	void construct() override;
 	void hostEvent();
 
 private:

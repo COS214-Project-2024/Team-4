@@ -1,7 +1,11 @@
 #ifndef LANDMARKBUILDINGBUILDER_H
 #define LANDMARKBUILDINGBUILDER_H
+#include "Builder.h"
+#include "LandmarkBuilding.h"
+#include<string>
+using namespace std;
 
-class LandmarkBuildingBuilder : Builder {
+class LandmarkBuildingBuilder : public Builder {
 
 private:
 	int visitorCapacity;
@@ -21,7 +25,7 @@ public:
 
 	void setIsHistoric(bool isHistoric);
 
-	LandMarkBuilding build();
+	LandmarkBuilding build();
 };
 
 #endif

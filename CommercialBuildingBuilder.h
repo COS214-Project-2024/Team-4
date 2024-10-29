@@ -1,7 +1,11 @@
 #ifndef COMMERCIALBUILDINGBUILDER_H
 #define COMMERCIALBUILDINGBUILDER_H
+#include "Builder.h"
+#include "CommercialBuilding.h"
+#include<string>
+using namespace std;
 
-class CommercialBuildingBuilder : Builder {
+class CommercialBuildingBuilder :public Builder {
 
 private:
 	int businessUnits;

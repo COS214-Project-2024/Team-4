@@ -1,5 +1,8 @@
 #ifndef DIRECTOR_H
 #define DIRECTOR_H
+#include "Builder.h"
+#include<string>
+using namespace std;	
 
 class Director {
 

@@ -24,7 +24,7 @@ void LandmarkBuildingBuilder::setIsHistoric(bool isHistoric) {
 	this->isHistoric = isHistoric;
 }
 
-LandMarkBuilding LandmarkBuildingBuilder::build() {
+LandmarkBuilding LandmarkBuildingBuilder::build() {
 	// TODO - implement LandmarkBuildingBuilder::build
 	throw "Not yet implemented";
 }

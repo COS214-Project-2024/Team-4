@@ -1,7 +1,10 @@
 #ifndef INDUSTRIALBUILDING_H
 #define INDUSTRIALBUILDING_H
+#include "Building.h"
+#include<string>
+using namespace std;
 
-class IndustrialBuilding : Building {
+class IndustrialBuilding :public Building {
 
 private:
 	float pollutionLevel;
@@ -12,6 +15,8 @@ public:
 	IndustrialBuilding(int Builder);
 
 	string getType();
+
+	void construct() override;
 
 public:
 	void updateImpacts();

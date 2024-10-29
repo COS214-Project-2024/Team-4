@@ -1,5 +1,9 @@
 #ifndef INDUSTRIALBUILDINGBUILDER_H
 #define INDUSTRIALBUILDINGBUILDER_H
+#include "Builder.h"
+#include "IndustrialBuilding.h"
+#include<string>
+using namespace std;
 
 class IndustrialBuildingBuilder : Builder {
 

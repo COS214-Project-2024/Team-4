@@ -1,5 +1,8 @@
 #ifndef BUILDER_H
 #define BUILDER_H
+#include<string>
+using namespace std;
+#include "Building.h"
 
 class Builder {
 

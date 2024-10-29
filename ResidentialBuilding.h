@@ -1,12 +1,16 @@
 #ifndef RESIDENTIALBUILDING_H
 #define RESIDENTIALBUILDING_H
+#include "Building.h"
+//#include "Citizen.h"
+#include<string>
+using namespace std;
 
-class ResidentialBuilding : Building {
+class ResidentialBuilding :public Building {
 
 private:
 	int residentialUnit;
 	float comfort;
-	vector<Citizen*> occupants;
+	//vector<Citizen*> occupants;
 	char bType;
 
 public:
@@ -16,7 +20,7 @@ public:
 
 public:
 	void updateImpacts();
-
+	void construct() override;
 	void upgradeComfort(float comfort);
 
 protected:
