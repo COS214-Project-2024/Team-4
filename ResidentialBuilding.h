@@ -10,7 +10,6 @@ class ResidentialBuilding :public Building {
 private:
 	int residentialUnit;
 	float comfort;
-	//vector<Citizen*> occupants;
 	char bType;
 
 public:
