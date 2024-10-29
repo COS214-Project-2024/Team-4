@@ -35,7 +35,3 @@ Builder Builder::setResourceConsumption(float resourceConsumption) {
 	throw "Not yet implemented";
 }
 
-// Building Builder::build() {
-// 	// TODO - implement Builder::build
-// 	throw "Not yet implemented";
-// }
