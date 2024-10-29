@@ -1,7 +1,40 @@
 #include "Builder.h"
 //abstract class
 
+Builder& Builder::setName(string name) {
+    this->name = name;
+    return *this;
+}
 
+Builder& Builder::setArea(float area) {
+    this->area = area;
+    return *this;
+}
+
+Builder& Builder::setFloors(int floors) {
+    this->floors = floors;
+    return *this;
+}
+
+Builder& Builder::setCapacity(int capacity) {
+    this->capacity = capacity;
+    return *this;
+}
+
+Builder& Builder::setCitizenSatisfaction(float citizenSatisfaction) {
+    this->citizenSatisfaction = citizenSatisfaction;
+    return *this;
+}
+
+Builder& Builder::setEconomicGrowth(float economicGrowth) {
+    this->economicGrowth = economicGrowth;
+    return *this;
+}
+
+Builder& Builder::setResourceConsumption(float resourceConsumption) {
+    this->resourceConsumption = resourceConsumption;
+    return *this;
+}
 // Builder Builder::setName(string name) {
 // 	// TODO - implement Builder::setName
 // 	throw "Not yet implemented";

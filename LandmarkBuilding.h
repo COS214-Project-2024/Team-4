@@ -14,10 +14,9 @@ private:
 	string bType;
 
 public:
-	LandmarkBuilding(const std::string& name, float area, int floors,
-                                         int capacity, float citizenSatisfaction,
-                                         float economicGrowth, float resourceConsumption,
-                                         int visitorCapacity, float culturalValue);
+	 LandmarkBuilding(const std::string& name, float area, int floors, int capacity,
+                     float citizenSatisfactionImpact, float economicGrowthImpact,
+                     float resourceConsumption, int visitorCapacity, float culturalValue, bool isHistoric);
 
 	string getType()const override;
 	void updateImpacts()override;

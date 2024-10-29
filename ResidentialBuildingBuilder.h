@@ -14,13 +14,11 @@ private:
 public:
 	ResidentialBuildingBuilder& setResidentialUnit(int unit);
     ResidentialBuildingBuilder& setComfort(float comfort);
-
+	ResidentialBuildingBuilder();
 	int getResidentialUnit();
 
 	float getComfort();
 
-public:
-	ResidentialBuildingBuilder();
 
 	std::unique_ptr<Building> build() override;
 };

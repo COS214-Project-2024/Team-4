@@ -5,7 +5,7 @@
 #include<string>
 using namespace std;
 
-class IndustrialBuildingBuilder : Builder {
+class IndustrialBuildingBuilder : public Builder {
 
 private:
 	float pollutionLevel = 0.0f;
@@ -14,12 +14,11 @@ private:
 public:
 IndustrialBuildingBuilder& setPollutionLevel(float level);
     IndustrialBuildingBuilder& setProductionCapacity(float capacity);
-
+IndustrialBuildingBuilder(); 
 	float getPollutionLevel();
 
 	float getProductionCapacity();
 
-	IndustrialBuildingBuilder();
 
 	std::unique_ptr<Building> build() override;
 };

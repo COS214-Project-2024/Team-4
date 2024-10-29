@@ -23,3 +23,7 @@ std::unique_ptr<Building> IndustrialBuildingBuilder::build() {
         resourceConsumption, productionCapacity, pollutionLevel
     );
 }
+
+IndustrialBuildingBuilder::IndustrialBuildingBuilder() {
+    // will add something
+}

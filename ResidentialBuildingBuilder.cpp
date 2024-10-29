@@ -24,3 +24,7 @@ std::unique_ptr<Building> ResidentialBuildingBuilder::build() {
         resourceConsumption, residentialUnit, comfort
     );
 }
+
+ResidentialBuildingBuilder::ResidentialBuildingBuilder() {
+    // will add 
+}

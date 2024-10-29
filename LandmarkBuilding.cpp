@@ -1,9 +1,9 @@
 #include "LandmarkBuilding.h"
 
-LandmarkBuilding::LandmarkBuilding(const std::string& name, float area, int floors,
-                                         int capacity, float citizenSatisfaction,
-                                         float economicGrowth, float resourceConsumption,
-                                         int visitorCapacity, float culturalValue):Building(name, area, floors, capacity, citizenSatisfaction, economicGrowth, resourceConsumption)
+LandmarkBuilding::LandmarkBuilding(const std::string& name, float area, int floors, int capacity,
+                                   float citizenSatisfactionImpact, float economicGrowthImpact,
+                                   float resourceConsumption, int visitorCapacity, float culturalValue, bool isHistoric)
+ :Building(name, area, floors, capacity, citizenSatisfaction, economicGrowth, resourceConsumption)
 										 {
 	this->visitorCapacity = visitorCapacity;
 	this->culturalValue = culturalValue;
