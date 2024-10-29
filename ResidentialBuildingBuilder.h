@@ -8,13 +8,12 @@ using namespace std;
 class ResidentialBuildingBuilder :public Builder {
 
 private:
-	int residentialUnit;
-	float comfort;
+	int residentialUnit = 0;
+	float comfort = 0.0f;
 
 public:
-	void setResidentialUnit(int unit);
-
-	void setComfort(float comfort);
+	ResidentialBuildingBuilder& setResidentialUnit(int unit);
+    ResidentialBuildingBuilder& setComfort(float comfort);
 
 	int getResidentialUnit();
 
@@ -23,7 +22,7 @@ public:
 public:
 	ResidentialBuildingBuilder();
 
-	ResidentialBuilding build();
+	std::unique_ptr<Building> build() override;
 };
 
 #endif

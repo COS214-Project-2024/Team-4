@@ -1,7 +1,8 @@
 #include "CommercialBuildingBuilder.h"
 
-void CommercialBuildingBuilder::setBusinessUnits(int units) {
-	this->businessUnits = units;
+CommercialBuildingBuilder& CommercialBuildingBuilder::setBusinessUnits(int units) {
+    this->businessUnits = units;
+    return *this;
 }
 
 int CommercialBuildingBuilder::getBusinessUnits() {
@@ -12,13 +13,15 @@ float CommercialBuildingBuilder::getCustomerTraffic() {
 	return this->customerTraffic;
 }
 
-void CommercialBuildingBuilder::setCustomerTraffic(float customerTraffic) {
-	this->customerTraffic = customerTraffic;
+CommercialBuildingBuilder& CommercialBuildingBuilder::setCustomerTraffic(float traffic) {
+    this->customerTraffic = traffic;
+    return *this;
 }
 
-CommercialBuilding CommercialBuildingBuilder::build() {
-	// TODO - implement CommercialBuildingBuilder::build
-	throw "Not yet implemented";
+std::unique_ptr<Building> CommercialBuildingBuilder::build() {
+    return std::make_unique<CommercialBuilding>(
+        name, area, floors, capacity, citizenSatisfaction, economicGrowth,
+        resourceConsumption, businessUnits, customerTraffic
+    );
 }
-
 

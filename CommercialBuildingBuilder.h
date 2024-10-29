@@ -8,21 +8,21 @@ using namespace std;
 class CommercialBuildingBuilder :public Builder {
 
 private:
-	int businessUnits;
-	float customerTraffic;
+	int businessUnits = 0;
+	float customerTraffic = 0.0f;
 
 public:
-	void setBusinessUnits(int units);
+ 	CommercialBuildingBuilder& setBusinessUnits(int units);
 
 	int getBusinessUnits();
 
 	float getCustomerTraffic();
 
-	void setCustomerTraffic(float customerTraffic);
+	CommercialBuildingBuilder& setCustomerTraffic(float customerTraffic);
 
-	CommercialBuildingBuilder();
+	//CommercialBuildingBuilder();
 
-	CommercialBuilding build();
+	std::unique_ptr<Building> build() override;
 };
 
 #endif

@@ -8,13 +8,12 @@ using namespace std;
 class IndustrialBuildingBuilder : Builder {
 
 private:
-	float pollutionLevel;
-	float productionCapacity;
+	float pollutionLevel = 0.0f;
+	float productionCapacity = 0.0f;
 
 public:
-	void setPollutionLevel(float pollutionLevel);
-
-	void setProductionCapacity(float productionCapacity);
+IndustrialBuildingBuilder& setPollutionLevel(float level);
+    IndustrialBuildingBuilder& setProductionCapacity(float capacity);
 
 	float getPollutionLevel();
 
@@ -22,7 +21,7 @@ public:
 
 	IndustrialBuildingBuilder();
 
-	IndustrialBuilding build();
+	std::unique_ptr<Building> build() override;
 };
 
 #endif

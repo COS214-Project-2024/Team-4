@@ -1,13 +1,14 @@
 #include "IndustrialBuildingBuilder.h"
 
-void IndustrialBuildingBuilder::setPollutionLevel(float pollutionLevel) {
-	this->pollutionLevel = pollutionLevel;
+IndustrialBuildingBuilder& IndustrialBuildingBuilder::setPollutionLevel(float level) {
+    this->pollutionLevel = level;
+    return *this;
 }
 
-void IndustrialBuildingBuilder::setProductionCapacity(float productionCapacity) {
-	this->productionCapacity = productionCapacity;
+IndustrialBuildingBuilder& IndustrialBuildingBuilder::setProductionCapacity(float capacity) {
+    this->productionCapacity = capacity;
+    return *this;
 }
-
 float IndustrialBuildingBuilder::getPollutionLevel() {
 	return this->pollutionLevel;
 }
@@ -16,7 +17,9 @@ float IndustrialBuildingBuilder::getProductionCapacity() {
 	return this->productionCapacity;
 }
 
-IndustrialBuilding IndustrialBuildingBuilder::build() {
-	// TODO - implement IndustrialBuildingBuilder::build
-	throw "Not yet implemented";
+std::unique_ptr<Building> IndustrialBuildingBuilder::build() {
+    return std::make_unique<IndustrialBuilding>(
+        name, area, floors, capacity, citizenSatisfaction, economicGrowth,
+        resourceConsumption, productionCapacity, pollutionLevel
+    );
 }

@@ -1,11 +1,13 @@
 #include "ResidentialBuildingBuilder.h"
 
-void ResidentialBuildingBuilder::setResidentialUnit(int unit) {
-	this->residentialUnit = unit;
+ResidentialBuildingBuilder& ResidentialBuildingBuilder::setResidentialUnit(int unit) {
+    this->residentialUnit = unit;
+    return *this;
 }
 
-void ResidentialBuildingBuilder::setComfort(float comfort) {
-	this->comfort = comfort;
+ResidentialBuildingBuilder& ResidentialBuildingBuilder::setComfort(float comfort) {
+    this->comfort = comfort;
+    return *this;
 }
 
 int ResidentialBuildingBuilder::getResidentialUnit() {
@@ -16,7 +18,9 @@ float ResidentialBuildingBuilder::getComfort() {
 	return this->comfort;
 }
 
-ResidentialBuilding ResidentialBuildingBuilder::build() {
-	// TODO - implement ResidentialBuildingBuilder::build
-	throw "Not yet implemented";
+std::unique_ptr<Building> ResidentialBuildingBuilder::build() {
+    return std::make_unique<ResidentialBuilding>(
+        name, area, floors, capacity, citizenSatisfaction, economicGrowth,
+        resourceConsumption, residentialUnit, comfort
+    );
 }
