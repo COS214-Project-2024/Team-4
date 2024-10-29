@@ -1,36 +1,38 @@
 #include "LandmarkBuilding.h"
 
-LandmarkBuilding::LandmarkBuilding(int Builder) {
-	// TODO - implement LandmarkBuilding::LandmarkBuilding
-	throw "Not yet implemented";
+LandmarkBuilding::LandmarkBuilding(const std::string& name, float area, int floors,
+                                         int capacity, float citizenSatisfaction,
+                                         float economicGrowth, float resourceConsumption,
+                                         int visitorCapacity, float culturalValue):Building(name, area, floors, capacity, citizenSatisfaction, economicGrowth, resourceConsumption)
+										 {
+	this->visitorCapacity = visitorCapacity;
+	this->culturalValue = culturalValue;
+	this->bType = "Landmark";
 }
 
-string LandmarkBuilding::getType() {
-	// TODO - implement LandmarkBuilding::getType
-	throw "Not yet implemented";
+string LandmarkBuilding::getType()const {
+	return this->bType;
 }
 
 void LandmarkBuilding::updateImpacts() {
-	// TODO - implement LandmarkBuilding::updateImpacts
-	throw "Not yet implemented";
+	calculateEconomicImpact();
+	calculateResourceConsumption();
+	calculateSatisfactionImpact();
 }
 
-void LandmarkBuilding::hostEvent() {
-	// TODO - implement LandmarkBuilding::hostEvent
-	throw "Not yet implemented";
+void LandmarkBuilding::hostEvent(int visitors) {
+	//not sure yet
+	visitorCapacity += visitors;
 }
 
 void LandmarkBuilding::calculateEconomicImpact() {
-	// TODO - implement LandmarkBuilding::calculateEconomicImpact
-	throw "Not yet implemented";
+	economicGrowth += visitorCapacity * culturalValue;
 }
 
 void LandmarkBuilding::calculateResourceConsumption() {
-	// TODO - implement LandmarkBuilding::calculateResourceConsumption
-	throw "Not yet implemented";
+	resourceConsumption += visitorCapacity * 0.1;
 }
 
 void LandmarkBuilding::calculateSatisfactionImpact() {
-	// TODO - implement LandmarkBuilding::calculateSatisfactionImpact
-	throw "Not yet implemented";
+	citizenSatisfaction += visitorCapacity * 0.01;
 }

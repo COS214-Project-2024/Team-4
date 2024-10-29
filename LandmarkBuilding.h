@@ -9,19 +9,20 @@ class LandmarkBuilding :public Building {
 private:
 	int visitorCapacity;
 	float culturalValue;
-	char bType;
+	string bType;
 
 public:
-	LandmarkBuilding(int Builder);
+	LandmarkBuilding(const std::string& name, float area, int floors,
+                                         int capacity, float citizenSatisfaction,
+                                         float economicGrowth, float resourceConsumption,
+                                         int visitorCapacity, float culturalValue);
 
-	string getType();
-
-public:
-	void updateImpacts();
+	string getType()const override;
+	void updateImpacts()override;
 	void construct() override;
-	void hostEvent();
+	void hostEvent(int visitors);
 
-private:
+protected:
 	void calculateEconomicImpact();
 
 	void calculateResourceConsumption();
