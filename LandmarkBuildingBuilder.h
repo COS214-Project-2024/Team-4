@@ -3,29 +3,36 @@
 #include "Builder.h"
 #include "LandmarkBuilding.h"
 #include<string>
+#include <memory>
 using namespace std;
 
 class LandmarkBuildingBuilder : public Builder {
 
 private:
-	int visitorCapacity;
-	float culturalValue;
-	bool isHistoric;
+	 int visitorCapacity = 0;
+    float culturalValue = 0.0f;
+    bool isHistoric = false;
 
 public:
 	int getVisitorCapacity();
 
-	void setVisitorCapacity(int visitorCapacity);
+	//void setVisitorCapacity(int visitorCapacity);
 
 	float getCulturalValue();
 
-	void setCulturalValue(float culturalValue);
+	//void setCulturalValue(float culturalValue);
 
 	bool getIsHistoric();
 
-	void setIsHistoric(bool isHistoric);
+	//void setIsHistoric(bool isHistoric);
 
-	LandmarkBuilding build();
+    LandmarkBuildingBuilder& setVisitorCapacity(int visitorCapacity);
+    LandmarkBuildingBuilder& setCulturalValue(float culturalValue);
+    LandmarkBuildingBuilder& setIsHistoric(bool isHistoric);
+
+
+	std::unique_ptr<Building> build() override;
+
 };
 
 #endif
