@@ -9,15 +9,17 @@ class CommercialBuilding :public Building {
 private:
 	int businessUnits;
 	float customerTraffic;
-	char bType;
+	string bType;
 
 public:
-	CommercialBuilding(int Builder);
+	CommercialBuilding(const std::string& name, float area, int floors, int capacity,
+							float citizenSatisfaction, float economicGrowth, float resourceConsumption,
+							int businessUnits, float customerTraffic);
 
-	string getType();
+	string getType()const override;
 
 public:
-	void updateImpacts();
+	void updateImpacts()override;
 
 	void updateCustomer(int traffic);
 

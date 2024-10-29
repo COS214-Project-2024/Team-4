@@ -27,9 +27,3 @@ float Building::getEconomicGrowth() const{
 float Building::getResourceConsumption()const {
 	return this->resourceConsumption;	
 }
-
-//i forgot what i needed this for
-Building::Building(int Builder) {
-	// TODO - implement Building::Building
-	throw "Not yet implemented";
-}

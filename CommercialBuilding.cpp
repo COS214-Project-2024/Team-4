@@ -1,36 +1,38 @@
 #include "CommercialBuilding.h"
 
-CommercialBuilding::CommercialBuilding(int Builder) {
-	// TODO - implement CommercialBuilding::CommercialBuilding
-	throw "Not yet implemented";
+CommercialBuilding::CommercialBuilding(const std::string& name, float area, int floors, int capacity,
+							float citizenSatisfaction, float economicGrowth, float resourceConsumption,
+							int businessUnits, float customerTraffic):
+ Building(name, area, floors, capacity, citizenSatisfaction, economicGrowth, resourceConsumption)
+ {
+	this->businessUnits = businessUnits;
+	this->customerTraffic = customerTraffic;
+	this->bType = "Commercial";
+
 }
 
-string CommercialBuilding::getType() {
-	// TODO - implement CommercialBuilding::getType
-	throw "Not yet implemented";
+string CommercialBuilding::getType() const{
+	return this->bType;
 }
 
 void CommercialBuilding::updateImpacts() {
-	// TODO - implement CommercialBuilding::updateImpacts
-	throw "Not yet implemented";
+	calculateEconomicImpact();
+	calculateResourceConsumption();
+	calculateSatisfactionImpact();
 }
 
 void CommercialBuilding::updateCustomer(int traffic) {
-	// TODO - implement CommercialBuilding::updateCustomer
-	throw "Not yet implemented";
+	customerTraffic += traffic;
 }
 
 void CommercialBuilding::calculateEconomicImpact() {
-	// TODO - implement CommercialBuilding::calculateEconomicImpact
-	throw "Not yet implemented";
+	economicGrowth = businessUnits * customerTraffic * 0.1f;
 }
 
 void CommercialBuilding::calculateResourceConsumption() {
-	// TODO - implement CommercialBuilding::calculateResourceConsumption
-	throw "Not yet implemented";
+	resourceConsumption = businessUnits * 0.05f;
 }
 
 void CommercialBuilding::calculateSatisfactionImpact() {
-	// TODO - implement CommercialBuilding::calculateSatisfactionImpact
-	throw "Not yet implemented";
+	citizenSatisfaction = customerTraffic * 0.1f;
 }
