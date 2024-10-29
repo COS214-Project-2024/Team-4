@@ -7,16 +7,16 @@ using namespace std;
 class Director {
 
 private:
-	Builder builder;
+	Builder* builder;
 
 public:
-	void setBuilder(Builder builder);
+	void setBuilder(Builder& builder);
 
-	void constructSmallBuilding();
+	std::unique_ptr<Building> constructSmallBuilding();
 
-	void constructMediumBuilding();
-
-	void constructLargeBuilding();
+    std::unique_ptr<Building> constructMediumBuilding();
+	
+    std::unique_ptr<Building> constructLargeBuilding();
 };
 
 #endif
