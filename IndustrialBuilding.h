@@ -9,19 +9,20 @@ class IndustrialBuilding :public Building {
 private:
 	float pollutionLevel;
 	float productionCapacity;
-	char bType;
+	string bType;
 
 public:
-	IndustrialBuilding(int Builder);
+	IndustrialBuilding(const std::string& name, float area, int floors, int capacity,
+                        float citizenSatisfaction, float economicGrowth, float resourceConsumption,
+                        float pollutionLevel, float productionCapacity);
 
-	string getType();
+	string getType()const override;
 
 	void construct() override;
 
-public:
-	void updateImpacts();
+	void updateImpacts()override;
 
-	void upgradeTech();
+	void upgradeTech(float techLevel);
 
 protected:
 	void calculateEconomicImpact();
