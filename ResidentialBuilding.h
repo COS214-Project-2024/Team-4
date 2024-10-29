@@ -8,17 +8,19 @@ using namespace std;
 class ResidentialBuilding :public Building {
 
 private:
-	int residentialUnit;
-	float comfort;
-	char bType;
+	 int residentialUnits = 0;
+    float comfortLevel = 0.0f;
+	string bType;
+
 
 public:
-	ResidentialBuilding(int Builder);
+	 ResidentialBuilding(const std::string& name, float area, int floors, int capacity,
+                        float citizenSatisfaction, float economicGrowth, float resourceConsumption,
+                        int residentialUnits, float comfortLevel);
 
-	string getType();
+	string getType() const override;
 
-public:
-	void updateImpacts();
+	void updateImpacts()override;
 	void construct() override;
 	void upgradeComfort(float comfort);
 

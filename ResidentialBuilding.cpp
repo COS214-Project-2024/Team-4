@@ -1,36 +1,40 @@
 #include "ResidentialBuilding.h"
 
-ResidentialBuilding::ResidentialBuilding(int Builder) {
-	// TODO - implement ResidentialBuilding::ResidentialBuilding
-	throw "Not yet implemented";
-}
+//constructor
+ResidentialBuilding::ResidentialBuilding(const std::string& name, float area, int floors,
+                                         int capacity, float citizenSatisfaction,
+                                         float economicGrowth, float resourceConsumption,
+                                         int residentialUnits, float comfortLevel)
+    : Building(name, area, floors, capacity, citizenSatisfaction, economicGrowth, resourceConsumption),
+      residentialUnits(residentialUnits), comfortLevel(comfortLevel), bType("Residential") {}
 
-string ResidentialBuilding::getType() {
-	// TODO - implement ResidentialBuilding::getType
-	throw "Not yet implemented";
+
+string ResidentialBuilding::getType() const{
+	return bType;
 }
 
 void ResidentialBuilding::updateImpacts() {
-	// TODO - implement ResidentialBuilding::updateImpacts
-	throw "Not yet implemented";
+	calculateEconomicImpact();
+    calculateResourceConsumption();
+    calculateSatisfactionImpact();
 }
 
 void ResidentialBuilding::upgradeComfort(float comfort) {
-	// TODO - implement ResidentialBuilding::upgradeComfort
-	throw "Not yet implemented";
+	comfortLevel += comfort;
 }
 
 void ResidentialBuilding::calculateEconomicImpact() {
-	// TODO - implement ResidentialBuilding::calculateEconomicImpact
-	throw "Not yet implemented";
+	 economicGrowth = residentialUnits * comfortLevel * 0.1f;
 }
 
 void ResidentialBuilding::calculateResourceConsumption() {
-	// TODO - implement ResidentialBuilding::calculateResourceConsumption
-	throw "Not yet implemented";
+	resourceConsumption = residentialUnits * 0.05f;
 }
 
 void ResidentialBuilding::calculateSatisfactionImpact() {
-	// TODO - implement ResidentialBuilding::calculateSatisfactionImpact
-	throw "Not yet implemented";
+	citizenSatisfaction = comfortLevel * 0.1f;
+}
+
+void ResidentialBuilding::construct() {
+	
 }
