@@ -1,4 +1,5 @@
 #include "Building.h"
+//base class for all buildings
 
 //construtor
 Building::Building(const std::string& name, float area, int floors, int capacity,

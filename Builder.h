@@ -31,6 +31,7 @@ public:
 	Builder& setResourceConsumption(float resourceConsumption);
 
 	//Building build();
+	virtual ~Builder() = default;
 
 	 virtual std::unique_ptr<Building> build() = 0;
 };

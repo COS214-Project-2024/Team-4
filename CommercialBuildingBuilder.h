@@ -3,6 +3,7 @@
 #include "Builder.h"
 #include "CommercialBuilding.h"
 #include<string>
+#include<memory>
 using namespace std;
 
 class CommercialBuildingBuilder :public Builder {
@@ -20,7 +21,7 @@ public:
 
 	CommercialBuildingBuilder& setCustomerTraffic(float customerTraffic);
 
-	//CommercialBuildingBuilder();
+	CommercialBuildingBuilder();
 
 	std::unique_ptr<Building> build() override;
 };

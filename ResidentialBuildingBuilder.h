@@ -3,6 +3,7 @@
 #include "Builder.h"
 #include "ResidentialBuilding.h"
 #include<string>
+#include<memory>
 using namespace std;
 
 class ResidentialBuildingBuilder :public Builder {

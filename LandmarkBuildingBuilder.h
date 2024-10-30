@@ -30,7 +30,7 @@ public:
     LandmarkBuildingBuilder& setCulturalValue(float culturalValue);
     LandmarkBuildingBuilder& setIsHistoric(bool isHistoric);
 
-
+	LandmarkBuildingBuilder();
 	std::unique_ptr<Building> build() override;
 
 };

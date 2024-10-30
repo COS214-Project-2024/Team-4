@@ -1,9 +1,11 @@
 #include "Director.h"
 
+//sets the builder
 void Director::setBuilder(Builder& builder) {
 	this->builder = &builder;
 }
 
+//constructs a small building
 std::unique_ptr<Building> Director::constructSmallBuilding() {
 	builder->setArea(500.0f)
            .setFloors(1)
@@ -14,6 +16,7 @@ std::unique_ptr<Building> Director::constructSmallBuilding() {
     return builder->build();
 }
 
+//constructs a medium building
 std::unique_ptr<Building> Director::constructMediumBuilding() {
 	  builder->setArea(1500.0f)
            .setFloors(3)
@@ -24,6 +27,8 @@ std::unique_ptr<Building> Director::constructMediumBuilding() {
     return builder->build();
 }
 
+
+//constructs a large building
 std::unique_ptr<Building> Director::constructLargeBuilding() {
 	builder->setArea(3000.0f)
            .setFloors(5)

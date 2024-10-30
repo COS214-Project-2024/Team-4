@@ -2,6 +2,7 @@
 #define INDUSTRIALBUILDINGBUILDER_H
 #include "Builder.h"
 #include "IndustrialBuilding.h"
+#include<memory>
 #include<string>
 using namespace std;
 
