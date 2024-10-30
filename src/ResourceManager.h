@@ -5,7 +5,6 @@
 #include "ResourceType.h"
 #include <map>
 #include <vector>
-#include "Observer.h"
 #include "Resource.h"
 #include "ResourceAllocationStrategy.h"
 
@@ -15,7 +14,6 @@ private:
     std::map<ResourceType, Resource*> resources;
     std::map<ResourceType, int> resourceCosts;
     ResourceAllocationStrategy* allocationStrategy;
-    std::vector<Observer*> observers;
 
 public:
     ResourceManager(int initialBudget) : budget(initialBudget) {}
@@ -23,7 +21,7 @@ public:
     bool allocateResources(ResourceType type, int quantity) {
         if (budget >= resourceCosts[type] * quantity && resources[type]->allocate(quantity)) {
             budget -= resourceCosts[type] * quantity;
-            notifyObservers();
+            //notifyObservers();
             return true;
         }
         return false;
@@ -31,7 +29,7 @@ public:
 
     void releaseResources(ResourceType type, int quantity) {
         resources[type]->release(quantity);
-        notifyObservers();
+        //notifyObservers();
     }
 
     void setAllocationStrategy(ResourceAllocationStrategy* strategy) {
@@ -40,10 +38,10 @@ public:
 
     int getBudget() const { return budget; }
 
-private:
-    void notifyObservers() {
-        for (auto obs : observers) obs->update();
-    }
+// private:
+//     void notifyObservers() {
+//         for (auto obs : observers) obs->update();
+//     }
 };
 
 #endif // RESOURCEMANAGER_H
