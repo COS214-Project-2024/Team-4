@@ -1,67 +1,62 @@
-# Compiler
-CXX = g++
+# Define the compiler and compiler flags
+CC = g++
+CFLAGS = -std=c++14 -g
 
-# Compiler flags
-CXXFLAGS = -std=c++11 -Wall -Wextra -pedantic
+# Define the list of object files
+ofiles = main.o Builder.o Building.o CommercialBuilding.o CommercialBuildingBuilder.o \
+          Director.o IndustrialBuilding.o IndustrialBuildingBuilder.o LandmarkBuilding.o \
+          LandmarkBuildingBuilder.o ResidentialBuilding.o ResidentialBuildingBuilder.o 
 
-# Additional linker flags
-LDFLAGS = -fPIC -no-pie
-GTEST_DIR = /usr/local
-GTEST_INCLUDES = -isystem $(GTEST_DIR)/include
-GTEST_LIBS = -L$(GTEST_DIR)/lib -lgtest -lgtest_main -pthread 
+# Define the makefile rule to build the executable
+main: $(ofiles)
+	$(CC) $(CFLAGS) $(ofiles) -o main
 
-# Source files for the main application
-SOURCES = Builder.cpp Building.cpp CommercialBuilding.cpp CommercialBuildingBuilder.cpp \
-          Director.cpp IndustrialBuilding.cpp IndustrialBuildingBuilder.cpp LandmarkBuilding.cpp \
-          LandmarkBuildingBuilder.cpp ResidentialBuilding.cpp ResidentialBuildingBuilder.cpp Sensor.cpp 
+# Define individual rules for each source file
+main.o: main.cpp Builder.h Building.h CommercialBuilding.h CommercialBuildingBuilder.h \
+         Director.h IndustrialBuilding.h IndustrialBuildingBuilder.h LandmarkBuilding.h \
+         LandmarkBuildingBuilder.h ResidentialBuilding.h ResidentialBuildingBuilder.h
+	$(CC) $(CFLAGS) -c main.cpp
 
-# Source files for unit tests
-TEST_SOURCES = Main.cpp  # Add your test source files here
+Builder.o: Builder.cpp Builder.h
+	$(CC) $(CFLAGS) -c Builder.cpp
 
-# Object files for the main application
-OBJECTS = $(SOURCES:.cpp=.o)
+Building.o: Building.cpp Building.h
+	$(CC) $(CFLAGS) -c Building.cpp
 
-# Object files for unit tests
-TEST_OBJECTS = $(TEST_SOURCES:.cpp=.o)
+CommercialBuilding.o: CommercialBuilding.cpp CommercialBuilding.h
+	$(CC) $(CFLAGS) -c CommercialBuilding.cpp
 
-# Executable names
-EXECUTABLE = smart_home
-TEST_EXECUTABLE = runSmartHomeTests
+CommercialBuildingBuilder.o: CommercialBuildingBuilder.cpp CommercialBuildingBuilder.h
+	$(CC) $(CFLAGS) -c CommercialBuildingBuilder.cpp
 
-# Default target (builds the main executable)
-all: $(EXECUTABLE)
+Director.o: Director.cpp Director.h
+	$(CC) $(CFLAGS) -c Director.cpp
 
-# Linking rule for the main executable
-$(EXECUTABLE): $(OBJECTS) TestingMain.o
-	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(OBJECTS) TestingMain.o -o $@
+IndustrialBuilding.o: IndustrialBuilding.cpp IndustrialBuilding.h
+	$(CC) $(CFLAGS) -c IndustrialBuilding.cpp
 
-# Linking rule for the unit test executable
-$(TEST_EXECUTABLE): $(OBJECTS) $(TEST_OBJECTS)
-	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(OBJECTS) $(TEST_OBJECTS) $(GTEST_LIBS) -o $@
+IndustrialBuildingBuilder.o: IndustrialBuildingBuilder.cpp IndustrialBuildingBuilder.h
+	$(CC) $(CFLAGS) -c IndustrialBuildingBuilder.cpp
 
-# Compilation rule for individual object files
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+LandmarkBuilding.o: LandmarkBuilding.cpp LandmarkBuilding.h
+	$(CC) $(CFLAGS) -c LandmarkBuilding.cpp
 
-# Clean rule
-clean:
-	rm -f $(OBJECTS) $(EXECUTABLE) $(TEST_OBJECTS) $(TEST_EXECUTABLE)
+LandmarkBuildingBuilder.o: LandmarkBuildingBuilder.cpp LandmarkBuildingBuilder.h
+	$(CC) $(CFLAGS) -c LandmarkBuildingBuilder.cpp
+
+ResidentialBuilding.o: ResidentialBuilding.cpp ResidentialBuilding.h
+	$(CC) $(CFLAGS) -c ResidentialBuilding.cpp
+
+ResidentialBuildingBuilder.o: ResidentialBuildingBuilder.cpp ResidentialBuildingBuilder.h
+	$(CC) $(CFLAGS) -c ResidentialBuildingBuilder.cpp
+
+# Define a rule to run the program with Valgrind
+run: main
+	valgrind ./main
+
+# Define a rule to clean up object files and executable
+clean: 
+	rm -f *.o main
 
 # Phony targets
-.PHONY: all clean run debug valgrind test
-
-# Run rule for the main application
-run: $(EXECUTABLE)
-	./$(EXECUTABLE)
-
-# Debug rule
-debug: CXXFLAGS += -g
-debug: clean all
-
-# Valgrind rule
-valgrind: $(EXECUTABLE)
-	valgrind --leak-check=full --track-origins=yes --undef-value-errors=yes ./$(EXECUTABLE)
-
-# Test rule
-test: $(TEST_EXECUTABLE)
-	./$(TEST_EXECUTABLE)
+.PHONY: clean run
