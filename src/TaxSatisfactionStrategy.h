@@ -1,13 +1,15 @@
 // TaxSatisfactionStrategy.h
 
-#ifndef TAX_SATISFACTION_STRATEGY_H
-#define TAX_SATISFACTION_STRATEGY_H
+#ifndef TAXSATISFACTIONSTRATEGY_H
+#define TAXSATISFACTIONSTRATEGY_H
 
 #include "SatisfactionStrategy.h"
+#include "Citizen.h"
 
 class TaxSatisfactionStrategy : public SatisfactionStrategy {
 public:
     float calculateSatisfaction(const Citizen& citizen) const override;
 };
 
-#endif // TAX_SATISFACTION_STRATEGY_H
+#endif // TAXSATISFACTIONSTRATEGY_H
+

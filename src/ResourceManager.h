@@ -3,10 +3,11 @@
 #define RESOURCEMANAGER_H
 
 #include "ResourceType.h"
-#include <map>
-#include <vector>
+#include "Observer.h"
 #include "Resource.h"
 #include "ResourceAllocationStrategy.h"
+#include <map>
+#include <vector>
 
 class ResourceManager {
 private:
@@ -14,6 +15,7 @@ private:
     std::map<ResourceType, Resource*> resources;
     std::map<ResourceType, int> resourceCosts;
     ResourceAllocationStrategy* allocationStrategy;
+    std::vector<Observer*> observers; // List of observers (like UtilityMediator)
 
 public:
     ResourceManager(int initialBudget) : budget(initialBudget) {}
@@ -21,7 +23,7 @@ public:
     bool allocateResources(ResourceType type, int quantity) {
         if (budget >= resourceCosts[type] * quantity && resources[type]->allocate(quantity)) {
             budget -= resourceCosts[type] * quantity;
-            //notifyObservers();
+            notifyObservers(type, quantity);
             return true;
         }
         return false;
@@ -29,7 +31,7 @@ public:
 
     void releaseResources(ResourceType type, int quantity) {
         resources[type]->release(quantity);
-        //notifyObservers();
+        notifyObservers(type, -quantity);  // Negative to indicate release
     }
 
     void setAllocationStrategy(ResourceAllocationStrategy* strategy) {
@@ -38,10 +40,21 @@ public:
 
     int getBudget() const { return budget; }
 
-// private:
-//     void notifyObservers() {
-//         for (auto obs : observers) obs->update();
-//     }
+    void addObserver(Observer* observer) {
+        observers.push_back(observer);
+    }
+
+    Resource* getResource(ResourceType type) const {
+        auto it = resources.find(type);
+        return (it != resources.end()) ? it->second : nullptr;
+    }
+
+private:
+    void notifyObservers(ResourceType type, int quantity) {
+        for (auto obs : observers) {
+            obs->update(type, quantity);
+        }
+    }
 };
 
 #endif // RESOURCEMANAGER_H
