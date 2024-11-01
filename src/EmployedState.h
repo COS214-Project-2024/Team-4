@@ -1,7 +1,7 @@
 // EmployedState.h
 
-#ifndef EMPLOYED_STATE_H
-#define EMPLOYED_STATE_H
+#ifndef EMPLOYEDSTATE_H
+#define EMPLOYEDSTATE_H
 
 #include "CitizenState.h"
 
@@ -10,5 +10,6 @@ public:
     void handleState(Citizen& citizen) const override;
 };
 
-#endif // EMPLOYED_STATE_H
+#endif // EMPLOYEDSTATE_H
+
 

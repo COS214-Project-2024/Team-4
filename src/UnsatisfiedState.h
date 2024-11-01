@@ -1,11 +1,14 @@
+// UnsatisfiedState.h
+
 #ifndef UNSATISFIEDSTATE_H
 #define UNSATISFIEDSTATE_H
+
 #include "CitizenState.h"
-class UnsatisfiedState : CitizenState {
 
-
+class UnsatisfiedState : public CitizenState {
 public:
-	void handleState(int Citizen_C);
+    void handleState(Citizen& citizen) const override;
 };
 
-#endif
+#endif // UNSATISFIEDSTATE_H
+

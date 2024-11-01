@@ -1,6 +1,8 @@
 #include "UnemployedState.h"
+#include "Citizen.h"
 
-void UnemployedState::handleState(int Citizen_C) {
-	// TODO - implement UnemployedState::handleState
-	throw "Not yet implemented";
+void UnemployedState::handleState(Citizen& citizen) const {
+    // Decrease satisfaction due to unemployment
+    citizen.updateSatisfaction(citizen.getSatisfactionLevel() - 5.0);
 }
+

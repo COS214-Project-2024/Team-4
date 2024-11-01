@@ -1,7 +1,7 @@
 // UnemployedState.h
 
-#ifndef UNEMPLOYED_STATE_H
-#define UNEMPLOYED_STATE_H
+#ifndef UNEMPLOYEDSTATE_H
+#define UNEMPLOYEDSTATE_H
 
 #include "CitizenState.h"
 
@@ -10,5 +10,5 @@ public:
     void handleState(Citizen& citizen) const override;
 };
 
-#endif // UNEMPLOYED_STATE_H
+#endif // UNEMPLOYEDSTATE_H
 

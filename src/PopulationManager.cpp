@@ -1,5 +1,6 @@
 #include "PopulationManager.h"
 #include "Citizen.h"
+#include <iostream>
 
 void PopulationManager::addCitizen(std::shared_ptr<Citizen> citizen) {
     citizens.push_back(citizen);
@@ -7,7 +8,9 @@ void PopulationManager::addCitizen(std::shared_ptr<Citizen> citizen) {
 }
 
 void PopulationManager::update(Citizen* citizen) {
-    // Logic to handle updates when a citizen changes
-    // For example, respond to job status changes, health updates, etc.
+    // Example response to a Citizen update
+    std::cout << "PopulationManager notified: Citizen " << citizen->getName() 
+              << " has been updated. Current satisfaction: " << citizen->getSatisfactionLevel() 
+              << "\n";
 }
 

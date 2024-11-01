@@ -1,12 +1,14 @@
+// LeavingCityState.h
+
 #ifndef LEAVINGCITYSTATE_H
 #define LEAVINGCITYSTATE_H
 
 #include "CitizenState.h"
-class LeavingCityState : CitizenState {
 
-
+class LeavingCityState : public CitizenState {
 public:
-	void handleState(int Citizen_C);
+    void handleState(Citizen& citizen) const override;
 };
 
-#endif
+#endif // LEAVINGCITYSTATE_H
+

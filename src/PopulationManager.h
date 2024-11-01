@@ -1,4 +1,5 @@
 // PopulationManager.h
+
 #ifndef POPULATIONMANAGER_H
 #define POPULATIONMANAGER_H
 
@@ -16,8 +17,9 @@ public:
     void addCitizen(std::shared_ptr<Citizen> citizen);
     void update(Citizen* citizen) override;  // Override the update method to respond to Citizen changes
 
-    // Additional PopulationManager methods...
+    // Additional methods to handle population growth, if needed
 };
 
 #endif // POPULATIONMANAGER_H
+
 

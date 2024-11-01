@@ -1,6 +1,7 @@
 #include "UnsatisfiedState.h"
+#include "Citizen.h"
 
-void UnsatisfiedState::handleState(int Citizen_C) {
-	// TODO - implement UnsatisfiedState::handleState
-	throw "Not yet implemented";
+void UnsatisfiedState::handleState(Citizen& citizen) const {
+    // Lower satisfaction
+    citizen.updateSatisfaction(citizen.getSatisfactionLevel() - 10.0);
 }
