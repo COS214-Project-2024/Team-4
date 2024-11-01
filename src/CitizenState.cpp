@@ -1,6 +1,6 @@
 #include "CitizenState.h"
 
-void CitizenState::handleState(int Citizen_C) {
+void CitizenState::handleState(Citizen& citizen) const{
 	// TODO - implement CitizenState::handleState
 	throw "Not yet implemented";
 }

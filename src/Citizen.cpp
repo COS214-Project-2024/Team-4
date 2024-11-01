@@ -2,7 +2,7 @@
 
 #include "Citizen.h"
 #include "CitizenObserver.h"
-#include "LeavingCityState.h"
+//#include "LeavingCityState.h"
 #include <algorithm>
 #include <iostream>
 
@@ -13,8 +13,8 @@ T clamp(T value, T min, T max) {
     return value;
 }
 
-Citizen::Citizen(const std::string& name, int age, const std::string& resStatus, const std::string& jobStatus)
-    : name(name), age(age), resStatus(resStatus), jobStatus(jobStatus), satisfaction(50.0),
+Citizen::Citizen(const std::string& name, int age, const std::string& resStatus, const std::string& jobTitle)
+    : name(name), age(age), resStatus(resStatus), jobTitle(jobTitle), satisfaction(50.0),
       maritalStatus(false), health(true), bankBalance(0.0), educationLevel("None"), taxRate(0.1f),
       housingSatisfaction(false), income(0.0), currentState(nullptr) , housingComfortLevel(5.0f), employed(false) {}
 
@@ -88,6 +88,7 @@ void Citizen::updateHealth(bool status) {
     notifyObservers();
 }
 
+
 void Citizen::updateSatisfaction(float newSatisfaction) {
     satisfaction = newSatisfaction;
     notifyObservers();
@@ -148,7 +149,7 @@ std::string Citizen::getName() const {
 }
 
 std::string Citizen::getJob() const {
-    return jobStatus;
+    return jobTitle;
 }
 
 bool Citizen::getHealth() const {
@@ -164,7 +165,7 @@ std::string Citizen::getResStatus() const {
 }
 
 std::string Citizen::getJobStatus() const {
-    return jobStatus;
+    return jobTitle;
 }
 
 double Citizen::getBankBalance() const {
@@ -204,6 +205,14 @@ int Citizen::getNumChildren() const {
     return numChildren;
 }
 
+void Citizen::setJobTitle(const std::string& title) {
+    jobTitle = title;
+}
+
+void Citizen::displayInfo() const {
+    std::cout << "Name: " << name << ", Age: " << age
+              << ", Job: " << jobTitle << std::endl;
+}
 
 bool Citizen::isLeaving() const {
     return dynamic_cast<LeavingCityState*>(currentState) != nullptr;
