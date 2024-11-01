@@ -9,15 +9,15 @@
 #include "CitizenObserver.h"
 #include "Policy.h"
 #include "CityService.h"
-#include "CitizenState.h"
-#include "SatisfactionStrategy.h"
+ #include "CitizenState.h"
+ #include "SatisfactionStrategy.h"
 
 class Citizen {
 protected:
 std::string name;
     int age;
     std::string resStatus = "Resident";        // Residential status, default to "Resident"
-    std::string jobStatus = "Unemployed";      // Employment status
+    //std::string jobStatus = "Unemployed";      // Employment status
     float satisfaction = 50.0f;
     std::string relationshipStatus = "Single";
     int marriageDuration = 0;
@@ -33,6 +33,7 @@ std::string name;
     float taxRate = 0.1f;
     float housingComfortLevel = 5.0f;
     bool employed = false;
+    std::string jobTitle = "Unemployed";
     std::vector<std::shared_ptr<SatisfactionStrategy>> satisfactionStrategies;
 
 
@@ -45,7 +46,7 @@ public:
     virtual ~Citizen();
 
     // Prototype Pattern: Clone method
-    virtual std::shared_ptr<Citizen> clone() const = 0;
+   virtual std::shared_ptr<Citizen> clone() const = 0;
 
     // Observer management
     void addObserver(CitizenObserver* observer);
@@ -71,7 +72,7 @@ public:
     void updateService(const CityService* service);
     void updatePolicy(const Policy* policy);
     bool isLeaving() const; 
-    void updateSatisfaction(float adjustment);  // Modify satisfaction by a certain amount
+   void updateSatisfaction(float adjustment);  // Modify satisfaction by a certain amount
     float getSatisfactionLevel() const;         // Retrieve the current satisfaction level
 
     // Getters
@@ -83,6 +84,7 @@ public:
     std::string getResStatus() const;
     std::string getJobStatus() const;
     double getBankBalance() const;
+    std::string getJobTitle() const;
 
     // Relationship management
     std::string getRelationshipStatus() const;
@@ -93,9 +95,13 @@ public:
     void addChild();
     int getNumChildren() const;
 
-    void addSatisfactionStrategy(std::shared_ptr<SatisfactionStrategy> strategy);
+    //void addSatisfactionStrategy(std::shared_ptr<SatisfactionStrategy> strategy);
     void updateSatisfaction();
 
+    //job stuff
+    void setJobTitle(const std::string& title);
+    void displayInfo() const;
+    
     // Getters for strategy inputs
     bool isEmployed() const { return employed; }
     float getTaxRate() const { return taxRate; }

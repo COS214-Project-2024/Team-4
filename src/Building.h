@@ -25,6 +25,8 @@ public:
              float satisfactionImpact, float growthImpact, float consumption);
 
     void setName(string name);
+
+	std::string getName()const;
     
 	virtual void construct() = 0;
 

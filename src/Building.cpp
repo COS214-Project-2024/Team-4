@@ -36,12 +36,12 @@ void Building::addJob(const Jobs& job) {
 }
 
 // Lists all jobs in the building
-void Building::listJobs() const {
-    std::cout << "Jobs in " << name << ":\n";
-    for (const auto& job : jobs) {
-        job.displayJobInfo();
-    }
-}
+// void Building::listJobs() const {
+//     std::cout << "Jobs in " << name << ":\n";
+//     for (const auto& job : jobs) {
+//         job.displayJobInfo();
+//     }
+// }
 
 // Hires an employee for a job if available
 bool Building::hireEmployee(const std::string& jobTitle) {
@@ -75,4 +75,14 @@ void Building::displayJobInfo(const std::string& jobTitle) const {
 	if (it != jobs.end()) {
 		it->displayJobInfo();
 	}
+}
+
+std::string Building::getName()const{
+    return this->name;
+}
+
+void Building::listJobs() const {
+    for (const auto& job : jobs) {
+        job.displayJobInfo();  // Only display job information here
+    }
 }

@@ -15,7 +15,7 @@ void BuildingManager::addCitizen(Citizen* citizen) {
 // Assigns a job to a citizen if the job is available in the specified building
 bool BuildingManager::assignJobToCitizen(const std::string& jobTitle, Citizen* citizen, Building* building) {
     // Search for the job in the building
-    for (Job& job : building->getJobs()) {
+    for (Jobs& job : building->getJobs()) {
         if (job.getTitle() == jobTitle && job.getAvailablePositions() > 0) {
             // Hire the citizen for the job if a position is available
             if (job.hireEmployee()) {
@@ -32,8 +32,8 @@ bool BuildingManager::assignJobToCitizen(const std::string& jobTitle, Citizen* c
 // Releases a citizen from their job by updating both the citizen and the job's state
 void BuildingManager::releaseCitizenFromJob(Citizen* citizen) {
     for (Building* building : buildings) {
-        for (Job& job : building->getJobs()) {
-            if (job.getTitle() == citizen->getJobTitle()) {
+        for (Jobs& job : building->getJobs()) {
+            if (job.getTitle() == citizen->getJob()) {
                 job.releaseEmployee();
                 citizen->setJobTitle("Unemployed");
                 std::cout << citizen->getName() << " released from " << job.getTitle() << " in " << building->getName() << std::endl;
