@@ -1,20 +1,28 @@
-#ifndef __POWERPLANT_H__
-#define __POWERPLANT_H__
+#ifndef __POWERPLANT_H
+#define __POWERPLANT_H
 
 #include "Utility.h"
+//#include "UtilityMediator.h"
 
-class PowerPlant {
+class PowerPlant : public Utility {
+    // private:
+    //     UtilityMediator* mediator;
     
     public:
 
-        void generateElectricity(Building *building);
+        PowerPlant(UtilityMediator* mediator);
 
-        void supplyPower(Building *building);
+        //void generateElectricity(Building *building);
 
-        PowerPlant();
+        void registerBuilding(Building* building) override;
+
+        void supplyResources(Building *building) override;
+
+        //void adjustForCitizen(Citizen* citizen) override;
+        //PowerPlant();
 
 
 
 };
 
-#endif // __POWERPLANT_H__
+#endif // __POWERPLANT_H

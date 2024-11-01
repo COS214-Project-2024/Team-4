@@ -1,16 +1,16 @@
 #include "WasteManagement.h"
+#include <iostream>
 
-// void WasteManagement::manageWaste(Citizen *citizen) {
-// 	// TODO - implement WasteManagement::manageWaste
-// 	throw "Not yet implemented";
-// }
+WasteManagement::WasteManagement(UtilityMediator* mediator) : Utility(mediator) {}
 
-WasteManagement::WasteManagement() {
-	// TODO - implement WasteManagement::WasteManagement
-	throw "Not yet implemented";
+void WasteManagement::registerBuilding(Building* building) {
+    std::cout << "Building registered with WasteManagement.\n";
 }
 
-// void WasteManagement::manageWaste(Citizen *citizen) {
-// 	// TODO - implement WasteManagement::manageWaste
-// 	throw "Not yet implemented";
+void WasteManagement::supplyResources(Building* building) {
+    std::cout << "Waste management service provided to building.\n";
+}
+
+// void WasteManagement::adjustForCitizen(Citizen* citizen) {
+//     std::cout << "Adjusting waste management based on citizen's requirements.\n";
 // }

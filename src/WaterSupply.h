@@ -3,16 +3,14 @@
 
 #include "Utility.h"
 
-class WaterSupply: Utility {
+class WaterSupply: public Utility {
 
 public:
-	Utility mediator;
+    WaterSupply(UtilityMediator* mediator);
 
-	void distributeWater(Building *building);
-
-	void supplyWater(Building *building);
-
-	WaterSupply();
+	void registerBuilding(Building* building) override;
+    void supplyResources(Building* building) override;
+    //void adjustForCitizen(Citizen* citizen) override;
 };
 
 #endif

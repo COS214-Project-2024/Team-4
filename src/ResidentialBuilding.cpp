@@ -48,3 +48,24 @@ void ResidentialBuilding::construct() {
     std::cout << "Residential Units: " << residentialUnits << "\nComfort Level: " << comfortLevel << std::endl;
 std::cout<<"============================================================\n";
 }
+
+
+//! below is Neo's code waiting for @abdulrasaqzainab to approve and the citizen class
+// // Adds a resident to the building
+// void ResidentialBuilding::addResident(Citizen* citizen) {
+//     residents.push_back(citizen);
+// }
+
+// // Optional: Removes a resident from the building if needed
+// void ResidentialBuilding::removeResident(Citizen* citizen) {
+//     residents.erase(std::remove(residents.begin(), residents.end(), citizen), residents.end());
+// }
+
+// Calculate total resource demand based on all residents
+// float ResidentialBuilding::calculateTotalResourceDemand() const {
+//     float totalDemand = 0.0f;
+//     for (const Citizen* citizen : residents) {
+//         totalDemand += citizen->getResourceUsage();  // Assuming getResourceUsage() returns the citizen's resource needs
+//     }
+//     return totalDemand;
+// }

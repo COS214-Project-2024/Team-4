@@ -3,20 +3,32 @@
 
 #include "Building.h"
 //#include "Citizen.h"
+#include "ResourceType.h"
+#include "UtilityMediator.h"
 
 class Utility {
 
+	protected:
+		 UtilityMediator* mediator;  // Reference to the mediator for managing resources
+	public:
+		// void supplyPower(Building *building);
+		// void supplyWater(Building *building);
+		// // void manageWaste(Citizen *citizen);
+		// void manageSewage(Building *building);
+		// Utility();
 
-public:
-	void supplyPower(Building *building);
+		Utility(UtilityMediator* mediator) : mediator(mediator) {}
 
-	void supplyWater(Building *building);
+		virtual void registerBuilding(Building* building) = 0;
 
-	// void manageWaste(Citizen *citizen);
+		virtual void supplyResources(Building* building) = 0;
 
-	void manageSewage(Building *building);
+		//!waiting on citizen to implement the below method
+		//virtual void adjustForCitizen(Citizen* citizen) = 0;
 
-	Utility();
+		virtual void adjustForPopulation(int newPopulation) = 0;  // New method
+
+		virtual ~Utility() = default;
 };
 
 #endif
