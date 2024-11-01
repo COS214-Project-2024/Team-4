@@ -1,11 +1,15 @@
+// CitizenState.h
+
 #ifndef CITIZENSTATE_H
 #define CITIZENSTATE_H
 
+class Citizen;
+
 class CitizenState {
-
-
 public:
-	void handleState(int Citizen_C);
+    virtual void handleState(Citizen& citizen) const = 0;
+    virtual ~CitizenState() = default;
 };
 
-#endif
+#endif // CITIZENSTATE_H
+
