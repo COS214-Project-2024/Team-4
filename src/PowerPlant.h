@@ -18,7 +18,7 @@ class PowerPlant : public Utility {
 
         void supplyResources(Building *building) override;
 
-        //void adjustForCitizen(Citizen* citizen) override;
+        void adjustForCitizen(Citizen* citizen) override;
         //PowerPlant();
 
 

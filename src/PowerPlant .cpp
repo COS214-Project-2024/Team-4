@@ -17,10 +17,10 @@ void PowerPlant::supplyResources(Building* building) {
     }
 }
 
-// void PowerPlant::adjustForCitizen(Citizen* citizen) {
-//     // Adjust power based on new citizen needs, if required
-//     std::cout << "Adjusting power supply based on citizen's requirements.\n";
-// }
+void PowerPlant::adjustForCitizen(Citizen* citizen) {
+    // Adjust power based on new citizen needs, if required
+    std::cout << "Adjusting power supply based on citizen's requirements.\n";
+}
 
 
 // void PowerPlant::generateElectricity(Building* building) {
