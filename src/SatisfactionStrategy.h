@@ -1,9 +1,9 @@
 // SatisfactionStrategy.h
 
-#ifndef SATISFACTION_STRATEGY_H
-#define SATISFACTION_STRATEGY_H
+#ifndef SATISFACTIONSTRATEGY_H
+#define SATISFACTIONSTRATEGY_H
 
-class Citizen;
+class Citizen;  // Forward declaration
 
 class SatisfactionStrategy {
 public:
@@ -11,4 +11,5 @@ public:
     virtual float calculateSatisfaction(const Citizen& citizen) const = 0;
 };
 
-#endif // SATISFACTION_STRATEGY_H
+#endif // SATISFACTIONSTRATEGY_H
+

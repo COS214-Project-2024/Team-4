@@ -3,5 +3,5 @@
 
 void LeavingCityState::handleState(Citizen& citizen) const {
     // Drastically reduce satisfaction as citizen prepares to leave
-    citizen.updateSatisfaction(citizen.getSatisfactionLevel() - 20.0);
+    citizen.updateSatisfaction(citizen.getSatisfactionLevel() - 100.0);
 }
