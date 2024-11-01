@@ -2,7 +2,11 @@
 #ifndef BUILDING_H
 #define BUILDING_H
 #include<string>
+#include<vector>
+#include<algorithm>
+#include "Jobs.h"
 using namespace std;    
+
 
 class Building {
 
@@ -14,6 +18,7 @@ protected:
 	float citizenSatisfaction;
 	float economicGrowth;
 	float resourceConsumption;
+	 std::vector<Jobs> jobs; 
 
 public:
     Building(const std::string& name, float area, int floors, int capacity,
@@ -35,6 +40,13 @@ public:
 
 	virtual string getType()const = 0;
 
+	 void addJob(const Jobs& job);                 // Adds a job to the building
+    void listJobs() const;                       // Lists all jobs in the building
+    bool hireEmployee(const std::string& jobTitle);  // Hires an employee for a job if available
+    void releaseEmployee(const std::string& jobTitle); // Releases an employee from a job
+	void displayJobInfo(const std::string& jobTitle) const; // Displays job information
+    // Accessor for job list, for use by BuildingManager
+    std::vector<Jobs>& getJobs();
 protected:
 	Building(int Builder);
 
