@@ -44,6 +44,11 @@ public:
         observers.push_back(observer);
     }
 
+    Resource* getResource(ResourceType type) const {
+        auto it = resources.find(type);
+        return (it != resources.end()) ? it->second : nullptr;
+    }
+
 private:
     void notifyObservers(ResourceType type, int quantity) {
         for (auto obs : observers) {
