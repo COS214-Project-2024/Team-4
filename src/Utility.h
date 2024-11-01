@@ -2,7 +2,7 @@
 #define UTILITY_H
 
 #include "Building.h"
-//#include "Citizen.h"
+#include "Citizen.h"
 #include "ResourceType.h"
 #include "UtilityMediator.h"
 
@@ -23,8 +23,7 @@ class Utility {
 
 		virtual void supplyResources(Building* building) = 0;
 
-		//!waiting on citizen to implement the below method
-		//virtual void adjustForCitizen(Citizen* citizen) = 0;
+		virtual void adjustForCitizen(Citizen* citizen) = 0;
 
 		virtual void adjustForPopulation(int newPopulation) = 0;  // New method
 
