@@ -10,27 +10,38 @@
 #include "Policy.h"
 #include "CityService.h"
 #include "CitizenState.h"
+#include "SatisfactionStrategy.h"
 
 class Citizen {
 protected:
-    std::string name;
+std::string name;
     int age;
-    std::string resStatus;       // Residential status
-    std::string jobStatus;       // Employment status
-    float satisfaction;
-    bool maritalStatus;
-    bool health;
-    double bankBalance;
-    std::string educationLevel;
-    bool housingSatisfaction;
-    double income;
-    std::vector<CitizenObserver*> observers; // List of observers
-    CitizenState* currentState;  // Current state
+    std::string resStatus = "Resident";        // Residential status, default to "Resident"
+    std::string jobStatus = "Unemployed";      // Employment status
+    float satisfaction = 50.0f;
+    std::string relationshipStatus = "Single";
+    int marriageDuration = 0;
+    int numChildren = 0;
+    bool maritalStatus = false;                // Indicates married status
+    bool health = true;                        // Indicates health status (true for healthy)
+    double bankBalance = 0.0;
+    std::string educationLevel = "None";       // Default education level
+    bool housingSatisfaction = false;
+    double income = 0.0;
+    std::vector<CitizenObserver*> observers;   // List of observers
+    CitizenState* currentState = nullptr;      // Current state pointer
+    float taxRate = 0.1f;
+    float housingComfortLevel = 5.0f;
+    bool employed = false;
+    std::vector<std::shared_ptr<SatisfactionStrategy>> satisfactionStrategies;
+
+
     
 
 public:
     // Constructor and Destructor
-    Citizen(const std::string& name, int age, const std::string& resStatus, const std::string& jobStatus);
+    Citizen(const std::string& name = "Unnamed Citizen", int age = 30,
+            const std::string& relationshipStatus = "Single", const std::string& jobStatus = "Unemployed");
     virtual ~Citizen();
 
     // Prototype Pattern: Clone method
@@ -59,7 +70,7 @@ public:
     void updateBankBalance(double amount);
     void updateService(const CityService* service);
     void updatePolicy(const Policy* policy);
-
+    bool isLeaving() const; 
     void updateSatisfaction(float adjustment);  // Modify satisfaction by a certain amount
     float getSatisfactionLevel() const;         // Retrieve the current satisfaction level
 
@@ -72,6 +83,23 @@ public:
     std::string getResStatus() const;
     std::string getJobStatus() const;
     double getBankBalance() const;
+
+    // Relationship management
+    std::string getRelationshipStatus() const;
+    void setRelationshipStatus(const std::string& status);
+    void incrementMarriageDuration();
+    void resetMarriageDuration();
+    int getMarriageDuration() const;
+    void addChild();
+    int getNumChildren() const;
+
+    void addSatisfactionStrategy(std::shared_ptr<SatisfactionStrategy> strategy);
+    void updateSatisfaction();
+
+    // Getters for strategy inputs
+    bool isEmployed() const { return employed; }
+    float getTaxRate() const { return taxRate; }
+    float getHousingComfortLevel() const { return housingComfortLevel; }
 };
 
 #endif // CITIZEN_H

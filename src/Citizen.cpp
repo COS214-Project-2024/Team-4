@@ -2,7 +2,9 @@
 
 #include "Citizen.h"
 #include "CitizenObserver.h"
+#include "LeavingCityState.h"
 #include <algorithm>
+#include <iostream>
 
 template <typename T>
 T clamp(T value, T min, T max) {
@@ -12,9 +14,9 @@ T clamp(T value, T min, T max) {
 }
 
 Citizen::Citizen(const std::string& name, int age, const std::string& resStatus, const std::string& jobStatus)
-    : name(name), age(age), resStatus(resStatus), jobStatus(jobStatus), satisfaction(0.0),
-      maritalStatus(false), health(true), bankBalance(0.0), educationLevel("None"),
-      housingSatisfaction(false), income(0.0), currentState(nullptr) {}
+    : name(name), age(age), resStatus(resStatus), jobStatus(jobStatus), satisfaction(50.0),
+      maritalStatus(false), health(true), bankBalance(0.0), educationLevel("None"), taxRate(0.1f),
+      housingSatisfaction(false), income(0.0), currentState(nullptr) , housingComfortLevel(5.0f), employed(false) {}
 
 Citizen::~Citizen() {
     delete currentState;
@@ -167,4 +169,56 @@ std::string Citizen::getJobStatus() const {
 
 double Citizen::getBankBalance() const {
     return bankBalance;
+}
+
+// Relationship methods
+std::string Citizen::getRelationshipStatus() const {
+    return relationshipStatus;
+}
+
+void Citizen::setRelationshipStatus(const std::string& status) {
+    relationshipStatus = status;
+    notifyObservers();
+}
+
+void Citizen::incrementMarriageDuration() {
+    if (relationshipStatus == "Married") {
+        ++marriageDuration;
+    }
+}
+
+void Citizen::resetMarriageDuration() {
+    marriageDuration = 0;
+}
+
+int Citizen::getMarriageDuration() const {
+    return marriageDuration;
+}
+
+void Citizen::addChild() {
+    ++numChildren;
+    notifyObservers();  // Notify observers of the new child
+}
+
+int Citizen::getNumChildren() const {
+    return numChildren;
+}
+
+
+bool Citizen::isLeaving() const {
+    return dynamic_cast<LeavingCityState*>(currentState) != nullptr;
+}
+
+void Citizen::addSatisfactionStrategy(std::shared_ptr<SatisfactionStrategy> strategy) {
+    satisfactionStrategies.push_back(strategy);
+}
+
+void Citizen::updateSatisfaction() {
+    float totalSatisfaction = 0.0;
+    for (const auto& strategy : satisfactionStrategies) {
+        totalSatisfaction += strategy->calculateSatisfaction(*this);
+    }
+    // Average satisfaction score if multiple strategies are used
+    satisfaction = totalSatisfaction / satisfactionStrategies.size();
+    std::cout << name << "'s updated satisfaction: " << satisfaction << std::endl;
 }
