@@ -1,17 +1,25 @@
 #include "UtilityMediator.h"
 
 bool UtilityMediator::requestResources(ResourceType type, int amount) {
-	// TODO - implement UtilityMediator::requestResources
-	throw "Not yet implemented";
+	 if (resourceInventory[type] >= amount) {
+            resourceInventory[type] -= amount;
+            return true;  // Request fulfilled
+        }
+        return false;  // Insufficient resources
 }
 
-void UtilityMediator::releaseResources(ResourceType type, int amountt) {
-	// TODO - implement UtilityMediator::releaseResources
-	throw "Not yet implemented";
+void UtilityMediator::releaseResources(ResourceType type, int amount) {
+	resourceInventory[type] += amount;
 }
 
 void UtilityMediator::produceResource(ResourceType type, int amount) {
-	// TODO - implement UtilityMediator::produceResource
-	throw "Not yet implemented";
+	resourceInventory[type] += amount;
+}
+
+int UtilityMediator::getAvailableResource(ResourceType type) const
+{
+	return resourceInventory.count(type) ? resourceInventory.at(type) : 0;
 }
 //! Compare this snippet from src/ResourceType.h:
+
+

@@ -1,17 +1,20 @@
 #include "WaterSupply.h"
+#include <iostream>
 
-void WaterSupply::distributeWater(Building *building) {
-	// TODO - implement WaterSupply ::distributeWater
-	throw "Not yet implemented";
+WaterSupply::WaterSupply(UtilityMediator* mediator) : Utility(mediator) {}
+
+void WaterSupply::registerBuilding(Building* building) {
+    std::cout << "Building registered with WaterSupply.\n";
 }
 
-void WaterSupply::supplyWater(Building *building) {
-	// TODO - implement WaterSupply ::supplyWater
-	throw "Not yet implemented";
+void WaterSupply::supplyResources(Building* building) {
+    if (mediator->requestResources(ResourceType::Water, 30)) {
+        std::cout << "Water supplied to building.\n";
+    } else {
+        std::cout << "Insufficient water to supply to building.\n";
+    }
 }
 
-WaterSupply::WaterSupply() {
-	// TODO - implement WaterSupply ::WaterSupply
-	throw "Not yet implemented";
-}
-
+// void WaterSupply::adjustForCitizen(Citizen* citizen) {
+//     std::cout << "Adjusting water supply based on citizen's requirements.\n";
+// }
