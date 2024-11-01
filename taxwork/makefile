@@ -8,11 +8,17 @@ VALGRIND = valgrind --leak-check=full --track-origins=yes --show-reachable=yes
 TARGET = testTaxes
 
 # Source files
-SOURCES = testTaxes.cpp CollectTaxesCommand.cpp Income.cpp Property.cpp Sales.cpp SetTaxCommand.cpp TaxSatisfactionStrategy.cpp TaxSystem.cpp TaxType.cpp Government.cpp
+SOURCES = testTaxes.cpp CollectTaxesCommand.cpp Income.cpp Property.cpp Sales.cpp \
+          SetTaxCommand.cpp TaxSatisfactionStrategy.cpp TaxSystem.cpp TaxType.cpp \
+          Government.cpp CityService.cpp Policy.cpp
 
-# Header files (for dependency tracking)
-HEADERS = CollectTaxesCommand.h Income.h Property.h Sales.h SetTaxCommand.h TaxSatisfactionStrategy.h TaxSystem.h TaxType.h Resource.h ResourceAllocationStrategy.h ResourceApprovalHandler.h ResourceAvailability.h ResourceManager.h ResourceType.h Government.h
-
+# Header files
+HEADERS = CollectTaxesCommand.h Income.h Property.h Sales.h SetTaxCommand.h \
+          TaxSatisfactionStrategy.h TaxSystem.h TaxType.h Resource.h \
+          ResourceAllocationStrategy.h ResourceApprovalHandler.h \
+          ResourceAvailability.h ResourceManager.h ResourceType.h Government.h \
+          GovObserver.h CityService.h Policy.h
+		  
 # Object files
 OBJECTS = $(SOURCES:.cpp=.o)
 

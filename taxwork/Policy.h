@@ -12,6 +12,10 @@ public:
 	void implement();
 
 	void revoke();
+
+	void setPolicyName(string name);
+
+	string getPolicyName() const;
 };
 
 #endif

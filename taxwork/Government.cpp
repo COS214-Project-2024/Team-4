@@ -32,7 +32,7 @@ void Government::notifyServices() {
 
 void Government::allocateBudget(CityService& service, double amount) {
     budget -= amount;
-    service.updateBudget(amount);
+  service.updateBudget(amount);
     cout << "Allocated " << amount << " to service. Remaining budget: " << budget << endl;
     notifyObservers();
 }
@@ -44,8 +44,8 @@ void Government::revertBudgetAllocation(CityService& service, double amount) {
     notifyObservers();
 }
 
-void Government::enforcePolicy(Policy policy) {
-    cout << "Enforcing policy..." << endl;
+void Government::enforcePolicy(Policy* policy) {
+    cout << "Enforcing " << policy->getPolicyName() << " policy..." << endl;
     notifyObservers();
 }
 
