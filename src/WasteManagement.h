@@ -11,7 +11,7 @@ public:
 	//void manageWaste(Citizen *citizen);
 	void registerBuilding(Building* building) override;
     void supplyResources(Building* building) override;
-    // void adjustForCitizen(Citizen* citizen) override;
+    void adjustForCitizen(Citizen* citizen) override;
 };
 
 #endif
