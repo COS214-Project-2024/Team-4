@@ -50,4 +50,3 @@ debug: clean all
 
 # Additional target to ensure main is executed
 main: all
-q   

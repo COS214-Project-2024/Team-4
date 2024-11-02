@@ -9,29 +9,21 @@ void BuildingManager::addBuilding(Building* building) {
     buildings.push_back(building);
 }
 
-//collects all taxes from the citizens in all buildings
-double BuildingManager::collectAllTaxes() {
-    double totalTax = 0.0;
-    for (Building* building : buildings) {
-        if(building->getType() == "Residential"){
-            totalTax+=building->collectTaxes();
-        }else if (building->getType() == "Commercial")
-        {
-            totalTax+=building->collectTaxes();
-        } else if (building->getType() == "Industrial")
-        {
-            totalTax+=building->collectTaxes();
-        
-        } else if (building->getType() == "Government")
-        {
-            std::cout<<"Government building does not collect taxes"<<std::endl;
-        } else
-        {
-            std::cout<<"Building type cannot be taxed"<<std::endl;
-        }
-    }
-    return totalTax;
-}
+// //collects all taxes from the citizens in all buildings
+// double BuildingManager::collectAllTaxes() {
+//     double totalTax = 0.0;
+//     for (Building* building : buildings) {
+//         std::string type = building->getType();
+//         if (type == "Government") {
+//             std::cout << "Government building does not collect taxes" << std::endl;
+//         } else if (type == "Residential" || type == "Commercial" || type == "Industrial") {
+//             totalTax += building->payTaxes(new TaxType(0.0, 'B'));
+//         } else {
+//             std::cout << "Building type cannot be taxed" << std::endl;
+//         }
+//     }
+//     return totalTax;
+// }
 
 // Adds a citizen to the list of managed citizens
 void BuildingManager::addCitizen(Citizen* citizen) {
@@ -76,4 +68,4 @@ void BuildingManager::listAllJobsInBuilding(const Building* building) const {
     building->listJobs();
 }
 
-} // namespace YourNamespace
+}

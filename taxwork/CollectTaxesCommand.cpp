@@ -1,18 +1,17 @@
 #include "CollectTaxesCommand.h"
 
-CollectTaxesCommand::CollectTaxesCommand(Building* building, double taxRate) {
+CollectTaxesCommand::CollectTaxesCommand(Building* building, TaxType* taxType) {
 	this->building = building;
 	taxesCollected = 0;
-	this->taxRate = taxRate;
-
+	this->taxType = taxType;
 }
 
 void CollectTaxesCommand::execute() {
-	taxesCollected = building->collectTaxes();
+	taxesCollected = building->payTaxes(taxType);
 }
 
 void CollectTaxesCommand::undo() {
-	building->undoCollectIncome();
+	building->undoCollectTaxes();
 }
 double CollectTaxesCommand::getTaxesCollected() {
 	return taxesCollected;

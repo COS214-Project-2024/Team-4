@@ -6,7 +6,7 @@
 #include "VAT.h"
 
 SetTaxCommand::SetTaxCommand(Government* gov, TaxSystem* taxSys, double rate, char taxType)
-    : government(gov), taxRate(rate), previousTaxRate(0.0), taxSys(taxSys), taxType(taxType) {
+    : government(gov), taxSys(taxSys), taxRate(rate), taxType(taxType), previousTaxRate(0.0)  {
 
 
 
@@ -42,5 +42,5 @@ void SetTaxCommand::undo() {
 }
 
 double SetTaxCommand::returnVal() {
-    return previousTaxRate;
+    return newTaxType->getTaxRate();
 }

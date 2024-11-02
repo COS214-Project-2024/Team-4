@@ -30,7 +30,7 @@ public:
 
 
     // Collect taxes from all citizens in all buildings
-    double collectAllTaxes();
+    //double collectAllTaxes();
 };
 
 #endif

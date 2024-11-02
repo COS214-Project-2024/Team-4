@@ -232,3 +232,29 @@ void Citizen::updateSatisfaction() {
     satisfaction = totalSatisfaction / satisfactionStrategies.size();
     std::cout << name << "'s updated satisfaction: " << satisfaction << std::endl;
 }
+
+//tax stuff
+void Citizen::setTaxRate(double rate) {
+    taxRate = rate;
+}
+
+double Citizen::calculateTax() {
+    return income * taxRate;
+}
+
+double Citizen::getIncome() const {
+    return income;
+}
+
+bool Citizen::canPayTax() const {
+    return !taxCooldown && bankBalance > 0;
+}
+
+void Citizen::setTaxCooldown(bool status) {
+    taxCooldown = status;
+}
+
+bool Citizen::getTaxCooldown() const {
+    return taxCooldown;
+}
+

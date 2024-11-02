@@ -3,6 +3,7 @@
 #include "Building.h"
 #include<string>
 #include<iostream>
+
 using namespace std;
 
 class IndustrialBuilding :public Building {
@@ -24,6 +25,8 @@ public:
 	void updateImpacts()override;
 
 	void upgradeTech(float techLevel);
+	double payTaxes(TaxType* taxType)override;
+	void undoCollectTaxes()override;
 
 protected:
 	void calculateEconomicImpact();

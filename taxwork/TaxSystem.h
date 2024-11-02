@@ -10,17 +10,18 @@
 #include "Sales.h"
 #include "CollectTaxesCommand.h"
 #include "Property.h"
-#include "Government.h"
+// #include "Government.h"
 #include <vector>
 #include <string>
 #include <iostream>
 #include "Sales.h"
 #include <map>
+class Government;
 class TaxSystem {
 private:
     std::map<double, TaxType*> taxRates;
     Government* government;
-    
+
 
     // std::map<Citizen*, char> citizenTaxPayers;
     // std::map<Business*, char> businessTaxPayers;

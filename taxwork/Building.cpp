@@ -88,7 +88,7 @@ void Building::listJobs() const {
 }
 
 //collect taxes from the building
-double Building::collectTaxes() {
+double Building::payTaxes(TaxType* taxType) {
 	// Placeholder for tax collection logic
 }
 
@@ -97,8 +97,8 @@ void Building::undoCollectTaxes() {
 	// Placeholder for undoing tax collection logic
 }
 
-void Building::undoCollectIncome() {
-	// Placeholder for undoing income collection logic
-}
 
-
+//set tax rate for occupants in the building
+// void Building::setTaxRate(double rate) {
+//     // Placeholder for setting tax rate logic
+// }

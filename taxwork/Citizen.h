@@ -30,12 +30,12 @@ std::string name;
     double income = 0.0;
     std::vector<CitizenObserver*> observers;   // List of observers
     CitizenState* currentState = nullptr;      // Current state pointer
-    float taxRate = 0.1f;
+    double taxRate;
     float housingComfortLevel = 5.0f;
     bool employed = false;
     std::string jobTitle = "Unemployed";
     std::vector<std::shared_ptr<SatisfactionStrategy>> satisfactionStrategies;
-
+    bool taxCooldown = false;
 
     
 
@@ -106,6 +106,15 @@ public:
     bool isEmployed() const { return employed; }
     float getTaxRate() const { return taxRate; }
     float getHousingComfortLevel() const { return housingComfortLevel; }
+ 
+
+    //things needed for tax payment
+    void setTaxRate(double rate);
+    double calculateTax();
+    double getIncome() const;
+    bool canPayTax() const;
+    void setTaxCooldown(bool status);
+    bool getTaxCooldown() const;
 };
 
 #endif // CITIZEN_H

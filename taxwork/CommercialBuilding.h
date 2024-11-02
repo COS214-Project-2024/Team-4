@@ -26,6 +26,11 @@ public:
 
     void construct() override;
 
+	double collectTaxes()override;
+
+	void undoCollectTaxes()override;
+
+
 protected:
 	void calculateEconomicImpact();
 
@@ -34,4 +39,4 @@ protected:
 	void calculateSatisfactionImpact();
 };
 
-#endif
+#endif // COMMERCIALBUILDING_H

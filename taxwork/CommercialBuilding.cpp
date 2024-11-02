@@ -52,3 +52,11 @@ void CommercialBuilding::construct() {
 	std::cout<<"============================================================\n";
 
 }
+
+double CommercialBuilding::collectTaxes() {
+}
+
+void CommercialBuilding::undoCollectTaxes() {
+	double tax = economicGrowth * 0.1;
+	cout << "Refunded taxes from Commercial Building: " << name << " - Amount: " << tax << endl;
+}

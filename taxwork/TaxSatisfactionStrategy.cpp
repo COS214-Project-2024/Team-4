@@ -8,3 +8,4 @@ float TaxSatisfactionStrategy::calculateSatisfaction(const Citizen& citizen) con
     float taxImpact = static_cast<float>(taxRate * 50.0); // Adjust multiplier as needed
     float satisfaction = maxSatisfaction - taxImpact;
     return std::clamp(satisfaction, 0.0f, maxSatisfaction);
+}

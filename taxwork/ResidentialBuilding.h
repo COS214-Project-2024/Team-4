@@ -29,6 +29,7 @@ public:
 	void undoCollectTaxes() override;
 	int getResidentialUnits() const;
 	void addResidents(Citizen* citizen);
+	void removeResidents(Citizen* citizen);
 
 protected:
 	void calculateEconomicImpact();

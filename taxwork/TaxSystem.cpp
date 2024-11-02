@@ -147,3 +147,14 @@ void TaxSystem::checkImpact() {
 void TaxSystem::addTaxRate(TaxType* tax) {
   taxRates.insert(std::pair<double, TaxType*>(tax->getTaxRate(), tax));
 }
+
+void TaxSystem::removeTaxRate(TaxType* taxType) {
+    // Remove the tax rate from the map
+    auto it = std::find_if(taxRates.begin(), taxRates.end(),
+                           [taxType](const std::pair<char, TaxType*>& pair) {
+                               return pair.second == taxType;
+                           });
+    if (it != taxRates.end()) {
+        taxRates.erase(it);
+    }
+}

@@ -49,10 +49,17 @@ void ResidentialBuilding::construct() {
 std::cout<<"============================================================\n";
 }
 
-//collect taxes from the building
-double ResidentialBuilding::collectTaxes() {
-
+//pay taxes for the building
+double ResidentialBuilding::payTaxes(TaxType* taxType) {
+for (Citizen* citizen : residents) {
+    citizen->setTaxRate(taxType->getTaxRate());
+    propertyTax += citizen->calculateTax();
+    householdIncome += citizen->getIncome();
+  }
+  return propertyTax;
 }
+
+
 
 //calculate property tax of the building
 double ResidentialBuilding::calculatePropertyTax() {
@@ -83,3 +90,4 @@ void ResidentialBuilding::undoCollectTaxes() {
 int ResidentialBuilding::getResidentialUnits() const {
   return residentialUnits;
 }
+
