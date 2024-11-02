@@ -5,30 +5,26 @@
 #include "UnemployedState.h"
 #include "SatisfiedState.h"
 #include "UnsatisfiedState.h"
+#include "LeavingCityState.h"
+#include "MaleCitizen.h"
+#include "FemaleCitizen.h"
 #include <iostream>
 #include <thread>
 #include <chrono>
-#include <cstdlib> // For random relationship progression
-// PopulationManager.cpp
-
-#include "PopulationManager.h"
-#include "Citizen.h"
-#include "LeavingCityState.h"
+#include <cstdlib>
 #include <algorithm>
 #include <random>
 #include <ctime>
 
-PopulationManager::PopulationManager() {
-    std::srand(std::time(nullptr)); // Seed for randomness
-}
-
-void PopulationManager::addCitizen(std::shared_ptr<Citizen> citizen) {
-    citizens.push_back(citizen);
-    citizen->addObserver(this); // Register this PopulationManager as an observer
+PopulationManager::PopulationManager() 
+    : jobSatisfaction(std::make_shared<JobSatisfactionStrategy>()),
+      housingSatisfaction(std::make_shared<HousingSatisfactionStrategy>()) 
+{
+    // Seed randomness for the simulation
+    std::srand(std::time(nullptr));
 }
 
 void PopulationManager::update(Citizen* citizen) {
-    // Respond to Citizen state changes (e.g., update based on satisfaction)
     checkCitizenStates();
 }
 
@@ -42,10 +38,21 @@ void PopulationManager::simulatePopulationGrowth() {
     removeLeavingCitizens();
 }
 
-void PopulationManager::addRandomCitizen() {
-    auto citizen = std::make_shared<Citizen>("RandomCitizen", std::rand() % 80 + 1, "Single", "Unemployed");
+void PopulationManager::addCitizen(std::shared_ptr<Citizen> citizen) {
     citizens.push_back(citizen);
-    std::cout << "Citizen added. Total population: " << getPopulation() << std::endl;
+    citizen->addObserver(this);  // Register this PopulationManager as an observer
+}
+
+void PopulationManager::addRandomCitizen() {
+    std::shared_ptr<Citizen> citizen;
+            if (std::rand() % 2 == 0) {
+                citizen = std::make_shared<MaleCitizen>("RandomMale", 0, "Single", "Unemployed");
+            } else {
+                citizen = std::make_shared<FemaleCitizen>("RandomFemale", 0, "Single", "Unemployed");
+            }
+
+    citizens.push_back(citizen);
+    std::cout << "Citizen added randomly. Total population: " << getPopulation() << std::endl;
 }
 
 void PopulationManager::removeRandomCitizen() {
@@ -67,93 +74,103 @@ void PopulationManager::removeLeavingCitizens() {
     }
 }
 
-int PopulationManager::getPopulation() const {
+int PopulationManager::getPopulation() {
     return citizens.size();
 }
 
+const std::vector<std::shared_ptr<Citizen>>& PopulationManager::getCitizens() const {
+    return citizens;
+}
 
 void PopulationManager::checkCitizenStates() {
     for (auto& citizen : citizens) {
-        // Example logic: Switch to UnsatisfiedState if satisfaction is low
-        if (citizen->getSatisfactionLevel() < 20) {
-            citizen->setState(new UnsatisfiedState());
-        } else if (citizen->getSatisfactionLevel() > 80) {
-            citizen->setState(new SatisfiedState());
-        }
-        else if (citizen->getSatisfactionLevel() == 0) {
-            citizen->setState(new LeavingCityState()); // Change state if satisfaction is too low
+        // Only allow job and income-related state changes for citizens 18 and older
+        if (citizen->getAge() >= 18) {
+            if (citizen->getSatisfactionLevel() < 20) {
+                citizen->setState(new UnsatisfiedState());
+            } else if (citizen->getSatisfactionLevel() > 80) {
+                citizen->setState(new SatisfiedState());
+            } else if (citizen->getSatisfactionLevel() == 0) {
+                citizen->setState(new LeavingCityState());
+            }
         }
     }
 }
 
-PopulationManager::PopulationManager() : programRunning(true) {}
-
-void PopulationManager::startRelationshipManager() {
-    // Start manageRelationships in a separate thread
-    std::thread relationshipThread(&PopulationManager::manageRelationships, this);
-    relationshipThread.detach(); // Detach to let it run independently
-}
-
-void PopulationManager::stopRelationshipManager() {
-    // Set the flag to false to end the loop
-    programRunning = false;
+void PopulationManager::updateCitizensAge() {
+    for (auto& citizen : citizens) {
+        // Increment the citizen's age
+        citizen->incrementAge();
+        
+        // If the citizen has turned 18 and has no satisfaction strategy
+        if (citizen->getAge() == 18 ) {
+            // Randomly assign a predefined satisfaction strategy
+            if (std::rand() % 2 == 0) {
+                citizen->addSatisfactionStrategy(jobSatisfaction);
+                std::cout << citizen->getName() << " turned 18 and received Job Satisfaction Strategy.\n";
+            } else {
+                citizen->addSatisfactionStrategy(housingSatisfaction);
+                std::cout << citizen->getName() << " turned 18 and received Housing Satisfaction Strategy.\n";
+            }
+        }
+    }
 }
 
 void PopulationManager::manageRelationships() {
-    while (programRunning) {
-        for (auto& citizen : citizens) {
-            // Relationship progression logic
-            if (citizen->getRelationshipStatus() == "Single" && rand() % 10 == 0) {
-                citizen->setRelationshipStatus("Dating");
-                std::cout << citizen->getName() << " is now dating.\n";
-            } else if (citizen->getRelationshipStatus() == "Dating") {
-                if (rand() % 20 == 0) {
-                    citizen->setRelationshipStatus("Married");
-                    std::cout << citizen->getName() << " just got married!\n";
-                } else if (rand() % 15 == 0) {
-                    citizen->setRelationshipStatus("Single");
-                    std::cout << citizen->getName() << " broke up and is now single.\n";
-                }
-            }
+    // Temporary vector to store new citizens to be added after the main loop
+    std::vector<std::shared_ptr<Citizen>> newCitizens;
 
-            // Add a child after a set duration of marriage
-            if (citizen->getRelationshipStatus() == "Married" && citizen->getMarriageDuration() >= 3) {
-                citizen->addChild();
-                citizen->resetMarriageDuration();
-                std::cout << citizen->getName() << " has a new child.\n";
-            }
-
-            // Update the marriage duration counter if married
-            if (citizen->getRelationshipStatus() == "Married") {
-                citizen->incrementMarriageDuration();
+    // Iterate through the existing citizens without modifying the vector
+    for (auto& citizen : citizens) {
+        if (citizen->getRelationshipStatus() == "Single" && std::rand() % 10 == 0) {
+            citizen->setRelationshipStatus("Dating");
+            std::cout << citizen->getName() << " is now dating.\n";
+        } else if (citizen->getRelationshipStatus() == "Dating") {
+            if (std::rand() % 20 == 0) {
+                citizen->setRelationshipStatus("Married");
+                std::cout << citizen->getName() << " just got married!\n";
+            } else if (std::rand() % 15 == 0) {
+                citizen->setRelationshipStatus("Single");
+                std::cout << citizen->getName() << " broke up and is now single.\n";
             }
         }
 
-        // Delay the loop to prevent it from running too fast
-        std::this_thread::sleep_for(std::chrono::seconds(1));
+        // If married, add a child after a certain duration
+        if (citizen->getRelationshipStatus() == "Married" && citizen->getMarriageDuration() >= 3) {
+            // Create a new child as a MaleCitizen or FemaleCitizen
+            std::shared_ptr<Citizen> child;
+            if (std::rand() % 2 == 0) {
+                child = std::make_shared<MaleCitizen>("RandomMale", 0, "Single", "Unemployed");
+            } else {
+                child = std::make_shared<FemaleCitizen>("RandomFemale", 0, "Single", "Unemployed");
+            }
+
+            if (child) {
+                std::cout << "Child " << child->getName() << " created successfully.\n";
+                newCitizens.push_back(child);  // Add child to temporary vector
+            }
+            citizen->resetMarriageDuration();
+            std::cout << citizen->getName() << " has a new child.\n";
+            citizen->addChild();
+        }
+
+        if (citizen->getRelationshipStatus() == "Married") {
+            citizen->incrementMarriageDuration();
+        }
     }
-    std::cout << "Relationship management stopped.\n";
+
+    // Add all new citizens to the main citizens vector after the loop completes
+    citizens.insert(citizens.end(), newCitizens.begin(), newCitizens.end());
 }
 
-PopulationManager::PopulationManager() : programRunning(true) {}
-
-void PopulationManager::startSatisfactionUpdater() {
-    std::thread updaterThread([this]() {
-        while (programRunning) {
-            updateCitizensSatisfaction();
-            std::this_thread::sleep_for(std::chrono::seconds(1)); // Update every 1 second
-        }
-    });
-    updaterThread.detach();
-}
-
-void PopulationManager::stopSatisfactionUpdater() {
-    programRunning = false;
-}
 
 void PopulationManager::updateCitizensSatisfaction() {
     for (auto& citizen : citizens) {
-        citizen->updateSatisfaction();
+        // Only update satisfaction for citizens above a certain age, if required
+        if (citizen->getAge() >= 18) {
+            citizen->updateSatisfaction();
+        }
     }
 }
+
 

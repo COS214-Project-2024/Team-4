@@ -1,36 +1,35 @@
+// Jobs.cpp
+
 #include "Jobs.h"
+#include <iostream>
 
-// Constructor
-Jobs::Jobs(const std::string& title, float income, int availablePositions)
-    : title(title), income(income), availablePositions(availablePositions), isEmployed(false) {}
+// Constructor initializes job title and income based on provided salary
+Jobs::Jobs(const std::string& jobTitle, double salary)
+    : title(jobTitle), income(std::make_shared<Income>(salary)) {}
 
-// Getter methods
-std::string Jobs::getTitle() const { return title; }
-float Jobs::getIncome() const { return income; }
-int Jobs::getAvailablePositions() const { return availablePositions; }
-bool Jobs::getEmploymentStatus() const { return isEmployed; }
-
-// Hire an employee, if available positions > 0
-bool Jobs::hireEmployee() {
-    if (availablePositions > 0) {
-        --availablePositions;
-        isEmployed = true;
-        return true;
+// Marks the job as occupied when an employee is hired
+void Jobs::hireEmployee() {
+    if (!occupied) {
+        occupied = true;
+        std::cout << "Job " << title << " has been filled." << std::endl;
+    } else {
+        std::cout << "Job " << title << " is already occupied." << std::endl;
     }
-    return false;  // No available positions
 }
 
-// Release an employee, increasing available positions
+// Releases the job, marking it as available
 void Jobs::releaseEmployee() {
-    ++availablePositions;
-    if (availablePositions > 0) {
-        isEmployed = false;
+    if (occupied) {
+        occupied = false;
+        std::cout << "Job " << title << " is now available." << std::endl;
+    } else {
+        std::cout << "Job " << title << " is already available." << std::endl;
     }
 }
 
-// Display job information
+// Displays job information for debugging or informational purposes
 void Jobs::displayJobInfo() const {
-    std::cout << "Title: " << title << ", Income: " << income
-              << ", Available Positions: " << availablePositions
-              << ", Employment Status: " << (isEmployed ? "Employed" : "Available") << std::endl;
+    std::cout << "Job Title: " << title << std::endl;
+    std::cout << "Monthly Income: " << income->calculateMonthlyIncome() << std::endl;
+    std::cout << "Status: " << (occupied ? "Occupied" : "Available") << std::endl;
 }
