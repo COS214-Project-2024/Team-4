@@ -1,6 +1,6 @@
 #ifndef GOVOBSERVER_H
 #define GOVOBSERVER_H
-
+//observer
 class Policy; // Forward declaration
 class CityService; // Forward declaration
 
