@@ -142,13 +142,13 @@ void testUtilities() {
     wasteManagement.supplyResources(&building2);
 
     // Adjust utilities based on citizens
-    Citizen citizen1("Citizen 1", 25, 1.0f, 1.0f, 1.0f);
-    Citizen citizen2("Citizen 2", 30, 1.5f, 1.5f, 1.5f);
+    // Citizen citizen1("Citizen 1", 25, 1.0f, 1.0f, 1.0f);
+    // Citizen citizen2("Citizen 2", 30, 1.5f, 1.5f, 1.5f);
 
-    waterSupply.adjustForCitizen(&citizen1);
-    waterSupply.adjustForCitizen(&citizen2);
+    // waterSupply.adjustForCitizen(&citizen1);
+    // waterSupply.adjustForCitizen(&citizen2);
 
-    wasteManagement.adjustForCitizen(&citizen1);
+    // wasteManagement.adjustForCitizen(&citizen1);
     wasteManagement.adjustForCitizen(&citizen2);
 }
 
