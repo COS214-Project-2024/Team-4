@@ -48,6 +48,7 @@ public:
     void collectTaxes(Building* building,char taxType);
     void addTaxRate(TaxType* tax);
     void removeTaxRate(TaxType* tax);
+    void addGovernment(Government* gov);
     void checkImpact();
 };
 

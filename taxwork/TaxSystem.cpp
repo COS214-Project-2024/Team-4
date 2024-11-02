@@ -2,6 +2,10 @@
 #include "CollectTaxesCommand.h"
 #include "SetTaxCommand.h"
 
+void TaxSystem::addGovernment(Government* gov) {
+	government = gov;
+}
+
 void TaxSystem::addIncomeTaxBuilding(Building* building) {
 	if(building->getType() == "Residential"){
 		incomeTaxbuildings.push_back(building);
