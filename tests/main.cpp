@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 #include "ResidentialBuildingBuilder.h"
 #include "CommercialBuildingBuilder.h"
 #include "IndustrialBuildingBuilder.h"
@@ -103,7 +104,8 @@ void testLandmarkBuildingBuilder() {
            .setCapacity(250)
            .setCitizenSatisfaction(5.0f)
            .setEconomicGrowth(2.5f)
-           .setResourceConsumption(1.5f);             // Landmark-specific method
+           .setResourceConsumption(1.5f);             
+           // Landmark-specific method
 
 builder.setVisitorCapacity(1000);
 builder.setCulturalValue(10.0f);
@@ -127,19 +129,54 @@ void testUtilities() {
     // Register buildings with utilities
     // Building building1("Building 1", 1000.0f, 2, 50, 3.0f, 2.0f, 1.0f);
     // Building building2("Building 2", 2000.0f, 3, 100, 2.5f, 1.5f, 1.5f);
+    //registering buildings (commercial,landmark and industrial)
+    CommercialBuildingBuilder builder;
+    builder.setName("Sunset Mall")
+           .setArea(3000.0f)
+           .setFloors(3)
+           .setCapacity(200)
+           .setCitizenSatisfaction(1.8f)
+           .setEconomicGrowth(3.0f)
+           .setResourceConsumption(2.5f);
+    
+    builder.setBusinessUnits(50);
+    builder.setCustomerTraffic(500);
+    auto commercialBuilding = builder.build();
+    commercialBuilding->construct();
+    commercialBuilding->updateImpacts();
+    // waterSupply.registerBuilding(commercialBuilding.get());
 
-    // waterSupply.registerBuilding(&building1);
-    // waterSupply.registerBuilding(&building2);
+    LandmarkBuildingBuilder builder1;
+    builder1.setName("National Museum")
+           .setArea(4000.0f)
+           .setFloors(4)
+           .setCapacity(250)
+           .setCitizenSatisfaction(5.0f)
+           .setEconomicGrowth(2.5f)
+           .setResourceConsumption(1.5f);             
+           // Landmark-specific method
+    
+    builder1.setVisitorCapacity(1000);
+    builder1.setCulturalValue(10.0f);
+    builder1.setIsHistoric(true);
+    auto landmarkBuilding = builder1.build();
+    landmarkBuilding->construct();
+    landmarkBuilding->updateImpacts();
+    // waterSupply.registerBuilding(landmarkBuilding.get());
 
-    // wasteManagement.registerBuilding(&building1);
-    // wasteManagement.registerBuilding(&building2);
 
-    // // Supply resources to buildings
-    // waterSupply.supplyResources(&building1);
-    // waterSupply.supplyResources(&building2);
+    waterSupply.registerBuilding(commercialBuilding.get());
+    waterSupply.registerBuilding(landmarkBuilding.get());
 
-    // wasteManagement.supplyResources(&building1);
-    // wasteManagement.supplyResources(&building2);
+    wasteManagement.registerBuilding(commercialBuilding.get());
+    wasteManagement.registerBuilding(landmarkBuilding.get());
+
+    // Supply resources to buildings
+    waterSupply.supplyResources(commercialBuilding.get());
+    waterSupply.supplyResources(landmarkBuilding.get());
+
+    wasteManagement.supplyResources(commercialBuilding.get());
+    wasteManagement.supplyResources(landmarkBuilding.get());
 
     // Adjust utilities based on citizens
     // Citizen citizen1("Citizen 1", 25, 1.0f, 1.0f, 1.0f);
@@ -158,6 +195,7 @@ int main() {
     testCommercialBuildingBuilder();
     testIndustrialBuildingBuilder();
     testLandmarkBuildingBuilder();
+    testUtilities();
 
     return 0;
 }
