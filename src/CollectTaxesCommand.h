@@ -6,12 +6,15 @@
 
 class CollectTaxesCommand : public GovCommand {
 
+private:
+    Government* government;
+    double collectedTaxes;
+
 public:
-	Government* government;
+    CollectTaxesCommand(Government* gov);
 
-	void execute();
-
-	void undo();
+    void execute() override;
+    void undo() override;
 };
 
 #endif

@@ -2,23 +2,20 @@
 #define SETTAXCOMMAND_H
 
 #include "GovCommand.h"
-#include "TaxType.h"
 #include "Government.h"
 
-
-class SetTaxCommand : GovCommand {
+class SetTaxCommand : public GovCommand {
 
 private:
-	void execute();
-	void undo();
-	TaxType* taxType;
+    Government* government;
+    double taxRate;
+    double previousTaxRate;
 
 public:
-	void setTaxCommand(double rate);
+    SetTaxCommand(Government* gov, double rate);
 
-	Government government();
-
-	double prevTaxRate();
+    void execute() override;
+    void undo() override;
 };
 
 #endif
