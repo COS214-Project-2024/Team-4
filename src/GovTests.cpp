@@ -6,7 +6,7 @@
 #include "CollectTaxesCommand.h"
 #include "CityService.h"
 #include "Policy.h"
-
+//TG
 int main() {
     // Create a Government instance
     Government government("City Government");
