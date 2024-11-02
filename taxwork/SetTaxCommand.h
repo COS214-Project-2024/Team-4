@@ -30,6 +30,7 @@ private:
     double previousTaxRate;
 
     char taxType;
+    TaxType* newTaxType;
 
 };
 #endif

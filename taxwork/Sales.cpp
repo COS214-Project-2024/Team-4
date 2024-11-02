@@ -1,15 +1,33 @@
 #include "Sales.h"
 
-Sales::Sales(double rate, char type):TaxType(rate,type) {
-	this->SalesTax = rate;
-	this->cType = type;
+// Constructor to initialize base sales tax, environmental levy, and service fee
+Sales::Sales(double rate, double levy, double fee)
+    : TaxType(rate,'S'), salesTax(rate), environmentalLevy(levy), serviceFee(fee) {
 }
 
+// Set the base sales tax rate
 void Sales::setTax(double rate) {
-	this->SalesTax = rate;
+    salesTax = rate;
 }
 
-double Sales::calculateTax(double val) {
-	return val * (SalesTax / 100.0);
+// Set the environmental levy rate
+void Sales::setEnvironmentalLevy(double levy) {
+    environmentalLevy = levy;
 }
 
+// Set the fixed service fee
+void Sales::setServiceFee(double fee) {
+    serviceFee = fee;
+}
+
+// Calculate the total sales tax for a given sale amount
+double Sales::calculateTax(double saleAmount) {
+    // Base sales tax as a percentage of the sale amount
+    double baseTax = saleAmount * (salesTax / 100.0);
+
+    // Environmental levy as a percentage of the sale amount
+    double levyAmount = saleAmount * (environmentalLevy / 100.0);
+
+    // Total tax includes base tax, environmental levy, and fixed service fee
+    return baseTax + levyAmount + serviceFee;
+}

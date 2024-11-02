@@ -5,12 +5,11 @@ class VAT : public TaxType {
 
 private:
 	double vat;
-	char cType;
 
 public:
+	VAT(double rate);
 	void setTax(double rate);
-
-	void calculateTax();
+	double calculateTax(double val) override;
 };
 
 #endif

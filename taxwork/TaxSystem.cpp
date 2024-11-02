@@ -134,26 +134,8 @@ void TaxSystem::collectTaxes(Building* building,char taxType) {
 }
 
 void TaxSystem::setTax(double rate, char taxType) {
-	GovCommand* setTaxCommand = new SetTaxCommand(rate, taxType);
-	switch (taxType) {
-		case 'I': {
-			TaxType* tax = new Income(rate, taxType);
-			this->taxRates.insert(std::pair<double, TaxType*>(rate, tax));
-			break;
-		}
-		case 'P': {
-			TaxType* tax = new Property(rate, taxType);
-			this->taxRates.insert(std::pair<double, TaxType*>(rate, tax));
-			break;
-		}
-		case 'S': {
-			TaxType* tax = new Sales(rate, taxType);
-			this->taxRates.insert(std::pair<double, TaxType*>(rate, tax));
-			break;
-		}
-		default:
-			break;
-	}
+	GovCommand* setTaxCommand = new SetTaxCommand(government, this, rate, taxType);
+	setTaxCommand->execute();
 }
 
 

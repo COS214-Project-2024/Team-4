@@ -1,10 +1,15 @@
 #include "VAT.h"
 
-void VAT::setTax(double rate) {
-	this->vat = rate;
-	this->cType='V';
+// Constructor to initialize VAT rate
+VAT::VAT(double rate) : TaxType(rate, 'V'), vat(rate) {
+    // Initialize vat using initializer list
 }
 
-void VAT::calculateTax() {
+void VAT::setTax(double rate) {
+    vat = rate;
+}
 
+double VAT::calculateTax(double val) {
+    // Calculate VAT as a percentage of the value
+    return val * (vat / 100.0);
 }
