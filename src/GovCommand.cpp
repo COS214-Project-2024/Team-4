@@ -1,5 +1,5 @@
 #include "GovCommand.h"
-
+GovCommand
 void GovCommand::execute() {
 	// TODO - implement GovCommand::execute
 	throw "Not yet implemented";
