@@ -37,11 +37,11 @@ void Citizen::applyState() {
     }
 }
 
-void Citizen::updateSatisfaction(float adjustment) {
-    // Adjust satisfaction with clamping between 0 and 100
-    satisfaction = clamp(satisfaction + adjustment, 0.0f, 100.0f);
-    notifyObservers();  // Notify observers that satisfaction has changed
-}
+// void Citizen::updateSatisfaction(float adjustment) {
+//     // Adjust satisfaction with clamping between 0 and 100
+//     satisfaction = clamp(satisfaction + adjustment, 0.0f, 100.0f);
+//     notifyObservers();  // Notify observers that satisfaction has changed
+// }
 
 float Citizen::getSatisfactionLevel() const {
     return satisfaction;
@@ -237,9 +237,9 @@ void Citizen::updateHousingComfortLevel(float comfortLevel) {
 	notifyObservers();
 }
 
-float Citizen::getHousingComfortLevel() {
-	return housingComfortLevel;
-}
+// float Citizen::getHousingComfortLevel() {
+// 	return housingComfortLevel;
+// }
 
 void Citizen::updateEmploymentStatus(bool employed) {
 	this->employed = employed;
@@ -258,7 +258,10 @@ std::string Citizen::getEducationLevel() {
 }
 
 double Citizen::payTax(double amount) {
-	double tax = amount * taxRate;
-	bankBalance -= tax;
-	return tax;
+    double tax = amount * taxRate;
+    bankBalance -= tax;
+}
+
+void Citizen::setTaxCooldown(bool cooldown) {
+    taxCooldown = cooldown;
 }

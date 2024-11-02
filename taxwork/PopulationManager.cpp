@@ -72,19 +72,19 @@ int PopulationManager::getPopulation() const {
 }
 
 
-void PopulationManager::checkCitizenStates() {
-    for (auto& citizen : citizens) {
-        // Example logic: Switch to UnsatisfiedState if satisfaction is low
-        if (citizen->getSatisfactionLevel() < 20) {
-            citizen->setState(new UnsatisfiedState());
-        } else if (citizen->getSatisfactionLevel() > 80) {
-            citizen->setState(new SatisfiedState());
-        }
-        else if (citizen->getSatisfactionLevel() == 0) {
-            citizen->setState(new LeavingCityState()); // Change state if satisfaction is too low
-        }
-    }
-}
+// void PopulationManager::checkCitizenStates() {
+//     for (auto& citizen : citizens) {
+//         // Example logic: Switch to UnsatisfiedState if satisfaction is low
+//         if (citizen->getSatisfactionLevel() < 20) {
+//             citizen->setState(new UnsatisfiedState());
+//         } else if (citizen->getSatisfactionLevel() > 80) {
+//             citizen->setState(new SatisfiedState());
+//         }
+//         else if (citizen->getSatisfactionLevel() == 0) {
+//             citizen->setState(new LeavingCityState()); // Change state if satisfaction is too low
+//         }
+//     }
+// }
 
 PopulationManager::PopulationManager() : programRunning(true) {}
 
@@ -155,4 +155,9 @@ void PopulationManager::updateCitizensSatisfaction() {
     for (auto& citizen : citizens) {
         citizen->updateSatisfaction();
     }
+}
+
+void PopulationManager::manageTaxPayments() {
+    //monitor tax payments and set a duration of time in between tax payments
+    //for each citizen
 }

@@ -6,7 +6,8 @@
 #include "GovObserver.h"
 #include "CityService.h"
 #include "Policy.h"
-
+#include "GovCommand.h"
+#include "TaxSystem.h"
 using namespace std;
 
 class Government {
@@ -23,7 +24,7 @@ public:
     // Tax-related methods
     void setTax(double rate);
     double getTaxRate() const;
-    double collectTaxes();
+    double collectAllTaxes(TaxSystem* tax);
     void refundTaxes(double amount);
 
     // Notification methods

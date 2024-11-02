@@ -27,6 +27,7 @@ public:
     void startSatisfactionUpdater();     // Start satisfaction updates in a loop
     void stopSatisfactionUpdater();      // Stop the update loop
     void updateCitizensSatisfaction();   // Update satisfaction for all citizens                      // Utility function to get population count
+    void manageTaxPayments();
 private:
     void addRandomCitizen();                             // Add citizen randomly
     void removeRandomCitizen();                          // Remove citizen randomly

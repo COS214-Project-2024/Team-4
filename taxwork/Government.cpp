@@ -54,11 +54,12 @@ void Government::update(int newPopulation) {
     notifyObservers();
 }
 
-double Government::collectTaxes() {
-    double collected = budget * taxRate / 100;
-    budget += collected;
-    cout << "Collected taxes: " << collected << ". New budget: " << budget << endl;
-    return collected;
+double Government::collectAllTaxes(TaxSystem* tax) {
+    for 
+    double totalTaxes = tax->collectTaxes();
+    budget += totalTaxes;
+    cout << "Collected taxes: " << totalTaxes << ". New budget: " << budget << endl;
+    return totalTaxes;
 }
 
 void Government::refundTaxes(double amount) {

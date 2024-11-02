@@ -1,5 +1,3 @@
-// Citizen.h
-
 #ifndef CITIZEN_H
 #define CITIZEN_H
 
@@ -14,7 +12,7 @@
 
 class Citizen {
 protected:
-std::string name;
+    std::string name;
     int age;
     std::string resStatus = "Resident";        // Residential status, default to "Resident"
     std::string jobStatus = "Unemployed";      // Employment status
@@ -35,8 +33,8 @@ std::string name;
     bool employed = false;
     std::vector<std::shared_ptr<SatisfactionStrategy>> satisfactionStrategies;
 
-
-    
+    // New member variable to track tax cooldown status
+    bool taxCooldown = false;
 
 public:
     // Constructor and Destructor
@@ -67,11 +65,11 @@ public:
     void updateEducationLevel(const std::string& level);
     void updateHealthStatus(bool status);
     void updateHousingSatisfaction(bool satisfaction);
+	void updateHousingComfortLevel(float comfortLevel);
     void updateBankBalance(double amount);
     void updateService(const CityService* service);
     void updatePolicy(const Policy* policy);
     bool isLeaving() const; 
-    void updateSatisfaction(float adjustment);  // Modify satisfaction by a certain amount
     float getSatisfactionLevel() const;         // Retrieve the current satisfaction level
 
     // Getters
@@ -103,6 +101,19 @@ public:
 	double getIncome() const { return income; }
 	std::string getEducationLevel() const { return educationLevel; }
 	bool getHousingSatisfaction() const { return housingSatisfaction; }
-	//pay tax 
-	void payTax(double amount);
+    
+    // New methods for tax cooldown
+    bool canPayTax() const { return !taxCooldown; }
+    void setTaxCooldown(bool cooldown) { taxCooldown = cooldown; }
+
+    // Additional methods for tax and employment updates
+    void updateIncome(double income);
+    double getIncome();
+    void updateEmploymentStatus(bool employed);
+    bool isEmployed();
+    double getTaxRate();
+    std::string getEducationLevel();
+    double payTax(double amount);
 };
+
+#endif // CITIZEN_H

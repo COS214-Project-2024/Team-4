@@ -22,6 +22,7 @@ public:
 
 	double collectIncome();
 	void undocollectIncome();
+	double collectTaxes();
 };
 
 #endif

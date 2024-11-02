@@ -18,7 +18,7 @@ HEADERS = CollectTaxesCommand.h Income.h Property.h Sales.h SetTaxCommand.h \
           ResourceAllocationStrategy.h ResourceApprovalHandler.h \
           ResourceAvailability.h ResourceManager.h ResourceType.h Government.h \
           GovObserver.h CityService.h Policy.h
-		  
+
 # Object files
 OBJECTS = $(SOURCES:.cpp=.o)
 
@@ -33,6 +33,10 @@ $(TARGET): $(OBJECTS)
 %.o: %.cpp $(HEADERS)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+# Run the program
+run: $(TARGET)
+	./$(TARGET)
+
 # Run the program with Valgrind for memory leak detection
 valgrind: $(TARGET)
 	$(VALGRIND) ./$(TARGET)
@@ -43,3 +47,7 @@ clean:
 
 # Debugging target (recompile with debug symbols)
 debug: clean all
+
+# Additional target to ensure main is executed
+main: all
+q   
