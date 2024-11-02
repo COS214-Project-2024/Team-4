@@ -5,11 +5,11 @@
 //#include "Citizen.h"
 //! changinging link to residentialbuilding so that I can tie to citizens
 
-class UtilityManager : CityGrowthObserver {
+// class UtilityManager : CityGrowthObserver {
 
 
-public:
-	void update(int newPopulation);
-};
+// public:
+// 	void update(int newPopulation);
+// };
 
 #endif

@@ -10,7 +10,8 @@ public:
 
 	void registerBuilding(Building* building) override;
     void supplyResources(Building* building) override;
-    void adjustForCitizen(Citizen* citizen) override;
+    void adjustForPopulation(int newPopulation) override;
+    //void adjustForCitizen(Citizen* citizen) override;
 };
 
 #endif

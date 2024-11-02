@@ -11,6 +11,8 @@ private:
     std::map<ResourceType, int> resourceInventory;
 
 public:
+
+    UtilityMediator() = default;
     bool requestResources(ResourceType type, int amount);
     void releaseResources(ResourceType type, int amount);
     void produceResource(ResourceType type, int amount);
