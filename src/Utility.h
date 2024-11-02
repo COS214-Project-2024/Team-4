@@ -5,6 +5,7 @@
 //#include "Citizen.h"
 #include "ResourceType.h"
 #include "UtilityMediator.h"
+#include <memory>
 
 class Utility {
 
