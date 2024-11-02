@@ -1,8 +1,9 @@
 // Citizen.cpp
 
 #include "Citizen.h"
+#include "BuildingManager.h" 
 #include "CitizenObserver.h"
-//#include "LeavingCityState.h"
+#include "LeavingCityState.h"
 #include <algorithm>
 #include <iostream>
 
@@ -16,7 +17,7 @@ T clamp(T value, T min, T max) {
 Citizen::Citizen(const std::string& name, int age, const std::string& resStatus, const std::string& jobTitle)
     : name(name), age(age), resStatus(resStatus), jobTitle(jobTitle), satisfaction(50.0),
       maritalStatus(false), health(true), bankBalance(0.0), educationLevel("None"), taxRate(0.1f),
-      housingSatisfaction(false), income(0.0), currentState(nullptr) , housingComfortLevel(5.0f), employed(false) {}
+      housingSatisfaction(false), currentState(nullptr) , housingComfortLevel(5.0f), employed(false) , income(nullptr), job(nullptr){}
 
 Citizen::~Citizen() {
     delete currentState;
@@ -89,20 +90,13 @@ void Citizen::updateHealth(bool status) {
 }
 
 
-void Citizen::updateSatisfaction(float newSatisfaction) {
-    satisfaction = newSatisfaction;
-    notifyObservers();
-}
+
 
 void Citizen::updateTaxRatePolicy(const Policy& policy) {
     // Respond to tax policy change by adjusting tax-related satisfaction or bank balance
     notifyObservers();
 }
 
-void Citizen::updateResService(const CityService& service) {
-    // Adjust satisfaction or other attributes based on service provided
-    notifyObservers();
-}
 
 void Citizen::changeTaxRate(double rate) {
     // Logic to directly change the tax rate
@@ -129,10 +123,7 @@ void Citizen::updateBankBalance(double amount) {
     notifyObservers();
 }
 
-void Citizen::updateService(const CityService* service) {
-    // Logic to update citizen based on service provided
-    notifyObservers();
-}
+
 
 void Citizen::updatePolicy(const Policy* policy) {
     // Logic to update citizen based on policy change
@@ -230,4 +221,54 @@ void Citizen::updateSatisfaction() {
     // Average satisfaction score if multiple strategies are used
     satisfaction = totalSatisfaction / satisfactionStrategies.size();
     std::cout << name << "'s updated satisfaction: " << satisfaction << std::endl;
+}
+
+void Citizen::depositMonthlyIncome() {
+    if (income) {
+        double monthlyIncome = income->calculateMonthlyIncome();
+        bankBalance += monthlyIncome;
+        std::cout << name << " received income: " << monthlyIncome << ". New bank balance: " << bankBalance << std::endl;
+    }
+}
+
+bool Citizen::searchAndApplyForJob(BuildingManager& manager) {
+    if (isEmployed()) {
+        std::cout << name << " is already employed." << std::endl;
+        return false;
+    }
+
+    job = manager.findAvailableJob();  // Try to find a job through BuildingManager
+    if (job) {
+        income = job->getIncome();  // Assign income based on job
+        job->hireEmployee();        // Mark the job as filled
+        std::cout << name << " found a job with income: " << income->calculateMonthlyIncome() << std::endl;
+        return true;
+    } else {
+        std::cout << name << " could not find a job." << std::endl;
+        return false;
+    }
+}
+
+void Citizen::payChildAllowance() {
+    double allowancePerChild = 50.0;
+    double totalAllowance = allowancePerChild * numChildren;
+    if (bankBalance >= totalAllowance) {
+        bankBalance -= totalAllowance;
+        std::cout << name << " paid child allowance: " << totalAllowance << ". Remaining balance: " << bankBalance << std::endl;
+    } else {
+        std::cout << name << " could not pay full child allowance. Insufficient funds." << std::endl;
+    }
+}
+
+void Citizen::payForGroceries(double groceryCost) {
+    if (bankBalance >= groceryCost) {
+        bankBalance -= groceryCost;
+        std::cout << name << " paid for groceries: " << groceryCost << ". Remaining balance: " << bankBalance << std::endl;
+    } else {
+        std::cout << name << " could not pay for groceries. Insufficient funds." << std::endl;
+    }
+}
+
+void Citizen::setIncome(std::shared_ptr<Income> inc) {
+    income = inc;
 }

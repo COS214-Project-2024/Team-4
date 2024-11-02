@@ -1,5 +1,3 @@
-// PopulationManager.h
-
 #ifndef POPULATIONMANAGER_H
 #define POPULATIONMANAGER_H
 
@@ -7,32 +5,45 @@
 #include <vector>
 #include <memory>
 #include <atomic>
+#include <mutex>
 #include "Citizen.h"
+#include "JobSatisfactionStrategy.h"
+#include "HousingSatisfactionStrategy.h"
 
 class PopulationManager : public CitizenObserver {
 private:
     std::vector<std::shared_ptr<Citizen>> citizens;
-    std::atomic<bool> programRunning; // Atomic flag for program status
+    std::atomic<bool> programRunning;   // Atomic flag for program status
+    std::mutex citizenMutex; 
+    std::shared_ptr<JobSatisfactionStrategy> jobSatisfaction;
+    std::shared_ptr<HousingSatisfactionStrategy> housingSatisfaction;            // Mutex for thread-safe access to citizens
+
 public:
     PopulationManager();
-    void addCitizen(std::shared_ptr<Citizen> citizen); 
+    void updateCitizensAge();
+    void addCitizen(std::shared_ptr<Citizen> citizen);
     void update(Citizen* citizen) override;              // Responds to Citizen state changes
     void checkCitizenStates();                           // Periodic state updater
     void simulatePopulationGrowth();                     // Simulate random growth
     void removeLeavingCitizens();                        // Remove citizens in LeavingCityState
     void manageRelationships();
-    int getPopulation() const;   
-    void startRelationshipManager(); // Start the manager in a thread
-    void stopRelationshipManager();  // Safely stop the manager  
-    void startSatisfactionUpdater();     // Start satisfaction updates in a loop
-    void stopSatisfactionUpdater();      // Stop the update loop
-    void updateCitizensSatisfaction();   // Update satisfaction for all citizens                      // Utility function to get population count
+    int getPopulation();  // Removed `const` to allow locking
+    const std::vector<std::shared_ptr<Citizen>>& getCitizens() const;
+    // Thread management for relationship and satisfaction updates
+    void startRelationshipManager();
+    void stopRelationshipManager();
+    void startSatisfactionUpdater();
+    void stopSatisfactionUpdater();
+    void updateCitizensSatisfaction();
+    
 private:
     void addRandomCitizen();                             // Add citizen randomly
     void removeRandomCitizen();                          // Remove citizen randomly
 };
 
 #endif // POPULATIONMANAGER_H
+
+
 
 
 

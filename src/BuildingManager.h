@@ -6,13 +6,15 @@
 #include "Building.h"
 #include "Citizen.h"
 #include "Jobs.h"
+#include <memory>
 
 class BuildingManager {
 private:
-    std::vector<Building*> buildings;   // Collection of buildings managed by the mediator
+    std::vector<std::shared_ptr<Building>> buildings; ;   // Collection of buildings managed by the mediator
     std::vector<Citizen*> citizens;     // Collection of citizens managed by the mediator
 
 public:
+    BuildingManager(const std::vector<std::shared_ptr<Building>>& buildingList);
     // Register a building with the manager
     void addBuilding(Building* building);
 
@@ -27,6 +29,8 @@ public:
 
     // List all jobs available in a specific building
     void listAllJobsInBuilding(const Building* building) const;
+
+    std::shared_ptr<Jobs> findAvailableJob();
 };
 
 #endif

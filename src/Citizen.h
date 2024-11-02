@@ -8,9 +8,12 @@
 #include <vector>
 #include "CitizenObserver.h"
 #include "Policy.h"
-#include "CityService.h"
  #include "CitizenState.h"
  #include "SatisfactionStrategy.h"
+ #include "Income.h"
+#include "Jobs.h"
+class BuildingManager;
+
 
 class Citizen {
 protected:
@@ -27,24 +30,29 @@ std::string name;
     double bankBalance = 0.0;
     std::string educationLevel = "None";       // Default education level
     bool housingSatisfaction = false;
-    double income = 0.0;
     std::vector<CitizenObserver*> observers;   // List of observers
     CitizenState* currentState = nullptr;      // Current state pointer
     float taxRate = 0.1f;
-    float housingComfortLevel = 5.0f;
-    bool employed = false;
+  
+    
     std::string jobTitle = "Unemployed";
     std::vector<std::shared_ptr<SatisfactionStrategy>> satisfactionStrategies;
+    std::shared_ptr<Income> income;  // Citizen's income object (if employed)
+    std::shared_ptr<Jobs> job;  // Job instance if citizen is employed
 
 
     
 
 public:
+
+float housingComfortLevel = 5.0f;
+bool employed = false;
     // Constructor and Destructor
     Citizen(const std::string& name = "Unnamed Citizen", int age = 30,
             const std::string& relationshipStatus = "Single", const std::string& jobStatus = "Unemployed");
     virtual ~Citizen();
 
+    void setName(const std::string& newName) { name = newName; }
     // Prototype Pattern: Clone method
    virtual std::shared_ptr<Citizen> clone() const = 0;
 
@@ -61,15 +69,14 @@ public:
     void updateMaritalStatus(bool status);
     void updateTaxRate(double rate);
     void updateHealth(bool status);
-    void updateSatisfaction(float newSatisfaction);
     void updateTaxRatePolicy(const Policy& policy);
-    void updateResService(const CityService& service);
+    
     void changeTaxRate(double rate);
     void updateEducationLevel(const std::string& level);
     void updateHealthStatus(bool status);
     void updateHousingSatisfaction(bool satisfaction);
     void updateBankBalance(double amount);
-    void updateService(const CityService* service);
+    
     void updatePolicy(const Policy* policy);
     bool isLeaving() const; 
    void updateSatisfaction(float adjustment);  // Modify satisfaction by a certain amount
@@ -83,9 +90,10 @@ public:
     bool getMaritalStatus() const;
     std::string getResStatus() const;
     std::string getJobStatus() const;
-    double getBankBalance() const;
+    
     std::string getJobTitle() const;
 
+    void incrementAge() { age++; }  // Increment age by 1 year
     // Relationship management
     std::string getRelationshipStatus() const;
     void setRelationshipStatus(const std::string& status);
@@ -103,9 +111,25 @@ public:
     void displayInfo() const;
     
     // Getters for strategy inputs
-    bool isEmployed() const { return employed; }
+    
     float getTaxRate() const { return taxRate; }
     float getHousingComfortLevel() const { return housingComfortLevel; }
+    void addSatisfactionStrategy(std::shared_ptr<SatisfactionStrategy> strategy);
+    // Method to deposit monthly income into bank balance
+    void depositMonthlyIncome();
+
+    // Method for searching and applying for jobs
+    bool searchAndApplyForJob(BuildingManager& manager);
+
+    // Methods to handle monthly expenses
+    void payChildAllowance();
+    void payForGroceries(double groceryCost);
+
+    // Getters for bank balance and employment status
+    double getBankBalance() const ;
+    bool isEmployed() const { return job != nullptr; }
+
+    void setIncome(std::shared_ptr<Income> income);  // Sets the citizen's income
 };
 
 #endif // CITIZEN_H
