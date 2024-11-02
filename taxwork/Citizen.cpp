@@ -38,11 +38,11 @@ void Citizen::applyState() {
     }
 }
 
-// void Citizen::updateSatisfaction(float adjustment) {
-//     // Adjust satisfaction with clamping between 0 and 100
-//     satisfaction = clamp(satisfaction + adjustment, 0.0f, 100.0f);
-//     notifyObservers();  // Notify observers that satisfaction has changed
-// }
+void Citizen::updateSatisfaction(float adjustment) {
+    // Adjust satisfaction with clamping between 0 and 100
+    satisfaction = ::clamp<float>(satisfaction + adjustment, 0.0f, 100.0f);
+    notifyObservers();  // Notify observers that satisfaction has changed
+}
 
 float Citizen::getSatisfactionLevel() const {
     return satisfaction;
