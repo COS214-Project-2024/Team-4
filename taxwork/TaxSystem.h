@@ -41,7 +41,7 @@ public:
     void removeVATTaxPayer(Citizen* citizen);
     void updateTaxRate(char cType, double rate);
     void collectTaxes(Building* building,char taxType);
-    void addTaxRate(GovCommand setTax);
+    void addTaxRate(TaxType* tax);
     void removeTaxRate(TaxType* tax);
     void checkImpact();
 };

@@ -1,5 +1,6 @@
 #include "TaxSystem.h"
-
+#include "CollectTaxesCommand.h"
+#include "SetTaxCommand.h"
 
 void TaxSystem::addIncomeTaxBuilding(Building* building) {
 	if(building->getType() == "Residential"){
@@ -133,6 +134,7 @@ void TaxSystem::collectTaxes(Building* building,char taxType) {
 }
 
 void TaxSystem::setTax(double rate, char taxType) {
+	GovCommand* setTaxCommand = new SetTaxCommand(rate, taxType);
 	switch (taxType) {
 		case 'I': {
 			TaxType* tax = new Income(rate, taxType);
@@ -158,4 +160,8 @@ void TaxSystem::setTax(double rate, char taxType) {
 void TaxSystem::checkImpact() {
   // TODO - implement TaxSystem::addTaxRate
 	throw "Not yet implemented";
+}
+
+void TaxSystem::addTaxRate(TaxType* tax) {
+  taxRates.insert(std::pair<double, TaxType*>(tax->getTaxRate(), tax));
 }

@@ -10,14 +10,14 @@ TARGET = testTaxes
 # Source files
 SOURCES = testTaxes.cpp CollectTaxesCommand.cpp Income.cpp Property.cpp Sales.cpp \
           SetTaxCommand.cpp TaxSatisfactionStrategy.cpp TaxSystem.cpp TaxType.cpp \
-          Government.cpp CityService.cpp Policy.cpp
+          Government.cpp CityService.cpp Policy.cpp VAT.cpp
 
 # Header files
 HEADERS = CollectTaxesCommand.h Income.h Property.h Sales.h SetTaxCommand.h \
           TaxSatisfactionStrategy.h TaxSystem.h TaxType.h Resource.h \
           ResourceAllocationStrategy.h ResourceApprovalHandler.h \
           ResourceAvailability.h ResourceManager.h ResourceType.h Government.h \
-          GovObserver.h CityService.h Policy.h
+          GovObserver.h CityService.h Policy.h VAT.h
 
 # Object files
 OBJECTS = $(SOURCES:.cpp=.o)
