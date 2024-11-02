@@ -13,6 +13,8 @@ public:
     // Constructor to initialize sales tax, environmental levy, and service fee
     Sales(double rate, double levy, double fee);
 
+    virtual ~Sales() override; // Override Destructor
+
     // Method to set the base sales tax rate
     void setTax(double rate) override;
 

@@ -4,7 +4,9 @@
 Sales::Sales(double rate, double levy, double fee)
     : TaxType(rate,'S'), salesTax(rate), environmentalLevy(levy), serviceFee(fee) {
 }
-
+Sales::~Sales() {
+    // Cleanup resources if any
+}
 // Set the base sales tax rate
 void Sales::setTax(double rate) {
     salesTax = rate;

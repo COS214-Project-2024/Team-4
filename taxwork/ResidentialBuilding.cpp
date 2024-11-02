@@ -1,6 +1,9 @@
-#include "ResidentialBuilding.h"
+// ResidentialBuilding.cpp
 
-//constructor
+#include "ResidentialBuilding.h"
+#include <iostream>
+
+// Constructor
 ResidentialBuilding::ResidentialBuilding(const std::string& name, float area, int floors,
                                          int capacity, float citizenSatisfaction,
                                          float economicGrowth, float resourceConsumption,
@@ -8,84 +11,90 @@ ResidentialBuilding::ResidentialBuilding(const std::string& name, float area, in
     : Building(name, area, floors, capacity, citizenSatisfaction, economicGrowth, resourceConsumption),
       residentialUnits(residentialUnits), comfortLevel(comfortLevel), bType("Residential") {}
 
-
-//get type of building
-string ResidentialBuilding::getType() const{
-	return bType;
+// Get Type of Building
+std::string ResidentialBuilding::getType() const {
+    return bType;
 }
 
-//update impacts by calculating economic impact, resource consumption and satisfaction impact
+// Update Impacts
 void ResidentialBuilding::updateImpacts() {
-	calculateEconomicImpact();
+    calculateEconomicImpact();
     calculateResourceConsumption();
     calculateSatisfactionImpact();
 }
 
-//upgrade comfort level of the building
+// Upgrade Comfort Level
 void ResidentialBuilding::upgradeComfort(float comfort) {
-	comfortLevel += comfort;
+    comfortLevel += comfort;
 }
 
-//calculate economic impact of the building
+// Calculate Economic Impact
 void ResidentialBuilding::calculateEconomicImpact() {
-	 economicGrowth = residentialUnits * comfortLevel * 0.5f;
+    economicGrowth = residentialUnits * comfortLevel * 0.5f;
 }
 
-//calculate resource consumption of the building
+// Calculate Resource Consumption
 void ResidentialBuilding::calculateResourceConsumption() {
-	resourceConsumption = residentialUnits * 0.05f;
+    resourceConsumption = residentialUnits * 0.05f;
 }
 
-//calculate satisfaction impact of the building
+// Calculate Satisfaction Impact
 void ResidentialBuilding::calculateSatisfactionImpact() {
-	citizenSatisfaction = comfortLevel * 0.2f;
+    citizenSatisfaction = comfortLevel * 0.2f;
 }
 
+// Construct Building
 void ResidentialBuilding::construct() {
-  std::cout<<"============================================================\n";
-	  std::cout << "Constructing Residential Building: " << name << std::endl;
+    std::cout << "============================================================\n";
+    std::cout << "Constructing Residential Building: " << name << std::endl;
     std::cout << "Area: " << area << "\nFloors: " << floors << "\nCapacity: " << capacity << std::endl;
     std::cout << "Residential Units: " << residentialUnits << "\nComfort Level: " << comfortLevel << std::endl;
-std::cout<<"============================================================\n";
+    std::cout << "============================================================\n";
 }
 
-//pay taxes for the building
-double ResidentialBuilding::payTaxes(TaxType* taxType)  {
-for (auto citizen : residents) {
-  citizen->payTaxes(taxType);
-  }
-  
+// Pay Taxes for the Building
+double ResidentialBuilding::payTaxes(TaxType* taxType) {
+    double totalTax = 0.0;
+
+    std::cout << "Collecting taxes from Residential Building: " << name << "\n";
+
+    for (const auto& citizen : residents) {
+        totalTax += citizen->payTaxes(taxType);
+    }
+
+    if (totalTax > 0.0) {
+        std::cout << "Total taxes collected from building " << name << ": $" << totalTax << "\n";
+    } else {
+        std::cout << "No taxes collected from building " << name << " (possibly on cooldown).\n";
+    }
+
+    return totalTax;
 }
 
-
-
-//calculate property tax of the building
+// Calculate Property Tax
 double ResidentialBuilding::calculatePropertyTax() {
-  propertyTax = residentialUnits * 0.1f;
-  return propertyTax;
+    propertyTax = residentialUnits * 0.1f;
+    return propertyTax;
 }
 
-//calculate household income of the building
-
+// Calculate Household Income
 double ResidentialBuilding::calculateHouseholdIncome() {
-  householdIncome = residentialUnits * 1000.0f;
-  return householdIncome;
+    householdIncome = residentialUnits * 1000.0f;
+    return householdIncome;
 }
 
-
-//add residents to the building
-void ResidentialBuilding::addResidents(Citizen* citizen) {
-  residents.push_back(citizen);
+// Add Residents to the Building
+void ResidentialBuilding::addResidents(std::shared_ptr<Citizen> citizen) {
+    residents.push_back(citizen);
 }
 
-//undo collecting taxes from the building
+// Undo Collecting Taxes from the Building
 void ResidentialBuilding::undoCollectTaxes() {
-  propertyTax = 0;
-  householdIncome = 0;
+    propertyTax = 0;
+    householdIncome = 0;
 }
 
-//get residential units of the building
+// Get Residential Units
 int ResidentialBuilding::getResidentialUnits() const {
-  return residentialUnits;
+    return residentialUnits;
 }
-

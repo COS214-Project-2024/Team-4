@@ -1,55 +1,37 @@
+// Government.h
+
 #ifndef GOVERNMENT_H
 #define GOVERNMENT_H
 
 #include <string>
 #include <vector>
-#include "GovObserver.h"
+#include <memory>
 #include "CityService.h"
 #include "Policy.h"
-#include "GovCommand.h"
-#include "TaxSystem.h"
-#include "BuildingManager.h"
-using namespace std;
+#include "GovObserver.h"
 
-class Government {
-private:
-    string governmentName;
-    double taxRate;
-    double budget;
-    vector<GovObserver*> observers;
-    BuildingManager* buildingManager;
-
+class Government : public std::enable_shared_from_this<Government> {
 public:
-    // Constructor
-    explicit Government(string name);
-
-    // Tax-related methods
+    Government(std::string name);
     void setTax(double rate);
     double getTaxRate() const;
-    // double collectAllTaxes();
-    void refundTaxes(double amount);
-    void setBuildingManager(BuildingManager* manager);
-
-
-    // Notification methods
     void notifyCitizen();
     void notifyBusinesses();
     void notifyServices();
-
-    // Budget methods
     void allocateBudget(CityService& service, double amount);
     void revertBudgetAllocation(CityService& service, double amount);
-
-    // Policy methods
-    void enforcePolicy(Policy* policy);
-
-    // Population update
+    void enforcePolicy(std::shared_ptr<Policy> policy);
     void update(int newPopulation);
-
-    // Observer pattern methods
-    void registerObserver(GovObserver* observer);
-    void unregisterObserver(GovObserver* observer);
+    void refundTaxes(double amount);
+    void registerObserver(std::shared_ptr<GovObserver> observer);
+    void unregisterObserver(std::shared_ptr<GovObserver> observer);
     void notifyObservers();
+
+private:
+    std::string governmentName;
+    double taxRate;
+    double budget;
+    std::vector<std::shared_ptr<GovObserver>> observers;
 };
 
 #endif // GOVERNMENT_H

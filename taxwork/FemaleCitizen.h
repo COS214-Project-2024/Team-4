@@ -1,5 +1,3 @@
-// FemaleCitizen.h
-
 #ifndef FEMALECITIZEN_H
 #define FEMALECITIZEN_H
 
@@ -7,11 +5,10 @@
 
 class FemaleCitizen : public Citizen {
 public:
-    FemaleCitizen(const std::string& name = "Jane Doe", int age = 28,
-                  const std::string& relationshipStatus = "Single", const std::string& jobStatus = "Unemployed");
+    FemaleCitizen(const std::string& name, int age, const std::string& resStatus, const std::string& jobTitle);
+    virtual ~FemaleCitizen() override;
 
-    // Override clone to return a copy of FemaleCitizen
-    std::shared_ptr<Citizen> clone() const override;
+    virtual std::shared_ptr<Citizen> clone() const override;
 };
 
 #endif // FEMALECITIZEN_H

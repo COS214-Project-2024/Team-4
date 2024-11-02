@@ -1,11 +1,14 @@
 // Citizen.cpp
 
+
 #include "Citizen.h"
 #include "CitizenObserver.h"
-//#include "LeavingCityState.h"
 #include <algorithm>
 #include <iostream>
 #include "LeavingCityState.h"
+#include "TaxType.h" // Ensure TaxType is included
+#include <thread>    // For sleep (if needed in testing)
+#include <chrono>
 
 template <typename T>
 T clamp(T value, T min, T max) {
@@ -13,11 +16,29 @@ T clamp(T value, T min, T max) {
     if (value > max) return max;
     return value;
 }
-
 Citizen::Citizen(const std::string& name, int age, const std::string& resStatus, const std::string& jobTitle)
-    : name(name), age(age), resStatus(resStatus), jobTitle(jobTitle), satisfaction(50.0),
-      maritalStatus(false), health(true), bankBalance(0.0), educationLevel("None"), taxRate(0.1f),
-      housingSatisfaction(false), income(0.0), currentState(nullptr) , housingComfortLevel(5.0f), employed(false) {}
+    : name(name),                 // Initializes 'name' (declared first)
+      age(age),                   // Initializes 'age'
+      satisfaction(50.0f),        // Initializes 'satisfaction'
+      jobTitle(jobTitle),         // Initializes 'jobTitle'
+      resStatus(resStatus),       // Initializes 'resStatus'
+      relationshipStatus("Single"),
+      marriageDuration(0),
+      numChildren(0),
+      maritalStatus(false),
+      health(true),
+      bankBalance(0.0),
+      educationLevel("None"),
+      income(0.0),
+      currentState(nullptr),
+      taxRate(0.1),
+      housingComfortLevel(5.0f),
+      employed(false),
+      taxCooldown(false),
+      lastTaxPayment(std::chrono::steady_clock::now() - taxCooldownPeriod)
+{
+    // Constructor body (if needed)
+}
 
 Citizen::~Citizen() {
     delete currentState;
@@ -79,6 +100,7 @@ void Citizen::updateMaritalStatus(bool status) {
 }
 
 void Citizen::updateTaxRate(double rate) {
+    (void)rate; // Suppress unused parameter warning
     // Apply the tax rate change to the citizen's financial state
     // Possibly adjust bank balance or satisfaction
     notifyObservers();
@@ -89,23 +111,20 @@ void Citizen::updateHealth(bool status) {
     notifyObservers();
 }
 
-
-void Citizen::updateSatisfaction(float newSatisfaction) {
-    satisfaction = newSatisfaction;
-    notifyObservers();
-}
-
 void Citizen::updateTaxRatePolicy(const Policy& policy) {
+    (void)policy; // Suppress unused parameter warning
     // Respond to tax policy change by adjusting tax-related satisfaction or bank balance
     notifyObservers();
 }
 
 void Citizen::updateResService(const CityService& service) {
+    (void)service; // Suppress unused parameter warning
     // Adjust satisfaction or other attributes based on service provided
     notifyObservers();
 }
 
 void Citizen::changeTaxRate(double rate) {
+    (void)rate; // Suppress unused parameter warning
     // Logic to directly change the tax rate
     notifyObservers();
 }
@@ -131,11 +150,13 @@ void Citizen::updateBankBalance(double amount) {
 }
 
 void Citizen::updateService(const CityService* service) {
+    (void)service; // Suppress unused parameter warning
     // Logic to update citizen based on service provided
     notifyObservers();
 }
 
 void Citizen::updatePolicy(const Policy* policy) {
+    (void)policy; // Suppress unused parameter warning
     // Logic to update citizen based on policy change
     notifyObservers();
 }
@@ -233,7 +254,7 @@ void Citizen::updateSatisfaction() {
     std::cout << name << "'s updated satisfaction: " << satisfaction << std::endl;
 }
 
-//tax stuff////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Tax-related methods
 void Citizen::setTaxRate(double rate) {
     taxRate = rate;
 }
@@ -247,26 +268,32 @@ void Citizen::setIncome(double income) {
 }
 
 double Citizen::payTaxes(TaxType* taxType) {
-if(!canPayTax()) {
-        return 0;
+    auto now = std::chrono::steady_clock::now();
+    if (taxCooldown) {
+        auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(now - lastTaxPayment);
+        if (elapsed < taxCooldownPeriod) {
+            std::cout << "Citizen " << name << " is on cooldown. Taxes cannot be collected now.\n";
+            return 0.0;
+        } else {
+            taxCooldown = false; // Cooldown period has passed
+        }
     }
-    if(taxCooldown==false){
- double tax = taxType->calculateTax(income);
-    if(tax > bankBalance) {
-        tax = bankBalance;
+
+    if (!taxCooldown) {
+        double tax = taxType->calculateTax(income);
+        tax = ::clamp(tax, 0.0, bankBalance); // Ensures tax is within [0, bankBalance]
+
+        bankBalance -= tax;
+        taxCooldown = true;
+        lastTaxPayment = now; // Update the last tax payment time
+        std::cout << "Collected $" << tax << " in taxes from " << name << ".\n";
+        return tax;
+    } else {
+        return 0.0;
     }
-    if(tax < 0) {
-        tax = 0;
-    }
-    bankBalance -= tax;
-    taxCooldown = true;
-    return tax;
-    }
-    else{
-        return 0;
-    }
-   
 }
+
+
 double Citizen::getIncome() const {
     return income;
 }
@@ -282,4 +309,3 @@ void Citizen::setTaxCooldown(bool status) {
 bool Citizen::getTaxCooldown() const {
     return taxCooldown;
 }
-////////////////////////////////////////////////////////////////////////////////////////////////////////////

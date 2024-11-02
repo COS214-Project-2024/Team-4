@@ -1,55 +1,42 @@
+// TaxSystem.h
+
 #ifndef TAXSYSTEM_H
 #define TAXSYSTEM_H
 
-#include "Citizen.h"
-#include "Business.h"
-#include "Building.h"
-#include "GovCommand.h"
-#include "TaxType.h"
-#include "Income.h"
-#include "Sales.h"
-#include "CollectTaxesCommand.h"
-#include "Property.h"
-// #include "Government.h"
 #include <vector>
-#include <string>
-#include <iostream>
-#include "Sales.h"
 #include <map>
-class Government;
+#include <memory>
+#include <algorithm>
+#include "Building.h"
+#include "Citizen.h"
+#include "TaxType.h"
+#include "Government.h"
+
 class TaxSystem {
-private:
-    std::map<double, TaxType*> taxRates;
-    Government* government;
-
-
-    // std::map<Citizen*, char> citizenTaxPayers;
-    // std::map<Business*, char> businessTaxPayers;
-    std::vector<Building*> incomeTaxbuildings;
-    std::vector<Building*> propertyTaxbuildings;
-    std::vector<Building*> salesTaxbuildings;
-    std::vector<Citizen*> vatTaxpayers;
-    
 public:
-    // void addCitizenTaxPayer(Citizen* taxPayer, char tType);
-    //  void addBusinessTaxPayer(Business* bTaxPayer);
-    void setTax(double rate, char taxType);
-    // void removeCitizenTaxPayer(Citizen* taxPayer);
-    // void removeBusinessTaxPayer(Business* bTaxPayer);
-    void addIncomeTaxBuilding(Building* building);
-    void addPropertyTaxBuilding(Building* building);
-    void addSalesTaxBuilding(Building* building);
-    void addVATTaxPayer(Citizen* citizen);
-    void removeIncomeTaxBuilding(Building* building);
-    void removePropertyTaxBuilding(Building* building);
-    void removeSalesTaxBuilding(Building* building);
-    void removeVATTaxPayer(Citizen* citizen);
+    void addGovernment(std::shared_ptr<Government> gov);
+    void addIncomeTaxBuilding(std::shared_ptr<Building> building);
+    void addPropertyTaxBuilding(std::shared_ptr<Building> building);
+    void addSalesTaxBuilding(std::shared_ptr<Building> building);
+    void addVATTaxPayer(std::shared_ptr<Citizen> citizen);
+    void removeIncomeTaxBuilding(std::shared_ptr<Building> building);
+    void removePropertyTaxBuilding(std::shared_ptr<Building> building);
+    void removeSalesTaxBuilding(std::shared_ptr<Building> building);
+    void removeVATTaxPayer(std::shared_ptr<Citizen> citizen);
     void updateTaxRate(char cType, double rate);
-    void collectTaxes(Building* building,char taxType);
-    void addTaxRate(TaxType* tax);
-    void removeTaxRate(TaxType* tax);
-    void addGovernment(Government* gov);
+    void collectTaxes(std::shared_ptr<Building> building, char taxType);
+    void setTax(double rate, char taxType);
     void checkImpact();
+    void addTaxRate(std::shared_ptr<TaxType> tax);
+    void removeTaxRate(std::shared_ptr<TaxType> taxType);
+
+private:
+    std::shared_ptr<Government> government;
+    std::vector<std::shared_ptr<Building>> incomeTaxbuildings;
+    std::vector<std::shared_ptr<Building>> propertyTaxbuildings;
+    std::vector<std::shared_ptr<Building>> salesTaxbuildings;
+    std::vector<std::shared_ptr<Citizen>> vatTaxpayers;
+    std::map<char, std::shared_ptr<TaxType>> taxRates;
 };
 
-#endif
+#endif // TAXSYSTEM_H

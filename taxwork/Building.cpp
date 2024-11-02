@@ -90,6 +90,8 @@ void Building::listJobs() const {
 //collect taxes from the building
 double Building::payTaxes(TaxType* taxType) {
 	// Placeholder for tax collection logic
+    taxType->calculateTax(0.0);
+    return 0.0;
 }
 
 //undo collecting taxes from the building

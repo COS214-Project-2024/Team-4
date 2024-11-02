@@ -7,14 +7,12 @@
 
 class MaleCitizen : public Citizen {
 public:
-    MaleCitizen(const std::string& name = "John Doe", int age = 30,
-                const std::string& relationshipStatus = "Single", const std::string& jobStatus = "Unemployed");
+    MaleCitizen(const std::string& name, int age, const std::string& resStatus, const std::string& jobTitle);
+    virtual ~MaleCitizen() override;
 
-    // Override clone to return a copy of MaleCitizen
-    std::shared_ptr<Citizen> clone() const override;
+    virtual std::shared_ptr<Citizen> clone() const override;
 };
 
 #endif // MALECITIZEN_H
-
 
 
