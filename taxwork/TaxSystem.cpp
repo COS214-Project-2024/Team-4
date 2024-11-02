@@ -128,7 +128,7 @@ void TaxSystem::updateTaxRate(char cType, double rate) {
 }
 
 void TaxSystem::collectTaxes(Building* building,char taxType) {
- GovCommand* command = new CollectTaxesCommand(building, taxRates.find(taxType)->second->getTaxRate());
+ GovCommand* command = new CollectTaxesCommand(building, taxRates.find(taxType)->second);
  command->execute();
  command->returnVal();
 }

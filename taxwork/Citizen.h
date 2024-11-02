@@ -9,9 +9,9 @@
 #include "CitizenObserver.h"
 #include "Policy.h"
 #include "CityService.h"
- #include "CitizenState.h"
- #include "SatisfactionStrategy.h"
-
+#include "CitizenState.h"
+#include "SatisfactionStrategy.h"
+#include "TaxType.h"
 class Citizen {
 protected:
 std::string name;
@@ -112,6 +112,8 @@ public:
     void setTaxRate(double rate);
     double calculateTax();
     double getIncome() const;
+    void setIncome(double income);
+    double payTaxes(TaxType* taxType);
     bool canPayTax() const;
     void setTaxCooldown(bool status);
     bool getTaxCooldown() const;

@@ -26,7 +26,7 @@ public:
     // Tax-related methods
     void setTax(double rate);
     double getTaxRate() const;
-    double collectAllTaxes();
+    // double collectAllTaxes();
     void refundTaxes(double amount);
     void setBuildingManager(BuildingManager* manager);
 

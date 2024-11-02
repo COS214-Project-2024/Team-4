@@ -233,7 +233,7 @@ void Citizen::updateSatisfaction() {
     std::cout << name << "'s updated satisfaction: " << satisfaction << std::endl;
 }
 
-//tax stuff
+//tax stuff////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void Citizen::setTaxRate(double rate) {
     taxRate = rate;
 }
@@ -242,6 +242,31 @@ double Citizen::calculateTax() {
     return income * taxRate;
 }
 
+void Citizen::setIncome(double income) {
+    this->income = income;
+}
+
+double Citizen::payTaxes(TaxType* taxType) {
+if(!canPayTax()) {
+        return 0;
+    }
+    if(taxCooldown==false){
+ double tax = taxType->calculateTax(income);
+    if(tax > bankBalance) {
+        tax = bankBalance;
+    }
+    if(tax < 0) {
+        tax = 0;
+    }
+    bankBalance -= tax;
+    taxCooldown = true;
+    return tax;
+    }
+    else{
+        return 0;
+    }
+   
+}
 double Citizen::getIncome() const {
     return income;
 }
@@ -257,4 +282,4 @@ void Citizen::setTaxCooldown(bool status) {
 bool Citizen::getTaxCooldown() const {
     return taxCooldown;
 }
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////

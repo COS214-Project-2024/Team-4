@@ -54,9 +54,9 @@ void Government::update(int newPopulation) {
     notifyObservers();
 }
 
-double Government::collectAllTaxes() {
-    return buildingManager->collectAllTaxes();
-}
+// double Government::collectAllTaxes() {
+//     return buildingManager->pay();
+// }
 
 void Government::refundTaxes(double amount) {
     budget -= amount;

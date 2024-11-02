@@ -50,13 +50,11 @@ std::cout<<"============================================================\n";
 }
 
 //pay taxes for the building
-double ResidentialBuilding::payTaxes(TaxType* taxType) {
-for (Citizen* citizen : residents) {
-    citizen->setTaxRate(taxType->getTaxRate());
-    propertyTax += citizen->calculateTax();
-    householdIncome += citizen->getIncome();
+double ResidentialBuilding::payTaxes(TaxType* taxType)  {
+for (auto citizen : residents) {
+  citizen->payTaxes(taxType);
   }
-  return propertyTax;
+  
 }
 
 

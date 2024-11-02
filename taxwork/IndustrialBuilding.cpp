@@ -60,7 +60,7 @@ std::cout<<"============================================================\n";
 
 //pay taxes for the building
 double IndustrialBuilding::payTaxes(TaxType* taxType) {
-	double tax = economicGrowth * taxType->getRate();
+	double tax = economicGrowth * taxType->getTaxRate();
 	std::cout << "Collected taxes from Industrial Building: " << name << " - Amount: " << tax << std::endl;
 	return tax;
 }
