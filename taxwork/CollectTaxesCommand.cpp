@@ -8,8 +8,7 @@ CollectTaxesCommand::CollectTaxesCommand(Building* building, double taxRate) {
 }
 
 void CollectTaxesCommand::execute() {
-	taxesCollected = building->collectIncome();
-	taxesCollected = taxesCollected * taxRate;
+	taxesCollected = building->collectTaxes();
 }
 
 void CollectTaxesCommand::undo() {

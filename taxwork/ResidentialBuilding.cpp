@@ -50,13 +50,36 @@ std::cout<<"============================================================\n";
 }
 
 //collect taxes from the building
-void ResidentialBuilding::collectTaxes() {
-  propertyTax = residentialUnits * 1000;
-  householdIncome = residentialUnits * 5000;
+double ResidentialBuilding::collectTaxes() {
+
+}
+
+//calculate property tax of the building
+double ResidentialBuilding::calculatePropertyTax() {
+  propertyTax = residentialUnits * 0.1f;
+  return propertyTax;
+}
+
+//calculate household income of the building
+
+double ResidentialBuilding::calculateHouseholdIncome() {
+  householdIncome = residentialUnits * 1000.0f;
+  return householdIncome;
+}
+
+
+//add residents to the building
+void ResidentialBuilding::addResidents(Citizen* citizen) {
+  residents.push_back(citizen);
 }
 
 //undo collecting taxes from the building
 void ResidentialBuilding::undoCollectTaxes() {
   propertyTax = 0;
   householdIncome = 0;
+}
+
+//get residential units of the building
+int ResidentialBuilding::getResidentialUnits() const {
+  return residentialUnits;
 }

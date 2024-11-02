@@ -1,7 +1,7 @@
 #ifndef RESIDENTIALBUILDING_H
 #define RESIDENTIALBUILDING_H
 #include "Building.h"
-//#include "Citizen.h"
+#include "Citizen.h"
 #include<iostream>
 #include<string>
 using namespace std;
@@ -14,6 +14,7 @@ private:
 	string bType;
 	double propertyTax;
 	double householdIncome;
+	vector<Citizen*> residents;
 public:
 	 ResidentialBuilding(const std::string& name, float area, int floors, int capacity,
                         float citizenSatisfaction, float economicGrowth, float resourceConsumption,
@@ -24,14 +25,23 @@ public:
 	void updateImpacts()override;
 	void construct() override;
 	void upgradeComfort(float comfort);
-	void collectTaxes() override;
+	double collectTaxes() override;
 	void undoCollectTaxes() override;
+	int getResidentialUnits() const;
+	void addResidents(Citizen* citizen);
+
 protected:
 	void calculateEconomicImpact();
 
 	void calculateResourceConsumption();
 
 	void calculateSatisfactionImpact();
+
+	double calculatePropertyTax();
+
+	double calculateHouseholdIncome();
+
+
 };
 
 #endif

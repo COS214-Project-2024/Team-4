@@ -1,24 +1,127 @@
 #include "TaxSystem.h"
 
 
-void TaxSystem::addCitizenTaxPayer(Citizen* taxPayer, char tType) {
-this->citizenTaxPayers.insert(std::pair<Citizen*, char>(taxPayer, tType));
-
+void TaxSystem::addIncomeTaxBuilding(Building* building) {
+	if(building->getType() == "Residential"){
+		incomeTaxbuildings.push_back(building);
+	}else if (building->getType() == "Commercial")
+	{
+		incomeTaxbuildings.push_back(building);
+	} else if (building->getType() == "Industrial")
+	{
+		incomeTaxbuildings.push_back(building);
+	
+	} else if (building->getType() == "Government")
+	{
+		std::cout<<"Government building does not collect taxes"<<std::endl;
+	} else
+	{
+		std::cout<<"Building type cannot be taxed"<<std::endl;
+	}
 }
 
-void TaxSystem::addBusinessTaxPayer(Business* bTaxPayer, char tType) {
-	this->businessTaxPayers.insert(std::pair<Business*, char>(bTaxPayer, tType));	
+void TaxSystem::addPropertyTaxBuilding(Building* building) {
+	if(building->getType() == "Residential"){
+		propertyTaxbuildings.push_back(building);
+	}else if (building->getType() == "Commercial")
+	{
+		propertyTaxbuildings.push_back(building);
+	} else if (building->getType() == "Industrial")
+	{
+		propertyTaxbuildings.push_back(building);
+	
+	} else if (building->getType() == "Government")
+	{
+		std::cout<<"Government building does not collect taxes"<<std::endl;
+	} else
+	{
+		std::cout<<"Building type cannot be taxed"<<std::endl;
+	}
 }
 
-void TaxSystem::removeCitizenTaxPayer(Citizen* taxPayer) {
-
-this->citizenTaxPayers.erase(taxPayer);
+void TaxSystem::addSalesTaxBuilding(Building* building) {
+if(building->getType() == "Residential"){
+	std::cout<<"Residential building does not collect taxes for sales"<<std::endl;
+	}else if (building->getType() == "Commercial")
+	{
+		salesTaxbuildings.push_back(building);
+	} else if (building->getType() == "Industrial")
+	{
+		salesTaxbuildings.push_back(building);
+	
+	} else if (building->getType() == "Government")
+	{
+		std::cout<<"Government building does not collect taxes for sales"<<std::endl;
+	} else
+	{
+		std::cout<<"Building type cannot be taxed"<<std::endl;
+	}
+}
+void TaxSystem::addVATTaxPayer(Citizen* citizen) {
+	vatTaxpayers.push_back(citizen);
 }
 
-void TaxSystem::removeBusinessTaxPayer(Business* bTaxPayer) {
-this->businessTaxPayers.erase(bTaxPayer);
+void TaxSystem::removeIncomeTaxBuilding(Building* building) {
+	if(building->getType() == "Residential"){
+		incomeTaxbuildings.erase(std::remove(incomeTaxbuildings.begin(), incomeTaxbuildings.end(), building), incomeTaxbuildings.end());
+	}else if (building->getType() == "Commercial")
+	{
+		incomeTaxbuildings.erase(std::remove(incomeTaxbuildings.begin(), incomeTaxbuildings.end(), building), incomeTaxbuildings.end());
+	} else if (building->getType() == "Industrial")
+	{
+		incomeTaxbuildings.erase(std::remove(incomeTaxbuildings.begin(), incomeTaxbuildings.end(), building), incomeTaxbuildings.end());
+	
+	} else if (building->getType() == "Government")
+	{
+		std::cout<<"Government building does not collect taxes"<<std::endl;
+	} else
+	{
+		std::cout<<"Building type cannot be taxed"<<std::endl;
+	}
 }
 
+void TaxSystem::removePropertyTaxBuilding(Building* building) {
+	if(building->getType() == "Residential"){
+		propertyTaxbuildings.erase(std::remove(propertyTaxbuildings.begin(), propertyTaxbuildings.end(), building), propertyTaxbuildings.end());
+	}else if (building->getType() == "Commercial")
+	{
+		propertyTaxbuildings.erase(std::remove(propertyTaxbuildings.begin(), propertyTaxbuildings.end(), building), propertyTaxbuildings.end());
+	} else if (building->getType() == "Industrial")
+	{
+		propertyTaxbuildings.erase(std::remove(propertyTaxbuildings.begin(), propertyTaxbuildings.end(), building), propertyTaxbuildings.end());
+	
+	} else if (building->getType() == "Government")
+	{
+		std::cout<<"Government building does not collect taxes"<<std::endl;
+	} else
+	{
+		std::cout<<"Building type cannot be taxed"<<std::endl;
+	}
+}
+
+void TaxSystem::removeSalesTaxBuilding(Building* building) {
+	if(building->getType() == "Residential"){
+		std::cout<<"Residential building does not collect taxes for sales"<<std::endl;
+	}else if (building->getType() == "Commercial")
+	{
+		salesTaxbuildings.erase(std::remove(salesTaxbuildings.begin(), salesTaxbuildings.end(), building), salesTaxbuildings.end());
+	} else if (building->getType() == "Industrial")
+	{
+		salesTaxbuildings.erase(std::remove(salesTaxbuildings.begin(), salesTaxbuildings.end(), building), salesTaxbuildings.end());
+	
+	} else if (building->getType() == "Government")
+	{
+		std::cout<<"Government building does not collect taxes for sales"<<std::endl;
+	} else
+	{
+		std::cout<<"Building type cannot be taxed"<<std::endl;
+	}
+}
+
+
+void TaxSystem::removeVATTaxPayer(Citizen* citizen) {
+	vatTaxpayers.erase(std::remove(vatTaxpayers.begin(), vatTaxpayers.end(), citizen), vatTaxpayers.end());
+}
 void TaxSystem::updateTaxRate(char cType, double rate) {
 	taxRates.find(cType)->second->setTax(rate);
 }

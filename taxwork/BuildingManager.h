@@ -27,6 +27,10 @@ public:
 
     // List all jobs available in a specific building
     void listAllJobsInBuilding(const Building* building) const;
+
+
+    // Collect taxes from all citizens in all buildings
+    double collectAllTaxes();
 };
 
 #endif

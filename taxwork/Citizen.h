@@ -1,3 +1,5 @@
+// Citizen.h
+
 #ifndef CITIZEN_H
 #define CITIZEN_H
 
@@ -7,15 +9,15 @@
 #include "CitizenObserver.h"
 #include "Policy.h"
 #include "CityService.h"
-#include "CitizenState.h"
-#include "SatisfactionStrategy.h"
+ #include "CitizenState.h"
+ #include "SatisfactionStrategy.h"
 
 class Citizen {
 protected:
-    std::string name;
+std::string name;
     int age;
     std::string resStatus = "Resident";        // Residential status, default to "Resident"
-    std::string jobStatus = "Unemployed";      // Employment status
+    //std::string jobStatus = "Unemployed";      // Employment status
     float satisfaction = 50.0f;
     std::string relationshipStatus = "Single";
     int marriageDuration = 0;
@@ -31,10 +33,11 @@ protected:
     float taxRate = 0.1f;
     float housingComfortLevel = 5.0f;
     bool employed = false;
+    std::string jobTitle = "Unemployed";
     std::vector<std::shared_ptr<SatisfactionStrategy>> satisfactionStrategies;
 
-    // New member variable to track tax cooldown status
-    bool taxCooldown = false;
+
+    
 
 public:
     // Constructor and Destructor
@@ -43,7 +46,7 @@ public:
     virtual ~Citizen();
 
     // Prototype Pattern: Clone method
-    virtual std::shared_ptr<Citizen> clone() const = 0;
+   virtual std::shared_ptr<Citizen> clone() const = 0;
 
     // Observer management
     void addObserver(CitizenObserver* observer);
@@ -58,18 +61,18 @@ public:
     void updateMaritalStatus(bool status);
     void updateTaxRate(double rate);
     void updateHealth(bool status);
-    void updateSatisfaction(float newSatisfaction);
+    //void updateSatisfaction(float newSatisfaction);
     void updateTaxRatePolicy(const Policy& policy);
     void updateResService(const CityService& service);
     void changeTaxRate(double rate);
     void updateEducationLevel(const std::string& level);
     void updateHealthStatus(bool status);
     void updateHousingSatisfaction(bool satisfaction);
-	void updateHousingComfortLevel(float comfortLevel);
     void updateBankBalance(double amount);
     void updateService(const CityService* service);
     void updatePolicy(const Policy* policy);
     bool isLeaving() const; 
+   void updateSatisfaction(float adjustment);  // Modify satisfaction by a certain amount
     float getSatisfactionLevel() const;         // Retrieve the current satisfaction level
 
     // Getters
@@ -81,6 +84,7 @@ public:
     std::string getResStatus() const;
     std::string getJobStatus() const;
     double getBankBalance() const;
+    std::string getJobTitle() const;
 
     // Relationship management
     std::string getRelationshipStatus() const;
@@ -94,26 +98,15 @@ public:
     void addSatisfactionStrategy(std::shared_ptr<SatisfactionStrategy> strategy);
     void updateSatisfaction();
 
+    //job stuff
+    void setJobTitle(const std::string& title);
+    void displayInfo() const;
+    
     // Getters for strategy inputs
     bool isEmployed() const { return employed; }
     float getTaxRate() const { return taxRate; }
     float getHousingComfortLevel() const { return housingComfortLevel; }
-	double getIncome() const { return income; }
-	std::string getEducationLevel() const { return educationLevel; }
-	bool getHousingSatisfaction() const { return housingSatisfaction; }
-    
-    // New methods for tax cooldown
-    bool canPayTax() const { return !taxCooldown; }
-    void setTaxCooldown(bool cooldown) { taxCooldown = cooldown; }
-
-    // Additional methods for tax and employment updates
-    void updateIncome(double income);
-    double getIncome();
-    void updateEmploymentStatus(bool employed);
-    bool isEmployed();
-    double getTaxRate();
-    std::string getEducationLevel();
-    double payTax(double amount);
 };
 
 #endif // CITIZEN_H
+

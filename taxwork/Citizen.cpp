@@ -2,9 +2,10 @@
 
 #include "Citizen.h"
 #include "CitizenObserver.h"
-#include "LeavingCityState.h"
+//#include "LeavingCityState.h"
 #include <algorithm>
 #include <iostream>
+#include "LeavingCityState.h"
 
 template <typename T>
 T clamp(T value, T min, T max) {
@@ -13,8 +14,8 @@ T clamp(T value, T min, T max) {
     return value;
 }
 
-Citizen::Citizen(const std::string& name, int age, const std::string& resStatus, const std::string& jobStatus)
-    : name(name), age(age), resStatus(resStatus), jobStatus(jobStatus), satisfaction(50.0),
+Citizen::Citizen(const std::string& name, int age, const std::string& resStatus, const std::string& jobTitle)
+    : name(name), age(age), resStatus(resStatus), jobTitle(jobTitle), satisfaction(50.0),
       maritalStatus(false), health(true), bankBalance(0.0), educationLevel("None"), taxRate(0.1f),
       housingSatisfaction(false), income(0.0), currentState(nullptr) , housingComfortLevel(5.0f), employed(false) {}
 
@@ -88,6 +89,7 @@ void Citizen::updateHealth(bool status) {
     notifyObservers();
 }
 
+
 void Citizen::updateSatisfaction(float newSatisfaction) {
     satisfaction = newSatisfaction;
     notifyObservers();
@@ -148,7 +150,7 @@ std::string Citizen::getName() const {
 }
 
 std::string Citizen::getJob() const {
-    return jobStatus;
+    return jobTitle;
 }
 
 bool Citizen::getHealth() const {
@@ -164,7 +166,7 @@ std::string Citizen::getResStatus() const {
 }
 
 std::string Citizen::getJobStatus() const {
-    return jobStatus;
+    return jobTitle;
 }
 
 double Citizen::getBankBalance() const {
@@ -204,6 +206,14 @@ int Citizen::getNumChildren() const {
     return numChildren;
 }
 
+void Citizen::setJobTitle(const std::string& title) {
+    jobTitle = title;
+}
+
+void Citizen::displayInfo() const {
+    std::cout << "Name: " << name << ", Age: " << age
+              << ", Job: " << jobTitle << std::endl;
+}
 
 bool Citizen::isLeaving() const {
     return dynamic_cast<LeavingCityState*>(currentState) != nullptr;
@@ -221,47 +231,4 @@ void Citizen::updateSatisfaction() {
     // Average satisfaction score if multiple strategies are used
     satisfaction = totalSatisfaction / satisfactionStrategies.size();
     std::cout << name << "'s updated satisfaction: " << satisfaction << std::endl;
-}
-
-void Citizen::updateIncome(double income) {
-	this->income = income;
-	notifyObservers();
-}
-
-double Citizen::getIncome() {
-	return income;
-}
-
-void Citizen::updateHousingComfortLevel(float comfortLevel) {
-	housingComfortLevel = comfortLevel;
-	notifyObservers();
-}
-
-// float Citizen::getHousingComfortLevel() {
-// 	return housingComfortLevel;
-// }
-
-void Citizen::updateEmploymentStatus(bool employed) {
-	this->employed = employed;
-	notifyObservers();
-}
-
-bool Citizen::isEmployed() {
-	return employed;
-}
-double Citizen::getTaxRate() {
-	return taxRate;
-}
-
-std::string Citizen::getEducationLevel() {
-	return educationLevel;
-}
-
-double Citizen::payTax(double amount) {
-    double tax = amount * taxRate;
-    bankBalance -= tax;
-}
-
-void Citizen::setTaxCooldown(bool cooldown) {
-    taxCooldown = cooldown;
 }

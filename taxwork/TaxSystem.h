@@ -18,15 +18,27 @@
 class TaxSystem {
 private:
     std::map<double, TaxType*> taxRates;
-    std::map<Citizen*, char> citizenTaxPayers;
-    std::map<Business*, char> businessTaxPayers;
+    // std::map<Citizen*, char> citizenTaxPayers;
+    // std::map<Business*, char> businessTaxPayers;
+    std::vector<Building*> incomeTaxbuildings;
+    std::vector<Building*> propertyTaxbuildings;
+    std::vector<Building*> salesTaxbuildings;
+    std::vector<Citizen*> vatTaxpayers;
     
 public:
-    void addCitizenTaxPayer(Citizen* taxPayer, char tType);
-    void addBusinessTaxPayer(Business* bTaxPayer, char tType);
+    // void addCitizenTaxPayer(Citizen* taxPayer, char tType);
+    //  void addBusinessTaxPayer(Business* bTaxPayer);
     void setTax(double rate, char taxType);
-    void removeCitizenTaxPayer(Citizen* taxPayer);
-    void removeBusinessTaxPayer(Business* bTaxPayer);
+    // void removeCitizenTaxPayer(Citizen* taxPayer);
+    // void removeBusinessTaxPayer(Business* bTaxPayer);
+    void addIncomeTaxBuilding(Building* building);
+    void addPropertyTaxBuilding(Building* building);
+    void addSalesTaxBuilding(Building* building);
+    void addVATTaxPayer(Citizen* citizen);
+    void removeIncomeTaxBuilding(Building* building);
+    void removePropertyTaxBuilding(Building* building);
+    void removeSalesTaxBuilding(Building* building);
+    void removeVATTaxPayer(Citizen* citizen);
     void updateTaxRate(char cType, double rate);
     void collectTaxes(Building* building,char taxType);
     void addTaxRate(GovCommand setTax);

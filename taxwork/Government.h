@@ -8,6 +8,7 @@
 #include "Policy.h"
 #include "GovCommand.h"
 #include "TaxSystem.h"
+#include "BuildingManager.h"
 using namespace std;
 
 class Government {
@@ -16,6 +17,7 @@ private:
     double taxRate;
     double budget;
     vector<GovObserver*> observers;
+    BuildingManager* buildingManager;
 
 public:
     // Constructor
@@ -24,8 +26,10 @@ public:
     // Tax-related methods
     void setTax(double rate);
     double getTaxRate() const;
-    double collectAllTaxes(TaxSystem* tax);
+    double collectAllTaxes();
     void refundTaxes(double amount);
+    void setBuildingManager(BuildingManager* manager);
+
 
     // Notification methods
     void notifyCitizen();

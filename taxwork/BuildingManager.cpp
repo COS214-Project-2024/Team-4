@@ -2,9 +2,35 @@
 #include <iostream>
 #include <algorithm>
 
+namespace YourNamespace {
+
 // Adds a building to the list of managed buildings
 void BuildingManager::addBuilding(Building* building) {
     buildings.push_back(building);
+}
+
+//collects all taxes from the citizens in all buildings
+double BuildingManager::collectAllTaxes() {
+    double totalTax = 0.0;
+    for (Building* building : buildings) {
+        if(building->getType() == "Residential"){
+            totalTax+=building->collectTaxes();
+        }else if (building->getType() == "Commercial")
+        {
+            totalTax+=building->collectTaxes();
+        } else if (building->getType() == "Industrial")
+        {
+            totalTax+=building->collectTaxes();
+        
+        } else if (building->getType() == "Government")
+        {
+            std::cout<<"Government building does not collect taxes"<<std::endl;
+        } else
+        {
+            std::cout<<"Building type cannot be taxed"<<std::endl;
+        }
+    }
+    return totalTax;
 }
 
 // Adds a citizen to the list of managed citizens
@@ -49,3 +75,5 @@ void BuildingManager::listAllJobsInBuilding(const Building* building) const {
     std::cout << "Jobs in " << building->getName() << ":\n";
     building->listJobs();
 }
+
+} // namespace YourNamespace
