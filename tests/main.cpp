@@ -4,6 +4,12 @@
 #include "IndustrialBuildingBuilder.h"
 #include "LandmarkBuildingBuilder.h"
 
+//utilities includes
+#include "UtilityMediator.h"
+#include "Utility.h"
+#include "WaterSupply.h"
+#include "WasteManagement.h"
+
 // Test ResidentialBuildingBuilder
 void testResidentialBuildingBuilder() {
     std::cout << "\nTesting ResidentialBuildingBuilder\n";
@@ -105,6 +111,45 @@ builder.setIsHistoric(true);
     auto landmarkBuilding = builder.build();
     landmarkBuilding->construct();
     landmarkBuilding->updateImpacts();
+}
+
+//test Utilities water supply and waste management
+void testUtilities() {
+    std::cout << "\nTesting Utilities\n";
+
+    // Create mediator
+    UtilityMediator mediator;
+
+    // Create water supply and waste management utilities
+    WaterSupply waterSupply(&mediator);
+    WasteManagement wasteManagement(&mediator);
+
+    // Register buildings with utilities
+    Building building1("Building 1", 1000.0f, 2, 50, 3.0f, 2.0f, 1.0f);
+    Building building2("Building 2", 2000.0f, 3, 100, 2.5f, 1.5f, 1.5f);
+
+    waterSupply.registerBuilding(&building1);
+    waterSupply.registerBuilding(&building2);
+
+    wasteManagement.registerBuilding(&building1);
+    wasteManagement.registerBuilding(&building2);
+
+    // Supply resources to buildings
+    waterSupply.supplyResources(&building1);
+    waterSupply.supplyResources(&building2);
+
+    wasteManagement.supplyResources(&building1);
+    wasteManagement.supplyResources(&building2);
+
+    // Adjust utilities based on citizens
+    Citizen citizen1("Citizen 1", 25, 1.0f, 1.0f, 1.0f);
+    Citizen citizen2("Citizen 2", 30, 1.5f, 1.5f, 1.5f);
+
+    waterSupply.adjustForCitizen(&citizen1);
+    waterSupply.adjustForCitizen(&citizen2);
+
+    wasteManagement.adjustForCitizen(&citizen1);
+    wasteManagement.adjustForCitizen(&citizen2);
 }
 
 int main() {
