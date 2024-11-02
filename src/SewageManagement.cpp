@@ -15,6 +15,6 @@ void SewageManagement::supplyResources(Building* building) {
     }
 }
 
-void SewageManagement::adjustForCitizen(Citizen* citizen) {
-    std::cout << "Adjusting sewage management based on citizen's requirements.\n";
-}
+// void SewageManagement::adjustForCitizen(Citizen* citizen) {
+//     std::cout << "Adjusting sewage management based on citizen's requirements.\n";
+// }
