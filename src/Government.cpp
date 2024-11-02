@@ -1,7 +1,7 @@
 #include "Government.h"
 #include <iostream>
 #include <algorithm>
-
+//GOV
 using namespace std;
 
 Government::Government(string name) : governmentName(name), taxRate(0.0), budget(0.0) {
