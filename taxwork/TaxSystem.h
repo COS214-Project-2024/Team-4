@@ -12,7 +12,7 @@
 #include "TaxType.h"
 #include "Government.h"
 
-class TaxSystem {
+class TaxSystem : public std::enable_shared_from_this<TaxSystem>{
 public:
     void addGovernment(std::shared_ptr<Government> gov);
     void addIncomeTaxBuilding(std::shared_ptr<Building> building);

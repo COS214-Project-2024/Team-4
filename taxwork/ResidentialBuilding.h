@@ -35,6 +35,14 @@ private:
     std::vector<std::shared_ptr<Citizen>> residents;
     double propertyTax;
     double householdIncome;
+
+
+protected:
+	void calculateEconomicImpact();
+
+	void calculateResourceConsumption();
+
+	void calculateSatisfactionImpact();
 };
 
 #endif // RESIDENTIALBUILDING_H

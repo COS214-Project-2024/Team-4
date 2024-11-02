@@ -89,7 +89,7 @@ void TaxSystem::collectTaxes(std::shared_ptr<Building> building, char taxType) {
 }
 
 void TaxSystem::setTax(double rate, char taxType) {
-    std::shared_ptr<GovCommand> setTaxCommand = std::make_shared<SetTaxCommand>(government, this, rate, taxType);
+    std::shared_ptr<GovCommand> setTaxCommand = std::make_shared<SetTaxCommand>(government, shared_from_this(), rate, taxType);
     setTaxCommand->execute();
 }
 

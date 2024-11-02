@@ -7,8 +7,6 @@
 #include <memory>
 #include <vector>
 #include <chrono>
-
-// Include necessary headers
 #include "CitizenObserver.h"
 #include "Policy.h"
 #include "CityService.h"
@@ -16,10 +14,6 @@
 #include "SatisfactionStrategy.h"
 #include "TaxType.h"
 
-// Forward declaration
-class CitizenObserver;
-
-// Citizen class
 class Citizen {
 public:
     // Constructor and Destructor
@@ -31,12 +25,12 @@ public:
     virtual std::shared_ptr<Citizen> clone() const = 0;
 
     // Observer management
-    void addObserver(CitizenObserver* observer);
-    void removeObserver(CitizenObserver* observer);
+    void addObserver(std::shared_ptr<CitizenObserver> observer);
+    void removeObserver(std::shared_ptr<CitizenObserver> observer);
     void notifyObservers();
 
     // State management
-    void setState(CitizenState* newState); // Change the citizen’s state
+    void setState(std::shared_ptr<CitizenState> newState); // Change the citizen’s state
     void applyState();                     // Apply the current state's effect on satisfaction
 
     // Update Methods
@@ -98,55 +92,34 @@ public:
     double calculateTax();
     double getIncome() const;
     void setIncome(double income);
-    double payTaxes(TaxType* taxType);
+    double payTaxes(std::shared_ptr<TaxType> taxType);
     bool canPayTax() const;
     void setTaxCooldown(bool status);
     bool getTaxCooldown() const;
 
 protected:
     // Personal Information
-    //  std::string name;
-    // int age;
-    // float satisfaction = 50.0f;
-    // std::string jobTitle = "Unemployed";
-    // std::string resStatus = "Resident";        // Residential status, default to "Resident"
-    // // Removed duplicate 'satisfaction' declaration here
-    // std::string relationshipStatus = "Single";
-    // int marriageDuration = 0;
-    // int numChildren = 0;
-    // bool maritalStatus = false;                // Indicates married status
-    // bool health = true;                        // Indicates health status (true for healthy)
-    // double bankBalance = 0.0;
-    // std::string educationLevel = "None";       // Default education level
-    //  bool housingSatisfaction;
-    // double income = 0.0;
-    // CitizenState* currentState = nullptr;      // Current state pointer
-    // double taxRate = 0.1;                      // Default tax rate
-    // float housingComfortLevel = 5.0f;
-    // bool employed = false;
-
-        std::string name;
+    std::string name;
     int age;
     float satisfaction = 50.0f;
     std::string jobTitle = "Unemployed";
-    std::string resStatus = "Resident"; // Residential status, default to "Resident"
+    std::string resStatus = "Resident";        // Residential status, default to "Resident"
     std::string relationshipStatus = "Single";
     int marriageDuration = 0;
     int numChildren = 0;
-    bool maritalStatus = false;
-    bool health = true;
+    bool maritalStatus = false;                // Indicates married status
+    bool health = true;                        // Indicates health status (true for healthy)
     double bankBalance = 0.0;
-    std::string educationLevel = "None";
+    std::string educationLevel = "None";       // Default education level
     double income = 0.0;
-    CitizenState* currentState = nullptr;
-    double taxRate = 0.1;
+    std::shared_ptr<CitizenState> currentState = nullptr;      // Current state pointer
+    double taxRate = 0.1;                      // Default tax rate
     float housingComfortLevel = 5.0f;
     bool employed = false;
-
-    bool housingSatisfaction=false;
+    bool housingSatisfaction = false;          // Indicates housing satisfaction status
 
     // Satisfaction Strategies
-   std::vector<std::shared_ptr<SatisfactionStrategy>> satisfactionStrategies;
+    std::vector<std::shared_ptr<SatisfactionStrategy>> satisfactionStrategies;
 
     // Cooldown Mechanism
     bool taxCooldown = false;
@@ -154,7 +127,7 @@ protected:
     const std::chrono::seconds taxCooldownPeriod = std::chrono::seconds(60); // Cooldown of 60 seconds
 
     // Observer Pattern Members
-    std::vector<CitizenObserver*> observers;   // List of observers
+    std::vector<std::shared_ptr<CitizenObserver>> observers;   // List of observers
 };
 
 #endif // CITIZEN_H

@@ -1,6 +1,5 @@
 // Citizen.cpp
 
-
 #include "Citizen.h"
 #include "CitizenObserver.h"
 #include <algorithm>
@@ -16,6 +15,7 @@ T clamp(T value, T min, T max) {
     if (value > max) return max;
     return value;
 }
+
 Citizen::Citizen(const std::string& name, int age, const std::string& resStatus, const std::string& jobTitle)
     : name(name),                 // Initializes 'name' (declared first)
       age(age),                   // Initializes 'age'
@@ -41,13 +41,10 @@ Citizen::Citizen(const std::string& name, int age, const std::string& resStatus,
 }
 
 Citizen::~Citizen() {
-    delete currentState;
+    // No need to delete currentState as it is managed by shared_ptr
 }
 
-void Citizen::setState(CitizenState* newState) {
-    if (currentState) {
-        delete currentState;
-    }
+void Citizen::setState(std::shared_ptr<CitizenState> newState) {
     currentState = newState;
     notifyObservers();  // Notify observers of the state change
 }
@@ -74,16 +71,16 @@ std::shared_ptr<Citizen> Citizen::clone() const {
 }
 
 // Observer management
-void Citizen::addObserver(CitizenObserver* observer) {
+void Citizen::addObserver(std::shared_ptr<CitizenObserver> observer) {
     observers.push_back(observer);
 }
 
-void Citizen::removeObserver(CitizenObserver* observer) {
+void Citizen::removeObserver(std::shared_ptr<CitizenObserver> observer) {
     observers.erase(std::remove(observers.begin(), observers.end(), observer), observers.end());
 }
 
 void Citizen::notifyObservers() {
-    for (auto* observer : observers) {
+    for (const auto& observer : observers) {
         observer->update(this);
     }
 }
@@ -237,7 +234,7 @@ void Citizen::displayInfo() const {
 }
 
 bool Citizen::isLeaving() const {
-    return dynamic_cast<LeavingCityState*>(currentState) != nullptr;
+    return dynamic_cast<LeavingCityState*>(currentState.get()) != nullptr;
 }
 
 void Citizen::addSatisfactionStrategy(std::shared_ptr<SatisfactionStrategy> strategy) {
@@ -267,7 +264,7 @@ void Citizen::setIncome(double income) {
     this->income = income;
 }
 
-double Citizen::payTaxes(TaxType* taxType) {
+double Citizen::payTaxes(std::shared_ptr<TaxType> taxType) {
     auto now = std::chrono::steady_clock::now();
     if (taxCooldown) {
         auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(now - lastTaxPayment);
@@ -292,7 +289,6 @@ double Citizen::payTaxes(TaxType* taxType) {
         return 0.0;
     }
 }
-
 
 double Citizen::getIncome() const {
     return income;

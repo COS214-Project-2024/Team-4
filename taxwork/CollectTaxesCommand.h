@@ -7,13 +7,13 @@
 #include "TaxType.h"
 class CollectTaxesCommand : public GovCommand {
 private:
-	Building* building;
+	std::shared_ptr<Building> building;
 	double taxesCollected;
 	double taxRate;
-	TaxType* taxType;
+	std::shared_ptr<TaxType> taxType;
 
 public:
-	CollectTaxesCommand(Building* building, TaxType* taxType);
+	CollectTaxesCommand(std::shared_ptr<Building> building, std::shared_ptr<TaxType> taxType);
 	void execute();
 	void undo();
 	double getTaxesCollected();

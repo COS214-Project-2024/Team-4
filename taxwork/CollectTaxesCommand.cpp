@@ -1,13 +1,13 @@
 #include "CollectTaxesCommand.h"
 
-CollectTaxesCommand::CollectTaxesCommand(Building* building, TaxType* taxType) {
+CollectTaxesCommand::CollectTaxesCommand(std::shared_ptr<Building> building, std::shared_ptr<TaxType> taxType) {
 	this->building = building;
 	taxesCollected = 0;
 	this->taxType = taxType;
 }
 
 void CollectTaxesCommand::execute() {
-	taxesCollected = building->payTaxes(taxType);
+	taxesCollected = building->payTaxes(taxType.get());
 }
 
 void CollectTaxesCommand::undo() {
