@@ -1,12 +1,11 @@
 #include "CollectTaxesCommand.h"
 
-CollectTaxesCommand::CollectTaxesCommand(Government* gov)
-    : government(gov), collectedTaxes(0.0) {}
-
 void CollectTaxesCommand::execute() {
-    collectedTaxes = government->collectTaxes();
+	// TODO - implement CollectTaxesCommand::execute
+	throw "Not yet implemented";
 }
 
 void CollectTaxesCommand::undo() {
-    government->refundTaxes(collectedTaxes);
+	// TODO - implement CollectTaxesCommand::undo
+	throw "Not yet implemented";
 }
