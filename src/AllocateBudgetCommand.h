@@ -25,6 +25,33 @@ public:
 
     // Undoes the budget allocation command
     void undo() override;
+
+    // Gets the amount to be allocated
+    double getAmount() const;
+
+    // Sets the amount to be allocated
+    void setAmount(double amt);
+
+    // Gets the previous allocation amount
+    double getPrevAllocation() const;
+
+    // Sets the previous allocation amount
+    void setPrevAllocation(double prevAmt);
+
+    // Validates the budget allocation
+    bool validateAllocation() const;
+
+    // Executes the budget allocation command with validation
+    void executeWithValidation();
+
+    // Gets the name of the command
+    std::string getName() const override;
+
+    // Gets the description of the command
+    std::string getDescription() const override;
+
+    // Checks if the command can be executed
+    bool canExecute() const override;
 };
 
 #endif

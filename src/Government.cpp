@@ -6,7 +6,7 @@ using namespace std;
 
 // Constructor for Government
 // Initializes the government with a name, tax rate, and budget
-Government::Government(string name) : governmentName(name), taxRate(0.0), budget(0.0) {
+Government::Government(string name) : taxRate(0.0), budget(1500.0), governmentName(name) {
     // Constructor implementation
 }
 
@@ -42,10 +42,14 @@ void Government::notifyServices() {
 // Allocates budget to a city service
 // Updates the budget and notifies observers
 void Government::allocateBudget(CityService& service, double amount) {
-    budget -= amount;
-    service.updateBudget(amount);
-    cout << "Allocated " << amount << " to service. Remaining budget: " << budget << endl;
-    notifyObservers();
+    if (budget >= amount) {
+        budget -= amount;
+        service.updateBudget(amount);
+        cout << "Allocated " << amount << " to service. Remaining budget: " << budget << endl;
+        notifyObservers();
+    } else {
+        cout << "Insufficient budget to allocate " << amount << " to service." << endl;
+    }
 }
 
 // Reverts the budget allocation to a city service
@@ -102,6 +106,11 @@ void Government::notifyObservers() {
     for (GovObserver* observer : observers) {
         observer->updateTaxRate(taxRate);
         observer->updatePolicy(Policy());
-        observer->updateServices(CityService());
+        observer->updateServices(CityService("Default Service", 0.0)); // Provide default arguments
     }
+}
+
+// Gets the current budget
+double Government::getBudget() const {
+    return budget;
 }
