@@ -6,11 +6,14 @@
 class Policy {
 
 private:
-    std::string policyName;
-    std::string impactLevel;
+    std::string policyName;   // Name of the policy
+    std::string impactLevel;  // Impact level of the policy
 
 public:
+    // Implements the policy
     void implement();
+
+    // Revokes the policy
     void revoke();
 };
 

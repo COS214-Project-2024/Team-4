@@ -2,23 +2,27 @@
 #define SETTAXCOMMAND_H
 
 #include "GovCommand.h"
-#include "TaxType.h"
 #include "Government.h"
 
-
-class SetTaxCommand : GovCommand {
+// SetTaxCommand class
+// This class represents a command to set the tax rate in the government
+class SetTaxCommand : public GovCommand {
 
 private:
-	void execute();
-	void undo();
-	TaxType* taxType;
+    Government* government;   // Pointer to the government object
+    double taxRate;           // New tax rate to be set
+    double previousTaxRate;   // Previous tax rate to revert if needed
 
 public:
-	void setTaxCommand(double rate);
+    // Constructor
+    // Initializes the command with the government object and the new tax rate
+    SetTaxCommand(Government* gov, double rate);
 
-	Government government();
+    // Executes the set tax command
+    void execute() override;
 
-	double prevTaxRate();
+    // Undoes the set tax command
+    void undo() override;
 };
 
 #endif
