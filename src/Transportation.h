@@ -15,7 +15,7 @@ class Transportation {
         Transportation(char state);
         float getTrafficFlow();
         bool setState(char state);
-        // virtual float calculateCommute() = 0;
+        virtual float calculateCommute() = 0;
         ~Transportation();
     
 

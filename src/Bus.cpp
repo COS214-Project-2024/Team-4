@@ -51,6 +51,7 @@ bool Bus::addPassengerTrain(PassengerTrain *passengerTrain) {
 }
 
 
+
 InsideRoad *Bus::getInsideRoad(std::size_t x) {
     if(x < insideRoads.size() && x >= 0){
         return insideRoads[x];
@@ -80,7 +81,6 @@ PassengerTrain *Bus::getPassengerTrain(std::size_t x) {
     return nullptr;
 }
 
-
 int Bus::getBusNumber(){
     return this->busNumber;
 }
@@ -89,6 +89,6 @@ int Bus::getCapacity(){
     return this->capacity;
 }
 
-std::string Bus::getRouteName() {
+std::string Bus::getRoute() {
     return this->getRoute();
 }

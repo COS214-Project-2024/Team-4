@@ -6,8 +6,6 @@
 #include "Road.h"
 #include "InsideRoad.h"
 
-class InsideRoad;
-
 class Highway : public Road {
     private:
         float speedLimit;

@@ -4,8 +4,6 @@
 #include "Airport.h"
 #include "InsideRoad.h"
 
-class InsideRoad;
-
 class CargoAirport : public Airport {
     private:
         std::vector<InsideRoad*> insideRoads;

@@ -30,7 +30,7 @@ bool Highway::addHighway(Highway *highway) {
 
 
 std::string Highway::getRoadName() {
-    return this->getName();
+    return this->getRoadName();
 }
 
 InsideRoad *Highway::getInsideRoad(std::size_t x) {

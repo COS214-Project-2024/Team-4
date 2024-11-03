@@ -41,5 +41,5 @@ ComercialAirport* ComercialAirport::getComercialAirport(std::size_t index) {
 }
 
 std::string ComercialAirport::getName() {
-    return this->getAirportName();
+    return this->getName();
 }
