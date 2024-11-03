@@ -10,7 +10,7 @@ class Train : public Transportation {
     public:
         Train(char state, std::string line);
         float calculateCommute();
-        std::string getLine();
+        std::string getTrainLine();
 
 };
 

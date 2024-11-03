@@ -10,7 +10,7 @@ class Airport : public Transportation {
     public:
         Airport(char state, std::string name);
         float calculateCommute();
-        std::string getAirportName();
+        std::string getName();
 };
 
 #endif
