@@ -44,7 +44,7 @@ void Government::revertBudgetAllocation(CityService& service, double amount) {
     notifyObservers();
 }
 
-void Government::enforcePolicy(std::shared_ptr<Policy> policy) {
+void Government::enforcePolicy(Policy* policy) {
     std::cout << "Enforcing " << policy->getPolicyName() << " policy..." << std::endl;
     notifyObservers();
 }
@@ -59,18 +59,24 @@ void Government::refundTaxes(double amount) {
     std::cout << "Refunded taxes: " << amount << ". New budget: " << budget << std::endl;
 }
 
-void Government::registerObserver(std::shared_ptr<GovObserver> observer) {
+void Government::registerObserver(GovObserver* observer) {
     observers.push_back(observer);
 }
 
-void Government::unregisterObserver(std::shared_ptr<GovObserver> observer) {
+void Government::unregisterObserver(GovObserver* observer) {
     observers.erase(std::remove(observers.begin(), observers.end(), observer), observers.end());
 }
 
+// Notifies all registered observers of changes
 void Government::notifyObservers() {
-    for (auto& observer : observers) {
+    for (GovObserver* observer : observers) {
         observer->updateTaxRate(taxRate);
-        observer->updatePolicy(std::make_shared<Policy>());
-        observer->updateServices(std::make_shared<CityService>());
+        observer->updatePolicy(Policy());
+        observer->updateServices(CityService());
     }
+}
+
+void Government::addTaxesToBudget(double amount) {
+    budget += amount;
+    std::cout << "Added taxes to budget. New budget: " << budget << std::endl;
 }

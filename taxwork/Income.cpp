@@ -15,3 +15,5 @@ double Income::calculateTax(double income) {
     return income * rate;
 }
 
+
+

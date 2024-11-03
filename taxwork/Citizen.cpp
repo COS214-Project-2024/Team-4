@@ -1,5 +1,6 @@
 // Citizen.cpp
 
+
 #include "Citizen.h"
 #include "CitizenObserver.h"
 #include <algorithm>
@@ -15,7 +16,6 @@ T clamp(T value, T min, T max) {
     if (value > max) return max;
     return value;
 }
-
 Citizen::Citizen(const std::string& name, int age, const std::string& resStatus, const std::string& jobTitle)
     : name(name),                 // Initializes 'name' (declared first)
       age(age),                   // Initializes 'age'
@@ -41,10 +41,13 @@ Citizen::Citizen(const std::string& name, int age, const std::string& resStatus,
 }
 
 Citizen::~Citizen() {
-    // No need to delete currentState as it is managed by shared_ptr
+    delete currentState;
 }
 
-void Citizen::setState(std::shared_ptr<CitizenState> newState) {
+void Citizen::setState(CitizenState* newState) {
+    if (currentState) {
+        delete currentState;
+    }
     currentState = newState;
     notifyObservers();  // Notify observers of the state change
 }
@@ -71,16 +74,16 @@ std::shared_ptr<Citizen> Citizen::clone() const {
 }
 
 // Observer management
-void Citizen::addObserver(std::shared_ptr<CitizenObserver> observer) {
+void Citizen::addObserver(CitizenObserver* observer) {
     observers.push_back(observer);
 }
 
-void Citizen::removeObserver(std::shared_ptr<CitizenObserver> observer) {
+void Citizen::removeObserver(CitizenObserver* observer) {
     observers.erase(std::remove(observers.begin(), observers.end(), observer), observers.end());
 }
 
 void Citizen::notifyObservers() {
-    for (const auto& observer : observers) {
+    for (auto* observer : observers) {
         observer->update(this);
     }
 }
@@ -234,7 +237,7 @@ void Citizen::displayInfo() const {
 }
 
 bool Citizen::isLeaving() const {
-    return dynamic_cast<LeavingCityState*>(currentState.get()) != nullptr;
+    return dynamic_cast<LeavingCityState*>(currentState) != nullptr;
 }
 
 void Citizen::addSatisfactionStrategy(std::shared_ptr<SatisfactionStrategy> strategy) {
@@ -251,6 +254,39 @@ void Citizen::updateSatisfaction() {
     std::cout << name << "'s updated satisfaction: " << satisfaction << std::endl;
 }
 
+
+bool Citizen::isOnCooldown() const {
+    if (!taxCooldown) {
+        return false;
+    }
+    auto now = std::chrono::steady_clock::now();
+    auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(now - lastTaxPayment);
+    std::cout << "Elapsed time since last tax payment for " << name << ": " << elapsed.count() << " seconds\n";
+    return elapsed < taxCooldownPeriod;
+}
+
+double Citizen::payTaxes(TaxType* taxType) {
+    auto now = std::chrono::steady_clock::now();
+    if (isOnCooldown()) {
+        std::cout << "Citizen " << name << " is on cooldown. Taxes cannot be collected now.\n";
+        return 0.0;
+    }
+
+    double tax = taxType->calculateTax(income);
+    tax = ::clamp(tax, 0.0, bankBalance);
+
+    if (tax > 0.0) {
+        bankBalance -= tax;
+        taxCooldown = true;
+        lastTaxPayment = now;
+        std::cout << "Collected $" << tax << " in taxes from " << name << ".\n";
+        return tax;
+    } else {
+        std::cout << "Citizen " << name << " has insufficient funds to pay taxes.\n";
+        return 0.0;
+    }
+}
+
 // Tax-related methods
 void Citizen::setTaxRate(double rate) {
     taxRate = rate;
@@ -264,31 +300,10 @@ void Citizen::setIncome(double income) {
     this->income = income;
 }
 
-double Citizen::payTaxes(std::shared_ptr<TaxType> taxType) {
-    auto now = std::chrono::steady_clock::now();
-    if (taxCooldown) {
-        auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(now - lastTaxPayment);
-        if (elapsed < taxCooldownPeriod) {
-            std::cout << "Citizen " << name << " is on cooldown. Taxes cannot be collected now.\n";
-            return 0.0;
-        } else {
-            taxCooldown = false; // Cooldown period has passed
-        }
-    }
 
-    if (!taxCooldown) {
-        double tax = taxType->calculateTax(income);
-        tax = ::clamp(tax, 0.0, bankBalance); // Ensures tax is within [0, bankBalance]
 
-        bankBalance -= tax;
-        taxCooldown = true;
-        lastTaxPayment = now; // Update the last tax payment time
-        std::cout << "Collected $" << tax << " in taxes from " << name << ".\n";
-        return tax;
-    } else {
-        return 0.0;
-    }
-}
+
+
 
 double Citizen::getIncome() const {
     return income;

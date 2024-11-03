@@ -11,13 +11,15 @@ TARGET = testTaxes
 SOURCES = testTaxes.cpp CollectTaxesCommand.cpp Income.cpp Property.cpp Sales.cpp \
           SetTaxCommand.cpp TaxSatisfactionStrategy.cpp TaxSystem.cpp TaxType.cpp \
           Government.cpp CityService.cpp Policy.cpp VAT.cpp Builder.cpp ResidentialBuildingBuilder.cpp BuildingManager.cpp \
-          Building.cpp ResidentialBuilding.cpp Jobs.cpp Citizen.cpp LeavingCityState.cpp FemaleCitizen.cpp MaleCitizen.cpp
+          Building.cpp ResidentialBuilding.cpp Jobs.cpp Citizen.cpp LeavingCityState.cpp FemaleCitizen.cpp MaleCitizen.cpp \
+          CommercialBuilding.cpp Business.cpp
 
 # Header files
 HEADERS = testTaxes.h CollectTaxesCommand.h Income.h Property.h Sales.h \
           SetTaxCommand.h TaxSatisfactionStrategy.h TaxSystem.h TaxType.h \
           Government.h CityService.h Policy.h VAT.h Builder.h ResidentialBuildingBuilder.h BuildingManager.h \
-          Building.h ResidentialBuilding.h Jobs.h Citizen.h LeavingCityState.h FemaleCitizen.h MaleCitizen.h
+          Building.h ResidentialBuilding.h Jobs.h Citizen.h LeavingCityState.h FemaleCitizen.h MaleCitizen.h \
+          CommercialBuilding.h Business.h
 
 # Object files
 OBJECTS = $(SOURCES:.cpp=.o)

@@ -1,61 +1,66 @@
-// testTaxes.cpp
-
-#include "ResidentialBuilding.h"
-#include "FemaleCitizen.h"
-#include "MaleCitizen.h"
-#include "TaxType.h"
-#include "Income.h"
 #include "Government.h"
 #include "TaxSystem.h"
-#include <iostream>
+#include "CommercialBuilding.h"
+#include "Business.h"
+#include "Income.h" // Assuming Income is derived from TaxType
+#include "Property.h" // Assuming Property is derived from TaxType
+#include "Sales.h" // Assuming Sales is derived from TaxType
 #include <thread>
 #include <chrono>
-#include <memory>
+#include <iostream>
 
 int main() {
-    // Create Government instance
-    std::shared_ptr<Government> government = std::make_shared<Government>("City Government");
+    // Create government
+    Government gov("City Government");
 
-    // Create TaxSystem instance and add the government
-    std::shared_ptr<TaxSystem> taxSystem = std::make_shared<TaxSystem>();
-    taxSystem->addGovernment(government);
+    // Create tax system and assign government
+    TaxSystem taxSystem;
+    taxSystem.addGovernment(&gov);
 
-    // Create TaxType instance for income tax
-    std::shared_ptr<TaxType> incomeTax = std::make_shared<Income>(0.1); // Example rate: 10%
-    taxSystem->addTaxRate(incomeTax);
+    // Create TaxTypes
+    TaxType* incomeTax = new Income(0.1); // Assuming 10% income tax rate
+    TaxType* propertyTax = new Property(0.05, 0.5, 100.0); // Assuming 5% property tax rate, 50% exemption, and $100 minimum tax
+    TaxType* salesTax = new Sales(0.07,2,4); // Assuming 7% sales tax rate
+    taxSystem.addTaxRate(incomeTax);
+    taxSystem.addTaxRate(propertyTax);
+    taxSystem.addTaxRate(salesTax);
 
-    // Create ResidentialBuilding
-    std::shared_ptr<ResidentialBuilding> resBuilding = std::make_shared<ResidentialBuilding>("Sunset Apartments", 5000.0f, 10, 100, 80.0f,
-                                    2.0f, 1.5f, 50, 7.5f);
+    // Create Commercial Building
+    CommercialBuilding comBuilding("Downtown Plaza", 2000.0f, 20, 100, 80.0f, 0.0f, 0.0f, 20, 15.0f);
 
-    // Add the building to the tax system
-    taxSystem->addIncomeTaxBuilding(resBuilding);
+    // Create Business
+    Business* business = new Business(1000000, 0.1); // Revenue: 1,000,000, Tax Rate: 10%
+    comBuilding.setBusiness(business);
 
-    // Create Citizens
-    std::shared_ptr<Citizen> citizen1 = std::make_shared<FemaleCitizen>("Alice", 30, "Single", "Engineer");
-    std::shared_ptr<Citizen> citizen2 = std::make_shared<MaleCitizen>("Bob", 45, "Single", "Teacher");
+    // Collect income taxes first time
+    std::cout << "First income tax collection:\n";
+    taxSystem.collectTaxes(&comBuilding, 'I'); // 'I' for Income Tax
 
-    // Set income for citizens
-    citizen1->setIncome(50000.0); // Ensure income is set
-    citizen2->setIncome(60000.0); // Ensure income is set
+    // Collect property taxes immediately after income taxes
+    std::cout << "\nFirst property tax collection:\n";
+    taxSystem.collectTaxes(&comBuilding, 'P'); // 'P' for Property Tax
 
-    // Add residents to the building
-    resBuilding->addResidents(citizen1);
-    resBuilding->addResidents(citizen2);
+    // Collect sales taxes immediately after property taxes
+    std::cout << "\nFirst sales tax collection:\n";
+    taxSystem.collectTaxes(&comBuilding, 'S'); // 'S' for Sales Tax
 
-    // Simulate tax collection through the tax system
-    std::cout << "First tax collection:\n";
-    taxSystem->collectTaxes(resBuilding, 'I'); // 'I' for Income Tax
+    // Try to collect income taxes again immediately (business should be on cooldown)
+    std::cout << "\nAttempting to collect income taxes again immediately:\n";
+    taxSystem.collectTaxes(&comBuilding, 'I');
 
-    std::cout << "\nAttempting immediate second tax collection (should be on cooldown):\n";
-    taxSystem->collectTaxes(resBuilding, 'I'); // 'I' for Income Tax
-
-    // Wait for the cooldown period to expire (e.g., 60 seconds)
+    // Wait for cooldown to expire
     std::cout << "\nWaiting for cooldown to expire...\n";
-    std::this_thread::sleep_for(std::chrono::seconds(60));
+    std::this_thread::sleep_for(std::chrono::seconds(65)); // Wait longer than cooldown
 
-    std::cout << "\nAttempting tax collection after cooldown:\n";
-    taxSystem->collectTaxes(resBuilding, 'I'); // 'I' for Income Tax
+    // Collect income taxes again
+    std::cout << "\nCollecting income taxes after cooldown:\n";
+    taxSystem.collectTaxes(&comBuilding, 'I');
 
-    return 0; // Ensure main function returns an int
+    // Clean up
+    delete business;
+    delete incomeTax;
+    delete propertyTax;
+    delete salesTax;
+
+    return 0;
 }

@@ -47,51 +47,50 @@ void ResidentialBuilding::calculateSatisfactionImpact() {
 void ResidentialBuilding::construct() {
     std::cout << "============================================================\n";
     std::cout << "Constructing Residential Building: " << name << std::endl;
-    std::cout << "Area: " << area << "\nFloors: " << floors << "\nCapacity: " << capacity << std::endl;
-    std::cout << "Residential Units: " << residentialUnits << "\nComfort Level: " << comfortLevel << std::endl;
-    std::cout << "============================================================\n";
+ std::cout << "Area: " << area << "\nFloors: " << floors << "\nCapacity: " << capacity << std::endl;
+std::cout << "Residential Units: " << residentialUnits << "\nComfort Level: " << comfortLevel << std::endl;
+std::cout << "============================================================\n";
 }
 
 // Pay Taxes for the Building
+// Update the ResidentialBuilding::payTaxes method:
 double ResidentialBuilding::payTaxes(TaxType* taxType) {
-    double totalTax = 0.0;
-
-    std::cout << "Collecting taxes from Residential Building: " << name << "\n";
-
+     double totalIncomeTax = 0.0;
+     double totalPropertyTax = 0.0;
+    if (taxType->getTaxType() =='I'){
+           std::cout << "Collecting Income taxes from Residential Building: " << name << "\n";
     for (const auto& citizen : residents) {
-        totalTax += citizen->payTaxes(taxType);
+        double citizenTax = citizen->payTaxes(taxType);
+        totalIncomeTax += citizenTax;
     }
-
-    if (totalTax > 0.0) {
-        std::cout << "Total taxes collected from building " << name << ": $" << totalTax << "\n";
-    } else {
-        std::cout << "No taxes collected from building " << name << " (possibly on cooldown).\n";
+    std::cout << "Total Income taxes collected from building " << name << ": $" << totalIncomeTax << "\n"; 
+    }else if (taxType->getTaxType() =='P'){
+       std::cout << "Collecting Property taxes from Residential Building: " << name << "\n";
+    for (const auto& citizen : residents) {
+        double citizenTax = citizen->payTaxes(taxType);
+        totalPropertyTax += citizenTax;
     }
-
-    return totalTax;
+    std::cout << "Total Property taxes collected from building " << name << ": $" << totalPropertyTax << "\n";
+    }else{
+        std::cout << "cannot collect taxes of this type\n";
+    }
+    totalTaxCollected += totalIncomeTax+totalPropertyTax;
+    return totalTaxCollected;
 }
-
 // Calculate Property Tax
 double ResidentialBuilding::calculatePropertyTax() {
     propertyTax = residentialUnits * 0.1f;
     return propertyTax;
 }
 
-// Calculate Household Income
-double ResidentialBuilding::calculateHouseholdIncome() {
-    householdIncome = residentialUnits * 1000.0f;
-    return householdIncome;
-}
-
 // Add Residents to the Building
-void ResidentialBuilding::addResidents(std::shared_ptr<Citizen> citizen) {
+void ResidentialBuilding::addResidents(Citizen* citizen) {
     residents.push_back(citizen);
 }
 
 // Undo Collecting Taxes from the Building
 void ResidentialBuilding::undoCollectTaxes() {
     propertyTax = 0;
-    householdIncome = 0;
 }
 
 // Get Residential Units

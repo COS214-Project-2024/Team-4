@@ -33,3 +33,4 @@ double Sales::calculateTax(double saleAmount) {
     // Total tax includes base tax, environmental levy, and fixed service fee
     return baseTax + levyAmount + serviceFee;
 }
+

@@ -23,8 +23,7 @@ public:
     void construct() override;
     double payTaxes(TaxType* taxType) override;
     double calculatePropertyTax();
-    double calculateHouseholdIncome();
-    void addResidents(std::shared_ptr<Citizen> citizen);
+    void addResidents(Citizen* citizen);
     void undoCollectTaxes();
     int getResidentialUnits() const;
 
@@ -32,17 +31,17 @@ private:
     int residentialUnits;
     float comfortLevel;
     std::string bType;
-    std::vector<std::shared_ptr<Citizen>> residents;
+    double totalTaxCollected;
     double propertyTax;
-    double householdIncome;
-
+    double totalPropertyTaxCollected;
+    double totalIncomeRaxCollected;
 
 protected:
-	void calculateEconomicImpact();
+    void calculateEconomicImpact() override;
+    void calculateResourceConsumption() override;
+    void calculateSatisfactionImpact() override; 
+     std::vector<Citizen*> residents;   
 
-	void calculateResourceConsumption();
-
-	void calculateSatisfactionImpact();
 };
 
 #endif // RESIDENTIALBUILDING_H

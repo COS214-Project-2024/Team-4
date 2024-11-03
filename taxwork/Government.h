@@ -10,7 +10,7 @@
 #include "Policy.h"
 #include "GovObserver.h"
 
-class Government : public std::enable_shared_from_this<Government> {
+class Government {
 public:
     Government(std::string name);
     void setTax(double rate);
@@ -20,18 +20,19 @@ public:
     void notifyServices();
     void allocateBudget(CityService& service, double amount);
     void revertBudgetAllocation(CityService& service, double amount);
-    void enforcePolicy(std::shared_ptr<Policy> policy);
+    void enforcePolicy(Policy* policy);
     void update(int newPopulation);
     void refundTaxes(double amount);
-    void registerObserver(std::shared_ptr<GovObserver> observer);
-    void unregisterObserver(std::shared_ptr<GovObserver> observer);
+    void registerObserver(GovObserver* observer);
+    void unregisterObserver(GovObserver* observer);
     void notifyObservers();
+    void addTaxesToBudget(double amount);
 
 private:
     std::string governmentName;
     double taxRate;
     double budget;
-    std::vector<std::shared_ptr<GovObserver>> observers;
+    std::vector<GovObserver*> observers;
 };
 
 #endif // GOVERNMENT_H

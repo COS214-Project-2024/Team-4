@@ -16,3 +16,8 @@ void TaxType::setTax(double rate) {
 double TaxType::getTaxRate() {
 	return taxRate;
 }
+
+char TaxType::getTaxType() {
+	return cType;
+}
+

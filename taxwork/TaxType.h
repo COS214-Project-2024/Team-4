@@ -15,6 +15,7 @@ public:
 	virtual double calculateTax(double val)=0;
 	virtual void setTax(double rate);
 	virtual double getTaxRate();
+	char getTaxType();
 };
 
 #endif
