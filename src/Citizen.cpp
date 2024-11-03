@@ -1,76 +1,28 @@
 // Citizen.cpp
 
-
 #include "Citizen.h"
-#include "CitizenObserver.h"
 #include <algorithm>
 #include <iostream>
+#include "BuildingManager.h"
+#include "SatisfiedState.h"
+#include "UnsatisfiedState.h"
 #include "LeavingCityState.h"
-#include "TaxType.h" // Ensure TaxType is included
-#include <thread>    // For sleep (if needed in testing)
-#include <chrono>
+#include "SatisfactionStrategy.h"
+#include "Building.h"
 
 template <typename T>
 T clamp(T value, T min, T max) {
-    if (value < min) return min;
-    if (value > max) return max;
-    return value;
+    return std::max(min, std::min(value, max));
 }
-Citizen::Citizen(const std::string& name, int age, const std::string& resStatus, const std::string& jobTitle)
-    : name(name),                 // Initializes 'name' (declared first)
-      age(age),                   // Initializes 'age'
-      satisfaction(50.0f),        // Initializes 'satisfaction'
-      jobTitle(jobTitle),         // Initializes 'jobTitle'
-      resStatus(resStatus),       // Initializes 'resStatus'
-      relationshipStatus("Single"),
-      marriageDuration(0),
-      numChildren(0),
-      maritalStatus(false),
-      health(true),
-      bankBalance(0.0),
-      educationLevel("None"),
-      income(0.0),
-      currentState(nullptr),
-      taxRate(0.1),
-      housingComfortLevel(5.0f),
-      employed(false),
-      taxCooldown(false),
-      lastTaxPayment(std::chrono::steady_clock::now() - taxCooldownPeriod)
-{
-    // Constructor body (if needed)
-}
+
+Citizen::Citizen(const std::string& name, int age) 
+    : name(name), age(age), satisfaction(50.0f), currentState(nullptr) {}
 
 Citizen::~Citizen() {
-    delete currentState;
-}
-
-void Citizen::setState(CitizenState* newState) {
-    if (currentState) {
+    if (currentState != nullptr) {
         delete currentState;
+        currentState = nullptr;
     }
-    currentState = newState;
-    notifyObservers();  // Notify observers of the state change
-}
-
-void Citizen::applyState() {
-    if (currentState) {
-        currentState->handleState(*this);
-        notifyObservers();  // Notify observers after applying the state
-    }
-}
-
-void Citizen::updateSatisfaction(float adjustment) {
-    // Adjust satisfaction with clamping between 0 and 100
-    satisfaction = ::clamp<float>(satisfaction + adjustment, 0.0f, 100.0f);
-    notifyObservers();  // Notify observers that satisfaction has changed
-}
-
-float Citizen::getSatisfactionLevel() const {
-    return satisfaction;
-}
-
-std::shared_ptr<Citizen> Citizen::clone() const {
-    return nullptr; // Placeholder, each subclass should implement this.
 }
 
 // Observer management
@@ -78,8 +30,30 @@ void Citizen::addObserver(CitizenObserver* observer) {
     observers.push_back(observer);
 }
 
+float Citizen::getTaxRate() const {
+    return taxRate;
+}
+
+void Citizen::setTaxRate(float rate) {
+    taxRate = rate;
+}
+
+void Citizen::checkAndUpdateState() {
+    if (satisfaction < 20.0f) {
+        setState(new UnsatisfiedState());
+    } else if (satisfaction >= 80.0f) {
+        setState(new SatisfiedState());
+    } else if (satisfaction == 0.0f) {
+        setState(new LeavingCityState());
+    }
+}
+
 void Citizen::removeObserver(CitizenObserver* observer) {
     observers.erase(std::remove(observers.begin(), observers.end(), observer), observers.end());
+}
+
+void Citizen::detachAllObservers(){
+     observers.clear();
 }
 
 void Citizen::notifyObservers() {
@@ -88,235 +62,91 @@ void Citizen::notifyObservers() {
     }
 }
 
-// Update methods
-void Citizen::updateJobSatisfaction() {
-    // Update job satisfaction logic here
-    notifyObservers();
-}
-
-void Citizen::updateMaritalStatus(bool status) {
-    maritalStatus = status;
-    notifyObservers();
-}
-
-void Citizen::updateTaxRate(double rate) {
-    (void)rate; // Suppress unused parameter warning
-    // Apply the tax rate change to the citizen's financial state
-    // Possibly adjust bank balance or satisfaction
-    notifyObservers();
-}
-
-void Citizen::updateHealth(bool status) {
-    health = status;
-    notifyObservers();
-}
-
-void Citizen::updateTaxRatePolicy(const Policy& policy) {
-    (void)policy; // Suppress unused parameter warning
-    // Respond to tax policy change by adjusting tax-related satisfaction or bank balance
-    notifyObservers();
-}
-
-void Citizen::updateResService(const CityService& service) {
-    (void)service; // Suppress unused parameter warning
-    // Adjust satisfaction or other attributes based on service provided
-    notifyObservers();
-}
-
-void Citizen::changeTaxRate(double rate) {
-    (void)rate; // Suppress unused parameter warning
-    // Logic to directly change the tax rate
-    notifyObservers();
-}
-
-void Citizen::updateEducationLevel(const std::string& level) {
-    educationLevel = level;
-    notifyObservers();
-}
-
-void Citizen::updateHealthStatus(bool status) {
-    health = status;
-    notifyObservers();
-}
-
-void Citizen::updateHousingSatisfaction(bool satisfaction) {
-    housingSatisfaction = satisfaction;
-    notifyObservers();
-}
-
-void Citizen::updateBankBalance(double amount) {
-    bankBalance += amount;
-    notifyObservers();
-}
-
-void Citizen::updateService(const CityService* service) {
-    (void)service; // Suppress unused parameter warning
-    // Logic to update citizen based on service provided
-    notifyObservers();
-}
-
-void Citizen::updatePolicy(const Policy* policy) {
-    (void)policy; // Suppress unused parameter warning
-    // Logic to update citizen based on policy change
-    notifyObservers();
-}
-
-// Getters
-int Citizen::getAge() const {
-    return age;
-}
-
-std::string Citizen::getName() const {
-    return name;
-}
-
-std::string Citizen::getJob() const {
-    return jobTitle;
-}
-
-bool Citizen::getHealth() const {
-    return health;
-}
-
-bool Citizen::getMaritalStatus() const {
-    return maritalStatus;
-}
-
-std::string Citizen::getResStatus() const {
-    return resStatus;
-}
-
-std::string Citizen::getJobStatus() const {
-    return jobTitle;
-}
-
-double Citizen::getBankBalance() const {
-    return bankBalance;
-}
-
-// Relationship methods
-std::string Citizen::getRelationshipStatus() const {
-    return relationshipStatus;
-}
-
-void Citizen::setRelationshipStatus(const std::string& status) {
-    relationshipStatus = status;
-    notifyObservers();
-}
-
-void Citizen::incrementMarriageDuration() {
-    if (relationshipStatus == "Married") {
-        ++marriageDuration;
+// Update satisfaction based on all strategies
+void Citizen::updateSatisfaction() {
+    float totalSatisfaction = 0.0f;
+    for (const auto& strategy : satisfactionStrategies) {
+        totalSatisfaction += strategy->calculateSatisfaction(*this);
     }
+    satisfaction = clamp(totalSatisfaction / satisfactionStrategies.size(), 0.0f, 100.0f);
 }
 
-void Citizen::resetMarriageDuration() {
-    marriageDuration = 0;
+void Citizen::updateSatisfaction(float adjustment) {
+    satisfaction = (satisfaction + adjustment > 100.0f) ? 100.0f : (satisfaction + adjustment < 0.0f) ? 0.0f : satisfaction + adjustment;
+    std::cout << name << "'s updated satisfaction: " << satisfaction << std::endl;
 }
 
-int Citizen::getMarriageDuration() const {
-    return marriageDuration;
+// State management
+void Citizen::setState(CitizenState* newState) {
+    // Delete the existing state to avoid memory leaks
+    if (currentState != nullptr) {
+        delete currentState;
+        currentState = nullptr;
+    }
+
+    // Assign the new state
+    currentState = newState;
 }
 
-void Citizen::addChild() {
-    ++numChildren;
-    notifyObservers();  // Notify observers of the new child
-}
+// Age management
+int Citizen::getAge() const { return age; }
+void Citizen::incrementAge() { ++age; }
 
-int Citizen::getNumChildren() const {
-    return numChildren;
-}
-
-void Citizen::setJobTitle(const std::string& title) {
-    jobTitle = title;
-}
-
-void Citizen::displayInfo() const {
-    std::cout << "Name: " << name << ", Age: " << age
-              << ", Job: " << jobTitle << std::endl;
-}
-
-bool Citizen::isLeaving() const {
-    return dynamic_cast<LeavingCityState*>(currentState) != nullptr;
-}
-
+// Satisfaction Strategy management
 void Citizen::addSatisfactionStrategy(std::shared_ptr<SatisfactionStrategy> strategy) {
     satisfactionStrategies.push_back(strategy);
 }
 
-void Citizen::updateSatisfaction() {
-    float totalSatisfaction = 0.0;
-    for (const auto& strategy : satisfactionStrategies) {
-        totalSatisfaction += strategy->calculateSatisfaction(*this);
-    }
-    // Average satisfaction score if multiple strategies are used
-    satisfaction = totalSatisfaction / satisfactionStrategies.size();
-    std::cout << name << "'s updated satisfaction: " << satisfaction << std::endl;
+void Citizen::removeSatisfactionStrategy() {
+    satisfactionStrategies.clear();
+}
+// Relationship management
+std::string Citizen::getRelationshipStatus() const { return relationshipStatus; }
+void Citizen::setRelationshipStatus(const std::string& status) { relationshipStatus = status; }
+int Citizen::getMarriageDuration() const { return marriageDuration; }
+void Citizen::resetMarriageDuration() { marriageDuration = 0; }
+void Citizen::incrementMarriageDuration() { ++marriageDuration; }
+void Citizen::addChild() {
+    // Placeholder for adding a child (could be linked to PopulationManager if needed)
+    std::cout << name << " has a new child.\n";
 }
 
-
-bool Citizen::isOnCooldown() const {
-    if (!taxCooldown) {
-        return false;
+// Monthly income deposit
+void Citizen::depositMonthlyIncome() {
+    if (income) {
+        double monthlyIncome = income->calculateMonthlyIncome();
+        bankBalance += monthlyIncome;
+        std::cout << name << " received income: " << monthlyIncome << ". New bank balance: " << bankBalance << std::endl;
     }
-    auto now = std::chrono::steady_clock::now();
-    auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(now - lastTaxPayment);
-    std::cout << "Elapsed time since last tax payment for " << name << ": " << elapsed.count() << " seconds\n";
-    return elapsed < taxCooldownPeriod;
 }
 
-double Citizen::payTaxes(TaxType* taxType) {
-    auto now = std::chrono::steady_clock::now();
-    if (isOnCooldown()) {
-        std::cout << "Citizen " << name << " is on cooldown. Taxes cannot be collected now.\n";
-        return 0.0;
-    }
+// Search and apply for a job
+void Citizen::searchAndApplyForJob(BuildingManager& manager, Building* building, std::string jobtitle) {
+    bool foundjob = manager.assignJobToCitizen(jobtitle, this, building);
 
-    double tax = taxType->calculateTax(income);
-    tax = ::clamp(tax, 0.0, bankBalance);
+    if (foundjob) {
+        // Set the job title to the newly assigned job
+        this->jobTitle = jobtitle;
 
-    if (tax > 0.0) {
-        bankBalance -= tax;
-        taxCooldown = true;
-        lastTaxPayment = now;
-        std::cout << "Collected $" << tax << " in taxes from " << name << ".\n";
-        return tax;
+        // Notify observers about the job assignment
+        notifyObservers();
+
+        // Update satisfaction after getting a job
+        updateSatisfaction();
+
+        std::cout << name << " found a job as " << jobtitle 
+                  << " with monthly income: " << income->calculateMonthlyIncome() << std::endl;
     } else {
-        std::cout << "Citizen " << name << " has insufficient funds to pay taxes.\n";
-        return 0.0;
+        std::cout << name << " could not find a job as " << jobtitle << "." << std::endl;
     }
 }
 
-// Tax-related methods
-void Citizen::setTaxRate(double rate) {
-    taxRate = rate;
-}
+// Getters
+std::string Citizen::getName() const { return name; }
+float Citizen::getSatisfactionLevel() const { return satisfaction; }
+bool Citizen::isLeaving() const { return satisfaction == 0; }
 
-double Citizen::calculateTax() {
-    return income * taxRate;
-}
-
-void Citizen::setIncome(double income) {
-    this->income = income;
-}
-
-
-
-
-
-
-double Citizen::getIncome() const {
-    return income;
-}
-
-bool Citizen::canPayTax() const {
-    return !taxCooldown && bankBalance > 0;
-}
-
-void Citizen::setTaxCooldown(bool status) {
-    taxCooldown = status;
-}
-
-bool Citizen::getTaxCooldown() const {
-    return taxCooldown;
+// Setters
+void Citizen::setIncome(std::shared_ptr<Income> inc) {
+    income = inc;
 }

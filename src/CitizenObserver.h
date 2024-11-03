@@ -1,17 +1,15 @@
-// CitizenObserver.h
+#ifndef CITIZEN_OBSERVER_H
+#define CITIZEN_OBSERVER_H
 
-#ifndef CITIZENOBSERVER_H
-#define CITIZENOBSERVER_H
-
-class Citizen;
+class Citizen; // Forward declaration
 
 class CitizenObserver {
 public:
-    virtual void update(Citizen* citizen) = 0; // Pure virtual function to respond to citizen updates
     virtual ~CitizenObserver() = default;
+    virtual void update(Citizen* citizen) = 0; // Abstract update method
 };
 
-#endif // CITIZENOBSERVER_H
+#endif // CITIZEN_OBSERVER_H
 
 
 

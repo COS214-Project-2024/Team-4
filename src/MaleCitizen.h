@@ -1,20 +1,21 @@
-// MaleCitizen.h
-
-#ifndef MALECITIZEN_H
-#define MALECITIZEN_H
+#ifndef MALE_CITIZEN_H
+#define MALE_CITIZEN_H
 
 #include "Citizen.h"
+#include <memory>
 
 class MaleCitizen : public Citizen {
 public:
-    MaleCitizen(const std::string& name = "John Doe", int age = 30,
-                const std::string& relationshipStatus = "Single", const std::string& jobStatus = "Unemployed");
+    MaleCitizen(const std::string& name, int age) : Citizen(name, age) {}
 
-    // Override clone to return a copy of MaleCitizen
-    std::shared_ptr<Citizen> clone() const override;
+    // Implement clone method
+    std::shared_ptr<Citizen> clone() const override {
+        return std::make_shared<MaleCitizen>(*this);
+    }
 };
 
-#endif // MALECITIZEN_H
+#endif // MALE_CITIZEN_H
+
 
 
 

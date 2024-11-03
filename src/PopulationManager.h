@@ -1,7 +1,6 @@
 #ifndef POPULATIONMANAGER_H
 #define POPULATIONMANAGER_H
 
-#include "CitizenObserver.h"
 #include <vector>
 #include <memory>
 #include <atomic>
@@ -10,41 +9,31 @@
 #include "JobSatisfactionStrategy.h"
 #include "HousingSatisfactionStrategy.h"
 
-class PopulationManager : public CitizenObserver {
+class PopulationManager {
 private:
     std::vector<std::shared_ptr<Citizen>> citizens;
     std::atomic<bool> programRunning;   // Atomic flag for program status
-    std::mutex citizenMutex; 
+    std::mutex citizenMutex;            // Mutex for thread-safe access to citizens
     std::shared_ptr<JobSatisfactionStrategy> jobSatisfaction;
-    std::shared_ptr<HousingSatisfactionStrategy> housingSatisfaction;            // Mutex for thread-safe access to citizens
+    std::shared_ptr<HousingSatisfactionStrategy> housingSatisfaction;
 
 public:
     PopulationManager();
-    void updateCitizensAge();
-    void addCitizen(std::shared_ptr<Citizen> citizen);
-    void update(Citizen* citizen) override;              // Responds to Citizen state changes
-    void checkCitizenStates();                           // Periodic state updater
-    void simulatePopulationGrowth();                     // Simulate random growth
-    void removeLeavingCitizens();                        // Remove citizens in LeavingCityState
-    void manageRelationships();
-    int getPopulation();  // Removed `const` to allow locking
+    void findJobsForUnemployedCitizens(BuildingManager& buildingManager);
+    void updateCitizensAge();                   // Increment ages
+    void addCitizen(std::shared_ptr<Citizen> citizen); // Add citizen to population
+    void checkCitizenStates();                  // Periodic state updater
+    void simulatePopulationGrowth();            // Simulate random growth
+    void removeLeavingCitizens();               // Remove citizens in LeavingCityState
+    void manageRelationships();                 // Relationship management
+    int getPopulation();                        // Get current population count
     const std::vector<std::shared_ptr<Citizen>>& getCitizens() const;
-    // Thread management for relationship and satisfaction updates
-    void startRelationshipManager();
-    void stopRelationshipManager();
-    void startSatisfactionUpdater();
-    void stopSatisfactionUpdater();
-    void updateCitizensSatisfaction();
-    
+
+    void updateCitizensSatisfaction();          // Central satisfaction update loop
+
 private:
-    void addRandomCitizen();                             // Add citizen randomly
-    void removeRandomCitizen();                          // Remove citizen randomly
+    void addRandomCitizen();                    // Add citizen randomly
+    void removeRandomCitizen();                 // Remove citizen randomly
 };
 
 #endif // POPULATIONMANAGER_H
-
-
-
-
-
-

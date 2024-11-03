@@ -1,7 +1,10 @@
 #include "UnsatisfiedState.h"
 #include "Citizen.h"
+#include <algorithm>
 
 void UnsatisfiedState::handleState(Citizen& citizen) const {
     // Lower satisfaction
-    citizen.updateSatisfaction(citizen.getSatisfactionLevel() - 10.0);
+    double newSatisfaction = std::clamp(citizen.getSatisfactionLevel() - 50.0, 0.0, 100.0);
+    citizen.setSatisfactionLevel(newSatisfaction);  // Use this if setSatisfactionLevel is added
+    
 }
