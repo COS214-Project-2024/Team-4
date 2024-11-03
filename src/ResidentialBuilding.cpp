@@ -48,6 +48,17 @@ void ResidentialBuilding::construct() {
     std::cout << "Residential Units: " << residentialUnits << "\nComfort Level: " << comfortLevel << std::endl;
 std::cout<<"============================================================\n";
 }
+double ResidentialBuilding::payTaxes(TaxType* taxType) {
+    double totalTax = 0.0;
+    std::cout << "Collecting taxes from Residential Building: " << name << "\n";
+    for (const auto& citizen : residents) {
+        double citizenTax = citizen->payTaxes(taxType);
+        totalTax += citizenTax;
+    }
+    std::cout << "Total taxes collected from building " << name << ": $" << totalTax << "\n";
+    totalTaxCollected += totalTax;
+    return totalTax;
+}
 
 
 //! below is Neo's code waiting for @abdulrasaqzainab to approve and the citizen class
