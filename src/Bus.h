@@ -8,6 +8,10 @@
 #include "ComercialAirport.h"
 #include "PassengerTrain.h"
 
+class InsideRoad;
+class ComercialAirport;
+class PassengerTrain;
+
 class Bus : public PublicTransit {
     private:
 
@@ -31,7 +35,7 @@ class Bus : public PublicTransit {
         PassengerTrain *getPassengerTrain(std::size_t x);
         int getBusNumber();
         int getCapacity();
-        std::string getRoute();
+        std::string getRouteName();
 
 };
 
