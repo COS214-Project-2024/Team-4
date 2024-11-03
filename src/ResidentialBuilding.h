@@ -32,6 +32,7 @@ public:
     //void addResident(Citizen* citizen);  
 	//void removeResident(Citizen* citizen);  // Optional: For flexibility in managing residents
     float calculateTotalResourceDemand() const;  // Calculate total demand based on residents
+ double payTaxes(TaxType* taxType) override;
 
 
 protected:
