@@ -1,5 +1,5 @@
-#ifndef WATERSUPPLY _H
-#define WATERSUPPLY _H
+#ifndef WATERSUPPLY_H
+#define WATERSUPPLY_H
 
 #include "Utility.h"
 
@@ -10,7 +10,8 @@ public:
 
 	void registerBuilding(Building* building) override;
     void supplyResources(Building* building) override;
-    void adjustForCitizen(Citizen* citizen) override;
+    void adjustForPopulation(int newPopulation) override;
+    //void adjustForCitizen(Citizen* citizen) override;
 };
 
 #endif

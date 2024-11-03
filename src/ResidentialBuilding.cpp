@@ -1,6 +1,9 @@
-#include "ResidentialBuilding.h"
+// ResidentialBuilding.cpp
 
-//constructor
+#include "ResidentialBuilding.h"
+#include <iostream>
+
+// Constructor
 ResidentialBuilding::ResidentialBuilding(const std::string& name, float area, int floors,
                                          int capacity, float citizenSatisfaction,
                                          float economicGrowth, float resourceConsumption,
@@ -8,64 +11,89 @@ ResidentialBuilding::ResidentialBuilding(const std::string& name, float area, in
     : Building(name, area, floors, capacity, citizenSatisfaction, economicGrowth, resourceConsumption),
       residentialUnits(residentialUnits), comfortLevel(comfortLevel), bType("Residential") {}
 
-
-//get type of building
-string ResidentialBuilding::getType() const{
-	return bType;
+// Get Type of Building
+std::string ResidentialBuilding::getType() const {
+    return bType;
 }
 
-//update impacts by calculating economic impact, resource consumption and satisfaction impact
+// Update Impacts
 void ResidentialBuilding::updateImpacts() {
-	calculateEconomicImpact();
+    calculateEconomicImpact();
     calculateResourceConsumption();
     calculateSatisfactionImpact();
 }
 
-//upgrade comfort level of the building
+// Upgrade Comfort Level
 void ResidentialBuilding::upgradeComfort(float comfort) {
-	comfortLevel += comfort;
+    comfortLevel += comfort;
 }
 
-//calculate economic impact of the building
+// Calculate Economic Impact
 void ResidentialBuilding::calculateEconomicImpact() {
-	 economicGrowth = residentialUnits * comfortLevel * 0.5f;
+    economicGrowth = residentialUnits * comfortLevel * 0.5f;
 }
 
-//calculate resource consumption of the building
+// Calculate Resource Consumption
 void ResidentialBuilding::calculateResourceConsumption() {
-	resourceConsumption = residentialUnits * 0.05f;
+    resourceConsumption = residentialUnits * 0.05f;
 }
 
-//calculate satisfaction impact of the building
+// Calculate Satisfaction Impact
 void ResidentialBuilding::calculateSatisfactionImpact() {
-	citizenSatisfaction = comfortLevel * 0.2f;
+    citizenSatisfaction = comfortLevel * 0.2f;
 }
 
+// Construct Building
 void ResidentialBuilding::construct() {
-  std::cout<<"============================================================\n";
-	  std::cout << "Constructing Residential Building: " << name << std::endl;
-    std::cout << "Area: " << area << "\nFloors: " << floors << "\nCapacity: " << capacity << std::endl;
-    std::cout << "Residential Units: " << residentialUnits << "\nComfort Level: " << comfortLevel << std::endl;
-std::cout<<"============================================================\n";
+    std::cout << "============================================================\n";
+    std::cout << "Constructing Residential Building: " << name << std::endl;
+ std::cout << "Area: " << area << "\nFloors: " << floors << "\nCapacity: " << capacity << std::endl;
+std::cout << "Residential Units: " << residentialUnits << "\nComfort Level: " << comfortLevel << std::endl;
+std::cout << "============================================================\n";
 }
 
+// Pay Taxes for the Building
+// Update the ResidentialBuilding::payTaxes method:
+double ResidentialBuilding::payTaxes(TaxType* taxType) {
+     double totalIncomeTax = 0.0;
+     double totalPropertyTax = 0.0;
+    if (taxType->getTaxType() =='I'){
+           std::cout << "Collecting Income taxes from Residential Building: " << name << "\n";
+    for (const auto& citizen : residents) {
+        double citizenTax = citizen->payTaxes(taxType);
+        totalIncomeTax += citizenTax;
+    }
+    std::cout << "Total Income taxes collected from building " << name << ": $" << totalIncomeTax << "\n"; 
+    }else if (taxType->getTaxType() =='P'){
+       std::cout << "Collecting Property taxes from Residential Building: " << name << "\n";
+    for (const auto& citizen : residents) {
+        double citizenTax = citizen->payTaxes(taxType);
+        totalPropertyTax += citizenTax;
+    }
+    std::cout << "Total Property taxes collected from building " << name << ": $" << totalPropertyTax << "\n";
+    }else{
+        std::cout << "cannot collect taxes of this type\n";
+    }
+    totalTaxCollected += totalIncomeTax+totalPropertyTax;
+    return totalTaxCollected;
+}
+// Calculate Property Tax
+double ResidentialBuilding::calculatePropertyTax() {
+    propertyTax = residentialUnits * 0.1f;
+    return propertyTax;
+}
 
-//! below is Neo's code waiting for @abdulrasaqzainab to approve and the citizen class
-// // Adds a resident to the building
-// void ResidentialBuilding::addResident(Citizen* citizen) {
-//     residents.push_back(citizen);
-// }
+// Add Residents to the Building
+void ResidentialBuilding::addResidents(Citizen* citizen) {
+    residents.push_back(citizen);
+}
 
-// // Optional: Removes a resident from the building if needed
-// void ResidentialBuilding::removeResident(Citizen* citizen) {
-//     residents.erase(std::remove(residents.begin(), residents.end(), citizen), residents.end());
-// }
+// Undo Collecting Taxes from the Building
+void ResidentialBuilding::undoCollectTaxes() {
+    propertyTax = 0;
+}
 
-// Calculate total resource demand based on all residents
-// float ResidentialBuilding::calculateTotalResourceDemand() const {
-//     float totalDemand = 0.0f;
-//     for (const Citizen* citizen : residents) {
-//         totalDemand += citizen->getResourceUsage();  // Assuming getResourceUsage() returns the citizen's resource needs
-//     }
-//     return totalDemand;
-// }
+// Get Residential Units
+int ResidentialBuilding::getResidentialUnits() const {
+    return residentialUnits;
+}

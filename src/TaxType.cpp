@@ -1,11 +1,23 @@
 #include "TaxType.h"
 
-void TaxType::calculateTax() {
-	// TODO - implement TaxType::calculateTax
-	throw "Not yet implemented";
+TaxType::TaxType(double rate, char type) {
+this->taxRate = rate;
+this->cType = type;
+}
+
+double TaxType::calculateTax(double val) {
+return val * taxRate;
 }
 
 void TaxType::setTax(double rate) {
-	// TODO - implement TaxType::setTax
-	throw "Not yet implemented";
+	this->taxRate = rate;
 }
+
+double TaxType::getTaxRate() {
+	return taxRate;
+}
+
+char TaxType::getTaxType() {
+	return cType;
+}
+

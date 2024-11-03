@@ -86,3 +86,21 @@ void Building::listJobs() const {
         job.displayJobInfo();  // Only display job information here
     }
 }
+
+//collect taxes from the building
+double Building::payTaxes(TaxType* taxType) {
+	// Placeholder for tax collection logic
+    taxType->calculateTax(0.0);
+    return 0.0;
+}
+
+//undo collecting taxes from the building
+void Building::undoCollectTaxes() {
+	// Placeholder for undoing tax collection logic
+}
+
+
+//set tax rate for occupants in the building
+// void Building::setTaxRate(double rate) {
+//     // Placeholder for setting tax rate logic
+// }

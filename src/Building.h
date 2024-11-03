@@ -5,6 +5,7 @@
 #include<vector>
 #include<algorithm>
 #include "Jobs.h"
+#include "TaxType.h"
 using namespace std;    
 
 
@@ -49,6 +50,16 @@ public:
 	void displayJobInfo(const std::string& jobTitle) const; // Displays job information
     // Accessor for job list, for use by BuildingManager
     std::vector<Jobs>& getJobs();
+
+	// Collect taxes from the building
+	virtual double payTaxes(TaxType* taxType) = 0;
+
+	// Undo collecting taxes from the building
+	virtual void undoCollectTaxes() = 0;
+
+	//set tax rate for occupants in the building
+	//virtual void setTaxRate(double rate) = 0;
+
 protected:
 	Building(int Builder);
 

@@ -1,18 +1,18 @@
+// BuildingManager.cpp
+
 #include "BuildingManager.h"
 #include <iostream>
-#include <algorithm>
 
-// Adds a building to the list of managed buildings
+namespace YourNamespace {
+
 void BuildingManager::addBuilding(Building* building) {
     buildings.push_back(building);
 }
 
-// Adds a citizen to the list of managed citizens
 void BuildingManager::addCitizen(Citizen* citizen) {
     citizens.push_back(citizen);
 }
 
-// Assigns a job to a citizen if the job is available in the specified building
 bool BuildingManager::assignJobToCitizen(const std::string& jobTitle, Citizen* citizen, Building* building) {
     // Search for the job in the building
     for (Jobs& job : building->getJobs()) {
@@ -29,7 +29,6 @@ bool BuildingManager::assignJobToCitizen(const std::string& jobTitle, Citizen* c
     return false;
 }
 
-// Releases a citizen from their job by updating both the citizen and the job's state
 void BuildingManager::releaseCitizenFromJob(Citizen* citizen) {
     for (Building* building : buildings) {
         for (Jobs& job : building->getJobs()) {
@@ -44,8 +43,24 @@ void BuildingManager::releaseCitizenFromJob(Citizen* citizen) {
     std::cout << citizen->getName() << " does not have an assigned job." << std::endl;
 }
 
-// Lists all jobs in the specified building
 void BuildingManager::listAllJobsInBuilding(const Building* building) const {
     std::cout << "Jobs in " << building->getName() << ":\n";
     building->listJobs();
 }
+
+// double BuildingManager::collectAllTaxes() {
+//     double totalTax = 0.0;
+//     for (Building* building : buildings) {
+//         std::string type = building->getType();
+//         if (type == "Government") {
+//             std::cout << "Government building does not collect taxes" << std::endl;
+//         } else if (type == "Residential" || type == "Commercial" || type == "Industrial") {
+//             totalTax += building->payTaxes();
+//         } else {
+//             std::cout << "Building type cannot be taxed" << std::endl;
+//         }
+//     }
+//     return totalTax;
+// }
+
+} // namespace YourNamespace

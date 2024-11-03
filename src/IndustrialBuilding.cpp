@@ -57,3 +57,15 @@ void IndustrialBuilding::construct() {
     
 std::cout<<"============================================================\n";
 }
+
+//pay taxes for the building
+double IndustrialBuilding::payTaxes(TaxType* taxType) {
+	double tax = economicGrowth * taxType->getTaxRate();
+	std::cout << "Collected taxes from Industrial Building: " << name << " - Amount: " << tax << std::endl;
+	return tax;
+}
+
+//undo collecting taxes from the building
+void IndustrialBuilding::undoCollectTaxes() {
+	std::cout << "Undoing tax collection from Industrial Building: " << name << std::endl;
+}
