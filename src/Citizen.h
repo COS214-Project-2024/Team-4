@@ -130,6 +130,23 @@ bool employed = false;
     bool isEmployed() const { return job != nullptr; }
 
     void setIncome(std::shared_ptr<Income> income);  // Sets the citizen's income
+
+    // Tax payment methods
+    void setTaxRate(double rate);
+    double calculateTax();
+    double getIncome() const;
+    void setIncome(double income);
+    double payTaxes(TaxType* taxType);
+    bool canPayTax() const;
+    void setTaxCooldown(bool status);
+    bool getTaxCooldown() const;
+
+
+// Cooldown Mechanism
+bool taxCooldown;
+std::chrono::steady_clock::time_point lastTaxPayment;
+static constexpr std::chrono::seconds taxCooldownPeriod{60}; // Cooldown period of 60 seconds
+
 };
 
 #endif // CITIZEN_H
