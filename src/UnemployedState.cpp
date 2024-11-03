@@ -1,6 +1,6 @@
 #include "UnemployedState.h"
 #include "Citizen.h"
-#include <algorithm>
+
 
 void UnemployedState::handleState(Citizen& citizen) const {
     // Decrease satisfaction due to unemployment

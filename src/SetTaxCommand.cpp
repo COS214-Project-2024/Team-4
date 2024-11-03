@@ -4,6 +4,12 @@
 // Initializes the command with the government object and the new tax rate
 SetTaxCommand::SetTaxCommand(Government* gov, double rate) : government(gov), taxRate(rate) {}
 
+SetTaxCommand::SetTaxCommand(Government* gov, TaxSystem* taxSys, double rate, char category)
+    : government(gov), taxRate(rate), previousTaxRate(0) {
+    // Initialize or use `taxSys` and `category` as needed.
+}
+
+
 // Executes the set tax command
 // Stores the previous tax rate and sets the new tax rate
 void SetTaxCommand::execute() {

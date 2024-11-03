@@ -84,6 +84,7 @@ public:
     bool isEmployed() const { return employed; }
      float getTaxRate() const;  // Getter for tax rate
     void setTaxRate(float rate);  // Setter if tax rate needs to be adjusted
+     double payTaxes(TaxType* taxType);
 };
 
 #endif // CITIZEN_H

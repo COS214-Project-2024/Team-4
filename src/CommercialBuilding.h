@@ -3,6 +3,10 @@
 
 #include "Building.h"
 #include "Business.h"
+#include <memory>
+#include <iostream>
+
+using namespace std;
 
 class CommercialBuilding : public Building {
 public:
@@ -17,8 +21,8 @@ public:
     void updateImpacts() override;
     void updateCustomer(int traffic);
     void construct() override;
-    double payTaxes(TaxType* taxType) override;
-    void undoCollectTaxes() override;
+    double payTaxes(TaxType* taxType);
+    void undoCollectTaxes();
     void setBusiness(Business* business);
 
 private:

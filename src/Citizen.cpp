@@ -150,3 +150,16 @@ bool Citizen::isLeaving() const { return satisfaction == 0; }
 void Citizen::setIncome(std::shared_ptr<Income> inc) {
     income = inc;
 }
+
+// Citizen.cpp
+double Citizen::payTaxes(TaxType* taxType) {
+    if (income) {
+        double citizenTax = income->payTaxes(*taxType); // Pass the dereferenced taxType if necessary
+        bankBalance -= citizenTax;
+        std::cout << name << " paid " << citizenTax << " in taxes." << std::endl;
+        return citizenTax;
+    } else {
+        std::cout << name << " has no income to tax." << std::endl;
+        return 0.0;
+    }
+}

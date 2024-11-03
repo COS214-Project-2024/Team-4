@@ -49,6 +49,9 @@ public:
 
     void displayJobInfo(const std::string& jobTitle) const;  // Displays job information
 	const std::vector<std::shared_ptr<Jobs>>& getJobs() const;  // Returns the job list as a const reference
+    virtual double payTaxes(double taxRate);
+    double payTaxes(TaxType* taxType);
+
 
 private:
     virtual void calculateSatisfactionImpact() = 0;

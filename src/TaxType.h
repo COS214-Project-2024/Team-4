@@ -12,7 +12,7 @@ public:
 	
     virtual ~TaxType() {} // Virtual Destructor
 	
-	virtual double calculateTax(double val)=0;
+	virtual double calculateTax(double val);
 	virtual void setTax(double rate);
 	virtual double getTaxRate();
 	char getTaxType();

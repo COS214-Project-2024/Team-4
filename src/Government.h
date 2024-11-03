@@ -53,6 +53,8 @@ public:
     // Refunds collected taxes
     void refundTaxes(double amount);
 
+    void addTaxesToBudget(double amount);
+
     // Registers an observer to the government
     void registerObserver(GovObserver* observer);
 

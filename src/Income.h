@@ -18,12 +18,19 @@ public:
     Income(double salary, double rate, const char category) 
         : TaxType(rate, category), baseSalary(salary), bonus(0.0), deductions(0.0) {}
 
+    Income(double salary) : Income(salary, 0.0, 'A') {}
+
     // Method to calculate monthly income
     double calculateMonthlyIncome() const;
 
     // Optional methods to adjust income
     void addBonus(double amount);
     void applyDeductions(double amount);
+    // In Income.h
+    // Income.h
+    double payTaxes(TaxType& taxType);
+
+
 
     // Getters
     double getBaseSalary() const { return baseSalary; }

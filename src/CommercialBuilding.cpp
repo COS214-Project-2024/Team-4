@@ -12,8 +12,13 @@ CommercialBuilding::CommercialBuilding(const std::string& name, float area, int 
 
 }
 
+CommercialBuilding::~CommercialBuilding() {
+    // Destructor implementation (can be empty)
+}
+
+
 //get type of building
-string CommercialBuilding::getType() const{
+std::string CommercialBuilding::getType() const{
 	return this->bType;
 }
 

@@ -2,8 +2,8 @@
 #define COMMERCIALBUILDINGBUILDER_H
 #include "Builder.h"
 #include "CommercialBuilding.h"
-#include<string>
-#include<memory>
+#include <string>
+#include <memory>
 using namespace std;
 
 class CommercialBuildingBuilder :public Builder {

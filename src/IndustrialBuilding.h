@@ -25,6 +25,9 @@ public:
 
 	void upgradeTech(float techLevel);
 
+	double payTaxes(TaxType* taxType);
+    void undoCollectTaxes();
+
 protected:
 	void calculateEconomicImpact();
 

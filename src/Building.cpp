@@ -88,3 +88,15 @@ void Building::displayJobInfo(const std::string& jobTitle) const {
 // Setters
 void Building::setName(const std::string& name) { this->name = name; }
 std::string Building::getName() const { return name; }
+
+
+double Building::payTaxes(double taxRate) {
+    // Example implementation, should be overridden by derived classes if needed
+    double taxAmount = (capacity * 100) * taxRate; // Replace with your logic
+    return taxAmount;
+}
+
+double Building::payTaxes(TaxType* taxType){
+    std::cout<<"idk what this does";
+}
+

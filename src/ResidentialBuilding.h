@@ -21,7 +21,7 @@ public:
     void updateImpacts() override;
     void upgradeComfort(float comfort);
     void construct() override;
-    double payTaxes(TaxType* taxType) override;
+    double payTaxes(TaxType* taxType);
     double calculatePropertyTax();
     void addResidents(Citizen* citizen);
     void undoCollectTaxes();

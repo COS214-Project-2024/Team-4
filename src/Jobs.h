@@ -6,6 +6,7 @@
 #include <memory>
 #include "Income.h"
 #include <string>
+#include <memory>
 
 class Jobs {
 private:

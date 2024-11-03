@@ -3,6 +3,7 @@
 
 #include "GovCommand.h"
 #include "Government.h"
+#include "TaxSystem.h"
 
 // SetTaxCommand class
 // This class represents a command to set the tax rate in the government
@@ -17,6 +18,7 @@ public:
     // Constructor
     // Initializes the command with the government object and the new tax rate
     SetTaxCommand(Government* gov, double rate);
+    SetTaxCommand(Government* gov, TaxSystem* taxSys, double rate, char category);
 
     // Executes the set tax command
     void execute() override;

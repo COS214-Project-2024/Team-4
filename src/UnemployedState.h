@@ -4,6 +4,8 @@
 #define UNEMPLOYEDSTATE_H
 
 #include "CitizenState.h"
+#include <algorithm>
+#include <iostream>
 
 class UnemployedState : public CitizenState {
 public:

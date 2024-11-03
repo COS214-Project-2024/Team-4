@@ -20,3 +20,13 @@ void Income::applyDeductions(double amount) {
 void Income::setTax(double taxRate) {
 	
 }
+
+// In Income.cpp
+// Income.cpp
+double Income::payTaxes(TaxType& taxType) {
+    // Calculate the tax based on the type's details
+    double taxRate = taxType.getTaxRate(); // Example usage of a method in TaxType
+    return baseSalary * taxRate;
+}
+
+
