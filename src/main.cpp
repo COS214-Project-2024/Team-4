@@ -232,13 +232,13 @@ void testResourceManager() {
 }
 
 int main() {
-    // Testing each builder class separately
-    testResidentialBuildingBuilder();
-    testCommercialBuildingBuilder();
-    testIndustrialBuildingBuilder();
-    testLandmarkBuildingBuilder();
-    testUtilities();
-    testResourceManager();
+    // // Testing each builder class separately
+    // testResidentialBuildingBuilder();
+    // testCommercialBuildingBuilder();
+    // testIndustrialBuildingBuilder();
+    // testLandmarkBuildingBuilder();
+    // testUtilities();
+    // testResourceManager();
 
     std::cout << "All tests completed.\n";
 

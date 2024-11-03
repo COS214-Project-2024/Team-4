@@ -50,7 +50,16 @@ bool Bus::addPassengerTrain(PassengerTrain *passengerTrain) {
     return true;
 }
 
-
+bool Bus::addBuilding(Building *building) {
+    for(Building *x : this->buildings){
+        if(x == building){
+            return false;
+        }
+    }
+ 
+    buildings.push_back(building);
+    return true;
+}
 
 InsideRoad *Bus::getInsideRoad(std::size_t x) {
     if(x < insideRoads.size() && x >= 0){
@@ -77,6 +86,13 @@ ComercialAirport *Bus::getComercialAirport(std::size_t x) {
 PassengerTrain *Bus::getPassengerTrain(std::size_t x) {
     if(x < passengerTrains.size() && x >= 0){
         return passengerTrains[x];
+    }
+    return nullptr;
+}
+
+Building *Bus::getBuilding(std::size_t x) {
+    if(x < buildings.size() && x >= 0){
+        return buildings[x];
     }
     return nullptr;
 }

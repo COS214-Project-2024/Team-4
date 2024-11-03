@@ -11,6 +11,7 @@
 #include "CargoAirport.h"
 #include "PassengerTrain.h"
 #include "FreightTrain.h"
+#include "Building.h"
 
 class InsideRoad : public Road {
     private:
@@ -23,6 +24,8 @@ class InsideRoad : public Road {
         std::vector<CargoAirport*> cargoAirports;
         std::vector<PassengerTrain*> passengerTrains;
         std::vector<FreightTrain*> freightTrains;
+        std::vector<Building*> buildings;
+
 
     public:
         InsideRoad(char state, std::string roadName, float avgStopTime);
@@ -33,7 +36,8 @@ class InsideRoad : public Road {
         bool addComercialAirport(ComercialAirport *comercialAirport);
         bool addCargoAirport(CargoAirport *cargoAirport);
         bool addPassengerTrain(PassengerTrain *passengerTrain);
-        bool addFreightTrain(FreightTrain *freightTrain);  
+        bool addFreightTrain(FreightTrain *freightTrain); 
+        bool addBuilding(Building *building); 
         FreightTrain *getFreightTrain(std::size_t x);
         PassengerTrain *getPassengerTrain(std::size_t x);
         Highway *getHighway(std::size_t x);
@@ -42,6 +46,7 @@ class InsideRoad : public Road {
         Taxi *getTaxi(std::size_t x);
         ComercialAirport *getComercialAirport(std::size_t x);
         CargoAirport *getCargoAirport(std::size_t x);
+        Building *getBuilding(std::size_t x);
         float getAvgStopTime();
         std::string getRoadName();
 

@@ -7,6 +7,7 @@
 #include "InsideRoad.h"
 #include "ComercialAirport.h"
 #include "PassengerTrain.h"
+#include "Building.h"
 
 class Bus : public PublicTransit {
     private:
@@ -17,6 +18,7 @@ class Bus : public PublicTransit {
         std::vector<Bus*> buses; 
         std::vector<ComercialAirport*> comercialAirports;
         std::vector<PassengerTrain*> passengerTrains;
+        std::vector<Building*> buildings;
 
     public:
 
@@ -25,10 +27,12 @@ class Bus : public PublicTransit {
         bool addBus(Bus *bus);
         bool addComercialAirport(ComercialAirport *comercialAirport);
         bool addPassengerTrain(PassengerTrain *passengerTrain);
+        bool addBuilding(Building *building);
         InsideRoad *getInsideRoad(std::size_t x);
         Bus *getBus(std::size_t x);
         ComercialAirport *getComercialAirport(std::size_t x);
         PassengerTrain *getPassengerTrain(std::size_t x);
+        Building *getBuilding(std::size_t x);
         int getBusNumber();
         int getCapacity();
         std::string getRoute();
