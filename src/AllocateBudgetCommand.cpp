@@ -60,3 +60,17 @@ void AllocateBudgetCommand::executeWithValidation() {
     execute();
 }
 
+// Gets the name of the command
+std::string AllocateBudgetCommand::getName() const {
+    return "AllocateBudgetCommand";
+}
+
+// Gets the description of the command
+std::string AllocateBudgetCommand::getDescription() const {
+    return "Allocates a budget to a city service.";
+}
+
+// Checks if the command can be executed
+bool AllocateBudgetCommand::canExecute() const {
+    return validateAllocation();
+}
