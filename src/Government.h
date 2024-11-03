@@ -61,6 +61,9 @@ public:
 
     // Notifies all registered observers of changes
     void notifyObservers();
+
+    // Budget management functions
+    double getBudget() const { return budget; }
 };
 
 #endif
