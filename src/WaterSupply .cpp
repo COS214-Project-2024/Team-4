@@ -15,6 +15,10 @@ void WaterSupply::supplyResources(Building* building) {
     }
 }
 
-void WaterSupply::adjustForCitizen(Citizen* citizen) {
-    std::cout << "Adjusting water supply based on citizen's requirements.\n";
+void WaterSupply::adjustForPopulation(int newPopulation) {
+    std::cout << "Adjusting water supply based on new population size: " << newPopulation << "\n";
 }
+
+// void WaterSupply::adjustForCitizen(Citizen* citizen) {
+//     std::cout << "Adjusting water supply based on citizen's requirements.\n";
+// }

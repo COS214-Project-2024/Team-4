@@ -4,21 +4,23 @@
 #include "GovCommand.h"
 #include "TaxType.h"
 #include "Government.h"
+#include "TaxSystem.h"
+#include <iostream>
 
-
-class SetTaxCommand : GovCommand {
-
+class SetTaxCommand : public GovCommand {
 private:
-	void execute();
-	void undo();
-	TaxType* taxType;
+    Government* government;
+    TaxSystem* taxSys;
+    double taxRate;
+    char taxType;
+    double previousTaxRate;
+    TaxType* newTaxType;
 
 public:
-	void setTaxCommand(double rate);
+    SetTaxCommand(Government* gov, TaxSystem* taxSys, double rate, char taxType);
+    void execute() override;
+    void undo() override;
+    double returnVal() override;
 
-	Government government();
-
-	double prevTaxRate();
 };
-
 #endif

@@ -1,26 +1,42 @@
+// TaxSystem.h
+
 #ifndef TAXSYSTEM_H
 #define TAXSYSTEM_H
 
-#include "Citizen.h"
-#include "Business.h"
+#include <vector>
+#include <map>
+#include <algorithm>
 #include "Building.h"
-#include "GovCommand.h"
+#include "Citizen.h"
+#include "TaxType.h"
+#include "Government.h"
+
 class TaxSystem {
-private:
-    std::map<std::string, TaxType*> taxRates;
-    std::map<Citizen*, char> citizenTaxPayers;
-    std::map<Business*, char> businessTaxPayers;
-    
 public:
-    TaxSystem();
-    void addCitizenTaxPayer(Citizen* taxPayer, char tType);
-    void addBusinessTaxPayer(Business* bTaxPayer, char tType);
+    void addGovernment(Government* gov);
+    void addIncomeTaxBuilding(Building* building);
+    void addPropertyTaxBuilding(Building* building);
+    void addSalesTaxBuilding(Building* building);
+    void addVATTaxPayer(Citizen* citizen);
+    void removeIncomeTaxBuilding(Building* building);
+    void removePropertyTaxBuilding(Building* building);
+    void removeSalesTaxBuilding(Building* building);
+    void removeVATTaxPayer(Citizen* citizen);
+    void updateTaxRate(char cType, double rate);
+    void collectTaxes(Building* building, char taxType);
     void setTax(double rate, char taxType);
-    void removeCitizenTaxPayer(Citizen* taxPayer, char tType);
-    void removeBusinessTaxPayer(Business* bTaxPayer, char tType);
-    void updateTaxRate(char cType);
-    void collectTaxes(Building* building, GovCommand* command);
     void checkImpact();
+    void addTaxRate(TaxType* tax);
+    void removeTaxRate(TaxType* taxType);
+    
+private:
+    Government* government;
+    std::vector<Building*> incomeTaxbuildings;
+    std::vector<Building*> propertyTaxbuildings;
+    std::vector<Building*> salesTaxbuildings;
+    std::vector<Citizen*> vatTaxpayers;
+    std::map<char, TaxType*> taxRates;
+    float totalTaxCollected = 0.0;
 };
 
-#endif
+#endif // TAXSYSTEM_H

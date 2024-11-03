@@ -1,11 +1,24 @@
 #include "CollectTaxesCommand.h"
 
-void CollectTaxesCommand::execute() {
-	// TODO - implement CollectTaxesCommand::execute
-	throw "Not yet implemented";
+CollectTaxesCommand::CollectTaxesCommand(Building* building, TaxType* taxType) {
+	this->building = building;
+	taxesCollected = 0;
+	this->taxType = taxType;
 }
 
+void CollectTaxesCommand::execute() {
+    taxesCollected = building->payTaxes(taxType);
+    std::cout << "Total taxes collected by CollectTaxesCommand: $" << taxesCollected << "\n";
+}
+
+
 void CollectTaxesCommand::undo() {
-	// TODO - implement CollectTaxesCommand::undo
-	throw "Not yet implemented";
+	building->undoCollectTaxes();
+}
+double CollectTaxesCommand::getTaxesCollected() {
+	return taxesCollected;
+}
+
+double CollectTaxesCommand::returnVal() {
+	return taxesCollected;
 }

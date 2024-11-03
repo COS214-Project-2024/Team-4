@@ -1,90 +1,106 @@
 #include "Building.h"
-#include <iostream>
+//base class for all buildings
 
-// Primary constructor
+//construtor
 Building::Building(const std::string& name, float area, int floors, int capacity,
                    float satisfactionImpact, float growthImpact, float consumption)
-    : name(name), area(area), floors(floors), capacity(capacity),
-      citizenSatisfaction(satisfactionImpact), economicGrowth(growthImpact),
-      resourceConsumption(consumption) {}
+    {
+	this->name = name;
+	this->area = area;
+	this->floors = floors;
+	this->capacity = capacity;
+	this->citizenSatisfaction = satisfactionImpact;
+	this->economicGrowth = growthImpact;
+	this->resourceConsumption = consumption;
 
-// Secondary constructor (e.g., for use with Builder pattern)
-Building::Building(int Builder) {
-    // This constructor might initialize certain defaults or setup values specific to the "Builder" type.
-    // Example defaults if using Builder (adjust as needed):
-    this->name = "Default Building";
-    this->area = 500.0f;
-    this->floors = 2;
-    this->capacity = 100;
-    this->citizenSatisfaction = 10.0f;
-    this->economicGrowth = 5.0f;
-    this->resourceConsumption = 2.0f;
+	}
+
+
+//getters
+float Building::getSatisfaction() const{
+	return this->citizenSatisfaction;
 }
 
-// Getters
-float Building::getSatisfaction() const { return citizenSatisfaction; }
-float Building::getEconomicGrowth() const { return economicGrowth; }
-float Building::getResourceConsumption() const { return resourceConsumption; }
+float Building::getEconomicGrowth() const{
+	return this->economicGrowth;
+}
 
+float Building::getResourceConsumption()const {
+	return this->resourceConsumption;	
+}
+
+//====jobs======
 // Adds a job to the building
-void Building::addJob(std::shared_ptr<Jobs> job) {
+void Building::addJob(const Jobs& job) {
     jobs.push_back(job);
 }
 
 // Lists all jobs in the building
-void Building::listJobs() const {
-    for (const auto& job : jobs) {
-        job->displayJobInfo();  // Display job information for each job
-    }
-}
+// void Building::listJobs() const {
+//     std::cout << "Jobs in " << name << ":\n";
+//     for (const auto& job : jobs) {
+//         job.displayJobInfo();
+//     }
+// }
 
 // Hires an employee for a job if available
 bool Building::hireEmployee(const std::string& jobTitle) {
-    for (const auto& job : jobs) {
-        if (job->getTitle() == jobTitle && !job->isOccupied()) {
-            job->hireEmployee();
-            return true;
-        }
+    auto it = std::find_if(jobs.begin(), jobs.end(),
+                           [&](const Jobs& job) { return job.getTitle() == jobTitle; });
+    if (it != jobs.end() && it->getAvailablePositions() > 0) {
+        it->hireEmployee();
+        return true;
     }
     return false;  // Job not found or no positions available
 }
 
 // Releases an employee from a job
 void Building::releaseEmployee(const std::string& jobTitle) {
-    for (const auto& job : jobs) {
-        if (job->getTitle() == jobTitle) {
-            job->releaseEmployee();
-            break;
-        }
-        
+    auto it = std::find_if(jobs.begin(), jobs.end(),
+                           [&](const Jobs& job) { return job.getTitle() == jobTitle; });
+    if (it != jobs.end()) {
+        it->releaseEmployee();
     }
 }
 
-// Provides access to an available job
-std::shared_ptr<Jobs> Building::getAvailableJob() {
-    for (auto& job : jobs) {
-        if (!job->isOccupied()) {
-            return job;  // Return the first unoccupied job
-        }
-    }
-    return nullptr;  // No available jobs
-}
-
-
-// Displays specific job information by title
-void Building::displayJobInfo(const std::string& jobTitle) const {
-    for (const auto& job : jobs) {
-        if (job->getTitle() == jobTitle) {
-            job->displayJobInfo();
-            break;
-        }
-    }
-}
-
- const std::vector<std::shared_ptr<Jobs>>& Building::getJobs() const{
+// Provides access to the jobs for BuildingManager
+std::vector<Jobs>& Building::getJobs() {
     return jobs;
 }
 
-// Setters
-void Building::setName(const std::string& name) { this->name = name; }
-std::string Building::getName() const { return name; }
+// Displays job information
+void Building::displayJobInfo(const std::string& jobTitle) const {
+	auto it = std::find_if(jobs.begin(), jobs.end(),
+						   [&](const Jobs& job) { return job.getTitle() == jobTitle; });
+	if (it != jobs.end()) {
+		it->displayJobInfo();
+	}
+}
+
+std::string Building::getName()const{
+    return this->name;
+}
+
+void Building::listJobs() const {
+    for (const auto& job : jobs) {
+        job.displayJobInfo();  // Only display job information here
+    }
+}
+
+//collect taxes from the building
+double Building::payTaxes(TaxType* taxType) {
+	// Placeholder for tax collection logic
+    taxType->calculateTax(0.0);
+    return 0.0;
+}
+
+//undo collecting taxes from the building
+void Building::undoCollectTaxes() {
+	// Placeholder for undoing tax collection logic
+}
+
+
+//set tax rate for occupants in the building
+// void Building::setTaxRate(double rate) {
+//     // Placeholder for setting tax rate logic
+// }
