@@ -22,6 +22,27 @@ public:
 
     // Undoes the tax collection command
     void undo() override;
+
+    // Gets the amount of taxes collected
+    double getCollectedTaxes() const;
+
+    // Sets the amount of taxes collected
+    void setCollectedTaxes(double amount);
+
+    // Validates the tax collection
+    bool validateCollection() const;
+
+    // Executes the tax collection command with validation
+    void executeWithValidation();
+
+    // Gets the name of the command
+    std::string getName() const override;
+
+    // Gets the description of the command
+    std::string getDescription() const override;
+
+    // Checks if the command can be executed
+    bool canExecute() const override;
 };
 
 #endif

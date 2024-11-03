@@ -16,6 +16,16 @@
 #include "Resource.h"
 #include "ResourceType.h"
 #include "ResourceAvailability.h"
+//GOV includes
+#include "Government.h"
+#include "SetTaxCommand.h"
+#include "EnforcePolicyCommand.h"
+#include "AllocateBudgetCommand.h"
+#include "CollectTaxesCommand.h"
+#include "CityService.h"
+#include "Policy.h"
+#include "Business.h"
+
 
 // Test ResidentialBuildingBuilder
 void testResidentialBuildingBuilder() {
@@ -230,6 +240,120 @@ void testResourceManager() {
     delete waterResource;
     delete powerResource;
 }
+//=========================================================================================================
+//                                            GOV TESTING :
+//=========================================================================================================
+void testGOVF1() {
+    // Create a CityService instance
+    CityService cityService("Public Transport", 1000.0);
+    // Test setServiceName and getServiceName
+    cityService.setServiceName("Healthcare");
+    std::cout << "Service Name: " << cityService.getServiceName() << std::endl;
+    // Test printDetails
+    cityService.printDetails();
+    // Test isWithinBudget
+    std::cout << "Is within budget (500): " << cityService.isWithinBudget(500) << std::endl;
+    std::cout << "Is within budget (1500): " << cityService.isWithinBudget(1500) << std::endl;
+    // Test allocateAdditionalBudget
+    try {
+        cityService.allocateAdditionalBudget(200, 500);
+        cityService.printDetails();
+    } catch (const std::exception& e) {
+        std::cout << e.what() << std::endl;
+    }
+    // Test reduceBudget
+    try {
+        cityService.reduceBudget(300);
+        cityService.printDetails();
+    } catch (const std::exception& e) {
+        std::cout << e.what() << std::endl;
+    }
+    // Create a Business instance
+    Business business(5000.0, 10.0);
+    // Test addService and removeService
+    business.addService("Consulting");
+    business.addService("IT Support");
+    business.printDetails();
+    business.removeService("Consulting");
+    business.printDetails();
+    // Test addPolicy and removePolicy
+    Policy policy1("Policy1", "High");
+    Policy policy2("Policy2", "Medium");
+    business.addPolicy(policy1);
+    business.addPolicy(policy2);
+    business.printDetails();
+    business.removePolicy(policy1);
+    business.printDetails();
+    // Test calculateTax
+    std::cout << "Calculated Tax: " << business.calculateTax() << std::endl;
+    // Test payTax
+    business.payTax(business.calculateTax());
+    business.printDetails();
+}
+
+void TESTGOVCOMMAND() {
+    // Create a Government instance
+    Government government("City Government");
+    // Create a CityService instance
+    CityService cityService("Public Transport", 1000.0);
+    // Create a Policy instance
+    Policy policy("Policy1", "High");
+    // Create command instances
+    SetTaxCommand setTaxCommand(&government, 15.0);
+    EnforcePolicyCommand enforcePolicyCommand(&government, policy);
+    AllocateBudgetCommand allocateBudgetCommand(&government, cityService, 500.0);
+    CollectTaxesCommand collectTaxesCommand(&government);
+    // Execute commands
+    std::cout << "Executing SetTaxCommand..." << std::endl;
+    setTaxCommand.execute();
+    std::cout << "Executing EnforcePolicyCommand..." << std::endl;
+    enforcePolicyCommand.execute();
+    std::cout << "Executing AllocateBudgetCommand..." << std::endl;
+    allocateBudgetCommand.execute();
+    std::cout << "Executing CollectTaxesCommand..." << std::endl;
+    collectTaxesCommand.execute();
+    // Undo commands
+    std::cout << "Undoing SetTaxCommand..." << std::endl;
+    setTaxCommand.undo();
+    std::cout << "Undoing AllocateBudgetCommand..." << std::endl;
+    allocateBudgetCommand.undo();
+    std::cout << "Undoing CollectTaxesCommand..." << std::endl;
+    collectTaxesCommand.undo();
+    // Test new command functions
+    std::cout << "Testing new command functions..." << std::endl;
+    // Test getName and getDescription for SetTaxCommand
+    std::cout << "SetTaxCommand Name: " << setTaxCommand.getName() << std::endl;
+    std::cout << "SetTaxCommand Description: " << setTaxCommand.getDescription() << std::endl;
+    // Test canExecute for SetTaxCommand
+    std::cout << "Can execute SetTaxCommand: " << setTaxCommand.canExecute() << std::endl;
+    // Test executeWithValidation for AllocateBudgetCommand
+    try {
+        allocateBudgetCommand.executeWithValidation();
+    } catch (const std::exception& e) {
+        std::cout << e.what() << std::endl;
+    }
+    // Test validateCollection for CollectTaxesCommand
+    std::cout << "Can execute CollectTaxesCommand: " << collectTaxesCommand.validateCollection() << std::endl;
+    // Test executeWithValidation for CollectTaxesCommand
+    try {
+        collectTaxesCommand.executeWithValidation();
+    } catch (const std::exception& e) {
+        std::cout << e.what() << std::endl;
+    }
+    // Test isPolicyEnforced for EnforcePolicyCommand
+    std::cout << "Is policy enforced: " << enforcePolicyCommand.isPolicyEnforced() << std::endl;
+    // Test executeWithValidation for EnforcePolicyCommand
+    try {
+        enforcePolicyCommand.executeWithValidation();
+    } catch (const std::exception& e) {
+        std::cout << e.what() << std::endl;
+    }
+}
+
+
+//=============================================================================================
+//                                    END    GOV    TESTING
+//=============================================================================================
 
 int main() {
     // Testing each builder class separately
@@ -240,7 +364,12 @@ int main() {
     testUtilities();
     testResourceManager();
 
+    std::cout << "============================GOVT1========================" << std::endl;
+    TESTGOVCOMMAND();
+    std::cout << "============================GOVT2========================" << std::endl;
+    testGOVF1();
+  
     std::cout << "All tests completed.\n";
-
+  
     return 0;
 }

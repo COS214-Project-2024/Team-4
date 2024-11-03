@@ -23,6 +23,15 @@ public:
 
     // Undoes the set tax command
     void undo() override;
+
+    // Gets the name of the command
+    std::string getName() const override;
+
+    // Gets the description of the command
+    std::string getDescription() const override;
+
+    // Checks if the command can be executed
+    bool canExecute() const override;
 };
 
 #endif

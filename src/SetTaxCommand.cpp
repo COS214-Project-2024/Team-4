@@ -16,3 +16,18 @@ void SetTaxCommand::execute() {
 void SetTaxCommand::undo() {
     government->setTax(previousTaxRate);
 }
+
+// Gets the name of the command
+std::string SetTaxCommand::getName() const {
+    return "SetTaxCommand";
+}
+
+// Gets the description of the command
+std::string SetTaxCommand::getDescription() const {
+    return "Sets the tax rate in the government.";
+}
+
+// Checks if the command can be executed
+bool SetTaxCommand::canExecute() const {
+    return taxRate >= 0;
+}
