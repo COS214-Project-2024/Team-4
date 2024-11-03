@@ -17,7 +17,7 @@ T clamp(T value, T min, T max) {
 Citizen::Citizen(const std::string& name, int age, const std::string& resStatus, const std::string& jobTitle)
     : name(name), age(age), resStatus(resStatus), jobTitle(jobTitle), satisfaction(50.0),
       maritalStatus(false), health(true), bankBalance(0.0), educationLevel("None"), taxRate(0.1f),
-      housingSatisfaction(false), currentState(nullptr) , housingComfortLevel(5.0f), employed(false) , income(nullptr), job(nullptr){}
+      housingSatisfaction(false), currentState(nullptr) , housingComfortLevel(5.0f), employed(false) , income(nullptr), job(nullptr),taxCooldown(false),lastTaxPayment(std::chrono::steady_clock::now() - taxCooldownPeriod){}
 
 Citizen::~Citizen() {
     delete currentState;
@@ -272,3 +272,38 @@ void Citizen::payForGroceries(double groceryCost) {
 void Citizen::setIncome(std::shared_ptr<Income> inc) {
     income = inc;
 }
+
+bool Citizen::isOnCooldown() const {
+    if (!taxCooldown) {
+        return false;
+    }
+    auto now = std::chrono::steady_clock::now();
+    auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(now - lastTaxPayment);
+    std::cout << "Elapsed time since last tax payment for " << name << ": " << elapsed.count() << " seconds\n";
+    return elapsed < taxCooldownPeriod;
+}
+
+double Citizen::payTaxes(TaxType* taxType) {
+    auto now = std::chrono::steady_clock::now();
+    if (isOnCooldown()) {
+        std::cout << "Citizen " << name << " is on cooldown. Taxes cannot be collected now.\n";
+        return 0.0;
+    }
+
+    double tax = taxType->calculateTax(income);
+    tax = ::clamp(tax, 0.0, bankBalance);
+
+    if (tax > 0.0) {
+        bankBalance -= tax;
+        taxCooldown = true;
+        lastTaxPayment = now;
+        std::cout << "Collected $" << tax << " in taxes from " << name << ".\n";
+        return tax;
+    } else {
+        std::cout << "Citizen " << name << " has insufficient funds to pay taxes.\n";
+        return 0.0;
+    }
+}
+
+
+
