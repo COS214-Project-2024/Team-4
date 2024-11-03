@@ -9,9 +9,9 @@
 #include <chrono>
 #include "CitizenObserver.h"
 #include "Policy.h"
- #include "CitizenState.h"
- #include "SatisfactionStrategy.h"
- #include "Income.h"
+#include "CitizenState.h"
+#include "SatisfactionStrategy.h"
+#include "Income.h"
 #include "Jobs.h"
 class BuildingManager;
 

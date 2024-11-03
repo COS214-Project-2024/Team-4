@@ -1,30 +1,37 @@
-# Makefile for compiling C++ files in a folder
+# Compiler and flags
+CC = g++
+CFLAGS = -std=c++14 -Wall -g
 
-# Compiler settings
-CXX := g++
-CXXFLAGS := -std=c++11 -Wall
+# Source and object files
+SRC_DIR = src
+BUILD_DIR = build
 
-# Source files (both .cpp and .h)
-SRC := $(wildcard *.cpp)
-HDR := $(wildcard *.h)
+SRCS = main.cpp Builder.cpp Building.cpp CommercialBuilding.cpp \
+       CommercialBuildingBuilder.cpp Director.cpp IndustrialBuilding.cpp \
+       IndustrialBuildingBuilder.cpp LandmarkBuilding.cpp \
+       LandmarkBuildingBuilder.cpp ResidentialBuilding.cpp \
+       ResidentialBuildingBuilder.cpp UtilityMediator.cpp \
+       Utility.cpp WaterSupply.cpp WasteManagement.cpp \
+       ResourceManager.cpp Resource.cpp ResourceType.cpp \
+       ResourceAvailability.cpp
 
-# Object files
-OBJ := $(SRC:.cpp=.o)
+OBJS = $(SRCS:.cpp=.o)
 
-# Output binary
-TARGET := my_program
+# Rule to build the executable
+main: $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o main
 
-# Default target
-all: $(TARGET)
+# Rule for compiling .cpp files into .o files
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
 
-# Compile .cpp files to object files
-%.o: %.cpp $(HDR)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+# Run the program
+run: main
+	./main
 
-# Link object files to create the binary
-$(TARGET): $(OBJ)
-	$(CXX) $(CXXFLAGS) $^ -o $@
-
-# Clean up generated files
+# Clean up object files and the executable
 clean:
-	rm -f $(OBJ) $(TARGET)
+	rm -f *.o main
+
+# Phony targets to prevent issues with files named 'clean' or 'run'
+.PHONY: clean run
