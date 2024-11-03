@@ -1,5 +1,5 @@
-#ifndef WATERSUPPLY _H
-#define WATERSUPPLY _H
+#ifndef WATERSUPPLY_H
+#define WATERSUPPLY_H
 
 #include "Utility.h"
 
