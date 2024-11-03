@@ -4,52 +4,28 @@
 #include "GovObserver.h"
 #include "Policy.h"
 #include "CityService.h"
-#include <vector>
-#include <string>
-
-// Business class
-// This class represents a business that observes government policies and updates its state accordingly
+#include <chrono>
+#include <map>
+#include <unordered_map>
+#include <iostream>
+#include "TaxType.h"
 class Business : public GovObserver {
 
 private:
-    double revenue;  // Revenue of the business
-    double taxRate;  // Tax rate applied to the business
-    std::vector<std::string> services; // List of services provided by the business
-    std::vector<Policy> policies; // List of policies affecting the business
+    double revenue;
+    double taxRate;
+   std::unordered_map<char, std::chrono::steady_clock::time_point> lastTaxPayments; // Add this line
+    std::chrono::seconds taxCooldownPeriod;
+
 
 public:
-    // Constructor
-    Business(double initialRevenue, double initialTaxRate);
-
-    // Updates the tax rate for the business
+  Business(double revenue, double taxRate);
+  virtual ~Business(); // Add virtual destructor
     void updateTaxRate(double rate) override;
-
-    // Updates the business policy
     void updatePolicy(Policy policy) override;
-
-    // Updates the services provided by the business
     void updateServices(CityService service) override;
-
-    // Processes the payment of tax by the business
-    void payTax(double amount);
-
-    // Adds a new service to the business
-    void addService(const std::string& serviceName);
-
-    // Removes a service from the business
-    void removeService(const std::string& serviceName);
-
-    // Adds a new policy to the business
-    void addPolicy(const Policy& policy);
-
-    // Removes a policy from the business
-    void removePolicy(const Policy& policy);
-
-    // Calculates the total tax to be paid based on the current tax rate and revenue
-    double calculateTax() const;
-
-    // Prints the details of the business
-    void printDetails() const;
+    double payTaxes(TaxType* taxType);
+    void setTaxCooldownPeriod(int seconds);
 };
 
 #endif

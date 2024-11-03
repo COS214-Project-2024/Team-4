@@ -47,7 +47,3 @@ void SetTaxCommand::undo() {
 double SetTaxCommand::returnVal() {
     return newTaxType->getTaxRate();
 }
-// Checks if the command can be executed
-bool SetTaxCommand::canExecute() const {
-    return taxRate >= 0;
-}

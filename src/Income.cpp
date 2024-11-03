@@ -1,28 +1,19 @@
+// IncomeTax.cpp
+
 #include "Income.h"
-// Initialize with base salary and set bonus and deductions to zero
-Income::Income(double salary)
-    : baseSalary(salary), bonus(0.0), deductions(0.0) {}
 
-// Calculate monthly income considering base salary, bonuses, and deductions
-double Income::calculateMonthlyIncome() const {
-    return baseSalary + bonus - deductions;
-}
+// Constructor
+Income::Income(double rate) : TaxType(rate,'I'), rate(rate) {}
 
-// Add a bonus to the income for the current month
-void Income::addBonus(double amount) {
-    bonus += amount;
+// Destructor
+Income::~Income() {
+    // Cleanup resources if any
 }
 
-// Apply deductions for the current month
-void Income::applyDeductions(double amount) {
-    deductions += amount;
-	deductions += incomeTax;
-}
-void Income::calculateTax() {
-	// TODO - implement Income::calculateTax
-	throw "Not yet implemented";
+// Calculate Tax
+double Income::calculateTax(double income) {
+    return income * rate;
 }
 
-void Income::setTax(double taxRate) {
-	
-}
+
+
