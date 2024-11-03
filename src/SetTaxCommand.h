@@ -9,14 +9,16 @@
 class SetTaxCommand : public GovCommand {
 
 private:
-    Government* government;   // Pointer to the government object
-    double taxRate;           // New tax rate to be set
-    double previousTaxRate;   // Previous tax rate to revert if needed
-
+  Government* government;
+    TaxSystem* taxSys;
+    double taxRate;
+    char taxType;
+    double previousTaxRate;
+    TaxType* newTaxType;
 public:
     // Constructor
     // Initializes the command with the government object and the new tax rate
-    SetTaxCommand(Government* gov, double rate);
+  SetTaxCommand(Government* gov, TaxSystem* taxSys, double rate, char taxType);
 
     // Executes the set tax command
     void execute() override;
@@ -32,6 +34,7 @@ public:
 
     // Checks if the command can be executed
     bool canExecute() const override;
+ double returnVal() override;
 };
 
 #endif
