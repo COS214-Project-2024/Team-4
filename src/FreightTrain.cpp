@@ -50,5 +50,5 @@ float FreightTrain::getLength(){
 }
 
 std::string FreightTrain::getTrainLine(){
-    return this->getTrainLine();
+    return this->getLine();
 }

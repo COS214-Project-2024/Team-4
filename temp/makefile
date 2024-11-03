@@ -1,7 +1,7 @@
 # Makefile for compiling C++ files in a folder
 
 # Compiler settings
-CXX := g++
+CXX := g++ -g
 CXXFLAGS := -std=c++11 -Wall
 
 # Source files (both .cpp and .h)

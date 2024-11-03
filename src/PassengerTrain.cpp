@@ -41,5 +41,5 @@ PassengerTrain *PassengerTrain::getPassengerTrain(std::size_t x) {
 }
 
 std::string PassengerTrain::getTrainLine() {
-    return this->getTrainLine();    
+    return this->getLine();    
 }

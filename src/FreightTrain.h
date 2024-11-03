@@ -4,6 +4,8 @@
 #include "Train.h"
 #include "InsideRoad.h"
 
+class InsideRoad;
+
 class FreightTrain : public Train {
     private:
         float weight;

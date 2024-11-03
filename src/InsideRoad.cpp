@@ -5,7 +5,7 @@ InsideRoad::InsideRoad(char state, std::string roadName, float avgStopTime) : Ro
 }
 
 std::string InsideRoad::getRoadName() {
-    return this->getRoadName();
+    return this->getName();
 }
 
 bool InsideRoad::addInsideRoad(InsideRoad *insideRoad) {
@@ -98,16 +98,16 @@ bool InsideRoad::addFreightTrain(FreightTrain *freightTrain){
     return true;
 }
 
-bool InsideRoad::addBuilding(Building *building){
-    for(Building *x : this->buildings){
-        if(x == building){
-            return false;
-        }
-    }
+// bool InsideRoad::addBuilding(Building *building){
+//     for(Building *x : this->buildings){
+//         if(x == building){
+//             return false;
+//         }
+//     }
 
-    this->buildings.push_back(building);
-    return true;
-}
+//     this->buildings.push_back(building);
+//     return true;
+// }
 
 Highway *InsideRoad::getHighway(std::size_t x){
     if(x < this->highways.size() && x >= 0){
@@ -157,11 +157,11 @@ FreightTrain *InsideRoad::getFreightTrain(std::size_t x){
     }else return nullptr;
 }
 
-Building *InsideRoad::getBuilding(std::size_t x){
-    if(x < this->buildings.size() && x >= 0){
-        return this->buildings[x];
-    }else return nullptr;
-}
+// Building *InsideRoad::getBuilding(std::size_t x){
+//     if(x < this->buildings.size() && x >= 0){
+//         return this->buildings[x];
+//     }else return nullptr;
+// }
 
 float InsideRoad::getAvgStopTime(){
     return this->avgStopTime;
