@@ -11,6 +11,12 @@
 #include "WaterSupply.h"
 #include "WasteManagement.h"
 
+// Resource management includes
+#include "ResourceManager.h"
+#include "Resource.h"
+#include "ResourceType.h"
+#include "ResourceAvailability.h"
+
 // Test ResidentialBuildingBuilder
 void testResidentialBuildingBuilder() {
     std::cout << "\nTesting ResidentialBuildingBuilder\n";
@@ -189,6 +195,42 @@ void testUtilities() {
     // wasteManagement.adjustForCitizen(&citizen2);
 }
 
+void testResourceManager() {
+    std::cout << "\nTesting ResourceManager\n";
+
+    // Create a ResourceManager with an initial budget of 1000
+    ResourceManager resourceManager(1000);
+
+    // Create Resource objects
+    Resource* waterResource = new Resource(ResourceType::Water, 200);
+    Resource* powerResource = new Resource(ResourceType::Power, 300);
+
+    // Add resources to the ResourceManager
+    resourceManager.addResource(ResourceType::Water, waterResource);
+    resourceManager.addResource(ResourceType::Power, powerResource);
+
+    // Test getResource method
+    Resource* retrievedWaterResource = resourceManager.getResource(ResourceType::Water);
+    if (retrievedWaterResource) {
+        std::cout << "Water resource found with quantity: " << retrievedWaterResource->getQuantity() << std::endl;
+    } else {
+        std::cout << "Water resource not found.\n";
+    }
+
+    // Allocate resources and test results
+    bool allocationSuccess = resourceManager.allocateResources(ResourceType::Water, 50);
+    std::cout << "Allocation of 50 units of Water: " << (allocationSuccess ? "Success" : "Failed") << std::endl;
+    std::cout << "Remaining Water resource quantity: " << retrievedWaterResource->getQuantity() << std::endl;
+
+    // Release resources and check quantity
+    resourceManager.releaseResources(ResourceType::Water, 20);
+    std::cout << "After releasing 20 units, Water resource quantity: " << retrievedWaterResource->getQuantity() << std::endl;
+
+    // Clean up dynamically allocated resources
+    delete waterResource;
+    delete powerResource;
+}
+
 int main() {
     // Testing each builder class separately
     testResidentialBuildingBuilder();
@@ -196,6 +238,9 @@ int main() {
     testIndustrialBuildingBuilder();
     testLandmarkBuildingBuilder();
     testUtilities();
+    testResourceManager();
+
+    std::cout << "All tests completed.\n";
 
     return 0;
 }

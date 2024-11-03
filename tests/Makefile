@@ -1,62 +1,30 @@
-# Define the compiler and compiler flags
-CC = g++
-CFLAGS = -std=c++14 -g
+# Makefile for compiling C++ files in a folder
 
-# Define the list of object files
-ofiles = main.o Builder.o Building.o CommercialBuilding.o CommercialBuildingBuilder.o \
-          Director.o IndustrialBuilding.o IndustrialBuildingBuilder.o LandmarkBuilding.o \
-          LandmarkBuildingBuilder.o ResidentialBuilding.o ResidentialBuildingBuilder.o 
+# Compiler settings
+CXX := g++
+CXXFLAGS := -std=c++11 -Wall
 
-# Define the makefile rule to build the executable
-main: $(ofiles)
-	$(CC) $(CFLAGS) $(ofiles) -o main
+# Source files (both .cpp and .h)
+SRC := $(wildcard *.cpp)
+HDR := $(wildcard *.h)
 
-# Define individual rules for each source file
-main.o: main.cpp Builder.h Building.h CommercialBuilding.h CommercialBuildingBuilder.h \
-         Director.h IndustrialBuilding.h IndustrialBuildingBuilder.h LandmarkBuilding.h \
-         LandmarkBuildingBuilder.h ResidentialBuilding.h ResidentialBuildingBuilder.h
-	$(CC) $(CFLAGS) -c main.cpp
+# Object files
+OBJ := $(SRC:.cpp=.o)
 
-Builder.o: Builder.cpp Builder.h
-	$(CC) $(CFLAGS) -c Builder.cpp
+# Output binary
+TARGET := my_program
 
-Building.o: Building.cpp Building.h
-	$(CC) $(CFLAGS) -c Building.cpp
+# Default target
+all: $(TARGET)
 
-CommercialBuilding.o: CommercialBuilding.cpp CommercialBuilding.h
-	$(CC) $(CFLAGS) -c CommercialBuilding.cpp
+# Compile .cpp files to object files
+%.o: %.cpp $(HDR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-CommercialBuildingBuilder.o: CommercialBuildingBuilder.cpp CommercialBuildingBuilder.h
-	$(CC) $(CFLAGS) -c CommercialBuildingBuilder.cpp
+# Link object files to create the binary
+$(TARGET): $(OBJ)
+	$(CXX) $(CXXFLAGS) $^ -o $@
 
-Director.o: Director.cpp Director.h
-	$(CC) $(CFLAGS) -c Director.cpp
-
-IndustrialBuilding.o: IndustrialBuilding.cpp IndustrialBuilding.h
-	$(CC) $(CFLAGS) -c IndustrialBuilding.cpp
-
-IndustrialBuildingBuilder.o: IndustrialBuildingBuilder.cpp IndustrialBuildingBuilder.h
-	$(CC) $(CFLAGS) -c IndustrialBuildingBuilder.cpp
-
-LandmarkBuilding.o: LandmarkBuilding.cpp LandmarkBuilding.h
-	$(CC) $(CFLAGS) -c LandmarkBuilding.cpp
-
-LandmarkBuildingBuilder.o: LandmarkBuildingBuilder.cpp LandmarkBuildingBuilder.h
-	$(CC) $(CFLAGS) -c LandmarkBuildingBuilder.cpp
-
-ResidentialBuilding.o: ResidentialBuilding.cpp ResidentialBuilding.h
-	$(CC) $(CFLAGS) -c ResidentialBuilding.cpp
-
-ResidentialBuildingBuilder.o: ResidentialBuildingBuilder.cpp ResidentialBuildingBuilder.h
-	$(CC) $(CFLAGS) -c ResidentialBuildingBuilder.cpp
-
-# Define a rule to run the program with Valgrind
-run: main
-	valgrind ./main
-
-# Define a rule to clean up object files and executable
-clean: 
-	rm -f *.o main
-
-# Phony targets
-.PHONY: clean run
+# Clean up generated files
+clean:
+	rm -f $(OBJ) $(TARGET)
