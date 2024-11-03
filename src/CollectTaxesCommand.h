@@ -4,14 +4,24 @@
 #include "GovCommand.h"
 #include "Government.h"
 
+// CollectTaxesCommand class
+// This class represents a command to collect taxes from the government
 class CollectTaxesCommand : public GovCommand {
 
+private:
+    Government* government;   // Pointer to the government object
+    double collectedTaxes;    // Amount of taxes collected
+
 public:
-	Government* government;
+    // Constructor
+    // Initializes the command with the government object
+    CollectTaxesCommand(Government* gov);
 
-	void execute();
+    // Executes the tax collection command
+    void execute() override;
 
-	void undo();
+    // Undoes the tax collection command
+    void undo() override;
 };
 
 #endif
