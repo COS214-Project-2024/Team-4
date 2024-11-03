@@ -17,7 +17,7 @@ public:
     ResidentialBuildingBuilder& setComfort(float comfort);
 	ResidentialBuildingBuilder();
 	int getResidentialUnit();
- double payTaxes(TaxType* taxType) override;
+
 	float getComfort();
 
 
