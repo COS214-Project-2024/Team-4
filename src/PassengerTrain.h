@@ -4,6 +4,8 @@
 #include "Train.h"
 #include "InsideRoad.h"
 
+class InsideRoad;
+
 class PassengerTrain : public Train {
     private:
         std::vector<InsideRoad*> insideRoads;
