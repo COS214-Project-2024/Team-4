@@ -8,6 +8,25 @@
 #include <thread>
 #include <chrono>
 #include <iostream>
+#include <memory>
+
+// Function to display a loading bar
+void showLoadingBar(int duration) {
+    const int barWidth = 50;
+    std::cout << "[";
+    for (int i = 0; i < barWidth; ++i) {
+        std::cout << " ";
+    }
+    std::cout << "]\r[";
+    std::cout.flush();
+
+    for (int i = 0; i < barWidth; ++i) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(duration / barWidth));
+        std::cout << "=";
+        std::cout.flush();
+    }
+    std::cout << "] Done!\n";
+}
 
 int main() {
     // Create government
@@ -17,20 +36,20 @@ int main() {
     TaxSystem taxSystem;
     taxSystem.addGovernment(&gov);
 
-    // Create TaxTypes
-    TaxType* incomeTax = new Income(0.1); // Assuming 10% income tax rate
-    TaxType* propertyTax = new Property(0.05, 0.5, 100.0); // Assuming 5% property tax rate, 50% exemption, and $100 minimum tax
-    TaxType* salesTax = new Sales(0.07,2,4); // Assuming 7% sales tax rate
-    taxSystem.addTaxRate(incomeTax);
-    taxSystem.addTaxRate(propertyTax);
-    taxSystem.addTaxRate(salesTax);
+    // Create TaxTypes using unique pointers
+    auto incomeTax = std::make_unique<Income>(0.1); // Assuming 10% income tax rate
+    auto propertyTax = std::make_unique<Property>(0.05, 0.5, 100.0); // Assuming 5% property tax rate, 50% exemption, and $100 minimum tax
+    auto salesTax = std::make_unique<Sales>(0.07, 2, 4); // Assuming 7% sales tax rate
+    taxSystem.addTaxRate(incomeTax.get());
+    taxSystem.addTaxRate(propertyTax.get());
+    taxSystem.addTaxRate(salesTax.get());
 
     // Create Commercial Building
     CommercialBuilding comBuilding("Downtown Plaza", 2000.0f, 20, 100, 80.0f, 0.0f, 0.0f, 20, 15.0f);
 
-    // Create Business
-    Business* business = new Business(1000000, 0.1); // Revenue: 1,000,000, Tax Rate: 10%
-    comBuilding.setBusiness(business);
+    // Create Business using unique pointer
+    auto business = std::make_unique<Business>(1000000, 0.1); // Revenue: 1,000,000, Tax Rate: 10%
+    comBuilding.setBusiness(business.get());
 
     // Collect income taxes first time
     std::cout << "First income tax collection:\n";
@@ -48,19 +67,15 @@ int main() {
     std::cout << "\nAttempting to collect income taxes again immediately:\n";
     taxSystem.collectTaxes(&comBuilding, 'I');
 
-    // Wait for cooldown to expire
+    // Wait for cooldown to expire with a loading bar
     std::cout << "\nWaiting for cooldown to expire...\n";
-    std::this_thread::sleep_for(std::chrono::seconds(65)); // Wait longer than cooldown
+    showLoadingBar(10000); // Wait for 10 seconds with a loading bar
 
     // Collect income taxes again
     std::cout << "\nCollecting income taxes after cooldown:\n";
     taxSystem.collectTaxes(&comBuilding, 'I');
 
-    // Clean up
-    delete business;
-    delete incomeTax;
-    delete propertyTax;
-    delete salesTax;
+    // No need to manually delete the unique pointers, they will be automatically cleaned up
 
     return 0;
 }
