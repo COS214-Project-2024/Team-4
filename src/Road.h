@@ -10,7 +10,7 @@ class Road : public Transportation {
     public:
         Road(char state, std::string roadName);
         float calculateCommute();
-        std::string getRoadName();
+        std::string getName();
 
 
     

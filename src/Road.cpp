@@ -8,6 +8,6 @@ Road::Road(char state, std::string roadName) : Transportation(state) {
 //     return getTrafficFlow();
 // }
 
-std::string Road::getRoadName() {
+std::string Road::getName() {
     return this->roadName;
 } 

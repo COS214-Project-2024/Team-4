@@ -41,5 +41,5 @@ CargoAirport* CargoAirport::getCargoAirport(std::size_t index) {
 }
 
 std::string CargoAirport::getName() {
-    return this->getName();
+    return this->getAirportName();
 }
