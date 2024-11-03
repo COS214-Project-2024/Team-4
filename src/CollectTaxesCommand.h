@@ -3,21 +3,46 @@
 
 #include "GovCommand.h"
 #include "Government.h"
-#include "Building.h"
-#include "TaxType.h"
+
+// CollectTaxesCommand class
+// This class represents a command to collect taxes from the government
 class CollectTaxesCommand : public GovCommand {
+
 private:
-	Building* building;
-	double taxesCollected;
-	double taxRate;
-	TaxType* taxType;
+    Government* government;   // Pointer to the government object
+    double collectedTaxes;    // Amount of taxes collected
 
 public:
-	CollectTaxesCommand(Building* building, TaxType* taxType);
-	void execute();
-	void undo();
-	double getTaxesCollected();
-	double returnVal();
+    // Constructor
+    // Initializes the command with the government object
+    CollectTaxesCommand(Government* gov);
+
+    // Executes the tax collection command
+    void execute() override;
+
+    // Undoes the tax collection command
+    void undo() override;
+
+    // Gets the amount of taxes collected
+    double getCollectedTaxes() const;
+
+    // Sets the amount of taxes collected
+    void setCollectedTaxes(double amount);
+
+    // Validates the tax collection
+    bool validateCollection() const;
+
+    // Executes the tax collection command with validation
+    void executeWithValidation();
+
+    // Gets the name of the command
+    std::string getName() const override;
+
+    // Gets the description of the command
+    std::string getDescription() const override;
+
+    // Checks if the command can be executed
+    bool canExecute() const override;
 };
 
 #endif
