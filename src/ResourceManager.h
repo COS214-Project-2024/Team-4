@@ -21,7 +21,7 @@ public:
     ResourceManager(int initialBudget) : budget(initialBudget) {}
 
     bool allocateResources(ResourceType type, int quantity) {
-        if (budget >= resourceCosts[type] * quantity && resources[type]->allocate(quantity)) {
+        if (resources.count(type) && budget >= resourceCosts[type] * quantity && resources[type]->allocate(quantity)) {
             budget -= resourceCosts[type] * quantity;
             notifyObservers(type, quantity);
             return true;
@@ -30,8 +30,10 @@ public:
     }
 
     void releaseResources(ResourceType type, int quantity) {
-        resources[type]->release(quantity);
-        notifyObservers(type, -quantity);  // Negative to indicate release
+        if (resources.count(type)) {
+            resources[type]->release(quantity);
+            notifyObservers(type, -quantity);  // Negative to indicate release
+        }
     }
 
     void setAllocationStrategy(ResourceAllocationStrategy* strategy) {
@@ -47,6 +49,13 @@ public:
     Resource* getResource(ResourceType type) const {
         auto it = resources.find(type);
         return (it != resources.end()) ? it->second : nullptr;
+    }
+
+    // Method to add a resource to the manager
+    void addResource(ResourceType type, Resource* resource) {
+        if (resources.count(type) == 0) {
+            resources[type] = resource;
+        }
     }
 
 private:
