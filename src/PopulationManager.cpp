@@ -8,10 +8,11 @@
 #include "LeavingCityState.h"
 #include "MaleCitizen.h"
 #include "FemaleCitizen.h"
+#include "JobSatisfactionStrategy.h"
+#include "HousingSatisfactionStrategy.h"
+#include "TaxSatisfactionStrategy.h"
+#include "BuildingManager.h" // Include this to use BuildingManager in PopulationManager
 #include <iostream>
-#include <thread>
-#include <chrono>
-#include <cstdlib>
 #include <algorithm>
 #include <random>
 #include <ctime>
@@ -20,49 +21,96 @@ PopulationManager::PopulationManager()
     : jobSatisfaction(std::make_shared<JobSatisfactionStrategy>()),
       housingSatisfaction(std::make_shared<HousingSatisfactionStrategy>()) 
 {
-    // Seed randomness for the simulation
-    std::srand(std::time(nullptr));
+    std::srand(std::time(nullptr)); // Seed randomness for the simulation
 }
 
-void PopulationManager::update(Citizen* citizen) {
-    checkCitizenStates();
+// Adding a citizen to the population
+void PopulationManager::addCitizen(std::shared_ptr<Citizen> citizen) {
+    citizens.push_back(citizen);
 }
 
+// Simulate population growth randomly
 void PopulationManager::simulatePopulationGrowth() {
     if (std::rand() % 2 == 0) {
         addRandomCitizen();
     } else {
         removeRandomCitizen();
     }
-    checkCitizenStates();
-    removeLeavingCitizens();
+    removeLeavingCitizens(); // Remove unhappy citizens if any
 }
 
-void PopulationManager::addCitizen(std::shared_ptr<Citizen> citizen) {
-    citizens.push_back(citizen);
-    citizen->addObserver(this);  // Register this PopulationManager as an observer
-}
+void PopulationManager::findJobsForUnemployedCitizens(BuildingManager& buildingManager) {
+    for (auto& citizen : citizens) {
+        // Check if the citizen is unemployed
+        if (!citizen->isEmployed()) {
+            bool jobFound = false;
 
-void PopulationManager::addRandomCitizen() {
-    std::shared_ptr<Citizen> citizen;
-            if (std::rand() % 2 == 0) {
-                citizen = std::make_shared<MaleCitizen>("RandomMale", 0, "Single", "Unemployed");
-            } else {
-                citizen = std::make_shared<FemaleCitizen>("RandomFemale", 0, "Single", "Unemployed");
+            // Try to find a job for the citizen in available buildings
+            for (const auto& building : buildingManager.getBuildings()) {
+                // Get available jobs in the building
+                const auto& jobs = building->getJobs();
+                
+                // Check if there are jobs available in this building
+                if (!jobs.empty()) {
+                    // Select a random job title from the available jobs
+                    std::shared_ptr<Jobs> randomJob = jobs[std::rand() % jobs.size()];
+                    std::string jobTitle = randomJob->getTitle();
+
+                    // Attempt to search and apply for this job
+                    citizen->searchAndApplyForJob(buildingManager, building.get(), jobTitle);
+                        
+                    
+                }
             }
 
+            // If no job was found, print a message
+            if (!jobFound) {
+                std::cout << citizen->getName() << " could not find a job.\n";
+            }
+        }
+    }
+}
+// Add a random citizen to the population
+void PopulationManager::addRandomCitizen() {
+    std::shared_ptr<Citizen> citizen;
+    if (std::rand() % 2 == 0) {
+        citizen = std::make_shared<MaleCitizen>("RandomMale", 0);
+    } else {
+        citizen = std::make_shared<FemaleCitizen>("RandomFemale", 0);
+    }
     citizens.push_back(citizen);
     std::cout << "Citizen added randomly. Total population: " << getPopulation() << std::endl;
+    citizen->addSatisfactionStrategy(std::make_shared<JobSatisfactionStrategy>());
+    citizen->addSatisfactionStrategy(std::make_shared<HousingSatisfactionStrategy>());
+    citizen->addSatisfactionStrategy(std::make_shared<TaxSatisfactionStrategy>());
+
 }
 
+// Remove a random citizen from the population
 void PopulationManager::removeRandomCitizen() {
     if (!citizens.empty()) {
+        // Generate a random index within bounds
         int index = std::rand() % citizens.size();
+
+        // Safely retrieve the citizen before erasing
+        std::shared_ptr<Citizen> citizenToRemove = citizens[index];
+
+        citizenToRemove->removeSatisfactionStrategy();
+        // Detach any observers if necessary (only if needed for your observer design)
+        citizenToRemove->detachAllObservers();
+
+        // Remove the citizen from the vector
         citizens.erase(citizens.begin() + index);
-        std::cout << "Citizen removed randomly. Total population: " << getPopulation() << std::endl;
+
+        // Log the removal
+        std::cout << "Citizen " << citizenToRemove->getName() 
+                  << " removed randomly. Total population: " << getPopulation() << std::endl;
     }
 }
 
+
+
+// Remove citizens who are in a LeavingCityState
 void PopulationManager::removeLeavingCitizens() {
     auto it = std::remove_if(citizens.begin(), citizens.end(),
                              [](const std::shared_ptr<Citizen>& citizen) {
@@ -74,37 +122,21 @@ void PopulationManager::removeLeavingCitizens() {
     }
 }
 
+// Get the current population count
 int PopulationManager::getPopulation() {
     return citizens.size();
 }
 
+// Get the list of all citizens
 const std::vector<std::shared_ptr<Citizen>>& PopulationManager::getCitizens() const {
     return citizens;
 }
 
-void PopulationManager::checkCitizenStates() {
-    for (auto& citizen : citizens) {
-        // Only allow job and income-related state changes for citizens 18 and older
-        if (citizen->getAge() >= 18) {
-            if (citizen->getSatisfactionLevel() < 20) {
-                citizen->setState(new UnsatisfiedState());
-            } else if (citizen->getSatisfactionLevel() > 80) {
-                citizen->setState(new SatisfiedState());
-            } else if (citizen->getSatisfactionLevel() == 0) {
-                citizen->setState(new LeavingCityState());
-            }
-        }
-    }
-}
-
+// Update citizens' age each cycle
 void PopulationManager::updateCitizensAge() {
     for (auto& citizen : citizens) {
-        // Increment the citizen's age
         citizen->incrementAge();
-        
-        // If the citizen has turned 18 and has no satisfaction strategy
-        if (citizen->getAge() == 18 ) {
-            // Randomly assign a predefined satisfaction strategy
+        if (citizen->getAge() == 18) {
             if (std::rand() % 2 == 0) {
                 citizen->addSatisfactionStrategy(jobSatisfaction);
                 std::cout << citizen->getName() << " turned 18 and received Job Satisfaction Strategy.\n";
@@ -116,11 +148,9 @@ void PopulationManager::updateCitizensAge() {
     }
 }
 
+// Manage relationships between citizens
 void PopulationManager::manageRelationships() {
-    // Temporary vector to store new citizens to be added after the main loop
     std::vector<std::shared_ptr<Citizen>> newCitizens;
-
-    // Iterate through the existing citizens without modifying the vector
     for (auto& citizen : citizens) {
         if (citizen->getRelationshipStatus() == "Single" && std::rand() % 10 == 0) {
             citizen->setRelationshipStatus("Dating");
@@ -134,43 +164,48 @@ void PopulationManager::manageRelationships() {
                 std::cout << citizen->getName() << " broke up and is now single.\n";
             }
         }
-
-        // If married, add a child after a certain duration
         if (citizen->getRelationshipStatus() == "Married" && citizen->getMarriageDuration() >= 3) {
-            // Create a new child as a MaleCitizen or FemaleCitizen
             std::shared_ptr<Citizen> child;
             if (std::rand() % 2 == 0) {
-                child = std::make_shared<MaleCitizen>("RandomMale", 0, "Single", "Unemployed");
+                child = std::make_shared<MaleCitizen>("RandomMale", 0);
             } else {
-                child = std::make_shared<FemaleCitizen>("RandomFemale", 0, "Single", "Unemployed");
+                child = std::make_shared<FemaleCitizen>("RandomFemale", 0);
             }
-
-            if (child) {
-                std::cout << "Child " << child->getName() << " created successfully.\n";
-                newCitizens.push_back(child);  // Add child to temporary vector
-            }
+            child->addSatisfactionStrategy(std::make_shared<JobSatisfactionStrategy>());
+            child->addSatisfactionStrategy(std::make_shared<HousingSatisfactionStrategy>());
+            child->addSatisfactionStrategy(std::make_shared<TaxSatisfactionStrategy>());
+            newCitizens.push_back(child);
             citizen->resetMarriageDuration();
             std::cout << citizen->getName() << " has a new child.\n";
             citizen->addChild();
         }
-
         if (citizen->getRelationshipStatus() == "Married") {
             citizen->incrementMarriageDuration();
         }
     }
-
-    // Add all new citizens to the main citizens vector after the loop completes
     citizens.insert(citizens.end(), newCitizens.begin(), newCitizens.end());
 }
 
-
+// Update satisfaction for all eligible citizens
 void PopulationManager::updateCitizensSatisfaction() {
     for (auto& citizen : citizens) {
-        // Only update satisfaction for citizens above a certain age, if required
         if (citizen->getAge() >= 18) {
             citizen->updateSatisfaction();
         }
     }
 }
 
-
+// Check and update citizens' states based on satisfaction levels
+void PopulationManager::checkCitizenStates() {
+    for (auto& citizen : citizens) {
+        if (citizen->getAge() >= 18) {
+            if (citizen->getSatisfactionLevel() < 20) {
+                citizen->setState(new UnsatisfiedState());
+            } else if (citizen->getSatisfactionLevel() > 80) {
+                citizen->setState(new SatisfiedState());
+            } else if (citizen->getSatisfactionLevel() == 0) {
+                citizen->setState(new LeavingCityState());
+            }
+        }
+    }
+}
