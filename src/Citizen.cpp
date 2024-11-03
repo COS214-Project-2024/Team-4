@@ -1,11 +1,14 @@
 // Citizen.cpp
 
+
 #include "Citizen.h"
-#include "BuildingManager.h" 
 #include "CitizenObserver.h"
-#include "LeavingCityState.h"
 #include <algorithm>
 #include <iostream>
+#include "LeavingCityState.h"
+#include "TaxType.h" // Ensure TaxType is included
+#include <thread>    // For sleep (if needed in testing)
+#include <chrono>
 
 template <typename T>
 T clamp(T value, T min, T max) {
@@ -13,11 +16,29 @@ T clamp(T value, T min, T max) {
     if (value > max) return max;
     return value;
 }
-
 Citizen::Citizen(const std::string& name, int age, const std::string& resStatus, const std::string& jobTitle)
-    : name(name), age(age), resStatus(resStatus), jobTitle(jobTitle), satisfaction(50.0),
-      maritalStatus(false), health(true), bankBalance(0.0), educationLevel("None"), taxRate(0.1f),
-      housingSatisfaction(false), currentState(nullptr) , housingComfortLevel(5.0f), employed(false) , income(nullptr), job(nullptr){}
+    : name(name),                 // Initializes 'name' (declared first)
+      age(age),                   // Initializes 'age'
+      satisfaction(50.0f),        // Initializes 'satisfaction'
+      jobTitle(jobTitle),         // Initializes 'jobTitle'
+      resStatus(resStatus),       // Initializes 'resStatus'
+      relationshipStatus("Single"),
+      marriageDuration(0),
+      numChildren(0),
+      maritalStatus(false),
+      health(true),
+      bankBalance(0.0),
+      educationLevel("None"),
+      income(0.0),
+      currentState(nullptr),
+      taxRate(0.1),
+      housingComfortLevel(5.0f),
+      employed(false),
+      taxCooldown(false),
+      lastTaxPayment(std::chrono::steady_clock::now() - taxCooldownPeriod)
+{
+    // Constructor body (if needed)
+}
 
 Citizen::~Citizen() {
     delete currentState;
@@ -40,7 +61,7 @@ void Citizen::applyState() {
 
 void Citizen::updateSatisfaction(float adjustment) {
     // Adjust satisfaction with clamping between 0 and 100
-    satisfaction = clamp(satisfaction + adjustment, 0.0f, 100.0f);
+    satisfaction = ::clamp<float>(satisfaction + adjustment, 0.0f, 100.0f);
     notifyObservers();  // Notify observers that satisfaction has changed
 }
 
@@ -79,6 +100,7 @@ void Citizen::updateMaritalStatus(bool status) {
 }
 
 void Citizen::updateTaxRate(double rate) {
+    (void)rate; // Suppress unused parameter warning
     // Apply the tax rate change to the citizen's financial state
     // Possibly adjust bank balance or satisfaction
     notifyObservers();
@@ -89,16 +111,20 @@ void Citizen::updateHealth(bool status) {
     notifyObservers();
 }
 
-
-
-
 void Citizen::updateTaxRatePolicy(const Policy& policy) {
+    (void)policy; // Suppress unused parameter warning
     // Respond to tax policy change by adjusting tax-related satisfaction or bank balance
     notifyObservers();
 }
 
+void Citizen::updateResService(const CityService& service) {
+    (void)service; // Suppress unused parameter warning
+    // Adjust satisfaction or other attributes based on service provided
+    notifyObservers();
+}
 
 void Citizen::changeTaxRate(double rate) {
+    (void)rate; // Suppress unused parameter warning
     // Logic to directly change the tax rate
     notifyObservers();
 }
@@ -123,9 +149,14 @@ void Citizen::updateBankBalance(double amount) {
     notifyObservers();
 }
 
-
+void Citizen::updateService(const CityService* service) {
+    (void)service; // Suppress unused parameter warning
+    // Logic to update citizen based on service provided
+    notifyObservers();
+}
 
 void Citizen::updatePolicy(const Policy* policy) {
+    (void)policy; // Suppress unused parameter warning
     // Logic to update citizen based on policy change
     notifyObservers();
 }
@@ -223,52 +254,69 @@ void Citizen::updateSatisfaction() {
     std::cout << name << "'s updated satisfaction: " << satisfaction << std::endl;
 }
 
-void Citizen::depositMonthlyIncome() {
-    if (income) {
-        double monthlyIncome = income->calculateMonthlyIncome();
-        bankBalance += monthlyIncome;
-        std::cout << name << " received income: " << monthlyIncome << ". New bank balance: " << bankBalance << std::endl;
-    }
-}
 
-bool Citizen::searchAndApplyForJob(BuildingManager& manager) {
-    if (isEmployed()) {
-        std::cout << name << " is already employed." << std::endl;
+bool Citizen::isOnCooldown() const {
+    if (!taxCooldown) {
         return false;
     }
+    auto now = std::chrono::steady_clock::now();
+    auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(now - lastTaxPayment);
+    std::cout << "Elapsed time since last tax payment for " << name << ": " << elapsed.count() << " seconds\n";
+    return elapsed < taxCooldownPeriod;
+}
 
-    job = manager.findAvailableJob();  // Try to find a job through BuildingManager
-    if (job) {
-        income = job->getIncome();  // Assign income based on job
-        job->hireEmployee();        // Mark the job as filled
-        std::cout << name << " found a job with income: " << income->calculateMonthlyIncome() << std::endl;
-        return true;
+double Citizen::payTaxes(TaxType* taxType) {
+    auto now = std::chrono::steady_clock::now();
+    if (isOnCooldown()) {
+        std::cout << "Citizen " << name << " is on cooldown. Taxes cannot be collected now.\n";
+        return 0.0;
+    }
+
+    double tax = taxType->calculateTax(income);
+    tax = ::clamp(tax, 0.0, bankBalance);
+
+    if (tax > 0.0) {
+        bankBalance -= tax;
+        taxCooldown = true;
+        lastTaxPayment = now;
+        std::cout << "Collected $" << tax << " in taxes from " << name << ".\n";
+        return tax;
     } else {
-        std::cout << name << " could not find a job." << std::endl;
-        return false;
+        std::cout << "Citizen " << name << " has insufficient funds to pay taxes.\n";
+        return 0.0;
     }
 }
 
-void Citizen::payChildAllowance() {
-    double allowancePerChild = 50.0;
-    double totalAllowance = allowancePerChild * numChildren;
-    if (bankBalance >= totalAllowance) {
-        bankBalance -= totalAllowance;
-        std::cout << name << " paid child allowance: " << totalAllowance << ". Remaining balance: " << bankBalance << std::endl;
-    } else {
-        std::cout << name << " could not pay full child allowance. Insufficient funds." << std::endl;
-    }
+// Tax-related methods
+void Citizen::setTaxRate(double rate) {
+    taxRate = rate;
 }
 
-void Citizen::payForGroceries(double groceryCost) {
-    if (bankBalance >= groceryCost) {
-        bankBalance -= groceryCost;
-        std::cout << name << " paid for groceries: " << groceryCost << ". Remaining balance: " << bankBalance << std::endl;
-    } else {
-        std::cout << name << " could not pay for groceries. Insufficient funds." << std::endl;
-    }
+double Citizen::calculateTax() {
+    return income * taxRate;
 }
 
-void Citizen::setIncome(std::shared_ptr<Income> inc) {
-    income = inc;
+void Citizen::setIncome(double income) {
+    this->income = income;
+}
+
+
+
+
+
+
+double Citizen::getIncome() const {
+    return income;
+}
+
+bool Citizen::canPayTax() const {
+    return !taxCooldown && bankBalance > 0;
+}
+
+void Citizen::setTaxCooldown(bool status) {
+    taxCooldown = status;
+}
+
+bool Citizen::getTaxCooldown() const {
+    return taxCooldown;
 }

@@ -2,12 +2,20 @@
 #define TAXTYPE_H
 
 class TaxType {
-protected:
-    double taxRate;
-    char cType; //tax type identifier
+
+private:
+	double taxRate;
+	char cType;
+
 public:
-    virtual void calculateTax() = 0; 
-    virtual void setTax(double rate) = 0;
+	TaxType(double rate, char type);
+	
+    virtual ~TaxType() {} // Virtual Destructor
+	
+	virtual double calculateTax(double val)=0;
+	virtual void setTax(double rate);
+	virtual double getTaxRate();
+	char getTaxType();
 };
 
 #endif
