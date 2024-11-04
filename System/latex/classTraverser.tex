@@ -1,0 +1,96 @@
+\doxysection{Traverser Class Reference}
+\hypertarget{classTraverser}{}\label{classTraverser}\index{Traverser@{Traverser}}
+
+
+Interface for iterating over \doxylink{classTransportation}{Transportation} objects.  
+
+
+
+
+{\ttfamily \#include $<$Traverser.\+h$>$}
+
+Inheritance diagram for Traverser\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTraverser}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classTraverser_acddaf2e3a31117755712dd8ce8247dad}{operator++}} ()=0
+\begin{DoxyCompactList}\small\item\em Increment the iterator. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classTraverser_ae858453031a81cbf55fed59cabf86b80}{operator-\/-\/}} ()=0
+\begin{DoxyCompactList}\small\item\em Decrement the iterator. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTraverser_a1b498f160040cd6385a1c1cfe57f681a}{operator\texorpdfstring{$\ast$}{*}}} ()=0
+\begin{DoxyCompactList}\small\item\em Dereference the iterator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for iterating over \doxylink{classTransportation}{Transportation} objects. 
+
+The \doxylink{classTraverser}{Traverser} class provides pure virtual functions for incrementing, decrementing, and dereferencing iterators over \doxylink{classTransportation}{Transportation} objects. Classes that inherit from \doxylink{classTraverser}{Traverser} must implement these functions. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTraverser_a1b498f160040cd6385a1c1cfe57f681a}\index{Traverser@{Traverser}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Traverser@{Traverser}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \label{classTraverser_a1b498f160040cd6385a1c1cfe57f681a} 
+virtual \mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} Traverser\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Dereference the iterator. 
+
+Pure virtual function to dereference the iterator and access the current \doxylink{classTransportation}{Transportation} object.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the current \doxylink{classTransportation}{Transportation} object. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classCityTraverser_a67dacbb070e8befb67cc731ee7083833}{City\+Traverser}}.
+
+\Hypertarget{classTraverser_acddaf2e3a31117755712dd8ce8247dad}\index{Traverser@{Traverser}!operator++@{operator++}}
+\index{operator++@{operator++}!Traverser@{Traverser}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}}
+{\footnotesize\ttfamily \label{classTraverser_acddaf2e3a31117755712dd8ce8247dad} 
+virtual bool Traverser\+::operator++ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Increment the iterator. 
+
+Pure virtual function to increment the iterator to the next \doxylink{classTransportation}{Transportation} object.
+
+\begin{DoxyReturn}{Returns}
+true if the increment was successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classCityTraverser_a0e4a4571000d38e717f7eeba52e2cf66}{City\+Traverser}}.
+
+\Hypertarget{classTraverser_ae858453031a81cbf55fed59cabf86b80}\index{Traverser@{Traverser}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!Traverser@{Traverser}}
+\doxysubsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}}
+{\footnotesize\ttfamily \label{classTraverser_ae858453031a81cbf55fed59cabf86b80} 
+virtual bool Traverser\+::operator-\/-\/ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Decrement the iterator. 
+
+Pure virtual function to decrement the iterator to the previous \doxylink{classTransportation}{Transportation} object.
+
+\begin{DoxyReturn}{Returns}
+true if the decrement was successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classCityTraverser_a7fee6843980058b360d81f348296d062}{City\+Traverser}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Traverser_8h}{Traverser.\+h}}\end{DoxyCompactItemize}

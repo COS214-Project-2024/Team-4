@@ -1,0 +1,52 @@
+\doxysection{Residential\+Building.\+h}
+\hypertarget{ResidentialBuilding_8h_source}{}\label{ResidentialBuilding_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ ResidentialBuilding.h}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ RESIDENTIALBUILDING\_H}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ RESIDENTIALBUILDING\_H}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Building.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Citizen.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}TaxType.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classResidentialBuilding}{ResidentialBuilding}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBuilding}{Building}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{classResidentialBuilding}{ResidentialBuilding}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{float}\ area,\ \textcolor{keywordtype}{int}\ floors,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ capacity,\ \textcolor{keywordtype}{float}\ citizenSatisfaction,}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ economicGrowth,\ \textcolor{keywordtype}{float}\ resourceConsumption,}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ residentialUnits,\ \textcolor{keywordtype}{float}\ comfortLevel);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ std::string\ getType()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ updateImpacts()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ upgradeComfort(\textcolor{keywordtype}{float}\ comfort);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ construct()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{double}\ payTaxes(\mbox{\hyperlink{classTaxType}{TaxType}}*\ taxType);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{double}\ calculatePropertyTax();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ addResidents(\mbox{\hyperlink{classCitizen}{Citizen}}*\ citizen);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ undoCollectTaxes();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ getResidentialUnits()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ residentialUnits;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{float}\ comfortLevel;}
+\DoxyCodeLine{00033\ \ \ \ \ std::string\ bType;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{double}\ totalTaxCollected;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{double}\ propertyTax;}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{double}\ totalPropertyTaxCollected;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{double}\ totalIncomeRaxCollected;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ calculateEconomicImpact()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ calculateResourceConsumption()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ calculateSatisfactionImpact()\ \textcolor{keyword}{override};\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ std::vector<Citizen*>\ residents;\ \ \ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RESIDENTIALBUILDING\_H}}
+
+\end{DoxyCode}

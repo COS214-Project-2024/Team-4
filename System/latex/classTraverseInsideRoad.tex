@@ -1,0 +1,123 @@
+\doxysection{Traverse\+Inside\+Road Class Reference}
+\hypertarget{classTraverseInsideRoad}{}\label{classTraverseInsideRoad}\index{TraverseInsideRoad@{TraverseInsideRoad}}
+
+
+A class to traverse inside roads in a transportation system.  
+
+
+
+
+{\ttfamily \#include $<$Traverse\+Inside\+Road.\+h$>$}
+
+Inheritance diagram for Traverse\+Inside\+Road\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTraverseInsideRoad}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTraverseInsideRoad_ab00066d9a666d719b0576e2effd2c5fc}{Traverse\+Inside\+Road}} (\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*}element)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classTraverseInsideRoad}{Traverse\+Inside\+Road}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTraverseInsideRoad_a4405e8e75fa856ca0b0889a783cb1e12}{next\+List}} ()
+\begin{DoxyCompactList}\small\item\em Move to the next list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTraverseInsideRoad_a84e6a98b53f50bd6e6ff2af680e2929f}{prev\+List}} ()
+\begin{DoxyCompactList}\small\item\em Move to the previous list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTraverseInsideRoad_aa28902ebcafefdcc5d91ff7c95931089}{get\+Pos}} (size\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{classTransportation}{Transportation} object at the specified position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTraverseState}{Traverse\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTraverseState_af3a208b51a05d3a16b9121c6514aa06f}{Traverse\+State}} (\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*}element)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classTraverseState}{Traverse\+State}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTraverseState_aefa131c6b0b24e49fc35dfd338daca95}{get\+Layer}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current \doxylink{classTransportation}{Transportation} layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to traverse inside roads in a transportation system. 
+
+The \doxylink{classTraverseInsideRoad}{Traverse\+Inside\+Road} class is a state class that allows traversal of inside roads within a transportation system. It inherits from the \doxylink{classTraverseState}{Traverse\+State} class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classTraverseInsideRoad_ab00066d9a666d719b0576e2effd2c5fc}\index{TraverseInsideRoad@{TraverseInsideRoad}!TraverseInsideRoad@{TraverseInsideRoad}}
+\index{TraverseInsideRoad@{TraverseInsideRoad}!TraverseInsideRoad@{TraverseInsideRoad}}
+\doxysubsubsection{\texorpdfstring{TraverseInsideRoad()}{TraverseInsideRoad()}}
+{\footnotesize\ttfamily \label{classTraverseInsideRoad_ab00066d9a666d719b0576e2effd2c5fc} 
+Traverse\+Inside\+Road\+::\+Traverse\+Inside\+Road (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*}}]{element}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{classTraverseInsideRoad}{Traverse\+Inside\+Road}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & A pointer to a \doxylink{classTransportation}{Transportation} object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTraverseInsideRoad_aa28902ebcafefdcc5d91ff7c95931089}\index{TraverseInsideRoad@{TraverseInsideRoad}!getPos@{getPos}}
+\index{getPos@{getPos}!TraverseInsideRoad@{TraverseInsideRoad}}
+\doxysubsubsection{\texorpdfstring{getPos()}{getPos()}}
+{\footnotesize\ttfamily \label{classTraverseInsideRoad_aa28902ebcafefdcc5d91ff7c95931089} 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} Traverse\+Inside\+Road\+::get\+Pos (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{x}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the \doxylink{classTransportation}{Transportation} object at the specified position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The position index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the \doxylink{classTransportation}{Transportation} object at the specified position. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTraverseState_aab673adeebd7b46dc8356d0c705af82e}{Traverse\+State}}.
+
+\Hypertarget{classTraverseInsideRoad_a4405e8e75fa856ca0b0889a783cb1e12}\index{TraverseInsideRoad@{TraverseInsideRoad}!nextList@{nextList}}
+\index{nextList@{nextList}!TraverseInsideRoad@{TraverseInsideRoad}}
+\doxysubsubsection{\texorpdfstring{nextList()}{nextList()}}
+{\footnotesize\ttfamily \label{classTraverseInsideRoad_a4405e8e75fa856ca0b0889a783cb1e12} 
+bool Traverse\+Inside\+Road\+::next\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Move to the next list. 
+
+\begin{DoxyReturn}{Returns}
+True if the operation was successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTraverseState_a0469f8f655306234ad5876de89f340e7}{Traverse\+State}}.
+
+\Hypertarget{classTraverseInsideRoad_a84e6a98b53f50bd6e6ff2af680e2929f}\index{TraverseInsideRoad@{TraverseInsideRoad}!prevList@{prevList}}
+\index{prevList@{prevList}!TraverseInsideRoad@{TraverseInsideRoad}}
+\doxysubsubsection{\texorpdfstring{prevList()}{prevList()}}
+{\footnotesize\ttfamily \label{classTraverseInsideRoad_a84e6a98b53f50bd6e6ff2af680e2929f} 
+bool Traverse\+Inside\+Road\+::prev\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Move to the previous list. 
+
+\begin{DoxyReturn}{Returns}
+True if the operation was successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTraverseState_ae4bf038bf916f6b0a84e915b8a4d9aa8}{Traverse\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TraverseInsideRoad_8h}{Traverse\+Inside\+Road.\+h}}\item 
+Traverse\+Inside\+Road.\+cpp\end{DoxyCompactItemize}

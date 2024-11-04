@@ -1,0 +1,246 @@
+\doxysection{Transport\+Manager Class Reference}
+\hypertarget{classTransportManager}{}\label{classTransportManager}\index{TransportManager@{TransportManager}}
+
+
+Manages various types of transportation objects.  
+
+
+
+
+{\ttfamily \#include $<$Transport\+Manager.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classTransportManager_aedee9bf50ae72668b9c38056e4fa867f}\label{classTransportManager_aedee9bf50ae72668b9c38056e4fa867f} 
+{\bfseries Transport\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classTransportManager}{Transport\+Manager} class. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTransportManager_a720763ebf77ba51b41602d12be27fa95}{create\+Highway}} (char state, std\+::string road\+Name, float speed\+Limit)
+\begin{DoxyCompactList}\small\item\em Creates a highway. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTransportManager_a580b7f3c9d70f42658f68c31e03140b2}{create\+Inside\+Road}} (char state, std\+::string road\+Name, float avg\+Stop\+Time)
+\begin{DoxyCompactList}\small\item\em Creates an inside road. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTransportManager_abbe5418c679e6a81c404756ef61f47a0}{create\+Bus}} (char state, std\+::string route, int bus\+Number, int capacity)
+\begin{DoxyCompactList}\small\item\em Creates a bus. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTransportManager_aab0a3b5458b6e567684db41bf59034e2}{create\+Taxi}} (char state, std\+::string route, std\+::string taxi\+Company, int taxi\+Number)
+\begin{DoxyCompactList}\small\item\em Creates a taxi. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTransportManager_a074d4e4a3d8b9296beb9df9bf7cf51c2}{create\+Passenger\+Train}} (char state, std\+::string line)
+\begin{DoxyCompactList}\small\item\em Creates a passenger train. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTransportManager_a7010f451635cfbc25410ac88e74f446c}{create\+Freight\+Train}} (char state, std\+::string line, float weight, float length)
+\begin{DoxyCompactList}\small\item\em Creates a freight train. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTransportManager_a06e3e8db95d5a04e303c218a4655a1b7}{create\+Comercial\+Airport}} (char state, std\+::string name)
+\begin{DoxyCompactList}\small\item\em Creates a commercial airport. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTransportManager_a86499033dd6581ede76e9b07466637a7}{create\+Cargo\+Airport}} (char state, std\+::string name)
+\begin{DoxyCompactList}\small\item\em Creates a cargo airport. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTransportManager_a4a6749454c4b0c5bb49ed2949a380573}{get\+Transportation}} (size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Gets a transportation object by index. \end{DoxyCompactList}\item 
+\Hypertarget{classTransportManager_a1452b6db9a94b71930272b238d7a2f14}\label{classTransportManager_a1452b6db9a94b71930272b238d7a2f14} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Transport\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classTransportManager}{Transport\+Manager} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages various types of transportation objects. 
+
+The \doxylink{classTransportManager}{Transport\+Manager} class uses a \doxylink{classTransportationFactory}{Transportation\+Factory} to create and manage different types of transportation objects such as highways, roads, buses, taxis, trains, and airports. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTransportManager_abbe5418c679e6a81c404756ef61f47a0}\index{TransportManager@{TransportManager}!createBus@{createBus}}
+\index{createBus@{createBus}!TransportManager@{TransportManager}}
+\doxysubsubsection{\texorpdfstring{createBus()}{createBus()}}
+{\footnotesize\ttfamily \label{classTransportManager_abbe5418c679e6a81c404756ef61f47a0} 
+bool Transport\+Manager\+::create\+Bus (\begin{DoxyParamCaption}\item[{char}]{state}{, }\item[{std\+::string}]{route}{, }\item[{int}]{bus\+Number}{, }\item[{int}]{capacity}{}\end{DoxyParamCaption})}
+
+
+
+Creates a bus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state where the bus operates. \\
+\hline
+{\em route} & The route of the bus. \\
+\hline
+{\em bus\+Number} & The bus number. \\
+\hline
+{\em capacity} & The capacity of the bus. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the bus was created successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classTransportManager_a86499033dd6581ede76e9b07466637a7}\index{TransportManager@{TransportManager}!createCargoAirport@{createCargoAirport}}
+\index{createCargoAirport@{createCargoAirport}!TransportManager@{TransportManager}}
+\doxysubsubsection{\texorpdfstring{createCargoAirport()}{createCargoAirport()}}
+{\footnotesize\ttfamily \label{classTransportManager_a86499033dd6581ede76e9b07466637a7} 
+bool Transport\+Manager\+::create\+Cargo\+Airport (\begin{DoxyParamCaption}\item[{char}]{state}{, }\item[{std\+::string}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Creates a cargo airport. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state where the airport is located. \\
+\hline
+{\em name} & The name of the airport. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the airport was created successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classTransportManager_a06e3e8db95d5a04e303c218a4655a1b7}\index{TransportManager@{TransportManager}!createComercialAirport@{createComercialAirport}}
+\index{createComercialAirport@{createComercialAirport}!TransportManager@{TransportManager}}
+\doxysubsubsection{\texorpdfstring{createComercialAirport()}{createComercialAirport()}}
+{\footnotesize\ttfamily \label{classTransportManager_a06e3e8db95d5a04e303c218a4655a1b7} 
+bool Transport\+Manager\+::create\+Comercial\+Airport (\begin{DoxyParamCaption}\item[{char}]{state}{, }\item[{std\+::string}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Creates a commercial airport. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state where the airport is located. \\
+\hline
+{\em name} & The name of the airport. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the airport was created successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classTransportManager_a7010f451635cfbc25410ac88e74f446c}\index{TransportManager@{TransportManager}!createFreightTrain@{createFreightTrain}}
+\index{createFreightTrain@{createFreightTrain}!TransportManager@{TransportManager}}
+\doxysubsubsection{\texorpdfstring{createFreightTrain()}{createFreightTrain()}}
+{\footnotesize\ttfamily \label{classTransportManager_a7010f451635cfbc25410ac88e74f446c} 
+bool Transport\+Manager\+::create\+Freight\+Train (\begin{DoxyParamCaption}\item[{char}]{state}{, }\item[{std\+::string}]{line}{, }\item[{float}]{weight}{, }\item[{float}]{length}{}\end{DoxyParamCaption})}
+
+
+
+Creates a freight train. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state where the train operates. \\
+\hline
+{\em line} & The line of the train. \\
+\hline
+{\em weight} & The weight of the freight. \\
+\hline
+{\em length} & The length of the freight. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the train was created successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classTransportManager_a720763ebf77ba51b41602d12be27fa95}\index{TransportManager@{TransportManager}!createHighway@{createHighway}}
+\index{createHighway@{createHighway}!TransportManager@{TransportManager}}
+\doxysubsubsection{\texorpdfstring{createHighway()}{createHighway()}}
+{\footnotesize\ttfamily \label{classTransportManager_a720763ebf77ba51b41602d12be27fa95} 
+bool Transport\+Manager\+::create\+Highway (\begin{DoxyParamCaption}\item[{char}]{state}{, }\item[{std\+::string}]{road\+Name}{, }\item[{float}]{speed\+Limit}{}\end{DoxyParamCaption})}
+
+
+
+Creates a highway. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state where the highway is located. \\
+\hline
+{\em road\+Name} & The name of the highway. \\
+\hline
+{\em speed\+Limit} & The speed limit of the highway. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the highway was created successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classTransportManager_a580b7f3c9d70f42658f68c31e03140b2}\index{TransportManager@{TransportManager}!createInsideRoad@{createInsideRoad}}
+\index{createInsideRoad@{createInsideRoad}!TransportManager@{TransportManager}}
+\doxysubsubsection{\texorpdfstring{createInsideRoad()}{createInsideRoad()}}
+{\footnotesize\ttfamily \label{classTransportManager_a580b7f3c9d70f42658f68c31e03140b2} 
+bool Transport\+Manager\+::create\+Inside\+Road (\begin{DoxyParamCaption}\item[{char}]{state}{, }\item[{std\+::string}]{road\+Name}{, }\item[{float}]{avg\+Stop\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Creates an inside road. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state where the road is located. \\
+\hline
+{\em road\+Name} & The name of the road. \\
+\hline
+{\em avg\+Stop\+Time} & The average stop time on the road. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the road was created successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classTransportManager_a074d4e4a3d8b9296beb9df9bf7cf51c2}\index{TransportManager@{TransportManager}!createPassengerTrain@{createPassengerTrain}}
+\index{createPassengerTrain@{createPassengerTrain}!TransportManager@{TransportManager}}
+\doxysubsubsection{\texorpdfstring{createPassengerTrain()}{createPassengerTrain()}}
+{\footnotesize\ttfamily \label{classTransportManager_a074d4e4a3d8b9296beb9df9bf7cf51c2} 
+bool Transport\+Manager\+::create\+Passenger\+Train (\begin{DoxyParamCaption}\item[{char}]{state}{, }\item[{std\+::string}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Creates a passenger train. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state where the train operates. \\
+\hline
+{\em line} & The line of the train. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the train was created successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classTransportManager_aab0a3b5458b6e567684db41bf59034e2}\index{TransportManager@{TransportManager}!createTaxi@{createTaxi}}
+\index{createTaxi@{createTaxi}!TransportManager@{TransportManager}}
+\doxysubsubsection{\texorpdfstring{createTaxi()}{createTaxi()}}
+{\footnotesize\ttfamily \label{classTransportManager_aab0a3b5458b6e567684db41bf59034e2} 
+bool Transport\+Manager\+::create\+Taxi (\begin{DoxyParamCaption}\item[{char}]{state}{, }\item[{std\+::string}]{route}{, }\item[{std\+::string}]{taxi\+Company}{, }\item[{int}]{taxi\+Number}{}\end{DoxyParamCaption})}
+
+
+
+Creates a taxi. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state where the taxi operates. \\
+\hline
+{\em route} & The route of the taxi. \\
+\hline
+{\em taxi\+Company} & The company that owns the taxi. \\
+\hline
+{\em taxi\+Number} & The taxi number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the taxi was created successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classTransportManager_a4a6749454c4b0c5bb49ed2949a380573}\index{TransportManager@{TransportManager}!getTransportation@{getTransportation}}
+\index{getTransportation@{getTransportation}!TransportManager@{TransportManager}}
+\doxysubsubsection{\texorpdfstring{getTransportation()}{getTransportation()}}
+{\footnotesize\ttfamily \label{classTransportManager_a4a6749454c4b0c5bb49ed2949a380573} 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} Transport\+Manager\+::get\+Transportation (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Gets a transportation object by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the transportation object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the transportation object. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TransportManager_8h}{Transport\+Manager.\+h}}\item 
+Transport\+Manager.\+cpp\end{DoxyCompactItemize}

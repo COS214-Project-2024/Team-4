@@ -1,0 +1,472 @@
+\doxysection{Inside\+Road Class Reference}
+\hypertarget{classInsideRoad}{}\label{classInsideRoad}\index{InsideRoad@{InsideRoad}}
+
+
+Represents an inside road that can contain various transportation entities.  
+
+
+
+
+{\ttfamily \#include $<$Inside\+Road.\+h$>$}
+
+Inheritance diagram for Inside\+Road\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classInsideRoad}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classInsideRoad_a625dbc0fb59e522f3cd3b8af28f1b2bc}{Inside\+Road}} (char state, std\+::string road\+Name, float avg\+Stop\+Time)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classInsideRoad}{Inside\+Road} class. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classInsideRoad_a1b004be77b4ad7eab3b6dcfc8f3fe284}{add\+Inside\+Road}} (\mbox{\hyperlink{classInsideRoad}{Inside\+Road}} \texorpdfstring{$\ast$}{*}inside\+Road)
+\begin{DoxyCompactList}\small\item\em Adds an inside road to this road. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classInsideRoad_ad668e0016c7b878eb3053195411938e0}{add\+Highway}} (\mbox{\hyperlink{classHighway}{Highway}} \texorpdfstring{$\ast$}{*}highway)
+\begin{DoxyCompactList}\small\item\em Adds a highway to this road. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classInsideRoad_aab7a07b2599c8ae3aebac9680c180a7e}{add\+Bus}} (\mbox{\hyperlink{classBus}{Bus}} \texorpdfstring{$\ast$}{*}bus)
+\begin{DoxyCompactList}\small\item\em Adds a bus to this road. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classInsideRoad_a59221c0eecab05e9003ec2e9e034b997}{add\+Taxi}} (\mbox{\hyperlink{classTaxi}{Taxi}} \texorpdfstring{$\ast$}{*}taxi)
+\begin{DoxyCompactList}\small\item\em Adds a taxi to this road. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classInsideRoad_afde7a99a8f2ff3ecb92f8ba2baeac8e0}{add\+Comercial\+Airport}} (\mbox{\hyperlink{classComercialAirport}{Comercial\+Airport}} \texorpdfstring{$\ast$}{*}comercial\+Airport)
+\begin{DoxyCompactList}\small\item\em Adds a commercial airport to this road. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classInsideRoad_a2e8accd1994e6f399e6d32eec0383125}{add\+Cargo\+Airport}} (\mbox{\hyperlink{classCargoAirport}{Cargo\+Airport}} \texorpdfstring{$\ast$}{*}cargo\+Airport)
+\begin{DoxyCompactList}\small\item\em Adds a cargo airport to this road. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classInsideRoad_a55143748ed9e9958a2c9b49bfe94bbfd}{add\+Passenger\+Train}} (\mbox{\hyperlink{classPassengerTrain}{Passenger\+Train}} \texorpdfstring{$\ast$}{*}passenger\+Train)
+\begin{DoxyCompactList}\small\item\em Adds a passenger train to this road. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classInsideRoad_a6015b2c8911e2440a158954de8a67d11}{add\+Freight\+Train}} (\mbox{\hyperlink{classFreightTrain}{Freight\+Train}} \texorpdfstring{$\ast$}{*}freight\+Train)
+\begin{DoxyCompactList}\small\item\em Adds a freight train to this road. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFreightTrain}{Freight\+Train}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classInsideRoad_a1bae6ba623da7afad691ec42f1f67d03}{get\+Freight\+Train}} (std\+::size\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Gets a freight train from the list of freight trains. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classInsideRoad_ad7b5213eeb85714a0bfc0dba940b3310}{add\+Building}} (\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}building)
+\begin{DoxyCompactList}\small\item\em Adds a building to the road. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPassengerTrain}{Passenger\+Train}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classInsideRoad_a1a88a7d0dd8336d40f9312951a67973a}{get\+Passenger\+Train}} (std\+::size\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Gets a passenger train from the list of passenger trains. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHighway}{Highway}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classInsideRoad_ade335aa7a328793f2505c05e91fc4b71}{get\+Highway}} (std\+::size\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Gets a highway from the list of highways. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classInsideRoad}{Inside\+Road}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classInsideRoad_a4a0ed0c87da1f767a7646034a48d41aa}{get\+Inside\+Road}} (std\+::size\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Gets an inside road from the list of inside roads. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBus}{Bus}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classInsideRoad_a11db62438b40b7c5a6267ebf98af16e8}{get\+Bus}} (std\+::size\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Gets a bus from the list of buses. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTaxi}{Taxi}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classInsideRoad_ac4663d468f2d2bded1a5097a18a66a02}{get\+Taxi}} (std\+::size\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Gets a taxi from the list of taxis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classComercialAirport}{Comercial\+Airport}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classInsideRoad_ab09e8f9506337c93089bfddb221b8916}{get\+Comercial\+Airport}} (std\+::size\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Gets a commercial airport from the list of commercial airports. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCargoAirport}{Cargo\+Airport}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classInsideRoad_a7f0077b428b6a5f46a69861726d8bf09}{get\+Cargo\+Airport}} (std\+::size\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Gets a cargo airport from the list of cargo airports. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classInsideRoad_abbc00478ca2bb2a36046e76a54a15634}{get\+Building}} (std\+::size\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Gets a building from the list of buildings. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classInsideRoad_afb9c8d09fff030a226debb02d636b4eb}{get\+Avg\+Stop\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Gets the average stop time on this road. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classInsideRoad_a618d61af8ef95c6cf15ad32ee4ec4e98}{get\+Road\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of this road. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classRoad}{Road}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRoad_a3fdd668af28666d4d19c8ef83cd91515}{Road}} (char state, std\+::string road\+Name, char type)
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classRoad}{Road} object. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classRoad_a977c25448a0360dd33620ddbcd2a4898}{calculate\+Commute}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the commute time on the road. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classRoad_ad0c6b016a475f6d643f4eabdca070145}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the road. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTransportation}{Transportation}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTransportation_a6038480df048e3b81449d9417cff4800}{Transportation}} (char state, char type)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classTransportation}{Transportation} class. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classTransportation_a4abf7f44c7a515f6933886dd321cc1c6}{get\+Traffic\+Flow}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current traffic flow. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTransportation_a7de50ee7df6f27b64529f15f74407d14}{set\+State}} (char state)
+\begin{DoxyCompactList}\small\item\em Sets the traffic flow state. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classTransportation_a5693fe4abdbacc36ee865283535aa546}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of transportation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation_ae63d1b7fa5006d357228196b6b81684d}{\texorpdfstring{$\sim$}{\string~}\+Transportation}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classTransportation}{Transportation} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an inside road that can contain various transportation entities. 
+
+The \doxylink{classInsideRoad}{Inside\+Road} class inherits from the \doxylink{classRoad}{Road} class and adds functionality to manage different types of transportation entities such as buses, taxis, airports, and trains. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classInsideRoad_a625dbc0fb59e522f3cd3b8af28f1b2bc}\index{InsideRoad@{InsideRoad}!InsideRoad@{InsideRoad}}
+\index{InsideRoad@{InsideRoad}!InsideRoad@{InsideRoad}}
+\doxysubsubsection{\texorpdfstring{InsideRoad()}{InsideRoad()}}
+{\footnotesize\ttfamily \label{classInsideRoad_a625dbc0fb59e522f3cd3b8af28f1b2bc} 
+Inside\+Road\+::\+Inside\+Road (\begin{DoxyParamCaption}\item[{char}]{state}{, }\item[{std\+::string}]{road\+Name}{, }\item[{float}]{avg\+Stop\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{classInsideRoad}{Inside\+Road} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state of the road. \\
+\hline
+{\em road\+Name} & The name of the road. \\
+\hline
+{\em avg\+Stop\+Time} & The average stop time on this road. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classInsideRoad_ad7b5213eeb85714a0bfc0dba940b3310}\index{InsideRoad@{InsideRoad}!addBuilding@{addBuilding}}
+\index{addBuilding@{addBuilding}!InsideRoad@{InsideRoad}}
+\doxysubsubsection{\texorpdfstring{addBuilding()}{addBuilding()}}
+{\footnotesize\ttfamily \label{classInsideRoad_ad7b5213eeb85714a0bfc0dba940b3310} 
+bool Inside\+Road\+::add\+Building (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}}]{building}{}\end{DoxyParamCaption})}
+
+
+
+Adds a building to the road. 
+
+This function adds a building to the road\textquotesingle{}s list of buildings.
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & Pointer to the building to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the building was added successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classInsideRoad_aab7a07b2599c8ae3aebac9680c180a7e}\index{InsideRoad@{InsideRoad}!addBus@{addBus}}
+\index{addBus@{addBus}!InsideRoad@{InsideRoad}}
+\doxysubsubsection{\texorpdfstring{addBus()}{addBus()}}
+{\footnotesize\ttfamily \label{classInsideRoad_aab7a07b2599c8ae3aebac9680c180a7e} 
+bool Inside\+Road\+::add\+Bus (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBus}{Bus}} \texorpdfstring{$\ast$}{*}}]{bus}{}\end{DoxyParamCaption})}
+
+
+
+Adds a bus to this road. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bus} & Pointer to the bus to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the bus was added successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classInsideRoad_a2e8accd1994e6f399e6d32eec0383125}\index{InsideRoad@{InsideRoad}!addCargoAirport@{addCargoAirport}}
+\index{addCargoAirport@{addCargoAirport}!InsideRoad@{InsideRoad}}
+\doxysubsubsection{\texorpdfstring{addCargoAirport()}{addCargoAirport()}}
+{\footnotesize\ttfamily \label{classInsideRoad_a2e8accd1994e6f399e6d32eec0383125} 
+bool Inside\+Road\+::add\+Cargo\+Airport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCargoAirport}{Cargo\+Airport}} \texorpdfstring{$\ast$}{*}}]{cargo\+Airport}{}\end{DoxyParamCaption})}
+
+
+
+Adds a cargo airport to this road. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cargo\+Airport} & Pointer to the cargo airport to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the cargo airport was added successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classInsideRoad_afde7a99a8f2ff3ecb92f8ba2baeac8e0}\index{InsideRoad@{InsideRoad}!addComercialAirport@{addComercialAirport}}
+\index{addComercialAirport@{addComercialAirport}!InsideRoad@{InsideRoad}}
+\doxysubsubsection{\texorpdfstring{addComercialAirport()}{addComercialAirport()}}
+{\footnotesize\ttfamily \label{classInsideRoad_afde7a99a8f2ff3ecb92f8ba2baeac8e0} 
+bool Inside\+Road\+::add\+Comercial\+Airport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classComercialAirport}{Comercial\+Airport}} \texorpdfstring{$\ast$}{*}}]{comercial\+Airport}{}\end{DoxyParamCaption})}
+
+
+
+Adds a commercial airport to this road. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em comercial\+Airport} & Pointer to the commercial airport to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the commercial airport was added successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classInsideRoad_a6015b2c8911e2440a158954de8a67d11}\index{InsideRoad@{InsideRoad}!addFreightTrain@{addFreightTrain}}
+\index{addFreightTrain@{addFreightTrain}!InsideRoad@{InsideRoad}}
+\doxysubsubsection{\texorpdfstring{addFreightTrain()}{addFreightTrain()}}
+{\footnotesize\ttfamily \label{classInsideRoad_a6015b2c8911e2440a158954de8a67d11} 
+bool Inside\+Road\+::add\+Freight\+Train (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFreightTrain}{Freight\+Train}} \texorpdfstring{$\ast$}{*}}]{freight\+Train}{}\end{DoxyParamCaption})}
+
+
+
+Adds a freight train to this road. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em freight\+Train} & Pointer to the freight train to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the freight train was added successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classInsideRoad_ad668e0016c7b878eb3053195411938e0}\index{InsideRoad@{InsideRoad}!addHighway@{addHighway}}
+\index{addHighway@{addHighway}!InsideRoad@{InsideRoad}}
+\doxysubsubsection{\texorpdfstring{addHighway()}{addHighway()}}
+{\footnotesize\ttfamily \label{classInsideRoad_ad668e0016c7b878eb3053195411938e0} 
+bool Inside\+Road\+::add\+Highway (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHighway}{Highway}} \texorpdfstring{$\ast$}{*}}]{highway}{}\end{DoxyParamCaption})}
+
+
+
+Adds a highway to this road. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em highway} & Pointer to the highway to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the highway was added successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classInsideRoad_a1b004be77b4ad7eab3b6dcfc8f3fe284}\index{InsideRoad@{InsideRoad}!addInsideRoad@{addInsideRoad}}
+\index{addInsideRoad@{addInsideRoad}!InsideRoad@{InsideRoad}}
+\doxysubsubsection{\texorpdfstring{addInsideRoad()}{addInsideRoad()}}
+{\footnotesize\ttfamily \label{classInsideRoad_a1b004be77b4ad7eab3b6dcfc8f3fe284} 
+bool Inside\+Road\+::add\+Inside\+Road (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classInsideRoad}{Inside\+Road}} \texorpdfstring{$\ast$}{*}}]{inside\+Road}{}\end{DoxyParamCaption})}
+
+
+
+Adds an inside road to this road. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inside\+Road} & Pointer to the inside road to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the inside road was added successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classInsideRoad_a55143748ed9e9958a2c9b49bfe94bbfd}\index{InsideRoad@{InsideRoad}!addPassengerTrain@{addPassengerTrain}}
+\index{addPassengerTrain@{addPassengerTrain}!InsideRoad@{InsideRoad}}
+\doxysubsubsection{\texorpdfstring{addPassengerTrain()}{addPassengerTrain()}}
+{\footnotesize\ttfamily \label{classInsideRoad_a55143748ed9e9958a2c9b49bfe94bbfd} 
+bool Inside\+Road\+::add\+Passenger\+Train (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPassengerTrain}{Passenger\+Train}} \texorpdfstring{$\ast$}{*}}]{passenger\+Train}{}\end{DoxyParamCaption})}
+
+
+
+Adds a passenger train to this road. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em passenger\+Train} & Pointer to the passenger train to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the passenger train was added successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classInsideRoad_a59221c0eecab05e9003ec2e9e034b997}\index{InsideRoad@{InsideRoad}!addTaxi@{addTaxi}}
+\index{addTaxi@{addTaxi}!InsideRoad@{InsideRoad}}
+\doxysubsubsection{\texorpdfstring{addTaxi()}{addTaxi()}}
+{\footnotesize\ttfamily \label{classInsideRoad_a59221c0eecab05e9003ec2e9e034b997} 
+bool Inside\+Road\+::add\+Taxi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTaxi}{Taxi}} \texorpdfstring{$\ast$}{*}}]{taxi}{}\end{DoxyParamCaption})}
+
+
+
+Adds a taxi to this road. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em taxi} & Pointer to the taxi to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the taxi was added successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classInsideRoad_afb9c8d09fff030a226debb02d636b4eb}\index{InsideRoad@{InsideRoad}!getAvgStopTime@{getAvgStopTime}}
+\index{getAvgStopTime@{getAvgStopTime}!InsideRoad@{InsideRoad}}
+\doxysubsubsection{\texorpdfstring{getAvgStopTime()}{getAvgStopTime()}}
+{\footnotesize\ttfamily \label{classInsideRoad_afb9c8d09fff030a226debb02d636b4eb} 
+float Inside\+Road\+::get\+Avg\+Stop\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the average stop time on this road. 
+
+\begin{DoxyReturn}{Returns}
+The average stop time. 
+\end{DoxyReturn}
+\Hypertarget{classInsideRoad_abbc00478ca2bb2a36046e76a54a15634}\index{InsideRoad@{InsideRoad}!getBuilding@{getBuilding}}
+\index{getBuilding@{getBuilding}!InsideRoad@{InsideRoad}}
+\doxysubsubsection{\texorpdfstring{getBuilding()}{getBuilding()}}
+{\footnotesize\ttfamily \label{classInsideRoad_abbc00478ca2bb2a36046e76a54a15634} 
+\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*} Inside\+Road\+::get\+Building (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Gets a building from the list of buildings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Index of the building to be retrieved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the building at the specified index. 
+\end{DoxyReturn}
+\Hypertarget{classInsideRoad_a11db62438b40b7c5a6267ebf98af16e8}\index{InsideRoad@{InsideRoad}!getBus@{getBus}}
+\index{getBus@{getBus}!InsideRoad@{InsideRoad}}
+\doxysubsubsection{\texorpdfstring{getBus()}{getBus()}}
+{\footnotesize\ttfamily \label{classInsideRoad_a11db62438b40b7c5a6267ebf98af16e8} 
+\mbox{\hyperlink{classBus}{Bus}} \texorpdfstring{$\ast$}{*} Inside\+Road\+::get\+Bus (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Gets a bus from the list of buses. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Index of the bus to be retrieved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the bus at the specified index. 
+\end{DoxyReturn}
+\Hypertarget{classInsideRoad_a7f0077b428b6a5f46a69861726d8bf09}\index{InsideRoad@{InsideRoad}!getCargoAirport@{getCargoAirport}}
+\index{getCargoAirport@{getCargoAirport}!InsideRoad@{InsideRoad}}
+\doxysubsubsection{\texorpdfstring{getCargoAirport()}{getCargoAirport()}}
+{\footnotesize\ttfamily \label{classInsideRoad_a7f0077b428b6a5f46a69861726d8bf09} 
+\mbox{\hyperlink{classCargoAirport}{Cargo\+Airport}} \texorpdfstring{$\ast$}{*} Inside\+Road\+::get\+Cargo\+Airport (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Gets a cargo airport from the list of cargo airports. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Index of the cargo airport to be retrieved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the cargo airport at the specified index. 
+\end{DoxyReturn}
+\Hypertarget{classInsideRoad_ab09e8f9506337c93089bfddb221b8916}\index{InsideRoad@{InsideRoad}!getComercialAirport@{getComercialAirport}}
+\index{getComercialAirport@{getComercialAirport}!InsideRoad@{InsideRoad}}
+\doxysubsubsection{\texorpdfstring{getComercialAirport()}{getComercialAirport()}}
+{\footnotesize\ttfamily \label{classInsideRoad_ab09e8f9506337c93089bfddb221b8916} 
+\mbox{\hyperlink{classComercialAirport}{Comercial\+Airport}} \texorpdfstring{$\ast$}{*} Inside\+Road\+::get\+Comercial\+Airport (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Gets a commercial airport from the list of commercial airports. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Index of the commercial airport to be retrieved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the commercial airport at the specified index. 
+\end{DoxyReturn}
+\Hypertarget{classInsideRoad_a1bae6ba623da7afad691ec42f1f67d03}\index{InsideRoad@{InsideRoad}!getFreightTrain@{getFreightTrain}}
+\index{getFreightTrain@{getFreightTrain}!InsideRoad@{InsideRoad}}
+\doxysubsubsection{\texorpdfstring{getFreightTrain()}{getFreightTrain()}}
+{\footnotesize\ttfamily \label{classInsideRoad_a1bae6ba623da7afad691ec42f1f67d03} 
+\mbox{\hyperlink{classFreightTrain}{Freight\+Train}} \texorpdfstring{$\ast$}{*} Inside\+Road\+::get\+Freight\+Train (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Gets a freight train from the list of freight trains. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Index of the freight train to be retrieved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the freight train at the specified index. 
+\end{DoxyReturn}
+\Hypertarget{classInsideRoad_ade335aa7a328793f2505c05e91fc4b71}\index{InsideRoad@{InsideRoad}!getHighway@{getHighway}}
+\index{getHighway@{getHighway}!InsideRoad@{InsideRoad}}
+\doxysubsubsection{\texorpdfstring{getHighway()}{getHighway()}}
+{\footnotesize\ttfamily \label{classInsideRoad_ade335aa7a328793f2505c05e91fc4b71} 
+\mbox{\hyperlink{classHighway}{Highway}} \texorpdfstring{$\ast$}{*} Inside\+Road\+::get\+Highway (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Gets a highway from the list of highways. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Index of the highway to be retrieved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the highway at the specified index. 
+\end{DoxyReturn}
+\Hypertarget{classInsideRoad_a4a0ed0c87da1f767a7646034a48d41aa}\index{InsideRoad@{InsideRoad}!getInsideRoad@{getInsideRoad}}
+\index{getInsideRoad@{getInsideRoad}!InsideRoad@{InsideRoad}}
+\doxysubsubsection{\texorpdfstring{getInsideRoad()}{getInsideRoad()}}
+{\footnotesize\ttfamily \label{classInsideRoad_a4a0ed0c87da1f767a7646034a48d41aa} 
+\mbox{\hyperlink{classInsideRoad}{Inside\+Road}} \texorpdfstring{$\ast$}{*} Inside\+Road\+::get\+Inside\+Road (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Gets an inside road from the list of inside roads. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Index of the inside road to be retrieved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the inside road at the specified index. 
+\end{DoxyReturn}
+\Hypertarget{classInsideRoad_a1a88a7d0dd8336d40f9312951a67973a}\index{InsideRoad@{InsideRoad}!getPassengerTrain@{getPassengerTrain}}
+\index{getPassengerTrain@{getPassengerTrain}!InsideRoad@{InsideRoad}}
+\doxysubsubsection{\texorpdfstring{getPassengerTrain()}{getPassengerTrain()}}
+{\footnotesize\ttfamily \label{classInsideRoad_a1a88a7d0dd8336d40f9312951a67973a} 
+\mbox{\hyperlink{classPassengerTrain}{Passenger\+Train}} \texorpdfstring{$\ast$}{*} Inside\+Road\+::get\+Passenger\+Train (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Gets a passenger train from the list of passenger trains. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Index of the passenger train to be retrieved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the passenger train at the specified index. 
+\end{DoxyReturn}
+\Hypertarget{classInsideRoad_a618d61af8ef95c6cf15ad32ee4ec4e98}\index{InsideRoad@{InsideRoad}!getRoadName@{getRoadName}}
+\index{getRoadName@{getRoadName}!InsideRoad@{InsideRoad}}
+\doxysubsubsection{\texorpdfstring{getRoadName()}{getRoadName()}}
+{\footnotesize\ttfamily \label{classInsideRoad_a618d61af8ef95c6cf15ad32ee4ec4e98} 
+std\+::string Inside\+Road\+::get\+Road\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the name of this road. 
+
+\begin{DoxyReturn}{Returns}
+The name of the road. 
+\end{DoxyReturn}
+\Hypertarget{classInsideRoad_ac4663d468f2d2bded1a5097a18a66a02}\index{InsideRoad@{InsideRoad}!getTaxi@{getTaxi}}
+\index{getTaxi@{getTaxi}!InsideRoad@{InsideRoad}}
+\doxysubsubsection{\texorpdfstring{getTaxi()}{getTaxi()}}
+{\footnotesize\ttfamily \label{classInsideRoad_ac4663d468f2d2bded1a5097a18a66a02} 
+\mbox{\hyperlink{classTaxi}{Taxi}} \texorpdfstring{$\ast$}{*} Inside\+Road\+::get\+Taxi (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Gets a taxi from the list of taxis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Index of the taxi to be retrieved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the taxi at the specified index. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{InsideRoad_8h}{Inside\+Road.\+h}}\item 
+Inside\+Road.\+cpp\end{DoxyCompactItemize}

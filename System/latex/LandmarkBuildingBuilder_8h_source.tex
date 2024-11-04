@@ -1,0 +1,43 @@
+\doxysection{Landmark\+Building\+Builder.\+h}
+\hypertarget{LandmarkBuildingBuilder_8h_source}{}\label{LandmarkBuildingBuilder_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LANDMARKBUILDINGBUILDER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LANDMARKBUILDINGBUILDER\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Builder.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}LandmarkBuilding.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include<string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLandmarkBuildingBuilder}{LandmarkBuildingBuilder}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBuilder}{Builder}}\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00012\ \ \ \ \ \ \textcolor{keywordtype}{int}\ visitorCapacity\ =\ 0;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{float}\ culturalValue\ =\ 0.0f;}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{bool}\ isHistoric\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ getVisitorCapacity();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//void\ setVisitorCapacity(int\ visitorCapacity);}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{float}\ getCulturalValue();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//void\ setCulturalValue(float\ culturalValue);}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ getIsHistoric();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//void\ setIsHistoric(bool\ isHistoric);}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{classLandmarkBuildingBuilder}{LandmarkBuildingBuilder}}\&\ setVisitorCapacity(\textcolor{keywordtype}{int}\ visitorCapacity);}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classLandmarkBuildingBuilder}{LandmarkBuildingBuilder}}\&\ setCulturalValue(\textcolor{keywordtype}{float}\ culturalValue);}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classLandmarkBuildingBuilder}{LandmarkBuildingBuilder}}\&\ setIsHistoric(\textcolor{keywordtype}{bool}\ isHistoric);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classLandmarkBuildingBuilder}{LandmarkBuildingBuilder}}();}
+\DoxyCodeLine{00034\ \ \ \ \ std::unique\_ptr<Building>\ build()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

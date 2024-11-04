@@ -1,0 +1,131 @@
+\doxysection{Traverse\+Comercial\+Airport Class Reference}
+\hypertarget{classTraverseComercialAirport}{}\label{classTraverseComercialAirport}\index{TraverseComercialAirport@{TraverseComercialAirport}}
+
+
+A class to traverse through a commercial airport.  
+
+
+
+
+{\ttfamily \#include $<$Traverse\+Comercial\+Airport.\+h$>$}
+
+Inheritance diagram for Traverse\+Comercial\+Airport\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTraverseComercialAirport}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTraverseComercialAirport_aae2a5f707f202ded2fdc284e49c72fff}{Traverse\+Comercial\+Airport}} (\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*}element)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classTraverseComercialAirport}{Traverse\+Comercial\+Airport}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTraverseComercialAirport_afb68d84f9d9b0e10109c23714b771f1d}{next\+List}} ()
+\begin{DoxyCompactList}\small\item\em Move to the next list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTraverseComercialAirport_a1eda5050c63fe82af1ee2696ccd0761b}{prev\+List}} ()
+\begin{DoxyCompactList}\small\item\em Move to the previous list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTraverseComercialAirport_aea87bcccc79be397dc5603be61cf51fb}{get\+Pos}} (size\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Get the position of a specific element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTraverseState}{Traverse\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTraverseState_af3a208b51a05d3a16b9121c6514aa06f}{Traverse\+State}} (\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*}element)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classTraverseState}{Traverse\+State}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTraverseState_aefa131c6b0b24e49fc35dfd338daca95}{get\+Layer}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current \doxylink{classTransportation}{Transportation} layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to traverse through a commercial airport. 
+
+The \doxylink{classTraverseComercialAirport}{Traverse\+Comercial\+Airport} class provides methods to navigate through different lists within a commercial airport. It maintains the current position and allows moving to the next or previous list. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classTraverseComercialAirport_aae2a5f707f202ded2fdc284e49c72fff}\index{TraverseComercialAirport@{TraverseComercialAirport}!TraverseComercialAirport@{TraverseComercialAirport}}
+\index{TraverseComercialAirport@{TraverseComercialAirport}!TraverseComercialAirport@{TraverseComercialAirport}}
+\doxysubsubsection{\texorpdfstring{TraverseComercialAirport()}{TraverseComercialAirport()}}
+{\footnotesize\ttfamily \label{classTraverseComercialAirport_aae2a5f707f202ded2fdc284e49c72fff} 
+Traverse\+Comercial\+Airport\+::\+Traverse\+Comercial\+Airport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*}}]{element}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{classTraverseComercialAirport}{Traverse\+Comercial\+Airport}. 
+
+Initializes the \doxylink{classTraverseComercialAirport}{Traverse\+Comercial\+Airport} with a given \doxylink{classTransportation}{Transportation} element.
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & A pointer to a \doxylink{classTransportation}{Transportation} object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTraverseComercialAirport_aea87bcccc79be397dc5603be61cf51fb}\index{TraverseComercialAirport@{TraverseComercialAirport}!getPos@{getPos}}
+\index{getPos@{getPos}!TraverseComercialAirport@{TraverseComercialAirport}}
+\doxysubsubsection{\texorpdfstring{getPos()}{getPos()}}
+{\footnotesize\ttfamily \label{classTraverseComercialAirport_aea87bcccc79be397dc5603be61cf51fb} 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} Traverse\+Comercial\+Airport\+::get\+Pos (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{x}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the position of a specific element. 
+
+Retrieves the \doxylink{classTransportation}{Transportation} object at the specified position.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The index of the desired element. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the \doxylink{classTransportation}{Transportation} object at the specified position. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTraverseState_aab673adeebd7b46dc8356d0c705af82e}{Traverse\+State}}.
+
+\Hypertarget{classTraverseComercialAirport_afb68d84f9d9b0e10109c23714b771f1d}\index{TraverseComercialAirport@{TraverseComercialAirport}!nextList@{nextList}}
+\index{nextList@{nextList}!TraverseComercialAirport@{TraverseComercialAirport}}
+\doxysubsubsection{\texorpdfstring{nextList()}{nextList()}}
+{\footnotesize\ttfamily \label{classTraverseComercialAirport_afb68d84f9d9b0e10109c23714b771f1d} 
+bool Traverse\+Comercial\+Airport\+::next\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Move to the next list. 
+
+Advances the current list index to the next list.
+
+\begin{DoxyReturn}{Returns}
+true if the operation was successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTraverseState_a0469f8f655306234ad5876de89f340e7}{Traverse\+State}}.
+
+\Hypertarget{classTraverseComercialAirport_a1eda5050c63fe82af1ee2696ccd0761b}\index{TraverseComercialAirport@{TraverseComercialAirport}!prevList@{prevList}}
+\index{prevList@{prevList}!TraverseComercialAirport@{TraverseComercialAirport}}
+\doxysubsubsection{\texorpdfstring{prevList()}{prevList()}}
+{\footnotesize\ttfamily \label{classTraverseComercialAirport_a1eda5050c63fe82af1ee2696ccd0761b} 
+bool Traverse\+Comercial\+Airport\+::prev\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Move to the previous list. 
+
+Moves the current list index to the previous list.
+
+\begin{DoxyReturn}{Returns}
+true if the operation was successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTraverseState_ae4bf038bf916f6b0a84e915b8a4d9aa8}{Traverse\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TraverseComercialAirport_8h}{Traverse\+Comercial\+Airport.\+h}}\item 
+Traverse\+Comercial\+Airport.\+cpp\end{DoxyCompactItemize}
