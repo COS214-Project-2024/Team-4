@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['taxi_0',['Taxi',['../classTaxi.html',1,'']]],
+  ['taxsatisfactionstrategy_1',['TaxSatisfactionStrategy',['../classTaxSatisfactionStrategy.html',1,'']]],
+  ['taxsystem_2',['TaxSystem',['../classTaxSystem.html',1,'']]],
+  ['taxtype_3',['TaxType',['../classTaxType.html',1,'']]],
+  ['trafficflow_4',['TrafficFlow',['../classTrafficFlow.html',1,'']]],
+  ['train_5',['Train',['../classTrain.html',1,'']]],
+  ['transportation_6',['Transportation',['../classTransportation.html',1,'']]],
+  ['transportationfactory_7',['TransportationFactory',['../classTransportationFactory.html',1,'']]],
+  ['transportmanager_8',['TransportManager',['../classTransportManager.html',1,'']]],
+  ['traversebus_9',['TraverseBus',['../classTraverseBus.html',1,'']]],
+  ['traversecargoairport_10',['TraverseCargoAirport',['../classTraverseCargoAirport.html',1,'']]],
+  ['traversecomercialairport_11',['TraverseComercialAirport',['../classTraverseComercialAirport.html',1,'']]],
+  ['traversefreighttrain_12',['TraverseFreightTrain',['../classTraverseFreightTrain.html',1,'']]],
+  ['traversehighway_13',['TraverseHighway',['../classTraverseHighway.html',1,'']]],
+  ['traverseinsideroad_14',['TraverseInsideRoad',['../classTraverseInsideRoad.html',1,'']]],
+  ['traversepassengertrain_15',['TraversePassengerTrain',['../classTraversePassengerTrain.html',1,'']]],
+  ['traverser_16',['Traverser',['../classTraverser.html',1,'']]],
+  ['traversestate_17',['TraverseState',['../classTraverseState.html',1,'']]],
+  ['traversetaxi_18',['TraverseTaxi',['../classTraverseTaxi.html',1,'']]]
+];

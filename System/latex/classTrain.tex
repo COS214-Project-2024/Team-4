@@ -1,0 +1,101 @@
+\doxysection{Train Class Reference}
+\hypertarget{classTrain}{}\label{classTrain}\index{Train@{Train}}
+
+
+A class representing a train as a mode of transportation.  
+
+
+
+
+{\ttfamily \#include $<$Train.\+h$>$}
+
+Inheritance diagram for Train\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classTrain}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTrain_a84a605245a03d2f29b518a483ba89ccb}{Train}} (char state, std\+::string line, char type)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classTrain}{Train} object. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classTrain_a02a8f84984307a49e9765f4d2aa19a86}{calculate\+Commute}} ()
+\begin{DoxyCompactList}\small\item\em Calculate the commute time for the train. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classTrain_a807b1ba96c2efafb7b2e5a0acdba3577}{get\+Line}} ()
+\begin{DoxyCompactList}\small\item\em Get the line on which the train operates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTransportation}{Transportation}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTransportation_a6038480df048e3b81449d9417cff4800}{Transportation}} (char state, char type)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classTransportation}{Transportation} class. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classTransportation_a4abf7f44c7a515f6933886dd321cc1c6}{get\+Traffic\+Flow}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current traffic flow. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTransportation_a7de50ee7df6f27b64529f15f74407d14}{set\+State}} (char state)
+\begin{DoxyCompactList}\small\item\em Sets the traffic flow state. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classTransportation_a5693fe4abdbacc36ee865283535aa546}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of transportation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation_ae63d1b7fa5006d357228196b6b81684d}{\texorpdfstring{$\sim$}{\string~}\+Transportation}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classTransportation}{Transportation} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class representing a train as a mode of transportation. 
+
+The \doxylink{classTrain}{Train} class inherits from the \doxylink{classTransportation}{Transportation} class and adds specific attributes and methods related to trains, such as the train line and commute calculation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classTrain_a84a605245a03d2f29b518a483ba89ccb}\index{Train@{Train}!Train@{Train}}
+\index{Train@{Train}!Train@{Train}}
+\doxysubsubsection{\texorpdfstring{Train()}{Train()}}
+{\footnotesize\ttfamily \label{classTrain_a84a605245a03d2f29b518a483ba89ccb} 
+Train\+::\+Train (\begin{DoxyParamCaption}\item[{char}]{state}{, }\item[{std\+::string}]{line}{, }\item[{char}]{type}{}\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{classTrain}{Train} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state of the train. \\
+\hline
+{\em line} & The line on which the train operates. \\
+\hline
+{\em type} & The type of transportation. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTrain_a02a8f84984307a49e9765f4d2aa19a86}\index{Train@{Train}!calculateCommute@{calculateCommute}}
+\index{calculateCommute@{calculateCommute}!Train@{Train}}
+\doxysubsubsection{\texorpdfstring{calculateCommute()}{calculateCommute()}}
+{\footnotesize\ttfamily \label{classTrain_a02a8f84984307a49e9765f4d2aa19a86} 
+float Train\+::calculate\+Commute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Calculate the commute time for the train. 
+
+\begin{DoxyReturn}{Returns}
+The calculated commute time. 
+\end{DoxyReturn}
+\Hypertarget{classTrain_a807b1ba96c2efafb7b2e5a0acdba3577}\index{Train@{Train}!getLine@{getLine}}
+\index{getLine@{getLine}!Train@{Train}}
+\doxysubsubsection{\texorpdfstring{getLine()}{getLine()}}
+{\footnotesize\ttfamily \label{classTrain_a807b1ba96c2efafb7b2e5a0acdba3577} 
+std\+::string Train\+::get\+Line (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the line on which the train operates. 
+
+\begin{DoxyReturn}{Returns}
+The train line. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Train_8h}{Train.\+h}}\item 
+Train.\+cpp\end{DoxyCompactItemize}

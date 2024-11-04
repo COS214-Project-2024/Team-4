@@ -1,0 +1,179 @@
+\doxysection{Cargo\+Airport Class Reference}
+\hypertarget{classCargoAirport}{}\label{classCargoAirport}\index{CargoAirport@{CargoAirport}}
+
+
+Represents a cargo airport.  
+
+
+
+
+{\ttfamily \#include $<$Cargo\+Airport.\+h$>$}
+
+Inheritance diagram for Cargo\+Airport\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classCargoAirport}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCargoAirport_a0b4276dd28c8e3189f9d4752f589b5cc}{Cargo\+Airport}} (char state, std\+::string \mbox{\hyperlink{classAirport_a7f3bf800ff1d56c6cf5ac2011fd50a5d}{name}})
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classCargoAirport}{Cargo\+Airport} class. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCargoAirport_ac23c2593860098a5671da2e05921549e}{add\+Inside\+Road}} (\mbox{\hyperlink{classInsideRoad}{Inside\+Road}} \texorpdfstring{$\ast$}{*}inside\+Road)
+\begin{DoxyCompactList}\small\item\em Adds an inside road to the cargo airport. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCargoAirport_ac2cfedce63dbe6a9d44be6cfe2126cf8}{add\+Cargo\+Airport}} (\mbox{\hyperlink{classCargoAirport}{Cargo\+Airport}} \texorpdfstring{$\ast$}{*}cargo\+Airport)
+\begin{DoxyCompactList}\small\item\em Adds a cargo airport to the cargo airport. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classInsideRoad}{Inside\+Road}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCargoAirport_ab9ac1e678a429dd296af73562a151a0e}{get\+Inside\+Road}} (std\+::size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Gets an inside road by index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCargoAirport}{Cargo\+Airport}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCargoAirport_a65a05986235a29d5573ce12350ab571f}{get\+Cargo\+Airport}} (std\+::size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Gets a cargo airport by index. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classCargoAirport_aa1483bcfccb49170115dbe287a27e6b4}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the cargo airport. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classAirport}{Airport}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAirport_a66594bc21e859756ab8b12362d907c78}{Airport}} (char state, std\+::string \mbox{\hyperlink{classAirport_a7f3bf800ff1d56c6cf5ac2011fd50a5d}{name}}, char type)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{classAirport}{Airport} object. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classAirport_a0082b856ee355f5869666f10a2d3cc37}{calculate\+Commute}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the commute time to the airport. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classAirport_a949554b1846f19853e7b60778384cfc5}{get\+Airport\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the airport. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTransportation}{Transportation}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTransportation_a6038480df048e3b81449d9417cff4800}{Transportation}} (char state, char type)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classTransportation}{Transportation} class. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classTransportation_a4abf7f44c7a515f6933886dd321cc1c6}{get\+Traffic\+Flow}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current traffic flow. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTransportation_a7de50ee7df6f27b64529f15f74407d14}{set\+State}} (char state)
+\begin{DoxyCompactList}\small\item\em Sets the traffic flow state. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classTransportation_a5693fe4abdbacc36ee865283535aa546}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of transportation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation_ae63d1b7fa5006d357228196b6b81684d}{\texorpdfstring{$\sim$}{\string~}\+Transportation}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classTransportation}{Transportation} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classAirport}{Airport}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bfseries name}
+\begin{DoxyCompactList}\small\item\em Name of the airport. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a cargo airport. 
+
+The \doxylink{classCargoAirport}{Cargo\+Airport} class inherits from the \doxylink{classAirport}{Airport} class and manages a collection of \doxylink{classInsideRoad}{Inside\+Road} and \doxylink{classCargoAirport}{Cargo\+Airport} objects. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCargoAirport_a0b4276dd28c8e3189f9d4752f589b5cc}\index{CargoAirport@{CargoAirport}!CargoAirport@{CargoAirport}}
+\index{CargoAirport@{CargoAirport}!CargoAirport@{CargoAirport}}
+\doxysubsubsection{\texorpdfstring{CargoAirport()}{CargoAirport()}}
+{\footnotesize\ttfamily \label{classCargoAirport_a0b4276dd28c8e3189f9d4752f589b5cc} 
+Cargo\+Airport\+::\+Cargo\+Airport (\begin{DoxyParamCaption}\item[{char}]{state}{, }\item[{std\+::string}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{classCargoAirport}{Cargo\+Airport} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state of the cargo airport. \\
+\hline
+{\em name} & The name of the cargo airport. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCargoAirport_ac2cfedce63dbe6a9d44be6cfe2126cf8}\index{CargoAirport@{CargoAirport}!addCargoAirport@{addCargoAirport}}
+\index{addCargoAirport@{addCargoAirport}!CargoAirport@{CargoAirport}}
+\doxysubsubsection{\texorpdfstring{addCargoAirport()}{addCargoAirport()}}
+{\footnotesize\ttfamily \label{classCargoAirport_ac2cfedce63dbe6a9d44be6cfe2126cf8} 
+bool Cargo\+Airport\+::add\+Cargo\+Airport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCargoAirport}{Cargo\+Airport}} \texorpdfstring{$\ast$}{*}}]{cargo\+Airport}{}\end{DoxyParamCaption})}
+
+
+
+Adds a cargo airport to the cargo airport. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cargo\+Airport} & Pointer to the \doxylink{classCargoAirport}{Cargo\+Airport} object to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the cargo airport was added successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classCargoAirport_ac23c2593860098a5671da2e05921549e}\index{CargoAirport@{CargoAirport}!addInsideRoad@{addInsideRoad}}
+\index{addInsideRoad@{addInsideRoad}!CargoAirport@{CargoAirport}}
+\doxysubsubsection{\texorpdfstring{addInsideRoad()}{addInsideRoad()}}
+{\footnotesize\ttfamily \label{classCargoAirport_ac23c2593860098a5671da2e05921549e} 
+bool Cargo\+Airport\+::add\+Inside\+Road (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classInsideRoad}{Inside\+Road}} \texorpdfstring{$\ast$}{*}}]{inside\+Road}{}\end{DoxyParamCaption})}
+
+
+
+Adds an inside road to the cargo airport. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inside\+Road} & Pointer to the \doxylink{classInsideRoad}{Inside\+Road} object to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the inside road was added successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classCargoAirport_a65a05986235a29d5573ce12350ab571f}\index{CargoAirport@{CargoAirport}!getCargoAirport@{getCargoAirport}}
+\index{getCargoAirport@{getCargoAirport}!CargoAirport@{CargoAirport}}
+\doxysubsubsection{\texorpdfstring{getCargoAirport()}{getCargoAirport()}}
+{\footnotesize\ttfamily \label{classCargoAirport_a65a05986235a29d5573ce12350ab571f} 
+\mbox{\hyperlink{classCargoAirport}{Cargo\+Airport}} \texorpdfstring{$\ast$}{*} Cargo\+Airport\+::get\+Cargo\+Airport (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Gets a cargo airport by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the cargo airport to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \doxylink{classCargoAirport}{Cargo\+Airport} object at the specified index. 
+\end{DoxyReturn}
+\Hypertarget{classCargoAirport_ab9ac1e678a429dd296af73562a151a0e}\index{CargoAirport@{CargoAirport}!getInsideRoad@{getInsideRoad}}
+\index{getInsideRoad@{getInsideRoad}!CargoAirport@{CargoAirport}}
+\doxysubsubsection{\texorpdfstring{getInsideRoad()}{getInsideRoad()}}
+{\footnotesize\ttfamily \label{classCargoAirport_ab9ac1e678a429dd296af73562a151a0e} 
+\mbox{\hyperlink{classInsideRoad}{Inside\+Road}} \texorpdfstring{$\ast$}{*} Cargo\+Airport\+::get\+Inside\+Road (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Gets an inside road by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the inside road to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \doxylink{classInsideRoad}{Inside\+Road} object at the specified index. 
+\end{DoxyReturn}
+\Hypertarget{classCargoAirport_aa1483bcfccb49170115dbe287a27e6b4}\index{CargoAirport@{CargoAirport}!getName@{getName}}
+\index{getName@{getName}!CargoAirport@{CargoAirport}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classCargoAirport_aa1483bcfccb49170115dbe287a27e6b4} 
+std\+::string Cargo\+Airport\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the name of the cargo airport. 
+
+\begin{DoxyReturn}{Returns}
+The name of the cargo airport. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{CargoAirport_8h}{Cargo\+Airport.\+h}}\item 
+Cargo\+Airport.\+cpp\end{DoxyCompactItemize}

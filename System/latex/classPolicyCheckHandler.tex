@@ -1,0 +1,51 @@
+\doxysection{Policy\+Check\+Handler Class Reference}
+\hypertarget{classPolicyCheckHandler}{}\label{classPolicyCheckHandler}\index{PolicyCheckHandler@{PolicyCheckHandler}}
+Inheritance diagram for Policy\+Check\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPolicyCheckHandler}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classPolicyCheckHandler_a9de398290e33d4635bffd0ea3b97f835}\label{classPolicyCheckHandler_a9de398290e33d4635bffd0ea3b97f835} 
+{\bfseries Policy\+Check\+Handler} (\mbox{\hyperlink{classGovernment}{Government}} \texorpdfstring{$\ast$}{*}gov)
+\item 
+bool \mbox{\hyperlink{classPolicyCheckHandler_a5624818cf4353cc8c73277cb25910114}{handle\+Request}} (Resource\+Type type, int quantity) override
+\item 
+\Hypertarget{classPolicyCheckHandler_a499549a6779335361ea70d548e3545df}\label{classPolicyCheckHandler_a499549a6779335361ea70d548e3545df} 
+bool {\bfseries is\+Policy\+Enforced} () const
+\item 
+\Hypertarget{classPolicyCheckHandler_af4b220856d0441c1e610403965b343c9}\label{classPolicyCheckHandler_af4b220856d0441c1e610403965b343c9} 
+void {\bfseries set\+Policy\+Enforced} (bool enforced)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classResourceApprovalHandler}{Resource\+Approval\+Handler}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries set\+Next\+Handler} (\mbox{\hyperlink{classResourceApprovalHandler}{Resource\+Approval\+Handler}} \texorpdfstring{$\ast$}{*}handler)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classResourceApprovalHandler}{Resource\+Approval\+Handler}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classResourceApprovalHandler}{Resource\+Approval\+Handler}} \texorpdfstring{$\ast$}{*} {\bfseries next\+Handler}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPolicyCheckHandler_a5624818cf4353cc8c73277cb25910114}\index{PolicyCheckHandler@{PolicyCheckHandler}!handleRequest@{handleRequest}}
+\index{handleRequest@{handleRequest}!PolicyCheckHandler@{PolicyCheckHandler}}
+\doxysubsubsection{\texorpdfstring{handleRequest()}{handleRequest()}}
+{\footnotesize\ttfamily \label{classPolicyCheckHandler_a5624818cf4353cc8c73277cb25910114} 
+bool Policy\+Check\+Handler\+::handle\+Request (\begin{DoxyParamCaption}\item[{Resource\+Type}]{type}{, }\item[{int}]{quantity}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classResourceApprovalHandler}{Resource\+Approval\+Handler}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Policy\+Checker\+Handler.\+h\end{DoxyCompactItemize}

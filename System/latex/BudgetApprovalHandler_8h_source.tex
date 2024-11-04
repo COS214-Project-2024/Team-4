@@ -1,0 +1,33 @@
+\doxysection{Budget\+Approval\+Handler.\+h}
+\hypertarget{BudgetApprovalHandler_8h_source}{}\label{BudgetApprovalHandler_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ BudgetApprovalHandler.h}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ BUDGETAPPROVALHANDLER\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ BUDGETAPPROVALHANDLER\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}ResourceApprovalHandler.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Government.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBudgetApprovalHandler}{BudgetApprovalHandler}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classResourceApprovalHandler}{ResourceApprovalHandler}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{classGovernment}{Government}}*\ government;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{int}\ resourceCost;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{classBudgetApprovalHandler}{BudgetApprovalHandler}}(\mbox{\hyperlink{classGovernment}{Government}}*\ gov,\ \textcolor{keywordtype}{int}\ cost)\ :\ government(gov),\ resourceCost(cost)\ \{\}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{bool}\ handleRequest(ResourceType\ type,\ \textcolor{keywordtype}{int}\ quantity)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ totalCost\ =\ resourceCost\ *\ quantity;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCityService}{CityService}}\ service(\textcolor{stringliteral}{"{}Resource\ Allocation"{}},\ totalCost);\ \textcolor{comment}{//\ Placeholder\ CityService\ instance}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (government-\/>getBudget()\ >=\ totalCost)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ government-\/>allocateBudget(service,\ totalCost);}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ResourceApprovalHandler::handleRequest(type,\ quantity);}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BUDGETAPPROVALHANDLER\_H}}
+
+\end{DoxyCode}

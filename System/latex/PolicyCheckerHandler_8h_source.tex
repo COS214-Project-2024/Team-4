@@ -1,0 +1,41 @@
+\doxysection{Policy\+Checker\+Handler.\+h}
+\hypertarget{PolicyCheckerHandler_8h_source}{}\label{PolicyCheckerHandler_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ PolicyCheckHandler.h}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ POLICYCHECKHANDLER\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ POLICYCHECKHANDLER\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}ResourceApprovalHandler.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Government.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Policy.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPolicyCheckHandler}{PolicyCheckHandler}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classResourceApprovalHandler}{ResourceApprovalHandler}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{classGovernment}{Government}}*\ government;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{bool}\ policyEnforced;\ \textcolor{comment}{//\ Internal\ state\ to\ track\ if\ the\ policy\ was\ enforced}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{classPolicyCheckHandler}{PolicyCheckHandler}}(\mbox{\hyperlink{classGovernment}{Government}}*\ gov)\ :\ government(gov),\ policyEnforced(\textcolor{keyword}{false})\ \{\}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{bool}\ handleRequest(ResourceType\ type,\ \textcolor{keywordtype}{int}\ quantity)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPolicy}{Policy}}\ policy(type,\ quantity);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ government-\/>enforcePolicy(policy);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isPolicyEnforced())\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ResourceApprovalHandler::handleRequest(type,\ quantity);}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ determine\ if\ a\ policy\ was\ enforced}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ isPolicyEnforced()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ policyEnforced;}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ setPolicyEnforced(\textcolor{keywordtype}{bool}\ enforced)\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ policyEnforced\ =\ enforced;}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ POLICYCHECKHANDLER\_H}}
+
+\end{DoxyCode}

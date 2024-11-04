@@ -1,0 +1,22 @@
+\doxysection{Water\+Supply.\+h}
+\hypertarget{WaterSupply_8h_source}{}\label{WaterSupply_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ WATERSUPPLY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ WATERSUPPLY\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Utility.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classWaterSupply}{WaterSupply}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classUtility}{Utility}}\ \{}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{classWaterSupply}{WaterSupply}}(\mbox{\hyperlink{classUtilityMediator}{UtilityMediator}}*\ mediator);}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{void}\ registerBuilding(\mbox{\hyperlink{classBuilding}{Building}}*\ building)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{void}\ supplyResources(\mbox{\hyperlink{classBuilding}{Building}}*\ building)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{void}\ adjustForPopulation(\textcolor{keywordtype}{int}\ newPopulation)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{//void\ adjustForCitizen(Citizen*\ citizen)\ override;}}
+\DoxyCodeLine{00015\ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

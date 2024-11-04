@@ -1,0 +1,44 @@
+\doxysection{Population\+Manager.\+h}
+\hypertarget{PopulationManager_8h_source}{}\label{PopulationManager_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ POPULATIONMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ POPULATIONMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <atomic>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Citizen.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}JobSatisfactionStrategy.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}HousingSatisfactionStrategy.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPopulationManager}{PopulationManager}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ std::vector<std::shared\_ptr<Citizen>>\ citizens;}
+\DoxyCodeLine{00015\ \ \ \ \ std::atomic<bool>\ programRunning;\ \ \ \textcolor{comment}{//\ Atomic\ flag\ for\ program\ status}}
+\DoxyCodeLine{00016\ \ \ \ \ std::mutex\ citizenMutex;\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mutex\ for\ thread-\/safe\ access\ to\ citizens}}
+\DoxyCodeLine{00017\ \ \ \ \ std::shared\_ptr<JobSatisfactionStrategy>\ jobSatisfaction;}
+\DoxyCodeLine{00018\ \ \ \ \ std::shared\_ptr<HousingSatisfactionStrategy>\ housingSatisfaction;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classPopulationManager}{PopulationManager}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ findJobsForUnemployedCitizens(\mbox{\hyperlink{classBuildingManager}{BuildingManager}}\&\ buildingManager);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ updateCitizensAge();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Increment\ ages}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ addCitizen(std::shared\_ptr<Citizen>\ citizen);\ \textcolor{comment}{//\ Add\ citizen\ to\ population}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ checkCitizenStates();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Periodic\ state\ updater}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ simulatePopulationGrowth();\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Simulate\ random\ growth}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ removeLeavingCitizens();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Remove\ citizens\ in\ LeavingCityState}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ manageRelationships();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Relationship\ management}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ getPopulation();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ current\ population\ count}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::shared\_ptr<Citizen>>\&\ getCitizens()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ updateCitizensSatisfaction();\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Central\ satisfaction\ update\ loop}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ addRandomCitizen();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ citizen\ randomly}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ removeRandomCitizen();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Remove\ citizen\ randomly}}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ POPULATIONMANAGER\_H}}
+
+\end{DoxyCode}

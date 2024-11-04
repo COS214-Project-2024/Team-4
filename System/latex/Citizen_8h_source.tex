@@ -1,0 +1,114 @@
+\doxysection{Citizen.\+h}
+\hypertarget{Citizen_8h_source}{}\label{Citizen_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Citizen.h}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ CITIZEN\_H}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ CITIZEN\_H}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}CitizenObserver.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}CitizenState.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Income.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Jobs.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}TaxType.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBuildingManager}{BuildingManager}};}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSatisfactionStrategy}{SatisfactionStrategy}};}
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBuilding}{Building}};}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCitizen}{Citizen}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{float}\ taxRate;}
+\DoxyCodeLine{00023\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ age;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{float}\ satisfaction\ =\ 50.0f;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ maritalStatus\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ health\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{double}\ bankBalance\ =\ 0.0;}
+\DoxyCodeLine{00029\ \ \ \ \ std::string\ relationshipStatus\ =\ \textcolor{stringliteral}{"{}Single"{}};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ marriageDuration\ =\ 0;}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classCitizenState}{CitizenState}}*\ currentState\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00032\ \ \ \ \ std::vector<CitizenObserver*>\ observers;}
+\DoxyCodeLine{00033\ \ \ \ \ std::vector<std::shared\_ptr<SatisfactionStrategy>>\ satisfactionStrategies;}
+\DoxyCodeLine{00034\ \ \ \ \ std::shared\_ptr<Income>\ income;}
+\DoxyCodeLine{00035\ \ \ \ \ std::shared\_ptr<Jobs>\ job;}
+\DoxyCodeLine{00036\ \ \ \ \ std::string\ jobTitle\ =\ \textcolor{stringliteral}{"{}Unemployed"{}};\ \textcolor{comment}{//\ Default\ job\ title}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Employment\ status}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ employed\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{classCitizen}{Citizen}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{int}\ age);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classCitizen}{\string~Citizen}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{virtual}\ std::shared\_ptr<Citizen>\ clone()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ Observer\ pattern\ methods}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ addObserver(\mbox{\hyperlink{classCitizenObserver}{CitizenObserver}}*\ observer);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ detachAllObservers();}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ removeObserver(\mbox{\hyperlink{classCitizenObserver}{CitizenObserver}}*\ observer);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyObservers();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ State\ and\ satisfaction\ updates}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ setState(\mbox{\hyperlink{classCitizenState}{CitizenState}}*\ newState);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ updateSatisfaction();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//\ Relationship\ management}}
+\DoxyCodeLine{00056\ \ \ \ \ std::string\ getRelationshipStatus()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ setRelationshipStatus(\textcolor{keyword}{const}\ std::string\&\ status);}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ getMarriageDuration()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ resetMarriageDuration();}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ incrementMarriageDuration();}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ updateSatisfaction(\textcolor{keywordtype}{float}\ adjustment);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ addChild();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ Age\ management}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{int}\ getAge()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ incrementAge();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//\ Satisfaction\ Strategy}}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ addSatisfactionStrategy(std::shared\_ptr<SatisfactionStrategy>\ strategy);}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ removeSatisfactionStrategy();}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ setSatisfactionLevel(\textcolor{keywordtype}{double}\ level)\ \{\ satisfaction\ =\ level;\ \}}
+\DoxyCodeLine{00072\ \ \ \ \ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//\ Basic\ citizen\ operations}}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ depositMonthlyIncome();}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ searchAndApplyForJob(\mbox{\hyperlink{classBuildingManager}{BuildingManager}}\&\ manager\ ,\ \mbox{\hyperlink{classBuilding}{Building}}*\ building\ ,\ std::string\ jobtitle);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{comment}{//\ Getters\ for\ name\ and\ satisfaction\ level}}
+\DoxyCodeLine{00078\ \ \ \ \ std::string\ getName()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{float}\ getSatisfactionLevel()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{bool}\ isLeaving()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ setIncome(std::shared\_ptr<Income>\ income);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ checkAndUpdateState();}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ setJobTitle(\textcolor{keyword}{const}\ std::string\&\ jobTitle)\ \{\ this-\/>jobTitle\ =\ jobTitle;\ \}}
+\DoxyCodeLine{00085\ \ \ \ \ std::string\ getJob()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ jobTitle;\ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ setEmployed(\textcolor{keywordtype}{bool}\ status)\ \{\ employed\ =\ status;\ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{bool}\ isEmployed()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ employed;\ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \textcolor{keywordtype}{float}\ getTaxRate()\ \textcolor{keyword}{const};\ \ \textcolor{comment}{//\ Getter\ for\ tax\ rate}}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ setTaxRate(\textcolor{keywordtype}{float}\ rate);\ \ \textcolor{comment}{//\ Setter\ if\ tax\ rate\ needs\ to\ be\ adjusted}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \textcolor{keywordtype}{double}\ payTaxes(\mbox{\hyperlink{classTaxType}{TaxType}}*\ taxType);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{comment}{//\ \ bank\ balance\ }}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{double}\ getBankBalance()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ setBankBalance(\textcolor{keywordtype}{double}\ balance);}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ incraseBankBalance(\textcolor{keywordtype}{double}\ amount);}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ subtractBankBalance(\textcolor{keywordtype}{double}\ amount);}
+\DoxyCodeLine{00097\ \textcolor{comment}{//TAX\ STUFF}}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ setTaxCooldown(\textcolor{keywordtype}{bool}\ status);}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{bool}\ getTaxCooldown()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00100\ \ \ \ \ }
+\DoxyCodeLine{00101\ \ \textcolor{keywordtype}{bool}\ isOnCooldown()\ \textcolor{keyword}{const};\ \textcolor{comment}{//\ Change\ access\ modifier\ to\ public}}
+\DoxyCodeLine{00102\ \textcolor{comment}{//\ Cooldown\ Mechanism}}
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{bool}\ taxCooldown;}
+\DoxyCodeLine{00104\ std::chrono::steady\_clock::time\_point\ lastTaxPayment;}
+\DoxyCodeLine{00105\ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ std::chrono::seconds\ taxCooldownPeriod\{5\};\ \textcolor{comment}{//\ Cooldown\ period\ of\ 5\ seconds}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CITIZEN\_H}}
+
+\end{DoxyCode}

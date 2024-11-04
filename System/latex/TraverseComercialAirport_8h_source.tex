@@ -1,0 +1,36 @@
+\doxysection{Traverse\+Comercial\+Airport.\+h}
+\hypertarget{TraverseComercialAirport_8h_source}{}\label{TraverseComercialAirport_8h_source}\mbox{\hyperlink{TraverseComercialAirport_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ TRAVERSECOMERCIALAIRPORT\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ TRAVERSECOMERCIALAIRPORT\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TraverseState_8h}{TraverseState.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Transportation_8h}{Transportation.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{InsideRoad_8h}{InsideRoad.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ComercialAirport_8h}{ComercialAirport.h}}"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTransportation}{Transportation}};}
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classInsideRoad}{InsideRoad}};}
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classComercialAirport}{ComercialAirport}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTraverseComercialAirport}{TraverseComercialAirport}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classTraverseState}{TraverseState}}\{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ currentList\ =\ 0;\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ upperBound\ =\ 1;\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTraverseComercialAirport_aae2a5f707f202ded2fdc284e49c72fff}{TraverseComercialAirport}}(\mbox{\hyperlink{classTransportation}{Transportation}}\ *element);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTraverseComercialAirport_afb68d84f9d9b0e10109c23714b771f1d}{nextList}}();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTraverseComercialAirport_a1eda5050c63fe82af1ee2696ccd0761b}{prevList}}();}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTransportation}{Transportation}}*\ \mbox{\hyperlink{classTraverseComercialAirport_aea87bcccc79be397dc5603be61cf51fb}{getPos}}(\textcolor{keywordtype}{size\_t}\ x);}
+\DoxyCodeLine{00076\ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,42 @@
+\doxysection{Transport\+Manager.\+h}
+\hypertarget{TransportManager_8h_source}{}\label{TransportManager_8h_source}\mbox{\hyperlink{TransportManager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ TRANSPORTMANAGER\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ TRANSPORTMANAGER\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Transportation_8h}{Transportation.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TransportationFactory_8h}{TransportationFactory.h}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTransportManager}{TransportManager}}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTransportationFactory}{TransportationFactory}}*\ factory;\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ std::vector<Transportation*>\ transportations;\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTransportManager_aedee9bf50ae72668b9c38056e4fa867f}{TransportManager}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTransportManager_a720763ebf77ba51b41602d12be27fa95}{createHighway}}(\textcolor{keywordtype}{char}\ state,\ std::string\ roadName,\ \textcolor{keywordtype}{float}\ speedLimit);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTransportManager_a580b7f3c9d70f42658f68c31e03140b2}{createInsideRoad}}(\textcolor{keywordtype}{char}\ state,\ std::string\ roadName,\ \textcolor{keywordtype}{float}\ avgStopTime);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTransportManager_abbe5418c679e6a81c404756ef61f47a0}{createBus}}(\textcolor{keywordtype}{char}\ state,\ std::string\ route,\ \textcolor{keywordtype}{int}\ busNumber,\ \textcolor{keywordtype}{int}\ capacity);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTransportManager_aab0a3b5458b6e567684db41bf59034e2}{createTaxi}}(\textcolor{keywordtype}{char}\ state,\ std::string\ route,\ std::string\ taxiCompany,\ \textcolor{keywordtype}{int}\ taxiNumber);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTransportManager_a074d4e4a3d8b9296beb9df9bf7cf51c2}{createPassengerTrain}}(\textcolor{keywordtype}{char}\ state,\ std::string\ line);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTransportManager_a7010f451635cfbc25410ac88e74f446c}{createFreightTrain}}(\textcolor{keywordtype}{char}\ state,\ std::string\ line,\ \textcolor{keywordtype}{float}\ weight,\ \textcolor{keywordtype}{float}\ length);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTransportManager_a06e3e8db95d5a04e303c218a4655a1b7}{createComercialAirport}}(\textcolor{keywordtype}{char}\ state,\ std::string\ name);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTransportManager_a86499033dd6581ede76e9b07466637a7}{createCargoAirport}}(\textcolor{keywordtype}{char}\ state,\ std::string\ name);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTransportation}{Transportation}}*\ \mbox{\hyperlink{classTransportManager_a4a6749454c4b0c5bb49ed2949a380573}{getTransportation}}(\textcolor{keywordtype}{size\_t}\ index);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTransportManager_a1452b6db9a94b71930272b238d7a2f14}{\string~TransportManager}}();}
+\DoxyCodeLine{00125\ \};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TRANSPORTMANAGER\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,265 @@
+\doxysection{City\+Traverser Class Reference}
+\hypertarget{classCityTraverser}{}\label{classCityTraverser}\index{CityTraverser@{CityTraverser}}
+
+
+A concrete iterator for traversing transportation elements in a city.  
+
+
+
+
+{\ttfamily \#include $<$City\+Traverser.\+h$>$}
+
+Inheritance diagram for City\+Traverser\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCityTraverser}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCityTraverser_aa1a204a1573a3b967376b752976cf0aa}\label{classCityTraverser_aa1a204a1573a3b967376b752976cf0aa} 
+{\bfseries City\+Traverser} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{classCityTraverser}{City\+Traverser}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCityTraverser_a86a950527613d8196be61e19f6bb333a}{City\+Traverser}} (\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*}t)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classCityTraverser}{City\+Traverser} with a starting transportation element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCityTraverser_a1e9fa0e4ba81fb0675e7be36cb7850f6}{City\+Traverser}} (\mbox{\hyperlink{classCityTraverser}{City\+Traverser}} \texorpdfstring{$\ast$}{*}t)
+\begin{DoxyCompactList}\small\item\em Copy constructor for \doxylink{classCityTraverser}{City\+Traverser}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCityTraverser_a0e4a4571000d38e717f7eeba52e2cf66}{operator++}} ()
+\begin{DoxyCompactList}\small\item\em Move to the next transportation element. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCityTraverser_a7fee6843980058b360d81f348296d062}{operator-\/-\/}} ()
+\begin{DoxyCompactList}\small\item\em Move to the previous transportation element. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCityTraverser_a668041c76c78674a2e0d5737c3b97916}{operator+}} ()
+\begin{DoxyCompactList}\small\item\em Move forward in the current layer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCityTraverser_ae5b4b36f68f413fdb9c49e21b3ab89fd}{operator-\/}} ()
+\begin{DoxyCompactList}\small\item\em Move backward in the current layer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCityTraverser_a24d52f2deb2abbebedb5843f4993dd0b}{step\+In}} ()
+\begin{DoxyCompactList}\small\item\em Step into the current layer of transportation elements. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCityTraverser_ae81a12229fe74db91c37fec36fd739ac}{step\+Out}} ()
+\begin{DoxyCompactList}\small\item\em Step out to the current layer of transportation elements. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCityTraverser_a67dacbb070e8befb67cc731ee7083833}{operator\texorpdfstring{$\ast$}{*}}} ()
+\begin{DoxyCompactList}\small\item\em Dereference operator to access the current transportation element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCityTraverser_a709f3655149bc2569573336f253ad41e}{get\+Current\+Layer}} ()
+\begin{DoxyCompactList}\small\item\em Get the current layer of transportation elements. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCityTraverser_a06cec09f74f4f70b11478738998d62d2}{operator=}} (\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*}t)
+\begin{DoxyCompactList}\small\item\em Assignment operator to set the current transportation layer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCityTraverser_a49a8843c8c770815aba2759fb9622731}{operator=}} (\mbox{\hyperlink{classCityTraverser}{City\+Traverser}} \texorpdfstring{$\ast$}{*}t)
+\begin{DoxyCompactList}\small\item\em Assignment operator to copy from another \doxylink{classCityTraverser}{City\+Traverser} object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCityTraverser_a05a27cf8ca2e28b2c5b092fae28e20ec}{set\+State}} ()
+\begin{DoxyCompactList}\small\item\em Set the current state of traversal. \end{DoxyCompactList}\item 
+\Hypertarget{classCityTraverser_a4cae985d8f01a8299d7c3bdbd24a3647}\label{classCityTraverser_a4cae985d8f01a8299d7c3bdbd24a3647} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+City\+Traverser} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classCityTraverser}{City\+Traverser}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTraverser}{Traverser}}}
+
+
+\doxysubsection{Detailed Description}
+A concrete iterator for traversing transportation elements in a city. 
+
+The \doxylink{classCityTraverser}{City\+Traverser} class provides functionality to iterate over various transportation elements within a city. It maintains the current state of traversal and allows moving forward and backward through the elements, as well as stepping into and out of layers. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCityTraverser_a86a950527613d8196be61e19f6bb333a}\index{CityTraverser@{CityTraverser}!CityTraverser@{CityTraverser}}
+\index{CityTraverser@{CityTraverser}!CityTraverser@{CityTraverser}}
+\doxysubsubsection{\texorpdfstring{CityTraverser()}{CityTraverser()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classCityTraverser_a86a950527613d8196be61e19f6bb333a} 
+City\+Traverser\+::\+City\+Traverser (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*}}]{t}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{classCityTraverser}{City\+Traverser} with a starting transportation element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Pointer to the starting transportation element. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classCityTraverser_a1e9fa0e4ba81fb0675e7be36cb7850f6}\index{CityTraverser@{CityTraverser}!CityTraverser@{CityTraverser}}
+\index{CityTraverser@{CityTraverser}!CityTraverser@{CityTraverser}}
+\doxysubsubsection{\texorpdfstring{CityTraverser()}{CityTraverser()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classCityTraverser_a1e9fa0e4ba81fb0675e7be36cb7850f6} 
+City\+Traverser\+::\+City\+Traverser (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityTraverser}{City\+Traverser}} \texorpdfstring{$\ast$}{*}}]{t}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor for \doxylink{classCityTraverser}{City\+Traverser}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Pointer to another \doxylink{classCityTraverser}{City\+Traverser} object to copy from. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCityTraverser_a709f3655149bc2569573336f253ad41e}\index{CityTraverser@{CityTraverser}!getCurrentLayer@{getCurrentLayer}}
+\index{getCurrentLayer@{getCurrentLayer}!CityTraverser@{CityTraverser}}
+\doxysubsubsection{\texorpdfstring{getCurrentLayer()}{getCurrentLayer()}}
+{\footnotesize\ttfamily \label{classCityTraverser_a709f3655149bc2569573336f253ad41e} 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} City\+Traverser\+::get\+Current\+Layer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the current layer of transportation elements. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the current layer of transportation elements. 
+\end{DoxyReturn}
+\Hypertarget{classCityTraverser_a67dacbb070e8befb67cc731ee7083833}\index{CityTraverser@{CityTraverser}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!CityTraverser@{CityTraverser}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \label{classCityTraverser_a67dacbb070e8befb67cc731ee7083833} 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} City\+Traverser\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Dereference operator to access the current transportation element. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the current transportation element. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTraverser_a1b498f160040cd6385a1c1cfe57f681a}{Traverser}}.
+
+\Hypertarget{classCityTraverser_a668041c76c78674a2e0d5737c3b97916}\index{CityTraverser@{CityTraverser}!operator+@{operator+}}
+\index{operator+@{operator+}!CityTraverser@{CityTraverser}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \label{classCityTraverser_a668041c76c78674a2e0d5737c3b97916} 
+bool City\+Traverser\+::operator+ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Move forward in the current layer. 
+
+\begin{DoxyReturn}{Returns}
+True if successful, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classCityTraverser_a0e4a4571000d38e717f7eeba52e2cf66}\index{CityTraverser@{CityTraverser}!operator++@{operator++}}
+\index{operator++@{operator++}!CityTraverser@{CityTraverser}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}}
+{\footnotesize\ttfamily \label{classCityTraverser_a0e4a4571000d38e717f7eeba52e2cf66} 
+bool City\+Traverser\+::operator++ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Move to the next transportation element. 
+
+\begin{DoxyReturn}{Returns}
+True if successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTraverser_acddaf2e3a31117755712dd8ce8247dad}{Traverser}}.
+
+\Hypertarget{classCityTraverser_ae5b4b36f68f413fdb9c49e21b3ab89fd}\index{CityTraverser@{CityTraverser}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!CityTraverser@{CityTraverser}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \label{classCityTraverser_ae5b4b36f68f413fdb9c49e21b3ab89fd} 
+bool City\+Traverser\+::operator-\/ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Move backward in the current layer. 
+
+\begin{DoxyReturn}{Returns}
+True if successful, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classCityTraverser_a7fee6843980058b360d81f348296d062}\index{CityTraverser@{CityTraverser}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!CityTraverser@{CityTraverser}}
+\doxysubsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}}
+{\footnotesize\ttfamily \label{classCityTraverser_a7fee6843980058b360d81f348296d062} 
+bool City\+Traverser\+::operator-\/-\/ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Move to the previous transportation element. 
+
+\begin{DoxyReturn}{Returns}
+True if successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTraverser_ae858453031a81cbf55fed59cabf86b80}{Traverser}}.
+
+\Hypertarget{classCityTraverser_a49a8843c8c770815aba2759fb9622731}\index{CityTraverser@{CityTraverser}!operator=@{operator=}}
+\index{operator=@{operator=}!CityTraverser@{CityTraverser}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classCityTraverser_a49a8843c8c770815aba2759fb9622731} 
+bool City\+Traverser\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityTraverser}{City\+Traverser}} \texorpdfstring{$\ast$}{*}}]{t}{}\end{DoxyParamCaption})}
+
+
+
+Assignment operator to copy from another \doxylink{classCityTraverser}{City\+Traverser} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Pointer to the \doxylink{classCityTraverser}{City\+Traverser} object to copy from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if successful, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classCityTraverser_a06cec09f74f4f70b11478738998d62d2}\index{CityTraverser@{CityTraverser}!operator=@{operator=}}
+\index{operator=@{operator=}!CityTraverser@{CityTraverser}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classCityTraverser_a06cec09f74f4f70b11478738998d62d2} 
+bool City\+Traverser\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*}}]{t}{}\end{DoxyParamCaption})}
+
+
+
+Assignment operator to set the current transportation layer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Pointer to the transportation element to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if successful, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classCityTraverser_a05a27cf8ca2e28b2c5b092fae28e20ec}\index{CityTraverser@{CityTraverser}!setState@{setState}}
+\index{setState@{setState}!CityTraverser@{CityTraverser}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily \label{classCityTraverser_a05a27cf8ca2e28b2c5b092fae28e20ec} 
+bool City\+Traverser\+::set\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Set the current state of traversal. 
+
+\begin{DoxyReturn}{Returns}
+True if successful, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classCityTraverser_a24d52f2deb2abbebedb5843f4993dd0b}\index{CityTraverser@{CityTraverser}!stepIn@{stepIn}}
+\index{stepIn@{stepIn}!CityTraverser@{CityTraverser}}
+\doxysubsubsection{\texorpdfstring{stepIn()}{stepIn()}}
+{\footnotesize\ttfamily \label{classCityTraverser_a24d52f2deb2abbebedb5843f4993dd0b} 
+bool City\+Traverser\+::step\+In (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Step into the current layer of transportation elements. 
+
+\begin{DoxyReturn}{Returns}
+True if successful, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classCityTraverser_ae81a12229fe74db91c37fec36fd739ac}\index{CityTraverser@{CityTraverser}!stepOut@{stepOut}}
+\index{stepOut@{stepOut}!CityTraverser@{CityTraverser}}
+\doxysubsubsection{\texorpdfstring{stepOut()}{stepOut()}}
+{\footnotesize\ttfamily \label{classCityTraverser_ae81a12229fe74db91c37fec36fd739ac} 
+bool City\+Traverser\+::step\+Out (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Step out to the current layer of transportation elements. 
+
+\begin{DoxyReturn}{Returns}
+True if successful, false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{CityTraverser_8h}{City\+Traverser.\+h}}\item 
+City\+Traverser.\+cpp\end{DoxyCompactItemize}
