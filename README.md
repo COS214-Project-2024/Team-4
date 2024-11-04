@@ -1,5 +1,5 @@
-# Team-4
-Team-4's description.
+# README
+Team-4's README.
 # 🏙️ VScoders and the Jetbrainstormers👨‍💻 - City Builder Simulation
 
 <div align="center"> 
@@ -108,6 +108,14 @@ This project applies various design patterns to manage different components of t
   <li><b>Observer</b> for updating citizen satisfaction dynamically.</li>
   <li><b>Strategy</b> for handling different taxation policies.</li>
   <li><b>Command</b> for handling user interactions.</li>
+  <li><b>Mediator</b> for facilitating communication between different components.</li>
+  <li><b>State</b> for managing the state of various entities.</li>
+  <li><b>Chain of Responsibility</b> for processing resource approval requests.</li>
+  <li><b>Iterator</b> for traversing collections of farm units.</li>
+  <li><b>Builder</b> for constructing complex objects step by step.</li>
+  <li><b>Template</b> for defining the skeleton of an algorithm.</li>
+  <li><b>Prototype</b> for creating new objects by copying existing ones.</li>
+  <li><b>Adapter</b> for integrating legacy systems with new interfaces.</li>
 </ul>
 
 > UML Diagrams and more details on patterns can be found in the project documentation.
