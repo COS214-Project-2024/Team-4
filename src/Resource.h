@@ -6,7 +6,7 @@
  * with a specific type and quantity. It provides methods to allocate and release the resource.
  * 
  * @version 1.0
- * @date 2023-10-05
+ * @date 2024-11-04
  */
 
 #ifndef RESOURCE_H

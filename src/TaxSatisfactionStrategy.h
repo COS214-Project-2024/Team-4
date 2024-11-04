@@ -11,7 +11,7 @@
  * based on the current tax rate. It inherits from the SatisfactionStrategy interface.
  * 
  * @version 1.0
- * @date 2023-10-05
+ * @date 2024-11-04
  */
 class TaxSatisfactionStrategy : public SatisfactionStrategy {
 public:

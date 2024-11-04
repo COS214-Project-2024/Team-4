@@ -5,7 +5,7 @@
  * This file contains the declaration of the UnemployedState class, which handles the behavior of a citizen in an unemployed state.
  * 
  * @version 1.0
- * @date 2023-10-05
+ * @date 2024-11-04
  * 
  * @note This file is part of a larger project that simulates the behavior of citizens in various states.
  */

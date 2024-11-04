@@ -5,7 +5,7 @@
  * This file contains the implementation of the VAT class, which handles the calculation and setting of Value Added Tax (VAT).
  * 
  * @version 1.0
- * @date 2023-10-05
+ * @date 2024-11-04
  * 
  * @note This file is part of a larger project that simulates the behavior of citizens and buildings in a city.
  */

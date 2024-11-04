@@ -9,7 +9,7 @@
  * and get the tax type identifier.
  * 
  * @version 1.0
- * @date 2023-10-05
+ * @date 2024-11-04
  */
 class TaxType {
 
