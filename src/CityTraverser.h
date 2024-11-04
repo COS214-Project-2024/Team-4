@@ -116,14 +116,14 @@ class CityTraverser: public Traverser {
          * @param t Pointer to the transportation element to set.
          * @return True if successful, false otherwise.
          */
-        bool set(Transportation* t);
+        bool operator=(Transportation* t);
 
         /**
          * @brief Assignment operator to copy from another CityTraverser object.
          * @param t Pointer to the CityTraverser object to copy from.
          * @return True if successful, false otherwise.
          */
-        bool set(CityTraverser* t);
+        bool operator=(CityTraverser* t);
 
         /**
          * @brief Set the current state of traversal.

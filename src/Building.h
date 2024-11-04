@@ -18,7 +18,7 @@ protected:
     float economicGrowth;
     float resourceConsumption;
     std::vector<std::shared_ptr<Jobs>> jobs;  // Collection of jobs as shared pointers
-	std::string getName() const;
+    std::string owner ;
 
 public:
     // Main constructor for setting attributes directly
@@ -31,6 +31,8 @@ public:
     // Setters and getters
     void setName(const std::string& name);
     std::string getName() const;
+
+    void setOwner(std::string owner1){owner = owner1 ;}
 
     virtual void construct() = 0;
     virtual ~Building() = default;
@@ -59,8 +61,7 @@ public:
 	virtual void undoCollectTaxes() = 0;
     virtual void addCitizen(Citizen* citizen) = 0;
     virtual  void addBusiness(std::shared_ptr<Business> business)= 0;
-	std::string getOwner(){return owner;} ;
-	void setOwner(std::string owner1){owner = owner1 ;}
+    std::string getOwner(){return owner;} ;
 
 private:
     virtual void calculateSatisfactionImpact() = 0;

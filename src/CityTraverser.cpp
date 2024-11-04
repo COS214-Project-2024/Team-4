@@ -1,6 +1,6 @@
 #include "CityTraverser.h"
 
-CityTraverser::CityTraverser() : Traverser(){
+CityTraverser::CityTraverser(){
     state = nullptr;
     currentElement = -1;
     Element = nullptr;
@@ -147,7 +147,7 @@ Transportation* CityTraverser::getCurrentLayer(){
     return this->currentLayer;
 }
 
-bool CityTraverser::set(Transportation* t){
+bool CityTraverser::operator=(Transportation* t){
     if(t == nullptr){
         return false;
     }
@@ -162,7 +162,7 @@ bool CityTraverser::set(Transportation* t){
     return true;
 }
 
-bool CityTraverser::set(CityTraverser* t){
+bool CityTraverser::operator=(CityTraverser* t){
     if(t == nullptr){
         return false;
     }
