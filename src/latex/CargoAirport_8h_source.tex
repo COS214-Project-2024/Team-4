@@ -1,0 +1,34 @@
+\doxysection{Cargo\+Airport.\+h}
+\hypertarget{CargoAirport_8h_source}{}\label{CargoAirport_8h_source}\mbox{\hyperlink{CargoAirport_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ CARGOAIRPORT\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ CARGOAIRPORT\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Airport_8h}{Airport.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{InsideRoad_8h}{InsideRoad.h}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classInsideRoad}{InsideRoad}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCargoAirport}{CargoAirport}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classAirport}{Airport}}\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ std::vector<InsideRoad*>\ insideRoads;\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ std::vector<CargoAirport*>\ cargoAirports;\ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCargoAirport_a0b4276dd28c8e3189f9d4752f589b5cc}{CargoAirport}}(\textcolor{keywordtype}{char}\ state,\ std::string\ \mbox{\hyperlink{classAirport_a7f3bf800ff1d56c6cf5ac2011fd50a5d}{name}});}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCargoAirport_ac23c2593860098a5671da2e05921549e}{addInsideRoad}}(\mbox{\hyperlink{classInsideRoad}{InsideRoad}}\ *insideRoad);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCargoAirport_ac2cfedce63dbe6a9d44be6cfe2126cf8}{addCargoAirport}}(\mbox{\hyperlink{classCargoAirport}{CargoAirport}}\ *cargoAirport);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInsideRoad}{InsideRoad}}*\ \mbox{\hyperlink{classCargoAirport_ab9ac1e678a429dd296af73562a151a0e}{getInsideRoad}}(std::size\_t\ index);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCargoAirport}{CargoAirport}}*\ \mbox{\hyperlink{classCargoAirport_a65a05986235a29d5573ce12350ab571f}{getCargoAirport}}(std::size\_t\ index);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classCargoAirport_aa1483bcfccb49170115dbe287a27e6b4}{getName}}();}
+\DoxyCodeLine{00071\ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

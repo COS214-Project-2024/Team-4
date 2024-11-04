@@ -1,0 +1,114 @@
+\doxysection{Allocate\+Budget\+Command Class Reference}
+\hypertarget{classAllocateBudgetCommand}{}\label{classAllocateBudgetCommand}\index{AllocateBudgetCommand@{AllocateBudgetCommand}}
+Inheritance diagram for Allocate\+Budget\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classAllocateBudgetCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classAllocateBudgetCommand_a3c704900a5928109b5c9d863115a328f}\label{classAllocateBudgetCommand_a3c704900a5928109b5c9d863115a328f} 
+{\bfseries Allocate\+Budget\+Command} (\mbox{\hyperlink{classGovernment}{Government}} \texorpdfstring{$\ast$}{*}gov, \mbox{\hyperlink{classCityService}{City\+Service}} \&srv, double amt)
+\item 
+void \mbox{\hyperlink{classAllocateBudgetCommand_a64deb7819fcad9c90338645d340fbd55}{execute}} () override
+\item 
+void \mbox{\hyperlink{classAllocateBudgetCommand_affbd44c00d68923098edfa003d1ba217}{undo}} () override
+\item 
+\Hypertarget{classAllocateBudgetCommand_ad29e67d98fb5bd0e09018ec6d1aef8c7}\label{classAllocateBudgetCommand_ad29e67d98fb5bd0e09018ec6d1aef8c7} 
+double {\bfseries get\+Amount} () const
+\item 
+\Hypertarget{classAllocateBudgetCommand_a6e4d8276e6c1abf2903878260f3e2e8b}\label{classAllocateBudgetCommand_a6e4d8276e6c1abf2903878260f3e2e8b} 
+void {\bfseries set\+Amount} (double amt)
+\item 
+\Hypertarget{classAllocateBudgetCommand_aefb5c5a65ec1ad77da5cc8e32b4405f8}\label{classAllocateBudgetCommand_aefb5c5a65ec1ad77da5cc8e32b4405f8} 
+double {\bfseries get\+Prev\+Allocation} () const
+\item 
+\Hypertarget{classAllocateBudgetCommand_a78d5df41072f027a46f4c4001957f195}\label{classAllocateBudgetCommand_a78d5df41072f027a46f4c4001957f195} 
+void {\bfseries set\+Prev\+Allocation} (double prev\+Amt)
+\item 
+\Hypertarget{classAllocateBudgetCommand_a1bdc3a5ecaf9b9231e4c07ca19d06635}\label{classAllocateBudgetCommand_a1bdc3a5ecaf9b9231e4c07ca19d06635} 
+bool {\bfseries validate\+Allocation} () const
+\item 
+\Hypertarget{classAllocateBudgetCommand_af288868b31ca8ea410653c1680a9aee5}\label{classAllocateBudgetCommand_af288868b31ca8ea410653c1680a9aee5} 
+void {\bfseries execute\+With\+Validation} ()
+\item 
+std\+::string \mbox{\hyperlink{classAllocateBudgetCommand_a9b0c7c7c71788ae1c2e2350a93e0a814}{get\+Name}} () const override
+\item 
+std\+::string \mbox{\hyperlink{classAllocateBudgetCommand_a854b33f1e42f8ba2aff1ee1ccfdfb5dd}{get\+Description}} () const override
+\item 
+bool \mbox{\hyperlink{classAllocateBudgetCommand_a0535d207cc5f46b5406f773f43d7c6fc}{can\+Execute}} () const override
+\item 
+double \mbox{\hyperlink{classAllocateBudgetCommand_ad23849ea6d44aab60049361b40e01d49}{return\+Val}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGovCommand}{Gov\+Command}}}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classAllocateBudgetCommand_a0535d207cc5f46b5406f773f43d7c6fc}\index{AllocateBudgetCommand@{AllocateBudgetCommand}!canExecute@{canExecute}}
+\index{canExecute@{canExecute}!AllocateBudgetCommand@{AllocateBudgetCommand}}
+\doxysubsubsection{\texorpdfstring{canExecute()}{canExecute()}}
+{\footnotesize\ttfamily \label{classAllocateBudgetCommand_a0535d207cc5f46b5406f773f43d7c6fc} 
+bool Allocate\+Budget\+Command\+::can\+Execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovCommand}{Gov\+Command}}.
+
+\Hypertarget{classAllocateBudgetCommand_a64deb7819fcad9c90338645d340fbd55}\index{AllocateBudgetCommand@{AllocateBudgetCommand}!execute@{execute}}
+\index{execute@{execute}!AllocateBudgetCommand@{AllocateBudgetCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classAllocateBudgetCommand_a64deb7819fcad9c90338645d340fbd55} 
+void Allocate\+Budget\+Command\+::execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovCommand}{Gov\+Command}}.
+
+\Hypertarget{classAllocateBudgetCommand_a854b33f1e42f8ba2aff1ee1ccfdfb5dd}\index{AllocateBudgetCommand@{AllocateBudgetCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!AllocateBudgetCommand@{AllocateBudgetCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classAllocateBudgetCommand_a854b33f1e42f8ba2aff1ee1ccfdfb5dd} 
+std\+::string Allocate\+Budget\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovCommand}{Gov\+Command}}.
+
+\Hypertarget{classAllocateBudgetCommand_a9b0c7c7c71788ae1c2e2350a93e0a814}\index{AllocateBudgetCommand@{AllocateBudgetCommand}!getName@{getName}}
+\index{getName@{getName}!AllocateBudgetCommand@{AllocateBudgetCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classAllocateBudgetCommand_a9b0c7c7c71788ae1c2e2350a93e0a814} 
+std\+::string Allocate\+Budget\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovCommand}{Gov\+Command}}.
+
+\Hypertarget{classAllocateBudgetCommand_ad23849ea6d44aab60049361b40e01d49}\index{AllocateBudgetCommand@{AllocateBudgetCommand}!returnVal@{returnVal}}
+\index{returnVal@{returnVal}!AllocateBudgetCommand@{AllocateBudgetCommand}}
+\doxysubsubsection{\texorpdfstring{returnVal()}{returnVal()}}
+{\footnotesize\ttfamily \label{classAllocateBudgetCommand_ad23849ea6d44aab60049361b40e01d49} 
+double Allocate\+Budget\+Command\+::return\+Val (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovCommand}{Gov\+Command}}.
+
+\Hypertarget{classAllocateBudgetCommand_affbd44c00d68923098edfa003d1ba217}\index{AllocateBudgetCommand@{AllocateBudgetCommand}!undo@{undo}}
+\index{undo@{undo}!AllocateBudgetCommand@{AllocateBudgetCommand}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily \label{classAllocateBudgetCommand_affbd44c00d68923098edfa003d1ba217} 
+void Allocate\+Budget\+Command\+::undo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovCommand}{Gov\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Allocate\+Budget\+Command.\+h\item 
+Allocate\+Budget\+Command.\+cpp\end{DoxyCompactItemize}

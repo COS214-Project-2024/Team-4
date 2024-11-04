@@ -32,3 +32,6 @@ clean:
 
 run: $(TARGET)
 	./$(TARGET)
+
+doxygen:
+	doxygen dconfig

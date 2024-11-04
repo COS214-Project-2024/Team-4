@@ -1,0 +1,26 @@
+\doxysection{Male\+Citizen.\+h}
+\hypertarget{MaleCitizen_8h_source}{}\label{MaleCitizen_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MALE\_CITIZEN\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MALE\_CITIZEN\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Citizen.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMaleCitizen}{MaleCitizen}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCitizen}{Citizen}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{classMaleCitizen}{MaleCitizen}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{int}\ age)\ :\ \mbox{\hyperlink{classCitizen}{Citizen}}(name,\ age)\ \{\}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{comment}{//\ Implement\ clone\ method}}
+\DoxyCodeLine{00012\ \ \ \ \ std::shared\_ptr<Citizen>\ clone()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_shared<MaleCitizen>(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00014\ \ \ \ \ \}}
+\DoxyCodeLine{00015\ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MALE\_CITIZEN\_H}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ }
+
+\end{DoxyCode}

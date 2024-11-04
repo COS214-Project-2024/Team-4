@@ -1,0 +1,71 @@
+\doxysection{Taxi.\+h}
+\hypertarget{Taxi_8h_source}{}\label{Taxi_8h_source}\mbox{\hyperlink{Taxi_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ TAXI\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ TAXI\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PublicTransit_8h}{PublicTransit.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{InsideRoad_8h}{InsideRoad.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ComercialAirport_8h}{ComercialAirport.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{CargoAirport_8h}{CargoAirport.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{FreightTrain_8h}{FreightTrain.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PassengerTrain_8h}{PassengerTrain.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}Building.h"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classInsideRoad}{InsideRoad}};}
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classComercialAirport}{ComercialAirport}};}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCargoAirport}{CargoAirport}};}
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPassengerTrain}{PassengerTrain}};}
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFreightTrain}{FreightTrain}};}
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBuilding}{Building}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTaxi}{Taxi}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classPublicTransit}{PublicTransit}}\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ std::string\ taxiCompany;\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ taxiNumber;\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ std::vector<InsideRoad*>\ insideRoads;\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ std::vector<ComercialAirport*>\ comercialAirports;\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ std::vector<CargoAirport*>\ cargoAirports;\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ std::vector<PassengerTrain*>\ passengerTrains;\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ std::vector<FreightTrain*>\ freightTrains;\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ std::vector<Building*>\ buildings;\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTaxi_a8549ab1056f20acd9e0b527af4dfa0e1}{Taxi}}(\textcolor{keywordtype}{char}\ state,\ std::string\ route,\ std::string\ taxiCompany,\ \textcolor{keywordtype}{int}\ taxiNumber);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTaxi_a37534cfa31168d897e802ca6252fc077}{addInsideRoad}}(\mbox{\hyperlink{classInsideRoad}{InsideRoad}}\ *insideRoad);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTaxi_af2938c17ea540bcac4e50f60f0d182f9}{addComercialAirport}}(\mbox{\hyperlink{classComercialAirport}{ComercialAirport}}\ *comercialAirport);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTaxi_a11409b3c9b09ca9881fd6f1486209f38}{addCargoAirport}}(\mbox{\hyperlink{classCargoAirport}{CargoAirport}}\ *cargoAirport);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTaxi_aef283cfc8c112401ba1cfe65050005d5}{addPassengerTrain}}(\mbox{\hyperlink{classPassengerTrain}{PassengerTrain}}\ *passengerTrain);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTaxi_aacc0a35a993c23756ba29f2638c59cbb}{addFreightTrain}}(\mbox{\hyperlink{classFreightTrain}{FreightTrain}}\ *freightTrain);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTaxi_acafd6a03012e381478d1569438ead23a}{addBuilding}}(\mbox{\hyperlink{classBuilding}{Building}}\ *building);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInsideRoad}{InsideRoad}}\ *\mbox{\hyperlink{classTaxi_ab6823f6ba59456567fa3112f055c6dcb}{getInsideRoad}}(std::size\_t\ x);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classComercialAirport}{ComercialAirport}}\ *\mbox{\hyperlink{classTaxi_a7050f9a325a45d3f2e35bf10db0983a6}{getComercialAirport}}(std::size\_t\ x);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCargoAirport}{CargoAirport}}\ *\mbox{\hyperlink{classTaxi_a9dacb6517109861330cb4539de725066}{getCargoAirport}}(std::size\_t\ x);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPassengerTrain}{PassengerTrain}}\ *\mbox{\hyperlink{classTaxi_adf635ff28e6666e3b059c11f4f3a3e39}{getPassengerTrain}}(std::size\_t\ x);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFreightTrain}{FreightTrain}}\ *\mbox{\hyperlink{classTaxi_a0e318ada505a8c9f8b0a48ef181249bc}{getFreightTrain}}(std::size\_t\ x);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBuilding}{Building}}\ *\mbox{\hyperlink{classTaxi_a6b2b16cbc112191f93e806e0cffe3a24}{getBuilding}}(std::size\_t\ x);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classTaxi_a3620e276ff7d5a582b5b9a40cef0d3a7}{getRouteName}}();}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classTaxi_a93b6faf8cd2154fef8aca8553e1a33d0}{getTaxiCompany}}();}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTaxi_a0102e8bf446cdcb2f5eed0874b99630b}{getTaxiNumber}}();}
+\DoxyCodeLine{00152\ \};}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,87 @@
+\doxysection{Business Class Reference}
+\hypertarget{classBusiness}{}\label{classBusiness}\index{Business@{Business}}
+Inheritance diagram for Business\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBusiness}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classBusiness_a6bdbb01ee6da501dff84a2383198575e}\label{classBusiness_a6bdbb01ee6da501dff84a2383198575e} 
+{\bfseries Business} (double initial\+Revenue, double initial\+Tax\+Rate)
+\item 
+void \mbox{\hyperlink{classBusiness_ac956480f7dc489a809e50da4f7c4370c}{update\+Tax\+Rate}} (double rate) override
+\item 
+void \mbox{\hyperlink{classBusiness_a8be439320a0d29bccb568907b606b147}{update\+Policy}} (\mbox{\hyperlink{classPolicy}{Policy}} policy) override
+\item 
+void \mbox{\hyperlink{classBusiness_ae57ec64b90df210fcaa360e805a4e0d2}{update\+Services}} (\mbox{\hyperlink{classCityService}{City\+Service}} service) override
+\item 
+\Hypertarget{classBusiness_adfc822097cbcbbf408e88757d9a4a3ff}\label{classBusiness_adfc822097cbcbbf408e88757d9a4a3ff} 
+void {\bfseries pay\+Tax} (double amount)
+\item 
+\Hypertarget{classBusiness_a2864e8c561bd01e3e734221db6e13674}\label{classBusiness_a2864e8c561bd01e3e734221db6e13674} 
+void {\bfseries add\+Service} (const std\+::string \&service\+Name)
+\item 
+\Hypertarget{classBusiness_ac5bc0a4aa184d1b0d67a191cf9e18721}\label{classBusiness_ac5bc0a4aa184d1b0d67a191cf9e18721} 
+void {\bfseries remove\+Service} (const std\+::string \&service\+Name)
+\item 
+\Hypertarget{classBusiness_ad8cd073759def99d25c865e037805f32}\label{classBusiness_ad8cd073759def99d25c865e037805f32} 
+void {\bfseries add\+Policy} (const \mbox{\hyperlink{classPolicy}{Policy}} \&policy)
+\item 
+\Hypertarget{classBusiness_a3b9a3d5a395e29f9c32cf8b7f9c8f14c}\label{classBusiness_a3b9a3d5a395e29f9c32cf8b7f9c8f14c} 
+void {\bfseries remove\+Policy} (const \mbox{\hyperlink{classPolicy}{Policy}} \&policy)
+\item 
+\Hypertarget{classBusiness_aa2fafdd0fe46b284400f2a31016d9042}\label{classBusiness_aa2fafdd0fe46b284400f2a31016d9042} 
+double {\bfseries calculate\+Tax} () const
+\item 
+\Hypertarget{classBusiness_a0c4282a1226e94bd2fef66bfdafcea67}\label{classBusiness_a0c4282a1226e94bd2fef66bfdafcea67} 
+void {\bfseries print\+Details} () const
+\item 
+\Hypertarget{classBusiness_ae2aff0484d336f9cbfc7289d6d38925e}\label{classBusiness_ae2aff0484d336f9cbfc7289d6d38925e} 
+double {\bfseries pay\+Taxes} (\mbox{\hyperlink{classTaxType}{Tax\+Type}} \texorpdfstring{$\ast$}{*}tax\+Type)
+\item 
+\Hypertarget{classBusiness_a271e17b4a8d701337de1c6d606ccde80}\label{classBusiness_a271e17b4a8d701337de1c6d606ccde80} 
+void {\bfseries set\+Tax\+Cooldown\+Period} (int seconds)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGovObserver}{Gov\+Observer}}}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBusiness_a8be439320a0d29bccb568907b606b147}\index{Business@{Business}!updatePolicy@{updatePolicy}}
+\index{updatePolicy@{updatePolicy}!Business@{Business}}
+\doxysubsubsection{\texorpdfstring{updatePolicy()}{updatePolicy()}}
+{\footnotesize\ttfamily \label{classBusiness_a8be439320a0d29bccb568907b606b147} 
+void Business\+::update\+Policy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPolicy}{Policy}}}]{policy}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovObserver}{Gov\+Observer}}.
+
+\Hypertarget{classBusiness_ae57ec64b90df210fcaa360e805a4e0d2}\index{Business@{Business}!updateServices@{updateServices}}
+\index{updateServices@{updateServices}!Business@{Business}}
+\doxysubsubsection{\texorpdfstring{updateServices()}{updateServices()}}
+{\footnotesize\ttfamily \label{classBusiness_ae57ec64b90df210fcaa360e805a4e0d2} 
+void Business\+::update\+Services (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityService}{City\+Service}}}]{service}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovObserver}{Gov\+Observer}}.
+
+\Hypertarget{classBusiness_ac956480f7dc489a809e50da4f7c4370c}\index{Business@{Business}!updateTaxRate@{updateTaxRate}}
+\index{updateTaxRate@{updateTaxRate}!Business@{Business}}
+\doxysubsubsection{\texorpdfstring{updateTaxRate()}{updateTaxRate()}}
+{\footnotesize\ttfamily \label{classBusiness_ac956480f7dc489a809e50da4f7c4370c} 
+void Business\+::update\+Tax\+Rate (\begin{DoxyParamCaption}\item[{double}]{rate}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovObserver}{Gov\+Observer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Business.\+h\item 
+Business.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,28 @@
+\doxysection{Utility\+Mediator.\+h}
+\hypertarget{UtilityMediator_8h_source}{}\label{UtilityMediator_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ UtilityMediator.h}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ UTILITYMEDIATOR\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ UTILITYMEDIATOR\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}ResourceType.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Observer.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUtilityMediator}{UtilityMediator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classObserver}{Observer}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00011\ \ \ \ \ std::map<ResourceType,\ int>\ resourceInventory;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{classUtilityMediator}{UtilityMediator}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{bool}\ requestResources(ResourceType\ type,\ \textcolor{keywordtype}{int}\ amount);}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ releaseResources(ResourceType\ type,\ \textcolor{keywordtype}{int}\ amount);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ produceResource(ResourceType\ type,\ \textcolor{keywordtype}{int}\ amount);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ getAvailableResource(ResourceType\ type)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ update(ResourceType\ type,\ \textcolor{keywordtype}{int}\ quantity)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UTILITYMEDIATOR\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,37 @@
+\doxysection{Policy.\+h}
+\hypertarget{Policy_8h_source}{}\label{Policy_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ POLICY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ POLICY\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPolicy}{Policy}}\ \{}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00009\ \ \ \ \ std::string\ policyName;\ \ \ \textcolor{comment}{//\ Name\ of\ the\ policy}}
+\DoxyCodeLine{00010\ \ \ \ \ std::string\ impactLevel;\ \ \textcolor{comment}{//\ Impact\ level\ of\ the\ policy}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//\ Default\ constructor}}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{classPolicy}{Policy}}();}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ Constructor\ with\ parameters}}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classPolicy}{Policy}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ impact);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ Implements\ the\ policy}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ implement();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ Revokes\ the\ policy}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ revoke();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ Gets\ the\ name\ of\ the\ policy}}
+\DoxyCodeLine{00026\ \ \ \ \ std::string\ getPolicyName()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Gets\ the\ impact\ level\ of\ the\ policy}}
+\DoxyCodeLine{00029\ \ \ \ \ std::string\ getImpactLevel()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

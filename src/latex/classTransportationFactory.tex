@@ -1,0 +1,218 @@
+\doxysection{Transportation\+Factory Class Reference}
+\hypertarget{classTransportationFactory}{}\label{classTransportationFactory}\index{TransportationFactory@{TransportationFactory}}
+
+
+A factory class for creating different types of transportation objects.  
+
+
+
+
+{\ttfamily \#include $<$Transportation\+Factory.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTransportationFactory_abb77f43a6c068000f76c08b11db7ec12}{create\+Highway}} (char state, std\+::string road\+Name, float speed\+Limit)
+\begin{DoxyCompactList}\small\item\em Creates a \doxylink{classHighway}{Highway} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTransportationFactory_aa6614bffbe2de6494813fe946ab78a33}{create\+Inside\+Road}} (char state, std\+::string road\+Name, float avg\+Stop\+Time)
+\begin{DoxyCompactList}\small\item\em Creates an \doxylink{classInsideRoad}{Inside\+Road} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTransportationFactory_a143845c229cd67536a170b32f0a3a130}{create\+Bus}} (char state, std\+::string route, int bus\+Number, int capacity)
+\begin{DoxyCompactList}\small\item\em Creates a \doxylink{classBus}{Bus} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTransportationFactory_a8f98d673dc63a2c0b2d8a2df5f41f608}{create\+Taxi}} (char state, std\+::string route, std\+::string taxi\+Company, int taxi\+Number)
+\begin{DoxyCompactList}\small\item\em Creates a \doxylink{classTaxi}{Taxi} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTransportationFactory_a83fa743ce0356c595354a1bad82c60de}{create\+Passenger\+Train}} (char state, std\+::string line)
+\begin{DoxyCompactList}\small\item\em Creates a \doxylink{classPassengerTrain}{Passenger\+Train} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTransportationFactory_acecfde978d4a9bccfa8ace156cec1c5e}{create\+Freight\+Train}} (char state, std\+::string line, float weight, float length)
+\begin{DoxyCompactList}\small\item\em Creates a \doxylink{classFreightTrain}{Freight\+Train} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTransportationFactory_a85fd8a24bb4f75c4294945a08347e540}{create\+Comercial\+Airport}} (char state, std\+::string name)
+\begin{DoxyCompactList}\small\item\em Creates a \doxylink{classComercialAirport}{Comercial\+Airport} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTransportationFactory_a3d0d5fe4161aaedff2d70f093371a0c1}{create\+Cargo\+Airport}} (char state, std\+::string name)
+\begin{DoxyCompactList}\small\item\em Creates a \doxylink{classCargoAirport}{Cargo\+Airport} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A factory class for creating different types of transportation objects. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTransportationFactory_a143845c229cd67536a170b32f0a3a130}\index{TransportationFactory@{TransportationFactory}!createBus@{createBus}}
+\index{createBus@{createBus}!TransportationFactory@{TransportationFactory}}
+\doxysubsubsection{\texorpdfstring{createBus()}{createBus()}}
+{\footnotesize\ttfamily \label{classTransportationFactory_a143845c229cd67536a170b32f0a3a130} 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} Transportation\+Factory\+::create\+Bus (\begin{DoxyParamCaption}\item[{char}]{state}{, }\item[{std\+::string}]{route}{, }\item[{int}]{bus\+Number}{, }\item[{int}]{capacity}{}\end{DoxyParamCaption})}
+
+
+
+Creates a \doxylink{classBus}{Bus} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state of the bus. \\
+\hline
+{\em route} & The route of the bus. \\
+\hline
+{\em bus\+Number} & The bus number. \\
+\hline
+{\em capacity} & The capacity of the bus. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the created \doxylink{classBus}{Bus} object. 
+\end{DoxyReturn}
+\Hypertarget{classTransportationFactory_a3d0d5fe4161aaedff2d70f093371a0c1}\index{TransportationFactory@{TransportationFactory}!createCargoAirport@{createCargoAirport}}
+\index{createCargoAirport@{createCargoAirport}!TransportationFactory@{TransportationFactory}}
+\doxysubsubsection{\texorpdfstring{createCargoAirport()}{createCargoAirport()}}
+{\footnotesize\ttfamily \label{classTransportationFactory_a3d0d5fe4161aaedff2d70f093371a0c1} 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} Transportation\+Factory\+::create\+Cargo\+Airport (\begin{DoxyParamCaption}\item[{char}]{state}{, }\item[{std\+::string}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Creates a \doxylink{classCargoAirport}{Cargo\+Airport} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state of the cargo airport. \\
+\hline
+{\em name} & The name of the cargo airport. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the created \doxylink{classCargoAirport}{Cargo\+Airport} object. 
+\end{DoxyReturn}
+\Hypertarget{classTransportationFactory_a85fd8a24bb4f75c4294945a08347e540}\index{TransportationFactory@{TransportationFactory}!createComercialAirport@{createComercialAirport}}
+\index{createComercialAirport@{createComercialAirport}!TransportationFactory@{TransportationFactory}}
+\doxysubsubsection{\texorpdfstring{createComercialAirport()}{createComercialAirport()}}
+{\footnotesize\ttfamily \label{classTransportationFactory_a85fd8a24bb4f75c4294945a08347e540} 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} Transportation\+Factory\+::create\+Comercial\+Airport (\begin{DoxyParamCaption}\item[{char}]{state}{, }\item[{std\+::string}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Creates a \doxylink{classComercialAirport}{Comercial\+Airport} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state of the commercial airport. \\
+\hline
+{\em name} & The name of the commercial airport. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the created \doxylink{classComercialAirport}{Comercial\+Airport} object. 
+\end{DoxyReturn}
+\Hypertarget{classTransportationFactory_acecfde978d4a9bccfa8ace156cec1c5e}\index{TransportationFactory@{TransportationFactory}!createFreightTrain@{createFreightTrain}}
+\index{createFreightTrain@{createFreightTrain}!TransportationFactory@{TransportationFactory}}
+\doxysubsubsection{\texorpdfstring{createFreightTrain()}{createFreightTrain()}}
+{\footnotesize\ttfamily \label{classTransportationFactory_acecfde978d4a9bccfa8ace156cec1c5e} 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} Transportation\+Factory\+::create\+Freight\+Train (\begin{DoxyParamCaption}\item[{char}]{state}{, }\item[{std\+::string}]{line}{, }\item[{float}]{weight}{, }\item[{float}]{length}{}\end{DoxyParamCaption})}
+
+
+
+Creates a \doxylink{classFreightTrain}{Freight\+Train} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state of the freight train. \\
+\hline
+{\em line} & The line of the freight train. \\
+\hline
+{\em weight} & The weight of the freight. \\
+\hline
+{\em length} & The length of the freight train. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the created \doxylink{classFreightTrain}{Freight\+Train} object. 
+\end{DoxyReturn}
+\Hypertarget{classTransportationFactory_abb77f43a6c068000f76c08b11db7ec12}\index{TransportationFactory@{TransportationFactory}!createHighway@{createHighway}}
+\index{createHighway@{createHighway}!TransportationFactory@{TransportationFactory}}
+\doxysubsubsection{\texorpdfstring{createHighway()}{createHighway()}}
+{\footnotesize\ttfamily \label{classTransportationFactory_abb77f43a6c068000f76c08b11db7ec12} 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} Transportation\+Factory\+::create\+Highway (\begin{DoxyParamCaption}\item[{char}]{state}{, }\item[{std\+::string}]{road\+Name}{, }\item[{float}]{speed\+Limit}{}\end{DoxyParamCaption})}
+
+
+
+Creates a \doxylink{classHighway}{Highway} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state of the highway. \\
+\hline
+{\em road\+Name} & The name of the road. \\
+\hline
+{\em speed\+Limit} & The speed limit of the highway. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the created \doxylink{classHighway}{Highway} object. 
+\end{DoxyReturn}
+\Hypertarget{classTransportationFactory_aa6614bffbe2de6494813fe946ab78a33}\index{TransportationFactory@{TransportationFactory}!createInsideRoad@{createInsideRoad}}
+\index{createInsideRoad@{createInsideRoad}!TransportationFactory@{TransportationFactory}}
+\doxysubsubsection{\texorpdfstring{createInsideRoad()}{createInsideRoad()}}
+{\footnotesize\ttfamily \label{classTransportationFactory_aa6614bffbe2de6494813fe946ab78a33} 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} Transportation\+Factory\+::create\+Inside\+Road (\begin{DoxyParamCaption}\item[{char}]{state}{, }\item[{std\+::string}]{road\+Name}{, }\item[{float}]{avg\+Stop\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Creates an \doxylink{classInsideRoad}{Inside\+Road} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state of the inside road. \\
+\hline
+{\em road\+Name} & The name of the road. \\
+\hline
+{\em avg\+Stop\+Time} & The average stop time on the road. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the created \doxylink{classInsideRoad}{Inside\+Road} object. 
+\end{DoxyReturn}
+\Hypertarget{classTransportationFactory_a83fa743ce0356c595354a1bad82c60de}\index{TransportationFactory@{TransportationFactory}!createPassengerTrain@{createPassengerTrain}}
+\index{createPassengerTrain@{createPassengerTrain}!TransportationFactory@{TransportationFactory}}
+\doxysubsubsection{\texorpdfstring{createPassengerTrain()}{createPassengerTrain()}}
+{\footnotesize\ttfamily \label{classTransportationFactory_a83fa743ce0356c595354a1bad82c60de} 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} Transportation\+Factory\+::create\+Passenger\+Train (\begin{DoxyParamCaption}\item[{char}]{state}{, }\item[{std\+::string}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Creates a \doxylink{classPassengerTrain}{Passenger\+Train} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state of the passenger train. \\
+\hline
+{\em line} & The line of the passenger train. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the created \doxylink{classPassengerTrain}{Passenger\+Train} object. 
+\end{DoxyReturn}
+\Hypertarget{classTransportationFactory_a8f98d673dc63a2c0b2d8a2df5f41f608}\index{TransportationFactory@{TransportationFactory}!createTaxi@{createTaxi}}
+\index{createTaxi@{createTaxi}!TransportationFactory@{TransportationFactory}}
+\doxysubsubsection{\texorpdfstring{createTaxi()}{createTaxi()}}
+{\footnotesize\ttfamily \label{classTransportationFactory_a8f98d673dc63a2c0b2d8a2df5f41f608} 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} Transportation\+Factory\+::create\+Taxi (\begin{DoxyParamCaption}\item[{char}]{state}{, }\item[{std\+::string}]{route}{, }\item[{std\+::string}]{taxi\+Company}{, }\item[{int}]{taxi\+Number}{}\end{DoxyParamCaption})}
+
+
+
+Creates a \doxylink{classTaxi}{Taxi} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state of the taxi. \\
+\hline
+{\em route} & The route of the taxi. \\
+\hline
+{\em taxi\+Company} & The company of the taxi. \\
+\hline
+{\em taxi\+Number} & The taxi number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the created \doxylink{classTaxi}{Taxi} object. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TransportationFactory_8h}{Transportation\+Factory.\+h}}\item 
+Transportation\+Factory.\+cpp\end{DoxyCompactItemize}

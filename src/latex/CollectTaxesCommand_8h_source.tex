@@ -1,0 +1,66 @@
+\doxysection{Collect\+Taxes\+Command.\+h}
+\hypertarget{CollectTaxesCommand_8h_source}{}\label{CollectTaxesCommand_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ COLLECTTAXESCOMMAND\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ COLLECTTAXESCOMMAND\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}GovCommand.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Government.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Building.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}TaxType.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ CollectTaxesCommand\ class}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ This\ class\ represents\ a\ command\ to\ collect\ taxes\ from\ the\ government}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCollectTaxesCommand}{CollectTaxesCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classGovCommand}{GovCommand}}\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{classGovernment}{Government}}*\ government;\ \ \ \textcolor{comment}{//\ Pointer\ to\ the\ government\ object}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{double}\ collectedTaxes;\ \ \ \ \textcolor{comment}{//\ Amount\ of\ taxes\ collected}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classBuilding}{Building}}*\ building;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{double}\ taxesCollected;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{double}\ taxRate;}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classTaxType}{TaxType}}*\ taxType;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Constructor}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ Initializes\ the\ command\ with\ the\ government\ object}}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classCollectTaxesCommand}{CollectTaxesCommand}}(\mbox{\hyperlink{classGovernment}{Government}}*\ gov);}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{classCollectTaxesCommand}{CollectTaxesCommand}}(\mbox{\hyperlink{classBuilding}{Building}}*\ building,\ \mbox{\hyperlink{classTaxType}{TaxType}}*\ taxType);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ Executes\ the\ tax\ collection\ command}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ execute()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ Undoes\ the\ tax\ collection\ command}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ undo()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ Gets\ the\ amount\ of\ taxes\ collected}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{double}\ getCollectedTaxes()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ Sets\ the\ amount\ of\ taxes\ collected}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ setCollectedTaxes(\textcolor{keywordtype}{double}\ amount);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//\ Validates\ the\ tax\ collection}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{bool}\ validateCollection()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ Executes\ the\ tax\ collection\ command\ with\ validation}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ executeWithValidation();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ Gets\ the\ name\ of\ the\ command}}
+\DoxyCodeLine{00048\ \ \ \ \ std::string\ getName()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//\ Gets\ the\ description\ of\ the\ command}}
+\DoxyCodeLine{00051\ \ \ \ \ std::string\ getDescription()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ Checks\ if\ the\ command\ can\ be\ executed}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ canExecute()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{double}\ getTaxesCollected();}
+\DoxyCodeLine{00057\ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{double}\ returnVal();}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

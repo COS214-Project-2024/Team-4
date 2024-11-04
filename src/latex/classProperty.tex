@@ -1,0 +1,62 @@
+\doxysection{Property Class Reference}
+\hypertarget{classProperty}{}\label{classProperty}\index{Property@{Property}}
+Inheritance diagram for Property\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classProperty}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classProperty_ae97966fd8d2282871511e83bee713cb2}\label{classProperty_ae97966fd8d2282871511e83bee713cb2} 
+{\bfseries Property} (double rate, double levy, double fees)
+\item 
+void \mbox{\hyperlink{classProperty_ae6055bc87f7c528748c461de379f2f7c}{set\+Tax}} (double rate) override
+\item 
+double \mbox{\hyperlink{classProperty_a697fafd6e686e783a6038886acedc935}{calculate\+Tax}} (double property\+Value) override
+\item 
+\Hypertarget{classProperty_acbb42b9fe6c93889d3565d2115352a63}\label{classProperty_acbb42b9fe6c93889d3565d2115352a63} 
+void {\bfseries set\+Municipal\+Levy} (double levy)
+\item 
+\Hypertarget{classProperty_a46958b1be094047d3edaa49639b9f692}\label{classProperty_a46958b1be094047d3edaa49639b9f692} 
+void {\bfseries set\+Additional\+Fees} (double fees)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTaxType}{Tax\+Type}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Tax\+Type} (double rate, char type)
+\item 
+virtual double {\bfseries get\+Tax\+Rate} ()
+\item 
+char {\bfseries get\+Tax\+Type} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classProperty_a697fafd6e686e783a6038886acedc935}\index{Property@{Property}!calculateTax@{calculateTax}}
+\index{calculateTax@{calculateTax}!Property@{Property}}
+\doxysubsubsection{\texorpdfstring{calculateTax()}{calculateTax()}}
+{\footnotesize\ttfamily \label{classProperty_a697fafd6e686e783a6038886acedc935} 
+double Property\+::calculate\+Tax (\begin{DoxyParamCaption}\item[{double}]{property\+Value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classTaxType}{Tax\+Type}}.
+
+\Hypertarget{classProperty_ae6055bc87f7c528748c461de379f2f7c}\index{Property@{Property}!setTax@{setTax}}
+\index{setTax@{setTax}!Property@{Property}}
+\doxysubsubsection{\texorpdfstring{setTax()}{setTax()}}
+{\footnotesize\ttfamily \label{classProperty_ae6055bc87f7c528748c461de379f2f7c} 
+void Property\+::set\+Tax (\begin{DoxyParamCaption}\item[{double}]{rate}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classTaxType}{Tax\+Type}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Property.\+h\item 
+Property.\+cpp\end{DoxyCompactItemize}

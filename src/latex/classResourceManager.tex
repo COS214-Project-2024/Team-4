@@ -1,0 +1,34 @@
+\doxysection{Resource\+Manager Class Reference}
+\hypertarget{classResourceManager}{}\label{classResourceManager}\index{ResourceManager@{ResourceManager}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classResourceManager_af366ed3390d41ded6f74adf9d4056e21}\label{classResourceManager_af366ed3390d41ded6f74adf9d4056e21} 
+{\bfseries Resource\+Manager} (int initial\+Budget)
+\item 
+\Hypertarget{classResourceManager_aff2cdf001b124a32ac5facdf1893802d}\label{classResourceManager_aff2cdf001b124a32ac5facdf1893802d} 
+bool {\bfseries allocate\+Resources} (Resource\+Type type, int quantity)
+\item 
+\Hypertarget{classResourceManager_aeb9373520fd04367bd85e1206c012f8a}\label{classResourceManager_aeb9373520fd04367bd85e1206c012f8a} 
+void {\bfseries release\+Resources} (Resource\+Type type, int quantity)
+\item 
+\Hypertarget{classResourceManager_ac2776ccd4a8c5b89e31300a2204f4494}\label{classResourceManager_ac2776ccd4a8c5b89e31300a2204f4494} 
+void {\bfseries set\+Allocation\+Strategy} (\mbox{\hyperlink{classResourceAllocationStrategy}{Resource\+Allocation\+Strategy}} \texorpdfstring{$\ast$}{*}strategy)
+\item 
+\Hypertarget{classResourceManager_a576c29ce49fdb6c65f6b9c6eecbdb988}\label{classResourceManager_a576c29ce49fdb6c65f6b9c6eecbdb988} 
+int {\bfseries get\+Budget} () const
+\item 
+\Hypertarget{classResourceManager_a01d3b7f5686f6131250bdbd20743094b}\label{classResourceManager_a01d3b7f5686f6131250bdbd20743094b} 
+void {\bfseries add\+Observer} (\mbox{\hyperlink{classObserver}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+\Hypertarget{classResourceManager_a57fedd807ab26987d66cbd0a012c669c}\label{classResourceManager_a57fedd807ab26987d66cbd0a012c669c} 
+\mbox{\hyperlink{classResource}{Resource}} \texorpdfstring{$\ast$}{*} {\bfseries get\+Resource} (Resource\+Type type) const
+\item 
+\Hypertarget{classResourceManager_a4cb608e665a3abd58c1de4cdf45518bf}\label{classResourceManager_a4cb608e665a3abd58c1de4cdf45518bf} 
+void {\bfseries add\+Resource} (Resource\+Type type, \mbox{\hyperlink{classResource}{Resource}} \texorpdfstring{$\ast$}{*}resource)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Resource\+Manager.\+h\end{DoxyCompactItemize}

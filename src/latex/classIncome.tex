@@ -1,0 +1,71 @@
+\doxysection{Income Class Reference}
+\hypertarget{classIncome}{}\label{classIncome}\index{Income@{Income}}
+Inheritance diagram for Income\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classIncome}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classIncome_a6ae9a62f0b093f136fd0fffada527866}\label{classIncome_a6ae9a62f0b093f136fd0fffada527866} 
+{\bfseries Income} (double salary, double rate, const char category)
+\item 
+\Hypertarget{classIncome_a2f0e656c68b490b42c4aba1612150ce7}\label{classIncome_a2f0e656c68b490b42c4aba1612150ce7} 
+{\bfseries Income} (double salary)
+\item 
+\Hypertarget{classIncome_a128efde64d79b55a9354dbb848f8f934}\label{classIncome_a128efde64d79b55a9354dbb848f8f934} 
+double {\bfseries calculate\+Monthly\+Income} () const
+\item 
+\Hypertarget{classIncome_a656398ff13b3ce373ba3ce9605b1e9ac}\label{classIncome_a656398ff13b3ce373ba3ce9605b1e9ac} 
+void {\bfseries add\+Bonus} (double amount)
+\item 
+\Hypertarget{classIncome_af0f45a6e246dcbfb22044680624cb4ca}\label{classIncome_af0f45a6e246dcbfb22044680624cb4ca} 
+void {\bfseries apply\+Deductions} (double amount)
+\item 
+\Hypertarget{classIncome_ad46a97db5b118757e6cd8779201c6930}\label{classIncome_ad46a97db5b118757e6cd8779201c6930} 
+double {\bfseries pay\+Taxes} (\mbox{\hyperlink{classTaxType}{Tax\+Type}} \&tax\+Type)
+\item 
+\Hypertarget{classIncome_aa2fcb4ec3f53253050e8796a3ee77a5a}\label{classIncome_aa2fcb4ec3f53253050e8796a3ee77a5a} 
+double {\bfseries get\+Base\+Salary} () const
+\item 
+\Hypertarget{classIncome_a09e2e4d728ece8b478af1e075be00d09}\label{classIncome_a09e2e4d728ece8b478af1e075be00d09} 
+double {\bfseries get\+Bonus} () const
+\item 
+\Hypertarget{classIncome_a81b74bc98712baba9d8e1a8426d9e4d6}\label{classIncome_a81b74bc98712baba9d8e1a8426d9e4d6} 
+double {\bfseries get\+Deductions} () const
+\item 
+void \mbox{\hyperlink{classIncome_a32e9947645981a859ce2ed0b03e5449b}{set\+Tax}} (double rate) override
+\item 
+double \mbox{\hyperlink{classIncome_a8fc41c918915bba743ecdf5fdea8fd8a}{calculate\+Tax}} (double val) override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classIncome_a8fc41c918915bba743ecdf5fdea8fd8a}\index{Income@{Income}!calculateTax@{calculateTax}}
+\index{calculateTax@{calculateTax}!Income@{Income}}
+\doxysubsubsection{\texorpdfstring{calculateTax()}{calculateTax()}}
+{\footnotesize\ttfamily \label{classIncome_a8fc41c918915bba743ecdf5fdea8fd8a} 
+double Income\+::calculate\+Tax (\begin{DoxyParamCaption}\item[{double}]{val}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classTaxType}{Tax\+Type}}.
+
+\Hypertarget{classIncome_a32e9947645981a859ce2ed0b03e5449b}\index{Income@{Income}!setTax@{setTax}}
+\index{setTax@{setTax}!Income@{Income}}
+\doxysubsubsection{\texorpdfstring{setTax()}{setTax()}}
+{\footnotesize\ttfamily \label{classIncome_a32e9947645981a859ce2ed0b03e5449b} 
+void Income\+::set\+Tax (\begin{DoxyParamCaption}\item[{double}]{rate}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classTaxType}{Tax\+Type}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Income.\+h\item 
+Income.\+cpp\end{DoxyCompactItemize}

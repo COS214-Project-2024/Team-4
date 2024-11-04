@@ -1,0 +1,108 @@
+\doxysection{Enforce\+Policy\+Command Class Reference}
+\hypertarget{classEnforcePolicyCommand}{}\label{classEnforcePolicyCommand}\index{EnforcePolicyCommand@{EnforcePolicyCommand}}
+Inheritance diagram for Enforce\+Policy\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classEnforcePolicyCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classEnforcePolicyCommand_a746474cb1e019c3f7de42793f5d34328}\label{classEnforcePolicyCommand_a746474cb1e019c3f7de42793f5d34328} 
+{\bfseries Enforce\+Policy\+Command} (\mbox{\hyperlink{classGovernment}{Government}} \texorpdfstring{$\ast$}{*}gov, \mbox{\hyperlink{classPolicy}{Policy}} pol)
+\item 
+void \mbox{\hyperlink{classEnforcePolicyCommand_aa387daa65d2ba0d783fd37d100b84010}{execute}} () override
+\item 
+void \mbox{\hyperlink{classEnforcePolicyCommand_a2e21fc6fd4f5a508b19c363b686716f1}{undo}} () override
+\item 
+\Hypertarget{classEnforcePolicyCommand_ae51e005d15940ff1e3c025b5c4bb98a9}\label{classEnforcePolicyCommand_ae51e005d15940ff1e3c025b5c4bb98a9} 
+bool {\bfseries is\+Policy\+Enforced} () const
+\item 
+\Hypertarget{classEnforcePolicyCommand_a3bd008101ed4e25d8a529cccf5c461cb}\label{classEnforcePolicyCommand_a3bd008101ed4e25d8a529cccf5c461cb} 
+void {\bfseries set\+Policy\+Enforced} (bool enforced)
+\item 
+\Hypertarget{classEnforcePolicyCommand_a03afdb9de4ed62191eeeed52a7d716ae}\label{classEnforcePolicyCommand_a03afdb9de4ed62191eeeed52a7d716ae} 
+bool {\bfseries validate\+Enforcement} () const
+\item 
+\Hypertarget{classEnforcePolicyCommand_a4c8a409b8fc100736bd293d2591ac836}\label{classEnforcePolicyCommand_a4c8a409b8fc100736bd293d2591ac836} 
+void {\bfseries execute\+With\+Validation} ()
+\item 
+std\+::string \mbox{\hyperlink{classEnforcePolicyCommand_ad04bb7178475d3cdee05adbadb82cb35}{get\+Name}} () const override
+\item 
+std\+::string \mbox{\hyperlink{classEnforcePolicyCommand_a4c742319473915751ae5a3811ebede71}{get\+Description}} () const override
+\item 
+bool \mbox{\hyperlink{classEnforcePolicyCommand_a6fc7c50dde8b5951da3e877b9862038c}{can\+Execute}} () const override
+\item 
+double \mbox{\hyperlink{classEnforcePolicyCommand_af99f5758bbb4ba0da99d3a7fe6768c8b}{return\+Val}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGovCommand}{Gov\+Command}}}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classEnforcePolicyCommand_a6fc7c50dde8b5951da3e877b9862038c}\index{EnforcePolicyCommand@{EnforcePolicyCommand}!canExecute@{canExecute}}
+\index{canExecute@{canExecute}!EnforcePolicyCommand@{EnforcePolicyCommand}}
+\doxysubsubsection{\texorpdfstring{canExecute()}{canExecute()}}
+{\footnotesize\ttfamily \label{classEnforcePolicyCommand_a6fc7c50dde8b5951da3e877b9862038c} 
+bool Enforce\+Policy\+Command\+::can\+Execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovCommand}{Gov\+Command}}.
+
+\Hypertarget{classEnforcePolicyCommand_aa387daa65d2ba0d783fd37d100b84010}\index{EnforcePolicyCommand@{EnforcePolicyCommand}!execute@{execute}}
+\index{execute@{execute}!EnforcePolicyCommand@{EnforcePolicyCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classEnforcePolicyCommand_aa387daa65d2ba0d783fd37d100b84010} 
+void Enforce\+Policy\+Command\+::execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovCommand}{Gov\+Command}}.
+
+\Hypertarget{classEnforcePolicyCommand_a4c742319473915751ae5a3811ebede71}\index{EnforcePolicyCommand@{EnforcePolicyCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!EnforcePolicyCommand@{EnforcePolicyCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classEnforcePolicyCommand_a4c742319473915751ae5a3811ebede71} 
+std\+::string Enforce\+Policy\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovCommand}{Gov\+Command}}.
+
+\Hypertarget{classEnforcePolicyCommand_ad04bb7178475d3cdee05adbadb82cb35}\index{EnforcePolicyCommand@{EnforcePolicyCommand}!getName@{getName}}
+\index{getName@{getName}!EnforcePolicyCommand@{EnforcePolicyCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classEnforcePolicyCommand_ad04bb7178475d3cdee05adbadb82cb35} 
+std\+::string Enforce\+Policy\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovCommand}{Gov\+Command}}.
+
+\Hypertarget{classEnforcePolicyCommand_af99f5758bbb4ba0da99d3a7fe6768c8b}\index{EnforcePolicyCommand@{EnforcePolicyCommand}!returnVal@{returnVal}}
+\index{returnVal@{returnVal}!EnforcePolicyCommand@{EnforcePolicyCommand}}
+\doxysubsubsection{\texorpdfstring{returnVal()}{returnVal()}}
+{\footnotesize\ttfamily \label{classEnforcePolicyCommand_af99f5758bbb4ba0da99d3a7fe6768c8b} 
+double Enforce\+Policy\+Command\+::return\+Val (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovCommand}{Gov\+Command}}.
+
+\Hypertarget{classEnforcePolicyCommand_a2e21fc6fd4f5a508b19c363b686716f1}\index{EnforcePolicyCommand@{EnforcePolicyCommand}!undo@{undo}}
+\index{undo@{undo}!EnforcePolicyCommand@{EnforcePolicyCommand}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily \label{classEnforcePolicyCommand_a2e21fc6fd4f5a508b19c363b686716f1} 
+void Enforce\+Policy\+Command\+::undo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovCommand}{Gov\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Enforce\+Policy\+Command.\+h\item 
+Enforce\+Policy\+Command.\+cpp\end{DoxyCompactItemize}
