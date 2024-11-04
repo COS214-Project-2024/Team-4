@@ -1,0 +1,9 @@
+<map id="SatisfactionStrategy" name="SatisfactionStrategy">
+<area shape="rect" id="Node000001" title="Interface for calculating and updating citizen satisfaction." alt="" coords="235,5,440,151"/>
+<area shape="rect" id="Node000002" href="$classHousingSatisfactionStrategy.html" title="Strategy for calculating and updating citizen satisfaction based on housing conditions." alt="" coords="5,199,211,324"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="237,161,188,201,184,196,234,157"/>
+<area shape="rect" id="Node000003" href="$classJobSatisfactionStrategy.html" title="Strategy for calculating and updating citizen satisfaction based on job conditions." alt="" coords="235,199,440,324"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="340,164,340,198,335,198,335,164"/>
+<area shape="rect" id="Node000004" href="$classTaxSatisfactionStrategy.html" title="A strategy for calculating and updating citizen satisfaction based on tax rates." alt="" coords="464,199,669,324"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="441,157,490,196,487,201,437,161"/>
+</map>

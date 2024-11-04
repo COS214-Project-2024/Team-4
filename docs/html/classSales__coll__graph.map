@@ -1,0 +1,5 @@
+<map id="Sales" name="Sales">
+<area shape="rect" id="Node000001" title="Represents a type of tax that includes a base sales tax, an environmental levy, and a service fee." alt="" coords="5,219,191,384"/>
+<area shape="rect" id="Node000002" href="$classTaxType.html" title="Represents a specific type of tax with a rate and type identifier." alt="" coords="38,5,158,171"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,184,101,218,95,218,95,184"/>
+</map>

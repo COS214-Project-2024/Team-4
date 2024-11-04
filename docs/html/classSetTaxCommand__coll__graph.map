@@ -1,0 +1,5 @@
+<map id="SetTaxCommand" name="SetTaxCommand">
+<area shape="rect" id="Node000001" title="A command to set the tax rate in the government." alt="" coords="5,239,155,444"/>
+<area shape="rect" id="Node000002" href="$classGovCommand.html" title="Abstract base class for government commands." alt="" coords="9,5,151,191"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,205,83,239,77,239,77,205"/>
+</map>

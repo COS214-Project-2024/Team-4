@@ -1,0 +1,7 @@
+<map id="Taxi" name="Taxi">
+<area shape="rect" id="Node000001" title="A class representing a taxi in a public transit system." alt="" coords="5,352,179,617"/>
+<area shape="rect" id="Node000002" href="$classPublicTransit.html" title="A class representing public transit transportation." alt="" coords="11,199,173,304"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,318,95,352,89,352,89,318"/>
+<area shape="rect" id="Node000003" href="$classTransportation.html" title="Manages traffic flow states and types of transportation." alt="" coords="21,5,163,151"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="95,164,95,199,89,199,89,164"/>
+</map>
