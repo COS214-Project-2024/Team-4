@@ -15,13 +15,6 @@
 #include "PassengerTrain.h"
 #include "Building.h"
 
-class InsideRoad;
-class ComercialAirport;
-class CargoAirport;
-class PassengerTrain;
-class FreightTrain;
-class Building;
-
 /**
  * @class Taxi
  * @brief A class representing a taxi in a public transit system.
