@@ -22,6 +22,8 @@
 #include "Utility.h"
 #include "WaterSupply.h"
 #include "WasteManagement.h"
+#include "PowerPlant.h"
+#include "CitizenManager.h"
 
 // Resource management includes
 #include "ResourceManager.h"
@@ -214,11 +216,12 @@ void testUtilities() {
     // Create water supply and waste management utilities
     WaterSupply waterSupply(&mediator);
     WasteManagement wasteManagement(&mediator);
+    PowerPlant powerPlant(&mediator);
+
+    // Create CitizenManager
+    CitizenManager citizenManager;
 
     // Register buildings with utilities
-    // Building building1("Building 1", 1000.0f, 2, 50, 3.0f, 2.0f, 1.0f);
-    // Building building2("Building 2", 2000.0f, 3, 100, 2.5f, 1.5f, 1.5f);
-    //registering buildings (commercial,landmark and industrial)
     CommercialBuildingBuilder builder;
     builder.setName("Sunset Mall")
            .setArea(3000.0f)
@@ -231,6 +234,7 @@ void testUtilities() {
     builder.setBusinessUnits(50);
     builder.setCustomerTraffic(500);
     auto commercialBuilding = builder.build();
+    commercialBuilding->setOwner("John Doe");
     commercialBuilding->construct();
     commercialBuilding->updateImpacts();
     // waterSupply.registerBuilding(commercialBuilding.get());
@@ -249,33 +253,24 @@ void testUtilities() {
     builder1.setCulturalValue(10.0f);
     builder1.setIsHistoric(true);
     auto landmarkBuilding = builder1.build();
+    landmarkBuilding->setOwner("Jane Smith");
     landmarkBuilding->construct();
     landmarkBuilding->updateImpacts();
     // waterSupply.registerBuilding(landmarkBuilding.get());
 
 
-    waterSupply.registerBuilding(commercialBuilding.get());
-    waterSupply.registerBuilding(landmarkBuilding.get());
+    powerPlant.registerBuilding(commercialBuilding.get());
+    powerPlant.registerBuilding(landmarkBuilding.get());
 
-    wasteManagement.registerBuilding(commercialBuilding.get());
-    wasteManagement.registerBuilding(landmarkBuilding.get());
+    powerPlant.supplyResources(commercialBuilding.get());
+    powerPlant.supplyResources(landmarkBuilding.get());
 
-    // Supply resources to buildings
-    waterSupply.supplyResources(commercialBuilding.get());
-    waterSupply.supplyResources(landmarkBuilding.get());
+    // Track charges in CitizenManager
+    citizenManager.addCharge(commercialBuilding->getOwner(), powerPlant.getCharges(commercialBuilding->getOwner()));
+    citizenManager.addCharge(landmarkBuilding->getOwner(), powerPlant.getCharges(landmarkBuilding->getOwner()));
 
-    wasteManagement.supplyResources(commercialBuilding.get());
-    wasteManagement.supplyResources(landmarkBuilding.get());
-
-    // Adjust utilities based on citizens
-    // Citizen citizen1("Citizen 1", 25, 1.0f, 1.0f, 1.0f);
-    // Citizen citizen2("Citizen 2", 30, 1.5f, 1.5f, 1.5f);
-
-    // waterSupply.adjustForCitizen(&citizen1);
-    // waterSupply.adjustForCitizen(&citizen2);
-
-    // wasteManagement.adjustForCitizen(&citizen1);
-    // wasteManagement.adjustForCitizen(&citizen2);
+    std::cout << "Total charges for John Doe: $" << citizenManager.getTotalCharges("John Doe") << std::endl;
+    std::cout << "Total charges for Jane Smith: $" << citizenManager.getTotalCharges("Jane Smith") << std::endl;
 }
 
 void testResourceManager() {
