@@ -1,0 +1,32 @@
+\doxysection{Utility.\+h}
+\hypertarget{Utility_8h_source}{}\label{Utility_8h_source}\index{/mnt/c/users/rudie/documents/sem2/214/project/src/Utility.h@{/mnt/c/users/rudie/documents/sem2/214/project/src/Utility.h}}
+\mbox{\hyperlink{Utility_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ UTILITY\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ UTILITY\_H}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Building_8h}{Building.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ResourceType_8h}{ResourceType.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{UtilityMediator_8h}{UtilityMediator.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUtility}{Utility}}\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{classUtilityMediator}{UtilityMediator}}*\ \mbox{\hyperlink{classUtility_a919c8612d579ef8fcfbc0c8471a09a21}{mediator}};\ \ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classUtility_aea121b6382162de41d65b9a751bfcc09}{Utility}}(\mbox{\hyperlink{classUtilityMediator}{UtilityMediator}}*\ \mbox{\hyperlink{classUtility_a919c8612d579ef8fcfbc0c8471a09a21}{mediator}})\ :\ \mbox{\hyperlink{classUtility_a919c8612d579ef8fcfbc0c8471a09a21}{mediator}}(\mbox{\hyperlink{classUtility_a919c8612d579ef8fcfbc0c8471a09a21}{mediator}})\ \{\}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUtility_ab53d5d9e12800abfd2146c449be3925f}{registerBuilding}}(\mbox{\hyperlink{classBuilding}{Building}}*\ building)\ =\ 0;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUtility_a3121c3f21234dc562c9e96fe4208bbf7}{supplyResources}}(\mbox{\hyperlink{classBuilding}{Building}}*\ building)\ =\ 0;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUtility_ac085bb895a72073632d5e0adfb7f446e}{adjustForPopulation}}(\textcolor{keywordtype}{int}\ newPopulation)\ =\ 0;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classUtility_a658f0109fa28ef7342768f50bb11a110}{\string~Utility}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00064\ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UTILITY\_H}}
+
+\end{DoxyCode}
