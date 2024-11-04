@@ -1,0 +1,292 @@
+\doxysection{Tax\+System Class Reference}
+\hypertarget{classTaxSystem}{}\label{classTaxSystem}\index{TaxSystem@{TaxSystem}}
+
+
+Manages various types of taxes, including income, property, sales, and \doxylink{classVAT}{VAT}.  
+
+
+
+
+{\ttfamily \#include $<$Tax\+System.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTaxSystem_ac4f5565d85bc9bee39bc178afd6f8ac1}{add\+Government}} (\mbox{\hyperlink{classGovernment}{Government}} \texorpdfstring{$\ast$}{*}gov)
+\begin{DoxyCompactList}\small\item\em Adds a government to the tax system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTaxSystem_a995fb9d2312a535a63fc059e58849fda}{add\+Income\+Tax\+Building}} (\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}building)
+\begin{DoxyCompactList}\small\item\em Adds a building to the income tax list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTaxSystem_a75bc7952fbb5e20de2abedcaee98d398}{add\+Property\+Tax\+Building}} (\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}building)
+\begin{DoxyCompactList}\small\item\em Adds a building to the property tax list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTaxSystem_a815bb765408aae3b029a29ed92146902}{add\+Sales\+Tax\+Building}} (\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}building)
+\begin{DoxyCompactList}\small\item\em Adds a building to the sales tax list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTaxSystem_a5b42c2ca5457b4eba43c4666146339f8}{add\+VATTax\+Payer}} (\mbox{\hyperlink{classCitizen}{Citizen}} \texorpdfstring{$\ast$}{*}citizen)
+\begin{DoxyCompactList}\small\item\em Adds a citizen to the \doxylink{classVAT}{VAT} tax list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTaxSystem_a703080378edb1424f460d8ad6c05539b}{remove\+Income\+Tax\+Building}} (\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}building)
+\begin{DoxyCompactList}\small\item\em Removes a building from the income tax list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTaxSystem_a9aa593db5deaa4daa95fce5fa68dae52}{remove\+Property\+Tax\+Building}} (\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}building)
+\begin{DoxyCompactList}\small\item\em Removes a building from the property tax list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTaxSystem_a4a4026ee489743786740c3d2ce38630f}{remove\+Sales\+Tax\+Building}} (\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}building)
+\begin{DoxyCompactList}\small\item\em Removes a building from the sales tax list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTaxSystem_a033af0f900fdd3aa0ae39071e5f6780f}{remove\+VATTax\+Payer}} (\mbox{\hyperlink{classCitizen}{Citizen}} \texorpdfstring{$\ast$}{*}citizen)
+\begin{DoxyCompactList}\small\item\em Removes a citizen from the \doxylink{classVAT}{VAT} tax list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTaxSystem_a2028cbd176a786e7b7be77e19fe422c6}{update\+Tax\+Rate}} (char c\+Type, double rate)
+\begin{DoxyCompactList}\small\item\em Updates the tax rate for a specific tax type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTaxSystem_a173d06226d6bf370f87ab70fe60fd8b1}{collect\+Taxes}} (\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}building, char tax\+Type)
+\begin{DoxyCompactList}\small\item\em Collects taxes from a building based on the tax type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTaxSystem_ad9076d1424f1eeaae74869461eec5746}{set\+Tax}} (double rate, char tax\+Type)
+\begin{DoxyCompactList}\small\item\em Sets the tax rate for a specific tax type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTaxSystem_a89587685b01699227b84bb764c1da1c5}{check\+Impact}} ()
+\begin{DoxyCompactList}\small\item\em Checks the impact of the tax system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTaxSystem_a68e9eb6ec181455a823613eeec2a7c37}{add\+Tax\+Rate}} (\mbox{\hyperlink{classTaxType}{Tax\+Type}} \texorpdfstring{$\ast$}{*}tax)
+\begin{DoxyCompactList}\small\item\em Adds a new tax rate to the tax system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTaxSystem_a1e4db2656bbfaeec71e80af4c868fe93}{remove\+Tax\+Rate}} (\mbox{\hyperlink{classTaxType}{Tax\+Type}} \texorpdfstring{$\ast$}{*}tax\+Type)
+\begin{DoxyCompactList}\small\item\em Removes a tax rate from the tax system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages various types of taxes, including income, property, sales, and \doxylink{classVAT}{VAT}. 
+
+This class allows adding and removing buildings and citizens for tax purposes, updating tax rates, and collecting taxes.
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/11-\/04 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTaxSystem_ac4f5565d85bc9bee39bc178afd6f8ac1}\label{classTaxSystem_ac4f5565d85bc9bee39bc178afd6f8ac1} 
+\index{TaxSystem@{TaxSystem}!addGovernment@{addGovernment}}
+\index{addGovernment@{addGovernment}!TaxSystem@{TaxSystem}}
+\doxysubsubsection{\texorpdfstring{addGovernment()}{addGovernment()}}
+{\footnotesize\ttfamily void Tax\+System\+::add\+Government (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGovernment}{Government}} \texorpdfstring{$\ast$}{*}}]{gov }\end{DoxyParamCaption})}
+
+
+
+Adds a government to the tax system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gov} & Pointer to the government object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTaxSystem_a995fb9d2312a535a63fc059e58849fda}\label{classTaxSystem_a995fb9d2312a535a63fc059e58849fda} 
+\index{TaxSystem@{TaxSystem}!addIncomeTaxBuilding@{addIncomeTaxBuilding}}
+\index{addIncomeTaxBuilding@{addIncomeTaxBuilding}!TaxSystem@{TaxSystem}}
+\doxysubsubsection{\texorpdfstring{addIncomeTaxBuilding()}{addIncomeTaxBuilding()}}
+{\footnotesize\ttfamily void Tax\+System\+::add\+Income\+Tax\+Building (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}}]{building }\end{DoxyParamCaption})}
+
+
+
+Adds a building to the income tax list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & Pointer to the building object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTaxSystem_a75bc7952fbb5e20de2abedcaee98d398}\label{classTaxSystem_a75bc7952fbb5e20de2abedcaee98d398} 
+\index{TaxSystem@{TaxSystem}!addPropertyTaxBuilding@{addPropertyTaxBuilding}}
+\index{addPropertyTaxBuilding@{addPropertyTaxBuilding}!TaxSystem@{TaxSystem}}
+\doxysubsubsection{\texorpdfstring{addPropertyTaxBuilding()}{addPropertyTaxBuilding()}}
+{\footnotesize\ttfamily void Tax\+System\+::add\+Property\+Tax\+Building (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}}]{building }\end{DoxyParamCaption})}
+
+
+
+Adds a building to the property tax list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & Pointer to the building object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTaxSystem_a815bb765408aae3b029a29ed92146902}\label{classTaxSystem_a815bb765408aae3b029a29ed92146902} 
+\index{TaxSystem@{TaxSystem}!addSalesTaxBuilding@{addSalesTaxBuilding}}
+\index{addSalesTaxBuilding@{addSalesTaxBuilding}!TaxSystem@{TaxSystem}}
+\doxysubsubsection{\texorpdfstring{addSalesTaxBuilding()}{addSalesTaxBuilding()}}
+{\footnotesize\ttfamily void Tax\+System\+::add\+Sales\+Tax\+Building (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}}]{building }\end{DoxyParamCaption})}
+
+
+
+Adds a building to the sales tax list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & Pointer to the building object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTaxSystem_a68e9eb6ec181455a823613eeec2a7c37}\label{classTaxSystem_a68e9eb6ec181455a823613eeec2a7c37} 
+\index{TaxSystem@{TaxSystem}!addTaxRate@{addTaxRate}}
+\index{addTaxRate@{addTaxRate}!TaxSystem@{TaxSystem}}
+\doxysubsubsection{\texorpdfstring{addTaxRate()}{addTaxRate()}}
+{\footnotesize\ttfamily void Tax\+System\+::add\+Tax\+Rate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTaxType}{Tax\+Type}} \texorpdfstring{$\ast$}{*}}]{tax }\end{DoxyParamCaption})}
+
+
+
+Adds a new tax rate to the tax system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tax} & Pointer to the \doxylink{classTaxType}{Tax\+Type} object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTaxSystem_a5b42c2ca5457b4eba43c4666146339f8}\label{classTaxSystem_a5b42c2ca5457b4eba43c4666146339f8} 
+\index{TaxSystem@{TaxSystem}!addVATTaxPayer@{addVATTaxPayer}}
+\index{addVATTaxPayer@{addVATTaxPayer}!TaxSystem@{TaxSystem}}
+\doxysubsubsection{\texorpdfstring{addVATTaxPayer()}{addVATTaxPayer()}}
+{\footnotesize\ttfamily void Tax\+System\+::add\+VATTax\+Payer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} \texorpdfstring{$\ast$}{*}}]{citizen }\end{DoxyParamCaption})}
+
+
+
+Adds a citizen to the \doxylink{classVAT}{VAT} tax list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em citizen} & Pointer to the citizen object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTaxSystem_a89587685b01699227b84bb764c1da1c5}\label{classTaxSystem_a89587685b01699227b84bb764c1da1c5} 
+\index{TaxSystem@{TaxSystem}!checkImpact@{checkImpact}}
+\index{checkImpact@{checkImpact}!TaxSystem@{TaxSystem}}
+\doxysubsubsection{\texorpdfstring{checkImpact()}{checkImpact()}}
+{\footnotesize\ttfamily void Tax\+System\+::check\+Impact (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks the impact of the tax system. 
+
+This function is currently not implemented. \Hypertarget{classTaxSystem_a173d06226d6bf370f87ab70fe60fd8b1}\label{classTaxSystem_a173d06226d6bf370f87ab70fe60fd8b1} 
+\index{TaxSystem@{TaxSystem}!collectTaxes@{collectTaxes}}
+\index{collectTaxes@{collectTaxes}!TaxSystem@{TaxSystem}}
+\doxysubsubsection{\texorpdfstring{collectTaxes()}{collectTaxes()}}
+{\footnotesize\ttfamily void Tax\+System\+::collect\+Taxes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}}]{building,  }\item[{char}]{tax\+Type }\end{DoxyParamCaption})}
+
+
+
+Collects taxes from a building based on the tax type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & Pointer to the building object. \\
+\hline
+{\em tax\+Type} & Character representing the tax type. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTaxSystem_a703080378edb1424f460d8ad6c05539b}\label{classTaxSystem_a703080378edb1424f460d8ad6c05539b} 
+\index{TaxSystem@{TaxSystem}!removeIncomeTaxBuilding@{removeIncomeTaxBuilding}}
+\index{removeIncomeTaxBuilding@{removeIncomeTaxBuilding}!TaxSystem@{TaxSystem}}
+\doxysubsubsection{\texorpdfstring{removeIncomeTaxBuilding()}{removeIncomeTaxBuilding()}}
+{\footnotesize\ttfamily void Tax\+System\+::remove\+Income\+Tax\+Building (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}}]{building }\end{DoxyParamCaption})}
+
+
+
+Removes a building from the income tax list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & Pointer to the building object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTaxSystem_a9aa593db5deaa4daa95fce5fa68dae52}\label{classTaxSystem_a9aa593db5deaa4daa95fce5fa68dae52} 
+\index{TaxSystem@{TaxSystem}!removePropertyTaxBuilding@{removePropertyTaxBuilding}}
+\index{removePropertyTaxBuilding@{removePropertyTaxBuilding}!TaxSystem@{TaxSystem}}
+\doxysubsubsection{\texorpdfstring{removePropertyTaxBuilding()}{removePropertyTaxBuilding()}}
+{\footnotesize\ttfamily void Tax\+System\+::remove\+Property\+Tax\+Building (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}}]{building }\end{DoxyParamCaption})}
+
+
+
+Removes a building from the property tax list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & Pointer to the building object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTaxSystem_a4a4026ee489743786740c3d2ce38630f}\label{classTaxSystem_a4a4026ee489743786740c3d2ce38630f} 
+\index{TaxSystem@{TaxSystem}!removeSalesTaxBuilding@{removeSalesTaxBuilding}}
+\index{removeSalesTaxBuilding@{removeSalesTaxBuilding}!TaxSystem@{TaxSystem}}
+\doxysubsubsection{\texorpdfstring{removeSalesTaxBuilding()}{removeSalesTaxBuilding()}}
+{\footnotesize\ttfamily void Tax\+System\+::remove\+Sales\+Tax\+Building (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}}]{building }\end{DoxyParamCaption})}
+
+
+
+Removes a building from the sales tax list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & Pointer to the building object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTaxSystem_a1e4db2656bbfaeec71e80af4c868fe93}\label{classTaxSystem_a1e4db2656bbfaeec71e80af4c868fe93} 
+\index{TaxSystem@{TaxSystem}!removeTaxRate@{removeTaxRate}}
+\index{removeTaxRate@{removeTaxRate}!TaxSystem@{TaxSystem}}
+\doxysubsubsection{\texorpdfstring{removeTaxRate()}{removeTaxRate()}}
+{\footnotesize\ttfamily void Tax\+System\+::remove\+Tax\+Rate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTaxType}{Tax\+Type}} \texorpdfstring{$\ast$}{*}}]{tax\+Type }\end{DoxyParamCaption})}
+
+
+
+Removes a tax rate from the tax system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tax\+Type} & Pointer to the \doxylink{classTaxType}{Tax\+Type} object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTaxSystem_a033af0f900fdd3aa0ae39071e5f6780f}\label{classTaxSystem_a033af0f900fdd3aa0ae39071e5f6780f} 
+\index{TaxSystem@{TaxSystem}!removeVATTaxPayer@{removeVATTaxPayer}}
+\index{removeVATTaxPayer@{removeVATTaxPayer}!TaxSystem@{TaxSystem}}
+\doxysubsubsection{\texorpdfstring{removeVATTaxPayer()}{removeVATTaxPayer()}}
+{\footnotesize\ttfamily void Tax\+System\+::remove\+VATTax\+Payer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} \texorpdfstring{$\ast$}{*}}]{citizen }\end{DoxyParamCaption})}
+
+
+
+Removes a citizen from the \doxylink{classVAT}{VAT} tax list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em citizen} & Pointer to the citizen object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTaxSystem_ad9076d1424f1eeaae74869461eec5746}\label{classTaxSystem_ad9076d1424f1eeaae74869461eec5746} 
+\index{TaxSystem@{TaxSystem}!setTax@{setTax}}
+\index{setTax@{setTax}!TaxSystem@{TaxSystem}}
+\doxysubsubsection{\texorpdfstring{setTax()}{setTax()}}
+{\footnotesize\ttfamily void Tax\+System\+::set\+Tax (\begin{DoxyParamCaption}\item[{double}]{rate,  }\item[{char}]{tax\+Type }\end{DoxyParamCaption})}
+
+
+
+Sets the tax rate for a specific tax type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rate} & New tax rate. \\
+\hline
+{\em tax\+Type} & Character representing the tax type. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTaxSystem_a2028cbd176a786e7b7be77e19fe422c6}\label{classTaxSystem_a2028cbd176a786e7b7be77e19fe422c6} 
+\index{TaxSystem@{TaxSystem}!updateTaxRate@{updateTaxRate}}
+\index{updateTaxRate@{updateTaxRate}!TaxSystem@{TaxSystem}}
+\doxysubsubsection{\texorpdfstring{updateTaxRate()}{updateTaxRate()}}
+{\footnotesize\ttfamily void Tax\+System\+::update\+Tax\+Rate (\begin{DoxyParamCaption}\item[{char}]{c\+Type,  }\item[{double}]{rate }\end{DoxyParamCaption})}
+
+
+
+Updates the tax rate for a specific tax type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c\+Type} & Character representing the tax type. \\
+\hline
+{\em rate} & New tax rate. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/users/rudie/documents/sem2/214/project/src/Tax\+System.\+h\item 
+/mnt/c/users/rudie/documents/sem2/214/project/src/\mbox{\hyperlink{TaxSystem_8cpp}{Tax\+System.\+cpp}}\end{DoxyCompactItemize}

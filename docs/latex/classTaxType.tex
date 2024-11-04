@@ -1,0 +1,140 @@
+\doxysection{Tax\+Type Class Reference}
+\hypertarget{classTaxType}{}\label{classTaxType}\index{TaxType@{TaxType}}
+
+
+Represents a specific type of tax with a rate and type identifier.  
+
+
+
+
+{\ttfamily \#include $<$Tax\+Type.\+h$>$}
+
+
+
+Inheritance diagram for Tax\+Type\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTaxType_a3c04e9d6723ac37a7995a509c6a3b27e}{Tax\+Type}} (double rate, char type)
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classTaxType}{Tax\+Type} object. \end{DoxyCompactList}\item 
+\Hypertarget{classTaxType_a1169953d14852d23b1fe1a50703452be}\label{classTaxType_a1169953d14852d23b1fe1a50703452be} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Tax\+Type} ()
+\begin{DoxyCompactList}\small\item\em Virtual Destructor. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classTaxType_a02b9366605226a1b592c29d4d0570101}{calculate\+Tax}} (double val)
+\begin{DoxyCompactList}\small\item\em Calculates the tax based on a given value. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTaxType_ae19ec84b7dcc0f5420ddbdcb69fbad13}{set\+Tax}} (double rate)
+\begin{DoxyCompactList}\small\item\em Sets the tax rate. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classTaxType_afa8c95916f0c75bd3f6065237ae77c8a}{get\+Tax\+Rate}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current tax rate. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classTaxType_a053fb349661aa980d2710e573138b667}{get\+Tax\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the tax type identifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a specific type of tax with a rate and type identifier. 
+
+This class provides methods to calculate tax based on a given value, set and get the tax rate, and get the tax type identifier.
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/11-\/04 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classTaxType_a3c04e9d6723ac37a7995a509c6a3b27e}\label{classTaxType_a3c04e9d6723ac37a7995a509c6a3b27e} 
+\index{TaxType@{TaxType}!TaxType@{TaxType}}
+\index{TaxType@{TaxType}!TaxType@{TaxType}}
+\doxysubsubsection{\texorpdfstring{TaxType()}{TaxType()}}
+{\footnotesize\ttfamily Tax\+Type\+::\+Tax\+Type (\begin{DoxyParamCaption}\item[{double}]{rate,  }\item[{char}]{type }\end{DoxyParamCaption})}
+
+
+
+Constructs a new \doxylink{classTaxType}{Tax\+Type} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rate} & The tax rate. \\
+\hline
+{\em type} & The character representing the tax type. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTaxType_a02b9366605226a1b592c29d4d0570101}\label{classTaxType_a02b9366605226a1b592c29d4d0570101} 
+\index{TaxType@{TaxType}!calculateTax@{calculateTax}}
+\index{calculateTax@{calculateTax}!TaxType@{TaxType}}
+\doxysubsubsection{\texorpdfstring{calculateTax()}{calculateTax()}}
+{\footnotesize\ttfamily double Tax\+Type\+::calculate\+Tax (\begin{DoxyParamCaption}\item[{double}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Calculates the tax based on a given value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & The value to calculate tax on. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated tax. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classProperty_a697fafd6e686e783a6038886acedc935}{Property}}, \mbox{\hyperlink{classSales_a8a393b9c17abfd6c52b8800f5d9de3e0}{Sales}}, and \mbox{\hyperlink{classIncome_a8fc41c918915bba743ecdf5fdea8fd8a}{Income}}.
+
+\Hypertarget{classTaxType_afa8c95916f0c75bd3f6065237ae77c8a}\label{classTaxType_afa8c95916f0c75bd3f6065237ae77c8a} 
+\index{TaxType@{TaxType}!getTaxRate@{getTaxRate}}
+\index{getTaxRate@{getTaxRate}!TaxType@{TaxType}}
+\doxysubsubsection{\texorpdfstring{getTaxRate()}{getTaxRate()}}
+{\footnotesize\ttfamily double Tax\+Type\+::get\+Tax\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the current tax rate. 
+
+\begin{DoxyReturn}{Returns}
+The current tax rate. 
+\end{DoxyReturn}
+\Hypertarget{classTaxType_a053fb349661aa980d2710e573138b667}\label{classTaxType_a053fb349661aa980d2710e573138b667} 
+\index{TaxType@{TaxType}!getTaxType@{getTaxType}}
+\index{getTaxType@{getTaxType}!TaxType@{TaxType}}
+\doxysubsubsection{\texorpdfstring{getTaxType()}{getTaxType()}}
+{\footnotesize\ttfamily char Tax\+Type\+::get\+Tax\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the tax type identifier. 
+
+\begin{DoxyReturn}{Returns}
+The character representing the tax type. 
+\end{DoxyReturn}
+\Hypertarget{classTaxType_ae19ec84b7dcc0f5420ddbdcb69fbad13}\label{classTaxType_ae19ec84b7dcc0f5420ddbdcb69fbad13} 
+\index{TaxType@{TaxType}!setTax@{setTax}}
+\index{setTax@{setTax}!TaxType@{TaxType}}
+\doxysubsubsection{\texorpdfstring{setTax()}{setTax()}}
+{\footnotesize\ttfamily void Tax\+Type\+::set\+Tax (\begin{DoxyParamCaption}\item[{double}]{rate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the tax rate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rate} & The new tax rate. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classVAT_a6e874a5f83065eb29b5234e85ba87157}{VAT}}, \mbox{\hyperlink{classIncome_a32e9947645981a859ce2ed0b03e5449b}{Income}}, \mbox{\hyperlink{classProperty_ae6055bc87f7c528748c461de379f2f7c}{Property}}, and \mbox{\hyperlink{classSales_a9a8c80992d85b6ba6fd17caf33e57c3c}{Sales}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/users/rudie/documents/sem2/214/project/src/Tax\+Type.\+h\item 
+/mnt/c/users/rudie/documents/sem2/214/project/src/\mbox{\hyperlink{TaxType_8cpp}{Tax\+Type.\+cpp}}\end{DoxyCompactItemize}

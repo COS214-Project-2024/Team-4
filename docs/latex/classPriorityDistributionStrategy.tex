@@ -1,0 +1,61 @@
+\doxysection{Priority\+Distribution\+Strategy Class Reference}
+\hypertarget{classPriorityDistributionStrategy}{}\label{classPriorityDistributionStrategy}\index{PriorityDistributionStrategy@{PriorityDistributionStrategy}}
+
+
+Strategy for priority-\/based resource allocation.  
+
+
+
+
+{\ttfamily \#include $<$Resource\+Allocation\+Strategy.\+h$>$}
+
+
+
+Inheritance diagram for Priority\+Distribution\+Strategy\+:
+% FIG 0
+
+
+Collaboration diagram for Priority\+Distribution\+Strategy\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classPriorityDistributionStrategy_ac21ab1603acb502a3a697c12cdecf690}{allocate}} (\mbox{\hyperlink{ResourceType_8h_a8571efa4409be32e28abf3ea74a0dbb1}{Resource\+Type}} type, int quantity) override
+\begin{DoxyCompactList}\small\item\em Allocates resources based on priority. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Strategy for priority-\/based resource allocation. 
+
+The \doxylink{classPriorityDistributionStrategy}{Priority\+Distribution\+Strategy} class implements the \doxylink{classResourceAllocationStrategy}{Resource\+Allocation\+Strategy} interface and provides logic for priority-\/based allocation of resources. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPriorityDistributionStrategy_ac21ab1603acb502a3a697c12cdecf690}\label{classPriorityDistributionStrategy_ac21ab1603acb502a3a697c12cdecf690} 
+\index{PriorityDistributionStrategy@{PriorityDistributionStrategy}!allocate@{allocate}}
+\index{allocate@{allocate}!PriorityDistributionStrategy@{PriorityDistributionStrategy}}
+\doxysubsubsection{\texorpdfstring{allocate()}{allocate()}}
+{\footnotesize\ttfamily bool Priority\+Distribution\+Strategy\+::allocate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ResourceType_8h_a8571efa4409be32e28abf3ea74a0dbb1}{Resource\+Type}}}]{type,  }\item[{int}]{quantity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Allocates resources based on priority. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of the resource. \\
+\hline
+{\em quantity} & The quantity of the resource to allocate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the allocation was successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResourceAllocationStrategy_aefc659644376ead86d3bd2dc93e8a534}{Resource\+Allocation\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/users/rudie/documents/sem2/214/project/src/\mbox{\hyperlink{ResourceAllocationStrategy_8h}{Resource\+Allocation\+Strategy.\+h}}\end{DoxyCompactItemize}

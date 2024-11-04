@@ -1,0 +1,115 @@
+\doxysection{Power\+Plant Class Reference}
+\hypertarget{classPowerPlant}{}\label{classPowerPlant}\index{PowerPlant@{PowerPlant}}
+
+
+Represents a power plant that supplies power to buildings.  
+
+
+
+
+{\ttfamily \#include $<$Power\+Plant.\+h$>$}
+
+
+
+Inheritance diagram for Power\+Plant\+:
+% FIG 0
+
+
+Collaboration diagram for Power\+Plant\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPowerPlant_af6221d07a890132cf8c04d7e670f37c1}{Power\+Plant}} (\mbox{\hyperlink{classUtilityMediator}{Utility\+Mediator}} \texorpdfstring{$\ast$}{*}mediator)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classPowerPlant}{Power\+Plant}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPowerPlant_a9d5dbca59659cf0faba89a01b89465f8}{register\+Building}} (\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}building) override
+\begin{DoxyCompactList}\small\item\em Registers a building to receive power. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPowerPlant_af20a83eea7ffa990905804346afff03e}{supply\+Resources}} (\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}building) override
+\begin{DoxyCompactList}\small\item\em Supplies power to a building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classUtility}{Utility}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtility_aea121b6382162de41d65b9a751bfcc09}{Utility}} (\mbox{\hyperlink{classUtilityMediator}{Utility\+Mediator}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classUtility_a919c8612d579ef8fcfbc0c8471a09a21}{mediator}})
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classUtility}{Utility} class. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtility_ac085bb895a72073632d5e0adfb7f446e}{adjust\+For\+Population}} (int new\+Population)=0
+\begin{DoxyCompactList}\small\item\em Adjusts the utility service for a new population size. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Utility} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{classUtility}{Utility} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classUtility}{Utility}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtilityMediator}{Utility\+Mediator}} \texorpdfstring{$\ast$}{*} {\bfseries mediator}
+\begin{DoxyCompactList}\small\item\em Reference to the mediator for managing resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a power plant that supplies power to buildings. 
+
+The \doxylink{classPowerPlant}{Power\+Plant} class inherits from the \doxylink{classUtility}{Utility} class and provides methods to register buildings, supply resources, and generate electricity. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPowerPlant_af6221d07a890132cf8c04d7e670f37c1}\label{classPowerPlant_af6221d07a890132cf8c04d7e670f37c1} 
+\index{PowerPlant@{PowerPlant}!PowerPlant@{PowerPlant}}
+\index{PowerPlant@{PowerPlant}!PowerPlant@{PowerPlant}}
+\doxysubsubsection{\texorpdfstring{PowerPlant()}{PowerPlant()}}
+{\footnotesize\ttfamily Power\+Plant\+::\+Power\+Plant (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtilityMediator}{Utility\+Mediator}} \texorpdfstring{$\ast$}{*}}]{mediator }\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{classPowerPlant}{Power\+Plant}. 
+
+Default constructor for \doxylink{classPowerPlant}{Power\+Plant}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mediator} & Pointer to the \doxylink{classUtilityMediator}{Utility\+Mediator}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPowerPlant_a9d5dbca59659cf0faba89a01b89465f8}\label{classPowerPlant_a9d5dbca59659cf0faba89a01b89465f8} 
+\index{PowerPlant@{PowerPlant}!registerBuilding@{registerBuilding}}
+\index{registerBuilding@{registerBuilding}!PowerPlant@{PowerPlant}}
+\doxysubsubsection{\texorpdfstring{registerBuilding()}{registerBuilding()}}
+{\footnotesize\ttfamily void Power\+Plant\+::register\+Building (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}}]{building }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Registers a building to receive power. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & Pointer to the building to be registered. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classUtility_ab53d5d9e12800abfd2146c449be3925f}{Utility}}.
+
+\Hypertarget{classPowerPlant_af20a83eea7ffa990905804346afff03e}\label{classPowerPlant_af20a83eea7ffa990905804346afff03e} 
+\index{PowerPlant@{PowerPlant}!supplyResources@{supplyResources}}
+\index{supplyResources@{supplyResources}!PowerPlant@{PowerPlant}}
+\doxysubsubsection{\texorpdfstring{supplyResources()}{supplyResources()}}
+{\footnotesize\ttfamily void Power\+Plant\+::supply\+Resources (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}}]{building }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Supplies power to a building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & Pointer to the building to receive power. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classUtility_a3121c3f21234dc562c9e96fe4208bbf7}{Utility}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/users/rudie/documents/sem2/214/project/src/\mbox{\hyperlink{PowerPlant_8h}{Power\+Plant.\+h}}\item 
+/mnt/c/users/rudie/documents/sem2/214/project/src/\mbox{\hyperlink{PowerPlant_8cpp}{Power\+Plant.\+cpp}}\end{DoxyCompactItemize}

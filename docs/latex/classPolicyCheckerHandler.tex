@@ -1,0 +1,128 @@
+\doxysection{Policy\+Checker\+Handler Class Reference}
+\hypertarget{classPolicyCheckerHandler}{}\label{classPolicyCheckerHandler}\index{PolicyCheckerHandler@{PolicyCheckerHandler}}
+
+
+Handles policy enforcement checks for resource approval requests.  
+
+
+
+
+{\ttfamily \#include $<$Policy\+Checker\+Handler.\+h$>$}
+
+
+
+Inheritance diagram for Policy\+Checker\+Handler\+:
+% FIG 0
+
+
+Collaboration diagram for Policy\+Checker\+Handler\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPolicyCheckerHandler_a527261aaba0bfd78e53d9f73317dff4a}{Policy\+Checker\+Handler}} (\mbox{\hyperlink{classGovernment}{Government}} \texorpdfstring{$\ast$}{*}gov)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classPolicyCheckerHandler}{Policy\+Checker\+Handler}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPolicyCheckerHandler_ab81ea6f30bd9f06f811f35e3c9c06438}{handle\+Request}} (\mbox{\hyperlink{ResourceType_8h_a8571efa4409be32e28abf3ea74a0dbb1}{Resource\+Type}} type, int quantity) override
+\begin{DoxyCompactList}\small\item\em Handles the resource approval request. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPolicyCheckerHandler_a9d49f1b75caaef9490eae3c61a26624c}{is\+Policy\+Enforced}} () const
+\begin{DoxyCompactList}\small\item\em Determines if a policy was enforced. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPolicyCheckerHandler_a711b381b86f85959fb6bca648187e499}{set\+Policy\+Enforced}} (bool enforced)
+\begin{DoxyCompactList}\small\item\em Sets the policy enforcement state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classResourceApprovalHandler}{Resource\+Approval\+Handler}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Resource\+Approval\+Handler} ()
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classResourceApprovalHandler}{Resource\+Approval\+Handler} object. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Resource\+Approval\+Handler} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{classResourceApprovalHandler}{Resource\+Approval\+Handler} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResourceApprovalHandler_a4f1a742235ea0754dcea73805f8115cd}{set\+Next\+Handler}} (\mbox{\hyperlink{classResourceApprovalHandler}{Resource\+Approval\+Handler}} \texorpdfstring{$\ast$}{*}handler)
+\begin{DoxyCompactList}\small\item\em Sets the next handler in the chain. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classResourceApprovalHandler}{Resource\+Approval\+Handler}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classResourceApprovalHandler}{Resource\+Approval\+Handler}} \texorpdfstring{$\ast$}{*} {\bfseries next\+Handler}
+\begin{DoxyCompactList}\small\item\em Pointer to the next handler in the chain. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles policy enforcement checks for resource approval requests. 
+
+The \doxylink{classPolicyCheckerHandler}{Policy\+Checker\+Handler} class inherits from \doxylink{classResourceApprovalHandler}{Resource\+Approval\+Handler} and provides methods to enforce policies and handle resource approval requests based on policy enforcement. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPolicyCheckerHandler_a527261aaba0bfd78e53d9f73317dff4a}\label{classPolicyCheckerHandler_a527261aaba0bfd78e53d9f73317dff4a} 
+\index{PolicyCheckerHandler@{PolicyCheckerHandler}!PolicyCheckerHandler@{PolicyCheckerHandler}}
+\index{PolicyCheckerHandler@{PolicyCheckerHandler}!PolicyCheckerHandler@{PolicyCheckerHandler}}
+\doxysubsubsection{\texorpdfstring{PolicyCheckerHandler()}{PolicyCheckerHandler()}}
+{\footnotesize\ttfamily Policy\+Checker\+Handler\+::\+Policy\+Checker\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGovernment}{Government}} \texorpdfstring{$\ast$}{*}}]{gov }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for \doxylink{classPolicyCheckerHandler}{Policy\+Checker\+Handler}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gov} & Pointer to the \doxylink{classGovernment}{Government} object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPolicyCheckerHandler_ab81ea6f30bd9f06f811f35e3c9c06438}\label{classPolicyCheckerHandler_ab81ea6f30bd9f06f811f35e3c9c06438} 
+\index{PolicyCheckerHandler@{PolicyCheckerHandler}!handleRequest@{handleRequest}}
+\index{handleRequest@{handleRequest}!PolicyCheckerHandler@{PolicyCheckerHandler}}
+\doxysubsubsection{\texorpdfstring{handleRequest()}{handleRequest()}}
+{\footnotesize\ttfamily bool Policy\+Checker\+Handler\+::handle\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ResourceType_8h_a8571efa4409be32e28abf3ea74a0dbb1}{Resource\+Type}}}]{type,  }\item[{int}]{quantity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles the resource approval request. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of the resource. \\
+\hline
+{\em quantity} & The quantity of the resource. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the request is approved, false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classResourceApprovalHandler_ab8de645b0677b784b6dc2f3feac04983}{Resource\+Approval\+Handler}}.
+
+\Hypertarget{classPolicyCheckerHandler_a9d49f1b75caaef9490eae3c61a26624c}\label{classPolicyCheckerHandler_a9d49f1b75caaef9490eae3c61a26624c} 
+\index{PolicyCheckerHandler@{PolicyCheckerHandler}!isPolicyEnforced@{isPolicyEnforced}}
+\index{isPolicyEnforced@{isPolicyEnforced}!PolicyCheckerHandler@{PolicyCheckerHandler}}
+\doxysubsubsection{\texorpdfstring{isPolicyEnforced()}{isPolicyEnforced()}}
+{\footnotesize\ttfamily bool Policy\+Checker\+Handler\+::is\+Policy\+Enforced (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Determines if a policy was enforced. 
+
+\begin{DoxyReturn}{Returns}
+True if the policy was enforced, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classPolicyCheckerHandler_a711b381b86f85959fb6bca648187e499}\label{classPolicyCheckerHandler_a711b381b86f85959fb6bca648187e499} 
+\index{PolicyCheckerHandler@{PolicyCheckerHandler}!setPolicyEnforced@{setPolicyEnforced}}
+\index{setPolicyEnforced@{setPolicyEnforced}!PolicyCheckerHandler@{PolicyCheckerHandler}}
+\doxysubsubsection{\texorpdfstring{setPolicyEnforced()}{setPolicyEnforced()}}
+{\footnotesize\ttfamily void Policy\+Checker\+Handler\+::set\+Policy\+Enforced (\begin{DoxyParamCaption}\item[{bool}]{enforced }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the policy enforcement state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enforced} & True if the policy was enforced, false otherwise. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/users/rudie/documents/sem2/214/project/src/\mbox{\hyperlink{PolicyCheckerHandler_8h}{Policy\+Checker\+Handler.\+h}}\end{DoxyCompactItemize}

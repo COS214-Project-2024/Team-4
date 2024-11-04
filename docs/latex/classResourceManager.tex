@@ -1,0 +1,176 @@
+\doxysection{Resource\+Manager Class Reference}
+\hypertarget{classResourceManager}{}\label{classResourceManager}\index{ResourceManager@{ResourceManager}}
+
+
+Manages resources, handles resource allocation and release, and notifies observers.  
+
+
+
+
+{\ttfamily \#include $<$Resource\+Manager.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classResourceManager_af366ed3390d41ded6f74adf9d4056e21}{Resource\+Manager}} (int initial\+Budget)
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classResourceManager}{Resource\+Manager} object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classResourceManager_aff2cdf001b124a32ac5facdf1893802d}{allocate\+Resources}} (\mbox{\hyperlink{ResourceType_8h_a8571efa4409be32e28abf3ea74a0dbb1}{Resource\+Type}} type, int quantity)
+\begin{DoxyCompactList}\small\item\em Allocates resources of a specific type and quantity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResourceManager_aeb9373520fd04367bd85e1206c012f8a}{release\+Resources}} (\mbox{\hyperlink{ResourceType_8h_a8571efa4409be32e28abf3ea74a0dbb1}{Resource\+Type}} type, int quantity)
+\begin{DoxyCompactList}\small\item\em Releases resources of a specific type and quantity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResourceManager_ac2776ccd4a8c5b89e31300a2204f4494}{set\+Allocation\+Strategy}} (\mbox{\hyperlink{classResourceAllocationStrategy}{Resource\+Allocation\+Strategy}} \texorpdfstring{$\ast$}{*}strategy)
+\begin{DoxyCompactList}\small\item\em Sets the resource allocation strategy. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classResourceManager_a576c29ce49fdb6c65f6b9c6eecbdb988}{get\+Budget}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current budget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResourceManager_a01d3b7f5686f6131250bdbd20743094b}{add\+Observer}} (\mbox{\hyperlink{classObserver}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Adds an observer to the resource manager. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classResource}{Resource}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classResourceManager_a57fedd807ab26987d66cbd0a012c669c}{get\+Resource}} (\mbox{\hyperlink{ResourceType_8h_a8571efa4409be32e28abf3ea74a0dbb1}{Resource\+Type}} type) const
+\begin{DoxyCompactList}\small\item\em Gets a resource of a specific type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResourceManager_a4cb608e665a3abd58c1de4cdf45518bf}{add\+Resource}} (\mbox{\hyperlink{ResourceType_8h_a8571efa4409be32e28abf3ea74a0dbb1}{Resource\+Type}} type, \mbox{\hyperlink{classResource}{Resource}} \texorpdfstring{$\ast$}{*}resource)
+\begin{DoxyCompactList}\small\item\em Adds a resource to the resource manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages resources, handles resource allocation and release, and notifies observers. 
+
+The \doxylink{classResourceManager}{Resource\+Manager} class provides methods to allocate and release resources, set allocation strategies, manage budget, and notify observers about resource changes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classResourceManager_af366ed3390d41ded6f74adf9d4056e21}\label{classResourceManager_af366ed3390d41ded6f74adf9d4056e21} 
+\index{ResourceManager@{ResourceManager}!ResourceManager@{ResourceManager}}
+\index{ResourceManager@{ResourceManager}!ResourceManager@{ResourceManager}}
+\doxysubsubsection{\texorpdfstring{ResourceManager()}{ResourceManager()}}
+{\footnotesize\ttfamily Resource\+Manager\+::\+Resource\+Manager (\begin{DoxyParamCaption}\item[{int}]{initial\+Budget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a new \doxylink{classResourceManager}{Resource\+Manager} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em initial\+Budget} & The initial budget for the resource manager. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classResourceManager_a01d3b7f5686f6131250bdbd20743094b}\label{classResourceManager_a01d3b7f5686f6131250bdbd20743094b} 
+\index{ResourceManager@{ResourceManager}!addObserver@{addObserver}}
+\index{addObserver@{addObserver}!ResourceManager@{ResourceManager}}
+\doxysubsubsection{\texorpdfstring{addObserver()}{addObserver()}}
+{\footnotesize\ttfamily void Resource\+Manager\+::add\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classObserver}{Observer}} \texorpdfstring{$\ast$}{*}}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds an observer to the resource manager. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & Pointer to the observer. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classResourceManager_a4cb608e665a3abd58c1de4cdf45518bf}\label{classResourceManager_a4cb608e665a3abd58c1de4cdf45518bf} 
+\index{ResourceManager@{ResourceManager}!addResource@{addResource}}
+\index{addResource@{addResource}!ResourceManager@{ResourceManager}}
+\doxysubsubsection{\texorpdfstring{addResource()}{addResource()}}
+{\footnotesize\ttfamily void Resource\+Manager\+::add\+Resource (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ResourceType_8h_a8571efa4409be32e28abf3ea74a0dbb1}{Resource\+Type}}}]{type,  }\item[{\mbox{\hyperlink{classResource}{Resource}} \texorpdfstring{$\ast$}{*}}]{resource }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a resource to the resource manager. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of the resource. \\
+\hline
+{\em resource} & Pointer to the \doxylink{classResource}{Resource} object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classResourceManager_aff2cdf001b124a32ac5facdf1893802d}\label{classResourceManager_aff2cdf001b124a32ac5facdf1893802d} 
+\index{ResourceManager@{ResourceManager}!allocateResources@{allocateResources}}
+\index{allocateResources@{allocateResources}!ResourceManager@{ResourceManager}}
+\doxysubsubsection{\texorpdfstring{allocateResources()}{allocateResources()}}
+{\footnotesize\ttfamily bool Resource\+Manager\+::allocate\+Resources (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ResourceType_8h_a8571efa4409be32e28abf3ea74a0dbb1}{Resource\+Type}}}]{type,  }\item[{int}]{quantity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Allocates resources of a specific type and quantity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of the resource. \\
+\hline
+{\em quantity} & The quantity of the resource to allocate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the allocation was successful, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classResourceManager_a576c29ce49fdb6c65f6b9c6eecbdb988}\label{classResourceManager_a576c29ce49fdb6c65f6b9c6eecbdb988} 
+\index{ResourceManager@{ResourceManager}!getBudget@{getBudget}}
+\index{getBudget@{getBudget}!ResourceManager@{ResourceManager}}
+\doxysubsubsection{\texorpdfstring{getBudget()}{getBudget()}}
+{\footnotesize\ttfamily int Resource\+Manager\+::get\+Budget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current budget. 
+
+\begin{DoxyReturn}{Returns}
+The current budget. 
+\end{DoxyReturn}
+\Hypertarget{classResourceManager_a57fedd807ab26987d66cbd0a012c669c}\label{classResourceManager_a57fedd807ab26987d66cbd0a012c669c} 
+\index{ResourceManager@{ResourceManager}!getResource@{getResource}}
+\index{getResource@{getResource}!ResourceManager@{ResourceManager}}
+\doxysubsubsection{\texorpdfstring{getResource()}{getResource()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classResource}{Resource}} \texorpdfstring{$\ast$}{*} Resource\+Manager\+::get\+Resource (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ResourceType_8h_a8571efa4409be32e28abf3ea74a0dbb1}{Resource\+Type}}}]{type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets a resource of a specific type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of the resource. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \doxylink{classResource}{Resource} object, or nullptr if not found. 
+\end{DoxyReturn}
+\Hypertarget{classResourceManager_aeb9373520fd04367bd85e1206c012f8a}\label{classResourceManager_aeb9373520fd04367bd85e1206c012f8a} 
+\index{ResourceManager@{ResourceManager}!releaseResources@{releaseResources}}
+\index{releaseResources@{releaseResources}!ResourceManager@{ResourceManager}}
+\doxysubsubsection{\texorpdfstring{releaseResources()}{releaseResources()}}
+{\footnotesize\ttfamily void Resource\+Manager\+::release\+Resources (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ResourceType_8h_a8571efa4409be32e28abf3ea74a0dbb1}{Resource\+Type}}}]{type,  }\item[{int}]{quantity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Releases resources of a specific type and quantity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of the resource. \\
+\hline
+{\em quantity} & The quantity of the resource to release. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classResourceManager_ac2776ccd4a8c5b89e31300a2204f4494}\label{classResourceManager_ac2776ccd4a8c5b89e31300a2204f4494} 
+\index{ResourceManager@{ResourceManager}!setAllocationStrategy@{setAllocationStrategy}}
+\index{setAllocationStrategy@{setAllocationStrategy}!ResourceManager@{ResourceManager}}
+\doxysubsubsection{\texorpdfstring{setAllocationStrategy()}{setAllocationStrategy()}}
+{\footnotesize\ttfamily void Resource\+Manager\+::set\+Allocation\+Strategy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResourceAllocationStrategy}{Resource\+Allocation\+Strategy}} \texorpdfstring{$\ast$}{*}}]{strategy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the resource allocation strategy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strategy} & Pointer to the resource allocation strategy. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/users/rudie/documents/sem2/214/project/src/\mbox{\hyperlink{ResourceManager_8h}{Resource\+Manager.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,69 @@
+\doxysection{Resource\+Availability Class Reference}
+\hypertarget{classResourceAvailability}{}\label{classResourceAvailability}\index{ResourceAvailability@{ResourceAvailability}}
+
+
+Checks the availability of a specific resource type and quantity.  
+
+
+
+
+{\ttfamily \#include $<$Resource\+Availability.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classResourceAvailability_a40aeaa943978dbb180dee9cdf347e41f}{Resource\+Availability}} (\mbox{\hyperlink{classResourceManager}{Resource\+Manager}} \texorpdfstring{$\ast$}{*}manager)
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classResourceAvailability}{Resource\+Availability} object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classResourceAvailability_a82613e871c3d7abd77f8c23db9a1d26e}{check\+Availability}} (\mbox{\hyperlink{ResourceType_8h_a8571efa4409be32e28abf3ea74a0dbb1}{Resource\+Type}} type, int quantity) const
+\begin{DoxyCompactList}\small\item\em Checks if a given quantity of a specific resource type is available. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Checks the availability of a specific resource type and quantity. 
+
+The \doxylink{classResourceAvailability}{Resource\+Availability} class provides a method to check if a given quantity of a specific resource type is available. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classResourceAvailability_a40aeaa943978dbb180dee9cdf347e41f}\label{classResourceAvailability_a40aeaa943978dbb180dee9cdf347e41f} 
+\index{ResourceAvailability@{ResourceAvailability}!ResourceAvailability@{ResourceAvailability}}
+\index{ResourceAvailability@{ResourceAvailability}!ResourceAvailability@{ResourceAvailability}}
+\doxysubsubsection{\texorpdfstring{ResourceAvailability()}{ResourceAvailability()}}
+{\footnotesize\ttfamily Resource\+Availability\+::\+Resource\+Availability (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResourceManager}{Resource\+Manager}} \texorpdfstring{$\ast$}{*}}]{manager }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a new \doxylink{classResourceAvailability}{Resource\+Availability} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & Pointer to the resource manager. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classResourceAvailability_a82613e871c3d7abd77f8c23db9a1d26e}\label{classResourceAvailability_a82613e871c3d7abd77f8c23db9a1d26e} 
+\index{ResourceAvailability@{ResourceAvailability}!checkAvailability@{checkAvailability}}
+\index{checkAvailability@{checkAvailability}!ResourceAvailability@{ResourceAvailability}}
+\doxysubsubsection{\texorpdfstring{checkAvailability()}{checkAvailability()}}
+{\footnotesize\ttfamily bool Resource\+Availability\+::check\+Availability (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ResourceType_8h_a8571efa4409be32e28abf3ea74a0dbb1}{Resource\+Type}}}]{type,  }\item[{int}]{quantity }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if a given quantity of a specific resource type is available. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of the resource. \\
+\hline
+{\em quantity} & The quantity of the resource. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the resource is available, false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/users/rudie/documents/sem2/214/project/src/\mbox{\hyperlink{ResourceAvailability_8h}{Resource\+Availability.\+h}}\end{DoxyCompactItemize}

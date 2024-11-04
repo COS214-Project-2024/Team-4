@@ -1,0 +1,165 @@
+\doxysection{Residential\+Building\+Builder Class Reference}
+\hypertarget{classResidentialBuildingBuilder}{}\label{classResidentialBuildingBuilder}\index{ResidentialBuildingBuilder@{ResidentialBuildingBuilder}}
+
+
+\doxylink{classBuilder}{Builder} class for constructing \doxylink{classResidentialBuilding}{Residential\+Building} objects.  
+
+
+
+
+{\ttfamily \#include $<$Residential\+Building\+Builder.\+h$>$}
+
+
+
+Inheritance diagram for Residential\+Building\+Builder\+:
+% FIG 0
+
+
+Collaboration diagram for Residential\+Building\+Builder\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classResidentialBuildingBuilder_a0b09f98fa53d656775dcd3c66f58f489}\label{classResidentialBuildingBuilder_a0b09f98fa53d656775dcd3c66f58f489} 
+{\bfseries Residential\+Building\+Builder} ()
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classResidentialBuildingBuilder}{Residential\+Building\+Builder} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classResidentialBuildingBuilder}{Residential\+Building\+Builder}} \& \mbox{\hyperlink{classResidentialBuildingBuilder_a79f50bdea6f8c67d2f2aed3ffbad0a9e}{set\+Residential\+Unit}} (int unit)
+\begin{DoxyCompactList}\small\item\em Sets the number of residential units in the building. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classResidentialBuildingBuilder}{Residential\+Building\+Builder}} \& \mbox{\hyperlink{classResidentialBuildingBuilder_aaa34afbcbefdfd28e52e922c82271c61}{set\+Comfort}} (float comfort)
+\begin{DoxyCompactList}\small\item\em Sets the comfort level of the building. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classResidentialBuildingBuilder_a02b4e865125e8c44c99531dcad204b9e}{get\+Residential\+Unit}} ()
+\begin{DoxyCompactList}\small\item\em Gets the number of residential units in the building. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classResidentialBuildingBuilder_aaa564284bafd5610bd55006264c9c283}{get\+Comfort}} ()
+\begin{DoxyCompactList}\small\item\em Gets the comfort level of the building. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classBuilding}{Building}} $>$ \mbox{\hyperlink{classResidentialBuildingBuilder_a42cbb8b6c25ad9987194669c35a04024}{build}} () override
+\begin{DoxyCompactList}\small\item\em Builds the residential building and sets all the attributes of the building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classBuilder}{Builder}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBuilder}{Builder}} \& \mbox{\hyperlink{classBuilder_a01a5abf0ea11e544e26d16985ba22d5f}{set\+Name}} (string \mbox{\hyperlink{classBuilder_a119d2647afbdd46c37e81484ec3d8089}{name}})
+\begin{DoxyCompactList}\small\item\em Sets the name of the building. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBuilder}{Builder}} \& \mbox{\hyperlink{classBuilder_a45f2872c38008c201b48623f3dff9bfb}{set\+Area}} (float \mbox{\hyperlink{classBuilder_a805aaecb83a5ba66fb9f7642cf6469fa}{area}})
+\begin{DoxyCompactList}\small\item\em Sets the area of the building. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBuilder}{Builder}} \& \mbox{\hyperlink{classBuilder_a5bcaa3d7e2387596fb15789b0c40755b}{set\+Floors}} (int \mbox{\hyperlink{classBuilder_af6211df8d8fb28754c6e6db1c32ae405}{floors}})
+\begin{DoxyCompactList}\small\item\em Sets the number of floors in the building. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBuilder}{Builder}} \& \mbox{\hyperlink{classBuilder_a3c44874ee91567ed031d3221eac60138}{set\+Capacity}} (int \mbox{\hyperlink{classBuilder_aaf1b91f25c19620b9a804938159c3e80}{capacity}})
+\begin{DoxyCompactList}\small\item\em Sets the capacity of the building. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBuilder}{Builder}} \& \mbox{\hyperlink{classBuilder_a537fc2884d585548947a01edfa2bc3e6}{set\+Citizen\+Satisfaction}} (float \mbox{\hyperlink{classBuilder_a28b7cf8af75631d98825c75ecd9c9e55}{citizen\+Satisfaction}})
+\begin{DoxyCompactList}\small\item\em Sets the citizen satisfaction of the building. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBuilder}{Builder}} \& \mbox{\hyperlink{classBuilder_ade42c562f69832755580fdb2516fd3bb}{set\+Economic\+Growth}} (float \mbox{\hyperlink{classBuilder_a7f76ef1c1881d18056e7475e43bec18f}{economic\+Growth}})
+\begin{DoxyCompactList}\small\item\em Sets the economic growth of the building. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBuilder}{Builder}} \& \mbox{\hyperlink{classBuilder_a02cc1b5f6229d90056314dc8c140dee2}{set\+Resource\+Consumption}} (float \mbox{\hyperlink{classBuilder_a026f60301465e91b3c28cf24262d89e9}{resource\+Consumption}})
+\begin{DoxyCompactList}\small\item\em Sets the resource consumption of the building. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Builder} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{classBuilder}{Builder} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classBuilder}{Builder}}}
+\begin{DoxyCompactItemize}
+\item 
+string {\bfseries name}
+\begin{DoxyCompactList}\small\item\em Name of the building. \end{DoxyCompactList}\item 
+float {\bfseries area} = 0.\+0f
+\begin{DoxyCompactList}\small\item\em Area of the building. \end{DoxyCompactList}\item 
+int {\bfseries floors} = 0
+\begin{DoxyCompactList}\small\item\em Number of floors in the building. \end{DoxyCompactList}\item 
+int {\bfseries capacity} = 0
+\begin{DoxyCompactList}\small\item\em Capacity of the building. \end{DoxyCompactList}\item 
+float {\bfseries citizen\+Satisfaction} = 0.\+0f
+\begin{DoxyCompactList}\small\item\em \doxylink{classCitizen}{Citizen} satisfaction of the building. \end{DoxyCompactList}\item 
+float {\bfseries economic\+Growth} = 0.\+0f
+\begin{DoxyCompactList}\small\item\em Economic growth of the building. \end{DoxyCompactList}\item 
+float {\bfseries resource\+Consumption} = 0.\+0f
+\begin{DoxyCompactList}\small\item\em \doxylink{classResource}{Resource} consumption of the building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classBuilder}{Builder} class for constructing \doxylink{classResidentialBuilding}{Residential\+Building} objects. 
+
+The \doxylink{classResidentialBuildingBuilder}{Residential\+Building\+Builder} class provides methods to set specific attributes for a \doxylink{classResidentialBuilding}{Residential\+Building} object and then construct the object. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classResidentialBuildingBuilder_a42cbb8b6c25ad9987194669c35a04024}\label{classResidentialBuildingBuilder_a42cbb8b6c25ad9987194669c35a04024} 
+\index{ResidentialBuildingBuilder@{ResidentialBuildingBuilder}!build@{build}}
+\index{build@{build}!ResidentialBuildingBuilder@{ResidentialBuildingBuilder}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classBuilding}{Building}} $>$ Residential\+Building\+Builder\+::build (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Builds the residential building and sets all the attributes of the building. 
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to the constructed \doxylink{classResidentialBuilding}{Residential\+Building} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilder_a152aecc8c569193f40471c1f62215b9f}{Builder}}.
+
+\Hypertarget{classResidentialBuildingBuilder_aaa564284bafd5610bd55006264c9c283}\label{classResidentialBuildingBuilder_aaa564284bafd5610bd55006264c9c283} 
+\index{ResidentialBuildingBuilder@{ResidentialBuildingBuilder}!getComfort@{getComfort}}
+\index{getComfort@{getComfort}!ResidentialBuildingBuilder@{ResidentialBuildingBuilder}}
+\doxysubsubsection{\texorpdfstring{getComfort()}{getComfort()}}
+{\footnotesize\ttfamily float Residential\+Building\+Builder\+::get\+Comfort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the comfort level of the building. 
+
+\begin{DoxyReturn}{Returns}
+The comfort level. 
+\end{DoxyReturn}
+\Hypertarget{classResidentialBuildingBuilder_a02b4e865125e8c44c99531dcad204b9e}\label{classResidentialBuildingBuilder_a02b4e865125e8c44c99531dcad204b9e} 
+\index{ResidentialBuildingBuilder@{ResidentialBuildingBuilder}!getResidentialUnit@{getResidentialUnit}}
+\index{getResidentialUnit@{getResidentialUnit}!ResidentialBuildingBuilder@{ResidentialBuildingBuilder}}
+\doxysubsubsection{\texorpdfstring{getResidentialUnit()}{getResidentialUnit()}}
+{\footnotesize\ttfamily int Residential\+Building\+Builder\+::get\+Residential\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the number of residential units in the building. 
+
+\begin{DoxyReturn}{Returns}
+The number of residential units. 
+\end{DoxyReturn}
+\Hypertarget{classResidentialBuildingBuilder_aaa34afbcbefdfd28e52e922c82271c61}\label{classResidentialBuildingBuilder_aaa34afbcbefdfd28e52e922c82271c61} 
+\index{ResidentialBuildingBuilder@{ResidentialBuildingBuilder}!setComfort@{setComfort}}
+\index{setComfort@{setComfort}!ResidentialBuildingBuilder@{ResidentialBuildingBuilder}}
+\doxysubsubsection{\texorpdfstring{setComfort()}{setComfort()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classResidentialBuildingBuilder}{Residential\+Building\+Builder}} \& Residential\+Building\+Builder\+::set\+Comfort (\begin{DoxyParamCaption}\item[{float}]{comfort }\end{DoxyParamCaption})}
+
+
+
+Sets the comfort level of the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em comfort} & The comfort level. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the \doxylink{classResidentialBuildingBuilder}{Residential\+Building\+Builder} object. 
+\end{DoxyReturn}
+\Hypertarget{classResidentialBuildingBuilder_a79f50bdea6f8c67d2f2aed3ffbad0a9e}\label{classResidentialBuildingBuilder_a79f50bdea6f8c67d2f2aed3ffbad0a9e} 
+\index{ResidentialBuildingBuilder@{ResidentialBuildingBuilder}!setResidentialUnit@{setResidentialUnit}}
+\index{setResidentialUnit@{setResidentialUnit}!ResidentialBuildingBuilder@{ResidentialBuildingBuilder}}
+\doxysubsubsection{\texorpdfstring{setResidentialUnit()}{setResidentialUnit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classResidentialBuildingBuilder}{Residential\+Building\+Builder}} \& Residential\+Building\+Builder\+::set\+Residential\+Unit (\begin{DoxyParamCaption}\item[{int}]{unit }\end{DoxyParamCaption})}
+
+
+
+Sets the number of residential units in the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit} & The number of residential units. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the \doxylink{classResidentialBuildingBuilder}{Residential\+Building\+Builder} object. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/users/rudie/documents/sem2/214/project/src/\mbox{\hyperlink{ResidentialBuildingBuilder_8h}{Residential\+Building\+Builder.\+h}}\item 
+/mnt/c/users/rudie/documents/sem2/214/project/src/\mbox{\hyperlink{ResidentialBuildingBuilder_8cpp}{Residential\+Building\+Builder.\+cpp}}\end{DoxyCompactItemize}

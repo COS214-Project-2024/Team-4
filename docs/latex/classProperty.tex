@@ -1,0 +1,150 @@
+\doxysection{Property Class Reference}
+\hypertarget{classProperty}{}\label{classProperty}\index{Property@{Property}}
+
+
+Represents a property with specific attributes and behaviors related to property tax calculation.  
+
+
+
+
+{\ttfamily \#include $<$Property.\+h$>$}
+
+
+
+Inheritance diagram for Property\+:
+% FIG 0
+
+
+Collaboration diagram for Property\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classProperty_ae97966fd8d2282871511e83bee713cb2}{Property}} (double rate, double levy, double fees)
+\begin{DoxyCompactList}\small\item\em Constructor to initialize base property tax rate, municipal levy, and additional fees. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classProperty_ae6055bc87f7c528748c461de379f2f7c}{set\+Tax}} (double rate) override
+\begin{DoxyCompactList}\small\item\em Sets the base property tax rate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classProperty_a697fafd6e686e783a6038886acedc935}{calculate\+Tax}} (double property\+Value) override
+\begin{DoxyCompactList}\small\item\em Calculates the total property tax for a given property value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classProperty_acbb42b9fe6c93889d3565d2115352a63}{set\+Municipal\+Levy}} (double levy)
+\begin{DoxyCompactList}\small\item\em Sets the municipal levy rate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classProperty_a46958b1be094047d3edaa49639b9f692}{set\+Additional\+Fees}} (double fees)
+\begin{DoxyCompactList}\small\item\em Sets additional fixed fees. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTaxType}{Tax\+Type}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTaxType_a3c04e9d6723ac37a7995a509c6a3b27e}{Tax\+Type}} (double rate, char type)
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classTaxType}{Tax\+Type} object. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Tax\+Type} ()
+\begin{DoxyCompactList}\small\item\em Virtual Destructor. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classTaxType_afa8c95916f0c75bd3f6065237ae77c8a}{get\+Tax\+Rate}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current tax rate. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classTaxType_a053fb349661aa980d2710e573138b667}{get\+Tax\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the tax type identifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a property with specific attributes and behaviors related to property tax calculation. 
+
+The \doxylink{classProperty}{Property} class inherits from the \doxylink{classTaxType}{Tax\+Type} class and provides methods to set tax rates, calculate property tax, and set additional fees. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classProperty_ae97966fd8d2282871511e83bee713cb2}\label{classProperty_ae97966fd8d2282871511e83bee713cb2} 
+\index{Property@{Property}!Property@{Property}}
+\index{Property@{Property}!Property@{Property}}
+\doxysubsubsection{\texorpdfstring{Property()}{Property()}}
+{\footnotesize\ttfamily Property\+::\+Property (\begin{DoxyParamCaption}\item[{double}]{rate,  }\item[{double}]{levy,  }\item[{double}]{fees }\end{DoxyParamCaption})}
+
+
+
+Constructor to initialize base property tax rate, municipal levy, and additional fees. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rate} & The base property tax rate. \\
+\hline
+{\em levy} & The municipal levy rate. \\
+\hline
+{\em fees} & Additional fixed fees. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classProperty_a697fafd6e686e783a6038886acedc935}\label{classProperty_a697fafd6e686e783a6038886acedc935} 
+\index{Property@{Property}!calculateTax@{calculateTax}}
+\index{calculateTax@{calculateTax}!Property@{Property}}
+\doxysubsubsection{\texorpdfstring{calculateTax()}{calculateTax()}}
+{\footnotesize\ttfamily double Property\+::calculate\+Tax (\begin{DoxyParamCaption}\item[{double}]{property\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Calculates the total property tax for a given property value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em property\+Value} & The value of the property. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The total property tax. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classTaxType_a02b9366605226a1b592c29d4d0570101}{Tax\+Type}}.
+
+\Hypertarget{classProperty_a46958b1be094047d3edaa49639b9f692}\label{classProperty_a46958b1be094047d3edaa49639b9f692} 
+\index{Property@{Property}!setAdditionalFees@{setAdditionalFees}}
+\index{setAdditionalFees@{setAdditionalFees}!Property@{Property}}
+\doxysubsubsection{\texorpdfstring{setAdditionalFees()}{setAdditionalFees()}}
+{\footnotesize\ttfamily void Property\+::set\+Additional\+Fees (\begin{DoxyParamCaption}\item[{double}]{fees }\end{DoxyParamCaption})}
+
+
+
+Sets additional fixed fees. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fees} & The additional fixed fees. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classProperty_acbb42b9fe6c93889d3565d2115352a63}\label{classProperty_acbb42b9fe6c93889d3565d2115352a63} 
+\index{Property@{Property}!setMunicipalLevy@{setMunicipalLevy}}
+\index{setMunicipalLevy@{setMunicipalLevy}!Property@{Property}}
+\doxysubsubsection{\texorpdfstring{setMunicipalLevy()}{setMunicipalLevy()}}
+{\footnotesize\ttfamily void Property\+::set\+Municipal\+Levy (\begin{DoxyParamCaption}\item[{double}]{levy }\end{DoxyParamCaption})}
+
+
+
+Sets the municipal levy rate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em levy} & The municipal levy rate. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classProperty_ae6055bc87f7c528748c461de379f2f7c}\label{classProperty_ae6055bc87f7c528748c461de379f2f7c} 
+\index{Property@{Property}!setTax@{setTax}}
+\index{setTax@{setTax}!Property@{Property}}
+\doxysubsubsection{\texorpdfstring{setTax()}{setTax()}}
+{\footnotesize\ttfamily void Property\+::set\+Tax (\begin{DoxyParamCaption}\item[{double}]{rate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the base property tax rate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rate} & The base property tax rate. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classTaxType_ae19ec84b7dcc0f5420ddbdcb69fbad13}{Tax\+Type}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/users/rudie/documents/sem2/214/project/src/\mbox{\hyperlink{Property_8h}{Property.\+h}}\item 
+/mnt/c/users/rudie/documents/sem2/214/project/src/\mbox{\hyperlink{Property_8cpp}{Property.\+cpp}}\end{DoxyCompactItemize}
