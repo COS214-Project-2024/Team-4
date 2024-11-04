@@ -1,0 +1,44 @@
+<map id="/mnt/c/users/rudie/documents/sem2/214/project/src/CommercialBuilding.cpp" name="/mnt/c/users/rudie/documents/sem2/214/project/src/CommercialBuilding.cpp">
+<area shape="rect" id="Node000001" title="Implementation of the CommercialBuilding class." alt="" coords="124,5,381,60"/>
+<area shape="rect" id="Node000002" href="$CommercialBuilding_8h.html" title="Declaration of the CommercialBuilding class." alt="" coords="169,108,336,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="255,60,255,94,250,94,250,60"/>
+<area shape="rect" id="Node000003" href="$Building_8h.html" title="Definition of the Building class." alt="" coords="169,181,256,207"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="248,135,228,171,224,168,244,132"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="9,328,86,353"/>
+<area shape="poly" id="edge24_Node000002_Node000006" title=" " alt="" coords="203,136,154,152,101,176,51,211,30,232,12,256,8,271,11,286,29,316,24,319,6,288,3,271,8,254,26,228,48,206,98,172,152,147,201,131"/>
+<area shape="rect" id="Node000011" href="$Business_8h.html" title="Header file for the Business class." alt="" coords="524,255,616,280"/>
+<area shape="poly" id="edge13_Node000002_Node000011" title=" " alt="" coords="261,132,284,169,301,188,321,204,367,228,417,244,467,255,511,260,510,266,466,260,416,249,365,233,318,209,297,192,280,172,256,135"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="331,181,411,207"/>
+<area shape="poly" id="edge25_Node000002_Node000017" title=" " alt="" coords="273,131,341,172,339,176,270,136"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="346,401,405,427"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="224,205,258,253,272,281,281,304,291,326,308,352,349,391,346,395,304,355,286,329,276,306,267,283,253,256,220,208"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="319,328,381,353"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="236,205,268,225,301,253,325,284,342,314,337,317,320,287,297,256,265,229,233,209"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="202,209,121,282,74,321,71,317,118,278,198,205"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="22,255,107,280"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="190,209,102,251,100,246,188,204"/>
+<area shape="rect" id="Node000008" href="$Jobs_8h.html" title="Definition of the Jobs class." alt="" coords="182,255,243,280"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="215,207,215,241,210,241,210,207"/>
+<area shape="poly" id="edge12_Node000008_Node000004" title=" " alt="" coords="219,279,236,314,264,351,298,376,334,395,331,399,295,381,260,355,232,317,215,282"/>
+<area shape="poly" id="edge8_Node000008_Node000006" title=" " alt="" coords="187,282,88,325,86,320,185,278"/>
+<area shape="rect" id="Node000009" href="$Income_8h.html" title="Definition of the Income class." alt="" coords="110,328,193,353"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="205,282,172,319,168,316,201,279"/>
+<area shape="poly" id="edge11_Node000009_Node000004" title=" " alt="" coords="188,351,334,397,332,402,187,356"/>
+<area shape="rect" id="Node000010" href="$TaxType_8h_source.html" title=" " alt="" coords="219,401,305,427"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="171,351,234,391,231,396,168,356"/>
+<area shape="poly" id="edge20_Node000011_Node000004" title=" " alt="" coords="556,282,404,395,401,391,553,278"/>
+<area shape="poly" id="edge19_Node000011_Node000005" title=" " alt="" coords="535,283,395,328,394,322,534,277"/>
+<area shape="poly" id="edge23_Node000011_Node000010" title=" " alt="" coords="548,282,395,356,302,398,299,393,393,351,546,278"/>
+<area shape="rect" id="Node000012" href="$GovObserver_8h.html" title="Definition of the GovObserver class." alt="" coords="975,328,1093,353"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="616,273,962,325,961,330,616,278"/>
+<area shape="rect" id="Node000013" href="$Policy_8h.html" title="Definition of the Policy class." alt="" coords="748,328,819,353"/>
+<area shape="poly" id="edge15_Node000011_Node000013" title=" " alt="" coords="605,277,737,321,735,326,603,283"/>
+<area shape="rect" id="Node000014" href="$CityService_8h.html" title="Declaration of the CityService class." alt="" coords="843,328,951,353"/>
+<area shape="poly" id="edge17_Node000011_Node000014" title=" " alt="" coords="617,276,831,322,830,328,616,281"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="508,328,632,353"/>
+<area shape="poly" id="edge21_Node000011_Node000015" title=" " alt="" coords="573,280,573,314,567,314,567,280"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="657,328,723,353"/>
+<area shape="poly" id="edge22_Node000011_Node000016" title=" " alt="" coords="591,278,660,318,657,323,588,282"/>
+<area shape="poly" id="edge16_Node000013_Node000004" title=" " alt="" coords="748,353,736,356,560,387,419,409,418,404,559,382,735,351,747,348"/>
+<area shape="poly" id="edge18_Node000014_Node000004" title=" " alt="" coords="843,354,832,356,599,388,419,410,418,405,598,383,831,351,842,349"/>
+</map>

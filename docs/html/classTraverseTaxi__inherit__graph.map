@@ -1,0 +1,5 @@
+<map id="TraverseTaxi" name="TraverseTaxi">
+<area shape="rect" id="Node000001" title="Manages the traversal state of a Taxi object." alt="" coords="15,219,135,344"/>
+<area shape="rect" id="Node000002" href="$classTraverseState.html" title="Abstract class that provides an interface for traversing through a list of Transportation elements." alt="" coords="5,5,144,171"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,184,77,218,72,218,72,184"/>
+</map>

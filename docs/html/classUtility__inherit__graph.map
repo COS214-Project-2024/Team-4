@@ -1,0 +1,11 @@
+<map id="Utility" name="Utility">
+<area shape="rect" id="Node000001" title="A class that represents a utility service in the city." alt="" coords="280,5,448,151"/>
+<area shape="rect" id="Node000002" href="$classPowerPlant.html" title="Represents a power plant that supplies power to buildings." alt="" coords="5,209,155,314"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="269,138,168,201,154,211,151,206,165,196,266,133"/>
+<area shape="rect" id="Node000003" href="$classSewageManagement.html" title="A class to manage sewage services for buildings." alt="" coords="179,209,355,314"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="321,164,297,210,292,207,317,161"/>
+<area shape="rect" id="Node000004" href="$classWasteManagement.html" title="A class that represents waste management services in the city." alt="" coords="379,199,547,324"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="412,161,431,197,427,200,407,164"/>
+<area shape="rect" id="Node000005" href="$classWaterSupply.html" title="A class that represents water supply services in the city." alt="" coords="571,199,739,324"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="461,135,560,196,572,204,569,208,557,201,458,140"/>
+</map>

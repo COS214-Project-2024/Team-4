@@ -1,0 +1,5 @@
+<map id="VAT" name="VAT">
+<area shape="rect" id="Node000001" title="A class that represents Value Added Tax (VAT)." alt="" coords="5,219,125,304"/>
+<area shape="rect" id="Node000002" href="$classTaxType.html" title="Represents a specific type of tax with a rate and type identifier." alt="" coords="5,5,125,171"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="68,184,68,218,63,218,63,184"/>
+</map>

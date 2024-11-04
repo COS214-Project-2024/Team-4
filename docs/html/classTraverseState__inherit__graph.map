@@ -1,0 +1,19 @@
+<map id="TraverseState" name="TraverseState">
+<area shape="rect" id="Node000001" title="Abstract class that provides an interface for traversing through a list of Transportation elements." alt="" coords="683,5,821,171"/>
+<area shape="rect" id="Node000002" href="$classTraverseBus.html" title="A class to manage the traversal state of a bus." alt="" coords="5,219,123,344"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="670,96,559,107,423,129,350,145,277,166,204,191,136,221,124,228,122,223,133,216,203,186,275,161,349,140,422,124,559,102,669,91"/>
+<area shape="rect" id="Node000003" href="$classTraverseCargoAirport.html" title="A class to traverse through a cargo airport." alt="" coords="147,219,323,344"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="670,111,512,155,423,186,336,221,324,227,322,222,334,216,421,181,511,150,668,106"/>
+<area shape="rect" id="Node000004" href="$classTraverseComercialAirport.html" title="A class to traverse through a commercial airport." alt="" coords="347,219,551,344"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="672,143,549,221,546,216,670,138"/>
+<area shape="rect" id="Node000005" href="$classTraverseFreightTrain.html" title="A class to traverse through FreightTrain objects." alt="" coords="575,219,745,344"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="709,184,692,220,687,217,704,182"/>
+<area shape="rect" id="Node000006" href="$classTraverseHighway.html" title="A class to traverse through highways in a transportation system." alt="" coords="769,219,919,344"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="800,182,817,217,812,220,795,184"/>
+<area shape="rect" id="Node000007" href="$classTraverseInsideRoad.html" title="A class to traverse inside roads in a transportation system." alt="" coords="944,219,1109,344"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="834,143,945,220,942,225,831,148"/>
+<area shape="rect" id="Node000008" href="$classTraversePassengerTrain.html" title="A class to traverse through a passenger train." alt="" coords="1134,219,1325,344"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="835,111,971,156,1122,216,1135,222,1133,227,1120,221,969,161,833,116"/>
+<area shape="rect" id="Node000009" href="$classTraverseTaxi.html" title="Manages the traversal state of a Taxi object." alt="" coords="1349,219,1469,344"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="835,92,940,105,1068,127,1206,163,1274,188,1339,216,1350,223,1348,228,1336,221,1272,193,1204,169,1067,132,939,110,835,98"/>
+</map>

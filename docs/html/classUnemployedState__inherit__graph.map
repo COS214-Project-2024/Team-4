@@ -1,0 +1,5 @@
+<map id="UnemployedState" name="UnemployedState">
+<area shape="rect" id="Node000001" title="A class that represents the unemployed state of a citizen." alt="" coords="5,139,136,204"/>
+<area shape="rect" id="Node000002" href="$classCitizenState.html" title="Abstract class representing the state of a citizen." alt="" coords="6,5,135,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,104,73,138,68,138,68,104"/>
+</map>
