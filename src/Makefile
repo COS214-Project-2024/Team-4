@@ -29,3 +29,6 @@ $(TARGET): $(OBJ)
 # Clean up generated files
 clean:
 	rm -f $(OBJ) $(TARGET)
+
+run: $(TARGET)
+	./$(TARGET)
