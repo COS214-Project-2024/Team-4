@@ -15,6 +15,7 @@ private:
 
 public:
     BuildingManager(const std::vector<std::shared_ptr<Building>>& buildingList);
+    
     // Register a building with the manager
     void addBuilding(Building* building);
 
