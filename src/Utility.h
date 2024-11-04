@@ -6,11 +6,13 @@
 #include "ResourceType.h"
 #include "UtilityMediator.h"
 #include <memory>
+#include <map>
 
 class Utility {
 
 	protected:
 		 UtilityMediator* mediator;  // Reference to the mediator for managing resources
+		 std::map<std::string, double> charges; // Track charges for each owner
 	public:
 		// void supplyPower(Building *building);
 		// void supplyWater(Building *building);
@@ -27,6 +29,16 @@ class Utility {
 		//virtual void adjustForCitizen(Citizen* citizen) = 0;
 
 		virtual void adjustForPopulation(int newPopulation) = 0;  // New method
+
+		void chargeOwner(Building* building, double amount) {
+			std::string owner = building->getOwner();
+			charges[owner] += amount;
+		}
+
+		double getCharges(const std::string& owner) const {
+			auto it = charges.find(owner);
+			return it != charges.end() ? it->second : 0.0;
+		}
 
 		virtual ~Utility() = default;
 };

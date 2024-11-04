@@ -1,4 +1,3 @@
-
 #ifndef BUILDING_H
 #define BUILDING_H
 #include<string>
@@ -20,6 +19,7 @@ protected:
 	float economicGrowth;
 	float resourceConsumption;
 	 std::vector<Jobs> jobs; 
+	std::string owner; // Add owner attribute
 
 public:
     Building(const std::string& name, float area, int floors, int capacity,
@@ -59,6 +59,9 @@ public:
 
 	//set tax rate for occupants in the building
 	//virtual void setTaxRate(double rate) = 0;
+
+	void setOwner(const std::string& owner) { this->owner = owner; }
+    std::string getOwner() const { return owner; }
 
 protected:
 	Building(int Builder);
