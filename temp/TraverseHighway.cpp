@@ -4,10 +4,6 @@ TraverseHighway::TraverseHighway(Transportation *element): TraverseState(element
     currentList = 0;
 }
 
-int TraverseHighway::getCurrentList(){
-    return currentList;
-}
-
 bool TraverseHighway::nextList(){
     if(currentList < upperBound){
         currentList++;
@@ -26,7 +22,19 @@ bool TraverseHighway::prevList(){
     return false;
 }
 
-std::vector<Transportation*> TraverseHighway::getList(){
-    
+Transportation* TraverseHighway::getPos(size_t x){
+    switch(this->currentList){
+        case 0:
+            InsideRoad *temp = static_cast<Highway*>(this->getLayer())->getInsideRoad(x);
+            return temp;
+
+        case 1:
+            Highway *temp2 = static_cast<Highway*>(this->getLayer())->getHighway(x);
+            return temp2;
+
+        default:
+            return nullptr;
+    }
+
 
 }

@@ -13,9 +13,8 @@ class CityTraverser;
 class CreateTraverser : public AgregateTraverser{
     public:
         CityTraverser* createCityTraverser();
-        CityTraverser* createCityTraverser(Transportation* t);
-        CityTraverser* createCityTraverser(CityTraverser *t);
-        CityTraverser* createCityTraverser(std::vector<Transportation*> t);
+        CityTraverser* createCityTraverser(Transportation *t);
+
 
 };
 

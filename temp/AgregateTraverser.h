@@ -2,8 +2,17 @@
 #define AGREGATETRAVERSER_H
 
 #include <vector>
+#include <variant>
 
-#include "Transportation.h"
+#include "Highway.h"
+#include "InsideRoad.h"
+#include "Bus.h"
+#include "Taxi.h"
+#include "FreightTrain.h"
+#include "PassengerTrain.h"
+#include "ComercialAirport.h"
+#include "CargoAirport.h"
+
 #include "CityTraverser.h"
 
 class Transportation;
@@ -11,9 +20,7 @@ class Transportation;
 class AgregateTraverser {
     public:
         virtual CityTraverser* createCityTraverser() = 0;
-        virtual CityTraverser* createCityTraverser(Transportation* t) = 0;
-        virtual CityTraverser* createCityTraverser(CityTraverser *t) = 0;
-        virtual CityTraverser* createCityTraverser(std::vector<Transportation*> t) = 0;
+        virtual CityTraverser* createCityTraverser(Transportation *t) = 0;
 };
 
 #endif

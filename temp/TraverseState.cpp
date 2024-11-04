@@ -1,5 +1,9 @@
 #include "TraverseState.h"
 
-TraverseState::TraverseState(Transportation *element){
-    Element = element;
+TraverseState::TraverseState(Transportation *layer){
+    this->layer = layer;
+}
+
+Transportation* TraverseState::getLayer(){
+    return this->layer;
 }

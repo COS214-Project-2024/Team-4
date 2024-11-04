@@ -1,5 +1,5 @@
-#ifndef TRAVERSESTATE_h
-#define TRAVERSESTATE_h
+#ifndef TRAVERSESTATE_H
+#define TRAVERSESTATE_H
 
 #include <vector>
 
@@ -11,14 +11,14 @@ class Transportation;
 
 class TraverseState {
     private:
-        Transportation *Element;
+        Transportation *layer;
 
     public:
         TraverseState(Transportation *element);
         virtual bool nextList() = 0;
         virtual bool prevList() = 0;
-        virtual std::vector<Transportation*> getList() = 0;
-        Transportation* getElement();
+        virtual Transportation* getPos(size_t x) = 0;
+        Transportation* getLayer();
         // virtual std::vector<Building*> getBuildings() = 0;
 
 };

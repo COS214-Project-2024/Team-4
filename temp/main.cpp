@@ -7,7 +7,6 @@ using namespace std;
 #include "Highway.h"
 
 int main() {
-    
 
     return 0;
 

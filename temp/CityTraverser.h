@@ -19,8 +19,6 @@ class CityTraverser: public Traverser{
         Transportation* Element;
         std::vector<Transportation*> prevLayers;
         Transportation* currentLayer;
-        int currentList;
-        std::vector<Transportation*> List;
 
     public:
         CityTraverser();
