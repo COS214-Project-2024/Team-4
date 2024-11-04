@@ -70,7 +70,7 @@ double ResidentialBuilding::payTaxes(TaxType* taxType) {
         double citizenTax = citizen->payTaxes(taxType);
         totalPropertyTax += citizenTax;
     }
-    std::cout << "Total Property taxes collected from building " << name << ": $" << totalPropertyTax << "\n";
+    std::cout << "Total Property taxes collected from building " << name << ": R" << totalPropertyTax << "\n";
     }else{
         std::cout << "cannot collect taxes of this type\n";
     }
@@ -103,7 +103,40 @@ void ResidentialBuilding::addCitizen(Citizen* citizen) {
         residents.push_back(citizen);
     }
 }
-void ResidentialBuilding::addBusiness(Business* business) {
-    // Do nothing
+double ResidentialBuilding::getTotalSatisfaction() {
+    double totalSatisfaction = 0.0;
+    for (const auto& citizen : residents) {
+        totalSatisfaction += citizen->getSatisfactionLevel();
+    }
+    return totalSatisfaction;
 }
+
+double ResidentialBuilding::getTotalImpact(TaxType* newTaxType) const {
+    double totalCurrentTax = 0.0;
+    double totalNewTax = 0.0;
+
+    for (const auto& citizen : residents) {
+        double income = citizen->getIncome()->calculateMonthlyIncome();
+
+        // Calculate current tax
+        double currentTaxRate = citizen->getTaxRate();
+        double currentTax = income * currentTaxRate;
+        totalCurrentTax += currentTax;
+
+        // Calculate new tax
+        double newTaxRate = newTaxType->getTaxRate();
+        double newTax = income * newTaxRate;
+        totalNewTax += newTax;
+    }
+
+    // Calculate the percentage impact
+    double impact = 0.0;
+    if (totalCurrentTax != 0.0) {
+        impact = ((totalNewTax - totalCurrentTax) / totalCurrentTax) * 100.0;
+    }
+    return impact;
+}
+
+
+
 //END ResidentialBuilding.cpp ====================================================================================

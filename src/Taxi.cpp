@@ -128,3 +128,7 @@ std::string Taxi::getTaxiCompany() {
 int Taxi::getTaxiNumber() {
     return this->taxiNumber;
 }
+
+float Taxi::commuteTime(){
+    return this->commuteTime();
+}

@@ -4,8 +4,8 @@
 
 // Constructor for CollectTaxesCommand
 // Initializes the command with the government object
-CollectTaxesCommand::CollectTaxesCommand(Government* gov,Building* building, TaxType* taxType) : government(gov), collectedTaxes(0.0), building(building), taxType(taxType)
-{}
+CollectTaxesCommand::CollectTaxesCommand(Government* gov ,std::shared_ptr<Building> building, TaxType* taxType)
+    : government(gov), collectedTaxes(0.0), taxType(taxType){ this->building = building;}
 
 // Executes the tax collection command
 // Collects taxes from the government and stores the collected amount

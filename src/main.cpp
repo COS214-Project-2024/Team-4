@@ -38,10 +38,29 @@
 #include "Policy.h"
 #include "Business.h"
 
-//TaxSystem includes
+//Transportation includes
+#include "Transportation.h"
+#include "Airport.h"
+#include "Train.h"
+#include "PublicTransit.h"
+#include "Road.h"
+#include "TransportationFactory.h"
+#include "TransportManager.h"
+#include "Highway.h"
+#include "InsideRoad.h"
+#include "Bus.h"
+#include "FreightTrain.h"
+#include "PassengerTrain.h"
+#include "Taxi.h"
+#include "ComercialAirport.h"
+#include "CargoAirport.h"
+#include "createTraverser.h"
+#include "CityTraverser.h"
+
+//Tax system includes
 #include "TaxSystem.h"
 #include "TaxType.h"
-#include "Income.h"
+#include "Building.h"
 #include "Sales.h"
 #include "Property.h"
 
@@ -55,7 +74,9 @@ void testResourceManager();
 void testGOVF1();
 void TESTGOVCOMMAND();
 void testcit();
+void TRANSPORTATION_TEST();
 void testTaxSystem();
+
 int main() {
     // Testing each builder class separately
     testResidentialBuildingBuilder();
@@ -69,9 +90,10 @@ int main() {
     std::cout << "============================GOVT1========================" << std::endl;
     //TESTGOVCOMMAND();
     std::cout << "============================GOVT2========================" << std::endl;
-    //testGOVF1();
-  
-    std::cout << "All tests completed.\n";
+    testGOVF1();
+    std::cout << "\033[1;32m============================TRANSPORTATION========================\033[0m" << std::endl;
+    // TRANSPORTATION_TEST();
+    std::cout << "\033[1;32mAll tests completed.\033[0m\n";
   
     return 0;
 }
@@ -341,17 +363,41 @@ void testGOVF1() {
 }
 
 void TESTGOVCOMMAND() {
+
+        ResidentialBuildingBuilder residentialBuilder;
+    residentialBuilder.setName("Residential Complex")
+                      .setArea(1000)
+                      .setFloors(15)
+                      .setCapacity(200)
+                      .setCitizenSatisfaction(20.0f)
+                      .setEconomicGrowth(10.0f)
+                      .setResourceConsumption(15.0f);
+    auto residentialBuilding = residentialBuilder.build();
+
+    CommercialBuildingBuilder commercialBuilder;
+    commercialBuilder.setName("Innovation Hub")
+                     .setArea(2000)
+                     .setFloors(10)
+                     .setCapacity(400)
+                     .setCitizenSatisfaction(25.0f)
+                     .setEconomicGrowth(20.0f)
+                     .setResourceConsumption(30.0f);
+    auto commercialBuilding = commercialBuilder.build();
+
+    std::shared_ptr<Building> residentialBuilding1 = std::move(residentialBuilding);
     // Create a Government instance
     Government government("City Government");
     // Create a CityService instance
     CityService cityService("Public Transport", 1000.0);
     // Create a Policy instance
     Policy policy("Policy1", "High");
+
+    TaxType taxtype(150 , 'I')  ;
     // Create command instances
     SetTaxCommand setTaxCommand(&government, 15.0);
     EnforcePolicyCommand enforcePolicyCommand(&government, policy);
     AllocateBudgetCommand allocateBudgetCommand(&government, cityService, 500.0);
-    //CollectTaxesCommand collectTaxesCommand(&government,res);
+    CollectTaxesCommand collectTaxesCommand(&government ,residentialBuilding1, &taxtype);
     // Execute commands
     std::cout << "Executing SetTaxCommand..." << std::endl;
     setTaxCommand.execute();
@@ -542,7 +588,7 @@ void testcit(){
 
 //TEST TAXES ====================================================================================
 
-void testTaxSystem() {
+  void testTaxSystem() {
     // Step 1: Create instances of Residential and Commercial buildings
     ResidentialBuildingBuilder residentialBuilder;
     residentialBuilder.setName("Residential Complex")
@@ -622,19 +668,24 @@ void testTaxSystem() {
     auto salesTax = std::make_shared<Sales>(0.5, 0.10, 0.4);
     auto propertyTax = std::make_shared<Property>(0.0, 0.10, 0.5);
 
-    gov.getTaxSystem()->addTaxRate(incomeTax.get());
-    gov.getTaxSystem()->addTaxRate(salesTax.get());
-    gov.getTaxSystem()->addTaxRate(propertyTax.get());
+    gov.getTaxSystem()->addSharedTaxRate(incomeTax);
+    gov.getTaxSystem()->addSharedTaxRate(salesTax);
+    gov.getTaxSystem()->addSharedTaxRate(propertyTax);
 
     // Step 8: Add a business to the commercial building
-    Business business(5000.0, 10.0);
-    // commercialBuilding->addBusiness(&business);
-    buildings[1]->addBusiness(&business);
+    auto business = std::make_shared<Business>(5000.0, 10.0);
+    buildings[1].get()->addBusiness(business);
+
     // Step 9: Collect taxes from the residential building and the business
     std::cout << "\n--- Testing Residential Tax Collection ---\n";
     gov.getTaxSystem()->collectTaxes(buildings[0].get(), 'I');
 
     std::cout << "\n--- Testing Commercial Tax Collection ---\n";
     gov.getTaxSystem()->collectTaxes(buildings[1].get(), 'S');
+
+    // Step 10: Check impact of changing tax rates
+    std::cout << "\n--- Checking Impact of Changing Tax Rates ---\n";
+    gov.getTaxSystem()->checkImpact(buildings[0].get(), incomeTax);
+    gov.getTaxSystem()->checkImpact(buildings[1].get(), salesTax);
 }
 //END TEST TAXES ====================================================================================

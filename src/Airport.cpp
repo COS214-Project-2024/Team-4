@@ -7,3 +7,7 @@ Airport::Airport(char state, std::string name, char type) : Transportation(state
 std::string Airport::getAirportName() {
     return name;
 }
+
+float Airport::calculateCommute() {
+    return 20.0;
+}

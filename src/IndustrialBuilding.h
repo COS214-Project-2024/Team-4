@@ -11,7 +11,7 @@ private:
 	float pollutionLevel;
 	float productionCapacity;
 	string bType;
-	Business* business;
+	std::shared_ptr<Business> business;
 
 public:
 	IndustrialBuilding(const std::string& name, float area, int floors, int capacity,
@@ -30,7 +30,7 @@ public:
     void undoCollectTaxes();
 
 	void addCitizen(Citizen* citizen);
-	void addBusiness(Business* business) override;
+	void addBusiness(std::shared_ptr<Business> business);
 protected:
 	void calculateEconomicImpact();
 

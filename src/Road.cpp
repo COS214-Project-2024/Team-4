@@ -4,9 +4,9 @@ Road::Road(char state, std::string roadName, char type) : Transportation(state, 
     this->roadName = roadName;
 }
 
-// float Road::calculateCommute() {
-//     return getTrafficFlow();
-// }
+float Road::calculateCommute() {
+    return 10 * (1+getTrafficFlow());
+}
 
 std::string Road::getName() {
     return this->roadName;

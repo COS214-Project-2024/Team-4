@@ -105,6 +105,6 @@ void Building::addCitizen(Citizen* citizen) {
     // Placeholder for adding citizens to a building
 }
 
-void Building::addBusiness(Business* business) {
+void Building::addBusiness(std::shared_ptr<Business> business){
     // Placeholder for adding businesses to a building
 }

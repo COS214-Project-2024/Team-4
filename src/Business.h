@@ -21,6 +21,7 @@ private:
     std::vector<Policy> policies; // List of policies affecting the business
 std::unordered_map<char, std::chrono::steady_clock::time_point> lastTaxPayments; // Add this line
     std::chrono::seconds taxCooldownPeriod;
+
 public:
     // Constructor
     Business(double initialRevenue, double initialTaxRate);
@@ -57,6 +58,9 @@ public:
 
     double payTaxes(TaxType* taxType);
     void setTaxCooldownPeriod(int seconds);
+
+    double getRevenue();
+    double getTaxRate();
 };
 
 #endif

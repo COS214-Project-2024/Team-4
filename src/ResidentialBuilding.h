@@ -27,8 +27,10 @@ public:
     void undoCollectTaxes();
     int getResidentialUnits() const;
     void addCitizen(Citizen* citizen) override;  // Override the base class method
-    void addBusiness(Business* business); // do nothing
-
+    void addBusiness(std::shared_ptr<Business> business){};
+    double getTotalSatisfaction(); 
+    double getTotalTaxSatisfaction();  
+    double getTotalImpact(TaxType* taxType) const;
 private:
     int residentialUnits;
     float comfortLevel;

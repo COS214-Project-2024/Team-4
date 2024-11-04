@@ -52,3 +52,8 @@ float FreightTrain::getLength(){
 std::string FreightTrain::getTrainLine(){
     return this->getLine();
 }
+
+float FreightTrain::commuteTime(){
+    return this->commuteTime() * (1+weight/1000+length/100);    
+    
+}

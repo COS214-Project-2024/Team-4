@@ -1,64 +1,59 @@
 #include "CommercialBuilding.h"
 
-//constructor
+// Constructor
 CommercialBuilding::CommercialBuilding(const std::string& name, float area, int floors, int capacity,
-							float citizenSatisfaction, float economicGrowth, float resourceConsumption,
-							int businessUnits, float customerTraffic):
- Building(name, area, floors, capacity, citizenSatisfaction, economicGrowth, resourceConsumption)
- {
-	this->businessUnits = businessUnits;
-	this->customerTraffic = customerTraffic;
-	this->bType = "Commercial";
+                                       float citizenSatisfaction, float economicGrowth, float resourceConsumption,
+                                       int businessUnits, float customerTraffic)
+    : Building(name, area, floors, capacity, citizenSatisfaction, economicGrowth, resourceConsumption),
+      businessUnits(businessUnits), customerTraffic(customerTraffic), bType("Commercial") {}
 
-}
-
+// Destructor
 CommercialBuilding::~CommercialBuilding() {
     // Destructor implementation (can be empty)
 }
 
-
-//get type of building
-std::string CommercialBuilding::getType() const{
-	return this->bType;
+// Get type of building
+std::string CommercialBuilding::getType() const {
+    return this->bType;
 }
 
-//update impacts by calculating economic impact, resource consumption and satisfaction impact
+// Update impacts by calculating economic impact, resource consumption, and satisfaction impact
 void CommercialBuilding::updateImpacts() {
-	calculateEconomicImpact();
-	calculateResourceConsumption();
-	calculateSatisfactionImpact();
+    calculateEconomicImpact();
+    calculateResourceConsumption();
+    calculateSatisfactionImpact();
 }
 
-//update customer traffic
+// Update customer traffic
 void CommercialBuilding::updateCustomer(int traffic) {
-	customerTraffic += traffic;
+    customerTraffic += traffic;
 }
 
-//calculate economic impact of the building
+// Calculate economic impact of the building
 void CommercialBuilding::calculateEconomicImpact() {
-	economicGrowth = businessUnits * customerTraffic * 0.1f;
+    economicGrowth = businessUnits * customerTraffic * 0.1f;
 }
 
-//calculate resource consumption of the building
+// Calculate resource consumption of the building
 void CommercialBuilding::calculateResourceConsumption() {
-	resourceConsumption = businessUnits * 0.05f;
+    resourceConsumption = businessUnits * 0.05f;
 }
 
-//calculate satisfaction impact of the building
+// Calculate satisfaction impact of the building
 void CommercialBuilding::calculateSatisfactionImpact() {
-	citizenSatisfaction = customerTraffic * 0.1f;
+    citizenSatisfaction = customerTraffic * 0.1f;
 }
 
+// Construct the building
 void CommercialBuilding::construct() {
-	std::cout<<"============================================================\n";
-	 std::cout << "Constructing Commercial Building: " << name << std::endl;
+    std::cout << "============================================================\n";
+    std::cout << "Constructing Commercial Building: " << name << std::endl;
     std::cout << "Area: " << area << "\nFloors: " << floors << "\nCapacity: " << capacity << std::endl;
     std::cout << "Business Units: " << businessUnits << "\nCustomer Traffic: " << customerTraffic << std::endl;
-	std::cout<<"============================================================\n";
-
+    std::cout << "============================================================\n";
 }
 
-// Pay Taxes for the Building
+// Pay taxes for the building
 double CommercialBuilding::payTaxes(TaxType* taxType) {
     if (!business) {
         std::cout << "No business in the building to collect taxes from.\n";
@@ -70,23 +65,28 @@ double CommercialBuilding::payTaxes(TaxType* taxType) {
     return totalTax;
 }
 
-// Undo Collecting Taxes from the Building
+// Undo collecting taxes from the building
 void CommercialBuilding::undoCollectTaxes() {
     double tax = economicGrowth * 0.1;
     std::cout << "Refunded taxes from Commercial Building: " << name << " - Amount: " << tax << std::endl;
 }
 
-// Set Business in the Building
-void CommercialBuilding::setBusiness(Business* business) {
+// Set business in the building
+void CommercialBuilding::setBusiness(std::shared_ptr<Business> business) {
     this->business = business;
 }
 
-// Add Citizen to the Building
+// Add citizen to the building
 void CommercialBuilding::addCitizen(Citizen* citizen) {
-	//not implemented here
+    // Not implemented here
 }
 
-// Add Business to the Building
-void CommercialBuilding::addBusiness(Business* business) {
-	this->business = business;
+// Add business to the building
+void CommercialBuilding::addBusiness(std::shared_ptr<Business> business) {
+    this->business = business;
+}
+
+// Get business in the building
+std::shared_ptr<Business> CommercialBuilding::getBusiness() const {
+    return business;
 }

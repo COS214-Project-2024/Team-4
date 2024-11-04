@@ -113,10 +113,21 @@ double Business::payTaxes(TaxType* taxType) {
     if (tax > 0.0) {
         revenue -= tax;
         lastTaxPayments[taxTypeChar] = now; // Update last payment time for this tax type
-        cout << "Business paid $" << tax << " in taxes for tax type " << taxTypeChar << ". Remaining revenue: " << revenue << endl;
+        cout << "Business paid R" << tax << " in taxes for tax type " << taxTypeChar << ". Remaining revenue: " << revenue << endl;
         return tax;
     } else {
         cout << "Business has insufficient revenue to pay taxes.\n";
         return 0.0;
     }
+}
+
+void Business::setTaxCooldownPeriod(int seconds) {
+    taxCooldownPeriod = std::chrono::seconds(seconds);
+}
+
+double Business::getRevenue() {
+    return revenue;
+}
+double Business::getTaxRate() {
+    return taxRate;
 }

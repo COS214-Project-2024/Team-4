@@ -100,6 +100,17 @@ class Highway : public Road {
          * @return The speed limit of the highway.
          */
         float getSpeedLimit();
+
+        /**
+         * @brief Calculates the adjusted commute time on the highway.
+         * 
+         * This function computes the commute time on the highway, taking into account
+         * various factors such as speed limit, traffic conditions, and other relevant
+         * parameters.
+         * 
+         * @return The adjusted commute time.
+         */
+        float commuteTime() override;
 };
 
 #endif // HIGHWAY_H

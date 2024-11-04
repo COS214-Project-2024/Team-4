@@ -16,28 +16,27 @@ public:
 
     ~CommercialBuilding(); // Destructor
 
-    
     std::string getType() const override;
     void updateImpacts() override;
     void updateCustomer(int traffic);
     void construct() override;
     double payTaxes(TaxType* taxType);
     void undoCollectTaxes();
-    void setBusiness(Business* business);
+    void setBusiness(std::shared_ptr<Business> business);
     void addCitizen(Citizen* citizen);
-    void addBusiness(Business* business) override;
+    void addBusiness(std::shared_ptr<Business> business);
+    std::shared_ptr<Business> getBusiness() const;
+
 private:
     int businessUnits;
     float customerTraffic;
-    Business* business;
-	std::string bType;
+    std::shared_ptr<Business> business;
+    std::string bType;
 
-    protected:
-	void calculateEconomicImpact();
-
-	void calculateResourceConsumption();
-
-	void calculateSatisfactionImpact();
+protected:
+    void calculateEconomicImpact();
+    void calculateResourceConsumption();
+    void calculateSatisfactionImpact();
 };
 
 #endif // COMMERCIALBUILDING_H

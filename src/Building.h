@@ -57,7 +57,7 @@ public:
 	// Undo collecting taxes from the building
 	virtual void undoCollectTaxes() = 0;
     virtual void addCitizen(Citizen* citizen) = 0;
-    virtual void addBusiness(Business* business) = 0;
+    virtual  void addBusiness(std::shared_ptr<Business> business)= 0;
 
 private:
     virtual void calculateSatisfactionImpact() = 0;

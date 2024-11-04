@@ -35,3 +35,6 @@ run: $(TARGET)
 
 doxygen:
 	doxygen dconfig
+
+valgrind: $(TARGET)
+	valgrind --leak-check=full ./$(TARGET)

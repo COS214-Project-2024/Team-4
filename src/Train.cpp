@@ -7,3 +7,8 @@ Train::Train(char state, std::string line, char type) : Transportation(state, ty
 std::string Train::getLine() {
     return line;
 }
+
+float Train::commuteTime() {
+    return 5.0 * (1+getTrafficFlow());
+    
+}

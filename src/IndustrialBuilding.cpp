@@ -76,8 +76,8 @@ void IndustrialBuilding::addCitizen(Citizen* citizen) {
 	std::cout << "Added citizen " << citizen->getName() << " to Industrial Building " << name << std::endl;
 }
 
-//add business to the building
-void IndustrialBuilding::addBusiness(Business* business) {
-	std::cout << "Added business to Industrial Building " << name << std::endl;
+void IndustrialBuilding::addBusiness(std::shared_ptr<Business> business) {
+ 	std::cout << "Added business to Industrial Building " << name << std::endl;
 	this->business = business;
 }
+

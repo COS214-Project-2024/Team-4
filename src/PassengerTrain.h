@@ -74,6 +74,17 @@ class PassengerTrain : public Train {
          * @return A string representing the train line.
          */
         std::string getTrainLine();
+
+
+        /**
+         * @brief Calculates the adjusted commute time for the passenger train.
+         * 
+         * This function computes the adjusted commute time based on various factors
+         * such as delays, speed adjustments, and other relevant parameters.
+         * 
+         * @return float The adjusted commute time in hours.
+         */
+        float commuteTime() override;
 };
 
 #endif

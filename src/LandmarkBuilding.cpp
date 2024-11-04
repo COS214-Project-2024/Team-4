@@ -82,6 +82,3 @@ void LandmarkBuilding::addCitizen(Citizen* citizen) {
 }
 
 //add business to the building
-void LandmarkBuilding::addBusiness(Business* business) {
-	std::cout << "Added business to Landmark Building " << name << std::endl;
-}

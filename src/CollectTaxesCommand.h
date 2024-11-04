@@ -15,7 +15,7 @@ private:
     Government* government;   // Pointer to the government object
     double collectedTaxes;    // Amount of taxes collected
 
-    Building* building;
+    std::shared_ptr<Building>  building;
 	double taxesCollected;
 	double taxRate;
 	TaxType* taxType;
@@ -23,7 +23,8 @@ private:
 public:
     // Constructor
     // Initializes the command with the government object
-    CollectTaxesCommand(Government* gov,Building* building, TaxType* taxType);
+    CollectTaxesCommand(Government* gov ,std::shared_ptr<Building> building, TaxType* taxType);
+    
 
     // Executes the tax collection command
     void execute() override;

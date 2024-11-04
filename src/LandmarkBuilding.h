@@ -27,7 +27,7 @@ public:
 	void undoCollectTaxes() override;
 
 	void addCitizen(Citizen* citizen) override;
-	void addBusiness(Business* business) override;
+	void addBusiness(std::shared_ptr<Business> business){};
 
 protected:
 	void calculateEconomicImpact();

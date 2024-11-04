@@ -10,6 +10,7 @@
 #include "Citizen.h"
 #include "TaxType.h"
 #include "Government.h"
+#include <memory>
 class Government;
 
 class TaxSystem {
@@ -26,9 +27,9 @@ public:
     void updateTaxRate(char cType, double rate);
     void collectTaxes(Building* building, char taxType);
     void setTax(double rate, char taxType);
-    void checkImpact();
-    void addTaxRate(TaxType* tax);
-    void removeTaxRate(TaxType* taxType);
+    void addSharedTaxRate(std::shared_ptr<TaxType> tax);
+    void removeTaxRate(std::shared_ptr<TaxType> taxType);
+void checkImpact(Building* building, std::shared_ptr<TaxType> newTaxType);
     
 private:
     Government* government = nullptr;
@@ -36,7 +37,7 @@ private:
     std::vector<Building*> propertyTaxbuildings;
     std::vector<Building*> salesTaxbuildings;
     std::vector<Citizen*> vatTaxpayers;
-    std::map<char, TaxType*> taxRates;
+  std::map<char, std::shared_ptr<TaxType>> taxRates;
     float totalTaxCollected = 0.0;
 };
 

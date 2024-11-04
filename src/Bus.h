@@ -123,6 +123,16 @@ class Bus : public PublicTransit {
          * @return The route name of the bus.
          */
         std::string getRouteName();
+
+        /**
+         * @brief Calculates the adjusted commute time.
+         * 
+         * This function computes the adjusted commute time based on various factors
+         * such as traffic conditions, route changes, and other relevant parameters.
+         * 
+         * @return The adjusted commute time as a float.
+         */
+        float commuteTime() override;
 };
 
 #endif // BUS_H

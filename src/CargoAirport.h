@@ -68,6 +68,16 @@ class CargoAirport : public Airport {
          * @return The name of the cargo airport.
          */
         std::string getName();
+
+        /**
+         * @brief Calculates the adjusted commute time.
+         * 
+         * This function computes the adjusted commute time based on various factors
+         * such as traffic conditions, distance, and other relevant parameters.
+         * 
+         * @return The adjusted commute time as a float.
+         */
+        float commuteTime() override;
 };
 
 #endif
