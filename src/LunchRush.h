@@ -2,7 +2,7 @@
  * @file LunchRush.h
  * @brief Header file for the LunchRush class.
  * @version 1.0
- *
+ * @date 2024-11-04
  * This file contains the declaration of the LunchRush class, which is derived from the TrafficFlow class.
  * The LunchRush class represents a specific state of traffic flow during lunch hours.
  *

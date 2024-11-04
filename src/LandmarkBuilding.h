@@ -2,7 +2,7 @@
  * @file LandmarkBuilding.h
  * @brief Definition of the LandmarkBuilding class.
  * @version 1.0
- * 
+ * @date 2024-11-04
  * This file contains the definition of the LandmarkBuilding class, which represents a landmark building
  * with specific attributes and behaviors.
  */

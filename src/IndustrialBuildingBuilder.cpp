@@ -2,7 +2,7 @@
  * @file IndustrialBuildingBuilder.cpp
  * @brief Implementation of the IndustrialBuildingBuilder class.
  * @version 1.0
- * 
+ * @date 2024-11-04
  * This file contains the implementation of the IndustrialBuildingBuilder class, which provides
  * methods to set attributes and build an IndustrialBuilding object.
  */

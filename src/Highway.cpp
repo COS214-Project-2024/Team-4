@@ -2,7 +2,7 @@
  * @file Highway.cpp
  * @brief Implementation of the Highway class.
  * @version 1.0
- * 
+ * @date 2024-11-04
  * This file contains the implementation of the Highway class, which inherits from the Road class.
  * The Highway class represents a highway with specific attributes and behaviors.
  */

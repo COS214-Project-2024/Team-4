@@ -2,7 +2,7 @@
  * @file IndustrialBuilding.h
  * @brief Definition of the IndustrialBuilding class.
  * @version 1.0
- * 
+ * @date 2024-11-04
  * This file contains the definition of the IndustrialBuilding class, which represents an industrial building
  * with specific attributes and behaviors.
  */

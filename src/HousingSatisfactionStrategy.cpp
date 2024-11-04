@@ -2,7 +2,7 @@
  * @file HousingSatisfactionStrategy.cpp
  * @brief Implementation of the HousingSatisfactionStrategy class.
  * @version 1.0
- * 
+ * @date 2024-11-04
  * This file contains the implementation of the HousingSatisfactionStrategy class, which provides
  * methods to calculate and update citizen satisfaction based on housing conditions.
  */

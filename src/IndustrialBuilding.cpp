@@ -2,7 +2,7 @@
  * @file IndustrialBuilding.cpp
  * @brief Implementation of the IndustrialBuilding class.
  * @version 1.0
- * 
+ * @date 2024-11-04
  * This file contains the implementation of the IndustrialBuilding class, which represents an industrial building
  * with specific attributes and behaviors.
  */

@@ -2,7 +2,7 @@
  * @file LeavingCityState.h
  * @brief Definition of the LeavingCityState class.
  * @version 1.0
- * 
+ * @date 2024-11-04
  * This file contains the definition of the LeavingCityState class, which handles the state
  * of a citizen preparing to leave the city.
  */

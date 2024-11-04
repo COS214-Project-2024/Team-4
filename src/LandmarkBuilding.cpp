@@ -2,7 +2,7 @@
  * @file LandmarkBuilding.cpp
  * @brief Implementation of the LandmarkBuilding class.
  * @version 1.0
- * 
+ * @date 2024-11-04
  * This file contains the implementation of the LandmarkBuilding class, which represents a landmark building
  * with specific attributes and behaviors.
  */

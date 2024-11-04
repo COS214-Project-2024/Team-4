@@ -3,7 +3,7 @@
  * @brief Declaration of the CitizenState class.
  *
  * This file contains the declaration of the CitizenState class which handles the state of a citizen.
- * 
+ * @date 2024-11-04
  * @version 1.0
  */
 

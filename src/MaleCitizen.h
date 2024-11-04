@@ -2,7 +2,7 @@
  * @file MaleCitizen.h
  * @brief Definition of the MaleCitizen class.
  * @version 1.0
- * 
+ * @date 2024-11-04
  * This file contains the definition of the MaleCitizen class, which inherits from the Citizen class.
  * The MaleCitizen class represents a male citizen with specific attributes and behaviors.
  */

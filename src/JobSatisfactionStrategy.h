@@ -2,7 +2,7 @@
  * @file JobSatisfactionStrategy.h
  * @brief Definition of the JobSatisfactionStrategy class.
  * @version 1.0
- * 
+ * @date 2024-11-04
  * This file contains the definition of the JobSatisfactionStrategy class, which provides
  * methods to calculate and update citizen satisfaction based on job conditions.
  */

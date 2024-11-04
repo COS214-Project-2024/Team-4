@@ -2,7 +2,7 @@
  * @file Income.cpp
  * @brief Implementation of the Income class.
  * @version 1.0
- * 
+ * @date 2024-11-04
  * This file contains the implementation of the Income class, which provides methods to calculate
  * monthly income, add bonuses, apply deductions, and calculate taxes.
  */

@@ -2,7 +2,7 @@
  * @file LunchRush.cpp
  * @brief Implementation of the LunchRush class.
  * @version 1.0
- * 
+ * @date 2024-11-04
  * This file contains the implementation of the LunchRush class, which provides methods to get
  * the traffic flow and state during the lunch rush period.
  */

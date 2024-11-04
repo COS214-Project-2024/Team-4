@@ -2,7 +2,7 @@
  * @file Jobs.h
  * @brief Definition of the Jobs class.
  * @version 1.0
- * 
+ * @date 2024-11-04
  * This file contains the definition of the Jobs class, which manages job-related operations
  * such as hiring and releasing employees, and displaying job information.
  */

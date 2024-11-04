@@ -3,7 +3,7 @@
  * @brief Implementation of the CommercialBuildingBuilder class.
  *
  * This file contains the implementation of the CommercialBuildingBuilder class which builds commercial buildings.
- * 
+ * @date 2024-11-04
  * @version 1.0
  */
 
