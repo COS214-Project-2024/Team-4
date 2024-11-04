@@ -78,7 +78,7 @@ void TRANSPORTATION_TEST();
 
 void testTaxSystem();
 
-int main1() {
+int main() {
     // Testing each builder class separately
     testResidentialBuildingBuilder();
     testCommercialBuildingBuilder();
@@ -717,7 +717,7 @@ void testTaxSystem() {
     gov.getTaxSystem()->addSharedTaxRate(propertyTax);
 
     // Step 8: Add a business to the commercial building
-    auto business = std::make_shared<Business>(5000.0, 10.0);
+    auto business = std::make_shared<Business>(5000.0, 10.0,"Law firm");
     buildings[1].get()->addBusiness(business);
 
     // Step 9: Collect taxes from the residential building and the business
