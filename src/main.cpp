@@ -332,17 +332,41 @@ void testGOVF1() {
 }
 
 void TESTGOVCOMMAND() {
+
+        ResidentialBuildingBuilder residentialBuilder;
+    residentialBuilder.setName("Residential Complex")
+                      .setArea(1000)
+                      .setFloors(15)
+                      .setCapacity(200)
+                      .setCitizenSatisfaction(20.0f)
+                      .setEconomicGrowth(10.0f)
+                      .setResourceConsumption(15.0f);
+    auto residentialBuilding = residentialBuilder.build();
+
+    CommercialBuildingBuilder commercialBuilder;
+    commercialBuilder.setName("Innovation Hub")
+                     .setArea(2000)
+                     .setFloors(10)
+                     .setCapacity(400)
+                     .setCitizenSatisfaction(25.0f)
+                     .setEconomicGrowth(20.0f)
+                     .setResourceConsumption(30.0f);
+    auto commercialBuilding = commercialBuilder.build();
+
+    std::shared_ptr<Building> residentialBuilding1 = std::move(residentialBuilding);
     // Create a Government instance
     Government government("City Government");
     // Create a CityService instance
     CityService cityService("Public Transport", 1000.0);
     // Create a Policy instance
     Policy policy("Policy1", "High");
+
+    TaxType taxtype(150 , 'I')  ;
     // Create command instances
     SetTaxCommand setTaxCommand(&government, 15.0);
     EnforcePolicyCommand enforcePolicyCommand(&government, policy);
     AllocateBudgetCommand allocateBudgetCommand(&government, cityService, 500.0);
-    CollectTaxesCommand collectTaxesCommand(&government);
+    CollectTaxesCommand collectTaxesCommand(&government ,residentialBuilding1, &taxtype);
     // Execute commands
     std::cout << "Executing SetTaxCommand..." << std::endl;
     setTaxCommand.execute();
