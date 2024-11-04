@@ -365,7 +365,7 @@ public:
 
             std::cout << "Remaining " << (resourceType == ResourceType::Water ? "Water" : "Power")
                     << " resource quantity: " << resource->getQuantity() << std::endl;
-        } else {
+        } else {   
             std::cout << "Resource not found.\n";
         }
     }
