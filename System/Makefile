@@ -2,7 +2,7 @@
 
 # Compiler settings
 CXX := g++
-CXXFLAGS := -std=c++17 -Wall
+CXXFLAGS := -std=c++17
 
 # Source files (both .cpp and .h)
 SRC := $(wildcard *.cpp)
