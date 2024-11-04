@@ -60,16 +60,16 @@ bool Taxi::addFreightTrain(FreightTrain *freightTrain) {
     return true;
 }   
 
-// bool Taxi::addBuilding(Building *building) {
-//     for(Building *x : this->buildings){
-//         if(x == building){
-//             return false;
-//         }
-//     }
+bool Taxi::addBuilding(Building *building) {
+    for(Building *x : this->buildings){
+        if(x == building){
+            return false;
+        }
+    }
     
-//     buildings.push_back(building);
-//     return true;
-// }
+    buildings.push_back(building);
+    return true;
+}
 
 InsideRoad *Taxi::getInsideRoad(std::size_t x) {
     if(x < insideRoads.size()&& x >= 0){
@@ -106,12 +106,12 @@ FreightTrain *Taxi::getFreightTrain(std::size_t x) {
     return nullptr;
 }
 
-// Building *Taxi::getBuilding(std::size_t x) {
-//     if(x < buildings.size()&& x >= 0){
-//         return buildings[x];
-//     }
-//     return nullptr;
-// }
+Building *Taxi::getBuilding(std::size_t x) {
+    if(x < buildings.size()&& x >= 0){
+        return buildings[x];
+    }
+    return nullptr;
+}
 
 // std::vector<Building*> Taxi::getBuildingsList(){
 //     return this->buildings;
