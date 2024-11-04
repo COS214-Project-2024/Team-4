@@ -60,6 +60,7 @@ public:
     virtual void addCitizen(Citizen* citizen) = 0;
     virtual  void addBusiness(std::shared_ptr<Business> business)= 0;
 	std::string getOwner(){return owner;} ;
+	void setOwner(std::string owner1){owner = owner1 ;}
 
 private:
     virtual void calculateSatisfactionImpact() = 0;
