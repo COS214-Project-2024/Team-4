@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 #include <map>
+#include <iomanip>
 #include "Citizen.h"
 #include "Jobs.h"
 #include "Income.h"
@@ -13,12 +14,7 @@
 #include "ResidentialBuildingBuilder.h"
 #include "MaleCitizen.h"
 #include "FemaleCitizen.h"
-#include <iomanip>
 #include "BuildingManager.h"
-#include "ResidentialBuildingBuilder.h"
-#include "CommercialBuildingBuilder.h"
-#include "IndustrialBuildingBuilder.h"
-#include "LandmarkBuildingBuilder.h"
 #include "ResourceManager.h"
 #include "Government.h"
 #include "TransportManager.h"
@@ -43,6 +39,14 @@ private:
     Director director;
 
 public:
+
+    void initializeResources() {
+        auto waterResource = std::make_shared<Resource>(ResourceType::Water, 200); // Initialize with quantity
+        auto powerResource = std::make_shared<Resource>(ResourceType::Power, 300); // Initialize with quantity
+
+        resourceManager.addResource(ResourceType::Water, waterResource.get(), 5);  // Set cost per unit
+        resourceManager.addResource(ResourceType::Power, powerResource.get(), 10); // Set cost per unit
+    }
     // Main menu display
     void displayMainMenu() {
     std::cout << "\n--- City Builder Simulation ---\n";
@@ -62,6 +66,7 @@ public:
 }
 
     void run() {
+        initializeResources();
         int choice;
         while (true) {
             displayMainMenu();
@@ -229,11 +234,9 @@ public:
         std::cout << "\nCity Overview:\n";
         std::cout << "Number of buildings: " << buildingManager.getBuildings().size() << "\n";
         std::cout << "Current budget: " << resourceManager.getBudget() << "\n";
-
         std::cout << "Water resource: " << (waterResource ? waterResource->getQuantity() : 0) << "\n";
         std::cout << "Power resource: " << (powerResource ? powerResource->getQuantity() : 0) << "\n";
 
-        // Display transportation options
         size_t index = 0;
         Transportation* transport;
         std::cout << "Transportation options:\n";
@@ -611,10 +614,49 @@ public:
         }
     }
 
-    // Financial Management
     void financialManagementMenu() {
-        std::cout << "Financial Management not implemented yet.\n";
+    int choice;
+    while (true) {
+        std::cout << "\n--- Financial Management ---\n";
+        std::cout << "1. View Current Budget\n";
+        std::cout << "2. Allocate Budget for City Services\n";
+        std::cout << "3. Return to Main Menu\n";
+        std::cout << "Enter your choice: ";
+        std::cin >> choice;
+
+        switch (choice) {
+            case 1: {
+                // View Current Budget
+                std::cout << "Current Budget: " << resourceManager.getBudget() << "\n";
+                break;
+            }
+            case 2: {
+                // Allocate Budget
+                std::string serviceName;
+                int amount;
+                std::cout << "Enter the city service name to allocate budget: ";
+                std::cin.ignore();
+                std::getline(std::cin, serviceName);
+                std::cout << "Enter the budget amount to allocate: ";
+                std::cin >> amount;
+
+                if (amount > resourceManager.getBudget()) {
+                    std::cout << "Insufficient budget. Current Budget: " << resourceManager.getBudget() << "\n";
+                } else {
+                    resourceManager.allocateBudget(serviceName, amount);
+                    std::cout << "Allocated " << amount << " to " << serviceName << ".\n";
+                    std::cout << "Remaining Budget: " << resourceManager.getBudget() << "\n";
+                }
+                break;
+            }
+            case 3:
+                return;
+            default:
+                std::cout << "Invalid choice. Please try again.\n";
+        }
     }
+}
+
 };
 
 int main() {
