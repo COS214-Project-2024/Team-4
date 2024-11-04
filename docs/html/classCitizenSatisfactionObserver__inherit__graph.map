@@ -1,0 +1,5 @@
+<map id="CitizenSatisfactionObserver" name="CitizenSatisfactionObserver">
+<area shape="rect" id="Node000001" title="Observes changes in citizen satisfaction and updates their state accordingly." alt="" coords="5,139,200,204"/>
+<area shape="rect" id="Node000002" href="$classCitizenObserver.html" title="Interface for observers of Citizen objects." alt="" coords="26,5,179,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,104,105,138,100,138,100,104"/>
+</map>
