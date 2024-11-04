@@ -26,6 +26,11 @@ void PowerPlant::supplyResources(Building* building) {
     }
 }
 
+void PowerPlant::adjustForPopulation(int newPopulation) {
+    // Adjust power based on new population size, if required
+    std::cout << "Adjusting power supply based on new population size: " << newPopulation << "\n";
+}
+
 // void PowerPlant::adjustForCitizen(Citizen* citizen) {
 //     // Adjust power based on new citizen needs, if required
 //     std::cout << "Adjusting power supply based on citizen's requirements.\n";
