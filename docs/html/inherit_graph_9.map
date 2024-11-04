@@ -1,0 +1,11 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classGovCommand.html" title="Abstract base class for government commands." alt="" coords="5,80,120,105"/>
+<area shape="rect" id="Node000001" href="$classAllocateBudgetCommand.html" title="Represents a command to allocate a budget to a city service." alt="" coords="168,5,356,31"/>
+<area shape="poly" id="edge18_Node000000_Node000001" title=" " alt="" coords="98,71,167,40,203,28,205,33,169,44,100,76"/>
+<area shape="rect" id="Node000002" href="$classCollectTaxesCommand.html" title="CollectTaxesCommand class." alt="" coords="177,55,347,80"/>
+<area shape="poly" id="edge19_Node000000_Node000002" title=" " alt="" coords="133,81,176,76,177,81,134,86"/>
+<area shape="rect" id="Node000003" href="$classEnforcePolicyCommand.html" title="The EnforcePolicyCommand class for enforcing policies in the government." alt="" coords="173,104,351,129"/>
+<area shape="poly" id="edge20_Node000000_Node000003" title=" " alt="" coords="134,99,173,103,173,109,134,104"/>
+<area shape="rect" id="Node000004" href="$classSetTaxCommand.html" title="A command to set the tax rate in the government." alt="" coords="196,153,328,179"/>
+<area shape="poly" id="edge21_Node000000_Node000004" title=" " alt="" coords="102,109,169,138,209,151,207,156,167,143,100,114"/>
+</map>
