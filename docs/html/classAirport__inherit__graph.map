@@ -1,0 +1,9 @@
+<map id="Airport" name="Airport">
+<area shape="rect" id="Node000001" title="Represents an airport as a type of transportation." alt="" coords="89,199,251,304"/>
+<area shape="rect" id="Node000003" href="$classCargoAirport.html" title="Represents a cargo airport." alt="" coords="5,352,151,517"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="140,318,122,353,117,351,135,315"/>
+<area shape="rect" id="Node000004" href="$classComercialAirport.html" title="Represents a commercial airport." alt="" coords="175,352,349,517"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="205,315,223,351,218,353,200,318"/>
+<area shape="rect" id="Node000002" href="$classTransportation.html" title="Manages traffic flow states and types of transportation." alt="" coords="99,5,241,151"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,164,173,199,167,199,167,164"/>
+</map>

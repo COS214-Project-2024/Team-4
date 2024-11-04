@@ -1,0 +1,5 @@
+<map id="AllocateBudgetCommand" name="AllocateBudgetCommand">
+<area shape="rect" id="Node000001" title="Represents a command to allocate a budget to a city service." alt="" coords="5,239,211,544"/>
+<area shape="rect" id="Node000002" href="$classGovCommand.html" title="Abstract base class for government commands." alt="" coords="37,5,179,191"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,204,111,238,105,238,105,204"/>
+</map>
