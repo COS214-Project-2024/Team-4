@@ -34,6 +34,7 @@ bool BuildingManager::assignJobToCitizen(const std::string& jobTitle, Citizen* c
             job->hireEmployee();
             citizen->setJobTitle(jobTitle);
             citizen->setIncome(job->getIncome());
+            citizen->setJob(job);
             std::cout << citizen->getName() << " assigned to " << jobTitle << " in " 
                       << building->getName() << std::endl;
 

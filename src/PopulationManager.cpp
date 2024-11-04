@@ -12,6 +12,7 @@
 #include "HousingSatisfactionStrategy.h"
 #include "TaxSatisfactionStrategy.h"
 #include "BuildingManager.h" // Include this to use BuildingManager in PopulationManager
+#include "Jobs.h" 
 #include <iostream>
 #include <algorithm>
 #include <random>
@@ -94,6 +95,12 @@ void PopulationManager::removeRandomCitizen() {
 
         // Safely retrieve the citizen before erasing
         std::shared_ptr<Citizen> citizenToRemove = citizens[index];
+        
+            if (auto job = citizenToRemove->getjobobj()) {
+                job->unOcuppy();
+            }
+
+        citizenToRemove->unsetJob();
 
         citizenToRemove->removeSatisfactionStrategy();
         // Detach any observers if necessary (only if needed for your observer design)
@@ -116,9 +123,31 @@ void PopulationManager::removeLeavingCitizens() {
                              [](const std::shared_ptr<Citizen>& citizen) {
                                  return citizen->isLeaving();
                              });
+
     if (it != citizens.end()) {
+        for (auto iter = it; iter != citizens.end(); ++iter) {
+            auto citizenToRemove = *iter;
+
+            // Unoccupy the job if the citizen has one
+            if (auto job = citizenToRemove->getjobobj()) {
+                job->unOcuppy();
+            }
+            
+            citizenToRemove->unsetJob();
+
+            // Remove satisfaction strategy for the citizen
+            citizenToRemove->removeSatisfactionStrategy();
+
+            // Detach all observers
+            citizenToRemove->detachAllObservers();
+
+            // Log the removal
+            std::cout << "Citizen " << citizenToRemove->getName()
+                      << " left the city. Total population: " << getPopulation() << std::endl;
+        }
+
+        // Erase the citizens marked for removal
         citizens.erase(it, citizens.end());
-        std::cout << "Unhappy citizens left the city. Total population: " << getPopulation() << std::endl;
     }
 }
 
