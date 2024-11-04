@@ -2,14 +2,11 @@
 #define __POWERPLANT_H
 
 #include "Utility.h"
-#include "UtilityMediator.h"
-#include "ResourceType.h"
-
-class UtilityMediator;
+//#include "UtilityMediator.h"
 
 class PowerPlant : public Utility {
-    private:
-        UtilityMediator* mediator;
+    // private:
+    //     UtilityMediator* mediator;
     
     public:
 
@@ -20,6 +17,8 @@ class PowerPlant : public Utility {
         void registerBuilding(Building* building) override;
 
         void supplyResources(Building *building) override;
+
+        void adjustForPopulation(int newPopulation) override;
 
         //void adjustForCitizen(Citizen* citizen) override;
         //PowerPlant();

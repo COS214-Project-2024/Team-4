@@ -1,26 +1,34 @@
 #include "PowerPlant.h"
-#include "Utility.h"
-#include "UtilityMediator.h"
-#include "ResourceType.h"
-
 #include <iostream>
 
-PowerPlant::PowerPlant(UtilityMediator* mediator) : Utility(mediator) {
-    this->mediator = mediator;
-}
+PowerPlant::PowerPlant(UtilityMediator* mediator) : Utility(mediator) {}
 
 void PowerPlant::registerBuilding(Building* building) {
     // Register the building to receive power
     std::cout << "Building registered with PowerPlant.\n";
 }
 
+// void PowerPlant::supplyResources(Building* building) {
+//     // Request power from the mediator and supply to the building
+//     if (mediator->requestResources(ResourceType::Power, 50)) {
+//         std::cout << "Power supplied to building.\n";
+//     } else {
+//         std::cout << "Insufficient power to supply to building.\n";
+//     }
+// }
 void PowerPlant::supplyResources(Building* building) {
-    // // Request power from the mediator and supply to the building
-    // if (this->mediator->requestResources(ResourceType::Power, 50)) {
-    //     std::cout << "Power supplied to building.\n";
-    // } else {
-    //     std::cout << "Insufficient power to supply to building.\n";
-    // }
+    // Request power from the mediator and supply to the building
+    if (mediator->requestResources(ResourceType::Power, 50)) {
+        std::cout << "Power supplied to building.\n";
+        chargeOwner(building, 50 * 50); // Charge $50 per unit of power supplied
+    } else {
+        std::cout << "Insufficient power to supply to building.\n";
+    }
+}
+
+void PowerPlant::adjustForPopulation(int newPopulation) {
+    // Adjust power based on new population size, if required
+    std::cout << "Adjusting power supply based on new population size: " << newPopulation << "\n";
 }
 
 // void PowerPlant::adjustForCitizen(Citizen* citizen) {
