@@ -77,7 +77,7 @@ class CargoAirport : public Airport {
          * 
          * @return The adjusted commute time as a float.
          */
-        float adjustedCommuteTime();
+        float commuteTime() override;
 };
 
 #endif

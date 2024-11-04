@@ -44,6 +44,6 @@ std::string PassengerTrain::getTrainLine() {
     return this->getLine();    
 }
 
-float PassengerTrain::adjustedCommuteTime() {
+float PassengerTrain::commuteTime() {
     return this->commuteTime();
 }

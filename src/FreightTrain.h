@@ -105,7 +105,7 @@ class FreightTrain : public Train {
          * 
          * @return The adjusted commute time for the freight train.
          */
-        float adjustedCommuteTime();
+        float commuteTime() override;
         
 };
 

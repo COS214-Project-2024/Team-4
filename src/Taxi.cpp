@@ -129,6 +129,6 @@ int Taxi::getTaxiNumber() {
     return this->taxiNumber;
 }
 
-float Taxi::adjustedCommuteTime(){
+float Taxi::commuteTime(){
     return this->commuteTime();
 }

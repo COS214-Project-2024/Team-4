@@ -211,7 +211,7 @@ class InsideRoad : public Road {
          * 
          * @return The adjusted commute time as a float.
          */
-        float adjustedCommuteTime();
+        float commuteTime() override;
 
 
 };

@@ -44,6 +44,6 @@ std::string ComercialAirport::getName() {
     return this->getAirportName();
 }
 
-float ComercialAirport::adjustedCommuteTime() {
+float ComercialAirport::commuteTime() {
     return this->commuteTime();
 }

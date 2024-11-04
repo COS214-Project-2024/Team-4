@@ -59,6 +59,6 @@ float Highway::getSpeedLimit() {
     return this->speedLimit;
 }
 
-float Highway::adjustedCommuteTime(){
+float Highway::commuteTime(){
     return this->commuteTime() * (1+this->speedLimit/60);
 }

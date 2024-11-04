@@ -93,7 +93,7 @@ std::string Bus::getRouteName() {
     return this->getRoute();
 }
 
-float Bus::adjustedCommuteTime(){
+float Bus::commuteTime(){
     return this->commuteTime() + (this->capacity/10);
     
 }

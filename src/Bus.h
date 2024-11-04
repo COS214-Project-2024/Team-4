@@ -132,7 +132,7 @@ class Bus : public PublicTransit {
          * 
          * @return The adjusted commute time as a float.
          */
-        float adjustedCommuteTime();
+        float commuteTime() override;
 };
 
 #endif // BUS_H
