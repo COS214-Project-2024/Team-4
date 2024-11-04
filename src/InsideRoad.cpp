@@ -172,5 +172,5 @@ float InsideRoad::getAvgStopTime(){
 }
 
 float InsideRoad::commuteTime(){
-    return this->calculateCommute() + this->avgStopTime;
+    return this->commuteTime() + this->avgStopTime;
 }

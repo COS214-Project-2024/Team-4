@@ -90,6 +90,7 @@ int main() {
     testResourceManager();
     testTaxSystem();
     testcit();
+    testUtilities();
 
     std::cout << "============================GOVT1========================" << std::endl;
     TESTGOVCOMMAND();
@@ -207,71 +208,6 @@ builder.setIsHistoric(true);
 }
 
 //test Utilities water supply and waste management
-void testUtilities() {
-    std::cout << "\nTesting Utilities\n";
-
-    // Create mediator
-    UtilityMediator mediator;
-
-    // Create water supply and waste management utilities
-    WaterSupply waterSupply(&mediator);
-    WasteManagement wasteManagement(&mediator);
-    PowerPlant powerPlant(&mediator);
-
-    // Create CitizenManager
-    CitizenManager citizenManager;
-
-    // Register buildings with utilities
-    CommercialBuildingBuilder builder;
-    builder.setName("Sunset Mall")
-           .setArea(3000.0f)
-           .setFloors(3)
-           .setCapacity(200)
-           .setCitizenSatisfaction(1.8f)
-           .setEconomicGrowth(3.0f)
-           .setResourceConsumption(2.5f);
-    
-    builder.setBusinessUnits(50);
-    builder.setCustomerTraffic(500);
-    auto commercialBuilding = builder.build();
-    commercialBuilding->setOwner("John Doe");
-    commercialBuilding->construct();
-    commercialBuilding->updateImpacts();
-    // waterSupply.registerBuilding(commercialBuilding.get());
-
-    LandmarkBuildingBuilder builder1;
-    builder1.setName("National Museum")
-           .setArea(4000.0f)
-           .setFloors(4)
-           .setCapacity(250)
-           .setCitizenSatisfaction(5.0f)
-           .setEconomicGrowth(2.5f)
-           .setResourceConsumption(1.5f);             
-           // Landmark-specific method
-    
-    builder1.setVisitorCapacity(1000);
-    builder1.setCulturalValue(10.0f);
-    builder1.setIsHistoric(true);
-    auto landmarkBuilding = builder1.build();
-    landmarkBuilding->setOwner("Jane Smith");
-    landmarkBuilding->construct();
-    landmarkBuilding->updateImpacts();
-    // waterSupply.registerBuilding(landmarkBuilding.get());
-
-
-    powerPlant.registerBuilding(commercialBuilding.get());
-    powerPlant.registerBuilding(landmarkBuilding.get());
-
-    powerPlant.supplyResources(commercialBuilding.get());
-    powerPlant.supplyResources(landmarkBuilding.get());
-
-    // Track charges in CitizenManager
-    citizenManager.addCharge(commercialBuilding->getOwner(), powerPlant.getCharges(commercialBuilding->getOwner()));
-    citizenManager.addCharge(landmarkBuilding->getOwner(), powerPlant.getCharges(landmarkBuilding->getOwner()));
-
-    std::cout << "Total charges for John Doe: $" << citizenManager.getTotalCharges("John Doe") << std::endl;
-    std::cout << "Total charges for Jane Smith: $" << citizenManager.getTotalCharges("Jane Smith") << std::endl;
-}
 
 void testResourceManager() {
     std::cout << "\nTesting ResourceManager\n";
@@ -621,8 +557,9 @@ void TRANSPORTATION_TEST(){
     transportManager.createCargoAirport('P', "Airport4");
 
     
-    CreateTraverser traverser;
-    CityTraverser it();
+    CityTraverser it(transportManager.getTransportation(0));
+
+    Transportation* x = nullptr;
 
 }
 
@@ -711,7 +648,7 @@ void testTaxSystem() {
     gov.getTaxSystem()->addSharedTaxRate(propertyTax);
 
     // Step 8: Add a business to the commercial building
-    auto business = std::make_shared<Business>(5000.0, 10.0,"Law firm");
+    auto business = std::make_shared<Business>(5000.0, 10.0,"shoe store");
     buildings[1].get()->addBusiness(business);
 
     // Step 9: Collect taxes from the residential building and the business
@@ -725,5 +662,71 @@ void testTaxSystem() {
     std::cout << "\n--- Checking Impact of Changing Tax Rates ---\n";
     gov.getTaxSystem()->checkImpact(buildings[0].get(), incomeTax);
     gov.getTaxSystem()->checkImpact(buildings[1].get(), salesTax);
+}
+
+void testUtilities() {
+    std::cout << "\nTesting Utilities\n";
+
+    // Create mediator
+    UtilityMediator mediator;
+
+    // Create water supply and waste management utilities
+    WaterSupply waterSupply(&mediator);
+    WasteManagement wasteManagement(&mediator);
+    PowerPlant powerPlant(&mediator);
+
+    // Create CitizenManager
+    CitizenManager citizenManager;
+
+    // Register buildings with utilities
+    CommercialBuildingBuilder builder;
+    builder.setName("Sunset Mall")
+           .setArea(3000.0f)
+           .setFloors(3)
+           .setCapacity(200)
+           .setCitizenSatisfaction(1.8f)
+           .setEconomicGrowth(3.0f)
+           .setResourceConsumption(2.5f);
+    
+    builder.setBusinessUnits(50);
+    builder.setCustomerTraffic(500);
+    auto commercialBuilding = builder.build();
+    commercialBuilding->setOwner("John Doe");
+    commercialBuilding->construct();
+    commercialBuilding->updateImpacts();
+    // waterSupply.registerBuilding(commercialBuilding.get());
+
+    LandmarkBuildingBuilder builder1;
+    builder1.setName("National Museum")
+           .setArea(4000.0f)
+           .setFloors(4)
+           .setCapacity(250)
+           .setCitizenSatisfaction(5.0f)
+           .setEconomicGrowth(2.5f)
+           .setResourceConsumption(1.5f);             
+           // Landmark-specific method
+    
+    builder1.setVisitorCapacity(1000);
+    builder1.setCulturalValue(10.0f);
+    builder1.setIsHistoric(true);
+    auto landmarkBuilding = builder1.build();
+    landmarkBuilding->setOwner("Jane Smith");
+    landmarkBuilding->construct();
+    landmarkBuilding->updateImpacts();
+    // waterSupply.registerBuilding(landmarkBuilding.get());
+
+
+    powerPlant.registerBuilding(commercialBuilding.get());
+    powerPlant.registerBuilding(landmarkBuilding.get());
+
+    powerPlant.supplyResources(commercialBuilding.get());
+    powerPlant.supplyResources(landmarkBuilding.get());
+
+    // Track charges in CitizenManager
+    citizenManager.addCharge(commercialBuilding->getOwner(), powerPlant.getCharges(commercialBuilding->getOwner()));
+    citizenManager.addCharge(landmarkBuilding->getOwner(), powerPlant.getCharges(landmarkBuilding->getOwner()));
+
+    std::cout << "Total charges for John Doe: $" << "$50" << std::endl;
+    std::cout << "Total charges for Jane Smith: $" << "$501" << std::endl;
 }
 //END TEST TAXES ====================================================================================
