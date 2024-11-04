@@ -1,0 +1,18 @@
+<map id="/mnt/c/users/rudie/documents/sem2/214/project/src/ResourceManager.h" name="/mnt/c/users/rudie/documents/sem2/214/project/src/ResourceManager.h">
+<area shape="rect" id="Node000001" title="Header file for the ResourceManager class." alt="" coords="162,5,389,60"/>
+<area shape="rect" id="Node000002" href="$ResourceType_8h.html" title="Header file for the ResourceType enumeration." alt="" coords="67,181,191,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,54,71,78,36,93,14,110,9,120,9,129,21,146,46,162,76,174,74,179,43,167,17,150,4,130,4,118,10,106,33,88,70,73,162,49"/>
+<area shape="rect" id="Node000003" href="$Observer_8h.html" title="Definition of the Observer class." alt="" coords="24,108,116,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="214,63,112,105,110,100,212,58"/>
+<area shape="rect" id="Node000004" href="$Resource_8h.html" title="Header file for the Resource class." alt="" coords="140,108,235,133"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="251,62,211,100,208,96,247,58"/>
+<area shape="rect" id="Node000005" href="$ResourceAllocationStrategy_8h.html" title="Header file for resource allocation strategy classes." alt="" coords="259,108,471,133"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="305,58,345,96,341,100,301,62"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="494,108,545,133"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="351,58,482,103,481,108,349,63"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="570,108,632,133"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="376,57,557,105,556,110,374,63"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="82,132,113,169,109,173,78,135"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="180,135,149,173,145,169,176,132"/>
+<area shape="poly" id="edge7_Node000005_Node000002" title=" " alt="" coords="328,136,181,180,180,175,326,131"/>
+</map>
