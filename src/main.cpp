@@ -626,9 +626,8 @@ void TRANSPORTATION_TEST(){
     transportManager.createCargoAirport('P', "Airport4");
 
     
-    CityTraverser it(transportManager.getTransportation(0));
-
-    Transportation* x = nullptr;
+    CreateTraverser traverser;
+    CityTraverser it();
 
 }
 
