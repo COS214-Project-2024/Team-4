@@ -1,7 +1,7 @@
 # Makefile for compiling C++ files in a folder
 
 # Compiler settings
-CXX := g++
+CXX := g++ -g
 CXXFLAGS := -std=c++17
 
 # Source files (both .cpp and .h)
@@ -38,3 +38,6 @@ doxygen:
 
 valgrind: $(TARGET)
 	valgrind --leak-check=full ./$(TARGET)
+
+gdb: $(TARGET)
+	gdb ./$(TARGET)
