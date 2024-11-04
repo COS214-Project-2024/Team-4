@@ -3,6 +3,9 @@
 
 #include "GovCommand.h"
 #include "Government.h"
+#include "Building.h"
+#include "TaxType.h"
+
 
 // CollectTaxesCommand class
 // This class represents a command to collect taxes from the government
@@ -12,10 +15,16 @@ private:
     Government* government;   // Pointer to the government object
     double collectedTaxes;    // Amount of taxes collected
 
+    Building* building;
+	double taxesCollected;
+	double taxRate;
+	TaxType* taxType;
+
 public:
     // Constructor
     // Initializes the command with the government object
     CollectTaxesCommand(Government* gov);
+    CollectTaxesCommand(Building* building, TaxType* taxType);
 
     // Executes the tax collection command
     void execute() override;
@@ -43,6 +52,10 @@ public:
 
     // Checks if the command can be executed
     bool canExecute() const override;
+
+	double getTaxesCollected();
+    
+	double returnVal();
 };
 
 #endif

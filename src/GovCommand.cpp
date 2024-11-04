@@ -1,5 +1,6 @@
 #include "GovCommand.h"
 
+
 // Executes the command
 // This method should be overridden by derived classes to implement specific command execution logic
 void GovCommand::execute() {
@@ -29,3 +30,8 @@ std::string GovCommand::getDescription() const {
 bool GovCommand::canExecute() const {
     return true;
 }
+
+double GovCommand::returnVal() {
+    return 0.0;
+}
+

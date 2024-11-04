@@ -136,7 +136,7 @@ void Citizen::searchAndApplyForJob(BuildingManager& manager, Building* building,
         updateSatisfaction();
 
         std::cout << name << " found a job as " << jobtitle 
-                  << " with monthly income: " << income->calculateMonthlyIncome() << std::endl;
+                  << " with monthly income: R" << income->calculateMonthlyIncome() << std::endl;
     } else {
         std::cout << name << " could not find a job as " << jobtitle << "." << std::endl;
     }

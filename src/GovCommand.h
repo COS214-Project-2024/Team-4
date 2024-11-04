@@ -15,6 +15,8 @@ public:
     // This method should be overridden by derived classes to implement specific command undo logic
     virtual void undo() = 0;
 
+	virtual double returnVal()=0;
+    
     // Gets the name of the command
     virtual std::string getName() const = 0;
 

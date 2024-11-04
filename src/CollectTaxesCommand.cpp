@@ -1,15 +1,18 @@
 #include "CollectTaxesCommand.h"
 #include <stdexcept>
+#include <iostream>
 
 // Constructor for CollectTaxesCommand
 // Initializes the command with the government object
 CollectTaxesCommand::CollectTaxesCommand(Government* gov)
-    : government(gov), collectedTaxes(0.0) {}
+    : government(gov), collectedTaxes(0.0){}
 
 // Executes the tax collection command
 // Collects taxes from the government and stores the collected amount
 void CollectTaxesCommand::execute() {
     collectedTaxes = government->collectTaxes();
+    taxesCollected = building->payTaxes(taxType);
+    std::cout << "Total taxes collected by CollectTaxesCommand: R" << taxesCollected << "\n";
 }
 
 // Undoes the tax collection command
@@ -59,4 +62,12 @@ std::string CollectTaxesCommand::getDescription() const {
 // Checks if the command can be executed
 bool CollectTaxesCommand::canExecute() const {
     return validateCollection();
+}
+
+double CollectTaxesCommand::getTaxesCollected() {
+	return taxesCollected;
+}
+
+double CollectTaxesCommand::returnVal() {
+    return taxesCollected;
 }
