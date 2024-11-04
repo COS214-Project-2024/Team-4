@@ -74,3 +74,7 @@ std::string AllocateBudgetCommand::getDescription() const {
 bool AllocateBudgetCommand::canExecute() const {
     return validateAllocation();
 }
+
+double AllocateBudgetCommand::returnVal() {
+    return amount;
+}

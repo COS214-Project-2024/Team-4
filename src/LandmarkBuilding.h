@@ -23,6 +23,10 @@ public:
 	void construct() override;
 	void hostEvent(int visitors);
 
+	double payTaxes(TaxType* taxType) override;
+	void undoCollectTaxes() override;
+	
+
 protected:
 	void calculateEconomicImpact();
 

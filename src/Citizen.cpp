@@ -11,7 +11,7 @@
 #include "Building.h"
 
 template <typename T>
-T clamp(T value, T min, T max) {
+T minMax(T value, T min, T max) {
     return std::max(min, std::min(value, max));
 }
 
@@ -69,7 +69,7 @@ void Citizen::updateSatisfaction() {
     for (const auto& strategy : satisfactionStrategies) {
         totalSatisfaction += strategy->calculateSatisfaction(*this);
     }
-    satisfaction = clamp(totalSatisfaction / satisfactionStrategies.size(), 0.0f, 100.0f);
+    satisfaction = minMax(totalSatisfaction / satisfactionStrategies.size(), 0.0f, 100.0f);
 }
 
 void Citizen::updateSatisfaction(float adjustment) {
@@ -171,7 +171,7 @@ double Citizen::payTaxes(TaxType* taxType) {
     }
 
     double tax = taxType->calculateTax(income.get()->calculateMonthlyIncome());
-    tax = ::clamp(tax, 0.0, bankBalance);
+    tax = minMax(tax, 0.0, bankBalance);
 
     if (tax > 0.0) {
         bankBalance -= tax;
@@ -185,6 +185,7 @@ double Citizen::payTaxes(TaxType* taxType) {
     }
 }
 
+
 // Tax-related methods
 void Citizen::setTaxCooldown(bool status) {
     taxCooldown = status;
@@ -195,3 +196,18 @@ bool Citizen::getTaxCooldown() const {
 }
 
 
+double Citizen::getBankBalance() const {
+    return bankBalance;
+}
+
+void Citizen::setBankBalance(double balance) {
+    bankBalance = balance;
+}
+
+void Citizen::incraseBankBalance(double amount) {
+    bankBalance += amount;
+}
+
+void Citizen::subtractBankBalance(double amount) {
+    bankBalance -= amount;
+}

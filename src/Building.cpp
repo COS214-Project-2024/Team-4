@@ -89,6 +89,7 @@ void Building::displayJobInfo(const std::string& jobTitle) const {
 void Building::setName(const std::string& name) { this->name = name; }
 std::string Building::getName() const { return name; }
 //collect taxes from the building
+
 double Building::payTaxes(TaxType* taxType) {
 	// Placeholder for tax collection logic
     taxType->calculateTax(0.0);

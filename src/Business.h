@@ -6,6 +6,9 @@
 #include "CityService.h"
 #include <vector>
 #include <string>
+#include <unordered_map>
+#include <chrono>
+#include "TaxType.h"
 
 // Business class
 // This class represents a business that observes government policies and updates its state accordingly
@@ -16,7 +19,8 @@ private:
     double taxRate;  // Tax rate applied to the business
     std::vector<std::string> services; // List of services provided by the business
     std::vector<Policy> policies; // List of policies affecting the business
-
+std::unordered_map<char, std::chrono::steady_clock::time_point> lastTaxPayments; // Add this line
+    std::chrono::seconds taxCooldownPeriod;
 public:
     // Constructor
     Business(double initialRevenue, double initialTaxRate);
@@ -50,6 +54,9 @@ public:
 
     // Prints the details of the business
     void printDetails() const;
+
+    double payTaxes(TaxType* taxType);
+    void setTaxCooldownPeriod(int seconds);
 };
 
 #endif

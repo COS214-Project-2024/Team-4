@@ -1,13 +1,13 @@
 #include "Business.h"
 #include <iostream>
 #include <algorithm>
-
+#include <chrono>
 using namespace std;
 
 // Constructor for Business
 // Initializes the business with initial revenue and tax rate
 Business::Business(double initialRevenue, double initialTaxRate)
-    : revenue(initialRevenue), taxRate(initialTaxRate) {}
+    : revenue(initialRevenue), taxRate(initialTaxRate), taxCooldownPeriod(std::chrono::seconds(5)) {}
 
 // Updates the tax rate for the business
 // Prints the updated tax rate to the console
@@ -93,4 +93,30 @@ void Business::printDetails() const {
         cout << policy.getPolicyName() << " ";
     }
     cout << endl;
+}
+
+double Business::payTaxes(TaxType* taxType) {
+    char taxTypeChar = taxType->getTaxType();
+    auto now = std::chrono::steady_clock::now();
+
+    // Check if the business is on cooldown for this tax type
+    auto it = lastTaxPayments.find(taxTypeChar);
+    if (it != lastTaxPayments.end()) {
+        auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(now - it->second);
+        if (elapsed < taxCooldownPeriod) {
+            cout << "Business is on cooldown for tax type " << taxTypeChar << ". Taxes cannot be collected now.\n";
+            return 0.0;
+        }
+    }
+
+    double tax = taxType->calculateTax(revenue);
+    if (tax > 0.0) {
+        revenue -= tax;
+        lastTaxPayments[taxTypeChar] = now; // Update last payment time for this tax type
+        cout << "Business paid $" << tax << " in taxes for tax type " << taxTypeChar << ". Remaining revenue: " << revenue << endl;
+        return tax;
+    } else {
+        cout << "Business has insufficient revenue to pay taxes.\n";
+        return 0.0;
+    }
 }

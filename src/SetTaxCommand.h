@@ -32,6 +32,8 @@ public:
     // Gets the description of the command
     std::string getDescription() const override;
 
+     double returnVal() override;
+
     // Checks if the command can be executed
     bool canExecute() const override;
 };

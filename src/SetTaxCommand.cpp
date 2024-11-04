@@ -37,3 +37,7 @@ std::string SetTaxCommand::getDescription() const {
 bool SetTaxCommand::canExecute() const {
     return taxRate >= 0;
 }
+
+double SetTaxCommand::returnVal() {
+    return taxRate;
+}

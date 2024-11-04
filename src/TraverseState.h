@@ -50,6 +50,7 @@ class TraverseState {
          * @return Pointer to the current Transportation layer.
          */
         Transportation* getLayer();
+        virtual ~TraverseState() = default;
 };
 
 #endif

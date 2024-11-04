@@ -65,3 +65,13 @@ void LandmarkBuilding::construct() {
    	std::cout<<"============================================================\n";
 
 }
+
+//pay taxes for the building
+double LandmarkBuilding::payTaxes(TaxType* taxType) {
+return 0.0;
+}
+
+//undo collecting taxes from the building
+void LandmarkBuilding::undoCollectTaxes() {
+	//not needed
+}

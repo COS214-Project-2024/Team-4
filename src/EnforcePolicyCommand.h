@@ -45,6 +45,7 @@ public:
 
     // Checks if the command can be executed
     bool canExecute() const override;
+    double returnVal() override;
 };
 
 #endif

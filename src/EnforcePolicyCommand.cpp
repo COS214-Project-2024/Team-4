@@ -62,3 +62,8 @@ std::string EnforcePolicyCommand::getDescription() const {
 bool EnforcePolicyCommand::canExecute() const {
     return !isEnforced;
 }
+
+double EnforcePolicyCommand::returnVal() {
+    // Return an appropriate value based on the policy enforcement
+    return 0.0;
+}

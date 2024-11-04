@@ -89,6 +89,11 @@ public:
     void setTaxRate(float rate);  // Setter if tax rate needs to be adjusted
      double payTaxes(TaxType* taxType);
 
+    //  bank balance 
+    double getBankBalance() const;
+    void setBankBalance(double balance);
+    void incraseBankBalance(double amount);
+    void subtractBankBalance(double amount);
 //TAX STUFF
     void setTaxCooldown(bool status);
     bool getTaxCooldown() const;
