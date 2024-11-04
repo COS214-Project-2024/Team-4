@@ -1,0 +1,49 @@
+\doxysection{Income.\+h}
+\hypertarget{Income_8h_source}{}\label{Income_8h_source}\index{/mnt/c/users/rudie/documents/sem2/214/project/src/Income.h@{/mnt/c/users/rudie/documents/sem2/214/project/src/Income.h}}
+\mbox{\hyperlink{Income_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ INCOME\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ INCOME\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}TaxType.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classIncome}{Income}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classTaxType}{TaxType}}\ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{double}\ incomeTax;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{char}\ cType;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{double}\ baseSalary;\ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{double}\ bonus;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{double}\ deductions;\ \ \ \ \ \ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classIncome_a6ae9a62f0b093f136fd0fffada527866}{Income}}(\textcolor{keywordtype}{double}\ salary,\ \textcolor{keywordtype}{double}\ rate,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ category)\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classTaxType}{TaxType}}(rate,\ category),\ baseSalary(salary),\ bonus(0.0),\ deductions(0.0)\ \{\}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classIncome_a2f0e656c68b490b42c4aba1612150ce7}{Income}}(\textcolor{keywordtype}{double}\ salary)\ :\ \mbox{\hyperlink{classIncome}{Income}}(salary,\ 0.0,\ \textcolor{stringliteral}{'A'})\ \{\}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classIncome_a128efde64d79b55a9354dbb848f8f934}{calculateMonthlyIncome}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIncome_a656398ff13b3ce373ba3ce9605b1e9ac}{addBonus}}(\textcolor{keywordtype}{double}\ amount);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIncome_af0f45a6e246dcbfb22044680624cb4ca}{applyDeductions}}(\textcolor{keywordtype}{double}\ amount);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classIncome_ad46a97db5b118757e6cd8779201c6930}{payTaxes}}(\mbox{\hyperlink{classTaxType}{TaxType}}\&\ taxType);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIncome_a32e9947645981a859ce2ed0b03e5449b}{setTax}}(\textcolor{keywordtype}{double}\ rate)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classIncome_a8fc41c918915bba743ecdf5fdea8fd8a}{calculateTax}}(\textcolor{keywordtype}{double}\ val)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//\ Getters}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classIncome_aa2fcb4ec3f53253050e8796a3ee77a5a}{getBaseSalary}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ baseSalary;\ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classIncome_a09e2e4d728ece8b478af1e075be00d09}{getBonus}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ bonus;\ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classIncome_a81b74bc98712baba9d8e1a8426d9e4d6}{getDeductions}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ deductions;\ \}}
+\DoxyCodeLine{00104\ \};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ INCOME\_H}}
+
+\end{DoxyCode}
