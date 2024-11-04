@@ -1,5 +1,0 @@
-<map id="Income" name="Income">
-<area shape="rect" id="Node000001" title="Manages income&#45;related operations." alt="" coords="5,219,204,484"/>
-<area shape="rect" id="Node000002" href="$classTaxType.html" title="Represents a specific type of tax with a rate and type identifier." alt="" coords="45,5,165,171"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,184,107,219,102,219,102,184"/>
-</map>

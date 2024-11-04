@@ -1,5 +1,0 @@
-<map id="PowerPlant" name="PowerPlant">
-<area shape="rect" id="Node000001" title="Represents a power plant that supplies power to buildings." alt="" coords="15,199,164,304"/>
-<area shape="rect" id="Node000002" href="$classUtility.html" title="A class that represents a utility service in the city." alt="" coords="5,5,173,151"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,164,92,199,87,199,87,164"/>
-</map>

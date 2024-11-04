@@ -1,9 +1,0 @@
-<map id="/mnt/c/users/rudie/documents/sem2/214/project/src/ResidentialBuilding.h" name="/mnt/c/users/rudie/documents/sem2/214/project/src/ResidentialBuilding.h">
-<area shape="rect" id="Node000001" title="Header file for the ResidentialBuilding class." alt="" coords="143,5,379,60"/>
-<area shape="rect" id="Node000002" href="$ResidentialBuilding_8cpp.html" title="Implementation of the ResidentialBuilding class." alt="" coords="5,115,256,170"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,71,164,117,161,113,217,67"/>
-<area shape="rect" id="Node000003" href="$ResidentialBuildingBuilder_8h.html" title="Header file for the ResidentialBuildingBuilder class." alt="" coords="280,108,504,177"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="306,67,353,106,349,110,302,71"/>
-<area shape="rect" id="Node000004" href="$ResidentialBuildingBuilder_8cpp.html" title="Implementation file for the ResidentialBuildingBuilder class." alt="" coords="280,225,504,295"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="395,191,395,225,389,225,389,191"/>
-</map>

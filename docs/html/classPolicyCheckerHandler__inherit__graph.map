@@ -1,5 +1,0 @@
-<map id="PolicyCheckerHandler" name="PolicyCheckerHandler">
-<area shape="rect" id="Node000001" title="Handles policy enforcement checks for resource approval requests." alt="" coords="24,179,205,304"/>
-<area shape="rect" id="Node000002" href="$classResourceApprovalHandler.html" title="Base class for handling resource approval requests." alt="" coords="5,5,224,131"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,145,117,178,112,178,112,145"/>
-</map>

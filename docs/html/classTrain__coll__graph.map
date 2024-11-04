@@ -1,5 +1,0 @@
-<map id="Train" name="Train">
-<area shape="rect" id="Node000001" title="A class representing a train as a mode of transportation." alt="" coords="5,199,167,304"/>
-<area shape="rect" id="Node000002" href="$classTransportation.html" title="Manages traffic flow states and types of transportation." alt="" coords="15,5,157,151"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,164,89,199,83,199,83,164"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="Business" name="Business">
-<area shape="rect" id="Node000001" title="Represents a business that observes government policies and updates its state accordingly." alt="" coords="5,179,144,444"/>
-<area shape="rect" id="Node000002" href="$classGovObserver.html" title="Abstract base class for observers that monitor government changes." alt="" coords="5,5,144,131"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,144,68,178,63,178,64,144"/>
-<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="86,144,86,178,81,178,80,144"/>
-</map>

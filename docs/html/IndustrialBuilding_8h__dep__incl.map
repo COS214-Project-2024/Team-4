@@ -1,9 +1,0 @@
-<map id="/mnt/c/users/rudie/documents/sem2/214/project/src/IndustrialBuilding.h" name="/mnt/c/users/rudie/documents/sem2/214/project/src/IndustrialBuilding.h">
-<area shape="rect" id="Node000001" title="Definition of the IndustrialBuilding class." alt="" coords="137,5,361,60"/>
-<area shape="rect" id="Node000002" href="$IndustrialBuilding_8cpp.html" title="Implementation of the IndustrialBuilding class." alt="" coords="5,115,244,170"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,71,157,117,153,113,206,67"/>
-<area shape="rect" id="Node000003" href="$IndustrialBuildingBuilder_8h.html" title="Definition of the IndustrialBuildingBuilder class." alt="" coords="268,108,480,177"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="292,67,337,106,333,110,288,71"/>
-<area shape="rect" id="Node000004" href="$IndustrialBuildingBuilder_8cpp.html" title="Implementation of the IndustrialBuildingBuilder class." alt="" coords="268,225,480,295"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="377,191,377,225,371,225,371,191"/>
-</map>

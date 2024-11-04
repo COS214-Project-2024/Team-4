@@ -1,9 +1,0 @@
-<map id="/mnt/c/users/rudie/documents/sem2/214/project/src/TransportationFactory.h" name="/mnt/c/users/rudie/documents/sem2/214/project/src/TransportationFactory.h">
-<area shape="rect" id="Node000001" title="Header file for the TransportationFactory class." alt="" coords="147,5,337,75"/>
-<area shape="rect" id="Node000002" href="$TransportManager_8h.html" title="Header file for the TransportManager class." alt="" coords="13,130,239,185"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,87,154,132,151,128,196,83"/>
-<area shape="rect" id="Node000004" href="$TransportationFactory_8cpp.html" title="Implementation of the TransportationFactory class." alt="" coords="264,123,455,192"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="288,83,327,121,323,124,284,86"/>
-<area shape="rect" id="Node000003" href="$TransportManager_8cpp.html" title="Implementation of the TransportManager class." alt="" coords="5,240,247,295"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="129,199,129,240,123,240,123,199"/>
-</map>

@@ -1,9 +1,0 @@
-<map id="PublicTransit" name="PublicTransit">
-<area shape="rect" id="Node000001" title="A class representing public transit transportation." alt="" coords="110,199,271,304"/>
-<area shape="rect" id="Node000003" href="$classBus.html" title="Represents a bus in the public transit system." alt="" coords="5,352,179,637"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="167,318,152,353,148,351,162,316"/>
-<area shape="rect" id="Node000004" href="$classTaxi.html" title="A class representing a taxi in a public transit system." alt="" coords="203,362,376,627"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="219,316,238,361,233,363,214,318"/>
-<area shape="rect" id="Node000002" href="$classTransportation.html" title="Manages traffic flow states and types of transportation." alt="" coords="119,5,262,151"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,164,193,199,188,199,188,164"/>
-</map>

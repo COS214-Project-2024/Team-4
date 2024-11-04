@@ -1,5 +1,0 @@
-<map id="Traverser" name="Traverser">
-<area shape="rect" id="Node000001" title="Interface for iterating over Transportation objects." alt="" coords="19,5,135,111"/>
-<area shape="rect" id="Node000002" href="$classCityTraverser.html" title="A concrete iterator for traversing transportation elements in a city." alt="" coords="5,159,149,504"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,124,80,159,75,159,75,124"/>
-</map>

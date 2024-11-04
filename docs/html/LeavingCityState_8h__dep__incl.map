@@ -1,9 +1,0 @@
-<map id="/mnt/c/users/rudie/documents/sem2/214/project/src/LeavingCityState.h" name="/mnt/c/users/rudie/documents/sem2/214/project/src/LeavingCityState.h">
-<area shape="rect" id="Node000001" title="Definition of the LeavingCityState class." alt="" coords="208,5,429,60"/>
-<area shape="rect" id="Node000002" href="$Citizen_8cpp.html" title="Implementation of the Citizen class." alt="" coords="5,108,176,163"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="248,68,151,110,149,106,246,63"/>
-<area shape="rect" id="Node000003" href="$LeavingCityState_8cpp.html" title="Implementation of the LeavingCityState class." alt="" coords="201,108,437,163"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="321,74,321,108,316,108,316,74"/>
-<area shape="rect" id="Node000004" href="$PopulationManager_8cpp.html" title="Implementation of the PopulationManager class." alt="" coords="461,108,712,163"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="402,62,518,105,516,110,400,67"/>
-</map>

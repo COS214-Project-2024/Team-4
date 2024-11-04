@@ -1,5 +1,0 @@
-<map id="TraverseComercialAirport" name="TraverseComercialAirport">
-<area shape="rect" id="Node000001" title="A class to traverse through a commercial airport." alt="" coords="5,219,209,344"/>
-<area shape="rect" id="Node000002" href="$classTraverseState.html" title="Abstract class that provides an interface for traversing through a list of Transportation elements." alt="" coords="38,5,177,171"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,184,110,218,105,218,105,184"/>
-</map>

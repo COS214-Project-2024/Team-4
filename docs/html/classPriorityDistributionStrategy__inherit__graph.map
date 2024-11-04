@@ -1,5 +1,0 @@
-<map id="PriorityDistributionStrategy" name="PriorityDistributionStrategy">
-<area shape="rect" id="Node000001" title="Strategy for priority&#45;based resource allocation." alt="" coords="7,119,199,184"/>
-<area shape="rect" id="Node000002" href="$classResourceAllocationStrategy.html" title="Interface for resource allocation strategies." alt="" coords="5,5,200,71"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,84,105,119,100,119,100,84"/>
-</map>

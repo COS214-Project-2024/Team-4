@@ -1,5 +1,0 @@
-<map id="SatisfiedState" name="SatisfiedState">
-<area shape="rect" id="Node000001" title="Represents a state where a citizen is satisfied." alt="" coords="11,139,129,204"/>
-<area shape="rect" id="Node000002" href="$classCitizenState.html" title="Abstract class representing the state of a citizen." alt="" coords="5,5,135,91"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,104,73,138,67,138,67,104"/>
-</map>

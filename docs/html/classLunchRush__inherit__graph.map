@@ -1,5 +1,0 @@
-<map id="LunchRush" name="LunchRush">
-<area shape="rect" id="Node000001" title="A class representing traffic flow during lunch hours." alt="" coords="5,139,135,224"/>
-<area shape="rect" id="Node000002" href="$classTrafficFlow.html" title="An abstract class that represents the traffic flow." alt="" coords="5,5,135,91"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,104,73,138,67,138,67,104"/>
-</map>
