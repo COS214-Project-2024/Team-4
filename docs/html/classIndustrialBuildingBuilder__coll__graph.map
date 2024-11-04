@@ -1,0 +1,5 @@
+<map id="IndustrialBuildingBuilder" name="IndustrialBuildingBuilder">
+<area shape="rect" id="Node000001" title="Builder class for constructing IndustrialBuilding objects." alt="" coords="9,399,207,564"/>
+<area shape="rect" id="Node000002" href="$classBuilder.html" title="Base class for all builders." alt="" coords="5,5,211,351"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,364,111,398,105,398,105,364"/>
+</map>

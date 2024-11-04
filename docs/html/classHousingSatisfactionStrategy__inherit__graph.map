@@ -1,0 +1,5 @@
+<map id="HousingSatisfactionStrategy" name="HousingSatisfactionStrategy">
+<area shape="rect" id="Node000001" title="Strategy for calculating and updating citizen satisfaction based on housing conditions." alt="" coords="5,199,211,324"/>
+<area shape="rect" id="Node000002" href="$classSatisfactionStrategy.html" title="Interface for calculating and updating citizen satisfaction." alt="" coords="5,5,211,151"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,164,111,198,105,198,105,164"/>
+</map>

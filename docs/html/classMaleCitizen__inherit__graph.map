@@ -1,0 +1,5 @@
+<map id="MaleCitizen" name="MaleCitizen">
+<area shape="rect" id="Node000001" title="A class representing a male citizen." alt="" coords="38,319,154,404"/>
+<area shape="rect" id="Node000002" href="$classCitizen.html" title="Manages citizen attributes and behaviors." alt="" coords="5,5,187,271"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,284,99,319,93,319,93,284"/>
+</map>

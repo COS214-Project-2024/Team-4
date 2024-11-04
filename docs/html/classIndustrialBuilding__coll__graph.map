@@ -1,0 +1,5 @@
+<map id="IndustrialBuilding" name="IndustrialBuilding">
+<area shape="rect" id="Node000001" title="Represents an industrial building with specific attributes and behaviors." alt="" coords="5,459,249,704"/>
+<area shape="rect" id="Node000002" href="$classBuilding.html" title="Represents a building with various properties and job management capabilities." alt="" coords="25,5,230,411"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,424,130,458,125,458,125,424"/>
+</map>
