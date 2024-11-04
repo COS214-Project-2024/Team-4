@@ -12,13 +12,13 @@ class Transportation;
 class InsideRoad;
 class ComercialAirport;
 
-class TraverseComercialAiport: public TraverseState{
+class TraverseComercialAirport: public TraverseState{
     private:
         int currentList = 0;
         int upperBound = 1;
 
     public:
-        TraverseComercialAiport(Transportation *element);
+        TraverseComercialAirport(Transportation *element);
         bool nextList();
         bool prevList();
         Transportation* getPos(size_t x);

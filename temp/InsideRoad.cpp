@@ -1,6 +1,6 @@
 #include "InsideRoad.h"
 
-InsideRoad::InsideRoad(char state, std::string roadName, float avgStopTime) : Road(state, roadName) {
+InsideRoad::InsideRoad(char state, std::string roadName, float avgStopTime) : Road(state, roadName, 'I') {
     this->avgStopTime = avgStopTime;
 }
 

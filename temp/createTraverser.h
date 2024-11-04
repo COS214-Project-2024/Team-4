@@ -14,7 +14,7 @@ class CreateTraverser : public AgregateTraverser{
     public:
         CityTraverser* createCityTraverser();
         CityTraverser* createCityTraverser(Transportation *t);
-
+        CityTraverser* createCityTraverser(CityTraverser *t);
 
 };
 

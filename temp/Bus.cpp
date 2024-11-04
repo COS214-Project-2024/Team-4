@@ -1,6 +1,6 @@
 #include "Bus.h"
 
-Bus::Bus(char state, std::string route, int busNumber, int capacity) : PublicTransit(state, route) {
+Bus::Bus(char state, std::string route, int busNumber, int capacity) : PublicTransit(state, route, 'B') {
     this->busNumber = busNumber;
     this->capacity = capacity;
 }

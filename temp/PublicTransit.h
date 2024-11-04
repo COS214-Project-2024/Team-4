@@ -10,7 +10,7 @@ class PublicTransit : public Transportation {
         std::string route;
 
     public:
-        PublicTransit(char state, std::string route);
+        PublicTransit(char state, std::string route, char type);
         float calculateCommute();
         std::string getRoute();
 };

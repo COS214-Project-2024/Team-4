@@ -1,6 +1,6 @@
 #include "Highway.h"
 
-Highway::Highway(char state, std::string roadName, float speedLimit) : Road(state, roadName) {
+Highway::Highway(char state, std::string roadName, float speedLimit) : Road(state, roadName, 'H') {
     this->speedLimit = speedLimit;
 }
 

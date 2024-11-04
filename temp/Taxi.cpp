@@ -1,6 +1,6 @@
 #include "Taxi.h"
 
-Taxi::Taxi(char state, std::string route, std::string taxiCompany, int taxiNumber) : PublicTransit(state, route) {
+Taxi::Taxi(char state, std::string route, std::string taxiCompany, int taxiNumber) : PublicTransit(state, route, 'T') {
     this->taxiCompany = taxiCompany;
     this->taxiNumber = taxiNumber;
 }

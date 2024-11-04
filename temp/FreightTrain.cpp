@@ -1,6 +1,6 @@
 #include "FreightTrain.h"
 
-FreightTrain::FreightTrain(char state, std::string line, float weight, float length) : Train(state, line) {
+FreightTrain::FreightTrain(char state, std::string line, float weight, float length) : Train(state, line, 'F') {
     this->weight = weight;
     this->length = length;
 }

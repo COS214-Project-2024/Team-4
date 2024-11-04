@@ -1,8 +1,8 @@
 #include "TraverseComercialAirport.h"
 
-TraverseComercialAiport::TraverseComercialAiport(Transportation *element) : TraverseState(element) {}
+TraverseComercialAirport::TraverseComercialAirport(Transportation *element) : TraverseState(element) {}
 
-bool TraverseComercialAiport::nextList() {
+bool TraverseComercialAirport::nextList() {
     if (currentList < upperBound) {
         currentList++;
         return true;
@@ -10,7 +10,7 @@ bool TraverseComercialAiport::nextList() {
     return false;
 }
 
-bool TraverseComercialAiport::prevList() {
+bool TraverseComercialAirport::prevList() {
     if (currentList > 0) {
         currentList--;
         return true;
@@ -18,7 +18,7 @@ bool TraverseComercialAiport::prevList() {
     return false;
 }
 
-Transportation* TraverseComercialAiport::getPos(size_t x) {
+Transportation* TraverseComercialAirport::getPos(size_t x) {
     ComercialAirport *comercialAirport = static_cast<ComercialAirport*>(this->getLayer());
 
     switch(currentList) {

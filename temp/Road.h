@@ -8,7 +8,7 @@ class Road : public Transportation {
         std::string roadName;
 
     public:
-        Road(char state, std::string roadName);
+        Road(char state, std::string roadName, char type);
         float calculateCommute();
         std::string getName();
 
