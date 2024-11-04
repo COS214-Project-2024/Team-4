@@ -6,8 +6,8 @@ using namespace std;
 
 // Constructor for Business
 // Initializes the business with initial revenue and tax rate
-Business::Business(double initialRevenue, double initialTaxRate)
-    : revenue(initialRevenue), taxRate(initialTaxRate), taxCooldownPeriod(std::chrono::seconds(5)) {}
+Business::Business(double initialRevenue, double initialTaxRate, std::string name)
+    : revenue(initialRevenue), taxRate(initialTaxRate), taxCooldownPeriod(std::chrono::seconds(5)),businessName(name) {}
 
 // Updates the tax rate for the business
 // Prints the updated tax rate to the console
@@ -130,4 +130,8 @@ double Business::getRevenue() {
 }
 double Business::getTaxRate() {
     return taxRate;
+}
+
+std::string Business::getBusinessName() {
+    return businessName;
 }

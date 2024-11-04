@@ -17,6 +17,7 @@ class Business : public GovObserver {
 private:
     double revenue;  // Revenue of the business
     double taxRate;  // Tax rate applied to the business
+    std::string businessName; // Name of the business
     std::vector<std::string> services; // List of services provided by the business
     std::vector<Policy> policies; // List of policies affecting the business
 std::unordered_map<char, std::chrono::steady_clock::time_point> lastTaxPayments; // Add this line
@@ -24,7 +25,7 @@ std::unordered_map<char, std::chrono::steady_clock::time_point> lastTaxPayments;
 
 public:
     // Constructor
-    Business(double initialRevenue, double initialTaxRate);
+    Business(double initialRevenue, double initialTaxRate, std::string name);
 
     // Updates the tax rate for the business
     void updateTaxRate(double rate) override;
@@ -59,8 +60,10 @@ public:
     double payTaxes(TaxType* taxType);
     void setTaxCooldownPeriod(int seconds);
 
+
     double getRevenue();
     double getTaxRate();
+    std::string getBusinessName();
 };
 
 #endif
