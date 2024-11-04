@@ -10,6 +10,7 @@
 #include "Utility.h"
 #include "WaterSupply.h"
 #include "WasteManagement.h"
+#include "PowerPlant.h"
 
 // Resource management includes
 #include "ResourceManager.h"
