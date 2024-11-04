@@ -1,24 +1,24 @@
-#ifndef TRAVERSEFREIGHTTRAIN_H
-#define TRAVERSEFREIGHTTRAIN_H
+#ifndef TRAVERSECOMERCIALAIRPORT_H
+#define TRAVERSECOMERCIALAIRPORT_H
 
 #include <vector>
 
 #include "TraverseState.h"
 #include "Transportation.h"
 #include "InsideRoad.h"
-#include "FreightTrain.h"
+#include "ComercialAirport.h"
 
 class Transportation;
 class InsideRoad;
-class FreightTrain;
+class ComercialAirport;
 
-class TraverseFreightTrain: public TraverseState{
+class TraverseComercialAiport: public TraverseState{
     private:
         int currentList = 0;
         int upperBound = 1;
 
     public:
-        TraverseFreightTrain(Transportation *element);
+        TraverseComercialAiport(Transportation *element);
         bool nextList();
         bool prevList();
         Transportation* getPos(size_t x);
