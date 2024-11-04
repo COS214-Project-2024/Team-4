@@ -19,22 +19,20 @@ bool TraverseBus::prevList() {
 }
 
 Transportation* TraverseBus::getPos(size_t x) {
+    Bus *temp = static_cast<Bus*>(this->getLayer());
+
     switch(currentList) {
         case 0:
-            InsideRoad *temp = static_cast<Bus*>(this->getLayer())->getInsideRoad(x);
-            return temp;
+            return temp->getInsideRoad(x);
 
         case 1:
-            Bus *temp1 = static_cast<Bus*>(this->getLayer())->getBus(x);
-            return temp1;
+            return temp->getBus(x);
 
         case 2:
-            ComercialAirport *temp2 = static_cast<Bus*>(this->getLayer())->getComercialAirport(x);
-            return temp2;
+            return temp->getComercialAirport(x);
 
         case 3:
-            PassengerTrain *temp3 = static_cast<Bus*>(this->getLayer())->getPassengerTrain(x);
-            return temp3;
+            return temp->getPassengerTrain(x);
 
         default:
             return nullptr;

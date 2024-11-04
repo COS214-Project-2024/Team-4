@@ -1,6 +1,6 @@
 #include "ComercialAirport.h"
 
-ComercialAirport::ComercialAirport(char state, std::string name) : Airport(state, name) {}
+ComercialAirport::ComercialAirport(char state, std::string name) : Airport(state, name, 'A') {}
 
 bool ComercialAirport::addRoad(InsideRoad *road) {
     for(InsideRoad *x: this->roads) {

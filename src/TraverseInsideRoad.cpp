@@ -19,38 +19,32 @@ bool TraverseInsideRoad::prevList() {
 }
 
 Transportation* TraverseInsideRoad::getPos(size_t x) {
+    InsideRoad *temp = static_cast<InsideRoad*>(this->getLayer());
+
     switch(currentList){
         case 0:
-            InsideRoad *temp = static_cast<InsideRoad*>(this->getLayer())->getInsideRoad(x);
-            return temp;
+            return temp->getInsideRoad(x);
 
         case 1:
-            Highway *temp2 = static_cast<InsideRoad*>(this->getLayer())->getHighway(x);
-            return temp2;   
+            return temp->getHighway(x);   
 
         case 2:
-            Bus *temp3 = static_cast<InsideRoad*>(this->getLayer())->getBus(x);
-            return temp3;
+            return temp->getBus(x);
 
         case 3:
-            Taxi *temp4 = static_cast<InsideRoad*>(this->getLayer())->getTaxi(x);
-            return temp4;
+            return temp->getTaxi(x);
 
         case 4:
-            ComercialAirport *temp5 = static_cast<InsideRoad*>(this->getLayer())->getComercialAirport(x);
-            return temp5;
+            return temp->getComercialAirport(x);
 
         case 5:
-            CargoAirport *temp6 = static_cast<InsideRoad*>(this->getLayer())->getCargoAirport(x);
-            return temp6;
+            return temp->getCargoAirport(x);
 
         case 6:
-            PassengerTrain *temp7 = static_cast<InsideRoad*>(this->getLayer())->getPassengerTrain(x);
-            return temp7;
+            return temp->getPassengerTrain(x);
 
         case 7:
-            FreightTrain *temp8 = static_cast<InsideRoad*>(this->getLayer())->getFreightTrain(x);
-            return temp8;
+            return temp->getFreightTrain(x);
 
         default:
             return nullptr;

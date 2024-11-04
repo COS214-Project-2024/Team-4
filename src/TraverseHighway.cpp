@@ -23,14 +23,14 @@ bool TraverseHighway::prevList(){
 }
 
 Transportation* TraverseHighway::getPos(size_t x){
+    Highway *temp = static_cast<Highway*>(this->getLayer());
+
     switch(this->currentList){
         case 0:
-            InsideRoad *temp = static_cast<Highway*>(this->getLayer())->getInsideRoad(x);
-            return temp;
+            return temp->getInsideRoad(x);
 
         case 1:
-            Highway *temp2 = static_cast<Highway*>(this->getLayer())->getHighway(x);
-            return temp2;
+            return temp->getHighway(x);
 
         default:
             return nullptr;
