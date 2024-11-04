@@ -149,6 +149,16 @@ class Taxi : public PublicTransit {
          * @return The taxi number.
          */
         int getTaxiNumber();
+
+        /**
+         * @brief Calculates the adjusted commute time.
+         * 
+         * This function computes the adjusted commute time based on various factors
+         * such as traffic conditions, distance, and other relevant parameters.
+         * 
+         * @return The adjusted commute time as a float.
+         */
+        float adjustedCommuteTime();
 };
 
 #endif

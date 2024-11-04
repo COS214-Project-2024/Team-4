@@ -202,6 +202,18 @@ class InsideRoad : public Road {
          * @return The name of the road.
          */
         std::string getRoadName();
+
+        /**
+         * @brief Calculates the adjusted commute time.
+         * 
+         * This function computes the adjusted commute time based on various factors
+         * such as traffic conditions, road quality, and other relevant parameters.
+         * 
+         * @return The adjusted commute time as a float.
+         */
+        float adjustedCommuteTime();
+
+
 };
 
 #endif // INSIDEROAD_H

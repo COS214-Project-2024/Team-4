@@ -170,3 +170,7 @@ Building *InsideRoad::getBuilding(std::size_t x){
 float InsideRoad::getAvgStopTime(){
     return this->avgStopTime;
 }
+
+float InsideRoad::adjustedCommuteTime(){
+    return this->commuteTime() + this->avgStopTime;
+}

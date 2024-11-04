@@ -43,3 +43,7 @@ ComercialAirport* ComercialAirport::getComercialAirport(std::size_t index) {
 std::string ComercialAirport::getName() {
     return this->getAirportName();
 }
+
+float ComercialAirport::adjustedCommuteTime() {
+    return this->commuteTime();
+}

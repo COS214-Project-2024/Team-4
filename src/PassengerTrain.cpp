@@ -43,3 +43,7 @@ PassengerTrain *PassengerTrain::getPassengerTrain(std::size_t x) {
 std::string PassengerTrain::getTrainLine() {
     return this->getLine();    
 }
+
+float PassengerTrain::adjustedCommuteTime() {
+    return this->commuteTime();
+}

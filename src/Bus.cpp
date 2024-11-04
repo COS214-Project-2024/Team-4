@@ -92,3 +92,8 @@ int Bus::getCapacity(){
 std::string Bus::getRouteName() {
     return this->getRoute();
 }
+
+float Bus::adjustedCommuteTime(){
+    return this->commuteTime() + (this->capacity/10);
+    
+}

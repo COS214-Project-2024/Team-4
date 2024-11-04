@@ -38,6 +38,25 @@
 #include "Policy.h"
 #include "Business.h"
 
+//Transportation includes
+#include "Transportation.h"
+#include "Airport.h"
+#include "Train.h"
+#include "PublicTransit.h"
+#include "Road.h"
+#include "TransportationFactory.h"
+#include "TransportManager.h"
+#include "Highway.h"
+#include "InsideRoad.h"
+#include "Bus.h"
+#include "FreightTrain.h"
+#include "PassengerTrain.h"
+#include "Taxi.h"
+#include "ComercialAirport.h"
+#include "CargoAirport.h"
+#include "createTraverser.h"
+#include "CityTraverser.h"
+
 void testResidentialBuildingBuilder();
 void testCommercialBuildingBuilder();
 void testIndustrialBuildingBuilder();
@@ -47,6 +66,8 @@ void testResourceManager();
 void testGOVF1();
 void TESTGOVCOMMAND();
 void testcit();
+void TRANSPORTATION_TEST();
+
 int main() {
     // Testing each builder class separately
     testResidentialBuildingBuilder();
@@ -61,8 +82,9 @@ int main() {
     TESTGOVCOMMAND();
     std::cout << "============================GOVT2========================" << std::endl;
     testGOVF1();
-  
-    std::cout << "All tests completed.\n";
+    std::cout << "\033[1;32m============================TRANSPORTATION========================\033[0m" << std::endl;
+    // TRANSPORTATION_TEST();
+    std::cout << "\033[1;32mAll tests completed.\033[0m\n";
   
     return 0;
 }
@@ -551,3 +573,50 @@ void testcit(){
 //=============================================================================================
 //                                    END    CIT    TESTING
 //=============================================================================================
+
+//=============================================================================================
+//                                    START TRANSPORTATION TESTING
+//=============================================================================================
+
+void TRANSPORTATION_TEST(){
+    // ANSI escape codes for styles
+    const std::string RESET = "\033[0m";
+    const std::string BOLD = "\033[1m";
+    const std::string DIM = "\033[2m";
+    const std::string UNDERLINED = "\033[4m";
+    const std::string BLINK = "\033[5m";
+    const std::string REVERSE = "\033[7m";
+    const std::string HIDDEN = "\033[8m";
+
+    // ANSI escape codes for colors
+    const std::string RED = "\033[31m";
+    const std::string GREEN = "\033[32m";
+
+    // ANSI escape codes for background colors
+    const std::string BG_RED = "\033[41m";
+    const std::string BG_GREEN = "\033[42m";
+
+    TransportManager transportManager;
+    transportManager.createHighway('P',"N1", 120);
+    transportManager.createInsideRoad('N',"N2", 2);
+    transportManager.createBus('N', "Bus1", 50, 25);
+    transportManager.createFreightTrain('P', "Train1", 100, 50);
+    transportManager.createPassengerTrain('P', "Train2");
+    transportManager.createTaxi('N', "Taxi1", "Company_1", 2);
+    transportManager.createComercialAirport('P', "Airport1");
+    transportManager.createCargoAirport('N', "Airport2");
+    transportManager.createHighway('L',"N2", 250);
+    transportManager.createInsideRoad('N',"N3", 2);
+    transportManager.createBus('N', "Bus2", 50, 25);
+    transportManager.createFreightTrain('P', "Train3", 100, 50);
+    transportManager.createPassengerTrain('P', "Train4");
+    transportManager.createTaxi('N', "Taxi1", "Company_2", 2);
+    transportManager.createComercialAirport('P', "Airport3");
+    transportManager.createCargoAirport('P', "Airport4");
+
+    
+    CityTraverser it(transportManager.getTransportation(0));
+
+    Transportation* x = nullptr;
+
+}

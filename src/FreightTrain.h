@@ -96,6 +96,17 @@ class FreightTrain : public Train {
          * @return The line on which the train operates.
          */
         std::string getTrainLine();
+
+        /**
+         * @brief Calculates an adjusted commute time for the freight train.
+         * 
+         * This function takes the return value of Train::commuteTime() and adjusts it
+         * based on external variables to provide a more realistic commute time.
+         * 
+         * @return The adjusted commute time for the freight train.
+         */
+        float adjustedCommuteTime();
+        
 };
 
 #endif // FREIGHTTRAIN_H

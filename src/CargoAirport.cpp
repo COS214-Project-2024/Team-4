@@ -43,3 +43,7 @@ CargoAirport* CargoAirport::getCargoAirport(std::size_t index) {
 std::string CargoAirport::getName() {
     return this->getAirportName();
 }
+
+float CargoAirport::adjustedCommuteTime(){
+    return this->calculateCommute();
+}

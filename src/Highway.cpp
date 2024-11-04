@@ -58,3 +58,7 @@ std::vector<Highway*> Highway::getHighwaysList() {
 float Highway::getSpeedLimit() {
     return this->speedLimit;
 }
+
+float Highway::adjustedCommuteTime(){
+    return this->commuteTime() * (1+this->speedLimit/60);
+}
