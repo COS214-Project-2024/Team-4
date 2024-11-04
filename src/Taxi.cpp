@@ -1,6 +1,6 @@
 #include "Taxi.h"
 
-Taxi::Taxi(char state, std::string route, std::string taxiCompany, int taxiNumber) : PublicTransit(state, route) {
+Taxi::Taxi(char state, std::string route, std::string taxiCompany, int taxiNumber) : PublicTransit(state, route, 'T') {
     this->taxiCompany = taxiCompany;
     this->taxiNumber = taxiNumber;
 }
@@ -111,6 +111,10 @@ FreightTrain *Taxi::getFreightTrain(std::size_t x) {
 //         return buildings[x];
 //     }
 //     return nullptr;
+// }
+
+// std::vector<Building*> Taxi::getBuildingsList(){
+//     return this->buildings;
 // }
 
 std::string Taxi::getRouteName() {

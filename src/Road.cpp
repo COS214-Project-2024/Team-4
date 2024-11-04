@@ -1,6 +1,6 @@
 #include "Road.h"
 
-Road::Road(char state, std::string roadName) : Transportation(state) {
+Road::Road(char state, std::string roadName, char type) : Transportation(state, type) {
     this->roadName = roadName;
 }
 

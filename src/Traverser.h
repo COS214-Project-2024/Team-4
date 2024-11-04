@@ -8,10 +8,8 @@ class Transportation;
 
 class Traverser {
     public:
-        virtual Transportation* operator++() = 0;
-        virtual Transportation* operator--() = 0;
-        virtual Transportation* operator+() = 0;
-        virtual Transportation* operator-() = 0;
+        virtual bool operator++() = 0;
+        virtual bool operator--() = 0;
         virtual Transportation* operator*() = 0;
 
 };

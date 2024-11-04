@@ -1,6 +1,6 @@
 #include "CargoAirport.h"
 
-CargoAirport::CargoAirport(char state, std::string name) : Airport(state, name) {}
+CargoAirport::CargoAirport(char state, std::string name) : Airport(state, name, 'C') {}
 
 bool CargoAirport::addInsideRoad(InsideRoad *insideRoad) {
     for(InsideRoad *x : this->insideRoads) {

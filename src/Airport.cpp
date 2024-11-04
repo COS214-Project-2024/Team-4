@@ -1,6 +1,6 @@
 #include "Airport.h"
 
-Airport::Airport(char state, std::string name) : Transportation(state) {
+Airport::Airport(char state, std::string name, char type) : Transportation(state, type) {
     this->name = name;
 }
 
