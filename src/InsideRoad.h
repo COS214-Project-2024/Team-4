@@ -24,6 +24,16 @@
 #include "FreightTrain.h"
 #include "Building.h"
 
+class Road;
+class Highway;
+class Bus;
+class Taxi;
+class ComercialAirport;
+class CargoAirport;
+class PassengerTrain;
+class FreightTrain;
+class Building;
+
 /**
  * @class InsideRoad
  * @brief Represents an inside road that can contain various transportation entities.
