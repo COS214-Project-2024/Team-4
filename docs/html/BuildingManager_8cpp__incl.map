@@ -1,0 +1,46 @@
+<map id="/mnt/c/users/rudie/documents/sem2/214/project/src/BuildingManager.cpp" name="/mnt/c/users/rudie/documents/sem2/214/project/src/BuildingManager.cpp">
+<area shape="rect" id="Node000001" title="Implementation of the BuildingManager class." alt="" coords="93,5,328,60"/>
+<area shape="rect" id="Node000002" href="$BuildingManager_8h.html" title="Definition of the BuildingManager class." alt="" coords="214,108,357,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,58,268,96,264,99,231,62"/>
+<area shape="rect" id="Node000005" href="$Building_8h.html" title="Definition of the Building class." alt="" coords="107,181,194,207"/>
+<area shape="poly" id="edge27_Node000001_Node000005" title=" " alt="" coords="203,61,162,169,157,168,198,59"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="5,255,91,280"/>
+<area shape="poly" id="edge29_Node000001_Node000007" title=" " alt="" coords="190,62,145,116,97,183,62,243,58,241,92,180,141,113,186,58"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="381,108,461,133"/>
+<area shape="poly" id="edge28_Node000001_Node000015" title=" " alt="" coords="276,58,382,100,380,105,274,63"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="267,255,330,280"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="289,134,299,241,294,241,284,134"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="475,401,533,427"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="357,131,722,193,892,227,948,241,974,253,981,267,978,282,967,295,949,307,897,331,829,352,675,387,547,409,547,404,674,382,828,347,895,326,946,303,963,291,973,279,975,268,970,257,946,246,891,232,721,198,357,136"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="265,136,186,177,184,172,262,131"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="264,328,341,353"/>
+<area shape="poly" id="edge26_Node000002_Node000006" title=" " alt="" coords="282,134,270,161,258,197,253,238,259,279,269,299,282,316,278,320,264,302,253,281,247,238,253,196,265,159,277,132"/>
+<area shape="rect" id="Node000008" href="$Jobs_8h.html" title="Definition of the Jobs class." alt="" coords="405,255,467,280"/>
+<area shape="poly" id="edge25_Node000002_Node000008" title=" " alt="" coords="300,132,416,243,412,247,296,136"/>
+<area shape="rect" id="Node000011" href="$Citizen_8h.html" title="Header file for the Citizen class." alt="" coords="490,181,569,207"/>
+<area shape="poly" id="edge15_Node000002_Node000011" title=" " alt="" coords="325,131,478,175,476,180,324,136"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="176,204,263,246,261,251,173,209"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="156,206,167,240,186,279,215,321,230,336,253,351,306,375,362,392,416,402,461,408,461,413,415,407,361,397,304,380,251,356,227,340,210,324,182,281,163,242,151,208"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="159,205,181,240,213,278,240,301,269,319,266,323,237,305,209,282,176,243,155,208"/>
+<area shape="poly" id="edge8_Node000005_Node000007" title=" " alt="" coords="136,209,78,249,75,244,133,204"/>
+<area shape="poly" id="edge9_Node000005_Node000008" title=" " alt="" coords="195,203,392,252,391,258,193,209"/>
+<area shape="poly" id="edge14_Node000008_Node000004" title=" " alt="" coords="444,279,495,388,490,390,439,282"/>
+<area shape="poly" id="edge10_Node000008_Node000006" title=" " alt="" coords="416,282,338,324,335,319,413,278"/>
+<area shape="rect" id="Node000009" href="$Income_8h.html" title="Definition of the Income class." alt="" coords="596,328,679,353"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="468,277,593,321,591,326,466,282"/>
+<area shape="poly" id="edge13_Node000009_Node000004" title=" " alt="" coords="617,356,539,397,537,392,615,351"/>
+<area shape="rect" id="Node000010" href="$TaxType_8h_source.html" title=" " alt="" coords="649,401,735,427"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="648,352,677,389,673,392,644,355"/>
+<area shape="poly" id="edge18_Node000011_Node000003" title=" " alt="" coords="493,209,344,255,343,250,491,204"/>
+<area shape="poly" id="edge16_Node000011_Node000004" title=" " alt="" coords="531,207,510,387,504,387,525,207"/>
+<area shape="poly" id="edge17_Node000011_Node000006" title=" " alt="" coords="496,209,447,229,395,257,356,288,324,320,320,316,352,284,392,252,444,224,494,204"/>
+<area shape="poly" id="edge22_Node000011_Node000008" title=" " alt="" coords="516,209,464,248,460,244,513,205"/>
+<area shape="poly" id="edge21_Node000011_Node000009" title=" " alt="" coords="569,197,678,216,729,232,748,242,761,253,767,265,767,277,752,298,725,314,693,327,691,322,723,309,749,294,762,276,762,267,757,256,745,246,727,237,677,222,569,202"/>
+<area shape="poly" id="edge23_Node000011_Node000010" title=" " alt="" coords="569,192,666,192,788,199,848,206,901,217,945,232,974,253,985,268,989,283,989,297,983,311,961,334,926,354,883,371,837,386,750,406,748,400,836,381,882,366,924,350,957,330,979,308,984,296,984,284,980,271,970,257,942,237,900,222,847,212,787,204,666,197,569,197"/>
+<area shape="rect" id="Node000012" href="$CitizenObserver_8h.html" title="Header file for the CitizenObserver class." alt="" coords="822,255,959,280"/>
+<area shape="poly" id="edge19_Node000011_Node000012" title=" " alt="" coords="569,200,819,249,818,255,568,206"/>
+<area shape="rect" id="Node000013" href="$CitizenState_8h.html" title="Declaration of the CitizenState class." alt="" coords="542,255,655,280"/>
+<area shape="poly" id="edge20_Node000011_Node000013" title=" " alt="" coords="543,205,580,243,576,247,539,209"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="680,255,747,280"/>
+<area shape="poly" id="edge24_Node000011_Node000014" title=" " alt="" coords="560,204,671,247,669,252,558,209"/>
+</map>
