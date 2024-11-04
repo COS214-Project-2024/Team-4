@@ -1,0 +1,33 @@
+\doxysection{Sales.\+h}
+\hypertarget{Sales_8h_source}{}\label{Sales_8h_source}\index{/mnt/c/users/rudie/documents/sem2/214/project/src/Sales.h@{/mnt/c/users/rudie/documents/sem2/214/project/src/Sales.h}}
+\mbox{\hyperlink{Sales_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ SALES\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ SALES\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}TaxType.h"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSales}{Sales}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classTaxType}{TaxType}}\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{double}\ salesTax;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{double}\ environmentalLevy;\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{double}\ serviceFee;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classSales}{Sales}}(\textcolor{keywordtype}{double}\ rate,\ \textcolor{keywordtype}{double}\ levy,\ \textcolor{keywordtype}{double}\ fee);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classSales_ae3b1b786f97df81e1ef3754f0b14b444}{\string~Sales}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSales_a9a8c80992d85b6ba6fd17caf33e57c3c}{setTax}}(\textcolor{keywordtype}{double}\ rate)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSales_a8a393b9c17abfd6c52b8800f5d9de3e0}{calculateTax}}(\textcolor{keywordtype}{double}\ saleAmount)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSales_a100f2c39408fe0ae700fcd372516aec0}{setEnvironmentalLevy}}(\textcolor{keywordtype}{double}\ levy);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSales_afd367cd9368b46008c0979ca0bc4d4c7}{setServiceFee}}(\textcolor{keywordtype}{double}\ fee);}
+\DoxyCodeLine{00073\ \};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SALES\_H}}
+
+\end{DoxyCode}

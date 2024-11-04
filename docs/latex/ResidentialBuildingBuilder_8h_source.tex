@@ -1,0 +1,38 @@
+\doxysection{Residential\+Building\+Builder.\+h}
+\hypertarget{ResidentialBuildingBuilder_8h_source}{}\label{ResidentialBuildingBuilder_8h_source}\index{/mnt/c/users/rudie/documents/sem2/214/project/src/ResidentialBuildingBuilder.h@{/mnt/c/users/rudie/documents/sem2/214/project/src/ResidentialBuildingBuilder.h}}
+\mbox{\hyperlink{ResidentialBuildingBuilder_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ RESIDENTIALBUILDINGBUILDER\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ RESIDENTIALBUILDINGBUILDER\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Builder_8h}{Builder.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ResidentialBuilding_8h}{ResidentialBuilding.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classResidentialBuildingBuilder}{ResidentialBuildingBuilder}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBuilder}{Builder}}\ \{}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{int}\ residentialUnit\ =\ 0;\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{float}\ comfort\ =\ 0.0f;\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classResidentialBuildingBuilder_a0b09f98fa53d656775dcd3c66f58f489}{ResidentialBuildingBuilder}}();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{classResidentialBuildingBuilder}{ResidentialBuildingBuilder}}\&\ \mbox{\hyperlink{classResidentialBuildingBuilder_a79f50bdea6f8c67d2f2aed3ffbad0a9e}{setResidentialUnit}}(\textcolor{keywordtype}{int}\ unit);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{classResidentialBuildingBuilder}{ResidentialBuildingBuilder}}\&\ \mbox{\hyperlink{classResidentialBuildingBuilder_aaa34afbcbefdfd28e52e922c82271c61}{setComfort}}(\textcolor{keywordtype}{float}\ comfort);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classResidentialBuildingBuilder_a02b4e865125e8c44c99531dcad204b9e}{getResidentialUnit}}();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classResidentialBuildingBuilder_aaa564284bafd5610bd55006264c9c283}{getComfort}}();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00076\ \ \ \ \ std::unique\_ptr<Building>\ \mbox{\hyperlink{classResidentialBuildingBuilder_a42cbb8b6c25ad9987194669c35a04024}{build}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00077\ \};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RESIDENTIALBUILDINGBUILDER\_H}}
+
+\end{DoxyCode}

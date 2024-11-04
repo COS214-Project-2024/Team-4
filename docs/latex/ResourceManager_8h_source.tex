@@ -1,0 +1,74 @@
+\doxysection{Resource\+Manager.\+h}
+\hypertarget{ResourceManager_8h_source}{}\label{ResourceManager_8h_source}\index{/mnt/c/users/rudie/documents/sem2/214/project/src/ResourceManager.h@{/mnt/c/users/rudie/documents/sem2/214/project/src/ResourceManager.h}}
+\mbox{\hyperlink{ResourceManager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ RESOURCEMANAGER\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ RESOURCEMANAGER\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ResourceType_8h}{ResourceType.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Observer_8h}{Observer.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Resource_8h}{Resource.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ResourceAllocationStrategy_8h}{ResourceAllocationStrategy.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classResourceManager}{ResourceManager}}\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ budget;\ }
+\DoxyCodeLine{00032\ \ \ \ \ std::map<ResourceType,\ Resource*>\ resources;\ }
+\DoxyCodeLine{00033\ \ \ \ \ std::map<ResourceType,\ int>\ resourceCosts;\ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{classResourceAllocationStrategy}{ResourceAllocationStrategy}}*\ allocationStrategy;\ }
+\DoxyCodeLine{00035\ \ \ \ \ std::vector<Observer*>\ observers;\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classResourceManager_af366ed3390d41ded6f74adf9d4056e21}{ResourceManager}}(\textcolor{keywordtype}{int}\ initialBudget)\ :\ budget(initialBudget)\ \{\}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classResourceManager_aff2cdf001b124a32ac5facdf1893802d}{allocateResources}}(\mbox{\hyperlink{ResourceType_8h_a8571efa4409be32e28abf3ea74a0dbb1}{ResourceType}}\ type,\ \textcolor{keywordtype}{int}\ quantity)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (resources.count(type)\ \&\&\ budget\ >=\ resourceCosts[type]\ *\ quantity\ \&\&\ resources[type]-\/>allocate(quantity))\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ budget\ -\/=\ resourceCosts[type]\ *\ quantity;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ notifyObservers(type,\ quantity);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classResourceManager_aeb9373520fd04367bd85e1206c012f8a}{releaseResources}}(\mbox{\hyperlink{ResourceType_8h_a8571efa4409be32e28abf3ea74a0dbb1}{ResourceType}}\ type,\ \textcolor{keywordtype}{int}\ quantity)\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (resources.count(type))\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ resources[type]-\/>release(quantity);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ notifyObservers(type,\ -\/quantity);\ \ \textcolor{comment}{//\ Negative\ to\ indicate\ release}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classResourceManager_ac2776ccd4a8c5b89e31300a2204f4494}{setAllocationStrategy}}(\mbox{\hyperlink{classResourceAllocationStrategy}{ResourceAllocationStrategy}}*\ strategy)\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ allocationStrategy\ =\ strategy;}
+\DoxyCodeLine{00081\ \ \ \ \ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classResourceManager_a576c29ce49fdb6c65f6b9c6eecbdb988}{getBudget}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ budget;\ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classResourceManager_a01d3b7f5686f6131250bdbd20743094b}{addObserver}}(\mbox{\hyperlink{classObserver}{Observer}}*\ observer)\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ observers.push\_back(observer);}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{classResource}{Resource}}*\ \mbox{\hyperlink{classResourceManager_a57fedd807ab26987d66cbd0a012c669c}{getResource}}(\mbox{\hyperlink{ResourceType_8h_a8571efa4409be32e28abf3ea74a0dbb1}{ResourceType}}\ type)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ resources.find(type);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (it\ !=\ resources.end())\ ?\ it-\/>second\ :\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00108\ \ \ \ \ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classResourceManager_a4cb608e665a3abd58c1de4cdf45518bf}{addResource}}(\mbox{\hyperlink{ResourceType_8h_a8571efa4409be32e28abf3ea74a0dbb1}{ResourceType}}\ type,\ \mbox{\hyperlink{classResource}{Resource}}*\ resource)\ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (resources.count(type)\ ==\ 0)\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ resources[type]\ =\ resource;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyObservers(\mbox{\hyperlink{ResourceType_8h_a8571efa4409be32e28abf3ea74a0dbb1}{ResourceType}}\ type,\ \textcolor{keywordtype}{int}\ quantity)\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ obs\ :\ observers)\ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ obs-\/>update(type,\ quantity);}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+\DoxyCodeLine{00134\ \};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RESOURCEMANAGER\_H}}
+
+\end{DoxyCode}

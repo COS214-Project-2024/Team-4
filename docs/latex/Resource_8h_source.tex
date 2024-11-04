@@ -1,0 +1,37 @@
+\doxysection{Resource.\+h}
+\hypertarget{Resource_8h_source}{}\label{Resource_8h_source}\index{/mnt/c/users/rudie/documents/sem2/214/project/src/Resource.h@{/mnt/c/users/rudie/documents/sem2/214/project/src/Resource.h}}
+\mbox{\hyperlink{Resource_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ RESOURCE\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ RESOURCE\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ResourceType_8h}{ResourceType.h}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classResource}{Resource}}\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{ResourceType_8h_a8571efa4409be32e28abf3ea74a0dbb1}{ResourceType}}\ type;\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ quantity;\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{classResource_a3e0469896cdda729111820f7030fd9aa}{Resource}}(\mbox{\hyperlink{ResourceType_8h_a8571efa4409be32e28abf3ea74a0dbb1}{ResourceType}}\ resourceType,\ \textcolor{keywordtype}{int}\ initialQuantity)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ :\ type(resourceType),\ quantity(initialQuantity)\ \{\}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classResource_a51c6428476a051ca348bc35245567513}{allocate}}(\textcolor{keywordtype}{int}\ amount)\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (quantity\ >=\ amount)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ quantity\ -\/=\ amount;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classResource_a277d0cb50cf0bfaa7b8d0e473972b2e6}{release}}(\textcolor{keywordtype}{int}\ amount)\ \{\ quantity\ +=\ amount;\ \}}
+\DoxyCodeLine{00058\ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{ResourceType_8h_a8571efa4409be32e28abf3ea74a0dbb1}{ResourceType}}\ \mbox{\hyperlink{classResource_af3e5c0ae57a1dec4e6d30ca9ff65da4a}{getType}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ type;\ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classResource_aa50de861baf5cc44ecfce984ec30933a}{getQuantity}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ quantity;\ \}}
+\DoxyCodeLine{00072\ \};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RESOURCE\_H}}
+
+\end{DoxyCode}
