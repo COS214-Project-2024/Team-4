@@ -23,8 +23,6 @@
  */
 class Traverser {
     public:
-        Traverser(){}
-
         /**
          * @brief Increment the iterator.
          * 
