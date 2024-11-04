@@ -2,11 +2,13 @@
 #define __POWERPLANT_H
 
 #include "Utility.h"
-//#include "UtilityMediator.h"
+#include "UtilityMediator.h"
+
+class UtilityMediator;
 
 class PowerPlant : public Utility {
-    // private:
-    //     UtilityMediator* mediator;
+    private:
+        UtilityMediator* mediator;
     
     public:
 
