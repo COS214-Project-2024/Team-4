@@ -10,6 +10,9 @@
 #include "CitizenState.h"
 #include "Income.h"
 #include "Jobs.h"
+#include "TaxType.h"
+#include <chrono>
+
 
 class BuildingManager;
 class SatisfactionStrategy;
@@ -85,6 +88,17 @@ public:
      float getTaxRate() const;  // Getter for tax rate
     void setTaxRate(float rate);  // Setter if tax rate needs to be adjusted
      double payTaxes(TaxType* taxType);
+
+//TAX STUFF
+    void setTaxCooldown(bool status);
+    bool getTaxCooldown() const;
+    
+ bool isOnCooldown() const; // Change access modifier to public
+// Cooldown Mechanism
+bool taxCooldown;
+std::chrono::steady_clock::time_point lastTaxPayment;
+static constexpr std::chrono::seconds taxCooldownPeriod{5}; // Cooldown period of 5 seconds
+
 };
 
 #endif // CITIZEN_H

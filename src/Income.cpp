@@ -29,4 +29,7 @@ double Income::payTaxes(TaxType& taxType) {
     return baseSalary * taxRate;
 }
 
+double Income::calculateTax(double val) {
+    return val * incomeTax;
+}
 

@@ -88,15 +88,16 @@ void Building::displayJobInfo(const std::string& jobTitle) const {
 // Setters
 void Building::setName(const std::string& name) { this->name = name; }
 std::string Building::getName() const { return name; }
-
-
-double Building::payTaxes(double taxRate) {
-    // Example implementation, should be overridden by derived classes if needed
-    double taxAmount = (capacity * 100) * taxRate; // Replace with your logic
-    return taxAmount;
+//collect taxes from the building
+double Building::payTaxes(TaxType* taxType) {
+	// Placeholder for tax collection logic
+    taxType->calculateTax(0.0);
+    return 0.0;
 }
 
-double Building::payTaxes(TaxType* taxType){
-    std::cout<<"idk what this does";
+//undo collecting taxes from the building
+void Building::undoCollectTaxes() {
+	// Placeholder for undoing tax collection logic
 }
+
 

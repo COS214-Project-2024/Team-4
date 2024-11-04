@@ -39,6 +39,8 @@ public:
 	
 
 	void setTax(double rate) override;
+
+    double calculateTax(double val) override;
 };
 
 #endif

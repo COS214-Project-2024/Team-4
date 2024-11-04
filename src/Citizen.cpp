@@ -16,7 +16,8 @@ T clamp(T value, T min, T max) {
 }
 
 Citizen::Citizen(const std::string& name, int age) 
-    : name(name), age(age), satisfaction(50.0f), currentState(nullptr) {}
+    : name(name), age(age), satisfaction(50.0f), currentState(nullptr), taxCooldown(false),
+      lastTaxPayment(std::chrono::steady_clock::now() - taxCooldownPeriod) {}
 
 Citizen::~Citizen() {
     if (currentState != nullptr) {
@@ -152,14 +153,45 @@ void Citizen::setIncome(std::shared_ptr<Income> inc) {
 }
 
 // Citizen.cpp
+bool Citizen::isOnCooldown() const {
+    if (!taxCooldown) {
+        return false;
+    }
+    auto now = std::chrono::steady_clock::now();
+    auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(now - lastTaxPayment);
+    std::cout << "Elapsed time since last tax payment for " << name << ": " << elapsed.count() << " seconds\n";
+    return elapsed < taxCooldownPeriod;
+}
+
 double Citizen::payTaxes(TaxType* taxType) {
-    if (income) {
-        double citizenTax = income->payTaxes(*taxType); // Pass the dereferenced taxType if necessary
-        bankBalance -= citizenTax;
-        std::cout << name << " paid " << citizenTax << " in taxes." << std::endl;
-        return citizenTax;
+    auto now = std::chrono::steady_clock::now();
+    if (isOnCooldown()) {
+        std::cout << "Citizen " << name << " is on cooldown. Taxes cannot be collected now.\n";
+        return 0.0;
+    }
+
+    double tax = taxType->calculateTax(income.get()->calculateMonthlyIncome());
+    tax = ::clamp(tax, 0.0, bankBalance);
+
+    if (tax > 0.0) {
+        bankBalance -= tax;
+        taxCooldown = true;
+        lastTaxPayment = now;
+        std::cout << "Collected R" << tax << " in taxes from " << name << ".\n";
+        return tax;
     } else {
-        std::cout << name << " has no income to tax." << std::endl;
+        std::cout << "Citizen " << name << " has insufficient funds to pay taxes.\n";
         return 0.0;
     }
 }
+
+// Tax-related methods
+void Citizen::setTaxCooldown(bool status) {
+    taxCooldown = status;
+}
+
+bool Citizen::getTaxCooldown() const {
+    return taxCooldown;
+}
+
+
