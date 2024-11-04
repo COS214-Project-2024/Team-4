@@ -1,0 +1,30 @@
+<map id="/mnt/c/users/rudie/documents/sem2/214/project/src/JobSatisfactionStrategy.h" name="/mnt/c/users/rudie/documents/sem2/214/project/src/JobSatisfactionStrategy.h">
+<area shape="rect" id="Node000001" title="Definition of the JobSatisfactionStrategy class." alt="" coords="242,5,437,75"/>
+<area shape="rect" id="Node000002" href="$SatisfactionStrategy_8h.html" title="Header file for the SatisfactionStrategy class." alt="" coords="258,123,422,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="342,75,342,109,337,109,337,75"/>
+<area shape="rect" id="Node000003" href="$Citizen_8h.html" title="Header file for the Citizen class." alt="" coords="300,196,379,221"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="342,148,342,182,337,182,337,148"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="384,416,442,441"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="300,214,226,218,139,228,61,245,31,257,12,271,8,282,13,293,35,324,61,341,130,365,194,387,259,403,370,420,370,426,258,408,192,392,128,371,58,345,32,328,8,296,3,282,8,268,29,252,59,240,139,222,226,213,300,208"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="141,343,218,368"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="300,214,230,219,147,229,72,246,44,257,26,271,19,284,20,296,29,306,43,316,83,332,128,343,127,348,82,337,40,321,25,310,15,298,14,283,22,268,41,253,70,241,146,223,229,213,300,209"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="35,269,98,295"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="301,223,112,272,111,266,299,218"/>
+<area shape="rect" id="Node000007" href="$CitizenObserver_8h.html" title="Header file for the CitizenObserver class." alt="" coords="122,269,259,295"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="317,224,228,266,226,261,315,219"/>
+<area shape="rect" id="Node000008" href="$CitizenState_8h.html" title="Declaration of the CitizenState class." alt="" coords="283,269,396,295"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="342,222,342,256,337,256,337,222"/>
+<area shape="rect" id="Node000009" href="$Income_8h.html" title="Definition of the Income class." alt="" coords="450,343,533,368"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="380,210,410,216,442,227,472,243,497,268,503,283,506,299,502,330,497,329,500,299,498,284,492,271,469,248,440,232,409,221,379,216"/>
+<area shape="rect" id="Node000010" href="$TaxType_8h_source.html" title=" " alt="" coords="496,416,583,441"/>
+<area shape="poly" id="edge15_Node000003_Node000010" title=" " alt="" coords="380,211,413,217,450,227,486,244,519,267,531,282,540,299,549,335,550,371,547,402,542,402,545,371,543,336,535,301,526,285,515,271,484,248,448,232,412,222,379,216"/>
+<area shape="rect" id="Node000011" href="$Jobs_8h.html" title="Definition of the Jobs class." alt="" coords="421,269,482,295"/>
+<area shape="poly" id="edge11_Node000003_Node000011" title=" " alt="" coords="359,219,423,259,420,264,356,224"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="608,269,674,295"/>
+<area shape="poly" id="edge16_Node000003_Node000012" title=" " alt="" coords="380,217,595,267,594,272,378,222"/>
+<area shape="poly" id="edge10_Node000009_Node000004" title=" " alt="" coords="481,370,438,409,434,405,477,366"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="502,367,527,403,522,406,497,370"/>
+<area shape="poly" id="edge14_Node000011_Node000004" title=" " alt="" coords="451,296,422,403,417,402,446,294"/>
+<area shape="poly" id="edge12_Node000011_Node000005" title=" " alt="" coords="422,294,410,297,232,343,231,338,408,292,420,289"/>
+<area shape="poly" id="edge13_Node000011_Node000009" title=" " alt="" coords="461,294,481,329,476,332,456,296"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classResourceApprovalHandler.html" title="Base class for handling resource approval requests." alt="" coords="5,31,196,56"/>
+<area shape="rect" id="Node000001" href="$classBudgetApprovalHandler.html" title="Handles budget approval requests." alt="" coords="244,5,421,31"/>
+<area shape="poly" id="edge26_Node000000_Node000001" title=" " alt="" coords="210,29,244,25,244,30,210,34"/>
+<area shape="rect" id="Node000002" href="$classPolicyCheckerHandler.html" title="Handles policy enforcement checks for resource approval requests." alt="" coords="251,55,415,80"/>
+<area shape="poly" id="edge27_Node000000_Node000002" title=" " alt="" coords="210,52,251,56,250,62,210,57"/>
+</map>
