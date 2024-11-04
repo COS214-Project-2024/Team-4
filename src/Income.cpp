@@ -15,5 +15,14 @@ double Income::calculateTax(double income) {
     return income * rate;
 }
 
+// Get monthly income
+double Income::getMonthlyIncome() {
+    return income;
+}
+
+// Set monthly income
+double Income::calculateMonthlyIncome(double income) {
+    this->income = income;
+}
 
 

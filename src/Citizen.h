@@ -10,13 +10,19 @@
 #include "CitizenState.h"
 #include "Income.h"
 #include "Jobs.h"
+#include "TaxType.h"
+#include <chrono>
+#include <algorithm>
+#include <iostream>
+#include <thread>
+
 
 class BuildingManager;
 class SatisfactionStrategy;
 class Building;
 class Citizen {
 private:
-    float taxRate;
+    double taxRate;
     std::string name;
     int age;
     float satisfaction = 50.0f;
@@ -32,6 +38,12 @@ private:
     std::shared_ptr<Jobs> job;
     std::string jobTitle = "Unemployed"; // Default job title
                    // Employment status
+   // Cooldown Mechanism for tax payment
+bool taxCooldown;
+std::chrono::steady_clock::time_point lastTaxPayment;
+static constexpr std::chrono::seconds taxCooldownPeriod{10}; // Cooldown period of 10 seconds
+
+
 
 public:
     bool employed = false;
@@ -84,6 +96,20 @@ public:
     bool isEmployed() const { return employed; }
      float getTaxRate() const;  // Getter for tax rate
     void setTaxRate(float rate);  // Setter if tax rate needs to be adjusted
+
+
+ 
+
+                     // Tax payment methods
+    bool isOnCooldown() const; // Change access modifier to public
+    void setTaxRate(double rate);
+    double calculateTax();
+    double getIncome() const;
+    void setIncome(double income);
+    double payTaxes(TaxType* taxType);
+    bool canPayTax() const;
+    void setTaxCooldown(bool status);
+    bool getTaxCooldown() const;
 };
 
 #endif // CITIZEN_H

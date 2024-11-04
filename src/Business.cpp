@@ -4,7 +4,7 @@
 using namespace std;
 
 Business::Business(double revenue, double taxRate)
-    : revenue(revenue), taxRate(taxRate), taxCooldownPeriod(std::chrono::seconds(5)) { // Default cooldown period of 5 seconds
+    : revenue(revenue), taxRate(taxRate), taxCooldownPeriod(std::chrono::seconds(10)) { // Default cooldown period of 10 seconds
 }
 
 

@@ -1,4 +1,5 @@
 #include "CollectTaxesCommand.h"
+#include <iostream>
 
 CollectTaxesCommand::CollectTaxesCommand(Building* building, TaxType* taxType) {
 	this->building = building;

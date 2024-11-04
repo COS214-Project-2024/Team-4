@@ -11,9 +11,11 @@ public:
     virtual ~Income() override;
 
     virtual double calculateTax(double income) override;
-
+    double getMonthlyIncome();
+    double calculateMonthlyIncome(double income);
 private:
     double rate;
+    double income;
 };
 
 #endif // INCOME_H

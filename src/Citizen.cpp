@@ -9,14 +9,16 @@
 #include "LeavingCityState.h"
 #include "SatisfactionStrategy.h"
 #include "Building.h"
-
+#include "Income.h"
+#include "TaxType.h"
 template <typename T>
 T clamp(T value, T min, T max) {
     return std::max(min, std::min(value, max));
 }
 
 Citizen::Citizen(const std::string& name, int age) 
-    : name(name), age(age), satisfaction(50.0f), currentState(nullptr) {}
+    : name(name), age(age), satisfaction(50.0f), currentState(nullptr),taxCooldown(false),
+      lastTaxPayment(std::chrono::steady_clock::now() - taxCooldownPeriod) {}
 
 Citizen::~Citizen() {
     if (currentState != nullptr) {
@@ -68,7 +70,7 @@ void Citizen::updateSatisfaction() {
     for (const auto& strategy : satisfactionStrategies) {
         totalSatisfaction += strategy->calculateSatisfaction(*this);
     }
-    satisfaction = clamp(totalSatisfaction / satisfactionStrategies.size(), 0.0f, 100.0f);
+    satisfaction = ::clamp(totalSatisfaction / satisfactionStrategies.size(), 0.0f, 100.0f);
 }
 
 void Citizen::updateSatisfaction(float adjustment) {
@@ -114,7 +116,7 @@ void Citizen::addChild() {
 // Monthly income deposit
 void Citizen::depositMonthlyIncome() {
     if (income) {
-        double monthlyIncome = income->calculateMonthlyIncome();
+        double monthlyIncome = income->getMonthlyIncome();
         bankBalance += monthlyIncome;
         std::cout << name << " received income: " << monthlyIncome << ". New bank balance: " << bankBalance << std::endl;
     }
@@ -134,8 +136,11 @@ void Citizen::searchAndApplyForJob(BuildingManager& manager, Building* building,
         // Update satisfaction after getting a job
         updateSatisfaction();
 
-        std::cout << name << " found a job as " << jobtitle 
-                  << " with monthly income: " << income->calculateMonthlyIncome() << std::endl;
+        std::cout << name << " found a job as " << jobtitle;
+        if (income) {
+            std::cout << " with monthly income: " << income->getMonthlyIncome();
+        }
+        std::cout << std::endl;
     } else {
         std::cout << name << " could not find a job as " << jobtitle << "." << std::endl;
     }
@@ -149,4 +154,46 @@ bool Citizen::isLeaving() const { return satisfaction == 0; }
 // Setters
 void Citizen::setIncome(std::shared_ptr<Income> inc) {
     income = inc;
+}
+
+
+bool Citizen::isOnCooldown() const {
+    if (!taxCooldown) {
+        return false;
+    }
+    auto now = std::chrono::steady_clock::now();
+    auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(now - lastTaxPayment);
+    std::cout << "Elapsed time since last tax payment for " << name << ": " << elapsed.count() << " seconds\n";
+    return elapsed < taxCooldownPeriod;
+}
+
+double Citizen::payTaxes(TaxType* taxType) {
+    auto now = std::chrono::steady_clock::now();
+    if (isOnCooldown()) {
+        std::cout << "Citizen " << name << " is on cooldown. Taxes cannot be collected now.\n";
+        return 0.0;
+    }
+
+    double tax = taxType->calculateTax(income ? income->getMonthlyIncome() : 0.0);
+    tax = ::clamp(tax, 0.0, bankBalance);
+
+    if (tax > 0.0) {
+        bankBalance -= tax;
+        taxCooldown = true;
+        lastTaxPayment = now;
+        std::cout << "Collected $" << tax << " in taxes from " << name << ".\n";
+        return tax;
+    } else {
+        std::cout << "Citizen " << name << " has insufficient funds to pay taxes.\n";
+        return 0.0;
+    }
+}
+
+// Tax-related methods
+void Citizen::setTaxRate(double rate) {
+    taxRate = rate;
+}
+
+double Citizen::calculateTax() {
+    return income ? income->getMonthlyIncome() * taxRate : 0.0;
 }

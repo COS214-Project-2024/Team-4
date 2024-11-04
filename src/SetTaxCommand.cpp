@@ -24,7 +24,7 @@ SetTaxCommand::SetTaxCommand(Government* gov, TaxSystem* taxSys, double rate, ch
         double serviceFee = 15.0; //  service fee
         newTaxType = new Sales(rate, salesLevy, serviceFee);
     } else if (taxType == 'V') {
-        newTaxType = new VAT(rate);
+        //newTaxType = new VAT(rate);
     } else {
         std::cout << "Invalid tax type" << std::endl;
         return; // Exit if tax type is invalid
