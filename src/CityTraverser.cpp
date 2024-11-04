@@ -63,6 +63,7 @@ bool CityTraverser::operator++(){
     this->currentElement++;
     this->Element = temp;
 
+    return true;
 }
 
 bool CityTraverser::operator--(){
@@ -79,6 +80,8 @@ bool CityTraverser::operator--(){
     this->currentElement--;
     this->Element = temp;
 
+    return true;
+
 }
 
 bool CityTraverser::operator+(){
@@ -88,6 +91,8 @@ bool CityTraverser::operator+(){
 
     this->currentElement = 0;
     this->Element = state->getPos(currentElement);
+
+    return true;
 
 }
 
@@ -99,6 +104,7 @@ bool CityTraverser::operator-(){
     this->currentElement = 0;
     this->Element = state->getPos(currentElement);
 
+    return true;
 }
 
 bool CityTraverser::stepIn(){
@@ -218,6 +224,8 @@ bool CityTraverser::setState(){
             state = nullptr;
             break;
     }
+
+    return true;
 
 }
 

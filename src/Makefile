@@ -17,13 +17,14 @@ TARGET := my_program
 # Default target
 all: $(TARGET)
 
+# Link object files to create the binary
+$(TARGET): $(OBJ)
+	$(CXX) $(CXXFLAGS) $^ -o $@
+
 # Compile .cpp files to object files
 %.o: %.cpp $(HDR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Link object files to create the binary
-$(TARGET): $(OBJ)
-	$(CXX) $(CXXFLAGS) $^ -o $@
 
 # Clean up generated files
 clean:

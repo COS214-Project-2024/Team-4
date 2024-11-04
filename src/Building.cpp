@@ -98,5 +98,6 @@ double Building::payTaxes(double taxRate) {
 
 double Building::payTaxes(TaxType* taxType){
     std::cout<<"idk what this does";
+    return false;
 }
 
