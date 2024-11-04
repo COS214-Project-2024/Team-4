@@ -3,6 +3,7 @@
 
 #include "Utility.h"
 #include "UtilityMediator.h"
+#include "ResourceType.h"
 
 class UtilityMediator;
 

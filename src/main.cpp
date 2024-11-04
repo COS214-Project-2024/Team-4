@@ -26,6 +26,33 @@
 #include "Policy.h"
 #include "Business.h"
 
+void testResidentialBuildingBuilder();
+void testCommercialBuildingBuilder();
+void testIndustrialBuildingBuilder();
+void testLandmarkBuildingBuilder();
+void testUtilities();
+void testResourceManager();
+void testGOVF1();
+void TESTGOVCOMMAND();
+
+int main() {
+    // Testing each builder class separately
+    testResidentialBuildingBuilder();
+    testCommercialBuildingBuilder();
+    testIndustrialBuildingBuilder();
+    testLandmarkBuildingBuilder();
+    testUtilities();
+    testResourceManager();
+
+    std::cout << "============================GOVT1========================" << std::endl;
+    TESTGOVCOMMAND();
+    std::cout << "============================GOVT2========================" << std::endl;
+    testGOVF1();
+  
+    std::cout << "All tests completed.\n";
+  
+    return 0;
+}
 
 // Test ResidentialBuildingBuilder
 void testResidentialBuildingBuilder() {
@@ -355,21 +382,4 @@ void TESTGOVCOMMAND() {
 //                                    END    GOV    TESTING
 //=============================================================================================
 
-int main() {
-    // Testing each builder class separately
-    testResidentialBuildingBuilder();
-    testCommercialBuildingBuilder();
-    testIndustrialBuildingBuilder();
-    testLandmarkBuildingBuilder();
-    testUtilities();
-    testResourceManager();
 
-    std::cout << "============================GOVT1========================" << std::endl;
-    TESTGOVCOMMAND();
-    std::cout << "============================GOVT2========================" << std::endl;
-    testGOVF1();
-  
-    std::cout << "All tests completed.\n";
-  
-    return 0;
-}
