@@ -1,6 +1,6 @@
 #include "CityTraverser.h"
 
-CityTraverser::CityTraverser(){
+CityTraverser::CityTraverser() : Traverser(){
     state = nullptr;
     currentElement = -1;
     Element = nullptr;
