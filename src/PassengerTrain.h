@@ -84,7 +84,7 @@ class PassengerTrain : public Train {
          * 
          * @return float The adjusted commute time in hours.
          */
-        float commuteTime() override;
+        float commuteTime();
 };
 
 #endif

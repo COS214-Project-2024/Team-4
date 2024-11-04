@@ -158,7 +158,7 @@ class Taxi : public PublicTransit {
          * 
          * @return The adjusted commute time as a float.
          */
-        float commuteTime() override;
+        float commuteTime();
 };
 
 #endif
