@@ -20,6 +20,8 @@ class Highway : public Road {
         bool addHighway(Highway *highway);
         InsideRoad *getInsideRoad(std::size_t x);
         Highway *getHighway(std::size_t x);
+        std::vector<InsideRoad*> getInsideRoadsList();
+        std::vector<Highway*> getHighwaysList();
         std::string getRoadName();
         float getSpeedLimit();
     

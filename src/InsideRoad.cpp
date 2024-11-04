@@ -1,6 +1,6 @@
 #include "InsideRoad.h"
 
-InsideRoad::InsideRoad(char state, std::string roadName, float avgStopTime) : Road(state, roadName) {
+InsideRoad::InsideRoad(char state, std::string roadName, float avgStopTime) : Road(state, roadName, 'I') {
     this->avgStopTime = avgStopTime;
 }
 
@@ -161,6 +161,10 @@ FreightTrain *InsideRoad::getFreightTrain(std::size_t x){
 //     if(x < this->buildings.size() && x >= 0){
 //         return this->buildings[x];
 //     }else return nullptr;
+// }
+
+// std::vector<Building*> InsideRoad::getBuildingsList(){
+//     return this->buildings;
 // }
 
 float InsideRoad::getAvgStopTime(){

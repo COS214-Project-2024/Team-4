@@ -1,6 +1,6 @@
 #include "Highway.h"
 
-Highway::Highway(char state, std::string roadName, float speedLimit) : Road(state, roadName) {
+Highway::Highway(char state, std::string roadName, float speedLimit) : Road(state, roadName, 'H') {
     this->speedLimit = speedLimit;
 }
 
@@ -45,6 +45,14 @@ Highway *Highway::getHighway(std::size_t x) {
         return this->highways[x];
     }else return nullptr;
 
+}
+
+std::vector<InsideRoad*> Highway::getInsideRoadsList() {
+    return this->insideRoads;
+}
+
+std::vector<Highway*> Highway::getHighwaysList() {
+    return this->highways;
 }
 
 float Highway::getSpeedLimit() {

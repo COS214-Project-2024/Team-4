@@ -11,10 +11,12 @@
 class Transportation {
     private:
         TrafficFlow *state;
+        char type;
     public:
-        Transportation(char state);
+        Transportation(char state, char type);
         float getTrafficFlow();
         bool setState(char state);
+        char getType();
         // virtual float calculateCommute() = 0;
         ~Transportation();
     

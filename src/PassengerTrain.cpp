@@ -1,6 +1,6 @@
 #include "PassengerTrain.h"
 
-PassengerTrain::PassengerTrain(char state, std::string line) : Train(state, line) {}
+PassengerTrain::PassengerTrain(char state, std::string line) : Train(state, line, 'P') {}
 
 bool PassengerTrain::addInsideRoad(InsideRoad *insideRoad) {
     for(InsideRoad *x: this->insideRoads) {

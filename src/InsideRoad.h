@@ -2,6 +2,7 @@
 #define INSIDEROAD_H
 
 #include <vector>
+#include <iostream>
 
 #include "Road.h"
 #include "Highway.h"
@@ -35,7 +36,6 @@ class InsideRoad : public Road {
         std::vector<FreightTrain*> freightTrains;
         // std::vector<Building*> buildings;
 
-
     public:
         InsideRoad(char state, std::string roadName, float avgStopTime);
         bool addInsideRoad(InsideRoad *insideRoad);
@@ -56,6 +56,7 @@ class InsideRoad : public Road {
         ComercialAirport* getComercialAirport(std::size_t x);
         CargoAirport* getCargoAirport(std::size_t x);
         // Building *getBuilding(std::size_t x);
+        // std::vector<Building*> getBuildingsList();   
         float getAvgStopTime();
         std::string getRoadName();
 

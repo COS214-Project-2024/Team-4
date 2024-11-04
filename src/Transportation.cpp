@@ -1,6 +1,6 @@
 #include "Transportation.h"
 
-Transportation::Transportation(char state) {
+Transportation::Transportation(char state, char type) {
     switch (state)
     {
     case 'P':
@@ -18,6 +18,9 @@ Transportation::Transportation(char state) {
     default:
         break;
     };
+
+    this->type = type;
+
 }
 
 float Transportation::getTrafficFlow() {
@@ -52,6 +55,11 @@ bool Transportation::setState(char state) {
         return false;
         break;
     };
+    
+}
+
+char Transportation::getType() {
+    return this->type;
 }
 
 Transportation::~Transportation() {

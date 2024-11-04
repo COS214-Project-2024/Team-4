@@ -41,6 +41,7 @@ class Taxi : public PublicTransit {
         PassengerTrain *getPassengerTrain(std::size_t x);
         FreightTrain *getFreightTrain(std::size_t x);
         // Building *getBuilding(std::size_t x);
+        // std::vector<Building*> getBuildingsList();
         std::string getRouteName();
         std::string getTaxiCompany();
         int getTaxiNumber();
