@@ -1,0 +1,62 @@
+\doxysection{Tax\+System.\+h}
+\hypertarget{TaxSystem_8h_source}{}\label{TaxSystem_8h_source}\index{/mnt/c/users/rudie/documents/sem2/214/project/src/TaxSystem.h@{/mnt/c/users/rudie/documents/sem2/214/project/src/TaxSystem.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ TaxSystem.h}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ TAXSYSTEM\_H}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ TAXSYSTEM\_H}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Building_8h}{Building.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Citizen_8h}{Citizen.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}TaxType.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Government_8h}{Government.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTaxSystem}{TaxSystem}}\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTaxSystem_ac4f5565d85bc9bee39bc178afd6f8ac1}{addGovernment}}(\mbox{\hyperlink{classGovernment}{Government}}*\ gov);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTaxSystem_a995fb9d2312a535a63fc059e58849fda}{addIncomeTaxBuilding}}(\mbox{\hyperlink{classBuilding}{Building}}*\ building);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTaxSystem_a75bc7952fbb5e20de2abedcaee98d398}{addPropertyTaxBuilding}}(\mbox{\hyperlink{classBuilding}{Building}}*\ building);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTaxSystem_a815bb765408aae3b029a29ed92146902}{addSalesTaxBuilding}}(\mbox{\hyperlink{classBuilding}{Building}}*\ building);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTaxSystem_a5b42c2ca5457b4eba43c4666146339f8}{addVATTaxPayer}}(\mbox{\hyperlink{classCitizen}{Citizen}}*\ citizen);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTaxSystem_a703080378edb1424f460d8ad6c05539b}{removeIncomeTaxBuilding}}(\mbox{\hyperlink{classBuilding}{Building}}*\ building);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTaxSystem_a9aa593db5deaa4daa95fce5fa68dae52}{removePropertyTaxBuilding}}(\mbox{\hyperlink{classBuilding}{Building}}*\ building);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTaxSystem_a4a4026ee489743786740c3d2ce38630f}{removeSalesTaxBuilding}}(\mbox{\hyperlink{classBuilding}{Building}}*\ building);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTaxSystem_a033af0f900fdd3aa0ae39071e5f6780f}{removeVATTaxPayer}}(\mbox{\hyperlink{classCitizen}{Citizen}}*\ citizen);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTaxSystem_a2028cbd176a786e7b7be77e19fe422c6}{updateTaxRate}}(\textcolor{keywordtype}{char}\ cType,\ \textcolor{keywordtype}{double}\ rate);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTaxSystem_a173d06226d6bf370f87ab70fe60fd8b1}{collectTaxes}}(\mbox{\hyperlink{classBuilding}{Building}}*\ building,\ \textcolor{keywordtype}{char}\ taxType);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTaxSystem_ad9076d1424f1eeaae74869461eec5746}{setTax}}(\textcolor{keywordtype}{double}\ rate,\ \textcolor{keywordtype}{char}\ taxType);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTaxSystem_a89587685b01699227b84bb764c1da1c5}{checkImpact}}();}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTaxSystem_a68e9eb6ec181455a823613eeec2a7c37}{addTaxRate}}(\mbox{\hyperlink{classTaxType}{TaxType}}*\ tax);}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTaxSystem_a1e4db2656bbfaeec71e80af4c868fe93}{removeTaxRate}}(\mbox{\hyperlink{classTaxType}{TaxType}}*\ taxType);}
+\DoxyCodeLine{00133\ \ \ \ \ }
+\DoxyCodeLine{00134\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{classGovernment}{Government}}*\ government;}
+\DoxyCodeLine{00136\ \ \ \ \ std::vector<Building*>\ incomeTaxbuildings;}
+\DoxyCodeLine{00137\ \ \ \ \ std::vector<Building*>\ propertyTaxbuildings;}
+\DoxyCodeLine{00138\ \ \ \ \ std::vector<Building*>\ salesTaxbuildings;}
+\DoxyCodeLine{00139\ \ \ \ \ std::vector<Citizen*>\ vatTaxpayers;}
+\DoxyCodeLine{00140\ \ \ \ \ std::map<char,\ TaxType*>\ taxRates;}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{float}\ totalTaxCollected\ =\ 0.0;}
+\DoxyCodeLine{00142\ \};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TAXSYSTEM\_H}}
+
+\end{DoxyCode}

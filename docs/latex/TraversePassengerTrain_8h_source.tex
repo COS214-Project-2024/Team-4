@@ -1,0 +1,37 @@
+\doxysection{Traverse\+Passenger\+Train.\+h}
+\hypertarget{TraversePassengerTrain_8h_source}{}\label{TraversePassengerTrain_8h_source}\index{/mnt/c/users/rudie/documents/sem2/214/project/src/TraversePassengerTrain.h@{/mnt/c/users/rudie/documents/sem2/214/project/src/TraversePassengerTrain.h}}
+\mbox{\hyperlink{TraversePassengerTrain_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ TRAVERSEPASSENGERTRAIN\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ TRAVERSEPASSENGERTRAIN\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TraverseState_8h}{TraverseState.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Transportation_8h}{Transportation.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{InsideRoad_8h}{InsideRoad.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PassengerTrain_8h}{PassengerTrain.h}}"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTransportation}{Transportation}};}
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classInsideRoad}{InsideRoad}};}
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPassengerTrain}{PassengerTrain}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTraversePassengerTrain}{TraversePassengerTrain}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classTraverseState}{TraverseState}}\{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ currentList\ =\ 0;\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ upperBound\ =\ 1;\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTraversePassengerTrain}{TraversePassengerTrain}}(\mbox{\hyperlink{classTransportation}{Transportation}}\ *element);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTraversePassengerTrain_a90ef5d1844ba491166cdb6e91123c44b}{nextList}}();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTraversePassengerTrain_a48649b43c9cac366ca2109ca2b7eb485}{prevList}}();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTransportation}{Transportation}}*\ \mbox{\hyperlink{classTraversePassengerTrain_ad31f22c5dd913af1f146b856afc91e33}{getPos}}(\textcolor{keywordtype}{size\_t}\ x);}
+\DoxyCodeLine{00075\ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TRAVERSEPASSENGERTRAIN\_H}}
+
+\end{DoxyCode}
