@@ -539,32 +539,69 @@ public:
     }
 
     void addBuilding() {
-        int type;
-        std::cout << "Select building type:\n1. Commercial\n2. Industrial\n3. Landmark\n4. Residential\n";
-        std::cin >> type;
+        int choice;
+        std::cout << "\nChoose building type:\n1. Residential\n2. Commercial\n3. Industrial\n4. Landmark\n";
+        std::cin >> choice;
 
-        if (type == 1) {
-            CommercialBuildingBuilder builder;
-            director.setBuilder(builder);
-            buildings.push_back(director.constructSmallBuilding());
-            std::cout << "Commercial building added.\n";
-        } else if (type == 2) {
-            IndustrialBuildingBuilder builder;
-            director.setBuilder(builder);
-            buildings.push_back(director.constructSmallBuilding());
-            std::cout << "Industrial building added.\n";
-        } else if (type == 3) {
-            LandmarkBuildingBuilder builder;
-            director.setBuilder(builder);
-            buildings.push_back(director.constructSmallBuilding());
-            std::cout << "Landmark building added.\n";
-        } else if (type == 4) {
-            ResidentialBuildingBuilder builder;
-            director.setBuilder(builder);
-            buildings.push_back(director.constructSmallBuilding());
-            std::cout << "Residential building added.\n";
-        } else {
-            std::cout << "Invalid building type.\n";
+        switch (choice) {
+            case 1: {
+                ResidentialBuildingBuilder builder;
+                builder.setName("Residential Complex")
+                    .setArea(1200.0f)
+                    .setFloors(5)
+                    .setCapacity(100)
+                    .setCitizenSatisfaction(3.0f)
+                    .setEconomicGrowth(1.0f)
+                    .setResourceConsumption(1.5f);
+                auto residentialBuilding = builder.build();
+                buildingManager.addBuilding(residentialBuilding.get());
+                std::cout << "Residential building added.\n";
+                break;
+            }
+            case 2: {
+                CommercialBuildingBuilder builder;
+                builder.setName("Business Center")
+                    .setArea(2500.0f)
+                    .setFloors(10)
+                    .setCapacity(300)
+                    .setCitizenSatisfaction(2.5f)
+                    .setEconomicGrowth(5.0f)
+                    .setResourceConsumption(2.0f);
+                auto commercialBuilding = builder.build();
+                buildingManager.addBuilding(commercialBuilding.get());
+                std::cout << "Commercial building added.\n";
+                break;
+            }
+            case 3: {
+                IndustrialBuildingBuilder builder;
+                builder.setName("Industrial Plant")
+                    .setArea(3000.0f)
+                    .setFloors(8)
+                    .setCapacity(200)
+                    .setCitizenSatisfaction(-1.0f)
+                    .setEconomicGrowth(7.0f)
+                    .setResourceConsumption(4.0f);
+                auto industrialBuilding = builder.build();
+                buildingManager.addBuilding(industrialBuilding.get());
+                std::cout << "Industrial building added.\n";
+                break;
+            }
+            case 4: {
+                LandmarkBuildingBuilder builder;
+                builder.setName("City Park")
+                    .setArea(2000.0f)
+                    .setFloors(1)
+                    .setCapacity(500)
+                    .setCitizenSatisfaction(5.0f)
+                    .setEconomicGrowth(1.0f)
+                    .setResourceConsumption(0.5f);
+                auto landmarkBuilding = builder.build();
+                buildingManager.addBuilding(landmarkBuilding.get());
+                std::cout << "Landmark building added.\n";
+                break;
+            }
+            default:
+                std::cout << "Invalid option.\n";
         }
     }
 
