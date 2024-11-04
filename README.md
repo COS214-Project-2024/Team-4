@@ -1,5 +1,5 @@
-# README
-Team-4's README.
+# Team-4's README.
+Team-4's description.
 # 🏙️ VScoders and the Jetbrainstormers👨‍💻 - City Builder Simulation
 
 <div align="center"> 
@@ -118,7 +118,46 @@ This project applies various design patterns to manage different components of t
   <li><b>Adapter</b> for integrating legacy systems with new interfaces.</li>
 </ul>
 
+### Problem it Solves and Usage in Diagram
+
+- **Factory Method**
+  - **Problem it Solves**: Allows the creation of different building types without specifying their concrete classes.
+  - **Usage in Diagram**: Factories like ResidentialBuildingBuilder, CommercialBuildingBuilder, IndustrialBuildingBuilder, and LandmarkBuildingBuilder create specific building types.
+
+- **Strategy**
+  - **Problem it Solves**: Switches between different resource allocation strategies or tax types dynamically.
+  - **Usage in Diagram**: ResourceAllocationStrategy allows dynamic resource allocation strategies (e.g., PriorityDistributionStrategy, EqualDistributionStrategy). Also used for switching tax types.
+
+- **Command**
+  - **Problem it Solves**: Encapsulates requests (e.g., tax setting, budget allocation) as objects for flexible execution and undo functionality.
+  - **Usage in Diagram**: GovCommand and its concrete implementations (SetTaxCommand, AllocateBudgetCommand, EnforcePolicyCommand) allow the government to execute and undo commands.
+
+- **Observer**
+  - **Problem it Solves**: Automatically updates dependent objects when the state of a subject changes.
+  - **Usage in Diagram**: CitizenObserver and CityGrowthObserver notify other entities about changes in population growth, resource usage, or citizen satisfaction.
+
+- **Chain of Responsibility**
+  - **Problem it Solves**: Passes resource approval requests through a chain of handlers for validation (e.g., budget, policy, availability).
+  - **Usage in Diagram**: ResourceApprovalHandler and its subclasses (BudgetApprovalHandler, PolicyCheckHandler, ResourceAvailabilityHandler) process resource requests in a chain.
+
+- **Mediator**
+  - **Problem it Solves**: Coordinates interactions between components (e.g., utilities, buildings, citizens) without direct interaction between them.
+  - **Usage in Diagram**: UtilityMediator and CityUtilityMediator mediate between utilities like PowerPlant, WaterSupply, and city infrastructure, ensuring coordinated resource distribution.
+
+- **State**
+  - **Problem it Solves**: Changes behavior based on an internal state, such as citizen satisfaction or employment.
+  - **Usage in Diagram**: CitizenState transitions between states like EmployedState, UnemployedState, SatisfiedState, and UnsatisfiedState, affecting how citizens react to the city's economy and taxes.
+
+- **Builder Pattern**
+  - **Problem it Solves**: Constructs complex objects (buildings) step-by-step, allowing for flexible creation.
+  - **Usage in Diagram**: BuildingBuilder and its subclasses (e.g., ResidentialBuildingBuilder, CommercialBuildingBuilder) build various types of buildings using flexible construction steps.
+
+- **Prototype Pattern**
+  - **Problem it Solves**: Allows the cloning of existing building objects to create new instances efficiently.
+  - **Usage in Diagram**: BuildingPrototype clones buildings like ResidentialBuilding, CommercialBuilding, etc., for efficient replication in city expansion.
+
 > UML Diagrams and more details on patterns can be found in the project documentation.
+
 
 ---
 
