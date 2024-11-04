@@ -75,3 +75,13 @@ return 0.0;
 void LandmarkBuilding::undoCollectTaxes() {
 	//not needed
 }
+
+//add citizen to the building
+void LandmarkBuilding::addCitizen(Citizen* citizen) {
+	std::cout << "Added citizen " << citizen->getName() << " to Landmark Building " << name << std::endl;
+}
+
+//add business to the building
+void LandmarkBuilding::addBusiness(Business* business) {
+	std::cout << "Added business to Landmark Building " << name << std::endl;
+}

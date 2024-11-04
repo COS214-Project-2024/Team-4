@@ -22,6 +22,7 @@ IndustrialBuildingBuilder();
 
 
 	std::unique_ptr<Building> build() override;
+
 };
 
 #endif

@@ -6,7 +6,8 @@
 #include <memory>
 #include <algorithm>
 #include "Jobs.h"
-
+#include "Citizen.h"
+#include "Business.h"
 class Building {
 protected:
     std::string name;
@@ -55,6 +56,8 @@ public:
 
 	// Undo collecting taxes from the building
 	virtual void undoCollectTaxes() = 0;
+    virtual void addCitizen(Citizen* citizen) = 0;
+    virtual void addBusiness(Business* business) = 0;
 
 private:
     virtual void calculateSatisfactionImpact() = 0;

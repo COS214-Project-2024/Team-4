@@ -69,3 +69,15 @@ double IndustrialBuilding::payTaxes(TaxType* taxType) {
 void IndustrialBuilding::undoCollectTaxes() {
 	std::cout << "Undoing tax collection from Industrial Building: " << name << std::endl;
 }
+
+//add citizen to the building
+
+void IndustrialBuilding::addCitizen(Citizen* citizen) {
+	std::cout << "Added citizen " << citizen->getName() << " to Industrial Building " << name << std::endl;
+}
+
+//add business to the building
+void IndustrialBuilding::addBusiness(Business* business) {
+	std::cout << "Added business to Industrial Building " << name << std::endl;
+	this->business = business;
+}

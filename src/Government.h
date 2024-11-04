@@ -3,9 +3,13 @@
 
 #include "GovObserver.h"
 #include "CityService.h"
+#include "TaxSystem.h"
 #include "Policy.h"
 #include <vector>
 #include <string>
+#include "TaxType.h"
+#include "Building.h"
+class TaxSystem;
 
 class Government {
 
@@ -14,12 +18,13 @@ private:
     double budget;                       // Budget of the government
     std::string governmentName;          // Name of the government
     std::vector<GovObserver*> observers; // List of observers
-
+    TaxSystem* taxSystem;
 public:
     // Constructor
     // Initializes the government with a name
     Government(std::string name);
-
+    
+    ~Government();
     // Sets the tax rate for the government
     void setTax(double rate);
 
@@ -66,6 +71,11 @@ public:
 
     // Gets the current budget
     double getBudget() const;
+
+    //collect taxes from tax system
+    TaxSystem* getTaxSystem();  
+    //void collectTaxes(Building* building, char taxType);
+
 };
 
 #endif

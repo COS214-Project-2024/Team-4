@@ -11,6 +11,7 @@ private:
 	float pollutionLevel;
 	float productionCapacity;
 	string bType;
+	Business* business;
 
 public:
 	IndustrialBuilding(const std::string& name, float area, int floors, int capacity,
@@ -28,6 +29,8 @@ public:
 	double payTaxes(TaxType* taxType);
     void undoCollectTaxes();
 
+	void addCitizen(Citizen* citizen);
+	void addBusiness(Business* business) override;
 protected:
 	void calculateEconomicImpact();
 

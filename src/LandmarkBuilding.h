@@ -25,7 +25,9 @@ public:
 
 	double payTaxes(TaxType* taxType) override;
 	void undoCollectTaxes() override;
-	
+
+	void addCitizen(Citizen* citizen) override;
+	void addBusiness(Business* business) override;
 
 protected:
 	void calculateEconomicImpact();

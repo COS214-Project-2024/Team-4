@@ -24,7 +24,8 @@ public:
     double payTaxes(TaxType* taxType);
     void undoCollectTaxes();
     void setBusiness(Business* business);
-
+    void addCitizen(Citizen* citizen);
+    void addBusiness(Business* business) override;
 private:
     int businessUnits;
     float customerTraffic;

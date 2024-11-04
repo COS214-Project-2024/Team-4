@@ -101,4 +101,10 @@ void Building::undoCollectTaxes() {
 	// Placeholder for undoing tax collection logic
 }
 
+void Building::addCitizen(Citizen* citizen) {
+    // Placeholder for adding citizens to a building
+}
 
+void Building::addBusiness(Business* business) {
+    // Placeholder for adding businesses to a building
+}

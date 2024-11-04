@@ -108,6 +108,7 @@ static constexpr std::chrono::seconds taxCooldownPeriod{5}; // Cooldown period o
 std::shared_ptr<Jobs> getjobobj(){return job;}
 void setJob(std::shared_ptr<Jobs> job) { this->job = job; }
 void unsetJob() { this->job = nullptr; }
+std::shared_ptr<Income> getIncome() const { return income; }
 };
 
 #endif // CITIZEN_H

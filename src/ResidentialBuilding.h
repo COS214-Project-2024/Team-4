@@ -26,6 +26,8 @@ public:
     void addResidents(Citizen* citizen);
     void undoCollectTaxes();
     int getResidentialUnits() const;
+    void addCitizen(Citizen* citizen) override;  // Override the base class method
+    void addBusiness(Business* business); // do nothing
 
 private:
     int residentialUnits;
@@ -35,12 +37,13 @@ private:
     double propertyTax;
     double totalPropertyTaxCollected;
     double totalIncomeRaxCollected;
+    std::vector<Citizen*> residents; 
 
 protected:
     void calculateEconomicImpact() override;
     void calculateResourceConsumption() override;
     void calculateSatisfactionImpact() override; 
-     std::vector<Citizen*> residents;   
+      
 
 };
 

@@ -4,8 +4,8 @@
 
 // Constructor for CollectTaxesCommand
 // Initializes the command with the government object
-CollectTaxesCommand::CollectTaxesCommand(Government* gov)
-    : government(gov), collectedTaxes(0.0){}
+CollectTaxesCommand::CollectTaxesCommand(Government* gov,Building* building, TaxType* taxType) : government(gov), collectedTaxes(0.0), building(building), taxType(taxType)
+{}
 
 // Executes the tax collection command
 // Collects taxes from the government and stores the collected amount

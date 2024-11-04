@@ -8,6 +8,12 @@ using namespace std;
 // Initializes the government with a name, tax rate, and budget
 Government::Government(string name) : taxRate(0.0), budget(1500.0), governmentName(name) {
     // Constructor implementation
+    cout << "Government created: " << governmentName << endl;
+    taxSystem = new TaxSystem();
+    taxSystem->addGovernment(this);
+}
+Government::~Government() {
+    delete taxSystem;
 }
 
 // Sets the tax rate for the government
@@ -119,4 +125,8 @@ double Government::getBudget() const {
 void Government::addTaxesToBudget(double amount) {
     budget += amount;
     cout << "Added taxes to budget. New budget: " << budget << endl;
+}
+
+TaxSystem* Government::getTaxSystem() {
+    return taxSystem;
 }

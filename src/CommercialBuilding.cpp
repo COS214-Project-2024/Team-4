@@ -66,7 +66,7 @@ double CommercialBuilding::payTaxes(TaxType* taxType) {
     }
 
     double totalTax = business->payTaxes(taxType);
-    std::cout << "Total taxes collected from building " << name << ": $" << totalTax << "\n";
+    std::cout << "Total taxes collected from building " << name << ": R" << totalTax << "\n";
     return totalTax;
 }
 
@@ -79,4 +79,14 @@ void CommercialBuilding::undoCollectTaxes() {
 // Set Business in the Building
 void CommercialBuilding::setBusiness(Business* business) {
     this->business = business;
+}
+
+// Add Citizen to the Building
+void CommercialBuilding::addCitizen(Citizen* citizen) {
+	//not implemented here
+}
+
+// Add Business to the Building
+void CommercialBuilding::addBusiness(Business* business) {
+	this->business = business;
 }

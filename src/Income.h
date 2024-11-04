@@ -4,7 +4,7 @@
 #include "TaxType.h"
 #include <string>
 
-class Income : TaxType {
+class Income : public TaxType {
 
 private:
 	double incomeTax;
@@ -16,7 +16,7 @@ private:
 public:
 // Constructor to initialize with base salary
     Income(double salary, double rate, const char category) 
-        : TaxType(rate, category), baseSalary(salary), bonus(0.0), deductions(0.0) {}
+        : TaxType(rate, category), baseSalary(salary), bonus(0.0), deductions(0.0),incomeTax(rate) {}
 
     Income(double salary) : Income(salary, 0.0, 'A') {}
 

@@ -10,6 +10,7 @@
 #include "Citizen.h"
 #include "TaxType.h"
 #include "Government.h"
+class Government;
 
 class TaxSystem {
 public:
@@ -30,7 +31,7 @@ public:
     void removeTaxRate(TaxType* taxType);
     
 private:
-    Government* government;
+    Government* government = nullptr;
     std::vector<Building*> incomeTaxbuildings;
     std::vector<Building*> propertyTaxbuildings;
     std::vector<Building*> salesTaxbuildings;

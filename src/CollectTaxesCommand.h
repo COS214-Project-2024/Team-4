@@ -23,8 +23,7 @@ private:
 public:
     // Constructor
     // Initializes the command with the government object
-    CollectTaxesCommand(Government* gov);
-    CollectTaxesCommand(Building* building, TaxType* taxType);
+    CollectTaxesCommand(Government* gov,Building* building, TaxType* taxType);
 
     // Executes the tax collection command
     void execute() override;

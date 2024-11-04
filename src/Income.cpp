@@ -18,7 +18,7 @@ void Income::applyDeductions(double amount) {
 }
 
 void Income::setTax(double taxRate) {
-	
+	incomeTax = taxRate;
 }
 
 // In Income.cpp

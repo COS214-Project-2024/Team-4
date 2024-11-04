@@ -63,7 +63,7 @@ double ResidentialBuilding::payTaxes(TaxType* taxType) {
         double citizenTax = citizen->payTaxes(taxType);
         totalIncomeTax += citizenTax;
     }
-    std::cout << "Total Income taxes collected from building " << name << ": $" << totalIncomeTax << "\n"; 
+    std::cout << "Total Income taxes collected from building " << name << ": R" << totalIncomeTax << "\n"; 
     }else if (taxType->getTaxType() =='P'){
        std::cout << "Collecting Property taxes from Residential Building: " << name << "\n";
     for (const auto& citizen : residents) {
@@ -97,3 +97,13 @@ void ResidentialBuilding::undoCollectTaxes() {
 int ResidentialBuilding::getResidentialUnits() const {
     return residentialUnits;
 }
+
+void ResidentialBuilding::addCitizen(Citizen* citizen) {
+ if (citizen != nullptr) {
+        residents.push_back(citizen);
+    }
+}
+void ResidentialBuilding::addBusiness(Business* business) {
+    // Do nothing
+}
+//END ResidentialBuilding.cpp ====================================================================================
