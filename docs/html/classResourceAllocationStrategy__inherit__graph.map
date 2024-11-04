@@ -1,0 +1,7 @@
+<map id="ResourceAllocationStrategy" name="ResourceAllocationStrategy">
+<area shape="rect" id="Node000001" title="Interface for resource allocation strategies." alt="" coords="104,5,299,71"/>
+<area shape="rect" id="Node000002" href="$classEqualDistributionStrategy.html" title="Strategy for equal distribution of resources." alt="" coords="5,119,187,184"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,82,128,120,124,117,160,79"/>
+<area shape="rect" id="Node000003" href="$classPriorityDistributionStrategy.html" title="Strategy for priority&#45;based resource allocation." alt="" coords="211,119,403,184"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="242,79,279,117,275,120,239,82"/>
+</map>

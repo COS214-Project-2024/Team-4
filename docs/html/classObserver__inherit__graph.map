@@ -1,0 +1,5 @@
+<map id="Observer" name="Observer">
+<area shape="rect" id="Node000001" title="Interface for objects that need to be notified of changes in resource types and quantities." alt="" coords="53,5,137,71"/>
+<area shape="rect" id="Node000002" href="$classUtilityMediator.html" title="A class that manages resource distribution for utilities." alt="" coords="5,119,185,284"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,84,98,118,93,118,93,84"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Property" name="Property">
+<area shape="rect" id="Node000001" title="Represents a property with specific attributes and behaviors related to property tax calculation." alt="" coords="5,219,160,364"/>
+<area shape="rect" id="Node000002" href="$classTaxType.html" title="Represents a specific type of tax with a rate and type identifier." alt="" coords="23,5,143,171"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,185,85,218,80,218,80,185"/>
+</map>
