@@ -104,6 +104,9 @@ bool taxCooldown;
 std::chrono::steady_clock::time_point lastTaxPayment;
 static constexpr std::chrono::seconds taxCooldownPeriod{5}; // Cooldown period of 5 seconds
 
+
+std::shared_ptr<Jobs> getjobobj(){return job;}
+
 };
 
 #endif // CITIZEN_H

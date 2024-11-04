@@ -31,6 +31,9 @@ public:
 
     void updateCitizensSatisfaction();          // Central satisfaction update loop
 
+    
+    
+
 private:
     void addRandomCitizen();                    // Add citizen randomly
     void removeRandomCitizen();                 // Remove citizen randomly

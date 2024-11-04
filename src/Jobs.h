@@ -24,9 +24,9 @@ public:
     bool isOccupied() const { return occupied; }
     void hireEmployee(); 
     void releaseEmployee() ;
-
     // Display job information (for debugging or user interaction)
     void displayJobInfo() const;
+    void unOcuppy();
 };
 
 #endif // JOBS_H

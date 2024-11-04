@@ -2,9 +2,9 @@
 
 //constructor
 LandmarkBuilding::LandmarkBuilding(const std::string& name, float area, int floors, int capacity,
-                                   float citizenSatisfactionImpact, float economicGrowthImpact,
-                                   float resourceConsumption, int visitorCapacity, float culturalValue, bool isHistoric)
- :Building(name, area, floors, capacity, citizenSatisfaction, economicGrowth, resourceConsumption)
+                                   float citizenSatisfaction, float economicGrowth, float resourceConsumption,
+                                   int visitorsPerDay, float entranceFee, bool hasGuidedTours)
+    : Building(name, area, floors, capacity, citizenSatisfaction, economicGrowth, resourceConsumption)
 										 {
 	this->visitorCapacity = visitorCapacity;
 	this->culturalValue = culturalValue;

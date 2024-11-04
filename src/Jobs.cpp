@@ -33,3 +33,7 @@ void Jobs::displayJobInfo() const {
     std::cout << "Monthly Income: " << income->calculateMonthlyIncome() << std::endl;
     std::cout << "Status: " << (occupied ? "Occupied" : "Available") << std::endl;
 }
+
+void Jobs::unOcuppy() {
+    occupied = false;
+}
