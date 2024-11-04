@@ -122,6 +122,8 @@ void removeBuilding();
 void addCitizen();
 void viewCitizens();
 void assignJob();
+void runpopsim();
+
 
 int main() {
     bool exit = false;
@@ -329,6 +331,26 @@ void manageCitizens() {
     }
 }
 
+void run1year(){
+
+}
+
+void run5years(){
+
+}
+
+void run10years(){
+
+}
+
+void run25years(){
+
+}
+
+void run50years(){
+
+}
+
 void  runpopsim(){
     int choice;
     std::cout << "\n--- Run Population Simulation ---\n";
@@ -360,26 +382,6 @@ void  runpopsim(){
             std::cout << "Returning to main menu.\n";
             break;
     }
-}
-
-void run1year(){
-
-}
-
-void run5years(){
-
-}
-
-void run10years(){
-
-}
-
-void run25years(){
-
-}
-
-void run50years(){
-
 }
 
 void addCitizen() {
