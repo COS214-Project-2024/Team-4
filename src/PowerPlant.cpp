@@ -1,4 +1,8 @@
 #include "PowerPlant.h"
+#include "Utility.h"
+#include "UtilityMediator.h"
+#include "ResourceType.h"
+
 #include <iostream>
 
 PowerPlant::PowerPlant(UtilityMediator* mediator) : Utility(mediator) {
@@ -11,13 +15,12 @@ void PowerPlant::registerBuilding(Building* building) {
 }
 
 void PowerPlant::supplyResources(Building* building) {
-    if(mediator == nullptr) return;
-    // Request power from the mediator and supply to the building
-    if (this->mediator->requestResources(ResourceType::Power, 50)) {
-        std::cout << "Power supplied to building.\n";
-    } else {
-        std::cout << "Insufficient power to supply to building.\n";
-    }
+    // // Request power from the mediator and supply to the building
+    // if (this->mediator->requestResources(ResourceType::Power, 50)) {
+    //     std::cout << "Power supplied to building.\n";
+    // } else {
+    //     std::cout << "Insufficient power to supply to building.\n";
+    // }
 }
 
 // void PowerPlant::adjustForCitizen(Citizen* citizen) {
