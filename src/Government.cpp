@@ -114,3 +114,8 @@ void Government::notifyObservers() {
 double Government::getBudget() const {
     return budget;
 }
+
+void Government::addTaxesToBudget(double amount) {
+    budget += amount;
+    cout << "Added taxes to budget. New budget: " << budget << endl;
+}
