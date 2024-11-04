@@ -75,9 +75,10 @@ void testGOVF1();
 void TESTGOVCOMMAND();
 void testcit();
 void TRANSPORTATION_TEST();
+
 void testTaxSystem();
 
-int main() {
+int main1() {
     // Testing each builder class separately
     testResidentialBuildingBuilder();
     testCommercialBuildingBuilder();
@@ -85,10 +86,11 @@ int main() {
     testLandmarkBuildingBuilder();
     testUtilities();
     testResourceManager();
-    testcit();
     testTaxSystem();
+    testcit();
+
     std::cout << "============================GOVT1========================" << std::endl;
-    //TESTGOVCOMMAND();
+    TESTGOVCOMMAND();
     std::cout << "============================GOVT2========================" << std::endl;
     testGOVF1();
     std::cout << "\033[1;32m============================TRANSPORTATION========================\033[0m" << std::endl;
@@ -406,14 +408,14 @@ void TESTGOVCOMMAND() {
     std::cout << "Executing AllocateBudgetCommand..." << std::endl;
     allocateBudgetCommand.execute();
     std::cout << "Executing CollectTaxesCommand..." << std::endl;
-  //  collectTaxesCommand.execute();
+    collectTaxesCommand.execute();
     // Undo commands
     std::cout << "Undoing SetTaxCommand..." << std::endl;
     setTaxCommand.undo();
     std::cout << "Undoing AllocateBudgetCommand..." << std::endl;
     allocateBudgetCommand.undo();
     std::cout << "Undoing CollectTaxesCommand..." << std::endl;
-   // collectTaxesCommand.undo();
+    collectTaxesCommand.undo();
     // Test new command functions
     std::cout << "Testing new command functions..." << std::endl;
     // Test getName and getDescription for SetTaxCommand
@@ -427,16 +429,14 @@ void TESTGOVCOMMAND() {
     } catch (const std::exception& e) {
         std::cout << e.what() << std::endl;
     }
-
-
-    //Test validateCollection for CollectTaxesCommand
-   std::cout << "Can execute CollectTaxesCommand: " << collectTaxesCommand.validateCollection() << std::endl;
-   // Test executeWithValidation for CollectTaxesCommand
-   try {
-       collectTaxesCommand.executeWithValidation();
-   } catch (const std::exception& e) {
-       std::cout << e.what() << std::endl;
-   }
+    // Test validateCollection for CollectTaxesCommand
+    std::cout << "Can execute CollectTaxesCommand: " << collectTaxesCommand.validateCollection() << std::endl;
+    // Test executeWithValidation for CollectTaxesCommand
+    try {
+        collectTaxesCommand.executeWithValidation();
+    } catch (const std::exception& e) {
+        std::cout << e.what() << std::endl;
+    }
     // Test isPolicyEnforced for EnforcePolicyCommand
     std::cout << "Is policy enforced: " << enforcePolicyCommand.isPolicyEnforced() << std::endl;
     // Test executeWithValidation for EnforcePolicyCommand
@@ -451,7 +451,6 @@ void TESTGOVCOMMAND() {
 //=============================================================================================
 //                                    END    GOV    TESTING
 //=============================================================================================
-
 
 
 //=========================================================================================================
@@ -586,9 +585,54 @@ void testcit(){
 //                                    END    CIT    TESTING
 //=============================================================================================
 
-//TEST TAXES ====================================================================================
+//=============================================================================================
+//                                    START TRANSPORTATION TESTING
+//=============================================================================================
 
-  void testTaxSystem() {
+void TRANSPORTATION_TEST(){
+    // ANSI escape codes for styles
+    const std::string RESET = "\033[0m";
+    const std::string BOLD = "\033[1m";
+    const std::string DIM = "\033[2m";
+    const std::string UNDERLINED = "\033[4m";
+    const std::string BLINK = "\033[5m";
+    const std::string REVERSE = "\033[7m";
+    const std::string HIDDEN = "\033[8m";
+
+    // ANSI escape codes for colors
+    const std::string RED = "\033[31m";
+    const std::string GREEN = "\033[32m";
+
+    // ANSI escape codes for background colors
+    const std::string BG_RED = "\033[41m";
+    const std::string BG_GREEN = "\033[42m";
+
+    TransportManager transportManager;
+    transportManager.createHighway('P',"N1", 120);
+    transportManager.createInsideRoad('N',"N2", 2);
+    transportManager.createBus('N', "Bus1", 50, 25);
+    transportManager.createFreightTrain('P', "Train1", 100, 50);
+    transportManager.createPassengerTrain('P', "Train2");
+    transportManager.createTaxi('N', "Taxi1", "Company_1", 2);
+    transportManager.createComercialAirport('P', "Airport1");
+    transportManager.createCargoAirport('N', "Airport2");
+    transportManager.createHighway('L',"N2", 250);
+    transportManager.createInsideRoad('N',"N3", 2);
+    transportManager.createBus('N', "Bus2", 50, 25);
+    transportManager.createFreightTrain('P', "Train3", 100, 50);
+    transportManager.createPassengerTrain('P', "Train4");
+    transportManager.createTaxi('N', "Taxi1", "Company_2", 2);
+    transportManager.createComercialAirport('P', "Airport3");
+    transportManager.createCargoAirport('P', "Airport4");
+
+    
+    CityTraverser it(transportManager.getTransportation(0));
+
+    Transportation* x = nullptr;
+
+}
+
+void testTaxSystem() {
     // Step 1: Create instances of Residential and Commercial buildings
     ResidentialBuildingBuilder residentialBuilder;
     residentialBuilder.setName("Residential Complex")
