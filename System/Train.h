@@ -39,7 +39,7 @@ class Train : public Transportation {
          * 
          * @return The calculated commute time.
          */
-        float commuteTime();
+        float calculateCommute();
 
         /**
          * @brief Get the line on which the train operates.

@@ -110,7 +110,7 @@ class Highway : public Road {
          * 
          * @return The adjusted commute time.
          */
-        float commuteTime() override;
+        float commuteTime();
 };
 
 #endif // HIGHWAY_H

@@ -147,7 +147,7 @@ Transportation* CityTraverser::getCurrentLayer(){
     return this->currentLayer;
 }
 
-bool CityTraverser::operator=(Transportation* t){
+bool CityTraverser::set(Transportation* t){
     if(t == nullptr){
         return false;
     }
@@ -162,7 +162,7 @@ bool CityTraverser::operator=(Transportation* t){
     return true;
 }
 
-bool CityTraverser::operator=(CityTraverser* t){
+bool CityTraverser::set(CityTraverser* t){
     if(t == nullptr){
         return false;
     }
