@@ -1,0 +1,287 @@
+\doxysection{Allocate\+Budget\+Command Class Reference}
+\hypertarget{classAllocateBudgetCommand}{}\label{classAllocateBudgetCommand}\index{AllocateBudgetCommand@{AllocateBudgetCommand}}
+
+
+Represents a command to allocate a budget to a city service.  
+
+
+
+
+{\ttfamily \#include $<$Allocate\+Budget\+Command.\+h$>$}
+
+
+
+Inheritance diagram for Allocate\+Budget\+Command\+:
+% FIG 0
+
+
+Collaboration diagram for Allocate\+Budget\+Command\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAllocateBudgetCommand_a3c704900a5928109b5c9d863115a328f}{Allocate\+Budget\+Command}} (\mbox{\hyperlink{classGovernment}{Government}} \texorpdfstring{$\ast$}{*}gov, \mbox{\hyperlink{classCityService}{City\+Service}} \&srv, double amt)
+\begin{DoxyCompactList}\small\item\em Construct a new Allocate Budget Command object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAllocateBudgetCommand_a64deb7819fcad9c90338645d340fbd55}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Executes the budget allocation command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAllocateBudgetCommand_affbd44c00d68923098edfa003d1ba217}{undo}} () override
+\begin{DoxyCompactList}\small\item\em Undoes the budget allocation command. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classAllocateBudgetCommand_ad29e67d98fb5bd0e09018ec6d1aef8c7}{get\+Amount}} () const
+\begin{DoxyCompactList}\small\item\em Gets the amount to be allocated. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAllocateBudgetCommand_a6e4d8276e6c1abf2903878260f3e2e8b}{set\+Amount}} (double amt)
+\begin{DoxyCompactList}\small\item\em Sets the amount to be allocated. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classAllocateBudgetCommand_aefb5c5a65ec1ad77da5cc8e32b4405f8}{get\+Prev\+Allocation}} () const
+\begin{DoxyCompactList}\small\item\em Gets the previous allocation amount. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAllocateBudgetCommand_a78d5df41072f027a46f4c4001957f195}{set\+Prev\+Allocation}} (double prev\+Amt)
+\begin{DoxyCompactList}\small\item\em Sets the previous allocation amount. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAllocateBudgetCommand_a1bdc3a5ecaf9b9231e4c07ca19d06635}{validate\+Allocation}} () const
+\begin{DoxyCompactList}\small\item\em Validates the budget allocation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAllocateBudgetCommand_af288868b31ca8ea410653c1680a9aee5}{execute\+With\+Validation}} ()
+\begin{DoxyCompactList}\small\item\em Executes the budget allocation command with validation. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classAllocateBudgetCommand_a9b0c7c7c71788ae1c2e2350a93e0a814}{get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the name of the command. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classAllocateBudgetCommand_a854b33f1e42f8ba2aff1ee1ccfdfb5dd}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the description of the command. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAllocateBudgetCommand_a0535d207cc5f46b5406f773f43d7c6fc}{can\+Execute}} () const override
+\begin{DoxyCompactList}\small\item\em Checks if the command can be executed. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classAllocateBudgetCommand_ad23849ea6d44aab60049361b40e01d49}{return\+Val}} () override
+\begin{DoxyCompactList}\small\item\em Returns the amount to be allocated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGovCommand}{Gov\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classGovCommand_acba136c92974996a99524a3745075d61}{\texorpdfstring{$\sim$}{\string~}\+Gov\+Command}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a command to allocate a budget to a city service. 
+
+This class is used to allocate a budget to a city service. It includes methods to execute, undo, and validate the budget allocation, as well as getters and setters for the allocation amount and previous allocation amount. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classAllocateBudgetCommand_a3c704900a5928109b5c9d863115a328f}\label{classAllocateBudgetCommand_a3c704900a5928109b5c9d863115a328f} 
+\index{AllocateBudgetCommand@{AllocateBudgetCommand}!AllocateBudgetCommand@{AllocateBudgetCommand}}
+\index{AllocateBudgetCommand@{AllocateBudgetCommand}!AllocateBudgetCommand@{AllocateBudgetCommand}}
+\doxysubsubsection{\texorpdfstring{AllocateBudgetCommand()}{AllocateBudgetCommand()}}
+{\footnotesize\ttfamily Allocate\+Budget\+Command\+::\+Allocate\+Budget\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGovernment}{Government}} \texorpdfstring{$\ast$}{*}}]{gov,  }\item[{\mbox{\hyperlink{classCityService}{City\+Service}} \&}]{srv,  }\item[{double}]{amt }\end{DoxyParamCaption})}
+
+
+
+Construct a new Allocate Budget Command object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gov} & Pointer to the government object. \\
+\hline
+{\em srv} & Reference to the city service object. \\
+\hline
+{\em amt} & The amount to allocate. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classAllocateBudgetCommand_a0535d207cc5f46b5406f773f43d7c6fc}\label{classAllocateBudgetCommand_a0535d207cc5f46b5406f773f43d7c6fc} 
+\index{AllocateBudgetCommand@{AllocateBudgetCommand}!canExecute@{canExecute}}
+\index{canExecute@{canExecute}!AllocateBudgetCommand@{AllocateBudgetCommand}}
+\doxysubsubsection{\texorpdfstring{canExecute()}{canExecute()}}
+{\footnotesize\ttfamily bool Allocate\+Budget\+Command\+::can\+Execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the command can be executed. 
+
+\begin{DoxyReturn}{Returns}
+true if the command can be executed. 
+
+false if the command cannot be executed. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classGovCommand_a043e83a6ff2f1b404aa5c8d04649659b}{Gov\+Command}}.
+
+\Hypertarget{classAllocateBudgetCommand_a64deb7819fcad9c90338645d340fbd55}\label{classAllocateBudgetCommand_a64deb7819fcad9c90338645d340fbd55} 
+\index{AllocateBudgetCommand@{AllocateBudgetCommand}!execute@{execute}}
+\index{execute@{execute}!AllocateBudgetCommand@{AllocateBudgetCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Allocate\+Budget\+Command\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the budget allocation command. 
+
+Stores the previous allocation and allocates the new budget amount to the service. 
+
+Implements \mbox{\hyperlink{classGovCommand_a6b302ab0829b4663e6e432060bd33ad7}{Gov\+Command}}.
+
+\Hypertarget{classAllocateBudgetCommand_af288868b31ca8ea410653c1680a9aee5}\label{classAllocateBudgetCommand_af288868b31ca8ea410653c1680a9aee5} 
+\index{AllocateBudgetCommand@{AllocateBudgetCommand}!executeWithValidation@{executeWithValidation}}
+\index{executeWithValidation@{executeWithValidation}!AllocateBudgetCommand@{AllocateBudgetCommand}}
+\doxysubsubsection{\texorpdfstring{executeWithValidation()}{executeWithValidation()}}
+{\footnotesize\ttfamily void Allocate\+Budget\+Command\+::execute\+With\+Validation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Executes the budget allocation command with validation. 
+
+Throws an exception if the allocation is invalid.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the allocation is invalid. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classAllocateBudgetCommand_ad29e67d98fb5bd0e09018ec6d1aef8c7}\label{classAllocateBudgetCommand_ad29e67d98fb5bd0e09018ec6d1aef8c7} 
+\index{AllocateBudgetCommand@{AllocateBudgetCommand}!getAmount@{getAmount}}
+\index{getAmount@{getAmount}!AllocateBudgetCommand@{AllocateBudgetCommand}}
+\doxysubsubsection{\texorpdfstring{getAmount()}{getAmount()}}
+{\footnotesize\ttfamily double Allocate\+Budget\+Command\+::get\+Amount (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the amount to be allocated. 
+
+\begin{DoxyReturn}{Returns}
+double The amount to be allocated. 
+\end{DoxyReturn}
+\Hypertarget{classAllocateBudgetCommand_a854b33f1e42f8ba2aff1ee1ccfdfb5dd}\label{classAllocateBudgetCommand_a854b33f1e42f8ba2aff1ee1ccfdfb5dd} 
+\index{AllocateBudgetCommand@{AllocateBudgetCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!AllocateBudgetCommand@{AllocateBudgetCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily std\+::string Allocate\+Budget\+Command\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the description of the command. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string The description of the command. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classGovCommand_a5852ccd90ffc8f2781c67915b66206f0}{Gov\+Command}}.
+
+\Hypertarget{classAllocateBudgetCommand_a9b0c7c7c71788ae1c2e2350a93e0a814}\label{classAllocateBudgetCommand_a9b0c7c7c71788ae1c2e2350a93e0a814} 
+\index{AllocateBudgetCommand@{AllocateBudgetCommand}!getName@{getName}}
+\index{getName@{getName}!AllocateBudgetCommand@{AllocateBudgetCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Allocate\+Budget\+Command\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the name of the command. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string The name of the command. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classGovCommand_a01d23f0a2f7d2d4d61a1aa0f063cb896}{Gov\+Command}}.
+
+\Hypertarget{classAllocateBudgetCommand_aefb5c5a65ec1ad77da5cc8e32b4405f8}\label{classAllocateBudgetCommand_aefb5c5a65ec1ad77da5cc8e32b4405f8} 
+\index{AllocateBudgetCommand@{AllocateBudgetCommand}!getPrevAllocation@{getPrevAllocation}}
+\index{getPrevAllocation@{getPrevAllocation}!AllocateBudgetCommand@{AllocateBudgetCommand}}
+\doxysubsubsection{\texorpdfstring{getPrevAllocation()}{getPrevAllocation()}}
+{\footnotesize\ttfamily double Allocate\+Budget\+Command\+::get\+Prev\+Allocation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the previous allocation amount. 
+
+\begin{DoxyReturn}{Returns}
+double The previous allocation amount. 
+\end{DoxyReturn}
+\Hypertarget{classAllocateBudgetCommand_ad23849ea6d44aab60049361b40e01d49}\label{classAllocateBudgetCommand_ad23849ea6d44aab60049361b40e01d49} 
+\index{AllocateBudgetCommand@{AllocateBudgetCommand}!returnVal@{returnVal}}
+\index{returnVal@{returnVal}!AllocateBudgetCommand@{AllocateBudgetCommand}}
+\doxysubsubsection{\texorpdfstring{returnVal()}{returnVal()}}
+{\footnotesize\ttfamily double Allocate\+Budget\+Command\+::return\+Val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the amount to be allocated. 
+
+\begin{DoxyReturn}{Returns}
+double The amount to be allocated. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classGovCommand_a03f67f2f817e510f65bac3676cbf24e3}{Gov\+Command}}.
+
+\Hypertarget{classAllocateBudgetCommand_a6e4d8276e6c1abf2903878260f3e2e8b}\label{classAllocateBudgetCommand_a6e4d8276e6c1abf2903878260f3e2e8b} 
+\index{AllocateBudgetCommand@{AllocateBudgetCommand}!setAmount@{setAmount}}
+\index{setAmount@{setAmount}!AllocateBudgetCommand@{AllocateBudgetCommand}}
+\doxysubsubsection{\texorpdfstring{setAmount()}{setAmount()}}
+{\footnotesize\ttfamily void Allocate\+Budget\+Command\+::set\+Amount (\begin{DoxyParamCaption}\item[{double}]{amt }\end{DoxyParamCaption})}
+
+
+
+Sets the amount to be allocated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amt} & The amount to be allocated. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the amount is negative. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classAllocateBudgetCommand_a78d5df41072f027a46f4c4001957f195}\label{classAllocateBudgetCommand_a78d5df41072f027a46f4c4001957f195} 
+\index{AllocateBudgetCommand@{AllocateBudgetCommand}!setPrevAllocation@{setPrevAllocation}}
+\index{setPrevAllocation@{setPrevAllocation}!AllocateBudgetCommand@{AllocateBudgetCommand}}
+\doxysubsubsection{\texorpdfstring{setPrevAllocation()}{setPrevAllocation()}}
+{\footnotesize\ttfamily void Allocate\+Budget\+Command\+::set\+Prev\+Allocation (\begin{DoxyParamCaption}\item[{double}]{prev\+Amt }\end{DoxyParamCaption})}
+
+
+
+Sets the previous allocation amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prev\+Amt} & The previous allocation amount. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the previous allocation amount is negative. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classAllocateBudgetCommand_affbd44c00d68923098edfa003d1ba217}\label{classAllocateBudgetCommand_affbd44c00d68923098edfa003d1ba217} 
+\index{AllocateBudgetCommand@{AllocateBudgetCommand}!undo@{undo}}
+\index{undo@{undo}!AllocateBudgetCommand@{AllocateBudgetCommand}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily void Allocate\+Budget\+Command\+::undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Undoes the budget allocation command. 
+
+Reverts the budget allocation to the previous state. 
+
+Implements \mbox{\hyperlink{classGovCommand_a959b2aee2d8fe37cbcf1e2894a3123fb}{Gov\+Command}}.
+
+\Hypertarget{classAllocateBudgetCommand_a1bdc3a5ecaf9b9231e4c07ca19d06635}\label{classAllocateBudgetCommand_a1bdc3a5ecaf9b9231e4c07ca19d06635} 
+\index{AllocateBudgetCommand@{AllocateBudgetCommand}!validateAllocation@{validateAllocation}}
+\index{validateAllocation@{validateAllocation}!AllocateBudgetCommand@{AllocateBudgetCommand}}
+\doxysubsubsection{\texorpdfstring{validateAllocation()}{validateAllocation()}}
+{\footnotesize\ttfamily bool Allocate\+Budget\+Command\+::validate\+Allocation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Validates the budget allocation. 
+
+Ensures the government has enough budget to allocate.
+
+\begin{DoxyReturn}{Returns}
+true if the allocation is valid. 
+
+false if the allocation is invalid. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/users/rudie/documents/sem2/214/project/src/\mbox{\hyperlink{AllocateBudgetCommand_8h}{Allocate\+Budget\+Command.\+h}}\item 
+/mnt/c/users/rudie/documents/sem2/214/project/src/\mbox{\hyperlink{AllocateBudgetCommand_8cpp}{Allocate\+Budget\+Command.\+cpp}}\end{DoxyCompactItemize}

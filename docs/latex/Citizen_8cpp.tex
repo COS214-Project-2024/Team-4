@@ -1,0 +1,70 @@
+\doxysection{/mnt/c/users/rudie/documents/sem2/214/project/src/\+Citizen.cpp File Reference}
+\hypertarget{Citizen_8cpp}{}\label{Citizen_8cpp}\index{/mnt/c/users/rudie/documents/sem2/214/project/src/Citizen.cpp@{/mnt/c/users/rudie/documents/sem2/214/project/src/Citizen.cpp}}
+
+
+Implementation of the \doxylink{classCitizen}{Citizen} class.  
+
+
+{\ttfamily \#include "{}Citizen.\+h"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include "{}Building\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}Satisfied\+State.\+h"{}}\newline
+{\ttfamily \#include "{}Unsatisfied\+State.\+h"{}}\newline
+{\ttfamily \#include "{}Leaving\+City\+State.\+h"{}}\newline
+{\ttfamily \#include "{}Satisfaction\+Strategy.\+h"{}}\newline
+{\ttfamily \#include "{}Building.\+h"{}}\newline
+Include dependency graph for Citizen.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{Citizen_8cpp_af6d95dcaa9a900ca713e5f1db01f4144}{min\+Max}} (T value, T min, T max)
+\begin{DoxyCompactList}\small\item\em \doxylink{classUtility}{Utility} function to constrain a value within a specified range. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the \doxylink{classCitizen}{Citizen} class. 
+
+This file contains the implementation of the \doxylink{classCitizen}{Citizen} class, which manages citizen attributes and behaviors such as satisfaction, tax payments, job search, and relationship status.
+
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/11-\/04
+\end{DoxyDate}
+\begin{DoxyNote}{Note}
+This file is part of a project for managing city citizens and their properties. 
+\end{DoxyNote}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{Citizen_8cpp_af6d95dcaa9a900ca713e5f1db01f4144}\label{Citizen_8cpp_af6d95dcaa9a900ca713e5f1db01f4144} 
+\index{Citizen.cpp@{Citizen.cpp}!minMax@{minMax}}
+\index{minMax@{minMax}!Citizen.cpp@{Citizen.cpp}}
+\doxysubsubsection{\texorpdfstring{minMax()}{minMax()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T min\+Max (\begin{DoxyParamCaption}\item[{T}]{value,  }\item[{T}]{min,  }\item[{T}]{max }\end{DoxyParamCaption})}
+
+
+
+\doxylink{classUtility}{Utility} function to constrain a value within a specified range. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the value. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value to constrain. \\
+\hline
+{\em min} & The minimum allowable value. \\
+\hline
+{\em max} & The maximum allowable value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T The constrained value. 
+\end{DoxyReturn}
