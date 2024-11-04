@@ -1,0 +1,9 @@
+<map id="Train" name="Train">
+<area shape="rect" id="Node000001" title="A class representing a train as a mode of transportation." alt="" coords="81,199,242,304"/>
+<area shape="rect" id="Node000003" href="$classFreightTrain.html" title="A class representing a freight train." alt="" coords="5,352,144,557"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="136,318,121,353,116,351,131,316"/>
+<area shape="rect" id="Node000004" href="$classPassengerTrain.html" title="A class representing a passenger train." alt="" coords="168,372,328,537"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="191,316,215,371,210,373,187,318"/>
+<area shape="rect" id="Node000002" href="$classTransportation.html" title="Manages traffic flow states and types of transportation." alt="" coords="90,5,233,151"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,164,164,199,159,199,159,164"/>
+</map>

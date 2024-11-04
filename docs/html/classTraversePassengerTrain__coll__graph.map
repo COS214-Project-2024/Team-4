@@ -1,0 +1,5 @@
+<map id="TraversePassengerTrain" name="TraversePassengerTrain">
+<area shape="rect" id="Node000001" title="A class to traverse through a passenger train." alt="" coords="5,219,196,344"/>
+<area shape="rect" id="Node000002" href="$classTraverseState.html" title="Abstract class that provides an interface for traversing through a list of Transportation elements." alt="" coords="31,5,170,171"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,184,103,218,98,218,98,184"/>
+</map>

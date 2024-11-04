@@ -1,0 +1,27 @@
+<map id="Transportation" name="Transportation">
+<area shape="rect" id="Node000001" title="Manages traffic flow states and types of transportation." alt="" coords="681,5,824,151"/>
+<area shape="rect" id="Node000002" href="$classAirport.html" title="Represents an airport as a type of transportation." alt="" coords="181,199,343,304"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="669,111,344,224,342,219,667,106"/>
+<area shape="rect" id="Node000005" href="$classPublicTransit.html" title="A class representing public transit transportation." alt="" coords="576,199,737,304"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="708,164,688,200,683,197,704,161"/>
+<area shape="rect" id="Node000008" href="$classRoad.html" title="A class representing a road as a type of transportation." alt="" coords="768,199,929,304"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="802,161,822,197,817,200,797,164"/>
+<area shape="rect" id="Node000011" href="$classTrain.html" title="A class representing a train as a mode of transportation." alt="" coords="1140,199,1301,304"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="838,108,1141,218,1139,223,836,113"/>
+<area shape="rect" id="Node000003" href="$classCargoAirport.html" title="Represents a cargo airport." alt="" coords="5,412,151,577"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="199,315,165,354,125,413,120,410,161,350,195,312"/>
+<area shape="rect" id="Node000004" href="$classComercialAirport.html" title="Represents a commercial airport." alt="" coords="175,412,349,577"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="265,318,265,412,259,412,259,318"/>
+<area shape="rect" id="Node000006" href="$classBus.html" title="Represents a bus in the public transit system." alt="" coords="373,352,546,637"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="595,316,560,354,548,368,544,365,556,350,591,312"/>
+<area shape="rect" id="Node000007" href="$classTaxi.html" title="A class representing a taxi in a public transit system." alt="" coords="570,362,743,627"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="659,318,659,362,654,362,654,318"/>
+<area shape="rect" id="Node000009" href="$classHighway.html" title="Represents a highway with a speed limit." alt="" coords="768,382,929,607"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="851,318,851,382,846,382,846,318"/>
+<area shape="rect" id="Node000010" href="$classInsideRoad.html" title="Represents an inside road that can contain various transportation entities." alt="" coords="954,362,1127,627"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="910,312,943,350,956,367,952,370,939,354,906,316"/>
+<area shape="rect" id="Node000012" href="$classFreightTrain.html" title="A class representing a freight train." alt="" coords="1151,392,1290,597"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="1223,318,1223,392,1218,392,1218,318"/>
+<area shape="rect" id="Node000013" href="$classPassengerTrain.html" title="A class representing a passenger train." alt="" coords="1314,412,1474,577"/>
+<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="1275,313,1304,350,1345,410,1341,413,1300,354,1271,317"/>
+</map>

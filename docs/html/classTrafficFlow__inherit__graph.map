@@ -1,0 +1,9 @@
+<map id="TrafficFlow" name="TrafficFlow">
+<area shape="rect" id="Node000001" title="An abstract class that represents the traffic flow." alt="" coords="159,5,288,91"/>
+<area shape="rect" id="Node000002" href="$classLunchRush.html" title="A class representing traffic flow during lunch hours." alt="" coords="5,139,135,224"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,101,120,141,117,136,163,97"/>
+<area shape="rect" id="Node000003" href="$classNonPeak.html" title="A class to represent traffic flow during non&#45;peak hours." alt="" coords="159,139,288,224"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="226,104,226,138,221,138,221,104"/>
+<area shape="rect" id="Node000004" href="$classPeak.html" title="A class representing peak traffic flow." alt="" coords="312,139,441,224"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="284,97,330,136,326,141,280,101"/>
+</map>
