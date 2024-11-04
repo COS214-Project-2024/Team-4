@@ -1,0 +1,38 @@
+\doxysection{Jobs.\+h}
+\hypertarget{Jobs_8h_source}{}\label{Jobs_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Jobs.h}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ JOBS\_H}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ JOBS\_H}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Income.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJobs}{Jobs}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ std::string\ title\ ;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Job\ title,\ e.g.,\ "{}Engineer"{},\ "{}Manager"{}}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{bool}\ occupied\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Employment\ status;\ true\ if\ filled}}
+\DoxyCodeLine{00015\ \ \ \ \ std::shared\_ptr<Income>\ income;\ \ \ \textcolor{comment}{//\ Income\ object\ associated\ with\ the\ job}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Constructor\ that\ initializes\ a\ job\ with\ a\ title\ and\ salary}}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classJobs}{Jobs}}(\textcolor{keyword}{const}\ std::string\&\ jobTitle,\ \textcolor{keywordtype}{double}\ salary);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ Getters}}
+\DoxyCodeLine{00022\ \ \ \ \ std::string\ getTitle()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ title;\ \}}
+\DoxyCodeLine{00023\ \ \ \ \ std::shared\_ptr<Income>\ getIncome()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ income;\ \}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ isOccupied()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ occupied;\ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ hireEmployee();\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ releaseEmployee()\ ;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Display\ job\ information\ (for\ debugging\ or\ user\ interaction)}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ displayJobInfo()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ JOBS\_H}}
+\DoxyCodeLine{00033\ }
+
+\end{DoxyCode}

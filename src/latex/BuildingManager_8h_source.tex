@@ -1,0 +1,42 @@
+\doxysection{Building\+Manager.\+h}
+\hypertarget{BuildingManager_8h_source}{}\label{BuildingManager_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BUILDINGMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BUILDINGMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Building.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Citizen.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Jobs.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBuildingManager}{BuildingManager}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ std::vector<std::shared\_ptr<Building>>\ buildings;\ \ \ \textcolor{comment}{//\ Collection\ of\ buildings\ managed\ by\ the\ mediator}}
+\DoxyCodeLine{00014\ \ \ \ \ std::vector<Citizen*>\ citizens;\ \ \ \ \ \textcolor{comment}{//\ Collection\ of\ citizens\ managed\ by\ the\ mediator}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classBuildingManager}{BuildingManager}}(\textcolor{keyword}{const}\ std::vector<std::shared\_ptr<Building>>\&\ buildingList);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Register\ a\ building\ with\ the\ manager}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ addBuilding(\mbox{\hyperlink{classBuilding}{Building}}*\ building);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ std::vector<std::shared\_ptr<Building>>\ getBuildings()\ ;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ Register\ a\ citizen\ with\ the\ manager}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ addCitizen(\mbox{\hyperlink{classCitizen}{Citizen}}*\ citizen);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ Assign\ a\ job\ to\ a\ citizen\ in\ a\ specific\ building}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ assignJobToCitizen(\textcolor{keyword}{const}\ std::string\&\ jobTitle,\ \mbox{\hyperlink{classCitizen}{Citizen}}*\ citizen,\ \mbox{\hyperlink{classBuilding}{Building}}*\ building);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Release\ a\ citizen\ from\ their\ current\ job}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ releaseCitizenFromJob(\mbox{\hyperlink{classCitizen}{Citizen}}*\ citizen);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//\ List\ all\ jobs\ available\ in\ a\ specific\ building}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ listAllJobsInBuilding(\textcolor{keyword}{const}\ \mbox{\hyperlink{classBuilding}{Building}}*\ building)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ std::shared\_ptr<Jobs>\ findAvailableJob();}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

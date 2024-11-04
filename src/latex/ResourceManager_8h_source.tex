@@ -1,0 +1,74 @@
+\doxysection{Resource\+Manager.\+h}
+\hypertarget{ResourceManager_8h_source}{}\label{ResourceManager_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ ResourceManager.h}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ RESOURCEMANAGER\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ RESOURCEMANAGER\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}ResourceType.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Observer.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Resource.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}ResourceAllocationStrategy.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classResourceManager}{ResourceManager}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ budget;}
+\DoxyCodeLine{00015\ \ \ \ \ std::map<ResourceType,\ Resource*>\ resources;}
+\DoxyCodeLine{00016\ \ \ \ \ std::map<ResourceType,\ int>\ resourceCosts;}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classResourceAllocationStrategy}{ResourceAllocationStrategy}}*\ allocationStrategy;}
+\DoxyCodeLine{00018\ \ \ \ \ std::vector<Observer*>\ observers;\ \textcolor{comment}{//\ List\ of\ observers\ (like\ UtilityMediator)}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classResourceManager}{ResourceManager}}(\textcolor{keywordtype}{int}\ initialBudget)\ :\ budget(initialBudget)\ \{\}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{bool}\ allocateResources(ResourceType\ type,\ \textcolor{keywordtype}{int}\ quantity)\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (resources.count(type)\ \&\&\ budget\ >=\ resourceCosts[type]\ *\ quantity\ \&\&\ resources[type]-\/>allocate(quantity))\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ budget\ -\/=\ resourceCosts[type]\ *\ quantity;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ notifyObservers(type,\ quantity);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ releaseResources(ResourceType\ type,\ \textcolor{keywordtype}{int}\ quantity)\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (resources.count(type))\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ resources[type]-\/>release(quantity);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ notifyObservers(type,\ -\/quantity);\ \ \textcolor{comment}{//\ Negative\ to\ indicate\ release}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ setAllocationStrategy(\mbox{\hyperlink{classResourceAllocationStrategy}{ResourceAllocationStrategy}}*\ strategy)\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ allocationStrategy\ =\ strategy;}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ getBudget()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ budget;\ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ addObserver(\mbox{\hyperlink{classObserver}{Observer}}*\ observer)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ observers.push\_back(observer);}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{classResource}{Resource}}*\ getResource(ResourceType\ type)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ resources.find(type);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (it\ !=\ resources.end())\ ?\ it-\/>second\ :\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ add\ a\ resource\ to\ the\ manager}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ addResource(ResourceType\ type,\ \mbox{\hyperlink{classResource}{Resource}}*\ resource)\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (resources.count(type)\ ==\ 0)\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ resources[type]\ =\ resource;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyObservers(ResourceType\ type,\ \textcolor{keywordtype}{int}\ quantity)\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ obs\ :\ observers)\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ obs-\/>update(type,\ quantity);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RESOURCEMANAGER\_H}}
+
+\end{DoxyCode}

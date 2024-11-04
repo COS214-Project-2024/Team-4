@@ -1,0 +1,220 @@
+\doxysection{Highway Class Reference}
+\hypertarget{classHighway}{}\label{classHighway}\index{Highway@{Highway}}
+
+
+Represents a highway with a speed limit.  
+
+
+
+
+{\ttfamily \#include $<$Highway.\+h$>$}
+
+Inheritance diagram for Highway\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classHighway}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHighway_a92a1995b7f82755ffc4b077283bde889}{Highway}} (char state, std\+::string road\+Name, float speed\+Limit)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classHighway}{Highway} object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classHighway_a9a3b88c01a2aeb9516801bb1ee058b93}{add\+Inside\+Road}} (\mbox{\hyperlink{classInsideRoad}{Inside\+Road}} \texorpdfstring{$\ast$}{*}inside\+Road)
+\begin{DoxyCompactList}\small\item\em Adds an inside road to the highway. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classHighway_a4808298a43aff486cb065103dc52e300}{add\+Highway}} (\mbox{\hyperlink{classHighway}{Highway}} \texorpdfstring{$\ast$}{*}highway)
+\begin{DoxyCompactList}\small\item\em Adds another highway to this highway. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classInsideRoad}{Inside\+Road}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classHighway_ac06ede40fb2facbf140a4e4a24682ffd}{get\+Inside\+Road}} (std\+::size\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Gets an inside road by index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHighway}{Highway}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classHighway_a46bbeaabb13d95b8aed099baf290dd6e}{get\+Highway}} (std\+::size\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Gets a highway by index. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classInsideRoad}{Inside\+Road}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classHighway_a62082f5c2ffda3fa1f8840ee717f083e}{get\+Inside\+Roads\+List}} ()
+\begin{DoxyCompactList}\small\item\em Gets the list of inside roads. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classHighway}{Highway}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classHighway_a1d937e430c4c41e1756a8b79b3ccd8f8}{get\+Highways\+List}} ()
+\begin{DoxyCompactList}\small\item\em Gets the list of highways. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classHighway_ab38db7e5c86f6775f419cdca440fbe01}{get\+Road\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the highway. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classHighway_a5b183c43dfaa3dd02f1957fcb1e38852}{get\+Speed\+Limit}} ()
+\begin{DoxyCompactList}\small\item\em Gets the speed limit of the highway. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classRoad}{Road}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRoad_a3fdd668af28666d4d19c8ef83cd91515}{Road}} (char state, std\+::string road\+Name, char type)
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classRoad}{Road} object. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classRoad_a977c25448a0360dd33620ddbcd2a4898}{calculate\+Commute}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the commute time on the road. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classRoad_ad0c6b016a475f6d643f4eabdca070145}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the road. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTransportation}{Transportation}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTransportation_a6038480df048e3b81449d9417cff4800}{Transportation}} (char state, char type)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classTransportation}{Transportation} class. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classTransportation_a4abf7f44c7a515f6933886dd321cc1c6}{get\+Traffic\+Flow}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current traffic flow. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTransportation_a7de50ee7df6f27b64529f15f74407d14}{set\+State}} (char state)
+\begin{DoxyCompactList}\small\item\em Sets the traffic flow state. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classTransportation_a5693fe4abdbacc36ee865283535aa546}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of transportation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation_ae63d1b7fa5006d357228196b6b81684d}{\texorpdfstring{$\sim$}{\string~}\+Transportation}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classTransportation}{Transportation} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a highway with a speed limit. 
+
+The \doxylink{classHighway}{Highway} class inherits from the \doxylink{classRoad}{Road} class and includes additional attributes and methods specific to highways, such as a speed limit and lists of inside roads and other highways. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classHighway_a92a1995b7f82755ffc4b077283bde889}\index{Highway@{Highway}!Highway@{Highway}}
+\index{Highway@{Highway}!Highway@{Highway}}
+\doxysubsubsection{\texorpdfstring{Highway()}{Highway()}}
+{\footnotesize\ttfamily \label{classHighway_a92a1995b7f82755ffc4b077283bde889} 
+Highway\+::\+Highway (\begin{DoxyParamCaption}\item[{char}]{state}{, }\item[{std\+::string}]{road\+Name}{, }\item[{float}]{speed\+Limit}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classHighway}{Highway} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state of the highway. \\
+\hline
+{\em road\+Name} & The name of the highway. \\
+\hline
+{\em speed\+Limit} & The speed limit of the highway. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classHighway_a4808298a43aff486cb065103dc52e300}\index{Highway@{Highway}!addHighway@{addHighway}}
+\index{addHighway@{addHighway}!Highway@{Highway}}
+\doxysubsubsection{\texorpdfstring{addHighway()}{addHighway()}}
+{\footnotesize\ttfamily \label{classHighway_a4808298a43aff486cb065103dc52e300} 
+bool Highway\+::add\+Highway (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHighway}{Highway}} \texorpdfstring{$\ast$}{*}}]{highway}{}\end{DoxyParamCaption})}
+
+
+
+Adds another highway to this highway. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em highway} & Pointer to the highway to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the highway was added successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classHighway_a9a3b88c01a2aeb9516801bb1ee058b93}\index{Highway@{Highway}!addInsideRoad@{addInsideRoad}}
+\index{addInsideRoad@{addInsideRoad}!Highway@{Highway}}
+\doxysubsubsection{\texorpdfstring{addInsideRoad()}{addInsideRoad()}}
+{\footnotesize\ttfamily \label{classHighway_a9a3b88c01a2aeb9516801bb1ee058b93} 
+bool Highway\+::add\+Inside\+Road (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classInsideRoad}{Inside\+Road}} \texorpdfstring{$\ast$}{*}}]{inside\+Road}{}\end{DoxyParamCaption})}
+
+
+
+Adds an inside road to the highway. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inside\+Road} & Pointer to the inside road to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the inside road was added successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classHighway_a46bbeaabb13d95b8aed099baf290dd6e}\index{Highway@{Highway}!getHighway@{getHighway}}
+\index{getHighway@{getHighway}!Highway@{Highway}}
+\doxysubsubsection{\texorpdfstring{getHighway()}{getHighway()}}
+{\footnotesize\ttfamily \label{classHighway_a46bbeaabb13d95b8aed099baf290dd6e} 
+\mbox{\hyperlink{classHighway}{Highway}} \texorpdfstring{$\ast$}{*} Highway\+::get\+Highway (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Gets a highway by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The index of the highway. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the highway at the specified index. 
+\end{DoxyReturn}
+\Hypertarget{classHighway_a1d937e430c4c41e1756a8b79b3ccd8f8}\index{Highway@{Highway}!getHighwaysList@{getHighwaysList}}
+\index{getHighwaysList@{getHighwaysList}!Highway@{Highway}}
+\doxysubsubsection{\texorpdfstring{getHighwaysList()}{getHighwaysList()}}
+{\footnotesize\ttfamily \label{classHighway_a1d937e430c4c41e1756a8b79b3ccd8f8} 
+std\+::vector$<$ \mbox{\hyperlink{classHighway}{Highway}} \texorpdfstring{$\ast$}{*} $>$ Highway\+::get\+Highways\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the list of highways. 
+
+\begin{DoxyReturn}{Returns}
+Vector of pointers to the highways. 
+\end{DoxyReturn}
+\Hypertarget{classHighway_ac06ede40fb2facbf140a4e4a24682ffd}\index{Highway@{Highway}!getInsideRoad@{getInsideRoad}}
+\index{getInsideRoad@{getInsideRoad}!Highway@{Highway}}
+\doxysubsubsection{\texorpdfstring{getInsideRoad()}{getInsideRoad()}}
+{\footnotesize\ttfamily \label{classHighway_ac06ede40fb2facbf140a4e4a24682ffd} 
+\mbox{\hyperlink{classInsideRoad}{Inside\+Road}} \texorpdfstring{$\ast$}{*} Highway\+::get\+Inside\+Road (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Gets an inside road by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The index of the inside road. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the inside road at the specified index. 
+\end{DoxyReturn}
+\Hypertarget{classHighway_a62082f5c2ffda3fa1f8840ee717f083e}\index{Highway@{Highway}!getInsideRoadsList@{getInsideRoadsList}}
+\index{getInsideRoadsList@{getInsideRoadsList}!Highway@{Highway}}
+\doxysubsubsection{\texorpdfstring{getInsideRoadsList()}{getInsideRoadsList()}}
+{\footnotesize\ttfamily \label{classHighway_a62082f5c2ffda3fa1f8840ee717f083e} 
+std\+::vector$<$ \mbox{\hyperlink{classInsideRoad}{Inside\+Road}} \texorpdfstring{$\ast$}{*} $>$ Highway\+::get\+Inside\+Roads\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the list of inside roads. 
+
+\begin{DoxyReturn}{Returns}
+Vector of pointers to the inside roads. 
+\end{DoxyReturn}
+\Hypertarget{classHighway_ab38db7e5c86f6775f419cdca440fbe01}\index{Highway@{Highway}!getRoadName@{getRoadName}}
+\index{getRoadName@{getRoadName}!Highway@{Highway}}
+\doxysubsubsection{\texorpdfstring{getRoadName()}{getRoadName()}}
+{\footnotesize\ttfamily \label{classHighway_ab38db7e5c86f6775f419cdca440fbe01} 
+std\+::string Highway\+::get\+Road\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the name of the highway. 
+
+\begin{DoxyReturn}{Returns}
+The name of the highway. 
+\end{DoxyReturn}
+\Hypertarget{classHighway_a5b183c43dfaa3dd02f1957fcb1e38852}\index{Highway@{Highway}!getSpeedLimit@{getSpeedLimit}}
+\index{getSpeedLimit@{getSpeedLimit}!Highway@{Highway}}
+\doxysubsubsection{\texorpdfstring{getSpeedLimit()}{getSpeedLimit()}}
+{\footnotesize\ttfamily \label{classHighway_a5b183c43dfaa3dd02f1957fcb1e38852} 
+float Highway\+::get\+Speed\+Limit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the speed limit of the highway. 
+
+\begin{DoxyReturn}{Returns}
+The speed limit of the highway. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Highway_8h}{Highway.\+h}}\item 
+Highway.\+cpp\end{DoxyCompactItemize}

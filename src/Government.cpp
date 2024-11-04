@@ -91,6 +91,10 @@ void Government::refundTaxes(double amount) {
     cout << "Refunded taxes: " << amount << ". New budget: " << budget << endl;
 }
 
+void Government::addTaxesToBudget(double amount){
+    this->budget += amount;
+}
+
 // Registers an observer to the government
 void Government::registerObserver(GovObserver* observer) {
     observers.push_back(observer);

@@ -1,0 +1,62 @@
+\doxysection{Government Class Reference}
+\hypertarget{classGovernment}{}\label{classGovernment}\index{Government@{Government}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classGovernment_ace6cc1e9ae5efbb0baf987704dcb2ae5}\label{classGovernment_ace6cc1e9ae5efbb0baf987704dcb2ae5} 
+{\bfseries Government} (std\+::string name)
+\item 
+\Hypertarget{classGovernment_a1d925a490e5d0d8416f4366724865012}\label{classGovernment_a1d925a490e5d0d8416f4366724865012} 
+void {\bfseries set\+Tax} (double rate)
+\item 
+\Hypertarget{classGovernment_a569aa78b03ee9401740da3616a8e963e}\label{classGovernment_a569aa78b03ee9401740da3616a8e963e} 
+double {\bfseries get\+Tax\+Rate} () const
+\item 
+\Hypertarget{classGovernment_a2473c28b3a4e13b0855b47bcb0b06ff7}\label{classGovernment_a2473c28b3a4e13b0855b47bcb0b06ff7} 
+void {\bfseries notify\+Citizen} ()
+\item 
+\Hypertarget{classGovernment_aa5a5743cd6e80f2fc816b39cde1ce081}\label{classGovernment_aa5a5743cd6e80f2fc816b39cde1ce081} 
+void {\bfseries notify\+Businesses} ()
+\item 
+\Hypertarget{classGovernment_ab7fa1e34b7b5ae12ecb286a53ad61f45}\label{classGovernment_ab7fa1e34b7b5ae12ecb286a53ad61f45} 
+void {\bfseries notify\+Services} ()
+\item 
+\Hypertarget{classGovernment_ab52c33f8b6ce4117177cbbea5710fdbd}\label{classGovernment_ab52c33f8b6ce4117177cbbea5710fdbd} 
+void {\bfseries allocate\+Budget} (\mbox{\hyperlink{classCityService}{City\+Service}} \&service, double amount)
+\item 
+\Hypertarget{classGovernment_acce8f696f3d66cbb573b138c4a54422a}\label{classGovernment_acce8f696f3d66cbb573b138c4a54422a} 
+void {\bfseries revert\+Budget\+Allocation} (\mbox{\hyperlink{classCityService}{City\+Service}} \&service, double amount)
+\item 
+\Hypertarget{classGovernment_a027d161671e9d409a990671606d7d555}\label{classGovernment_a027d161671e9d409a990671606d7d555} 
+void {\bfseries enforce\+Policy} (\mbox{\hyperlink{classPolicy}{Policy}} policy)
+\item 
+\Hypertarget{classGovernment_a617a0ed27a6c96f194648ee35db7fb77}\label{classGovernment_a617a0ed27a6c96f194648ee35db7fb77} 
+void {\bfseries update} (int new\+Population)
+\item 
+\Hypertarget{classGovernment_a2820eb81d960860b5398f7855a32c73c}\label{classGovernment_a2820eb81d960860b5398f7855a32c73c} 
+double {\bfseries collect\+Taxes} ()
+\item 
+\Hypertarget{classGovernment_a825a0fbee610a4e40acb6b51fe13efce}\label{classGovernment_a825a0fbee610a4e40acb6b51fe13efce} 
+void {\bfseries refund\+Taxes} (double amount)
+\item 
+\Hypertarget{classGovernment_a5d0d597292e4d27b35b11c0e7c56a3ec}\label{classGovernment_a5d0d597292e4d27b35b11c0e7c56a3ec} 
+void {\bfseries add\+Taxes\+To\+Budget} (double amount)
+\item 
+\Hypertarget{classGovernment_af1fc2b4948861489f96e8d458a47b86b}\label{classGovernment_af1fc2b4948861489f96e8d458a47b86b} 
+void {\bfseries register\+Observer} (\mbox{\hyperlink{classGovObserver}{Gov\+Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+\Hypertarget{classGovernment_a7f89031eae94f29d06c3f5ea4d61a4b8}\label{classGovernment_a7f89031eae94f29d06c3f5ea4d61a4b8} 
+void {\bfseries unregister\+Observer} (\mbox{\hyperlink{classGovObserver}{Gov\+Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+\Hypertarget{classGovernment_a05816b4132101580e30789d1b59657e9}\label{classGovernment_a05816b4132101580e30789d1b59657e9} 
+void {\bfseries notify\+Observers} ()
+\item 
+\Hypertarget{classGovernment_ae925a4769f88e47de0cb4a08a3a50d35}\label{classGovernment_ae925a4769f88e47de0cb4a08a3a50d35} 
+double {\bfseries get\+Budget} () const
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Government.\+h\item 
+Government.\+cpp\end{DoxyCompactItemize}

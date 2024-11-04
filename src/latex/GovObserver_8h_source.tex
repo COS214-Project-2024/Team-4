@@ -1,0 +1,30 @@
+\doxysection{Gov\+Observer.\+h}
+\hypertarget{GovObserver_8h_source}{}\label{GovObserver_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GOVOBSERVER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GOVOBSERVER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPolicy}{Policy}};\ \textcolor{comment}{//\ Forward\ declaration}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCityService}{CityService}};\ \textcolor{comment}{//\ Forward\ declaration}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ GovObserver\ class}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ This\ is\ an\ abstract\ base\ class\ for\ observers\ that\ monitor\ government\ changes}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGovObserver}{GovObserver}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{comment}{//\ Updates\ the\ tax\ rate\ for\ the\ observer}}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ updateTaxRate(\textcolor{keywordtype}{double}\ rate)\ =\ 0;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{//\ Updates\ the\ policy\ for\ the\ observer}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ updatePolicy(\mbox{\hyperlink{classPolicy}{Policy}}\ policy)\ =\ 0;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ Updates\ the\ services\ for\ the\ observer}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ updateServices(\mbox{\hyperlink{classCityService}{CityService}}\ services)\ =\ 0;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{comment}{//\ Virtual\ destructor}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ Ensures\ derived\ class\ destructors\ are\ called\ correctly}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classGovObserver}{\string~GovObserver}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

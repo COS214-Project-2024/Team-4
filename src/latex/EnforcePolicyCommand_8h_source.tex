@@ -1,0 +1,56 @@
+\doxysection{Enforce\+Policy\+Command.\+h}
+\hypertarget{EnforcePolicyCommand_8h_source}{}\label{EnforcePolicyCommand_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ENFORCEPOLICYCOMMAND\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ENFORCEPOLICYCOMMAND\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}GovCommand.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Government.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Policy.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ EnforcePolicyCommand\ class}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ This\ class\ represents\ a\ command\ to\ enforce\ a\ policy\ in\ the\ government}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classEnforcePolicyCommand}{EnforcePolicyCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classGovCommand}{GovCommand}}\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{classGovernment}{Government}}*\ government;\ \textcolor{comment}{//\ Pointer\ to\ the\ government\ object}}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{classPolicy}{Policy}}\ policy;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Policy\ to\ be\ enforced}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{bool}\ isEnforced;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Flag\ to\ check\ if\ the\ policy\ is\ enforced}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Constructor}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ Initializes\ the\ command\ with\ the\ government\ object\ and\ the\ policy\ to\ enforce}}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classEnforcePolicyCommand}{EnforcePolicyCommand}}(\mbox{\hyperlink{classGovernment}{Government}}*\ gov,\ \mbox{\hyperlink{classPolicy}{Policy}}\ pol);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ Executes\ the\ policy\ enforcement\ command}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ execute()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ Undoes\ the\ policy\ enforcement\ command}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ undo()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Checks\ if\ the\ policy\ is\ enforced}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ isPolicyEnforced()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//\ Sets\ the\ enforcement\ status\ of\ the\ policy}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ setPolicyEnforced(\textcolor{keywordtype}{bool}\ enforced);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Validates\ the\ policy\ enforcement}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ validateEnforcement()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ Executes\ the\ policy\ enforcement\ command\ with\ validation}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ executeWithValidation();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ Gets\ the\ name\ of\ the\ command}}
+\DoxyCodeLine{00041\ \ \ \ \ std::string\ getName()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ Gets\ the\ description\ of\ the\ command}}
+\DoxyCodeLine{00044\ \ \ \ \ std::string\ getDescription()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ Checks\ if\ the\ command\ can\ be\ executed}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ canExecute()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{double}\ returnVal()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

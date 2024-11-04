@@ -1,0 +1,25 @@
+\doxysection{Property.\+h}
+\hypertarget{Property_8h_source}{}\label{Property_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PROPERTY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PROPERTY\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}TaxType.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classProperty}{Property}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classTaxType}{TaxType}}\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{double}\ propertyTax;\ \ \ \textcolor{comment}{//\ Base\ property\ tax\ rate\ as\ a\ percentage}}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{double}\ municipalLevy;\ \textcolor{comment}{//\ Additional\ municipal\ levy\ as\ a\ percentage}}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{double}\ additionalFees;\ \textcolor{comment}{//\ Fixed\ additional\ fees}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{classProperty}{Property}}(\textcolor{keywordtype}{double}\ rate,\ \textcolor{keywordtype}{double}\ levy,\ \textcolor{keywordtype}{double}\ fees);}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ setTax(\textcolor{keywordtype}{double}\ rate)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{double}\ calculateTax(\textcolor{keywordtype}{double}\ propertyValue)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ setMunicipalLevy(\textcolor{keywordtype}{double}\ levy);}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ setAdditionalFees(\textcolor{keywordtype}{double}\ fees);}
+\DoxyCodeLine{00018\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PROPERTY\_H}}
+
+\end{DoxyCode}

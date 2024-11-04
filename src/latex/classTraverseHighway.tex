@@ -1,0 +1,123 @@
+\doxysection{Traverse\+Highway Class Reference}
+\hypertarget{classTraverseHighway}{}\label{classTraverseHighway}\index{TraverseHighway@{TraverseHighway}}
+
+
+A class to traverse through highways in a transportation system.  
+
+
+
+
+{\ttfamily \#include $<$Traverse\+Highway.\+h$>$}
+
+Inheritance diagram for Traverse\+Highway\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTraverseHighway}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTraverseHighway_a1e63c7f5357465fb40834a9dca357079}{Traverse\+Highway}} (\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*}element)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classTraverseHighway}{Traverse\+Highway}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTraverseHighway_a486cd97663bb86fbe5b6e88448177651}{next\+List}} ()
+\begin{DoxyCompactList}\small\item\em Move to the next highway in the list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTraverseHighway_a90d16eace8e6162797d088666c31bff8}{prev\+List}} ()
+\begin{DoxyCompactList}\small\item\em Move to the previous highway in the list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTraverseHighway_a03a8f0cb3ae5444f4076edfcb639591e}{get\+Pos}} (size\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{classTransportation}{Transportation} object at the specified position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTraverseState}{Traverse\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTraverseState_af3a208b51a05d3a16b9121c6514aa06f}{Traverse\+State}} (\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*}element)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classTraverseState}{Traverse\+State}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTraverseState_aefa131c6b0b24e49fc35dfd338daca95}{get\+Layer}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current \doxylink{classTransportation}{Transportation} layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to traverse through highways in a transportation system. 
+
+The \doxylink{classTraverseHighway}{Traverse\+Highway} class provides methods to navigate through a list of highways, allowing movement to the next or previous highway and retrieving the current position. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classTraverseHighway_a1e63c7f5357465fb40834a9dca357079}\index{TraverseHighway@{TraverseHighway}!TraverseHighway@{TraverseHighway}}
+\index{TraverseHighway@{TraverseHighway}!TraverseHighway@{TraverseHighway}}
+\doxysubsubsection{\texorpdfstring{TraverseHighway()}{TraverseHighway()}}
+{\footnotesize\ttfamily \label{classTraverseHighway_a1e63c7f5357465fb40834a9dca357079} 
+Traverse\+Highway\+::\+Traverse\+Highway (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*}}]{element}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{classTraverseHighway}{Traverse\+Highway}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & A pointer to a \doxylink{classTransportation}{Transportation} object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTraverseHighway_a03a8f0cb3ae5444f4076edfcb639591e}\index{TraverseHighway@{TraverseHighway}!getPos@{getPos}}
+\index{getPos@{getPos}!TraverseHighway@{TraverseHighway}}
+\doxysubsubsection{\texorpdfstring{getPos()}{getPos()}}
+{\footnotesize\ttfamily \label{classTraverseHighway_a03a8f0cb3ae5444f4076edfcb639591e} 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} Traverse\+Highway\+::get\+Pos (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{x}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the \doxylink{classTransportation}{Transportation} object at the specified position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The position in the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the \doxylink{classTransportation}{Transportation} object at the specified position. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTraverseState_aab673adeebd7b46dc8356d0c705af82e}{Traverse\+State}}.
+
+\Hypertarget{classTraverseHighway_a486cd97663bb86fbe5b6e88448177651}\index{TraverseHighway@{TraverseHighway}!nextList@{nextList}}
+\index{nextList@{nextList}!TraverseHighway@{TraverseHighway}}
+\doxysubsubsection{\texorpdfstring{nextList()}{nextList()}}
+{\footnotesize\ttfamily \label{classTraverseHighway_a486cd97663bb86fbe5b6e88448177651} 
+bool Traverse\+Highway\+::next\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Move to the next highway in the list. 
+
+\begin{DoxyReturn}{Returns}
+True if the move was successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTraverseState_a0469f8f655306234ad5876de89f340e7}{Traverse\+State}}.
+
+\Hypertarget{classTraverseHighway_a90d16eace8e6162797d088666c31bff8}\index{TraverseHighway@{TraverseHighway}!prevList@{prevList}}
+\index{prevList@{prevList}!TraverseHighway@{TraverseHighway}}
+\doxysubsubsection{\texorpdfstring{prevList()}{prevList()}}
+{\footnotesize\ttfamily \label{classTraverseHighway_a90d16eace8e6162797d088666c31bff8} 
+bool Traverse\+Highway\+::prev\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Move to the previous highway in the list. 
+
+\begin{DoxyReturn}{Returns}
+True if the move was successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTraverseState_ae4bf038bf916f6b0a84e915b8a4d9aa8}{Traverse\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TraverseHighway_8h}{Traverse\+Highway.\+h}}\item 
+Traverse\+Highway.\+cpp\end{DoxyCompactItemize}

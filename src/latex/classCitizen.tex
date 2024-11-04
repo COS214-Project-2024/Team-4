@@ -1,0 +1,158 @@
+\doxysection{Citizen Class Reference}
+\hypertarget{classCitizen}{}\label{classCitizen}\index{Citizen@{Citizen}}
+Inheritance diagram for Citizen\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCitizen}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCitizen_a59e49068e48e69e99aebc611a77e0afc}\label{classCitizen_a59e49068e48e69e99aebc611a77e0afc} 
+{\bfseries Citizen} (const std\+::string \&name, int age)
+\item 
+\Hypertarget{classCitizen_a60655fd6a0b0d1d717aa1aea1805091d}\label{classCitizen_a60655fd6a0b0d1d717aa1aea1805091d} 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCitizen}{Citizen}} $>$ {\bfseries clone} () const =0
+\item 
+\Hypertarget{classCitizen_ada20a3b99d38fc77a891c3b28ffdda1f}\label{classCitizen_ada20a3b99d38fc77a891c3b28ffdda1f} 
+void {\bfseries add\+Observer} (\mbox{\hyperlink{classCitizenObserver}{Citizen\+Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+\Hypertarget{classCitizen_a7ad3fee37c0f1eafac65a6b51a1820af}\label{classCitizen_a7ad3fee37c0f1eafac65a6b51a1820af} 
+void {\bfseries detach\+All\+Observers} ()
+\item 
+\Hypertarget{classCitizen_a55b3360b8d1deb8346b87bd9d0aaddfd}\label{classCitizen_a55b3360b8d1deb8346b87bd9d0aaddfd} 
+void {\bfseries remove\+Observer} (\mbox{\hyperlink{classCitizenObserver}{Citizen\+Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+\Hypertarget{classCitizen_a1caf850dd35258789619908d31f9213c}\label{classCitizen_a1caf850dd35258789619908d31f9213c} 
+void {\bfseries notify\+Observers} ()
+\item 
+\Hypertarget{classCitizen_a15d0c1993fab1ae6831a136240ab9bce}\label{classCitizen_a15d0c1993fab1ae6831a136240ab9bce} 
+void {\bfseries set\+State} (\mbox{\hyperlink{classCitizenState}{Citizen\+State}} \texorpdfstring{$\ast$}{*}new\+State)
+\item 
+\Hypertarget{classCitizen_a5416dec5f712adeba685b4b6083eb814}\label{classCitizen_a5416dec5f712adeba685b4b6083eb814} 
+void {\bfseries update\+Satisfaction} ()
+\item 
+\Hypertarget{classCitizen_ad53c9c0a1b355b3b41e6e7f7fe3c764c}\label{classCitizen_ad53c9c0a1b355b3b41e6e7f7fe3c764c} 
+std\+::string {\bfseries get\+Relationship\+Status} () const
+\item 
+\Hypertarget{classCitizen_a9b55a73df25771a3b1ff63044221e808}\label{classCitizen_a9b55a73df25771a3b1ff63044221e808} 
+void {\bfseries set\+Relationship\+Status} (const std\+::string \&status)
+\item 
+\Hypertarget{classCitizen_a21c0a5aae29c5ca59e6b8f26c3044cfc}\label{classCitizen_a21c0a5aae29c5ca59e6b8f26c3044cfc} 
+int {\bfseries get\+Marriage\+Duration} () const
+\item 
+\Hypertarget{classCitizen_a020d1bfbc892f6f116c7256dbaea8936}\label{classCitizen_a020d1bfbc892f6f116c7256dbaea8936} 
+void {\bfseries reset\+Marriage\+Duration} ()
+\item 
+\Hypertarget{classCitizen_a1d6a1ad1530c7abe8be73a6853e38d9b}\label{classCitizen_a1d6a1ad1530c7abe8be73a6853e38d9b} 
+void {\bfseries increment\+Marriage\+Duration} ()
+\item 
+\Hypertarget{classCitizen_a6fea9489e4c9f4e23e64f7b6da409af2}\label{classCitizen_a6fea9489e4c9f4e23e64f7b6da409af2} 
+void {\bfseries update\+Satisfaction} (float adjustment)
+\item 
+\Hypertarget{classCitizen_aef80fcb7841b96e732f7cefb53a54704}\label{classCitizen_aef80fcb7841b96e732f7cefb53a54704} 
+void {\bfseries add\+Child} ()
+\item 
+\Hypertarget{classCitizen_a2c0e975c0171f1a690455291ab0c4f83}\label{classCitizen_a2c0e975c0171f1a690455291ab0c4f83} 
+int {\bfseries get\+Age} () const
+\item 
+\Hypertarget{classCitizen_a070c8fce195335730a64803b20944ef0}\label{classCitizen_a070c8fce195335730a64803b20944ef0} 
+void {\bfseries increment\+Age} ()
+\item 
+\Hypertarget{classCitizen_a87f104f61759169d0c938a41e715c58a}\label{classCitizen_a87f104f61759169d0c938a41e715c58a} 
+void {\bfseries add\+Satisfaction\+Strategy} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSatisfactionStrategy}{Satisfaction\+Strategy}} $>$ strategy)
+\item 
+\Hypertarget{classCitizen_ab162f681583a840f58a3c43782734232}\label{classCitizen_ab162f681583a840f58a3c43782734232} 
+void {\bfseries remove\+Satisfaction\+Strategy} ()
+\item 
+\Hypertarget{classCitizen_a617e1459fe18bcec51fbcbec884ea72f}\label{classCitizen_a617e1459fe18bcec51fbcbec884ea72f} 
+void {\bfseries set\+Satisfaction\+Level} (double level)
+\item 
+\Hypertarget{classCitizen_ac1729e82f9e1431b9fa62c503ddd7422}\label{classCitizen_ac1729e82f9e1431b9fa62c503ddd7422} 
+void {\bfseries deposit\+Monthly\+Income} ()
+\item 
+\Hypertarget{classCitizen_a7e25ecf512e7a40ace4564df9e8d3014}\label{classCitizen_a7e25ecf512e7a40ace4564df9e8d3014} 
+void {\bfseries search\+And\+Apply\+For\+Job} (\mbox{\hyperlink{classBuildingManager}{Building\+Manager}} \&manager, \mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}building, std\+::string jobtitle)
+\item 
+\Hypertarget{classCitizen_afb8548eee68238fd58fe0fb3a68307bc}\label{classCitizen_afb8548eee68238fd58fe0fb3a68307bc} 
+std\+::string {\bfseries get\+Name} () const
+\item 
+\Hypertarget{classCitizen_aa79a73c717f4be51dd87447847ae166f}\label{classCitizen_aa79a73c717f4be51dd87447847ae166f} 
+float {\bfseries get\+Satisfaction\+Level} () const
+\item 
+\Hypertarget{classCitizen_a85ccbf587289be572d03de332a8cb9b7}\label{classCitizen_a85ccbf587289be572d03de332a8cb9b7} 
+bool {\bfseries is\+Leaving} () const
+\item 
+\Hypertarget{classCitizen_a931179cb7deb1b6792af9c32d7646a57}\label{classCitizen_a931179cb7deb1b6792af9c32d7646a57} 
+void {\bfseries set\+Income} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIncome}{Income}} $>$ income)
+\item 
+\Hypertarget{classCitizen_acabdac0c3d58db68f1035f444e5a7ba3}\label{classCitizen_acabdac0c3d58db68f1035f444e5a7ba3} 
+void {\bfseries check\+And\+Update\+State} ()
+\item 
+\Hypertarget{classCitizen_a136985ff2d9a2f32e15db74c8f077038}\label{classCitizen_a136985ff2d9a2f32e15db74c8f077038} 
+void {\bfseries set\+Job\+Title} (const std\+::string \&job\+Title)
+\item 
+\Hypertarget{classCitizen_a0775df89a343dcd730aa436b8c3bd113}\label{classCitizen_a0775df89a343dcd730aa436b8c3bd113} 
+std\+::string {\bfseries get\+Job} () const
+\item 
+\Hypertarget{classCitizen_a68dcc794ac88a705ef74d563b56596b2}\label{classCitizen_a68dcc794ac88a705ef74d563b56596b2} 
+void {\bfseries set\+Employed} (bool status)
+\item 
+\Hypertarget{classCitizen_a296b0a9efa9da3558ee8427e56615ae6}\label{classCitizen_a296b0a9efa9da3558ee8427e56615ae6} 
+bool {\bfseries is\+Employed} () const
+\item 
+\Hypertarget{classCitizen_ac4ba59ecdd6c01077f59947a1fa37444}\label{classCitizen_ac4ba59ecdd6c01077f59947a1fa37444} 
+float {\bfseries get\+Tax\+Rate} () const
+\item 
+\Hypertarget{classCitizen_aa938e904532a92a8585c59bac34ddef8}\label{classCitizen_aa938e904532a92a8585c59bac34ddef8} 
+void {\bfseries set\+Tax\+Rate} (float rate)
+\item 
+\Hypertarget{classCitizen_a443c175a9be9b85f2391cac60dd1bba5}\label{classCitizen_a443c175a9be9b85f2391cac60dd1bba5} 
+double {\bfseries pay\+Taxes} (\mbox{\hyperlink{classTaxType}{Tax\+Type}} \texorpdfstring{$\ast$}{*}tax\+Type)
+\item 
+\Hypertarget{classCitizen_adf45f68ffcbb43435cfc946744e86552}\label{classCitizen_adf45f68ffcbb43435cfc946744e86552} 
+double {\bfseries get\+Bank\+Balance} () const
+\item 
+\Hypertarget{classCitizen_ab790ef9802681ce5f6253696b32a9571}\label{classCitizen_ab790ef9802681ce5f6253696b32a9571} 
+void {\bfseries set\+Bank\+Balance} (double balance)
+\item 
+\Hypertarget{classCitizen_ab05c2fc0459ae99facf2edbbebef98e9}\label{classCitizen_ab05c2fc0459ae99facf2edbbebef98e9} 
+void {\bfseries incrase\+Bank\+Balance} (double amount)
+\item 
+\Hypertarget{classCitizen_a13f9a6031e7ac6c71dc5fd2099779aa5}\label{classCitizen_a13f9a6031e7ac6c71dc5fd2099779aa5} 
+void {\bfseries subtract\+Bank\+Balance} (double amount)
+\item 
+\Hypertarget{classCitizen_a17c6f4eeca75a04daad0f46938912842}\label{classCitizen_a17c6f4eeca75a04daad0f46938912842} 
+void {\bfseries set\+Tax\+Cooldown} (bool status)
+\item 
+\Hypertarget{classCitizen_a2be6d6e9330575818d05dce1c2eaf4c6}\label{classCitizen_a2be6d6e9330575818d05dce1c2eaf4c6} 
+bool {\bfseries get\+Tax\+Cooldown} () const
+\item 
+\Hypertarget{classCitizen_a66902a74fb6f35e2e8600deb62ddfa77}\label{classCitizen_a66902a74fb6f35e2e8600deb62ddfa77} 
+bool {\bfseries is\+On\+Cooldown} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCitizen_a085737a4eec9c91906683a565bb3b0b0}\label{classCitizen_a085737a4eec9c91906683a565bb3b0b0} 
+bool {\bfseries employed} = false
+\item 
+\Hypertarget{classCitizen_a4f4aea365a24d7125692ae4bf3abee84}\label{classCitizen_a4f4aea365a24d7125692ae4bf3abee84} 
+bool {\bfseries tax\+Cooldown}
+\item 
+\Hypertarget{classCitizen_aab011e9be0f75b0ef280abda4f8cabcd}\label{classCitizen_aab011e9be0f75b0ef280abda4f8cabcd} 
+std\+::chrono\+::steady\+\_\+clock\+::time\+\_\+point {\bfseries last\+Tax\+Payment}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCitizen_a0cb08e6bd9f939dd736e30d4002fb30b}\label{classCitizen_a0cb08e6bd9f939dd736e30d4002fb30b} 
+static constexpr std\+::chrono\+::seconds {\bfseries tax\+Cooldown\+Period} \{5\}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Citizen.\+h\item 
+Citizen.\+cpp\end{DoxyCompactItemize}

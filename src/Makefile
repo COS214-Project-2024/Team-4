@@ -30,3 +30,8 @@ $(TARGET): $(OBJ)
 clean:
 	rm -f $(OBJ) $(TARGET)
 
+run: $(TARGET)
+	./$(TARGET)
+
+doxygen:
+	doxygen dconfig

@@ -1,0 +1,131 @@
+\doxysection{Traverse\+Freight\+Train Class Reference}
+\hypertarget{classTraverseFreightTrain}{}\label{classTraverseFreightTrain}\index{TraverseFreightTrain@{TraverseFreightTrain}}
+
+
+A class to traverse through \doxylink{classFreightTrain}{Freight\+Train} objects.  
+
+
+
+
+{\ttfamily \#include $<$Traverse\+Freight\+Train.\+h$>$}
+
+Inheritance diagram for Traverse\+Freight\+Train\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTraverseFreightTrain}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTraverseFreightTrain_a5b6d57dbca02e522b74892de92277c5f}{Traverse\+Freight\+Train}} (\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*}element)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classTraverseFreightTrain}{Traverse\+Freight\+Train}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTraverseFreightTrain_ad8041539b79dee0dbf3d017cbb01d8fa}{next\+List}} ()
+\begin{DoxyCompactList}\small\item\em Move to the next list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTraverseFreightTrain_afd94a8b95bc826ddc68d330c70cab594}{prev\+List}} ()
+\begin{DoxyCompactList}\small\item\em Move to the previous list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTraverseFreightTrain_a4347310c4c4f4561f8c13bca507a2712}{get\+Pos}} (size\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Get the position in the list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTraverseState}{Traverse\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTraverseState_af3a208b51a05d3a16b9121c6514aa06f}{Traverse\+State}} (\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*}element)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classTraverseState}{Traverse\+State}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTraverseState_aefa131c6b0b24e49fc35dfd338daca95}{get\+Layer}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current \doxylink{classTransportation}{Transportation} layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to traverse through \doxylink{classFreightTrain}{Freight\+Train} objects. 
+
+The \doxylink{classTraverseFreightTrain}{Traverse\+Freight\+Train} class provides methods to navigate through a list of \doxylink{classFreightTrain}{Freight\+Train} objects within a \doxylink{classTransportation}{Transportation} system. It maintains the current position within the list and allows moving to the next or previous list. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classTraverseFreightTrain_a5b6d57dbca02e522b74892de92277c5f}\index{TraverseFreightTrain@{TraverseFreightTrain}!TraverseFreightTrain@{TraverseFreightTrain}}
+\index{TraverseFreightTrain@{TraverseFreightTrain}!TraverseFreightTrain@{TraverseFreightTrain}}
+\doxysubsubsection{\texorpdfstring{TraverseFreightTrain()}{TraverseFreightTrain()}}
+{\footnotesize\ttfamily \label{classTraverseFreightTrain_a5b6d57dbca02e522b74892de92277c5f} 
+Traverse\+Freight\+Train\+::\+Traverse\+Freight\+Train (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*}}]{element}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{classTraverseFreightTrain}{Traverse\+Freight\+Train}. 
+
+Initializes a new instance of the \doxylink{classTraverseFreightTrain}{Traverse\+Freight\+Train} class with the given \doxylink{classTransportation}{Transportation} element.
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & A pointer to a \doxylink{classTransportation}{Transportation} object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTraverseFreightTrain_a4347310c4c4f4561f8c13bca507a2712}\index{TraverseFreightTrain@{TraverseFreightTrain}!getPos@{getPos}}
+\index{getPos@{getPos}!TraverseFreightTrain@{TraverseFreightTrain}}
+\doxysubsubsection{\texorpdfstring{getPos()}{getPos()}}
+{\footnotesize\ttfamily \label{classTraverseFreightTrain_a4347310c4c4f4561f8c13bca507a2712} 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} Traverse\+Freight\+Train\+::get\+Pos (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{x}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the position in the list. 
+
+Retrieves the \doxylink{classTransportation}{Transportation} object at the specified position in the list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The position in the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the \doxylink{classTransportation}{Transportation} object at the specified position. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTraverseState_aab673adeebd7b46dc8356d0c705af82e}{Traverse\+State}}.
+
+\Hypertarget{classTraverseFreightTrain_ad8041539b79dee0dbf3d017cbb01d8fa}\index{TraverseFreightTrain@{TraverseFreightTrain}!nextList@{nextList}}
+\index{nextList@{nextList}!TraverseFreightTrain@{TraverseFreightTrain}}
+\doxysubsubsection{\texorpdfstring{nextList()}{nextList()}}
+{\footnotesize\ttfamily \label{classTraverseFreightTrain_ad8041539b79dee0dbf3d017cbb01d8fa} 
+bool Traverse\+Freight\+Train\+::next\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Move to the next list. 
+
+Advances the current position to the next list.
+
+\begin{DoxyReturn}{Returns}
+true if the operation was successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTraverseState_a0469f8f655306234ad5876de89f340e7}{Traverse\+State}}.
+
+\Hypertarget{classTraverseFreightTrain_afd94a8b95bc826ddc68d330c70cab594}\index{TraverseFreightTrain@{TraverseFreightTrain}!prevList@{prevList}}
+\index{prevList@{prevList}!TraverseFreightTrain@{TraverseFreightTrain}}
+\doxysubsubsection{\texorpdfstring{prevList()}{prevList()}}
+{\footnotesize\ttfamily \label{classTraverseFreightTrain_afd94a8b95bc826ddc68d330c70cab594} 
+bool Traverse\+Freight\+Train\+::prev\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Move to the previous list. 
+
+Moves the current position to the previous list.
+
+\begin{DoxyReturn}{Returns}
+true if the operation was successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTraverseState_ae4bf038bf916f6b0a84e915b8a4d9aa8}{Traverse\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TraverseFreightTrain_8h}{Traverse\+Freight\+Train.\+h}}\item 
+Traverse\+Freight\+Train.\+cpp\end{DoxyCompactItemize}

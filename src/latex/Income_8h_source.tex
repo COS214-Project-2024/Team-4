@@ -1,0 +1,51 @@
+\doxysection{Income.\+h}
+\hypertarget{Income_8h_source}{}\label{Income_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ INCOME\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ INCOME\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}TaxType.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classIncome}{Income}}\ :\ \mbox{\hyperlink{classTaxType}{TaxType}}\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{double}\ incomeTax;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{char}\ cType;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{double}\ baseSalary;\ \ \ \ \ \ \textcolor{comment}{//\ Base\ salary\ for\ the\ job}}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{double}\ bonus;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Monthly\ bonus\ (if\ any)}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{double}\ deductions;\ \ \ \ \ \ \textcolor{comment}{//\ Monthly\ deductions\ (if\ any)}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ Constructor\ to\ initialize\ with\ base\ salary}}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classIncome}{Income}}(\textcolor{keywordtype}{double}\ salary,\ \textcolor{keywordtype}{double}\ rate,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ category)\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classTaxType}{TaxType}}(rate,\ category),\ baseSalary(salary),\ bonus(0.0),\ deductions(0.0)\ \{\}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classIncome}{Income}}(\textcolor{keywordtype}{double}\ salary)\ :\ \mbox{\hyperlink{classIncome}{Income}}(salary,\ 0.0,\ \textcolor{charliteral}{'A'})\ \{\}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ calculate\ monthly\ income}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{double}\ calculateMonthlyIncome()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Optional\ methods\ to\ adjust\ income}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ addBonus(\textcolor{keywordtype}{double}\ amount);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ applyDeductions(\textcolor{keywordtype}{double}\ amount);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ In\ Income.h}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ Income.h}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{double}\ payTaxes(\mbox{\hyperlink{classTaxType}{TaxType}}\&\ taxType);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ Getters}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{double}\ getBaseSalary()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ baseSalary;\ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{double}\ getBonus()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ bonus;\ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{double}\ getDeductions()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ deductions;\ \}}
+\DoxyCodeLine{00039\ \ \ \ \ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ setTax(\textcolor{keywordtype}{double}\ rate)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{double}\ calculateTax(\textcolor{keywordtype}{double}\ val)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

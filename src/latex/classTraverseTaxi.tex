@@ -1,0 +1,123 @@
+\doxysection{Traverse\+Taxi Class Reference}
+\hypertarget{classTraverseTaxi}{}\label{classTraverseTaxi}\index{TraverseTaxi@{TraverseTaxi}}
+
+
+Manages the traversal state of a \doxylink{classTaxi}{Taxi} object.  
+
+
+
+
+{\ttfamily \#include $<$Traverse\+Taxi.\+h$>$}
+
+Inheritance diagram for Traverse\+Taxi\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTraverseTaxi}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTraverseTaxi_a0aa6f7cc190bd5612941e3dd371c0612}{Traverse\+Taxi}} (\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*}element)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classTraverseTaxi}{Traverse\+Taxi}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTraverseTaxi_a57bf2a3744940bc27230ae2771eae092}{next\+List}} ()
+\begin{DoxyCompactList}\small\item\em Move to the next list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTraverseTaxi_aac374fc3d7c030574238f147b9131198}{prev\+List}} ()
+\begin{DoxyCompactList}\small\item\em Move to the previous list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTraverseTaxi_a951389fcde55ab1d227acbfa134217dd}{get\+Pos}} (size\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Get the transportation element at the specified position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTraverseState}{Traverse\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTraverseState_af3a208b51a05d3a16b9121c6514aa06f}{Traverse\+State}} (\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*}element)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classTraverseState}{Traverse\+State}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTraverseState_aefa131c6b0b24e49fc35dfd338daca95}{get\+Layer}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current \doxylink{classTransportation}{Transportation} layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the traversal state of a \doxylink{classTaxi}{Taxi} object. 
+
+The \doxylink{classTraverseTaxi}{Traverse\+Taxi} class provides functionality to traverse through different lists of transportation elements, specifically for \doxylink{classTaxi}{Taxi} objects. It maintains the current list index and an upper bound for the list index. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classTraverseTaxi_a0aa6f7cc190bd5612941e3dd371c0612}\index{TraverseTaxi@{TraverseTaxi}!TraverseTaxi@{TraverseTaxi}}
+\index{TraverseTaxi@{TraverseTaxi}!TraverseTaxi@{TraverseTaxi}}
+\doxysubsubsection{\texorpdfstring{TraverseTaxi()}{TraverseTaxi()}}
+{\footnotesize\ttfamily \label{classTraverseTaxi_a0aa6f7cc190bd5612941e3dd371c0612} 
+Traverse\+Taxi\+::\+Traverse\+Taxi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*}}]{element}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{classTraverseTaxi}{Traverse\+Taxi}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & A pointer to a \doxylink{classTransportation}{Transportation} object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTraverseTaxi_a951389fcde55ab1d227acbfa134217dd}\index{TraverseTaxi@{TraverseTaxi}!getPos@{getPos}}
+\index{getPos@{getPos}!TraverseTaxi@{TraverseTaxi}}
+\doxysubsubsection{\texorpdfstring{getPos()}{getPos()}}
+{\footnotesize\ttfamily \label{classTraverseTaxi_a951389fcde55ab1d227acbfa134217dd} 
+\mbox{\hyperlink{classTransportation}{Transportation}} \texorpdfstring{$\ast$}{*} Traverse\+Taxi\+::get\+Pos (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{x}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the transportation element at the specified position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The position index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the \doxylink{classTransportation}{Transportation} object at the specified position. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTraverseState_aab673adeebd7b46dc8356d0c705af82e}{Traverse\+State}}.
+
+\Hypertarget{classTraverseTaxi_a57bf2a3744940bc27230ae2771eae092}\index{TraverseTaxi@{TraverseTaxi}!nextList@{nextList}}
+\index{nextList@{nextList}!TraverseTaxi@{TraverseTaxi}}
+\doxysubsubsection{\texorpdfstring{nextList()}{nextList()}}
+{\footnotesize\ttfamily \label{classTraverseTaxi_a57bf2a3744940bc27230ae2771eae092} 
+bool Traverse\+Taxi\+::next\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Move to the next list. 
+
+\begin{DoxyReturn}{Returns}
+True if the operation was successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTraverseState_a0469f8f655306234ad5876de89f340e7}{Traverse\+State}}.
+
+\Hypertarget{classTraverseTaxi_aac374fc3d7c030574238f147b9131198}\index{TraverseTaxi@{TraverseTaxi}!prevList@{prevList}}
+\index{prevList@{prevList}!TraverseTaxi@{TraverseTaxi}}
+\doxysubsubsection{\texorpdfstring{prevList()}{prevList()}}
+{\footnotesize\ttfamily \label{classTraverseTaxi_aac374fc3d7c030574238f147b9131198} 
+bool Traverse\+Taxi\+::prev\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Move to the previous list. 
+
+\begin{DoxyReturn}{Returns}
+True if the operation was successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTraverseState_ae4bf038bf916f6b0a84e915b8a4d9aa8}{Traverse\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TraverseTaxi_8h}{Traverse\+Taxi.\+h}}\item 
+Traverse\+Taxi.\+cpp\end{DoxyCompactItemize}

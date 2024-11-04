@@ -1,0 +1,101 @@
+\doxysection{Building Class Reference}
+\hypertarget{classBuilding}{}\label{classBuilding}\index{Building@{Building}}
+Inheritance diagram for Building\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBuilding}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classBuilding_accf0c8c09cf572ed7357c4faeecb33ea}\label{classBuilding_accf0c8c09cf572ed7357c4faeecb33ea} 
+{\bfseries Building} (const std\+::string \&name, float area, int floors, int capacity, float satisfaction\+Impact, float growth\+Impact, float consumption)
+\item 
+\Hypertarget{classBuilding_a20595e9eace5fa1242d94c002072f93d}\label{classBuilding_a20595e9eace5fa1242d94c002072f93d} 
+{\bfseries Building} (int \mbox{\hyperlink{classBuilder}{Builder}})
+\item 
+\Hypertarget{classBuilding_a2e8eb4c784da6f8dd83f2f53c40faa15}\label{classBuilding_a2e8eb4c784da6f8dd83f2f53c40faa15} 
+void {\bfseries set\+Name} (const std\+::string \&name)
+\item 
+\Hypertarget{classBuilding_a1f59afb408a51e644bf7e7de99d50541}\label{classBuilding_a1f59afb408a51e644bf7e7de99d50541} 
+std\+::string {\bfseries get\+Name} () const
+\item 
+\Hypertarget{classBuilding_a3fc611406b8fa7653b7518b8f623b6ed}\label{classBuilding_a3fc611406b8fa7653b7518b8f623b6ed} 
+virtual void {\bfseries construct} ()=0
+\item 
+\Hypertarget{classBuilding_ab992d9e312a79fb803aba40477db4fd9}\label{classBuilding_ab992d9e312a79fb803aba40477db4fd9} 
+float {\bfseries get\+Satisfaction} () const
+\item 
+\Hypertarget{classBuilding_a0b1afe06c375066031abbaebdf0c31d3}\label{classBuilding_a0b1afe06c375066031abbaebdf0c31d3} 
+float {\bfseries get\+Economic\+Growth} () const
+\item 
+\Hypertarget{classBuilding_acacadb9f781ef1726f838b0891510ce9}\label{classBuilding_acacadb9f781ef1726f838b0891510ce9} 
+float {\bfseries get\+Resource\+Consumption} () const
+\item 
+\Hypertarget{classBuilding_addc7464fd207b64b52686ef70806c932}\label{classBuilding_addc7464fd207b64b52686ef70806c932} 
+virtual void {\bfseries update\+Impacts} ()=0
+\item 
+\Hypertarget{classBuilding_a20db85f737c1d014f54f1548c3bb2143}\label{classBuilding_a20db85f737c1d014f54f1548c3bb2143} 
+virtual std\+::string {\bfseries get\+Type} () const =0
+\item 
+\Hypertarget{classBuilding_a43c45a928edf2dcdb67775f4ed977af9}\label{classBuilding_a43c45a928edf2dcdb67775f4ed977af9} 
+void {\bfseries add\+Job} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classJobs}{Jobs}} $>$ job)
+\item 
+\Hypertarget{classBuilding_a50114ebe91f3efd876840db26adec233}\label{classBuilding_a50114ebe91f3efd876840db26adec233} 
+void {\bfseries list\+Jobs} () const
+\item 
+\Hypertarget{classBuilding_a8deb1bc936d0a0cd32f0a24e48ea676b}\label{classBuilding_a8deb1bc936d0a0cd32f0a24e48ea676b} 
+bool {\bfseries hire\+Employee} (const std\+::string \&job\+Title)
+\item 
+\Hypertarget{classBuilding_a4b8722c90f33eb198eadaba8fa6f403e}\label{classBuilding_a4b8722c90f33eb198eadaba8fa6f403e} 
+void {\bfseries release\+Employee} (const std\+::string \&job\+Title)
+\item 
+\Hypertarget{classBuilding_a7626badbb403cee2f4d8a9c6d859c8c0}\label{classBuilding_a7626badbb403cee2f4d8a9c6d859c8c0} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classJobs}{Jobs}} $>$ {\bfseries get\+Available\+Job} ()
+\item 
+\Hypertarget{classBuilding_a5f31a16b8722005924dafc2811dce58d}\label{classBuilding_a5f31a16b8722005924dafc2811dce58d} 
+void {\bfseries display\+Job\+Info} (const std\+::string \&job\+Title) const
+\item 
+\Hypertarget{classBuilding_abb83a99d05b7e2ec7cabb3b082b4ae92}\label{classBuilding_abb83a99d05b7e2ec7cabb3b082b4ae92} 
+const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classJobs}{Jobs}} $>$ $>$ \& {\bfseries get\+Jobs} () const
+\item 
+\Hypertarget{classBuilding_a751e4527089fd7aaeb6be619d99dad96}\label{classBuilding_a751e4527089fd7aaeb6be619d99dad96} 
+virtual double {\bfseries pay\+Taxes} (\mbox{\hyperlink{classTaxType}{Tax\+Type}} \texorpdfstring{$\ast$}{*}tax\+Type)=0
+\item 
+\Hypertarget{classBuilding_a020e1b8339aaa09ebfa10ad5f03dcd4c}\label{classBuilding_a020e1b8339aaa09ebfa10ad5f03dcd4c} 
+virtual void {\bfseries undo\+Collect\+Taxes} ()=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classBuilding_a6e62ddc243a1f5b900c34c797bff3569}\label{classBuilding_a6e62ddc243a1f5b900c34c797bff3569} 
+std\+::string {\bfseries name}
+\item 
+\Hypertarget{classBuilding_a44455b14b8665c5fe7a6f5325fb5efcd}\label{classBuilding_a44455b14b8665c5fe7a6f5325fb5efcd} 
+float {\bfseries area}
+\item 
+\Hypertarget{classBuilding_a3b239ef2bc3aea0c645928082ca104c9}\label{classBuilding_a3b239ef2bc3aea0c645928082ca104c9} 
+int {\bfseries floors}
+\item 
+\Hypertarget{classBuilding_a3a56eeb880c304f705b84fb5e96c0c0b}\label{classBuilding_a3a56eeb880c304f705b84fb5e96c0c0b} 
+int {\bfseries capacity}
+\item 
+\Hypertarget{classBuilding_ac7ce1e34742b52ca8425f9668642c8ba}\label{classBuilding_ac7ce1e34742b52ca8425f9668642c8ba} 
+float {\bfseries citizen\+Satisfaction}
+\item 
+\Hypertarget{classBuilding_af80eb936c6216a52f42c25ddc39a1bf8}\label{classBuilding_af80eb936c6216a52f42c25ddc39a1bf8} 
+float {\bfseries economic\+Growth}
+\item 
+\Hypertarget{classBuilding_ab0eeae7f84ffd219eff60f26701de151}\label{classBuilding_ab0eeae7f84ffd219eff60f26701de151} 
+float {\bfseries resource\+Consumption}
+\item 
+\Hypertarget{classBuilding_aadd65109f260a853b640bf4f61dfe8ef}\label{classBuilding_aadd65109f260a853b640bf4f61dfe8ef} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classJobs}{Jobs}} $>$ $>$ {\bfseries jobs}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Building.\+h\item 
+Building.\+cpp\end{DoxyCompactItemize}

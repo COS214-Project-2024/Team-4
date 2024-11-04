@@ -1,0 +1,33 @@
+\doxysection{Agregate\+Traverser.\+h}
+\hypertarget{AgregateTraverser_8h_source}{}\label{AgregateTraverser_8h_source}\mbox{\hyperlink{AgregateTraverser_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ AGREGATETRAVERSER\_H}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ AGREGATETRAVERSER\_H}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <variant>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Highway_8h}{Highway.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{InsideRoad_8h}{InsideRoad.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Bus_8h}{Bus.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Taxi_8h}{Taxi.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{FreightTrain_8h}{FreightTrain.h}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PassengerTrain_8h}{PassengerTrain.h}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ComercialAirport_8h}{ComercialAirport.h}}"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{CargoAirport_8h}{CargoAirport.h}}"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{CityTraverser_8h}{CityTraverser.h}}"{}}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classAgregateTraverser}{AgregateTraverser}}\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classCityTraverser}{CityTraverser}}*\ \mbox{\hyperlink{classAgregateTraverser_a1ffea39e6a6b9737561cbd0f4a2ae214}{createCityTraverser}}()\ =\ 0;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classCityTraverser}{CityTraverser}}*\ \mbox{\hyperlink{classAgregateTraverser_ab581e598d968c6af2aaa9efed697a0c7}{createCityTraverser}}(\mbox{\hyperlink{classTransportation}{Transportation}}\ *t)\ =\ 0;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classCityTraverser}{CityTraverser}}*\ \mbox{\hyperlink{classAgregateTraverser_a0edf3cd81944a24f671f037703574367}{createCityTraverser}}(\mbox{\hyperlink{classCityTraverser}{CityTraverser}}\ *t)\ =\ 0;}
+\DoxyCodeLine{00061\ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ AGREGATETRAVERSER\_H}}
+
+\end{DoxyCode}

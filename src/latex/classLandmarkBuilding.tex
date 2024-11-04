@@ -1,0 +1,176 @@
+\doxysection{Landmark\+Building Class Reference}
+\hypertarget{classLandmarkBuilding}{}\label{classLandmarkBuilding}\index{LandmarkBuilding@{LandmarkBuilding}}
+Inheritance diagram for Landmark\+Building\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classLandmarkBuilding}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLandmarkBuilding_a25f1fef0bf785fe99fc7906cb6fa5784}\label{classLandmarkBuilding_a25f1fef0bf785fe99fc7906cb6fa5784} 
+{\bfseries Landmark\+Building} (const std\+::string \&name, float area, int floors, int capacity, float citizen\+Satisfaction\+Impact, float economic\+Growth\+Impact, float resource\+Consumption, int visitor\+Capacity, float cultural\+Value, bool is\+Historic)
+\item 
+string \mbox{\hyperlink{classLandmarkBuilding_a8c3c0ab1d27ace61c61677e4646595b5}{get\+Type}} () const override
+\item 
+void \mbox{\hyperlink{classLandmarkBuilding_a1c7cdc836ece180864c34e4f73257a0f}{update\+Impacts}} () override
+\item 
+void \mbox{\hyperlink{classLandmarkBuilding_a22cec106e307dfa22ea616d8ad650524}{construct}} () override
+\item 
+\Hypertarget{classLandmarkBuilding_a142223ae47e31d7e39f081642e09cade}\label{classLandmarkBuilding_a142223ae47e31d7e39f081642e09cade} 
+void {\bfseries host\+Event} (int visitors)
+\item 
+double \mbox{\hyperlink{classLandmarkBuilding_aecb259b281aba777412bc3411ded4c6c}{pay\+Taxes}} (\mbox{\hyperlink{classTaxType}{Tax\+Type}} \texorpdfstring{$\ast$}{*}tax\+Type) override
+\item 
+void \mbox{\hyperlink{classLandmarkBuilding_aa82317ef86ed02d004665eab666537d8}{undo\+Collect\+Taxes}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classBuilding}{Building}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Building} (const std\+::string \&name, float area, int floors, int capacity, float satisfaction\+Impact, float growth\+Impact, float consumption)
+\item 
+{\bfseries Building} (int \mbox{\hyperlink{classBuilder}{Builder}})
+\item 
+void {\bfseries set\+Name} (const std\+::string \&name)
+\item 
+std\+::string {\bfseries get\+Name} () const
+\item 
+float {\bfseries get\+Satisfaction} () const
+\item 
+float {\bfseries get\+Economic\+Growth} () const
+\item 
+float {\bfseries get\+Resource\+Consumption} () const
+\item 
+void {\bfseries add\+Job} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classJobs}{Jobs}} $>$ job)
+\item 
+void {\bfseries list\+Jobs} () const
+\item 
+bool {\bfseries hire\+Employee} (const std\+::string \&job\+Title)
+\item 
+void {\bfseries release\+Employee} (const std\+::string \&job\+Title)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classJobs}{Jobs}} $>$ {\bfseries get\+Available\+Job} ()
+\item 
+void {\bfseries display\+Job\+Info} (const std\+::string \&job\+Title) const
+\item 
+const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classJobs}{Jobs}} $>$ $>$ \& {\bfseries get\+Jobs} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classLandmarkBuilding_ac9a6424c9dea7e0d26c2c9f623059039}{calculate\+Economic\+Impact}} ()
+\item 
+void \mbox{\hyperlink{classLandmarkBuilding_a26d80b2c0e8310f832d58e888b4be120}{calculate\+Resource\+Consumption}} ()
+\item 
+void \mbox{\hyperlink{classLandmarkBuilding_a7bd59f984917131f944c8918f04dcf4e}{calculate\+Satisfaction\+Impact}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classBuilding}{Building}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bfseries name}
+\item 
+float {\bfseries area}
+\item 
+int {\bfseries floors}
+\item 
+int {\bfseries capacity}
+\item 
+float {\bfseries citizen\+Satisfaction}
+\item 
+float {\bfseries economic\+Growth}
+\item 
+float {\bfseries resource\+Consumption}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classJobs}{Jobs}} $>$ $>$ {\bfseries jobs}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLandmarkBuilding_ac9a6424c9dea7e0d26c2c9f623059039}\index{LandmarkBuilding@{LandmarkBuilding}!calculateEconomicImpact@{calculateEconomicImpact}}
+\index{calculateEconomicImpact@{calculateEconomicImpact}!LandmarkBuilding@{LandmarkBuilding}}
+\doxysubsubsection{\texorpdfstring{calculateEconomicImpact()}{calculateEconomicImpact()}}
+{\footnotesize\ttfamily \label{classLandmarkBuilding_ac9a6424c9dea7e0d26c2c9f623059039} 
+void Landmark\+Building\+::calculate\+Economic\+Impact (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classBuilding}{Building}}.
+
+\Hypertarget{classLandmarkBuilding_a26d80b2c0e8310f832d58e888b4be120}\index{LandmarkBuilding@{LandmarkBuilding}!calculateResourceConsumption@{calculateResourceConsumption}}
+\index{calculateResourceConsumption@{calculateResourceConsumption}!LandmarkBuilding@{LandmarkBuilding}}
+\doxysubsubsection{\texorpdfstring{calculateResourceConsumption()}{calculateResourceConsumption()}}
+{\footnotesize\ttfamily \label{classLandmarkBuilding_a26d80b2c0e8310f832d58e888b4be120} 
+void Landmark\+Building\+::calculate\+Resource\+Consumption (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classBuilding}{Building}}.
+
+\Hypertarget{classLandmarkBuilding_a7bd59f984917131f944c8918f04dcf4e}\index{LandmarkBuilding@{LandmarkBuilding}!calculateSatisfactionImpact@{calculateSatisfactionImpact}}
+\index{calculateSatisfactionImpact@{calculateSatisfactionImpact}!LandmarkBuilding@{LandmarkBuilding}}
+\doxysubsubsection{\texorpdfstring{calculateSatisfactionImpact()}{calculateSatisfactionImpact()}}
+{\footnotesize\ttfamily \label{classLandmarkBuilding_a7bd59f984917131f944c8918f04dcf4e} 
+void Landmark\+Building\+::calculate\+Satisfaction\+Impact (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classBuilding}{Building}}.
+
+\Hypertarget{classLandmarkBuilding_a22cec106e307dfa22ea616d8ad650524}\index{LandmarkBuilding@{LandmarkBuilding}!construct@{construct}}
+\index{construct@{construct}!LandmarkBuilding@{LandmarkBuilding}}
+\doxysubsubsection{\texorpdfstring{construct()}{construct()}}
+{\footnotesize\ttfamily \label{classLandmarkBuilding_a22cec106e307dfa22ea616d8ad650524} 
+void Landmark\+Building\+::construct (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classBuilding}{Building}}.
+
+\Hypertarget{classLandmarkBuilding_a8c3c0ab1d27ace61c61677e4646595b5}\index{LandmarkBuilding@{LandmarkBuilding}!getType@{getType}}
+\index{getType@{getType}!LandmarkBuilding@{LandmarkBuilding}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{classLandmarkBuilding_a8c3c0ab1d27ace61c61677e4646595b5} 
+string Landmark\+Building\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classBuilding}{Building}}.
+
+\Hypertarget{classLandmarkBuilding_aecb259b281aba777412bc3411ded4c6c}\index{LandmarkBuilding@{LandmarkBuilding}!payTaxes@{payTaxes}}
+\index{payTaxes@{payTaxes}!LandmarkBuilding@{LandmarkBuilding}}
+\doxysubsubsection{\texorpdfstring{payTaxes()}{payTaxes()}}
+{\footnotesize\ttfamily \label{classLandmarkBuilding_aecb259b281aba777412bc3411ded4c6c} 
+double Landmark\+Building\+::pay\+Taxes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTaxType}{Tax\+Type}} \texorpdfstring{$\ast$}{*}}]{tax\+Type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classBuilding}{Building}}.
+
+\Hypertarget{classLandmarkBuilding_aa82317ef86ed02d004665eab666537d8}\index{LandmarkBuilding@{LandmarkBuilding}!undoCollectTaxes@{undoCollectTaxes}}
+\index{undoCollectTaxes@{undoCollectTaxes}!LandmarkBuilding@{LandmarkBuilding}}
+\doxysubsubsection{\texorpdfstring{undoCollectTaxes()}{undoCollectTaxes()}}
+{\footnotesize\ttfamily \label{classLandmarkBuilding_aa82317ef86ed02d004665eab666537d8} 
+void Landmark\+Building\+::undo\+Collect\+Taxes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classBuilding}{Building}}.
+
+\Hypertarget{classLandmarkBuilding_a1c7cdc836ece180864c34e4f73257a0f}\index{LandmarkBuilding@{LandmarkBuilding}!updateImpacts@{updateImpacts}}
+\index{updateImpacts@{updateImpacts}!LandmarkBuilding@{LandmarkBuilding}}
+\doxysubsubsection{\texorpdfstring{updateImpacts()}{updateImpacts()}}
+{\footnotesize\ttfamily \label{classLandmarkBuilding_a1c7cdc836ece180864c34e4f73257a0f} 
+void Landmark\+Building\+::update\+Impacts (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classBuilding}{Building}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Landmark\+Building.\+h\item 
+Landmark\+Building.\+cpp\end{DoxyCompactItemize}

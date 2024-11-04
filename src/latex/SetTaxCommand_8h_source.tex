@@ -1,0 +1,46 @@
+\doxysection{Set\+Tax\+Command.\+h}
+\hypertarget{SetTaxCommand_8h_source}{}\label{SetTaxCommand_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SETTAXCOMMAND\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SETTAXCOMMAND\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}GovCommand.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Government.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}TaxSystem.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ SetTaxCommand\ class}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ This\ class\ represents\ a\ command\ to\ set\ the\ tax\ rate\ in\ the\ government}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSetTaxCommand}{SetTaxCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classGovCommand}{GovCommand}}\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{classGovernment}{Government}}*\ government;\ \ \ \textcolor{comment}{//\ Pointer\ to\ the\ government\ object}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{double}\ taxRate;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ New\ tax\ rate\ to\ be\ set}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{double}\ previousTaxRate;\ \ \ \textcolor{comment}{//\ Previous\ tax\ rate\ to\ revert\ if\ needed}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Constructor}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ Initializes\ the\ command\ with\ the\ government\ object\ and\ the\ new\ tax\ rate}}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classSetTaxCommand}{SetTaxCommand}}(\mbox{\hyperlink{classGovernment}{Government}}*\ gov,\ \textcolor{keywordtype}{double}\ rate);}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classSetTaxCommand}{SetTaxCommand}}(\mbox{\hyperlink{classGovernment}{Government}}*\ gov,\ \mbox{\hyperlink{classTaxSystem}{TaxSystem}}*\ taxSys,\ \textcolor{keywordtype}{double}\ rate,\ \textcolor{keywordtype}{char}\ category);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//\ Executes\ the\ set\ tax\ command}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ execute()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Undoes\ the\ set\ tax\ command}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ undo()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ Gets\ the\ name\ of\ the\ command}}
+\DoxyCodeLine{00030\ \ \ \ \ std::string\ getName()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ Gets\ the\ description\ of\ the\ command}}
+\DoxyCodeLine{00033\ \ \ \ \ std::string\ getDescription()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \textcolor{keywordtype}{double}\ returnVal()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ Checks\ if\ the\ command\ can\ be\ executed}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ canExecute()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
