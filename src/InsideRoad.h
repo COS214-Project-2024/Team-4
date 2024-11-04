@@ -24,7 +24,6 @@
 #include "FreightTrain.h"
 #include "Building.h"
 
-class Road;
 class Highway;
 class Bus;
 class Taxi;

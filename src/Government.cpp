@@ -29,12 +29,6 @@ void Government::notifyCitizen() {
     cout << "Notifying citizens..." << endl;
 }
 
-void Government::addTaxesToBudget(double amount) {
-    budget += amount;
-    std::cout << "Added " << amount << " to the government budget. New budget: " << budget << std::endl;
-}
-
-
 // Notifies businesses of changes
 void Government::notifyBusinesses() {
     cout << "Notifying businesses..." << endl;
