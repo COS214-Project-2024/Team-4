@@ -1,0 +1,127 @@
+\doxysection{Utility Class Reference}
+\hypertarget{classUtility}{}\label{classUtility}\index{Utility@{Utility}}
+
+
+A class that represents a utility service in the city.  
+
+
+
+
+{\ttfamily \#include $<$Utility.\+h$>$}
+
+
+
+Inheritance diagram for Utility\+:
+% FIG 0
+
+
+Collaboration diagram for Utility\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtility_aea121b6382162de41d65b9a751bfcc09}{Utility}} (\mbox{\hyperlink{classUtilityMediator}{Utility\+Mediator}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classUtility_a919c8612d579ef8fcfbc0c8471a09a21}{mediator}})
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classUtility}{Utility} class. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtility_ab53d5d9e12800abfd2146c449be3925f}{register\+Building}} (\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}building)=0
+\begin{DoxyCompactList}\small\item\em Registers a building with the utility service. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtility_a3121c3f21234dc562c9e96fe4208bbf7}{supply\+Resources}} (\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}building)=0
+\begin{DoxyCompactList}\small\item\em Supplies resources to a building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtility_ac085bb895a72073632d5e0adfb7f446e}{adjust\+For\+Population}} (int new\+Population)=0
+\begin{DoxyCompactList}\small\item\em Adjusts the utility service for a new population size. \end{DoxyCompactList}\item 
+\Hypertarget{classUtility_a658f0109fa28ef7342768f50bb11a110}\label{classUtility_a658f0109fa28ef7342768f50bb11a110} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Utility} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{classUtility}{Utility} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classUtility_a919c8612d579ef8fcfbc0c8471a09a21}\label{classUtility_a919c8612d579ef8fcfbc0c8471a09a21} 
+\mbox{\hyperlink{classUtilityMediator}{Utility\+Mediator}} \texorpdfstring{$\ast$}{*} {\bfseries mediator}
+\begin{DoxyCompactList}\small\item\em Reference to the mediator for managing resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that represents a utility service in the city. 
+
+The \doxylink{classUtility}{Utility} class is responsible for managing resources for buildings through a mediator. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classUtility_aea121b6382162de41d65b9a751bfcc09}\label{classUtility_aea121b6382162de41d65b9a751bfcc09} 
+\index{Utility@{Utility}!Utility@{Utility}}
+\index{Utility@{Utility}!Utility@{Utility}}
+\doxysubsubsection{\texorpdfstring{Utility()}{Utility()}}
+{\footnotesize\ttfamily Utility\+::\+Utility (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtilityMediator}{Utility\+Mediator}} \texorpdfstring{$\ast$}{*}}]{mediator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \doxylink{classUtility}{Utility} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mediator} & A pointer to the \doxylink{classUtilityMediator}{Utility\+Mediator} for managing resources. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classUtility_ac085bb895a72073632d5e0adfb7f446e}\label{classUtility_ac085bb895a72073632d5e0adfb7f446e} 
+\index{Utility@{Utility}!adjustForPopulation@{adjustForPopulation}}
+\index{adjustForPopulation@{adjustForPopulation}!Utility@{Utility}}
+\doxysubsubsection{\texorpdfstring{adjustForPopulation()}{adjustForPopulation()}}
+{\footnotesize\ttfamily virtual void Utility\+::adjust\+For\+Population (\begin{DoxyParamCaption}\item[{int}]{new\+Population }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Adjusts the utility service for a new population size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Population} & The new population size. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classWasteManagement_a5b3ebc7ea5cdd4995022b69235866bd7}{Waste\+Management}}, and \mbox{\hyperlink{classWaterSupply_a06af4b01fbb99323f191a56b6b7748d1}{Water\+Supply}}.
+
+\Hypertarget{classUtility_ab53d5d9e12800abfd2146c449be3925f}\label{classUtility_ab53d5d9e12800abfd2146c449be3925f} 
+\index{Utility@{Utility}!registerBuilding@{registerBuilding}}
+\index{registerBuilding@{registerBuilding}!Utility@{Utility}}
+\doxysubsubsection{\texorpdfstring{registerBuilding()}{registerBuilding()}}
+{\footnotesize\ttfamily virtual void Utility\+::register\+Building (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}}]{building }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Registers a building with the utility service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & A pointer to the building to be registered. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPowerPlant_a9d5dbca59659cf0faba89a01b89465f8}{Power\+Plant}}, \mbox{\hyperlink{classSewageManagement_af32e7404430cbab4e5f0198e517b147b}{Sewage\+Management}}, \mbox{\hyperlink{classWasteManagement_a40187b6578753b434a4e417eaf5ab46a}{Waste\+Management}}, and \mbox{\hyperlink{classWaterSupply_aa57a0a044cb10b6e28bc119d9f8f22bf}{Water\+Supply}}.
+
+\Hypertarget{classUtility_a3121c3f21234dc562c9e96fe4208bbf7}\label{classUtility_a3121c3f21234dc562c9e96fe4208bbf7} 
+\index{Utility@{Utility}!supplyResources@{supplyResources}}
+\index{supplyResources@{supplyResources}!Utility@{Utility}}
+\doxysubsubsection{\texorpdfstring{supplyResources()}{supplyResources()}}
+{\footnotesize\ttfamily virtual void Utility\+::supply\+Resources (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}}]{building }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Supplies resources to a building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & A pointer to the building to receive resources. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPowerPlant_af20a83eea7ffa990905804346afff03e}{Power\+Plant}}, \mbox{\hyperlink{classSewageManagement_ad51fb02c89fb8facb76ba19bec0a8b59}{Sewage\+Management}}, \mbox{\hyperlink{classWasteManagement_add34ac8b132290b628bfe99bd59c306c}{Waste\+Management}}, and \mbox{\hyperlink{classWaterSupply_a24d5c69c5e02cb8c07a3185b5ec3bd2a}{Water\+Supply}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/users/rudie/documents/sem2/214/project/src/\mbox{\hyperlink{Utility_8h}{Utility.\+h}}\end{DoxyCompactItemize}

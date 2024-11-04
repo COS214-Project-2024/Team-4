@@ -1,0 +1,35 @@
+\doxysection{Comercial\+Airport.\+h}
+\hypertarget{ComercialAirport_8h_source}{}\label{ComercialAirport_8h_source}\index{/mnt/c/users/rudie/documents/sem2/214/project/src/ComercialAirport.h@{/mnt/c/users/rudie/documents/sem2/214/project/src/ComercialAirport.h}}
+\mbox{\hyperlink{ComercialAirport_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ COMERCIALAIRPORT\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ COMERCIALAIRPORT\_H}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Airport_8h}{Airport.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{InsideRoad_8h}{InsideRoad.h}}"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classInsideRoad}{InsideRoad}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classComercialAirport}{ComercialAirport}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classAirport}{Airport}}\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ std::vector<InsideRoad*>\ roads;\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ std::vector<ComercialAirport*>\ comercialAirports;\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classComercialAirport}{ComercialAirport}}(\textcolor{keywordtype}{char}\ state,\ std::string\ \mbox{\hyperlink{classAirport_a7f3bf800ff1d56c6cf5ac2011fd50a5d}{name}});}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classComercialAirport_a4235960a8da70cce9e4a5232b1f60169}{addRoad}}(\mbox{\hyperlink{classInsideRoad}{InsideRoad}}\ *road);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classComercialAirport_ae54d0106864844e9f81c404fd4d81065}{addComercialAirport}}(\mbox{\hyperlink{classComercialAirport}{ComercialAirport}}\ *comercialAirport);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInsideRoad}{InsideRoad}}*\ \mbox{\hyperlink{classComercialAirport_ad4aa19fc01c6436d6203f910addda8dd}{getRoad}}(std::size\_t\ index);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classComercialAirport}{ComercialAirport}}*\ \mbox{\hyperlink{classComercialAirport_ac649752718da99d9b1f8a344b9e0d1ea}{getComercialAirport}}(std::size\_t\ index);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classComercialAirport_ad26f85c47e1f50bc7d47128a4c0294ba}{getName}}();}
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ COMERCIALAIRPORT\_H}}
+
+\end{DoxyCode}

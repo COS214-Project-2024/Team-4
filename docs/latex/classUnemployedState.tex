@@ -1,0 +1,64 @@
+\doxysection{Unemployed\+State Class Reference}
+\hypertarget{classUnemployedState}{}\label{classUnemployedState}\index{UnemployedState@{UnemployedState}}
+
+
+A class that represents the unemployed state of a citizen.  
+
+
+
+
+{\ttfamily \#include $<$Unemployed\+State.\+h$>$}
+
+
+
+Inheritance diagram for Unemployed\+State\+:
+% FIG 0
+
+
+Collaboration diagram for Unemployed\+State\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classUnemployedState_a0fb504af1b6fecd75400b3ed50620e10}{handle\+State}} (\mbox{\hyperlink{classCitizen}{Citizen}} \&citizen) const override
+\begin{DoxyCompactList}\small\item\em Handles the state-\/specific behavior for an unemployed citizen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCitizenState}{Citizen\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Citizen\+State} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{classCitizenState}{Citizen\+State} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that represents the unemployed state of a citizen. 
+
+The \doxylink{classUnemployedState}{Unemployed\+State} class is responsible for handling the behavior of a citizen when they are unemployed. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classUnemployedState_a0fb504af1b6fecd75400b3ed50620e10}\label{classUnemployedState_a0fb504af1b6fecd75400b3ed50620e10} 
+\index{UnemployedState@{UnemployedState}!handleState@{handleState}}
+\index{handleState@{handleState}!UnemployedState@{UnemployedState}}
+\doxysubsubsection{\texorpdfstring{handleState()}{handleState()}}
+{\footnotesize\ttfamily void Unemployed\+State\+::handle\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} \&}]{citizen }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles the state-\/specific behavior for an unemployed citizen. 
+
+This function decreases the satisfaction level of a citizen due to unemployment. The satisfaction level is clamped between 0.\+0 and 100.\+0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em citizen} & The citizen whose state is being handled. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCitizenState_a237609919964cb9f2d3ad92dfe1c3e5d}{Citizen\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/users/rudie/documents/sem2/214/project/src/\mbox{\hyperlink{UnemployedState_8h}{Unemployed\+State.\+h}}\item 
+/mnt/c/users/rudie/documents/sem2/214/project/src/\mbox{\hyperlink{UnemployedState_8cpp}{Unemployed\+State.\+cpp}}\end{DoxyCompactItemize}

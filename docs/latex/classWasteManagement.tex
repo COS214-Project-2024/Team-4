@@ -1,0 +1,132 @@
+\doxysection{Waste\+Management Class Reference}
+\hypertarget{classWasteManagement}{}\label{classWasteManagement}\index{WasteManagement@{WasteManagement}}
+
+
+A class that represents waste management services in the city.  
+
+
+
+
+{\ttfamily \#include $<$Waste\+Management.\+h$>$}
+
+
+
+Inheritance diagram for Waste\+Management\+:
+% FIG 0
+
+
+Collaboration diagram for Waste\+Management\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWasteManagement_a099744c38539b21bfa453cccf4d9af2e}{Waste\+Management}} (\mbox{\hyperlink{classUtilityMediator}{Utility\+Mediator}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classUtility_a919c8612d579ef8fcfbc0c8471a09a21}{mediator}})
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classWasteManagement}{Waste\+Management} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWasteManagement_a40187b6578753b434a4e417eaf5ab46a}{register\+Building}} (\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}building) override
+\begin{DoxyCompactList}\small\item\em Registers a building with the waste management service. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWasteManagement_add34ac8b132290b628bfe99bd59c306c}{supply\+Resources}} (\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}building) override
+\begin{DoxyCompactList}\small\item\em Supplies waste management services to a building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWasteManagement_a5b3ebc7ea5cdd4995022b69235866bd7}{adjust\+For\+Population}} (int new\+Population) override
+\begin{DoxyCompactList}\small\item\em Adjusts waste management services based on the new population size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classUtility}{Utility}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtility_aea121b6382162de41d65b9a751bfcc09}{Utility}} (\mbox{\hyperlink{classUtilityMediator}{Utility\+Mediator}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classUtility_a919c8612d579ef8fcfbc0c8471a09a21}{mediator}})
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classUtility}{Utility} class. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Utility} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{classUtility}{Utility} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classUtility}{Utility}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtilityMediator}{Utility\+Mediator}} \texorpdfstring{$\ast$}{*} {\bfseries mediator}
+\begin{DoxyCompactList}\small\item\em Reference to the mediator for managing resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that represents waste management services in the city. 
+
+The \doxylink{classWasteManagement}{Waste\+Management} class is responsible for handling waste management services for buildings through a mediator. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classWasteManagement_a099744c38539b21bfa453cccf4d9af2e}\label{classWasteManagement_a099744c38539b21bfa453cccf4d9af2e} 
+\index{WasteManagement@{WasteManagement}!WasteManagement@{WasteManagement}}
+\index{WasteManagement@{WasteManagement}!WasteManagement@{WasteManagement}}
+\doxysubsubsection{\texorpdfstring{WasteManagement()}{WasteManagement()}}
+{\footnotesize\ttfamily Waste\+Management\+::\+Waste\+Management (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtilityMediator}{Utility\+Mediator}} \texorpdfstring{$\ast$}{*}}]{mediator }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{classWasteManagement}{Waste\+Management} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mediator} & A pointer to the \doxylink{classUtilityMediator}{Utility\+Mediator} for managing resources. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classWasteManagement_a5b3ebc7ea5cdd4995022b69235866bd7}\label{classWasteManagement_a5b3ebc7ea5cdd4995022b69235866bd7} 
+\index{WasteManagement@{WasteManagement}!adjustForPopulation@{adjustForPopulation}}
+\index{adjustForPopulation@{adjustForPopulation}!WasteManagement@{WasteManagement}}
+\doxysubsubsection{\texorpdfstring{adjustForPopulation()}{adjustForPopulation()}}
+{\footnotesize\ttfamily void Waste\+Management\+::adjust\+For\+Population (\begin{DoxyParamCaption}\item[{int}]{new\+Population }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Adjusts waste management services based on the new population size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Population} & The new population size. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classUtility_ac085bb895a72073632d5e0adfb7f446e}{Utility}}.
+
+\Hypertarget{classWasteManagement_a40187b6578753b434a4e417eaf5ab46a}\label{classWasteManagement_a40187b6578753b434a4e417eaf5ab46a} 
+\index{WasteManagement@{WasteManagement}!registerBuilding@{registerBuilding}}
+\index{registerBuilding@{registerBuilding}!WasteManagement@{WasteManagement}}
+\doxysubsubsection{\texorpdfstring{registerBuilding()}{registerBuilding()}}
+{\footnotesize\ttfamily void Waste\+Management\+::register\+Building (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}}]{building }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Registers a building with the waste management service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & A pointer to the building to be registered. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classUtility_ab53d5d9e12800abfd2146c449be3925f}{Utility}}.
+
+\Hypertarget{classWasteManagement_add34ac8b132290b628bfe99bd59c306c}\label{classWasteManagement_add34ac8b132290b628bfe99bd59c306c} 
+\index{WasteManagement@{WasteManagement}!supplyResources@{supplyResources}}
+\index{supplyResources@{supplyResources}!WasteManagement@{WasteManagement}}
+\doxysubsubsection{\texorpdfstring{supplyResources()}{supplyResources()}}
+{\footnotesize\ttfamily void Waste\+Management\+::supply\+Resources (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}}]{building }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Supplies waste management services to a building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & A pointer to the building to receive waste management services. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classUtility_a3121c3f21234dc562c9e96fe4208bbf7}{Utility}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/users/rudie/documents/sem2/214/project/src/\mbox{\hyperlink{WasteManagement_8h}{Waste\+Management.\+h}}\item 
+/mnt/c/users/rudie/documents/sem2/214/project/src/\mbox{\hyperlink{WasteManagement_8cpp}{Waste\+Management.\+cpp}}\end{DoxyCompactItemize}

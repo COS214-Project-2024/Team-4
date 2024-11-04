@@ -1,0 +1,84 @@
+\doxysection{VAT Class Reference}
+\hypertarget{classVAT}{}\label{classVAT}\index{VAT@{VAT}}
+
+
+A class that represents Value Added Tax (\doxylink{classVAT}{VAT}).  
+
+
+
+
+{\ttfamily \#include $<$VAT.\+h$>$}
+
+
+
+Inheritance diagram for VAT\+:
+% FIG 0
+
+
+Collaboration diagram for VAT\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVAT_a6e874a5f83065eb29b5234e85ba87157}{set\+Tax}} (double rate)
+\begin{DoxyCompactList}\small\item\em Sets the \doxylink{classVAT}{VAT} rate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVAT_ac4aadd68359140a5c01353c9562684f4}{calculate\+Tax}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the \doxylink{classVAT}{VAT}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTaxType}{Tax\+Type}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTaxType_a3c04e9d6723ac37a7995a509c6a3b27e}{Tax\+Type}} (double rate, char type)
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classTaxType}{Tax\+Type} object. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Tax\+Type} ()
+\begin{DoxyCompactList}\small\item\em Virtual Destructor. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classTaxType_a02b9366605226a1b592c29d4d0570101}{calculate\+Tax}} (double val)
+\begin{DoxyCompactList}\small\item\em Calculates the tax based on a given value. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classTaxType_afa8c95916f0c75bd3f6065237ae77c8a}{get\+Tax\+Rate}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current tax rate. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classTaxType_a053fb349661aa980d2710e573138b667}{get\+Tax\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the tax type identifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that represents Value Added Tax (\doxylink{classVAT}{VAT}). 
+
+The \doxylink{classVAT}{VAT} class is responsible for handling the calculation and setting of \doxylink{classVAT}{VAT}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classVAT_ac4aadd68359140a5c01353c9562684f4}\label{classVAT_ac4aadd68359140a5c01353c9562684f4} 
+\index{VAT@{VAT}!calculateTax@{calculateTax}}
+\index{calculateTax@{calculateTax}!VAT@{VAT}}
+\doxysubsubsection{\texorpdfstring{calculateTax()}{calculateTax()}}
+{\footnotesize\ttfamily void VAT\+::calculate\+Tax (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates the \doxylink{classVAT}{VAT}. 
+
+This function calculates the \doxylink{classVAT}{VAT} based on the current rate and applicable amount. \Hypertarget{classVAT_a6e874a5f83065eb29b5234e85ba87157}\label{classVAT_a6e874a5f83065eb29b5234e85ba87157} 
+\index{VAT@{VAT}!setTax@{setTax}}
+\index{setTax@{setTax}!VAT@{VAT}}
+\doxysubsubsection{\texorpdfstring{setTax()}{setTax()}}
+{\footnotesize\ttfamily void VAT\+::set\+Tax (\begin{DoxyParamCaption}\item[{double}]{rate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the \doxylink{classVAT}{VAT} rate. 
+
+This function sets the \doxylink{classVAT}{VAT} rate to the specified value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rate} & The \doxylink{classVAT}{VAT} rate to be set. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classTaxType_ae19ec84b7dcc0f5420ddbdcb69fbad13}{Tax\+Type}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/users/rudie/documents/sem2/214/project/src/\mbox{\hyperlink{VAT_8h}{VAT.\+h}}\item 
+/mnt/c/users/rudie/documents/sem2/214/project/src/\mbox{\hyperlink{VAT_8cpp}{VAT.\+cpp}}\end{DoxyCompactItemize}

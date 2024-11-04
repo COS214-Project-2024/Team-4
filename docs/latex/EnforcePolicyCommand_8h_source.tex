@@ -1,0 +1,44 @@
+\doxysection{Enforce\+Policy\+Command.\+h}
+\hypertarget{EnforcePolicyCommand_8h_source}{}\label{EnforcePolicyCommand_8h_source}\index{/mnt/c/users/rudie/documents/sem2/214/project/src/EnforcePolicyCommand.h@{/mnt/c/users/rudie/documents/sem2/214/project/src/EnforcePolicyCommand.h}}
+\mbox{\hyperlink{EnforcePolicyCommand_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ENFORCEPOLICYCOMMAND\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ENFORCEPOLICYCOMMAND\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GovCommand_8h}{GovCommand.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Government_8h}{Government.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Policy_8h}{Policy.h}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classEnforcePolicyCommand}{EnforcePolicyCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classGovCommand}{GovCommand}}\ \{}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{classGovernment}{Government}}*\ government;\ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{classPolicy}{Policy}}\ policy;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ isEnforced;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{classEnforcePolicyCommand}{EnforcePolicyCommand}}(\mbox{\hyperlink{classGovernment}{Government}}*\ gov,\ \mbox{\hyperlink{classPolicy}{Policy}}\ pol);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEnforcePolicyCommand_aa387daa65d2ba0d783fd37d100b84010}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEnforcePolicyCommand_a2e21fc6fd4f5a508b19c363b686716f1}{undo}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classEnforcePolicyCommand_ae51e005d15940ff1e3c025b5c4bb98a9}{isPolicyEnforced}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEnforcePolicyCommand_a3bd008101ed4e25d8a529cccf5c461cb}{setPolicyEnforced}}(\textcolor{keywordtype}{bool}\ enforced);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classEnforcePolicyCommand_a03afdb9de4ed62191eeeed52a7d716ae}{validateEnforcement}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEnforcePolicyCommand_a4c8a409b8fc100736bd293d2591ac836}{executeWithValidation}}();}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00092\ \ \ \ \ std::string\ \mbox{\hyperlink{classEnforcePolicyCommand_ad04bb7178475d3cdee05adbadb82cb35}{getName}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00099\ \ \ \ \ std::string\ \mbox{\hyperlink{classEnforcePolicyCommand_a4c742319473915751ae5a3811ebede71}{getDescription}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classEnforcePolicyCommand_a6fc7c50dde8b5951da3e877b9862038c}{canExecute}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classEnforcePolicyCommand_af99f5758bbb4ba0da99d3a7fe6768c8b}{returnVal}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00114\ \};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ENFORCEPOLICYCOMMAND\_H}}
+
+\end{DoxyCode}

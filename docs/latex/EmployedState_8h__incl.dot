@@ -1,0 +1,10 @@
+digraph "/mnt/c/users/rudie/documents/sem2/214/project/src/EmployedState.h"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="/mnt/c/users/rudie\l/documents/sem2/214\l/project/src/EmployedState.h",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Declaration of the EmployedState class for handling the employed state of a Citizen."];
+  Node1 -> Node2 [id="edge2_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="CitizenState.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$CitizenState_8h.html",tooltip="Declaration of the CitizenState class."];
+}
