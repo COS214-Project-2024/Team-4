@@ -1,0 +1,32 @@
+\doxysection{Industrial\+Building\+Builder.\+h}
+\hypertarget{IndustrialBuildingBuilder_8h_source}{}\label{IndustrialBuildingBuilder_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ INDUSTRIALBUILDINGBUILDER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ INDUSTRIALBUILDINGBUILDER\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Builder.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}IndustrialBuilding.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include<memory>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include<string>}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classIndustrialBuildingBuilder}{IndustrialBuildingBuilder}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBuilder}{Builder}}\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{float}\ pollutionLevel\ =\ 0.0f;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{float}\ productionCapacity\ =\ 0.0f;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \mbox{\hyperlink{classIndustrialBuildingBuilder}{IndustrialBuildingBuilder}}\&\ setPollutionLevel(\textcolor{keywordtype}{float}\ level);}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classIndustrialBuildingBuilder}{IndustrialBuildingBuilder}}\&\ setProductionCapacity(\textcolor{keywordtype}{float}\ capacity);}
+\DoxyCodeLine{00018\ \mbox{\hyperlink{classIndustrialBuildingBuilder}{IndustrialBuildingBuilder}}();\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{float}\ getPollutionLevel();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{float}\ getProductionCapacity();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ std::unique\_ptr<Building>\ build()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,31 @@
+\doxysection{Traverse\+State.\+h}
+\hypertarget{TraverseState_8h_source}{}\label{TraverseState_8h_source}\mbox{\hyperlink{TraverseState_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ TRAVERSESTATE\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ TRAVERSESTATE\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Transportation_8h}{Transportation.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTraverseState}{TraverseState}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTransportation}{Transportation}}\ *layer;\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTraverseState_af3a208b51a05d3a16b9121c6514aa06f}{TraverseState}}(\mbox{\hyperlink{classTransportation}{Transportation}}\ *element);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTraverseState_a0469f8f655306234ad5876de89f340e7}{nextList}}()\ =\ 0;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTraverseState_ae4bf038bf916f6b0a84e915b8a4d9aa8}{prevList}}()\ =\ 0;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classTransportation}{Transportation}}*\ \mbox{\hyperlink{classTraverseState_aab673adeebd7b46dc8356d0c705af82e}{getPos}}(\textcolor{keywordtype}{size\_t}\ x)\ =\ 0;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTransportation}{Transportation}}*\ \mbox{\hyperlink{classTraverseState_aefa131c6b0b24e49fc35dfd338daca95}{getLayer}}();}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classTraverseState}{\string~TraverseState}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

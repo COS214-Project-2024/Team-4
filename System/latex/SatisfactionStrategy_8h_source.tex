@@ -1,0 +1,23 @@
+\doxysection{Satisfaction\+Strategy.\+h}
+\hypertarget{SatisfactionStrategy_8h_source}{}\label{SatisfactionStrategy_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SATISFACTIONSTRATEGY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SATISFACTIONSTRATEGY\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Citizen.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSatisfactionStrategy}{SatisfactionStrategy}}\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classSatisfactionStrategy}{\string~SatisfactionStrategy}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{float}\ calculateSatisfaction(\textcolor{keyword}{const}\ \mbox{\hyperlink{classCitizen}{Citizen}}\&\ citizen)\ =\ 0;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ updateForJobChange(\mbox{\hyperlink{classCitizen}{Citizen}}\&\ citizen)\ =\ 0;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ updateForHousingChange(\mbox{\hyperlink{classCitizen}{Citizen}}\&\ citizen)\ =\ 0;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ updateForTaxChange(\mbox{\hyperlink{classCitizen}{Citizen}}\&\ citizen)\ =\ 0;}
+\DoxyCodeLine{00014\ \};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ }
+
+\end{DoxyCode}

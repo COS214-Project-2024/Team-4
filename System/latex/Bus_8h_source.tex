@@ -1,0 +1,56 @@
+\doxysection{Bus.\+h}
+\hypertarget{Bus_8h_source}{}\label{Bus_8h_source}\mbox{\hyperlink{Bus_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ BUS\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ BUS\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PublicTransit_8h}{PublicTransit.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{InsideRoad_8h}{InsideRoad.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ComercialAirport_8h}{ComercialAirport.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PassengerTrain_8h}{PassengerTrain.h}}"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classInsideRoad}{InsideRoad}};}
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classComercialAirport}{ComercialAirport}};}
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPassengerTrain}{PassengerTrain}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBus}{Bus}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classPublicTransit}{PublicTransit}}\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ busNumber;\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ capacity;\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ std::vector<InsideRoad*>\ insideRoads;\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ std::vector<Bus*>\ buses;\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ std::vector<ComercialAirport*>\ comercialAirports;\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ std::vector<PassengerTrain*>\ passengerTrains;\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBus_a20cd1646db737656399cc2933ac0a794}{Bus}}(\textcolor{keywordtype}{char}\ state,\ std::string\ route,\ \textcolor{keywordtype}{int}\ busNumber,\ \textcolor{keywordtype}{int}\ capacity);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBus_aeda76a6b4371e3ed2f77d006959f1ff2}{addInsideRoad}}(\mbox{\hyperlink{classInsideRoad}{InsideRoad}}\ *insideRoad);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBus_a9517c827a7d35c491f3ce9453280bfba}{addBus}}(\mbox{\hyperlink{classBus}{Bus}}\ *bus);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBus_a1bb8e92fb6ad99fc064039df42262357}{addComercialAirport}}(\mbox{\hyperlink{classComercialAirport}{ComercialAirport}}\ *comercialAirport);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBus_af750d86e9c6ffd7e5732fcbe586a7d75}{addPassengerTrain}}(\mbox{\hyperlink{classPassengerTrain}{PassengerTrain}}\ *passengerTrain);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInsideRoad}{InsideRoad}}\ *\mbox{\hyperlink{classBus_a2dcab836ed032c9d362cf1e59793ccd9}{getInsideRoad}}(std::size\_t\ x);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBus}{Bus}}\ *\mbox{\hyperlink{classBus_aa6bffe0200aa0e35f25c33b053e69d02}{getBus}}(std::size\_t\ x);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classComercialAirport}{ComercialAirport}}\ *\mbox{\hyperlink{classBus_adbb45482deb5cab39429665720ad4b82}{getComercialAirport}}(std::size\_t\ x);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPassengerTrain}{PassengerTrain}}\ *\mbox{\hyperlink{classBus_a9596c2b374bf6cc39405923ea1fab5b3}{getPassengerTrain}}(std::size\_t\ x);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classBus_a0cf86b81f47e48e154035e1dceb96033}{getBusNumber}}();}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classBus_ac077a2a678cbe4be6e27a046a5b9f5c8}{getCapacity}}();}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classBus_a07f7264a68c1c8dca9a5a6f30e69e6fa}{getRouteName}}();}
+\DoxyCodeLine{00126\ \};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BUS\_H}}
+
+\end{DoxyCode}

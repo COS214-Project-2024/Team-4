@@ -1,0 +1,64 @@
+\doxysection{Allocate\+Budget\+Command.\+h}
+\hypertarget{AllocateBudgetCommand_8h_source}{}\label{AllocateBudgetCommand_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ALLOCATEBUDGETCOMMAND\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ALLOCATEBUDGETCOMMAND\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}GovCommand.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Government.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}CityService.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ AllocateBudgetCommand\ class}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ This\ class\ represents\ a\ command\ to\ allocate\ a\ budget\ to\ a\ city\ service}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classAllocateBudgetCommand}{AllocateBudgetCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classGovCommand}{GovCommand}}\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{classGovernment}{Government}}*\ government;\ \textcolor{comment}{//\ Pointer\ to\ the\ government\ object}}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{classCityService}{CityService}}\&\ service;\ \ \ \textcolor{comment}{//\ Reference\ to\ the\ city\ service\ object}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{double}\ amount;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Amount\ to\ allocate}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{double}\ prevAllocation;\ \ \textcolor{comment}{//\ Previous\ allocation\ amount}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ Constructor}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{comment}{//\ Initializes\ the\ command\ with\ the\ government,\ city\ service,\ and\ the\ amount\ to\ allocate}}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classAllocateBudgetCommand}{AllocateBudgetCommand}}(\mbox{\hyperlink{classGovernment}{Government}}*\ gov,\ \mbox{\hyperlink{classCityService}{CityService}}\&\ srv,\ \textcolor{keywordtype}{double}\ amt);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//\ Executes\ the\ budget\ allocation\ command}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ execute()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Undoes\ the\ budget\ allocation\ command}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ undo()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ Gets\ the\ amount\ to\ be\ allocated}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{double}\ getAmount()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ Sets\ the\ amount\ to\ be\ allocated}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ setAmount(\textcolor{keywordtype}{double}\ amt);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ Gets\ the\ previous\ allocation\ amount}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{double}\ getPrevAllocation()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ Sets\ the\ previous\ allocation\ amount}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ setPrevAllocation(\textcolor{keywordtype}{double}\ prevAmt);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//\ Validates\ the\ budget\ allocation}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{bool}\ validateAllocation()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ Executes\ the\ budget\ allocation\ command\ with\ validation}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ executeWithValidation();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ Gets\ the\ name\ of\ the\ command}}
+\DoxyCodeLine{00048\ \ \ \ \ std::string\ getName()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//\ Gets\ the\ description\ of\ the\ command}}
+\DoxyCodeLine{00051\ \ \ \ \ std::string\ getDescription()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ Checks\ if\ the\ command\ can\ be\ executed}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ canExecute()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{double}\ returnVal()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

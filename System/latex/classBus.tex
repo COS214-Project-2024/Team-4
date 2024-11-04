@@ -1,0 +1,287 @@
+\doxysection{Bus Class Reference}
+\hypertarget{classBus}{}\label{classBus}\index{Bus@{Bus}}
+
+
+Represents a bus in the public transit system.  
+
+
+
+
+{\ttfamily \#include $<$Bus.\+h$>$}
+
+Inheritance diagram for Bus\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classBus}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBus_a20cd1646db737656399cc2933ac0a794}{Bus}} (char state, std\+::string route, int bus\+Number, int capacity)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classBus}{Bus} object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBus_aeda76a6b4371e3ed2f77d006959f1ff2}{add\+Inside\+Road}} (\mbox{\hyperlink{classInsideRoad}{Inside\+Road}} \texorpdfstring{$\ast$}{*}inside\+Road)
+\begin{DoxyCompactList}\small\item\em Adds an \doxylink{classInsideRoad}{Inside\+Road} connection to the bus. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBus_a9517c827a7d35c491f3ce9453280bfba}{add\+Bus}} (\mbox{\hyperlink{classBus}{Bus}} \texorpdfstring{$\ast$}{*}bus)
+\begin{DoxyCompactList}\small\item\em Adds a \doxylink{classBus}{Bus} connection to the bus. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBus_a1bb8e92fb6ad99fc064039df42262357}{add\+Comercial\+Airport}} (\mbox{\hyperlink{classComercialAirport}{Comercial\+Airport}} \texorpdfstring{$\ast$}{*}comercial\+Airport)
+\begin{DoxyCompactList}\small\item\em Adds a \doxylink{classComercialAirport}{Comercial\+Airport} connection to the bus. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBus_af750d86e9c6ffd7e5732fcbe586a7d75}{add\+Passenger\+Train}} (\mbox{\hyperlink{classPassengerTrain}{Passenger\+Train}} \texorpdfstring{$\ast$}{*}passenger\+Train)
+\begin{DoxyCompactList}\small\item\em Adds a \doxylink{classPassengerTrain}{Passenger\+Train} connection to the bus. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classInsideRoad}{Inside\+Road}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classBus_a2dcab836ed032c9d362cf1e59793ccd9}{get\+Inside\+Road}} (std\+::size\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Gets an \doxylink{classInsideRoad}{Inside\+Road} connection by index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBus}{Bus}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classBus_aa6bffe0200aa0e35f25c33b053e69d02}{get\+Bus}} (std\+::size\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Gets a \doxylink{classBus}{Bus} connection by index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classComercialAirport}{Comercial\+Airport}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classBus_adbb45482deb5cab39429665720ad4b82}{get\+Comercial\+Airport}} (std\+::size\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Gets a \doxylink{classComercialAirport}{Comercial\+Airport} connection by index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPassengerTrain}{Passenger\+Train}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classBus_a9596c2b374bf6cc39405923ea1fab5b3}{get\+Passenger\+Train}} (std\+::size\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Gets a \doxylink{classPassengerTrain}{Passenger\+Train} connection by index. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classBus_a0cf86b81f47e48e154035e1dceb96033}{get\+Bus\+Number}} ()
+\begin{DoxyCompactList}\small\item\em Gets the bus number. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classBus_ac077a2a678cbe4be6e27a046a5b9f5c8}{get\+Capacity}} ()
+\begin{DoxyCompactList}\small\item\em Gets the capacity of the bus. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classBus_a07f7264a68c1c8dca9a5a6f30e69e6fa}{get\+Route\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the route name of the bus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classPublicTransit}{Public\+Transit}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPublicTransit_acf40db5a346675346fe473e878fd091b}{Public\+Transit}} (char state, std\+::string route, char type)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classPublicTransit}{Public\+Transit} class. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classPublicTransit_a3db09f9e04516a482d22ebf2478e4217}{calculate\+Commute}} ()
+\begin{DoxyCompactList}\small\item\em Calculate the commute time for the public transit. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classPublicTransit_aa08a86920616095f3c08621783e18cee}{get\+Route}} ()
+\begin{DoxyCompactList}\small\item\em Get the route of the public transit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTransportation}{Transportation}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTransportation_a6038480df048e3b81449d9417cff4800}{Transportation}} (char state, char type)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classTransportation}{Transportation} class. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classTransportation_a4abf7f44c7a515f6933886dd321cc1c6}{get\+Traffic\+Flow}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current traffic flow. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTransportation_a7de50ee7df6f27b64529f15f74407d14}{set\+State}} (char state)
+\begin{DoxyCompactList}\small\item\em Sets the traffic flow state. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classTransportation_a5693fe4abdbacc36ee865283535aa546}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of transportation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation_ae63d1b7fa5006d357228196b6b81684d}{\texorpdfstring{$\sim$}{\string~}\+Transportation}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classTransportation}{Transportation} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a bus in the public transit system. 
+
+The \doxylink{classBus}{Bus} class inherits from \doxylink{classPublicTransit}{Public\+Transit} and includes additional attributes and methods specific to buses, such as bus number, capacity, and connections to other transportation modes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBus_a20cd1646db737656399cc2933ac0a794}\index{Bus@{Bus}!Bus@{Bus}}
+\index{Bus@{Bus}!Bus@{Bus}}
+\doxysubsubsection{\texorpdfstring{Bus()}{Bus()}}
+{\footnotesize\ttfamily \label{classBus_a20cd1646db737656399cc2933ac0a794} 
+Bus\+::\+Bus (\begin{DoxyParamCaption}\item[{char}]{state}{, }\item[{std\+::string}]{route}{, }\item[{int}]{bus\+Number}{, }\item[{int}]{capacity}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classBus}{Bus} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state of the bus. \\
+\hline
+{\em route} & The route name of the bus. \\
+\hline
+{\em bus\+Number} & The bus number. \\
+\hline
+{\em capacity} & The capacity of the bus. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBus_a9517c827a7d35c491f3ce9453280bfba}\index{Bus@{Bus}!addBus@{addBus}}
+\index{addBus@{addBus}!Bus@{Bus}}
+\doxysubsubsection{\texorpdfstring{addBus()}{addBus()}}
+{\footnotesize\ttfamily \label{classBus_a9517c827a7d35c491f3ce9453280bfba} 
+bool Bus\+::add\+Bus (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBus}{Bus}} \texorpdfstring{$\ast$}{*}}]{bus}{}\end{DoxyParamCaption})}
+
+
+
+Adds a \doxylink{classBus}{Bus} connection to the bus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bus} & Pointer to the \doxylink{classBus}{Bus} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classBus}{Bus} was added successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classBus_a1bb8e92fb6ad99fc064039df42262357}\index{Bus@{Bus}!addComercialAirport@{addComercialAirport}}
+\index{addComercialAirport@{addComercialAirport}!Bus@{Bus}}
+\doxysubsubsection{\texorpdfstring{addComercialAirport()}{addComercialAirport()}}
+{\footnotesize\ttfamily \label{classBus_a1bb8e92fb6ad99fc064039df42262357} 
+bool Bus\+::add\+Comercial\+Airport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classComercialAirport}{Comercial\+Airport}} \texorpdfstring{$\ast$}{*}}]{comercial\+Airport}{}\end{DoxyParamCaption})}
+
+
+
+Adds a \doxylink{classComercialAirport}{Comercial\+Airport} connection to the bus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em comercial\+Airport} & Pointer to the \doxylink{classComercialAirport}{Comercial\+Airport} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classComercialAirport}{Comercial\+Airport} was added successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classBus_aeda76a6b4371e3ed2f77d006959f1ff2}\index{Bus@{Bus}!addInsideRoad@{addInsideRoad}}
+\index{addInsideRoad@{addInsideRoad}!Bus@{Bus}}
+\doxysubsubsection{\texorpdfstring{addInsideRoad()}{addInsideRoad()}}
+{\footnotesize\ttfamily \label{classBus_aeda76a6b4371e3ed2f77d006959f1ff2} 
+bool Bus\+::add\+Inside\+Road (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classInsideRoad}{Inside\+Road}} \texorpdfstring{$\ast$}{*}}]{inside\+Road}{}\end{DoxyParamCaption})}
+
+
+
+Adds an \doxylink{classInsideRoad}{Inside\+Road} connection to the bus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inside\+Road} & Pointer to the \doxylink{classInsideRoad}{Inside\+Road} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classInsideRoad}{Inside\+Road} was added successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classBus_af750d86e9c6ffd7e5732fcbe586a7d75}\index{Bus@{Bus}!addPassengerTrain@{addPassengerTrain}}
+\index{addPassengerTrain@{addPassengerTrain}!Bus@{Bus}}
+\doxysubsubsection{\texorpdfstring{addPassengerTrain()}{addPassengerTrain()}}
+{\footnotesize\ttfamily \label{classBus_af750d86e9c6ffd7e5732fcbe586a7d75} 
+bool Bus\+::add\+Passenger\+Train (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPassengerTrain}{Passenger\+Train}} \texorpdfstring{$\ast$}{*}}]{passenger\+Train}{}\end{DoxyParamCaption})}
+
+
+
+Adds a \doxylink{classPassengerTrain}{Passenger\+Train} connection to the bus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em passenger\+Train} & Pointer to the \doxylink{classPassengerTrain}{Passenger\+Train} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classPassengerTrain}{Passenger\+Train} was added successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classBus_aa6bffe0200aa0e35f25c33b053e69d02}\index{Bus@{Bus}!getBus@{getBus}}
+\index{getBus@{getBus}!Bus@{Bus}}
+\doxysubsubsection{\texorpdfstring{getBus()}{getBus()}}
+{\footnotesize\ttfamily \label{classBus_aa6bffe0200aa0e35f25c33b053e69d02} 
+\mbox{\hyperlink{classBus}{Bus}} \texorpdfstring{$\ast$}{*} Bus\+::get\+Bus (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Gets a \doxylink{classBus}{Bus} connection by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The index of the \doxylink{classBus}{Bus}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \doxylink{classBus}{Bus} object. 
+\end{DoxyReturn}
+\Hypertarget{classBus_a0cf86b81f47e48e154035e1dceb96033}\index{Bus@{Bus}!getBusNumber@{getBusNumber}}
+\index{getBusNumber@{getBusNumber}!Bus@{Bus}}
+\doxysubsubsection{\texorpdfstring{getBusNumber()}{getBusNumber()}}
+{\footnotesize\ttfamily \label{classBus_a0cf86b81f47e48e154035e1dceb96033} 
+int Bus\+::get\+Bus\+Number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the bus number. 
+
+\begin{DoxyReturn}{Returns}
+The bus number. 
+\end{DoxyReturn}
+\Hypertarget{classBus_ac077a2a678cbe4be6e27a046a5b9f5c8}\index{Bus@{Bus}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!Bus@{Bus}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily \label{classBus_ac077a2a678cbe4be6e27a046a5b9f5c8} 
+int Bus\+::get\+Capacity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the capacity of the bus. 
+
+\begin{DoxyReturn}{Returns}
+The capacity of the bus. 
+\end{DoxyReturn}
+\Hypertarget{classBus_adbb45482deb5cab39429665720ad4b82}\index{Bus@{Bus}!getComercialAirport@{getComercialAirport}}
+\index{getComercialAirport@{getComercialAirport}!Bus@{Bus}}
+\doxysubsubsection{\texorpdfstring{getComercialAirport()}{getComercialAirport()}}
+{\footnotesize\ttfamily \label{classBus_adbb45482deb5cab39429665720ad4b82} 
+\mbox{\hyperlink{classComercialAirport}{Comercial\+Airport}} \texorpdfstring{$\ast$}{*} Bus\+::get\+Comercial\+Airport (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Gets a \doxylink{classComercialAirport}{Comercial\+Airport} connection by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The index of the \doxylink{classComercialAirport}{Comercial\+Airport}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \doxylink{classComercialAirport}{Comercial\+Airport} object. 
+\end{DoxyReturn}
+\Hypertarget{classBus_a2dcab836ed032c9d362cf1e59793ccd9}\index{Bus@{Bus}!getInsideRoad@{getInsideRoad}}
+\index{getInsideRoad@{getInsideRoad}!Bus@{Bus}}
+\doxysubsubsection{\texorpdfstring{getInsideRoad()}{getInsideRoad()}}
+{\footnotesize\ttfamily \label{classBus_a2dcab836ed032c9d362cf1e59793ccd9} 
+\mbox{\hyperlink{classInsideRoad}{Inside\+Road}} \texorpdfstring{$\ast$}{*} Bus\+::get\+Inside\+Road (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Gets an \doxylink{classInsideRoad}{Inside\+Road} connection by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The index of the \doxylink{classInsideRoad}{Inside\+Road}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \doxylink{classInsideRoad}{Inside\+Road} object. 
+\end{DoxyReturn}
+\Hypertarget{classBus_a9596c2b374bf6cc39405923ea1fab5b3}\index{Bus@{Bus}!getPassengerTrain@{getPassengerTrain}}
+\index{getPassengerTrain@{getPassengerTrain}!Bus@{Bus}}
+\doxysubsubsection{\texorpdfstring{getPassengerTrain()}{getPassengerTrain()}}
+{\footnotesize\ttfamily \label{classBus_a9596c2b374bf6cc39405923ea1fab5b3} 
+\mbox{\hyperlink{classPassengerTrain}{Passenger\+Train}} \texorpdfstring{$\ast$}{*} Bus\+::get\+Passenger\+Train (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Gets a \doxylink{classPassengerTrain}{Passenger\+Train} connection by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The index of the \doxylink{classPassengerTrain}{Passenger\+Train}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \doxylink{classPassengerTrain}{Passenger\+Train} object. 
+\end{DoxyReturn}
+\Hypertarget{classBus_a07f7264a68c1c8dca9a5a6f30e69e6fa}\index{Bus@{Bus}!getRouteName@{getRouteName}}
+\index{getRouteName@{getRouteName}!Bus@{Bus}}
+\doxysubsubsection{\texorpdfstring{getRouteName()}{getRouteName()}}
+{\footnotesize\ttfamily \label{classBus_a07f7264a68c1c8dca9a5a6f30e69e6fa} 
+std\+::string Bus\+::get\+Route\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the route name of the bus. 
+
+\begin{DoxyReturn}{Returns}
+The route name of the bus. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Bus_8h}{Bus.\+h}}\item 
+Bus.\+cpp\end{DoxyCompactItemize}

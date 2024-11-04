@@ -1,0 +1,27 @@
+\doxysection{Director.\+h}
+\hypertarget{Director_8h_source}{}\label{Director_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DIRECTOR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DIRECTOR\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Builder.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include<string>}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{using\ namespace\ }std;\ \ \ \ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDirector}{Director}}\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{classBuilder}{Builder}}*\ builder;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{void}\ setBuilder(\mbox{\hyperlink{classBuilder}{Builder}}\&\ builder);}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ std::unique\_ptr<Building>\ constructSmallBuilding();}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ std::unique\_ptr<Building>\ constructMediumBuilding();}
+\DoxyCodeLine{00018\ \ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ std::unique\_ptr<Building>\ constructLargeBuilding();}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

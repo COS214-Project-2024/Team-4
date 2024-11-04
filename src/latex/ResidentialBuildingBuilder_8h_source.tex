@@ -1,0 +1,32 @@
+\doxysection{Residential\+Building\+Builder.\+h}
+\hypertarget{ResidentialBuildingBuilder_8h_source}{}\label{ResidentialBuildingBuilder_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RESIDENTIALBUILDINGBUILDER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RESIDENTIALBUILDINGBUILDER\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Builder.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}ResidentialBuilding.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include<string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include<memory>}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classResidentialBuildingBuilder}{ResidentialBuildingBuilder}}\ :\textcolor{keyword}{public}\ \mbox{\hyperlink{classBuilder}{Builder}}\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ residentialUnit\ =\ 0;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{float}\ comfort\ =\ 0.0f;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{classResidentialBuildingBuilder}{ResidentialBuildingBuilder}}\&\ setResidentialUnit(\textcolor{keywordtype}{int}\ unit);}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classResidentialBuildingBuilder}{ResidentialBuildingBuilder}}\&\ setComfort(\textcolor{keywordtype}{float}\ comfort);}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classResidentialBuildingBuilder}{ResidentialBuildingBuilder}}();}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ getResidentialUnit();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{float}\ getComfort();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ std::unique\_ptr<Building>\ build()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,176 @@
+\doxysection{Industrial\+Building Class Reference}
+\hypertarget{classIndustrialBuilding}{}\label{classIndustrialBuilding}\index{IndustrialBuilding@{IndustrialBuilding}}
+Inheritance diagram for Industrial\+Building\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classIndustrialBuilding}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classIndustrialBuilding_a251571d479f257393541c87e6d62e681}\label{classIndustrialBuilding_a251571d479f257393541c87e6d62e681} 
+{\bfseries Industrial\+Building} (const std\+::string \&name, float area, int floors, int capacity, float citizen\+Satisfaction, float economic\+Growth, float resource\+Consumption, float pollution\+Level, float production\+Capacity)
+\item 
+string \mbox{\hyperlink{classIndustrialBuilding_afca5d120fcdbdfc675195b07d3506418}{get\+Type}} () const override
+\item 
+void \mbox{\hyperlink{classIndustrialBuilding_a582e4df5172e648e55af1731e21f802d}{construct}} () override
+\item 
+void \mbox{\hyperlink{classIndustrialBuilding_a5e3a23f5383c3f3e6862226f4542f9c3}{update\+Impacts}} () override
+\item 
+\Hypertarget{classIndustrialBuilding_af88095b5833a280a8a90651075600bec}\label{classIndustrialBuilding_af88095b5833a280a8a90651075600bec} 
+void {\bfseries upgrade\+Tech} (float tech\+Level)
+\item 
+double \mbox{\hyperlink{classIndustrialBuilding_af2d5a2423c491e9b96b1d6807f0f1e0c}{pay\+Taxes}} (\mbox{\hyperlink{classTaxType}{Tax\+Type}} \texorpdfstring{$\ast$}{*}tax\+Type)
+\item 
+void \mbox{\hyperlink{classIndustrialBuilding_aad6060a920a7bbcc7ac62e80c5974231}{undo\+Collect\+Taxes}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classBuilding}{Building}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Building} (const std\+::string \&name, float area, int floors, int capacity, float satisfaction\+Impact, float growth\+Impact, float consumption)
+\item 
+{\bfseries Building} (int \mbox{\hyperlink{classBuilder}{Builder}})
+\item 
+void {\bfseries set\+Name} (const std\+::string \&name)
+\item 
+std\+::string {\bfseries get\+Name} () const
+\item 
+float {\bfseries get\+Satisfaction} () const
+\item 
+float {\bfseries get\+Economic\+Growth} () const
+\item 
+float {\bfseries get\+Resource\+Consumption} () const
+\item 
+void {\bfseries add\+Job} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classJobs}{Jobs}} $>$ job)
+\item 
+void {\bfseries list\+Jobs} () const
+\item 
+bool {\bfseries hire\+Employee} (const std\+::string \&job\+Title)
+\item 
+void {\bfseries release\+Employee} (const std\+::string \&job\+Title)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classJobs}{Jobs}} $>$ {\bfseries get\+Available\+Job} ()
+\item 
+void {\bfseries display\+Job\+Info} (const std\+::string \&job\+Title) const
+\item 
+const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classJobs}{Jobs}} $>$ $>$ \& {\bfseries get\+Jobs} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classIndustrialBuilding_a35d6dcc369e89f95ff70762e53d1671d}{calculate\+Economic\+Impact}} ()
+\item 
+void \mbox{\hyperlink{classIndustrialBuilding_a3b26a16d899109de2a508611e273d40b}{calculate\+Resource\+Consumption}} ()
+\item 
+void \mbox{\hyperlink{classIndustrialBuilding_aabb4d4e3c933aab718c3caa712aef39d}{calculate\+Satisfaction\+Impact}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classBuilding}{Building}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bfseries name}
+\item 
+float {\bfseries area}
+\item 
+int {\bfseries floors}
+\item 
+int {\bfseries capacity}
+\item 
+float {\bfseries citizen\+Satisfaction}
+\item 
+float {\bfseries economic\+Growth}
+\item 
+float {\bfseries resource\+Consumption}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classJobs}{Jobs}} $>$ $>$ {\bfseries jobs}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classIndustrialBuilding_a35d6dcc369e89f95ff70762e53d1671d}\index{IndustrialBuilding@{IndustrialBuilding}!calculateEconomicImpact@{calculateEconomicImpact}}
+\index{calculateEconomicImpact@{calculateEconomicImpact}!IndustrialBuilding@{IndustrialBuilding}}
+\doxysubsubsection{\texorpdfstring{calculateEconomicImpact()}{calculateEconomicImpact()}}
+{\footnotesize\ttfamily \label{classIndustrialBuilding_a35d6dcc369e89f95ff70762e53d1671d} 
+void Industrial\+Building\+::calculate\+Economic\+Impact (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classBuilding}{Building}}.
+
+\Hypertarget{classIndustrialBuilding_a3b26a16d899109de2a508611e273d40b}\index{IndustrialBuilding@{IndustrialBuilding}!calculateResourceConsumption@{calculateResourceConsumption}}
+\index{calculateResourceConsumption@{calculateResourceConsumption}!IndustrialBuilding@{IndustrialBuilding}}
+\doxysubsubsection{\texorpdfstring{calculateResourceConsumption()}{calculateResourceConsumption()}}
+{\footnotesize\ttfamily \label{classIndustrialBuilding_a3b26a16d899109de2a508611e273d40b} 
+void Industrial\+Building\+::calculate\+Resource\+Consumption (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classBuilding}{Building}}.
+
+\Hypertarget{classIndustrialBuilding_aabb4d4e3c933aab718c3caa712aef39d}\index{IndustrialBuilding@{IndustrialBuilding}!calculateSatisfactionImpact@{calculateSatisfactionImpact}}
+\index{calculateSatisfactionImpact@{calculateSatisfactionImpact}!IndustrialBuilding@{IndustrialBuilding}}
+\doxysubsubsection{\texorpdfstring{calculateSatisfactionImpact()}{calculateSatisfactionImpact()}}
+{\footnotesize\ttfamily \label{classIndustrialBuilding_aabb4d4e3c933aab718c3caa712aef39d} 
+void Industrial\+Building\+::calculate\+Satisfaction\+Impact (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classBuilding}{Building}}.
+
+\Hypertarget{classIndustrialBuilding_a582e4df5172e648e55af1731e21f802d}\index{IndustrialBuilding@{IndustrialBuilding}!construct@{construct}}
+\index{construct@{construct}!IndustrialBuilding@{IndustrialBuilding}}
+\doxysubsubsection{\texorpdfstring{construct()}{construct()}}
+{\footnotesize\ttfamily \label{classIndustrialBuilding_a582e4df5172e648e55af1731e21f802d} 
+void Industrial\+Building\+::construct (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classBuilding}{Building}}.
+
+\Hypertarget{classIndustrialBuilding_afca5d120fcdbdfc675195b07d3506418}\index{IndustrialBuilding@{IndustrialBuilding}!getType@{getType}}
+\index{getType@{getType}!IndustrialBuilding@{IndustrialBuilding}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{classIndustrialBuilding_afca5d120fcdbdfc675195b07d3506418} 
+string Industrial\+Building\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classBuilding}{Building}}.
+
+\Hypertarget{classIndustrialBuilding_af2d5a2423c491e9b96b1d6807f0f1e0c}\index{IndustrialBuilding@{IndustrialBuilding}!payTaxes@{payTaxes}}
+\index{payTaxes@{payTaxes}!IndustrialBuilding@{IndustrialBuilding}}
+\doxysubsubsection{\texorpdfstring{payTaxes()}{payTaxes()}}
+{\footnotesize\ttfamily \label{classIndustrialBuilding_af2d5a2423c491e9b96b1d6807f0f1e0c} 
+double Industrial\+Building\+::pay\+Taxes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTaxType}{Tax\+Type}} \texorpdfstring{$\ast$}{*}}]{tax\+Type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classBuilding}{Building}}.
+
+\Hypertarget{classIndustrialBuilding_aad6060a920a7bbcc7ac62e80c5974231}\index{IndustrialBuilding@{IndustrialBuilding}!undoCollectTaxes@{undoCollectTaxes}}
+\index{undoCollectTaxes@{undoCollectTaxes}!IndustrialBuilding@{IndustrialBuilding}}
+\doxysubsubsection{\texorpdfstring{undoCollectTaxes()}{undoCollectTaxes()}}
+{\footnotesize\ttfamily \label{classIndustrialBuilding_aad6060a920a7bbcc7ac62e80c5974231} 
+void Industrial\+Building\+::undo\+Collect\+Taxes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classBuilding}{Building}}.
+
+\Hypertarget{classIndustrialBuilding_a5e3a23f5383c3f3e6862226f4542f9c3}\index{IndustrialBuilding@{IndustrialBuilding}!updateImpacts@{updateImpacts}}
+\index{updateImpacts@{updateImpacts}!IndustrialBuilding@{IndustrialBuilding}}
+\doxysubsubsection{\texorpdfstring{updateImpacts()}{updateImpacts()}}
+{\footnotesize\ttfamily \label{classIndustrialBuilding_a5e3a23f5383c3f3e6862226f4542f9c3} 
+void Industrial\+Building\+::update\+Impacts (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classBuilding}{Building}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Industrial\+Building.\+h\item 
+Industrial\+Building.\+cpp\end{DoxyCompactItemize}

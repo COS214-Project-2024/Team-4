@@ -1,0 +1,89 @@
+\doxysection{Inside\+Road.\+h}
+\hypertarget{InsideRoad_8h_source}{}\label{InsideRoad_8h_source}\mbox{\hyperlink{InsideRoad_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ INSIDEROAD\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ INSIDEROAD\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Road_8h}{Road.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Highway_8h}{Highway.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Bus_8h}{Bus.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Taxi_8h}{Taxi.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ComercialAirport_8h}{ComercialAirport.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{CargoAirport_8h}{CargoAirport.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PassengerTrain_8h}{PassengerTrain.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{FreightTrain_8h}{FreightTrain.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}Building.h"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classHighway}{Highway}};}
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBus}{Bus}};}
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTaxi}{Taxi}};}
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classComercialAirport}{ComercialAirport}};}
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCargoAirport}{CargoAirport}};}
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPassengerTrain}{PassengerTrain}};}
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFreightTrain}{FreightTrain}};}
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBuilding}{Building}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classInsideRoad}{InsideRoad}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classRoad}{Road}}\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ avgStopTime;\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ std::vector<InsideRoad*>\ insideRoads;\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ std::vector<Highway*>\ highways;\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ std::vector<Bus*>\ buses;\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ std::vector<Taxi*>\ taxis;\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ std::vector<ComercialAirport*>\ comercialAirports;\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ std::vector<CargoAirport*>\ cargoAirports;\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ std::vector<PassengerTrain*>\ passengerTrains;\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ std::vector<FreightTrain*>\ freightTrains;\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ std::vector<Building*>\ buildings;\ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInsideRoad_a625dbc0fb59e522f3cd3b8af28f1b2bc}{InsideRoad}}(\textcolor{keywordtype}{char}\ state,\ std::string\ roadName,\ \textcolor{keywordtype}{float}\ avgStopTime);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classInsideRoad_a1b004be77b4ad7eab3b6dcfc8f3fe284}{addInsideRoad}}(\mbox{\hyperlink{classInsideRoad}{InsideRoad}}\ *insideRoad);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classInsideRoad_ad668e0016c7b878eb3053195411938e0}{addHighway}}(\mbox{\hyperlink{classHighway}{Highway}}\ *highway);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classInsideRoad_aab7a07b2599c8ae3aebac9680c180a7e}{addBus}}(\mbox{\hyperlink{classBus}{Bus}}\ *bus);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classInsideRoad_a59221c0eecab05e9003ec2e9e034b997}{addTaxi}}(\mbox{\hyperlink{classTaxi}{Taxi}}\ *taxi);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classInsideRoad_afde7a99a8f2ff3ecb92f8ba2baeac8e0}{addComercialAirport}}(\mbox{\hyperlink{classComercialAirport}{ComercialAirport}}\ *comercialAirport);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classInsideRoad_a2e8accd1994e6f399e6d32eec0383125}{addCargoAirport}}(\mbox{\hyperlink{classCargoAirport}{CargoAirport}}\ *cargoAirport);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classInsideRoad_a55143748ed9e9958a2c9b49bfe94bbfd}{addPassengerTrain}}(\mbox{\hyperlink{classPassengerTrain}{PassengerTrain}}\ *passengerTrain);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classInsideRoad_a6015b2c8911e2440a158954de8a67d11}{addFreightTrain}}(\mbox{\hyperlink{classFreightTrain}{FreightTrain}}\ *freightTrain);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFreightTrain}{FreightTrain}}*\ \mbox{\hyperlink{classInsideRoad_a1bae6ba623da7afad691ec42f1f67d03}{getFreightTrain}}(std::size\_t\ x);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classInsideRoad_ad7b5213eeb85714a0bfc0dba940b3310}{addBuilding}}(\mbox{\hyperlink{classBuilding}{Building}}\ *building);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPassengerTrain}{PassengerTrain}}*\ \mbox{\hyperlink{classInsideRoad_a1a88a7d0dd8336d40f9312951a67973a}{getPassengerTrain}}(std::size\_t\ x);}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHighway}{Highway}}*\ \mbox{\hyperlink{classInsideRoad_ade335aa7a328793f2505c05e91fc4b71}{getHighway}}(std::size\_t\ x);}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInsideRoad}{InsideRoad}}*\ \mbox{\hyperlink{classInsideRoad_a4a0ed0c87da1f767a7646034a48d41aa}{getInsideRoad}}(std::size\_t\ x);}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBus}{Bus}}*\ \mbox{\hyperlink{classInsideRoad_a11db62438b40b7c5a6267ebf98af16e8}{getBus}}(std::size\_t\ x);}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTaxi}{Taxi}}*\ \mbox{\hyperlink{classInsideRoad_ac4663d468f2d2bded1a5097a18a66a02}{getTaxi}}(std::size\_t\ x);}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classComercialAirport}{ComercialAirport}}*\ \mbox{\hyperlink{classInsideRoad_ab09e8f9506337c93089bfddb221b8916}{getComercialAirport}}(std::size\_t\ x);}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCargoAirport}{CargoAirport}}*\ \mbox{\hyperlink{classInsideRoad_a7f0077b428b6a5f46a69861726d8bf09}{getCargoAirport}}(std::size\_t\ x);}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBuilding}{Building}}\ *\mbox{\hyperlink{classInsideRoad_abbc00478ca2bb2a36046e76a54a15634}{getBuilding}}(std::size\_t\ x);}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classInsideRoad_afb9c8d09fff030a226debb02d636b4eb}{getAvgStopTime}}();}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classInsideRoad_a618d61af8ef95c6cf15ad32ee4ec4e98}{getRoadName}}();}
+\DoxyCodeLine{00205\ \};}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ INSIDEROAD\_H}}
+
+\end{DoxyCode}

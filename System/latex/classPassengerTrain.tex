@@ -1,0 +1,173 @@
+\doxysection{Passenger\+Train Class Reference}
+\hypertarget{classPassengerTrain}{}\label{classPassengerTrain}\index{PassengerTrain@{PassengerTrain}}
+
+
+A class representing a passenger train.  
+
+
+
+
+{\ttfamily \#include $<$Passenger\+Train.\+h$>$}
+
+Inheritance diagram for Passenger\+Train\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classPassengerTrain}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPassengerTrain_a445ef9acc070238ec31cc31b7dd28c30}{Passenger\+Train}} (char state, std\+::string line)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classPassengerTrain}{Passenger\+Train} class. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPassengerTrain_ae1f1d6fbcc95d8e7af6398365deba2b8}{add\+Inside\+Road}} (\mbox{\hyperlink{classInsideRoad}{Inside\+Road}} \texorpdfstring{$\ast$}{*}inside\+Road)
+\begin{DoxyCompactList}\small\item\em Adds an \doxylink{classInsideRoad}{Inside\+Road} object to the train. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPassengerTrain_adfec8c949bf21cad5015fa7707ca8c2a}{add\+Passenger\+Train}} (\mbox{\hyperlink{classPassengerTrain}{Passenger\+Train}} \texorpdfstring{$\ast$}{*}passenger\+Train)
+\begin{DoxyCompactList}\small\item\em Adds a \doxylink{classPassengerTrain}{Passenger\+Train} object to the train. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classInsideRoad}{Inside\+Road}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classPassengerTrain_a8e8aa7217f4d240414d5883db8677638}{get\+Inside\+Road}} (std\+::size\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Gets an \doxylink{classInsideRoad}{Inside\+Road} object from the train. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPassengerTrain}{Passenger\+Train}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classPassengerTrain_ac97cf0cc071760b90776f9fcfa82a610}{get\+Passenger\+Train}} (std\+::size\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Gets a \doxylink{classPassengerTrain}{Passenger\+Train} object from the train. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classPassengerTrain_a9118e99f17953b819c96431720a8303e}{get\+Train\+Line}} ()
+\begin{DoxyCompactList}\small\item\em Gets the line on which the train operates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTrain}{Train}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTrain_a84a605245a03d2f29b518a483ba89ccb}{Train}} (char state, std\+::string line, char type)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classTrain}{Train} object. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classTrain_a02a8f84984307a49e9765f4d2aa19a86}{calculate\+Commute}} ()
+\begin{DoxyCompactList}\small\item\em Calculate the commute time for the train. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classTrain_a807b1ba96c2efafb7b2e5a0acdba3577}{get\+Line}} ()
+\begin{DoxyCompactList}\small\item\em Get the line on which the train operates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTransportation}{Transportation}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTransportation_a6038480df048e3b81449d9417cff4800}{Transportation}} (char state, char type)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classTransportation}{Transportation} class. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classTransportation_a4abf7f44c7a515f6933886dd321cc1c6}{get\+Traffic\+Flow}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current traffic flow. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTransportation_a7de50ee7df6f27b64529f15f74407d14}{set\+State}} (char state)
+\begin{DoxyCompactList}\small\item\em Sets the traffic flow state. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classTransportation_a5693fe4abdbacc36ee865283535aa546}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of transportation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation_ae63d1b7fa5006d357228196b6b81684d}{\texorpdfstring{$\sim$}{\string~}\+Transportation}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classTransportation}{Transportation} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class representing a passenger train. 
+
+The \doxylink{classPassengerTrain}{Passenger\+Train} class inherits from the \doxylink{classTrain}{Train} class and manages a collection of \doxylink{classInsideRoad}{Inside\+Road} and \doxylink{classPassengerTrain}{Passenger\+Train} objects. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPassengerTrain_a445ef9acc070238ec31cc31b7dd28c30}\index{PassengerTrain@{PassengerTrain}!PassengerTrain@{PassengerTrain}}
+\index{PassengerTrain@{PassengerTrain}!PassengerTrain@{PassengerTrain}}
+\doxysubsubsection{\texorpdfstring{PassengerTrain()}{PassengerTrain()}}
+{\footnotesize\ttfamily \label{classPassengerTrain_a445ef9acc070238ec31cc31b7dd28c30} 
+Passenger\+Train\+::\+Passenger\+Train (\begin{DoxyParamCaption}\item[{char}]{state}{, }\item[{std\+::string}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{classPassengerTrain}{Passenger\+Train} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state of the train. \\
+\hline
+{\em line} & The line on which the train operates. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPassengerTrain_ae1f1d6fbcc95d8e7af6398365deba2b8}\index{PassengerTrain@{PassengerTrain}!addInsideRoad@{addInsideRoad}}
+\index{addInsideRoad@{addInsideRoad}!PassengerTrain@{PassengerTrain}}
+\doxysubsubsection{\texorpdfstring{addInsideRoad()}{addInsideRoad()}}
+{\footnotesize\ttfamily \label{classPassengerTrain_ae1f1d6fbcc95d8e7af6398365deba2b8} 
+bool Passenger\+Train\+::add\+Inside\+Road (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classInsideRoad}{Inside\+Road}} \texorpdfstring{$\ast$}{*}}]{inside\+Road}{}\end{DoxyParamCaption})}
+
+
+
+Adds an \doxylink{classInsideRoad}{Inside\+Road} object to the train. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inside\+Road} & A pointer to the \doxylink{classInsideRoad}{Inside\+Road} object to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the \doxylink{classInsideRoad}{Inside\+Road} was added successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classPassengerTrain_adfec8c949bf21cad5015fa7707ca8c2a}\index{PassengerTrain@{PassengerTrain}!addPassengerTrain@{addPassengerTrain}}
+\index{addPassengerTrain@{addPassengerTrain}!PassengerTrain@{PassengerTrain}}
+\doxysubsubsection{\texorpdfstring{addPassengerTrain()}{addPassengerTrain()}}
+{\footnotesize\ttfamily \label{classPassengerTrain_adfec8c949bf21cad5015fa7707ca8c2a} 
+bool Passenger\+Train\+::add\+Passenger\+Train (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPassengerTrain}{Passenger\+Train}} \texorpdfstring{$\ast$}{*}}]{passenger\+Train}{}\end{DoxyParamCaption})}
+
+
+
+Adds a \doxylink{classPassengerTrain}{Passenger\+Train} object to the train. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em passenger\+Train} & A pointer to the \doxylink{classPassengerTrain}{Passenger\+Train} object to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the \doxylink{classPassengerTrain}{Passenger\+Train} was added successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classPassengerTrain_a8e8aa7217f4d240414d5883db8677638}\index{PassengerTrain@{PassengerTrain}!getInsideRoad@{getInsideRoad}}
+\index{getInsideRoad@{getInsideRoad}!PassengerTrain@{PassengerTrain}}
+\doxysubsubsection{\texorpdfstring{getInsideRoad()}{getInsideRoad()}}
+{\footnotesize\ttfamily \label{classPassengerTrain_a8e8aa7217f4d240414d5883db8677638} 
+\mbox{\hyperlink{classInsideRoad}{Inside\+Road}} \texorpdfstring{$\ast$}{*} Passenger\+Train\+::get\+Inside\+Road (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Gets an \doxylink{classInsideRoad}{Inside\+Road} object from the train. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The index of the \doxylink{classInsideRoad}{Inside\+Road} object to be retrieved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the \doxylink{classInsideRoad}{Inside\+Road} object. 
+\end{DoxyReturn}
+\Hypertarget{classPassengerTrain_ac97cf0cc071760b90776f9fcfa82a610}\index{PassengerTrain@{PassengerTrain}!getPassengerTrain@{getPassengerTrain}}
+\index{getPassengerTrain@{getPassengerTrain}!PassengerTrain@{PassengerTrain}}
+\doxysubsubsection{\texorpdfstring{getPassengerTrain()}{getPassengerTrain()}}
+{\footnotesize\ttfamily \label{classPassengerTrain_ac97cf0cc071760b90776f9fcfa82a610} 
+\mbox{\hyperlink{classPassengerTrain}{Passenger\+Train}} \texorpdfstring{$\ast$}{*} Passenger\+Train\+::get\+Passenger\+Train (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Gets a \doxylink{classPassengerTrain}{Passenger\+Train} object from the train. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The index of the \doxylink{classPassengerTrain}{Passenger\+Train} object to be retrieved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the \doxylink{classPassengerTrain}{Passenger\+Train} object. 
+\end{DoxyReturn}
+\Hypertarget{classPassengerTrain_a9118e99f17953b819c96431720a8303e}\index{PassengerTrain@{PassengerTrain}!getTrainLine@{getTrainLine}}
+\index{getTrainLine@{getTrainLine}!PassengerTrain@{PassengerTrain}}
+\doxysubsubsection{\texorpdfstring{getTrainLine()}{getTrainLine()}}
+{\footnotesize\ttfamily \label{classPassengerTrain_a9118e99f17953b819c96431720a8303e} 
+std\+::string Passenger\+Train\+::get\+Train\+Line (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the line on which the train operates. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the train line. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{PassengerTrain_8h}{Passenger\+Train.\+h}}\item 
+Passenger\+Train.\+cpp\end{DoxyCompactItemize}

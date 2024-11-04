@@ -1,0 +1,60 @@
+\doxysection{Power\+Plant Class Reference}
+\hypertarget{classPowerPlant}{}\label{classPowerPlant}\index{PowerPlant@{PowerPlant}}
+Inheritance diagram for Power\+Plant\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPowerPlant}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classPowerPlant_af6221d07a890132cf8c04d7e670f37c1}\label{classPowerPlant_af6221d07a890132cf8c04d7e670f37c1} 
+{\bfseries Power\+Plant} (\mbox{\hyperlink{classUtilityMediator}{Utility\+Mediator}} \texorpdfstring{$\ast$}{*}mediator)
+\item 
+void \mbox{\hyperlink{classPowerPlant_a9d5dbca59659cf0faba89a01b89465f8}{register\+Building}} (\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}building) override
+\item 
+void \mbox{\hyperlink{classPowerPlant_af20a83eea7ffa990905804346afff03e}{supply\+Resources}} (\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}building) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classUtility}{Utility}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Utility} (\mbox{\hyperlink{classUtilityMediator}{Utility\+Mediator}} \texorpdfstring{$\ast$}{*}mediator)
+\item 
+virtual void {\bfseries adjust\+For\+Population} (int new\+Population)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classUtility}{Utility}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtilityMediator}{Utility\+Mediator}} \texorpdfstring{$\ast$}{*} {\bfseries mediator}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPowerPlant_a9d5dbca59659cf0faba89a01b89465f8}\index{PowerPlant@{PowerPlant}!registerBuilding@{registerBuilding}}
+\index{registerBuilding@{registerBuilding}!PowerPlant@{PowerPlant}}
+\doxysubsubsection{\texorpdfstring{registerBuilding()}{registerBuilding()}}
+{\footnotesize\ttfamily \label{classPowerPlant_a9d5dbca59659cf0faba89a01b89465f8} 
+void Power\+Plant\+::register\+Building (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}}]{building}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classUtility}{Utility}}.
+
+\Hypertarget{classPowerPlant_af20a83eea7ffa990905804346afff03e}\index{PowerPlant@{PowerPlant}!supplyResources@{supplyResources}}
+\index{supplyResources@{supplyResources}!PowerPlant@{PowerPlant}}
+\doxysubsubsection{\texorpdfstring{supplyResources()}{supplyResources()}}
+{\footnotesize\ttfamily \label{classPowerPlant_af20a83eea7ffa990905804346afff03e} 
+void Power\+Plant\+::supply\+Resources (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}}]{building}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classUtility}{Utility}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Power\+Plant.\+h\item 
+Power\+Plant.\+cpp\end{DoxyCompactItemize}

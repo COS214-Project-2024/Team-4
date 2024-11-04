@@ -1,0 +1,105 @@
+\doxysection{Airport Class Reference}
+\hypertarget{classAirport}{}\label{classAirport}\index{Airport@{Airport}}
+
+
+Represents an airport as a type of transportation.  
+
+
+
+
+{\ttfamily \#include $<$Airport.\+h$>$}
+
+Inheritance diagram for Airport\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classAirport}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAirport_a66594bc21e859756ab8b12362d907c78}{Airport}} (char state, std\+::string \mbox{\hyperlink{classAirport_a7f3bf800ff1d56c6cf5ac2011fd50a5d}{name}}, char type)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{classAirport}{Airport} object. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classAirport_a0082b856ee355f5869666f10a2d3cc37}{calculate\+Commute}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the commute time to the airport. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classAirport_a949554b1846f19853e7b60778384cfc5}{get\+Airport\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the airport. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTransportation}{Transportation}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTransportation_a6038480df048e3b81449d9417cff4800}{Transportation}} (char state, char type)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classTransportation}{Transportation} class. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classTransportation_a4abf7f44c7a515f6933886dd321cc1c6}{get\+Traffic\+Flow}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current traffic flow. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTransportation_a7de50ee7df6f27b64529f15f74407d14}{set\+State}} (char state)
+\begin{DoxyCompactList}\small\item\em Sets the traffic flow state. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classTransportation_a5693fe4abdbacc36ee865283535aa546}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of transportation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation_ae63d1b7fa5006d357228196b6b81684d}{\texorpdfstring{$\sim$}{\string~}\+Transportation}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classTransportation}{Transportation} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classAirport_a7f3bf800ff1d56c6cf5ac2011fd50a5d}\label{classAirport_a7f3bf800ff1d56c6cf5ac2011fd50a5d} 
+std\+::string {\bfseries name}
+\begin{DoxyCompactList}\small\item\em Name of the airport. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an airport as a type of transportation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classAirport_a66594bc21e859756ab8b12362d907c78}\index{Airport@{Airport}!Airport@{Airport}}
+\index{Airport@{Airport}!Airport@{Airport}}
+\doxysubsubsection{\texorpdfstring{Airport()}{Airport()}}
+{\footnotesize\ttfamily \label{classAirport_a66594bc21e859756ab8b12362d907c78} 
+Airport\+::\+Airport (\begin{DoxyParamCaption}\item[{char}]{state}{, }\item[{std\+::string}]{name}{, }\item[{char}]{type}{}\end{DoxyParamCaption})}
+
+
+
+Constructs an \doxylink{classAirport}{Airport} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state where the airport is located. \\
+\hline
+{\em name} & The name of the airport. \\
+\hline
+{\em type} & The type of transportation. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classAirport_a0082b856ee355f5869666f10a2d3cc37}\index{Airport@{Airport}!calculateCommute@{calculateCommute}}
+\index{calculateCommute@{calculateCommute}!Airport@{Airport}}
+\doxysubsubsection{\texorpdfstring{calculateCommute()}{calculateCommute()}}
+{\footnotesize\ttfamily \label{classAirport_a0082b856ee355f5869666f10a2d3cc37} 
+float Airport\+::calculate\+Commute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the commute time to the airport. 
+
+\begin{DoxyReturn}{Returns}
+The commute time as a float. 
+\end{DoxyReturn}
+\Hypertarget{classAirport_a949554b1846f19853e7b60778384cfc5}\index{Airport@{Airport}!getAirportName@{getAirportName}}
+\index{getAirportName@{getAirportName}!Airport@{Airport}}
+\doxysubsubsection{\texorpdfstring{getAirportName()}{getAirportName()}}
+{\footnotesize\ttfamily \label{classAirport_a949554b1846f19853e7b60778384cfc5} 
+std\+::string Airport\+::get\+Airport\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the name of the airport. 
+
+\begin{DoxyReturn}{Returns}
+The name of the airport as a string. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Airport_8h}{Airport.\+h}}\item 
+Airport.\+cpp\end{DoxyCompactItemize}

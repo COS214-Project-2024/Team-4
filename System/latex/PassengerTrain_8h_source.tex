@@ -1,0 +1,34 @@
+\doxysection{Passenger\+Train.\+h}
+\hypertarget{PassengerTrain_8h_source}{}\label{PassengerTrain_8h_source}\mbox{\hyperlink{PassengerTrain_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ PASSANGERTRAIN\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ PASSANGERTRAIN\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Train_8h}{Train.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{InsideRoad_8h}{InsideRoad.h}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classInsideRoad}{InsideRoad}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPassengerTrain}{PassengerTrain}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classTrain}{Train}}\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ std::vector<InsideRoad*>\ insideRoads;\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ std::vector<PassengerTrain*>\ passengerTrains;\ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPassengerTrain_a445ef9acc070238ec31cc31b7dd28c30}{PassengerTrain}}(\textcolor{keywordtype}{char}\ state,\ std::string\ line);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPassengerTrain_ae1f1d6fbcc95d8e7af6398365deba2b8}{addInsideRoad}}(\mbox{\hyperlink{classInsideRoad}{InsideRoad}}\ *insideRoad);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPassengerTrain_adfec8c949bf21cad5015fa7707ca8c2a}{addPassengerTrain}}(\mbox{\hyperlink{classPassengerTrain}{PassengerTrain}}\ *passengerTrain);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInsideRoad}{InsideRoad}}\ *\mbox{\hyperlink{classPassengerTrain_a8e8aa7217f4d240414d5883db8677638}{getInsideRoad}}(std::size\_t\ x);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPassengerTrain}{PassengerTrain}}\ *\mbox{\hyperlink{classPassengerTrain_ac97cf0cc071760b90776f9fcfa82a610}{getPassengerTrain}}(std::size\_t\ x);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classPassengerTrain_a9118e99f17953b819c96431720a8303e}{getTrainLine}}();}
+\DoxyCodeLine{00077\ \};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

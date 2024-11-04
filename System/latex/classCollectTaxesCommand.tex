@@ -1,0 +1,114 @@
+\doxysection{Collect\+Taxes\+Command Class Reference}
+\hypertarget{classCollectTaxesCommand}{}\label{classCollectTaxesCommand}\index{CollectTaxesCommand@{CollectTaxesCommand}}
+Inheritance diagram for Collect\+Taxes\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCollectTaxesCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCollectTaxesCommand_ab0dd1b3162f11c85a51a13c2a3cfd6d1}\label{classCollectTaxesCommand_ab0dd1b3162f11c85a51a13c2a3cfd6d1} 
+{\bfseries Collect\+Taxes\+Command} (\mbox{\hyperlink{classGovernment}{Government}} \texorpdfstring{$\ast$}{*}gov)
+\item 
+\Hypertarget{classCollectTaxesCommand_a7d9591fc976c04d4c5c600b3b1d5b856}\label{classCollectTaxesCommand_a7d9591fc976c04d4c5c600b3b1d5b856} 
+{\bfseries Collect\+Taxes\+Command} (\mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}building, \mbox{\hyperlink{classTaxType}{Tax\+Type}} \texorpdfstring{$\ast$}{*}tax\+Type)
+\item 
+void \mbox{\hyperlink{classCollectTaxesCommand_aa34f02cb86db40e37cd0803f4b0d7d19}{execute}} () override
+\item 
+void \mbox{\hyperlink{classCollectTaxesCommand_a226bc5876ab49b71a1608b2abac3065c}{undo}} () override
+\item 
+\Hypertarget{classCollectTaxesCommand_a08af173206138ba62affdb80323a21e7}\label{classCollectTaxesCommand_a08af173206138ba62affdb80323a21e7} 
+double {\bfseries get\+Collected\+Taxes} () const
+\item 
+\Hypertarget{classCollectTaxesCommand_ad6f1f9eebcb987328280a28cf7364b42}\label{classCollectTaxesCommand_ad6f1f9eebcb987328280a28cf7364b42} 
+void {\bfseries set\+Collected\+Taxes} (double amount)
+\item 
+\Hypertarget{classCollectTaxesCommand_a1ccd866c2a16982116bd2ef4c30052b2}\label{classCollectTaxesCommand_a1ccd866c2a16982116bd2ef4c30052b2} 
+bool {\bfseries validate\+Collection} () const
+\item 
+\Hypertarget{classCollectTaxesCommand_a4cea9080ab54f5712add5a20a57b0f7a}\label{classCollectTaxesCommand_a4cea9080ab54f5712add5a20a57b0f7a} 
+void {\bfseries execute\+With\+Validation} ()
+\item 
+std\+::string \mbox{\hyperlink{classCollectTaxesCommand_a5ce184a75a087ea5644d3a74f1071039}{get\+Name}} () const override
+\item 
+std\+::string \mbox{\hyperlink{classCollectTaxesCommand_a78abf74f8fe8bd64981203d84b522029}{get\+Description}} () const override
+\item 
+bool \mbox{\hyperlink{classCollectTaxesCommand_acbd8d6a7ebc41c572eeb43f1731c8364}{can\+Execute}} () const override
+\item 
+\Hypertarget{classCollectTaxesCommand_a1c6ee987010b9fa08a1b3cbde69bc87f}\label{classCollectTaxesCommand_a1c6ee987010b9fa08a1b3cbde69bc87f} 
+double {\bfseries get\+Taxes\+Collected} ()
+\item 
+double \mbox{\hyperlink{classCollectTaxesCommand_a869259a4ede505192e635d011dcf4c6e}{return\+Val}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGovCommand}{Gov\+Command}}}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCollectTaxesCommand_acbd8d6a7ebc41c572eeb43f1731c8364}\index{CollectTaxesCommand@{CollectTaxesCommand}!canExecute@{canExecute}}
+\index{canExecute@{canExecute}!CollectTaxesCommand@{CollectTaxesCommand}}
+\doxysubsubsection{\texorpdfstring{canExecute()}{canExecute()}}
+{\footnotesize\ttfamily \label{classCollectTaxesCommand_acbd8d6a7ebc41c572eeb43f1731c8364} 
+bool Collect\+Taxes\+Command\+::can\+Execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovCommand}{Gov\+Command}}.
+
+\Hypertarget{classCollectTaxesCommand_aa34f02cb86db40e37cd0803f4b0d7d19}\index{CollectTaxesCommand@{CollectTaxesCommand}!execute@{execute}}
+\index{execute@{execute}!CollectTaxesCommand@{CollectTaxesCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classCollectTaxesCommand_aa34f02cb86db40e37cd0803f4b0d7d19} 
+void Collect\+Taxes\+Command\+::execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovCommand}{Gov\+Command}}.
+
+\Hypertarget{classCollectTaxesCommand_a78abf74f8fe8bd64981203d84b522029}\index{CollectTaxesCommand@{CollectTaxesCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!CollectTaxesCommand@{CollectTaxesCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classCollectTaxesCommand_a78abf74f8fe8bd64981203d84b522029} 
+std\+::string Collect\+Taxes\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovCommand}{Gov\+Command}}.
+
+\Hypertarget{classCollectTaxesCommand_a5ce184a75a087ea5644d3a74f1071039}\index{CollectTaxesCommand@{CollectTaxesCommand}!getName@{getName}}
+\index{getName@{getName}!CollectTaxesCommand@{CollectTaxesCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classCollectTaxesCommand_a5ce184a75a087ea5644d3a74f1071039} 
+std\+::string Collect\+Taxes\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovCommand}{Gov\+Command}}.
+
+\Hypertarget{classCollectTaxesCommand_a869259a4ede505192e635d011dcf4c6e}\index{CollectTaxesCommand@{CollectTaxesCommand}!returnVal@{returnVal}}
+\index{returnVal@{returnVal}!CollectTaxesCommand@{CollectTaxesCommand}}
+\doxysubsubsection{\texorpdfstring{returnVal()}{returnVal()}}
+{\footnotesize\ttfamily \label{classCollectTaxesCommand_a869259a4ede505192e635d011dcf4c6e} 
+double Collect\+Taxes\+Command\+::return\+Val (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovCommand}{Gov\+Command}}.
+
+\Hypertarget{classCollectTaxesCommand_a226bc5876ab49b71a1608b2abac3065c}\index{CollectTaxesCommand@{CollectTaxesCommand}!undo@{undo}}
+\index{undo@{undo}!CollectTaxesCommand@{CollectTaxesCommand}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily \label{classCollectTaxesCommand_a226bc5876ab49b71a1608b2abac3065c} 
+void Collect\+Taxes\+Command\+::undo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovCommand}{Gov\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Collect\+Taxes\+Command.\+h\item 
+Collect\+Taxes\+Command.\+cpp\end{DoxyCompactItemize}

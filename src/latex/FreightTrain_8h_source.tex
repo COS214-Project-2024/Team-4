@@ -1,0 +1,41 @@
+\doxysection{Freight\+Train.\+h}
+\hypertarget{FreightTrain_8h_source}{}\label{FreightTrain_8h_source}\mbox{\hyperlink{FreightTrain_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ FREIGHTTRAIN\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ FREIGHTTRAIN\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Train_8h}{Train.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{InsideRoad_8h}{InsideRoad.h}}"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classInsideRoad}{InsideRoad}};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFreightTrain}{FreightTrain}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classTrain}{Train}}\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ weight;\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ length;\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ std::vector<InsideRoad*>\ insideRoads;\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ std::vector<FreightTrain*>\ freightTrains;\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFreightTrain_a3cc472ce88654905028af41819b6b44b}{FreightTrain}}(\textcolor{keywordtype}{char}\ state,\ std::string\ line,\ \textcolor{keywordtype}{float}\ weight,\ \textcolor{keywordtype}{float}\ length);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classFreightTrain_afbaff78bbbd0bdde658fd5dafa9a8413}{addInsideRoad}}(\mbox{\hyperlink{classInsideRoad}{InsideRoad}}\ *insideRoad);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classFreightTrain_ad4032bdb5e1cadd5d586fccb9860b5bd}{addFreightTrain}}(\mbox{\hyperlink{classFreightTrain}{FreightTrain}}\ *freightTrain);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInsideRoad}{InsideRoad}}*\ \mbox{\hyperlink{classFreightTrain_a0144553505647ad9ea527a7cec4cda46}{getInsideRoad}}(\textcolor{keywordtype}{size\_t}\ index);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFreightTrain}{FreightTrain}}*\ \mbox{\hyperlink{classFreightTrain_abd82b44c2bd64184c340fcf6729f90b9}{getFreightTrain}}(\textcolor{keywordtype}{size\_t}\ index);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classFreightTrain_a448390eab33a9d24728a493d2f7e9351}{getWeight}}();}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classFreightTrain_a59f30a5ac42e43ddbbc93ca8a09f27ee}{getLength}}();}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classFreightTrain_a6433db88085814fcbeab87e3167fe908}{getTrainLine}}();}
+\DoxyCodeLine{00099\ \};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FREIGHTTRAIN\_H}}
+
+\end{DoxyCode}

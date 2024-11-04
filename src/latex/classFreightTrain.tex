@@ -1,0 +1,207 @@
+\doxysection{Freight\+Train Class Reference}
+\hypertarget{classFreightTrain}{}\label{classFreightTrain}\index{FreightTrain@{FreightTrain}}
+
+
+A class representing a freight train.  
+
+
+
+
+{\ttfamily \#include $<$Freight\+Train.\+h$>$}
+
+Inheritance diagram for Freight\+Train\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classFreightTrain}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFreightTrain_a3cc472ce88654905028af41819b6b44b}{Freight\+Train}} (char state, std\+::string line, float weight, float length)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classFreightTrain}{Freight\+Train} class. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFreightTrain_afbaff78bbbd0bdde658fd5dafa9a8413}{add\+Inside\+Road}} (\mbox{\hyperlink{classInsideRoad}{Inside\+Road}} \texorpdfstring{$\ast$}{*}inside\+Road)
+\begin{DoxyCompactList}\small\item\em Adds an \doxylink{classInsideRoad}{Inside\+Road} object to the freight train. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFreightTrain_ad4032bdb5e1cadd5d586fccb9860b5bd}{add\+Freight\+Train}} (\mbox{\hyperlink{classFreightTrain}{Freight\+Train}} \texorpdfstring{$\ast$}{*}freight\+Train)
+\begin{DoxyCompactList}\small\item\em Adds a \doxylink{classFreightTrain}{Freight\+Train} object to the freight train. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classInsideRoad}{Inside\+Road}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classFreightTrain_a0144553505647ad9ea527a7cec4cda46}{get\+Inside\+Road}} (size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Retrieves an \doxylink{classInsideRoad}{Inside\+Road} object by index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFreightTrain}{Freight\+Train}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classFreightTrain_abd82b44c2bd64184c340fcf6729f90b9}{get\+Freight\+Train}} (size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Retrieves a \doxylink{classFreightTrain}{Freight\+Train} object by index. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classFreightTrain_a448390eab33a9d24728a493d2f7e9351}{get\+Weight}} ()
+\begin{DoxyCompactList}\small\item\em Gets the weight of the freight train. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classFreightTrain_a59f30a5ac42e43ddbbc93ca8a09f27ee}{get\+Length}} ()
+\begin{DoxyCompactList}\small\item\em Gets the length of the freight train. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classFreightTrain_a6433db88085814fcbeab87e3167fe908}{get\+Train\+Line}} ()
+\begin{DoxyCompactList}\small\item\em Gets the line on which the train operates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTrain}{Train}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTrain_a84a605245a03d2f29b518a483ba89ccb}{Train}} (char state, std\+::string line, char type)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classTrain}{Train} object. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classTrain_a02a8f84984307a49e9765f4d2aa19a86}{calculate\+Commute}} ()
+\begin{DoxyCompactList}\small\item\em Calculate the commute time for the train. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classTrain_a807b1ba96c2efafb7b2e5a0acdba3577}{get\+Line}} ()
+\begin{DoxyCompactList}\small\item\em Get the line on which the train operates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTransportation}{Transportation}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTransportation_a6038480df048e3b81449d9417cff4800}{Transportation}} (char state, char type)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classTransportation}{Transportation} class. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classTransportation_a4abf7f44c7a515f6933886dd321cc1c6}{get\+Traffic\+Flow}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current traffic flow. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTransportation_a7de50ee7df6f27b64529f15f74407d14}{set\+State}} (char state)
+\begin{DoxyCompactList}\small\item\em Sets the traffic flow state. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classTransportation_a5693fe4abdbacc36ee865283535aa546}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of transportation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransportation_ae63d1b7fa5006d357228196b6b81684d}{\texorpdfstring{$\sim$}{\string~}\+Transportation}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classTransportation}{Transportation} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class representing a freight train. 
+
+The \doxylink{classFreightTrain}{Freight\+Train} class inherits from the \doxylink{classTrain}{Train} class and includes additional attributes specific to freight trains, such as weight and length. It also manages collections of \doxylink{classInsideRoad}{Inside\+Road} and \doxylink{classFreightTrain}{Freight\+Train} objects. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classFreightTrain_a3cc472ce88654905028af41819b6b44b}\index{FreightTrain@{FreightTrain}!FreightTrain@{FreightTrain}}
+\index{FreightTrain@{FreightTrain}!FreightTrain@{FreightTrain}}
+\doxysubsubsection{\texorpdfstring{FreightTrain()}{FreightTrain()}}
+{\footnotesize\ttfamily \label{classFreightTrain_a3cc472ce88654905028af41819b6b44b} 
+Freight\+Train\+::\+Freight\+Train (\begin{DoxyParamCaption}\item[{char}]{state}{, }\item[{std\+::string}]{line}{, }\item[{float}]{weight}{, }\item[{float}]{length}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{classFreightTrain}{Freight\+Train} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state of the train. \\
+\hline
+{\em line} & The line on which the train operates. \\
+\hline
+{\em weight} & The weight of the freight train. \\
+\hline
+{\em length} & The length of the freight train. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classFreightTrain_ad4032bdb5e1cadd5d586fccb9860b5bd}\index{FreightTrain@{FreightTrain}!addFreightTrain@{addFreightTrain}}
+\index{addFreightTrain@{addFreightTrain}!FreightTrain@{FreightTrain}}
+\doxysubsubsection{\texorpdfstring{addFreightTrain()}{addFreightTrain()}}
+{\footnotesize\ttfamily \label{classFreightTrain_ad4032bdb5e1cadd5d586fccb9860b5bd} 
+bool Freight\+Train\+::add\+Freight\+Train (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFreightTrain}{Freight\+Train}} \texorpdfstring{$\ast$}{*}}]{freight\+Train}{}\end{DoxyParamCaption})}
+
+
+
+Adds a \doxylink{classFreightTrain}{Freight\+Train} object to the freight train. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em freight\+Train} & Pointer to the \doxylink{classFreightTrain}{Freight\+Train} object to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the \doxylink{classFreightTrain}{Freight\+Train} was added successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classFreightTrain_afbaff78bbbd0bdde658fd5dafa9a8413}\index{FreightTrain@{FreightTrain}!addInsideRoad@{addInsideRoad}}
+\index{addInsideRoad@{addInsideRoad}!FreightTrain@{FreightTrain}}
+\doxysubsubsection{\texorpdfstring{addInsideRoad()}{addInsideRoad()}}
+{\footnotesize\ttfamily \label{classFreightTrain_afbaff78bbbd0bdde658fd5dafa9a8413} 
+bool Freight\+Train\+::add\+Inside\+Road (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classInsideRoad}{Inside\+Road}} \texorpdfstring{$\ast$}{*}}]{inside\+Road}{}\end{DoxyParamCaption})}
+
+
+
+Adds an \doxylink{classInsideRoad}{Inside\+Road} object to the freight train. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inside\+Road} & Pointer to the \doxylink{classInsideRoad}{Inside\+Road} object to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the \doxylink{classInsideRoad}{Inside\+Road} was added successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classFreightTrain_abd82b44c2bd64184c340fcf6729f90b9}\index{FreightTrain@{FreightTrain}!getFreightTrain@{getFreightTrain}}
+\index{getFreightTrain@{getFreightTrain}!FreightTrain@{FreightTrain}}
+\doxysubsubsection{\texorpdfstring{getFreightTrain()}{getFreightTrain()}}
+{\footnotesize\ttfamily \label{classFreightTrain_abd82b44c2bd64184c340fcf6729f90b9} 
+\mbox{\hyperlink{classFreightTrain}{Freight\+Train}} \texorpdfstring{$\ast$}{*} Freight\+Train\+::get\+Freight\+Train (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves a \doxylink{classFreightTrain}{Freight\+Train} object by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the \doxylink{classFreightTrain}{Freight\+Train} object to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \doxylink{classFreightTrain}{Freight\+Train} object at the specified index. 
+\end{DoxyReturn}
+\Hypertarget{classFreightTrain_a0144553505647ad9ea527a7cec4cda46}\index{FreightTrain@{FreightTrain}!getInsideRoad@{getInsideRoad}}
+\index{getInsideRoad@{getInsideRoad}!FreightTrain@{FreightTrain}}
+\doxysubsubsection{\texorpdfstring{getInsideRoad()}{getInsideRoad()}}
+{\footnotesize\ttfamily \label{classFreightTrain_a0144553505647ad9ea527a7cec4cda46} 
+\mbox{\hyperlink{classInsideRoad}{Inside\+Road}} \texorpdfstring{$\ast$}{*} Freight\+Train\+::get\+Inside\+Road (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves an \doxylink{classInsideRoad}{Inside\+Road} object by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the \doxylink{classInsideRoad}{Inside\+Road} object to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \doxylink{classInsideRoad}{Inside\+Road} object at the specified index. 
+\end{DoxyReturn}
+\Hypertarget{classFreightTrain_a59f30a5ac42e43ddbbc93ca8a09f27ee}\index{FreightTrain@{FreightTrain}!getLength@{getLength}}
+\index{getLength@{getLength}!FreightTrain@{FreightTrain}}
+\doxysubsubsection{\texorpdfstring{getLength()}{getLength()}}
+{\footnotesize\ttfamily \label{classFreightTrain_a59f30a5ac42e43ddbbc93ca8a09f27ee} 
+float Freight\+Train\+::get\+Length (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the length of the freight train. 
+
+\begin{DoxyReturn}{Returns}
+The length of the freight train. 
+\end{DoxyReturn}
+\Hypertarget{classFreightTrain_a6433db88085814fcbeab87e3167fe908}\index{FreightTrain@{FreightTrain}!getTrainLine@{getTrainLine}}
+\index{getTrainLine@{getTrainLine}!FreightTrain@{FreightTrain}}
+\doxysubsubsection{\texorpdfstring{getTrainLine()}{getTrainLine()}}
+{\footnotesize\ttfamily \label{classFreightTrain_a6433db88085814fcbeab87e3167fe908} 
+std\+::string Freight\+Train\+::get\+Train\+Line (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the line on which the train operates. 
+
+\begin{DoxyReturn}{Returns}
+The line on which the train operates. 
+\end{DoxyReturn}
+\Hypertarget{classFreightTrain_a448390eab33a9d24728a493d2f7e9351}\index{FreightTrain@{FreightTrain}!getWeight@{getWeight}}
+\index{getWeight@{getWeight}!FreightTrain@{FreightTrain}}
+\doxysubsubsection{\texorpdfstring{getWeight()}{getWeight()}}
+{\footnotesize\ttfamily \label{classFreightTrain_a448390eab33a9d24728a493d2f7e9351} 
+float Freight\+Train\+::get\+Weight (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the weight of the freight train. 
+
+\begin{DoxyReturn}{Returns}
+The weight of the freight train. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{FreightTrain_8h}{Freight\+Train.\+h}}\item 
+Freight\+Train.\+cpp\end{DoxyCompactItemize}

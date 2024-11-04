@@ -1,0 +1,65 @@
+\doxysection{City\+Traverser.\+h}
+\hypertarget{CityTraverser_8h_source}{}\label{CityTraverser_8h_source}\mbox{\hyperlink{CityTraverser_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifndef\ CITYTRAVERSER\_h}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ CITYTRAVERSER\_h}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Traverser_8h}{Traverser.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Transportation_8h}{Transportation.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TraverseState_8h}{TraverseState.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TraverseHighway_8h}{TraverseHighway.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TraverseInsideRoad_8h}{TraverseInsideRoad.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TraverseBus_8h}{TraverseBus.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TraverseTaxi_8h}{TraverseTaxi.h}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TraverseFreightTrain_8h}{TraverseFreightTrain.h}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TraversePassengerTrain_8h}{TraversePassengerTrain.h}}"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TraverseCargoAirport_8h}{TraverseCargoAirport.h}}"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TraverseComercialAirport_8h}{TraverseComercialAirport.h}}"{}}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCityTraverser}{CityTraverser}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classTraverser}{Traverser}}\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTraverseState}{TraverseState}}\ *state;\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ currentElement;\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTransportation}{Transportation}}*\ Element;\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ std::vector<Transportation*>\ prevLayers;\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTransportation}{Transportation}}*\ currentLayer;\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ dataType;\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCityTraverser_aa1a204a1573a3b967376b752976cf0aa}{CityTraverser}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCityTraverser_aa1a204a1573a3b967376b752976cf0aa}{CityTraverser}}(\mbox{\hyperlink{classTransportation}{Transportation}}*\ t);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCityTraverser_aa1a204a1573a3b967376b752976cf0aa}{CityTraverser}}(\mbox{\hyperlink{classCityTraverser}{CityTraverser}}*\ t);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCityTraverser_a0e4a4571000d38e717f7eeba52e2cf66}{operator++}}();}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCityTraverser_a7fee6843980058b360d81f348296d062}{operator-\/-\/}}();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCityTraverser_a668041c76c78674a2e0d5737c3b97916}{operator+}}();}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCityTraverser_ae5b4b36f68f413fdb9c49e21b3ab89fd}{operator-\/}}();}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCityTraverser_a24d52f2deb2abbebedb5843f4993dd0b}{stepIn}}();}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCityTraverser_ae81a12229fe74db91c37fec36fd739ac}{stepOut}}();}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTransportation}{Transportation}}*\ \mbox{\hyperlink{classCityTraverser_a67dacbb070e8befb67cc731ee7083833}{operator*}}();}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTransportation}{Transportation}}*\ \mbox{\hyperlink{classCityTraverser_a709f3655149bc2569573336f253ad41e}{getCurrentLayer}}();}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCityTraverser_a06cec09f74f4f70b11478738998d62d2}{operator=}}(\mbox{\hyperlink{classTransportation}{Transportation}}*\ t);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCityTraverser_a06cec09f74f4f70b11478738998d62d2}{operator=}}(\mbox{\hyperlink{classCityTraverser}{CityTraverser}}*\ t);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCityTraverser_a05a27cf8ca2e28b2c5b092fae28e20ec}{setState}}();}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCityTraverser_a4cae985d8f01a8299d7c3bdbd24a3647}{\string~CityTraverser}}();}
+\DoxyCodeLine{00138\ \};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

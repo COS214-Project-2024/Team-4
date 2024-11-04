@@ -1,0 +1,99 @@
+\doxysection{Set\+Tax\+Command Class Reference}
+\hypertarget{classSetTaxCommand}{}\label{classSetTaxCommand}\index{SetTaxCommand@{SetTaxCommand}}
+Inheritance diagram for Set\+Tax\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSetTaxCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSetTaxCommand_a72a656f72714c858f86f70e5055d6c99}\label{classSetTaxCommand_a72a656f72714c858f86f70e5055d6c99} 
+{\bfseries Set\+Tax\+Command} (\mbox{\hyperlink{classGovernment}{Government}} \texorpdfstring{$\ast$}{*}gov, double rate)
+\item 
+\Hypertarget{classSetTaxCommand_affc744e98c28a957e7adf242de6825c0}\label{classSetTaxCommand_affc744e98c28a957e7adf242de6825c0} 
+{\bfseries Set\+Tax\+Command} (\mbox{\hyperlink{classGovernment}{Government}} \texorpdfstring{$\ast$}{*}gov, \mbox{\hyperlink{classTaxSystem}{Tax\+System}} \texorpdfstring{$\ast$}{*}tax\+Sys, double rate, char category)
+\item 
+void \mbox{\hyperlink{classSetTaxCommand_a741324944c7f9631ef2fcf586caed323}{execute}} () override
+\item 
+void \mbox{\hyperlink{classSetTaxCommand_aa4f8c169056e1411ff4047c3d5345c22}{undo}} () override
+\item 
+std\+::string \mbox{\hyperlink{classSetTaxCommand_aecb15999edf7e439d1aaf34d4dd2fdd4}{get\+Name}} () const override
+\item 
+std\+::string \mbox{\hyperlink{classSetTaxCommand_a874321587e1e04893ec18b2ad0844129}{get\+Description}} () const override
+\item 
+double \mbox{\hyperlink{classSetTaxCommand_a2d0049b773e24458c9863ed078d3c15c}{return\+Val}} () override
+\item 
+bool \mbox{\hyperlink{classSetTaxCommand_a835854c63c53880d133d0de8d12585a2}{can\+Execute}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGovCommand}{Gov\+Command}}}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSetTaxCommand_a835854c63c53880d133d0de8d12585a2}\index{SetTaxCommand@{SetTaxCommand}!canExecute@{canExecute}}
+\index{canExecute@{canExecute}!SetTaxCommand@{SetTaxCommand}}
+\doxysubsubsection{\texorpdfstring{canExecute()}{canExecute()}}
+{\footnotesize\ttfamily \label{classSetTaxCommand_a835854c63c53880d133d0de8d12585a2} 
+bool Set\+Tax\+Command\+::can\+Execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovCommand}{Gov\+Command}}.
+
+\Hypertarget{classSetTaxCommand_a741324944c7f9631ef2fcf586caed323}\index{SetTaxCommand@{SetTaxCommand}!execute@{execute}}
+\index{execute@{execute}!SetTaxCommand@{SetTaxCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classSetTaxCommand_a741324944c7f9631ef2fcf586caed323} 
+void Set\+Tax\+Command\+::execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovCommand}{Gov\+Command}}.
+
+\Hypertarget{classSetTaxCommand_a874321587e1e04893ec18b2ad0844129}\index{SetTaxCommand@{SetTaxCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!SetTaxCommand@{SetTaxCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classSetTaxCommand_a874321587e1e04893ec18b2ad0844129} 
+std\+::string Set\+Tax\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovCommand}{Gov\+Command}}.
+
+\Hypertarget{classSetTaxCommand_aecb15999edf7e439d1aaf34d4dd2fdd4}\index{SetTaxCommand@{SetTaxCommand}!getName@{getName}}
+\index{getName@{getName}!SetTaxCommand@{SetTaxCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classSetTaxCommand_aecb15999edf7e439d1aaf34d4dd2fdd4} 
+std\+::string Set\+Tax\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovCommand}{Gov\+Command}}.
+
+\Hypertarget{classSetTaxCommand_a2d0049b773e24458c9863ed078d3c15c}\index{SetTaxCommand@{SetTaxCommand}!returnVal@{returnVal}}
+\index{returnVal@{returnVal}!SetTaxCommand@{SetTaxCommand}}
+\doxysubsubsection{\texorpdfstring{returnVal()}{returnVal()}}
+{\footnotesize\ttfamily \label{classSetTaxCommand_a2d0049b773e24458c9863ed078d3c15c} 
+double Set\+Tax\+Command\+::return\+Val (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovCommand}{Gov\+Command}}.
+
+\Hypertarget{classSetTaxCommand_aa4f8c169056e1411ff4047c3d5345c22}\index{SetTaxCommand@{SetTaxCommand}!undo@{undo}}
+\index{undo@{undo}!SetTaxCommand@{SetTaxCommand}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily \label{classSetTaxCommand_aa4f8c169056e1411ff4047c3d5345c22} 
+void Set\+Tax\+Command\+::undo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGovCommand}{Gov\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Set\+Tax\+Command.\+h\item 
+Set\+Tax\+Command.\+cpp\end{DoxyCompactItemize}

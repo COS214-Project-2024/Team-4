@@ -1,0 +1,39 @@
+\doxysection{Transportation\+Factory.\+h}
+\hypertarget{TransportationFactory_8h_source}{}\label{TransportationFactory_8h_source}\mbox{\hyperlink{TransportationFactory_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ TRANSPORTATIONFACTORY\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ TRANSPORTATIONFACTORY\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Transportation_8h}{Transportation.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Highway_8h}{Highway.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{InsideRoad_8h}{InsideRoad.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Bus_8h}{Bus.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Taxi_8h}{Taxi.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PassengerTrain_8h}{PassengerTrain.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{FreightTrain_8h}{FreightTrain.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ComercialAirport_8h}{ComercialAirport.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{CargoAirport_8h}{CargoAirport.h}}"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTransportationFactory}{TransportationFactory}}\{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTransportation}{Transportation}}*\ \mbox{\hyperlink{classTransportationFactory_abb77f43a6c068000f76c08b11db7ec12}{createHighway}}(\textcolor{keywordtype}{char}\ state,\ std::string\ roadName,\ \textcolor{keywordtype}{float}\ speedLimit);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTransportation}{Transportation}}*\ \mbox{\hyperlink{classTransportationFactory_aa6614bffbe2de6494813fe946ab78a33}{createInsideRoad}}(\textcolor{keywordtype}{char}\ state,\ std::string\ roadName,\ \textcolor{keywordtype}{float}\ avgStopTime);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTransportation}{Transportation}}*\ \mbox{\hyperlink{classTransportationFactory_a143845c229cd67536a170b32f0a3a130}{createBus}}(\textcolor{keywordtype}{char}\ state,\ std::string\ route,\ \textcolor{keywordtype}{int}\ busNumber,\ \textcolor{keywordtype}{int}\ capacity);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTransportation}{Transportation}}*\ \mbox{\hyperlink{classTransportationFactory_a8f98d673dc63a2c0b2d8a2df5f41f608}{createTaxi}}(\textcolor{keywordtype}{char}\ state,\ std::string\ route,\ std::string\ taxiCompany,\ \textcolor{keywordtype}{int}\ taxiNumber);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTransportation}{Transportation}}*\ \mbox{\hyperlink{classTransportationFactory_a83fa743ce0356c595354a1bad82c60de}{createPassengerTrain}}(\textcolor{keywordtype}{char}\ state,\ std::string\ line);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTransportation}{Transportation}}*\ \mbox{\hyperlink{classTransportationFactory_acecfde978d4a9bccfa8ace156cec1c5e}{createFreightTrain}}(\textcolor{keywordtype}{char}\ state,\ std::string\ line,\ \textcolor{keywordtype}{float}\ weight,\ \textcolor{keywordtype}{float}\ length);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTransportation}{Transportation}}*\ \mbox{\hyperlink{classTransportationFactory_a85fd8a24bb4f75c4294945a08347e540}{createComercialAirport}}(\textcolor{keywordtype}{char}\ state,\ std::string\ name);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTransportation}{Transportation}}*\ \mbox{\hyperlink{classTransportationFactory_a3d0d5fe4161aaedff2d70f093371a0c1}{createCargoAirport}}(\textcolor{keywordtype}{char}\ state,\ std::string\ name);}
+\DoxyCodeLine{00100\ \};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TRANSPORTATIONFACTORY\_H}}
+
+\end{DoxyCode}

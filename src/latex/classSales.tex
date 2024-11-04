@@ -1,0 +1,62 @@
+\doxysection{Sales Class Reference}
+\hypertarget{classSales}{}\label{classSales}\index{Sales@{Sales}}
+Inheritance diagram for Sales\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSales}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSales_ad5c33556a07fe456310ab1d292884984}\label{classSales_ad5c33556a07fe456310ab1d292884984} 
+{\bfseries Sales} (double rate, double levy, double fee)
+\item 
+void \mbox{\hyperlink{classSales_a9a8c80992d85b6ba6fd17caf33e57c3c}{set\+Tax}} (double rate) override
+\item 
+double \mbox{\hyperlink{classSales_a8a393b9c17abfd6c52b8800f5d9de3e0}{calculate\+Tax}} (double sale\+Amount) override
+\item 
+\Hypertarget{classSales_a100f2c39408fe0ae700fcd372516aec0}\label{classSales_a100f2c39408fe0ae700fcd372516aec0} 
+void {\bfseries set\+Environmental\+Levy} (double levy)
+\item 
+\Hypertarget{classSales_afd367cd9368b46008c0979ca0bc4d4c7}\label{classSales_afd367cd9368b46008c0979ca0bc4d4c7} 
+void {\bfseries set\+Service\+Fee} (double fee)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTaxType}{Tax\+Type}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Tax\+Type} (double rate, char type)
+\item 
+virtual double {\bfseries get\+Tax\+Rate} ()
+\item 
+char {\bfseries get\+Tax\+Type} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSales_a8a393b9c17abfd6c52b8800f5d9de3e0}\index{Sales@{Sales}!calculateTax@{calculateTax}}
+\index{calculateTax@{calculateTax}!Sales@{Sales}}
+\doxysubsubsection{\texorpdfstring{calculateTax()}{calculateTax()}}
+{\footnotesize\ttfamily \label{classSales_a8a393b9c17abfd6c52b8800f5d9de3e0} 
+double Sales\+::calculate\+Tax (\begin{DoxyParamCaption}\item[{double}]{sale\+Amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classTaxType}{Tax\+Type}}.
+
+\Hypertarget{classSales_a9a8c80992d85b6ba6fd17caf33e57c3c}\index{Sales@{Sales}!setTax@{setTax}}
+\index{setTax@{setTax}!Sales@{Sales}}
+\doxysubsubsection{\texorpdfstring{setTax()}{setTax()}}
+{\footnotesize\ttfamily \label{classSales_a9a8c80992d85b6ba6fd17caf33e57c3c} 
+void Sales\+::set\+Tax (\begin{DoxyParamCaption}\item[{double}]{rate}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classTaxType}{Tax\+Type}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Sales.\+h\item 
+Sales.\+cpp\end{DoxyCompactItemize}

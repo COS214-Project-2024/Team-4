@@ -1,0 +1,132 @@
+\doxysection{Male\+Citizen Class Reference}
+\hypertarget{classMaleCitizen}{}\label{classMaleCitizen}\index{MaleCitizen@{MaleCitizen}}
+Inheritance diagram for Male\+Citizen\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMaleCitizen}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classMaleCitizen_a4ddfe6119550be8911148cf96a958973}\label{classMaleCitizen_a4ddfe6119550be8911148cf96a958973} 
+{\bfseries Male\+Citizen} (const std\+::string \&name, int age)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCitizen}{Citizen}} $>$ \mbox{\hyperlink{classMaleCitizen_a8e8d8f9e52cc60dc317e8981b1d979de}{clone}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCitizen}{Citizen}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Citizen} (const std\+::string \&name, int age)
+\item 
+void {\bfseries add\+Observer} (\mbox{\hyperlink{classCitizenObserver}{Citizen\+Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+void {\bfseries detach\+All\+Observers} ()
+\item 
+void {\bfseries remove\+Observer} (\mbox{\hyperlink{classCitizenObserver}{Citizen\+Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+void {\bfseries notify\+Observers} ()
+\item 
+void {\bfseries set\+State} (\mbox{\hyperlink{classCitizenState}{Citizen\+State}} \texorpdfstring{$\ast$}{*}new\+State)
+\item 
+void {\bfseries update\+Satisfaction} ()
+\item 
+std\+::string {\bfseries get\+Relationship\+Status} () const
+\item 
+void {\bfseries set\+Relationship\+Status} (const std\+::string \&status)
+\item 
+int {\bfseries get\+Marriage\+Duration} () const
+\item 
+void {\bfseries reset\+Marriage\+Duration} ()
+\item 
+void {\bfseries increment\+Marriage\+Duration} ()
+\item 
+void {\bfseries update\+Satisfaction} (float adjustment)
+\item 
+void {\bfseries add\+Child} ()
+\item 
+int {\bfseries get\+Age} () const
+\item 
+void {\bfseries increment\+Age} ()
+\item 
+void {\bfseries add\+Satisfaction\+Strategy} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSatisfactionStrategy}{Satisfaction\+Strategy}} $>$ strategy)
+\item 
+void {\bfseries remove\+Satisfaction\+Strategy} ()
+\item 
+void {\bfseries set\+Satisfaction\+Level} (double level)
+\item 
+void {\bfseries deposit\+Monthly\+Income} ()
+\item 
+void {\bfseries search\+And\+Apply\+For\+Job} (\mbox{\hyperlink{classBuildingManager}{Building\+Manager}} \&manager, \mbox{\hyperlink{classBuilding}{Building}} \texorpdfstring{$\ast$}{*}building, std\+::string jobtitle)
+\item 
+std\+::string {\bfseries get\+Name} () const
+\item 
+float {\bfseries get\+Satisfaction\+Level} () const
+\item 
+bool {\bfseries is\+Leaving} () const
+\item 
+void {\bfseries set\+Income} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIncome}{Income}} $>$ income)
+\item 
+void {\bfseries check\+And\+Update\+State} ()
+\item 
+void {\bfseries set\+Job\+Title} (const std\+::string \&job\+Title)
+\item 
+std\+::string {\bfseries get\+Job} () const
+\item 
+void {\bfseries set\+Employed} (bool status)
+\item 
+bool {\bfseries is\+Employed} () const
+\item 
+float {\bfseries get\+Tax\+Rate} () const
+\item 
+void {\bfseries set\+Tax\+Rate} (float rate)
+\item 
+double {\bfseries pay\+Taxes} (\mbox{\hyperlink{classTaxType}{Tax\+Type}} \texorpdfstring{$\ast$}{*}tax\+Type)
+\item 
+double {\bfseries get\+Bank\+Balance} () const
+\item 
+void {\bfseries set\+Bank\+Balance} (double balance)
+\item 
+void {\bfseries incrase\+Bank\+Balance} (double amount)
+\item 
+void {\bfseries subtract\+Bank\+Balance} (double amount)
+\item 
+void {\bfseries set\+Tax\+Cooldown} (bool status)
+\item 
+bool {\bfseries get\+Tax\+Cooldown} () const
+\item 
+bool {\bfseries is\+On\+Cooldown} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classCitizen}{Citizen}}}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries employed} = false
+\item 
+bool {\bfseries tax\+Cooldown}
+\item 
+std\+::chrono\+::steady\+\_\+clock\+::time\+\_\+point {\bfseries last\+Tax\+Payment}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classCitizen}{Citizen}}}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr std\+::chrono\+::seconds {\bfseries tax\+Cooldown\+Period} \{5\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMaleCitizen_a8e8d8f9e52cc60dc317e8981b1d979de}\index{MaleCitizen@{MaleCitizen}!clone@{clone}}
+\index{clone@{clone}!MaleCitizen@{MaleCitizen}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{classMaleCitizen_a8e8d8f9e52cc60dc317e8981b1d979de} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classCitizen}{Citizen}} $>$ Male\+Citizen\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classCitizen}{Citizen}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Male\+Citizen.\+h\end{DoxyCompactItemize}

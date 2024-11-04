@@ -1,0 +1,76 @@
+\doxysection{Government.\+h}
+\hypertarget{Government_8h_source}{}\label{Government_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GOVERNMENT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GOVERNMENT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}GovObserver.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}CityService.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Policy.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGovernment}{Government}}\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{double}\ taxRate;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Tax\ rate\ applied\ by\ the\ government}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{double}\ budget;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Budget\ of\ the\ government}}
+\DoxyCodeLine{00015\ \ \ \ \ std::string\ governmentName;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Name\ of\ the\ government}}
+\DoxyCodeLine{00016\ \ \ \ \ std::vector<GovObserver*>\ observers;\ \textcolor{comment}{//\ List\ of\ observers}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ Constructor}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{comment}{//\ Initializes\ the\ government\ with\ a\ name}}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classGovernment}{Government}}(std::string\ name);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//\ Sets\ the\ tax\ rate\ for\ the\ government}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ setTax(\textcolor{keywordtype}{double}\ rate);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Gets\ the\ current\ tax\ rate}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{double}\ getTaxRate()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ Notifies\ citizens\ of\ changes}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyCitizen();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ Notifies\ businesses\ of\ changes}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyBusinesses();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ Notifies\ services\ of\ changes}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyServices();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ Allocates\ budget\ to\ a\ city\ service}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ allocateBudget(\mbox{\hyperlink{classCityService}{CityService}}\&\ service,\ \textcolor{keywordtype}{double}\ amount);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//\ Reverts\ the\ budget\ allocation\ to\ a\ city\ service}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ revertBudgetAllocation(\mbox{\hyperlink{classCityService}{CityService}}\&\ service,\ \textcolor{keywordtype}{double}\ amount);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ Enforces\ a\ policy\ in\ the\ government}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ enforcePolicy(\mbox{\hyperlink{classPolicy}{Policy}}\ policy);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ Updates\ the\ population\ of\ the\ government}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ update(\textcolor{keywordtype}{int}\ newPopulation);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//\ Collects\ taxes\ based\ on\ the\ tax\ rate}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{double}\ collectTaxes();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ Refunds\ collected\ taxes}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ refundTaxes(\textcolor{keywordtype}{double}\ amount);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ addTaxesToBudget(\textcolor{keywordtype}{double}\ amount);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//\ Registers\ an\ observer\ to\ the\ government}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ registerObserver(\mbox{\hyperlink{classGovObserver}{GovObserver}}*\ observer);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ Unregisters\ an\ observer\ from\ the\ government}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ unregisterObserver(\mbox{\hyperlink{classGovObserver}{GovObserver}}*\ observer);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ Notifies\ all\ registered\ observers\ of\ changes}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyObservers();}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{//\ Gets\ the\ current\ budget}}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{double}\ getBudget()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00069\ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

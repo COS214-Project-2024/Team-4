@@ -1,0 +1,30 @@
+\doxysection{Resource\+Availability.\+h}
+\hypertarget{ResourceAvailability_8h_source}{}\label{ResourceAvailability_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ ResourceAvailability.h}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ RESOURCEAVAILABILITY\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ RESOURCEAVAILABILITY\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}ResourceType.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}ResourceManager.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classResourceAvailability}{ResourceAvailability}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{classResourceManager}{ResourceManager}}*\ resourceManager;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{classResourceAvailability}{ResourceAvailability}}(\mbox{\hyperlink{classResourceManager}{ResourceManager}}*\ manager)\ :\ resourceManager(manager)\ \{\}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ Checks\ if\ a\ given\ quantity\ of\ a\ specific\ resource\ type\ is\ available}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{bool}\ checkAvailability(ResourceType\ type,\ \textcolor{keywordtype}{int}\ quantity)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classResource}{Resource}}*\ resource\ =\ resourceManager-\/>getResource(type);}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (resource)\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ resource-\/>getQuantity()\ >=\ quantity;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \ \textcolor{comment}{//\ Resource\ type\ not\ found}}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RESOURCEAVAILABILITY\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,45 @@
+\doxysection{Utility\+Mediator Class Reference}
+\hypertarget{classUtilityMediator}{}\label{classUtilityMediator}\index{UtilityMediator@{UtilityMediator}}
+Inheritance diagram for Utility\+Mediator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classUtilityMediator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classUtilityMediator_ad27179f7bf831bd4d5ce9ebe3ac1f03a}\label{classUtilityMediator_ad27179f7bf831bd4d5ce9ebe3ac1f03a} 
+bool {\bfseries request\+Resources} (Resource\+Type type, int amount)
+\item 
+\Hypertarget{classUtilityMediator_aad7311958ea060b82829e2d54c623ad9}\label{classUtilityMediator_aad7311958ea060b82829e2d54c623ad9} 
+void {\bfseries release\+Resources} (Resource\+Type type, int amount)
+\item 
+\Hypertarget{classUtilityMediator_a01f3c58f918866e66e0ea9803531079f}\label{classUtilityMediator_a01f3c58f918866e66e0ea9803531079f} 
+void {\bfseries produce\+Resource} (Resource\+Type type, int amount)
+\item 
+\Hypertarget{classUtilityMediator_a24b4c3973c1c0e78479ff459421e6bed}\label{classUtilityMediator_a24b4c3973c1c0e78479ff459421e6bed} 
+int {\bfseries get\+Available\+Resource} (Resource\+Type type) const
+\item 
+void \mbox{\hyperlink{classUtilityMediator_a77116d63c2fdeb68b7dfa72d8a009cb7}{update}} (Resource\+Type type, int quantity) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classObserver}{Observer}}}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classUtilityMediator_a77116d63c2fdeb68b7dfa72d8a009cb7}\index{UtilityMediator@{UtilityMediator}!update@{update}}
+\index{update@{update}!UtilityMediator@{UtilityMediator}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{classUtilityMediator_a77116d63c2fdeb68b7dfa72d8a009cb7} 
+void Utility\+Mediator\+::update (\begin{DoxyParamCaption}\item[{Resource\+Type}]{type}{, }\item[{int}]{quantity}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classObserver}{Observer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Utility\+Mediator.\+h\item 
+Utility\+Mediator.\+cpp\end{DoxyCompactItemize}

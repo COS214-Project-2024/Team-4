@@ -1,0 +1,47 @@
+\doxysection{Commercial\+Building.\+h}
+\hypertarget{CommercialBuilding_8h_source}{}\label{CommercialBuilding_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ COMMERCIALBUILDING\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ COMMERCIALBUILDING\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Building.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Business.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCommercialBuilding}{CommercialBuilding}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBuilding}{Building}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{classCommercialBuilding}{CommercialBuilding}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{float}\ area,\ \textcolor{keywordtype}{int}\ floors,\ \textcolor{keywordtype}{int}\ capacity,}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ citizenSatisfaction,\ \textcolor{keywordtype}{float}\ economicGrowth,\ \textcolor{keywordtype}{float}\ resourceConsumption,}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ businessUnits,\ \textcolor{keywordtype}{float}\ customerTraffic);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classCommercialBuilding}{\string~CommercialBuilding}}();\ \textcolor{comment}{//\ Destructor}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ std::string\ getType()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ updateImpacts()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ updateCustomer(\textcolor{keywordtype}{int}\ traffic);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ construct()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{double}\ payTaxes(\mbox{\hyperlink{classTaxType}{TaxType}}*\ taxType);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ undoCollectTaxes();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ setBusiness(\mbox{\hyperlink{classBusiness}{Business}}*\ business);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ businessUnits;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{float}\ customerTraffic;}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classBusiness}{Business}}*\ business;}
+\DoxyCodeLine{00032\ \ \ \ \ std::string\ bType;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ calculateEconomicImpact();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ calculateResourceConsumption();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ calculateSatisfactionImpact();}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ COMMERCIALBUILDING\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,71 @@
+\doxysection{Traffic\+Flow Class Reference}
+\hypertarget{classTrafficFlow}{}\label{classTrafficFlow}\index{TrafficFlow@{TrafficFlow}}
+
+
+An abstract class that represents the traffic flow.  
+
+
+
+
+{\ttfamily \#include $<$Traffic\+Flow.\+h$>$}
+
+Inheritance diagram for Traffic\+Flow\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTrafficFlow}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual float \mbox{\hyperlink{classTrafficFlow_a9ced5003ec646cd8e84c9546305c90e9}{get\+Traffic\+Flow}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to get the traffic flow. \end{DoxyCompactList}\item 
+virtual char \mbox{\hyperlink{classTrafficFlow_a1a6160ebc0705f38cf312ebd0b95fe1a}{get\+State}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to get the state of the traffic. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An abstract class that represents the traffic flow. 
+
+This class provides an interface for measuring traffic flow and obtaining the state of the traffic. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTrafficFlow_a1a6160ebc0705f38cf312ebd0b95fe1a}\index{TrafficFlow@{TrafficFlow}!getState@{getState}}
+\index{getState@{getState}!TrafficFlow@{TrafficFlow}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily \label{classTrafficFlow_a1a6160ebc0705f38cf312ebd0b95fe1a} 
+virtual char Traffic\+Flow\+::get\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to get the state of the traffic. 
+
+\begin{DoxyReturn}{Returns}
+char The current state of the traffic. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classLunchRush_a003a1fb6137331e8a449576409d2298f}{Lunch\+Rush}}, \mbox{\hyperlink{classNonPeak_ac3c7285e13b471bcec2b8f5ce6551b7d}{Non\+Peak}}, and \mbox{\hyperlink{classPeak_a7f864c8ace314c5639647a61df4318bf}{Peak}}.
+
+\Hypertarget{classTrafficFlow_a9ced5003ec646cd8e84c9546305c90e9}\index{TrafficFlow@{TrafficFlow}!getTrafficFlow@{getTrafficFlow}}
+\index{getTrafficFlow@{getTrafficFlow}!TrafficFlow@{TrafficFlow}}
+\doxysubsubsection{\texorpdfstring{getTrafficFlow()}{getTrafficFlow()}}
+{\footnotesize\ttfamily \label{classTrafficFlow_a9ced5003ec646cd8e84c9546305c90e9} 
+virtual float Traffic\+Flow\+::get\+Traffic\+Flow (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to get the traffic flow. 
+
+\begin{DoxyReturn}{Returns}
+float The current traffic flow. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classLunchRush_a6296b3eae652b6213e676d48d16bbec2}{Lunch\+Rush}}, \mbox{\hyperlink{classNonPeak_aa0e74b7aa1934c3489fdd68fbc2179dc}{Non\+Peak}}, and \mbox{\hyperlink{classPeak_a4798bc96e0ce72b7f03ad543c3e4fd0a}{Peak}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TrafficFlow_8h}{Traffic\+Flow.\+h}}\end{DoxyCompactItemize}

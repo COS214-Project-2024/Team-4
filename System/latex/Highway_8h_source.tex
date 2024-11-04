@@ -1,0 +1,43 @@
+\doxysection{Highway.\+h}
+\hypertarget{Highway_8h_source}{}\label{Highway_8h_source}\mbox{\hyperlink{Highway_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ HIGHWAY\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ HIGHWAY\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Road_8h}{Road.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{InsideRoad_8h}{InsideRoad.h}}"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classInsideRoad}{InsideRoad}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classHighway}{Highway}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classRoad}{Road}}\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ speedLimit;\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ std::vector<InsideRoad*>\ insideRoads;\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ std::vector<Highway*>\ highways;\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHighway_a92a1995b7f82755ffc4b077283bde889}{Highway}}(\textcolor{keywordtype}{char}\ state,\ std::string\ roadName,\ \textcolor{keywordtype}{float}\ speedLimit);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classHighway_a9a3b88c01a2aeb9516801bb1ee058b93}{addInsideRoad}}(\mbox{\hyperlink{classInsideRoad}{InsideRoad}}\ *insideRoad);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classHighway_a4808298a43aff486cb065103dc52e300}{addHighway}}(\mbox{\hyperlink{classHighway}{Highway}}\ *highway);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInsideRoad}{InsideRoad}}\ *\mbox{\hyperlink{classHighway_ac06ede40fb2facbf140a4e4a24682ffd}{getInsideRoad}}(std::size\_t\ x);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHighway}{Highway}}\ *\mbox{\hyperlink{classHighway_a46bbeaabb13d95b8aed099baf290dd6e}{getHighway}}(std::size\_t\ x);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ std::vector<InsideRoad*>\ \mbox{\hyperlink{classHighway_a62082f5c2ffda3fa1f8840ee717f083e}{getInsideRoadsList}}();}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ std::vector<Highway*>\ \mbox{\hyperlink{classHighway_a1d937e430c4c41e1756a8b79b3ccd8f8}{getHighwaysList}}();}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classHighway_ab38db7e5c86f6775f419cdca440fbe01}{getRoadName}}();}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classHighway_a5b183c43dfaa3dd02f1957fcb1e38852}{getSpeedLimit}}();}
+\DoxyCodeLine{00103\ \};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ HIGHWAY\_H}}
+
+\end{DoxyCode}

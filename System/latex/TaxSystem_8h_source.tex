@@ -1,0 +1,47 @@
+\doxysection{Tax\+System.\+h}
+\hypertarget{TaxSystem_8h_source}{}\label{TaxSystem_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ TaxSystem.h}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ TAXSYSTEM\_H}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ TAXSYSTEM\_H}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Building.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Citizen.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}TaxType.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Government.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTaxSystem}{TaxSystem}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ addGovernment(\mbox{\hyperlink{classGovernment}{Government}}*\ gov);}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ addIncomeTaxBuilding(\mbox{\hyperlink{classBuilding}{Building}}*\ building);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ addPropertyTaxBuilding(\mbox{\hyperlink{classBuilding}{Building}}*\ building);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ addSalesTaxBuilding(\mbox{\hyperlink{classBuilding}{Building}}*\ building);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ addVATTaxPayer(\mbox{\hyperlink{classCitizen}{Citizen}}*\ citizen);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ removeIncomeTaxBuilding(\mbox{\hyperlink{classBuilding}{Building}}*\ building);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ removePropertyTaxBuilding(\mbox{\hyperlink{classBuilding}{Building}}*\ building);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ removeSalesTaxBuilding(\mbox{\hyperlink{classBuilding}{Building}}*\ building);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ removeVATTaxPayer(\mbox{\hyperlink{classCitizen}{Citizen}}*\ citizen);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ updateTaxRate(\textcolor{keywordtype}{char}\ cType,\ \textcolor{keywordtype}{double}\ rate);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ collectTaxes(\mbox{\hyperlink{classBuilding}{Building}}*\ building,\ \textcolor{keywordtype}{char}\ taxType);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ setTax(\textcolor{keywordtype}{double}\ rate,\ \textcolor{keywordtype}{char}\ taxType);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ checkImpact();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ addTaxRate(\mbox{\hyperlink{classTaxType}{TaxType}}*\ tax);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ removeTaxRate(\mbox{\hyperlink{classTaxType}{TaxType}}*\ taxType);}
+\DoxyCodeLine{00031\ \ \ \ \ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classGovernment}{Government}}*\ government;}
+\DoxyCodeLine{00034\ \ \ \ \ std::vector<Building*>\ incomeTaxbuildings;}
+\DoxyCodeLine{00035\ \ \ \ \ std::vector<Building*>\ propertyTaxbuildings;}
+\DoxyCodeLine{00036\ \ \ \ \ std::vector<Building*>\ salesTaxbuildings;}
+\DoxyCodeLine{00037\ \ \ \ \ std::vector<Citizen*>\ vatTaxpayers;}
+\DoxyCodeLine{00038\ \ \ \ \ std::map<char,\ TaxType*>\ taxRates;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{float}\ totalTaxCollected\ =\ 0.0;}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TAXSYSTEM\_H}}
+
+\end{DoxyCode}

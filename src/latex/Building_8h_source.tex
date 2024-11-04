@@ -1,0 +1,71 @@
+\doxysection{Building.\+h}
+\hypertarget{Building_8h_source}{}\label{Building_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BUILDING\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BUILDING\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Jobs.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBuilding}{Building}}\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00012\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{float}\ area;}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ floors;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ capacity;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{float}\ citizenSatisfaction;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{float}\ economicGrowth;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{float}\ resourceConsumption;}
+\DoxyCodeLine{00019\ \ \ \ \ std::vector<std::shared\_ptr<Jobs>>\ jobs;\ \ \textcolor{comment}{//\ Collection\ of\ jobs\ as\ shared\ pointers}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ Main\ constructor\ for\ setting\ attributes\ directly}}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classBuilding}{Building}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{float}\ area,\ \textcolor{keywordtype}{int}\ floors,\ \textcolor{keywordtype}{int}\ capacity,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ satisfactionImpact,\ \textcolor{keywordtype}{float}\ growthImpact,\ \textcolor{keywordtype}{float}\ consumption);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Alternative\ constructor\ using\ an\ integer\ parameter,\ potentially\ for\ Builder\ pattern\ integration}}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{classBuilding}{Building}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classBuilder}{Builder}});}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ Setters\ and\ getters}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ setName(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00031\ \ \ \ \ std::string\ getName()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ construct()\ =\ 0;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classBuilding}{\string~Building}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{float}\ getSatisfaction()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{float}\ getEconomicGrowth()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{float}\ getResourceConsumption()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ updateImpacts()\ =\ 0;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ getType()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ Job\ management\ methods}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ addJob(std::shared\_ptr<Jobs>\ job);\ \ \textcolor{comment}{//\ Adds\ a\ job\ to\ the\ building}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ listJobs()\ \textcolor{keyword}{const};\ \ \textcolor{comment}{//\ Lists\ all\ jobs\ in\ the\ building}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ hireEmployee(\textcolor{keyword}{const}\ std::string\&\ jobTitle);\ \ \textcolor{comment}{//\ Hires\ an\ employee\ for\ a\ job\ if\ available}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ releaseEmployee(\textcolor{keyword}{const}\ std::string\&\ jobTitle);\ \ \textcolor{comment}{//\ Releases\ an\ employee\ from\ a\ job}}
+\DoxyCodeLine{00048\ \ \ \ \ std::shared\_ptr<Jobs>\ getAvailableJob();\ \ \textcolor{comment}{//\ Provides\ access\ to\ an\ available\ job}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ displayJobInfo(\textcolor{keyword}{const}\ std::string\&\ jobTitle)\ \textcolor{keyword}{const};\ \ \textcolor{comment}{//\ Displays\ job\ information}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::shared\_ptr<Jobs>>\&\ getJobs()\ \textcolor{keyword}{const};\ \ \textcolor{comment}{//\ Returns\ the\ job\ list\ as\ a\ const\ reference}}
+\DoxyCodeLine{00052\ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ Collect\ taxes\ from\ the\ building}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ payTaxes(\mbox{\hyperlink{classTaxType}{TaxType}}*\ taxType)\ =\ 0;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//\ Undo\ collecting\ taxes\ from\ the\ building}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ undoCollectTaxes()\ =\ 0;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ calculateSatisfactionImpact()\ =\ 0;}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ calculateEconomicImpact()\ =\ 0;}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ calculateResourceConsumption()\ =\ 0;}
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BUILDING\_H}}
+\DoxyCodeLine{00066\ }
+
+\end{DoxyCode}
