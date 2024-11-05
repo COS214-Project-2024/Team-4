@@ -71,6 +71,7 @@ public:
         while (true) {
             displayMainMenu();
             std::cin >> choice;
+            std::cin.ignore();
 
             switch (choice) {
                 case 1:
@@ -206,173 +207,176 @@ public:
 
 
     void addTransportation() {
-        int choice;
-        std::cout << "Choose transportation type:\n1. Bus\n2. Train\n3. Taxi\n4. Highway\n5. Inside Road\n6. Freight Train\n7. Commercial Airport\n8. Cargo Airport\n";
-        std::cin >> choice;
+    int choice;
+    std::cout << "Choose transportation type:\n1. Bus\n2. Train\n3. Taxi\n4. Highway\n5. Inside Road\n6. Freight Train\n7. Commercial Airport\n8. Cargo Airport\n";
+    std::cin >> choice;
+    std::cin.ignore();  // Clear the newline character after reading an integer
 
-        bool success = false;
-        switch (choice) {
-            case 1: {
-                char state = 'N';
-                std::string route;
-                int busNumber, capacity;
-                std::cout << "Enter route: ";
-                std::cin >> route;
-                std::cout << "Enter bus number: ";
-                std::cin >> busNumber;
-                std::cout << "Enter capacity: ";
-                std::cin >> capacity;
-                success = transportManager.createBus(state, route, busNumber, capacity);
-                break;
-            }
-            case 2: {
-                char state = 'P';
-                std::string line;
-                std::cout << "Enter train line: ";
-                std::cin >> line;
-                success = transportManager.createPassengerTrain(state, line);
-                break;
-            }
-            case 3: {
-                char state = 'N';
-                std::string route, taxiCompany;
-                int taxiNumber;
-                std::cout << "Enter route: ";
-                std::cin >> route;
-                std::cout << "Enter taxi company: ";
-                std::cin >> taxiCompany;
-                std::cout << "Enter taxi number: ";
-                std::cin >> taxiNumber;
-                success = transportManager.createTaxi(state, route, taxiCompany, taxiNumber);
-                break;
-            }
-            case 4: {
-                char state = 'N';
-                std::string roadName;
-                float speedLimit;
-                std::cout << "Enter highway name: ";
-                std::cin >> roadName;
-                std::cout << "Enter speed limit: ";
-                std::cin >> speedLimit;
-                success = transportManager.createHighway(state, roadName, speedLimit);
-                break;
-            }
-            case 5: {
-                char state = 'N';
-                std::string roadName;
-                float avgStopTime;
-                std::cout << "Enter road name: ";
-                std::cin >> roadName;
-                std::cout << "Enter average stop time: ";
-                std::cin >> avgStopTime;
-                success = transportManager.createInsideRoad(state, roadName, avgStopTime);
-                break;
-            }
-            case 6: {
-                char state = 'N';
-                std::string line;
-                float weight, length;
-                std::cout << "Enter freight train line: ";
-                std::cin >> line;
-                std::cout << "Enter train weight: ";
-                std::cin >> weight;
-                std::cout << "Enter train length: ";
-                std::cin >> length;
-                success = transportManager.createFreightTrain(state, line, weight, length);
-                break;
-            }
-            case 7: {
-                char state = 'L';
-                std::string name;
-                std::cout << "Enter commercial airport name: ";
-                std::cin >> name;
-                success = transportManager.createComercialAirport(state, name);
-                break;
-            }
-            case 8: {
-                char state = 'P';
-                std::string name;
-                std::cout << "Enter cargo airport name: ";
-                std::cin >> name;
-                success = transportManager.createCargoAirport(state, name);
-                break;
-            }
-            default:
-                std::cout << "Invalid option.\n";
-                return;
+    bool success = false;
+    switch (choice) {
+        case 1: {
+            char state = 'N';
+            std::string route;
+            int busNumber, capacity;
+            std::cout << "Enter route: ";
+            std::getline(std::cin, route);
+            std::cout << "Enter bus number: ";
+            std::cin >> busNumber;
+            std::cin.ignore();
+            std::cout << "Enter capacity: ";
+            std::cin >> capacity;
+            std::cin.ignore();
+            success = transportManager.createBus(state, route, busNumber, capacity);
+            break;
         }
-
-        std::cout << (success ? "Transportation added successfully.\n" : "Failed to add transportation.\n");
-
-        size_t transportCount = 0;
-        while (transportManager.getTransportation(transportCount) != nullptr) {
-            transportCount++;
+        case 2: {
+            char state = 'P';
+            std::string line;
+            std::cout << "Enter train line: ";
+            std::getline(std::cin, line);
+            success = transportManager.createPassengerTrain(state, line);
+            break;
         }
-        std::cout << "Total transportation elements in TransportManager: " << transportCount << "\n";
+        case 3: {
+            char state = 'N';
+            std::string route, taxiCompany;
+            int taxiNumber;
+            std::cout << "Enter route: ";
+            std::getline(std::cin, route);
+            std::cout << "Enter taxi company: ";
+            std::getline(std::cin, taxiCompany);
+            std::cout << "Enter taxi number: ";
+            std::cin >> taxiNumber;
+            std::cin.ignore();
+            success = transportManager.createTaxi(state, route, taxiCompany, taxiNumber);
+            break;
+        }
+        case 4: {
+            char state = 'N';
+            std::string roadName;
+            float speedLimit;
+            std::cout << "Enter highway name: ";
+            std::getline(std::cin, roadName);
+            std::cout << "Enter speed limit: ";
+            std::cin >> speedLimit;
+            std::cin.ignore();
+            success = transportManager.createHighway(state, roadName, speedLimit);
+            break;
+        }
+        case 5: {
+            char state = 'N';
+            std::string roadName;
+            float avgStopTime;
+            std::cout << "Enter road name: ";
+            std::getline(std::cin, roadName);
+            std::cout << "Enter average stop time: ";
+            std::cin >> avgStopTime;
+            std::cin.ignore();
+            success = transportManager.createInsideRoad(state, roadName, avgStopTime);
+            break;
+        }
+        case 6: {
+            char state = 'N';
+            std::string line;
+            float weight, length;
+            std::cout << "Enter freight train line: ";
+            std::getline(std::cin, line);
+            std::cout << "Enter train weight: ";
+            std::cin >> weight;
+            std::cin.ignore();
+            std::cout << "Enter train length: ";
+            std::cin >> length;
+            std::cin.ignore();
+            success = transportManager.createFreightTrain(state, line, weight, length);
+            break;
+        }
+        case 7: {
+            char state = 'L';
+            std::string name;
+            std::cout << "Enter commercial airport name: ";
+            std::getline(std::cin, name);
+            success = transportManager.createComercialAirport(state, name);
+            break;
+        }
+        case 8: {
+            char state = 'P';
+            std::string name;
+            std::cout << "Enter cargo airport name: ";
+            std::getline(std::cin, name);
+            success = transportManager.createCargoAirport(state, name);
+            break;
+        }
+        default:
+            std::cout << "Invalid option.\n";
+            return;
     }
+
+    std::cout << (success ? "Transportation added successfully.\n" : "Failed to add transportation.\n");
+
+    size_t transportCount = 0;
+    while (transportManager.getTransportation(transportCount) != nullptr) {
+        transportCount++;
+    }
+    std::cout << "Total transportation elements in TransportManager: " << transportCount << "\n";
+}
 
 
     void setGovernmentPolicies() {
-        int choice;
-        std::cout << "Choose a government policy to set:\n";
-        std::cout << "1. Set Tax Rate\n";
-        std::cout << "2. Enforce Policy\n";
-        std::cout << "3. Allocate Budget\n";
-        std::cout << "Enter your choice: ";
-        std::cin >> choice;
+    int choice;
+    std::cout << "Choose a government policy to set:\n";
+    std::cout << "1. Set Tax Rate\n";
+    std::cout << "2. Enforce Policy\n";
+    std::cout << "3. Allocate Budget\n";
+    std::cout << "Enter your choice: ";
+    std::cin >> choice;
+    std::cin.ignore();
 
-        switch (choice) {
-            case 1: {
-                // Set Tax Rate
-                float taxRate;
-                std::cout << "Set a new tax rate (0-100%): ";
-                std::cin >> taxRate;
-
-                SetTaxCommand setTaxCommand(&government, taxRate);
-                setTaxCommand.execute();
-                std::cout << "Tax rate updated to " << taxRate << "% using SetTaxCommand.\n";
-                break;
-            }
-            case 2: {
-                // Enforce Policy
-                std::string policyName, policyPriority;
-                std::cout << "Enter policy name: ";
-                std::cin.ignore();
-                std::getline(std::cin, policyName);
-                std::cout << "Enter policy priority (High, Medium, Low): ";
-                std::getline(std::cin, policyPriority);
-
-                Policy policy(policyName, policyPriority);
-                EnforcePolicyCommand enforcePolicyCommand(&government, policy);
-                enforcePolicyCommand.execute();
-                std::cout << "Policy \"" << policyName << "\" enforced with priority: " << policyPriority << ".\n";
-                break;
-            }
-            case 3: {
-                // Allocate Budget
-                std::string serviceName;
-                double budgetAmount;
-                std::cout << "Enter service name to allocate budget: ";
-                std::cin.ignore();
-                std::getline(std::cin, serviceName);
-                std::cout << "Enter budget amount: ";
-                std::cin >> budgetAmount;
-
-                CityService cityService(serviceName, budgetAmount);
-                AllocateBudgetCommand allocateBudgetCommand(&government, cityService, budgetAmount);
-                allocateBudgetCommand.execute();
-                std::cout << "Budget of " << budgetAmount << " allocated to " << serviceName << ".\n";
-                break;
-            }
-            default:
-                std::cout << "Invalid option.\n";
+    switch (choice) {
+        case 1: {
+            float taxRate;
+            std::cout << "Set a new tax rate (0-100%): ";
+            std::cin >> taxRate;
+            SetTaxCommand setTaxCommand(&government, taxRate);
+            setTaxCommand.execute();
+            std::cout << "Tax rate updated to " << taxRate << "% using SetTaxCommand.\n";
+            break;
         }
+        case 2: {
+            std::string policyName, policyPriority;
+            std::cout << "Enter policy name: ";
+            std::getline(std::cin, policyName);
+            std::cout << "Enter policy priority (High, Medium, Low): ";
+            std::getline(std::cin, policyPriority);
+            Policy policy(policyName, policyPriority);
+            EnforcePolicyCommand enforcePolicyCommand(&government, policy);
+            enforcePolicyCommand.execute();
+            std::cout << "Policy \"" << policyName << "\" enforced with priority: " << policyPriority << ".\n";
+            break;
+        }
+        case 3: {
+            std::string serviceName;
+            double budgetAmount;
+            std::cout << "Enter service name to allocate budget: ";
+            std::getline(std::cin, serviceName);
+            std::cout << "Enter budget amount: ";
+            std::cin >> budgetAmount;
+            CityService cityService(serviceName, budgetAmount);
+            AllocateBudgetCommand allocateBudgetCommand(&government, cityService, budgetAmount);
+            allocateBudgetCommand.execute();
+            std::cout << "Budget of " << budgetAmount << " allocated to " << serviceName << ".\n";
+            break;
+        }
+        default:
+            std::cout << "Invalid option.\n";
     }
+}
+
 
     void manageResources() {
         int resourceChoice, quantity;
         std::cout << "Choose a resource to manage:\n1. Water\n2. Power\n";
         std::cin >> resourceChoice;
+        std::cin.ignore();
 
         ResourceType resourceType = (resourceChoice == 1) ? ResourceType::Water : ResourceType::Power;
         Resource* resource = resourceManager.getResource(resourceType);
@@ -380,6 +384,7 @@ public:
         if (resource) {
             std::cout << "Enter quantity to allocate (positive) or release (negative): ";
             std::cin >> quantity;
+            std::cin.ignore();
 
             if (quantity > 0) {
                 bool success = resourceManager.allocateResources(resourceType, quantity);
@@ -415,6 +420,7 @@ public:
             std::cout << "3. Assign Job to Citizen\n";
             std::cout << "4. Return to Main Menu\n";
             std::cin >> choice;
+            std::cin.ignore();
 
             switch (choice) {
                 case 1:
@@ -439,10 +445,13 @@ public:
         int age;
         std::cout << "Enter name: ";
         std::cin >> name;
+        std::cin.ignore();
         std::cout << "Enter age: ";
         std::cin >> age;
+        std::cin.ignore();
         std::cout << "Enter gender (M/F): ";
         std::cin >> gender;
+        std::cin.ignore();
 
         if (gender == "M" || gender == "m") {
             citizens.push_back(std::make_shared<MaleCitizen>(name, age));
@@ -464,39 +473,53 @@ public:
     }
 
     void assignJobToCitizen() {
-        std::string citizenName, jobTitle;
-        std::cout << "Enter citizen name: ";
-        std::cin >> citizenName;
-        std::cout << "Enter job title: ";
-        std::cin >> jobTitle;
+    std::string citizenName, jobTitle;
+    std::cout << "Enter citizen name: ";
+    std::cin.ignore();
+    std::getline(std::cin, citizenName);
+    std::cout << "Enter job title: ";
+    std::getline(std::cin, jobTitle);
 
-        auto citizen = findCitizen(citizenName);
-        auto job = findJob(jobTitle);
+    auto citizen = findCitizen(citizenName);
+    auto job = findJob(jobTitle);
 
-        if (citizen && job && !job->isOccupied()) {
-            citizen->setJob(job);
-            citizen->setEmployed(true);
-            citizen->setJobTitle(job->getTitle());
-            job->hireEmployee();
-            std::cout << "Job assigned successfully!\n";
-        } else {
-            std::cout << "Could not assign job. Either job is filled or citizen not found.\n";
-        }
+    if (citizen && job && !job->isOccupied()) {
+        citizen->setJob(job);
+        citizen->setEmployed(true);
+        citizen->setJobTitle(job->getTitle());
+        job->hireEmployee();
+        std::cout << "Job assigned successfully to " << citizenName << "!\n";
+    } else {
+        std::cout << "Could not assign job. Either job is filled or citizen not found.\n";
     }
+}
+
+
 
     std::shared_ptr<Citizen> findCitizen(const std::string& name) const {
+        std::cout << "Searching for citizen: " << name << std::endl;
         for (const auto& citizen : citizens) {
-            if (citizen->getName() == name) return citizen;
+            if (citizen->getName() == name) {
+                std::cout << "Citizen found: " << name << std::endl;
+                return citizen;
+            }
         }
+        std::cout << "Citizen not found: " << name << std::endl;
         return nullptr;
     }
 
     std::shared_ptr<Jobs> findJob(const std::string& title) const {
+        std::cout << "Searching for job: " << title << std::endl;
         for (const auto& job : jobs) {
-            if (job->getTitle() == title) return job;
+            if (job->getTitle() == title) {
+                std::cout << "Job found: " << title << std::endl;
+                return job;
+            }
         }
+        std::cout << "Job not found: " << title << std::endl;
         return nullptr;
     }
+
 
     // Job Management
     void jobManagementMenu() {
@@ -507,6 +530,7 @@ public:
             std::cout << "2. View Jobs\n";
             std::cout << "3. Return to Main Menu\n";
             std::cin >> choice;
+            std::cin.ignore();
 
             switch (choice) {
                 case 1:
@@ -528,7 +552,9 @@ public:
         double salary;
         std::cout << "Enter job title: ";
         std::cin >> title;
+        std::cin.ignore();
         std::cout << "Enter job salary: ";
+        std::cin.ignore();
         std::cin >> salary;
 
         jobs.push_back(std::make_shared<Jobs>(title, salary));
@@ -551,6 +577,7 @@ public:
             std::cout << "2. View Buildings\n";
             std::cout << "3. Return to Main Menu\n";
             std::cin >> choice;
+            std::cin.ignore();
 
             switch (choice) {
                 case 1:
@@ -571,6 +598,7 @@ public:
         int choice;
         std::cout << "\nChoose building type:\n1. Residential\n2. Commercial\n3. Industrial\n4. Landmark\n";
         std::cin >> choice;
+        std::cin.ignore();
 
         switch (choice) {
             case 1: {
@@ -649,6 +677,7 @@ public:
         std::cout << "3. Return to Main Menu\n";
         std::cout << "Enter your choice: ";
         std::cin >> choice;
+        std::cin.ignore();
 
         switch (choice) {
             case 1: {
@@ -665,6 +694,7 @@ public:
                 std::getline(std::cin, serviceName);
                 std::cout << "Enter the budget amount to allocate: ";
                 std::cin >> amount;
+                std::cin.ignore();
 
                 if (amount > resourceManager.getBudget()) {
                     std::cout << "Insufficient budget. Current Budget: " << resourceManager.getBudget() << "\n";
