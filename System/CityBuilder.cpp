@@ -7,6 +7,9 @@
 #include "Citizen.h"
 #include "Jobs.h"
 #include "Income.h"
+#include "Property.h"
+#include "Building.h"
+#include "Sales.h"
 #include "Director.h"
 #include "CommercialBuildingBuilder.h"
 #include "IndustrialBuildingBuilder.h"
@@ -24,11 +27,15 @@
 #include "AllocateBudgetCommand.h"
 #include "EnforcePolicyCommand.h"
 #include "CityTraverser.h"
+#include "TaxSatisfactionStrategy.h"
+#include "CitizenSatisfactionObserver.h"
+#include "PopulationManager.h"
 
 BuildingManager buildingManager(std::vector<std::shared_ptr<Building>>{});
 ResourceManager resourceManager(10000); // Initial budget
 Government government("City Government");
 TransportManager transportManager;
+PopulationManager populationManager;
 
 // Main class for the TUI
 class CitySimulationUI {
