@@ -234,7 +234,7 @@ public:
                 break;
             }
             case 3: {
-                char state = 'T';
+                char state = 'N';
                 std::string route, taxiCompany;
                 int taxiNumber;
                 std::cout << "Enter route: ";
@@ -247,7 +247,7 @@ public:
                 break;
             }
             case 4: {
-                char state = 'H';
+                char state = 'N';
                 std::string roadName;
                 float speedLimit;
                 std::cout << "Enter highway name: ";
@@ -258,7 +258,7 @@ public:
                 break;
             }
             case 5: {
-                char state = 'I';
+                char state = 'N';
                 std::string roadName;
                 float avgStopTime;
                 std::cout << "Enter road name: ";
@@ -269,7 +269,7 @@ public:
                 break;
             }
             case 6: {
-                char state = 'F';
+                char state = 'N';
                 std::string line;
                 float weight, length;
                 std::cout << "Enter freight train line: ";
@@ -282,7 +282,7 @@ public:
                 break;
             }
             case 7: {
-                char state = 'A';
+                char state = 'L';
                 std::string name;
                 std::cout << "Enter commercial airport name: ";
                 std::cin >> name;
@@ -290,7 +290,7 @@ public:
                 break;
             }
             case 8: {
-                char state = 'C';
+                char state = 'P';
                 std::string name;
                 std::cout << "Enter cargo airport name: ";
                 std::cin >> name;

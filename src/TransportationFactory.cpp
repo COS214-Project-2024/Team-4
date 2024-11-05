@@ -9,7 +9,7 @@ Transportation* TransportationFactory::createHighway(char state, std::string roa
         return nullptr;
     }
 
-    if(state != 'P' || state != 'N' || state != 'L'){
+    if(state != 'P' && state != 'N' && state != 'L'){
         return nullptr;
     }
 
@@ -25,7 +25,7 @@ Transportation* TransportationFactory::createInsideRoad(char state, std::string 
         return nullptr;
     }
 
-    if(state != 'P' || state != 'N' || state != 'L'){
+    if(state != 'P' && state != 'N' && state != 'L'){
         return nullptr;
     }
 
@@ -41,7 +41,7 @@ Transportation* TransportationFactory::createBus(char state, std::string route, 
         return nullptr;
     }
 
-    if(state != 'P' || state != 'N' || state != 'L'){
+    if(state != 'P' && state != 'N' && state != 'L'){
         return nullptr;
     }
 
@@ -57,7 +57,7 @@ Transportation* TransportationFactory::createTaxi(char state, std::string route,
         return nullptr;
     }
 
-    if(state != 'P' || state != 'N' || state != 'L'){
+    if(state != 'P' && state != 'N' && state != 'L'){
         return nullptr;
     }
 
@@ -70,7 +70,7 @@ Transportation* TransportationFactory::createPassengerTrain(char state, std::str
         return nullptr;
     }
 
-    if(state != 'P' || state != 'N' || state != 'L'){
+    if(state != 'P' && state != 'N' && state != 'L'){
         return nullptr;
     }
 
@@ -86,7 +86,7 @@ Transportation* TransportationFactory::createFreightTrain(char state, std::strin
         return nullptr;
     }
 
-    if(state != 'P' || state != 'N' || state != 'L'){
+    if(state != 'P' && state != 'N' && state != 'L'){
         return nullptr;
     }
 
@@ -100,7 +100,7 @@ Transportation* TransportationFactory::createComercialAirport(char state, std::s
         return nullptr;
     }
 
-    if(state != 'P' || state != 'N' || state != 'L'){
+    if(state != 'P' && state != 'N' && state != 'L'){
         return nullptr;
     }
 
@@ -112,7 +112,7 @@ Transportation* TransportationFactory::createCargoAirport(char state, std::strin
         return nullptr;
     }
 
-    if(state != 'P' || state != 'N' || state != 'L'){
+    if(state != 'P' && state != 'N' && state != 'L'){
         return nullptr;
     }
 
