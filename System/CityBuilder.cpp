@@ -119,50 +119,35 @@ public:
     }
 
     void displayCityMap() {
-        std::vector<std::vector<char>> cityGrid(10, std::vector<char>(20, ' ')); // 10x20 grid with empty spaces
+        std::vector<std::vector<char>> cityGrid(10, std::vector<char>(20, ' '));
 
         size_t index = 0;
         Transportation* transport;
         while ((transport = transportManager.getTransportation(index)) != nullptr) {
             char symbol;
-            
-            if (dynamic_cast<Highway*>(transport)) {
-                symbol = 'H';  // Highway
-            } else if (dynamic_cast<InsideRoad*>(transport)) {
-                symbol = 'I';  // Inside road
-            } else if (dynamic_cast<Bus*>(transport)) {
-                symbol = 'B';  // Bus
-            } else if (dynamic_cast<Taxi*>(transport)) {
-                symbol = 'T';  // Taxi
-            } else if (dynamic_cast<PassengerTrain*>(transport)) {
-                symbol = 'P';  // Passenger Train
-            } else if (dynamic_cast<FreightTrain*>(transport)) {
-                symbol = 'F';  // Freight Train
-            } else if (dynamic_cast<ComercialAirport*>(transport)) {
-                symbol = 'A';  // Commercial Airport
-            } else if (dynamic_cast<CargoAirport*>(transport)) {
-                symbol = 'C';  // Cargo Airport
-            } else {
-                symbol = '?';  // Unknown type
-            }
+
+            if (dynamic_cast<Highway*>(transport)) symbol = 'H';
+            else if (dynamic_cast<InsideRoad*>(transport)) symbol = 'I';
+            else if (dynamic_cast<Bus*>(transport)) symbol = 'B';
+            else if (dynamic_cast<Taxi*>(transport)) symbol = 'T';
+            else if (dynamic_cast<PassengerTrain*>(transport)) symbol = 'P';
+            else if (dynamic_cast<FreightTrain*>(transport)) symbol = 'F';
+            else if (dynamic_cast<ComercialAirport*>(transport)) symbol = 'A';
+            else if (dynamic_cast<CargoAirport*>(transport)) symbol = 'C';
+            else symbol = '?';
 
             int row = index % 10;
             int col = (index * 2) % 20;
             cityGrid[row][col] = symbol;
-
             ++index;
         }
 
-        if (index == 0) {
-            std::cout << "No transportation elements added to display on the map.\n";
-        } else {
-            std::cout << "City Transportation Map:\n";
-            for (const auto& row : cityGrid) {
-                for (const char cell : row) {
-                    std::cout << std::setw(2) << cell;
-                }
-                std::cout << '\n';
+        std::cout << (index == 0 ? "No transportation elements added.\n" : "City Transportation Map:\n");
+        for (const auto& row : cityGrid) {
+            for (const char cell : row) {
+                std::cout << std::setw(2) << cell;
             }
+            std::cout << '\n';
         }
         std::cout << "Legend: H=Highway, I=InsideRoad, B=Bus, T=Taxi, P=PassengerTrain, F=FreightTrain, A=ComercialAirport, C=CargoAirport\n";
     }
@@ -194,43 +179,122 @@ public:
         std::cout << "\nCity Overview:\n";
         std::cout << "Number of buildings: " << buildingManager.getBuildings().size() << "\n";
         std::cout << "Current budget: " << resourceManager.getBudget() << "\n";
-        std::cout << "Water resource: " << (waterResource ? waterResource->getQuantity() : 0) << "\n";
-        std::cout << "Power resource: " << (powerResource ? powerResource->getQuantity() : 0) << "\n";
+        std::cout << "Water resource available: " << (waterResource ? waterResource->getQuantity() : 0) << "\n";
+        std::cout << "Power resource available: " << (powerResource ? powerResource->getQuantity() : 0) << "\n";
 
         size_t index = 0;
         Transportation* transport;
         std::cout << "Transportation options:\n";
         while ((transport = transportManager.getTransportation(index)) != nullptr) {
-            std::cout << "- Transportation " << index + 1 << ": " << transport->getType() << "\n";
+            std::string transportType;
+
+            if (dynamic_cast<Highway*>(transport)) transportType = "Highway";
+            else if (dynamic_cast<InsideRoad*>(transport)) transportType = "Inside Road";
+            else if (dynamic_cast<Bus*>(transport)) transportType = "Bus";
+            else if (dynamic_cast<Taxi*>(transport)) transportType = "Taxi";
+            else if (dynamic_cast<PassengerTrain*>(transport)) transportType = "Passenger Train";
+            else if (dynamic_cast<FreightTrain*>(transport)) transportType = "Freight Train";
+            else if (dynamic_cast<ComercialAirport*>(transport)) transportType = "Commercial Airport";
+            else if (dynamic_cast<CargoAirport*>(transport)) transportType = "Cargo Airport";
+            else transportType = "Unknown";
+
+            std::cout << "- Transportation " << index + 1 << ": " << transportType << "\n";
             ++index;
         }
         std::cout << "Total transportation options: " << index << "\n";
     }
 
+
     void addTransportation() {
         int choice;
-        std::cout << "Choose transportation type:\n1. Bus\n2. Train\n3. Taxi\n4. Highway\n";
+        std::cout << "Choose transportation type:\n1. Bus\n2. Train\n3. Taxi\n4. Highway\n5. Inside Road\n6. Freight Train\n7. Commercial Airport\n8. Cargo Airport\n";
         std::cin >> choice;
 
+        bool success = false;
         switch (choice) {
             case 1: {
-                transportManager.createBus('N', "City Bus", 50, 25);
-                std::cout << "Bus added.\n";
+                char state = 'N';
+                std::string route;
+                int busNumber, capacity;
+                std::cout << "Enter route: ";
+                std::cin >> route;
+                std::cout << "Enter bus number: ";
+                std::cin >> busNumber;
+                std::cout << "Enter capacity: ";
+                std::cin >> capacity;
+                success = transportManager.createBus(state, route, busNumber, capacity);
                 break;
             }
             case 2: {
-                transportManager.createPassengerTrain('P', "Metro Train");
-                std::cout << "Train added.\n";
+                char state = 'P';
+                std::string line;
+                std::cout << "Enter train line: ";
+                std::cin >> line;
+                success = transportManager.createPassengerTrain(state, line);
                 break;
             }
             case 3: {
-                transportManager.createTaxi('N', "City Taxi", "Company_1", 2);
-                std::cout << "Taxi added.\n";
+                char state = 'T';
+                std::string route, taxiCompany;
+                int taxiNumber;
+                std::cout << "Enter route: ";
+                std::cin >> route;
+                std::cout << "Enter taxi company: ";
+                std::cin >> taxiCompany;
+                std::cout << "Enter taxi number: ";
+                std::cin >> taxiNumber;
+                success = transportManager.createTaxi(state, route, taxiCompany, taxiNumber);
                 break;
             }
             case 4: {
-                transportManager.createHighway('L', "Main Highway", 200);
-                std::cout << "Highway added.\n";
+                char state = 'H';
+                std::string roadName;
+                float speedLimit;
+                std::cout << "Enter highway name: ";
+                std::cin >> roadName;
+                std::cout << "Enter speed limit: ";
+                std::cin >> speedLimit;
+                success = transportManager.createHighway(state, roadName, speedLimit);
+                break;
+            }
+            case 5: {
+                char state = 'I';
+                std::string roadName;
+                float avgStopTime;
+                std::cout << "Enter road name: ";
+                std::cin >> roadName;
+                std::cout << "Enter average stop time: ";
+                std::cin >> avgStopTime;
+                success = transportManager.createInsideRoad(state, roadName, avgStopTime);
+                break;
+            }
+            case 6: {
+                char state = 'F';
+                std::string line;
+                float weight, length;
+                std::cout << "Enter freight train line: ";
+                std::cin >> line;
+                std::cout << "Enter train weight: ";
+                std::cin >> weight;
+                std::cout << "Enter train length: ";
+                std::cin >> length;
+                success = transportManager.createFreightTrain(state, line, weight, length);
+                break;
+            }
+            case 7: {
+                char state = 'A';
+                std::string name;
+                std::cout << "Enter commercial airport name: ";
+                std::cin >> name;
+                success = transportManager.createComercialAirport(state, name);
+                break;
+            }
+            case 8: {
+                char state = 'C';
+                std::string name;
+                std::cout << "Enter cargo airport name: ";
+                std::cin >> name;
+                success = transportManager.createCargoAirport(state, name);
                 break;
             }
             default:
@@ -238,13 +302,15 @@ public:
                 return;
         }
 
-        // Debugging output to confirm addition
+        std::cout << (success ? "Transportation added successfully.\n" : "Failed to add transportation.\n");
+
         size_t transportCount = 0;
         while (transportManager.getTransportation(transportCount) != nullptr) {
             transportCount++;
         }
         std::cout << "Total transportation elements in TransportManager: " << transportCount << "\n";
     }
+
 
     void setGovernmentPolicies() {
         int choice;
