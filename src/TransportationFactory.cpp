@@ -1,7 +1,7 @@
 #include "TransportationFactory.h"
 
 Transportation* TransportationFactory::createHighway(char state, std::string roadName, float speedLimit){
-    if(speedLimit < 100){
+    if(speedLimit <= 0){
         return nullptr;
     }
 

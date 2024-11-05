@@ -86,7 +86,7 @@ class ComercialAirport : public Airport {
          * 
          * @return The adjusted commute time as a float.
          */
-        float commuteTime() override;
+        float commuteTime();
 
 };
 

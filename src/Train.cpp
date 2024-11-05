@@ -8,7 +8,7 @@ std::string Train::getLine() {
     return line;
 }
 
-float Train::commuteTime() {
+float Train::calculateCommute() {
     return 5.0 * (1+getTrafficFlow());
     
 }
