@@ -551,10 +551,9 @@ public:
         std::string title;
         double salary;
         std::cout << "Enter job title: ";
-        std::cin >> title;
-        std::cin.ignore();
+        std::cin.ignore();  // Ensure no leftover input interferes
+        std::getline(std::cin, title);  // Use getline to allow multi-word titles
         std::cout << "Enter job salary: ";
-        std::cin.ignore();
         std::cin >> salary;
 
         jobs.push_back(std::make_shared<Jobs>(title, salary));
