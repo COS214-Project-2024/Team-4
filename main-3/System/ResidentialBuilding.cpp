@@ -13,7 +13,7 @@ ResidentialBuilding::ResidentialBuilding(const std::string& name, float area, in
 
 // Get Type of Building
 std::string ResidentialBuilding::getType() const {
-    return bType;
+    return "Residential";
 }
 
 // Update Impacts

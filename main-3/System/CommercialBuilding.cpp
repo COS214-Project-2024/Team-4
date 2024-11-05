@@ -14,7 +14,7 @@ CommercialBuilding::~CommercialBuilding() {
 
 // Get type of building
 std::string CommercialBuilding::getType() const {
-    return this->bType;
+        return "Commercial";
 }
 
 // Update impacts by calculating economic impact, resource consumption, and satisfaction impact

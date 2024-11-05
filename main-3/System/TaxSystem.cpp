@@ -185,3 +185,7 @@ void TaxSystem::checkImpact(Building* building, std::shared_ptr<TaxType> newTaxT
         std::cout << "Building type not supported for impact check.\n";
     }
 }
+
+std::map<char, std::shared_ptr<TaxType>> TaxSystem::getTaxRates() {
+    return taxRates;
+}

@@ -14,7 +14,7 @@ IndustrialBuilding::IndustrialBuilding(const std::string& name, float area, int 
 
 //get type of building
 string IndustrialBuilding::getType() const{
-	return this->bType;
+	return "Industrial";
 }
 
 

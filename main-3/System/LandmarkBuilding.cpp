@@ -14,7 +14,7 @@ LandmarkBuilding::LandmarkBuilding(const std::string& name, float area, int floo
 
 //get type of building
 string LandmarkBuilding::getType()const {
-	return this->bType;
+	return "Landmark";
 }
 
 //update impacts by calculating economic impact, resource consumption and satisfaction impact
