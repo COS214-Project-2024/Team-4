@@ -168,63 +168,23 @@ public:
     }
 
     void displayRoads() {
-        CityTraverser traverser(transportManager.getTransportation(0));
-        int width = 20, height = 10;  // Example grid dimensions
-        std::vector<std::vector<char>> grid(height, std::vector<char>(width, ' '));  // Create an empty grid
+        int x = 0;
+        Transportation *temp = transportManager.getTransportation(x);;
 
-        int x = width / 2, y = height / 2;
+        while(temp != nullptr){
+            if(temp->getType() == 'H'){
+                Highway *H = static_cast<Highway*>(temp);
+                std::cout << H->getRoadName() << std::endl;
 
-        for (size_t i = 0; traverser.getCurrentLayer() != nullptr; ++traverser) {
-            Transportation* currentTransport = *traverser;
-
-            if (currentTransport) {
-                char symbol;
-                if (dynamic_cast<TraverseHighway*>(currentTransport)) {
-                    symbol = '=';  // Represent highway with '='
-                } else if (dynamic_cast<TraverseInsideRoad*>(currentTransport)) {
-                    symbol = '-';  // Represent inside road with '-'
-                } else if (dynamic_cast<TraverseBus*>(currentTransport)) {
-                    symbol = 'B';  // Represent bus with 'B'
-                } else if (dynamic_cast<TraverseTaxi*>(currentTransport)) {
-                    symbol = 'T';  // Represent taxi with 'T'
-                } else if (dynamic_cast<TraverseFreightTrain*>(currentTransport)) {
-                    symbol = 'F';  // Represent freight train with 'F'
-                } else if (dynamic_cast<TraversePassengerTrain*>(currentTransport)) {
-                    symbol = 'P';  // Represent passenger train with 'P'
-                } else if (dynamic_cast<TraverseCargoAirport*>(currentTransport) ||
-                        dynamic_cast<TraverseComercialAirport*>(currentTransport)) {
-                    symbol = 'A';  // Represent airport with 'A'
-                } else {
-                    symbol = '?';  // Unknown transportation type
-                }
-
-                if (x < width && y < height && x >= 0 && y >= 0) {
-                    grid[y][x] = symbol;
-                }
-
-                x += 2;
-                if (x >= width) {
-                    x = 0;
-                    y += 2;
-                }
-
-                if (y >= height) {
-                    break;
-                }
             }
+            else if(temp->getType() == 'I'){
+                InsideRoad *I = static_cast<InsideRoad*>(temp);
+                std::cout << I->getRoadName() << std::endl;
+            }
+            x++;
+            temp = transportManager.getTransportation(x);
         }
 
-        if (traverser.getCurrentLayer() == nullptr) {
-            std::cout << "No roads or transportation to display.\n";
-        } else {
-            std::cout << "\nCity Roads and Transportation Layout:\n";
-            for (const auto& row : grid) {
-                for (char cell : row) {
-                    std::cout << cell << ' ';
-                }
-                std::cout << '\n';
-            }
-        }
     }
 
     void cityOverview() {
