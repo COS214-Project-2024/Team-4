@@ -29,6 +29,7 @@ public:
     void setTax(double rate, char taxType);
     void addSharedTaxRate(std::shared_ptr<TaxType> tax);
     void removeTaxRate(std::shared_ptr<TaxType> taxType);
+  std::map<char, std::shared_ptr<TaxType>> getTaxRates();
 void checkImpact(Building* building, std::shared_ptr<TaxType> newTaxType);
     
 private:
