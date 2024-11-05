@@ -26,7 +26,7 @@
 #include "CityTraverser.h"
 
 BuildingManager buildingManager(std::vector<std::shared_ptr<Building>>{});
-ResourceManager resourceManager(1000); // Initial budget
+ResourceManager resourceManager(10000); // Initial budget
 Government government("City Government");
 TransportManager transportManager;
 
