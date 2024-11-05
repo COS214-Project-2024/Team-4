@@ -33,6 +33,8 @@ TransportManager transportManager;
 // Main class for the TUI
 class CitySimulationUI {
 private:
+std::vector<std::shared_ptr<Building>> resbuildings;
+std::vector<std::shared_ptr<Building>> comBuildings;
     std::vector<std::shared_ptr<Citizen>> citizens;
     std::vector<std::shared_ptr<Jobs>> jobs;
     std::vector<std::unique_ptr<Building>> buildings;
@@ -48,30 +50,29 @@ public:
         resourceManager.addResource(ResourceType::Power, powerResource.get(), 10); // Set cost per unit
     }
     // Main menu display
-    void displayMainMenu() {
-    std::cout << "\n--- City Builder Simulation ---\n";
-    std::cout << "1. Manage Buildings\n";
-    std::cout << "2. Manage Utilities\n";
-    std::cout << "3. Allocate Resources\n";
-    std::cout << "4. Set Government Policies\n";
-    std::cout << "5. Add Transportation\n";
-    std::cout << "6. View City Overview\n";
-    std::cout << "7. Display Roads\n";
-    std::cout << "8. Display City Map\n";
-    std::cout << "9. Citizen Management\n";
-    std::cout << "10. Job Management\n";
-    std::cout << "11. Building Management\n";
-    std::cout << "12. Financial Management\n";
-    std::cout << "13. Exit\n";
-}
+      void displayMainMenu() {
+        std::cout << "\n--- City Builder Simulation ---\n";
+        std::cout << "1. Manage Buildings\n";
+        std::cout << "2. Manage Utilities\n";
+        std::cout << "3. Allocate Resources\n";
+        std::cout << "4. Set Government Policies\n";
+        std::cout << "5. Add Transportation\n";
+        std::cout << "6. View City Overview\n";
+        std::cout << "7. Display Roads\n";
+        std::cout << "8. Display City Map\n";
+        std::cout << "9. Citizen Management\n";
+        std::cout << "10. Job Management\n";
+        std::cout << "11. Building Management\n";
+        std::cout << "12. Financial Management\n";
+        std::cout << "13. Manage Tax System\n";
+        std::cout << "14. Exit\n";
+    }
 
     void run() {
-        initializeResources();
         int choice;
         while (true) {
             displayMainMenu();
             std::cin >> choice;
-            std::cin.ignore();
 
             switch (choice) {
                 case 1:
@@ -111,6 +112,9 @@ public:
                     financialManagementMenu();
                     break;
                 case 13:
+                    manageTaxSystem();
+                    break;
+                case 14:
                     std::cout << "Exiting the simulation.\n";
                     return;
                 default:
@@ -708,6 +712,420 @@ public:
                 return;
             default:
                 std::cout << "Invalid choice. Please try again.\n";
+        }
+    }
+}
+
+void manageTaxSystem() {
+    bool running = true;
+    while (running) {
+        std::cout << "\nTax System Management\n";
+        std::cout << "1. Create Citizen\n";
+        std::cout << "2. Create Residential Building\n";
+        std::cout << "3. Add Citizen to Residential Building\n";
+        std::cout << "4. Set Tax Rates\n";
+        std::cout << "5. Set Citizen Income and Job\n";
+        std::cout << "6. Collect Taxes\n";
+        std::cout << "7. Create Business\n";
+        std::cout << "8. Create Commercial Building\n";
+        std::cout << "9. Add Business to Commercial Building\n";
+        std::cout << "10. Check impact of taxes\n";
+        std::cout << "11. Back to Main Menu\n";
+        std::cout << "Choose an option: ";
+
+        int choice;
+        std::cin >> choice;
+
+        switch (choice) {
+            case 1: {
+                // Create Citizen
+                std::string name;
+                int age;
+                char gender;
+                std::cout << "Enter citizen's name: ";
+                std::cin.ignore();
+                std::getline(std::cin, name);
+                std::cout << "Enter age: ";
+                std::cin >> age;
+                std::cout << "Enter gender (M/F): ";
+                std::cin >> gender;
+
+                std::shared_ptr<Citizen> citizen;
+                if (gender == 'M' || gender == 'm') {
+                    citizen = std::make_shared<MaleCitizen>(name, age);
+                } else if (gender == 'F' || gender == 'f') {
+                    citizen = std::make_shared<FemaleCitizen>(name, age);
+                } else {
+                    std::cout << "Invalid gender input.\n";
+                    break;
+                }
+
+                // Assign satisfaction strategies
+                citizen->addSatisfactionStrategy(std::make_shared<JobSatisfactionStrategy>());
+                citizen->addSatisfactionStrategy(std::make_shared<HousingSatisfactionStrategy>());
+                citizen->addSatisfactionStrategy(std::make_shared<TaxSatisfactionStrategy>());
+
+                // Attach SatisfactionObserver
+                auto satisfactionObserver = std::make_shared<CitizenSatisfactionObserver>();
+                citizen->addObserver(satisfactionObserver.get());
+
+                // Add citizen to population manager
+                populationManager.addCitizen(citizen);
+
+                std::cout << "Citizen " << name << " created and added to population.\n";
+                break;
+            }
+            case 2: {
+                // Create Residential Building
+                ResidentialBuildingBuilder builder;
+                std::string name;
+                float area;
+                int floors, capacity;
+                float citizenSatisfaction, economicGrowth, resourceConsumption;
+
+                std::cout << "Enter building name: ";
+                std::cin.ignore();
+                std::getline(std::cin, name);
+                std::cout << "Enter area: ";
+                std::cin >> area;
+                std::cout << "Enter number of floors: ";
+                std::cin >> floors;
+                std::cout << "Enter capacity: ";
+                std::cin >> capacity;
+                std::cout << "Enter citizen satisfaction impact: ";
+                std::cin >> citizenSatisfaction;
+                std::cout << "Enter economic growth impact: ";
+                std::cin >> economicGrowth;
+                std::cout << "Enter resource consumption: ";
+                std::cin >> resourceConsumption;
+
+                builder.setName(name)
+                       .setArea(area)
+                       .setFloors(floors)
+                       .setCapacity(capacity)
+                       .setCitizenSatisfaction(citizenSatisfaction)
+                       .setEconomicGrowth(economicGrowth)
+                       .setResourceConsumption(resourceConsumption);
+
+                auto residentialBuilding = builder.build();
+                resbuildings.push_back(std::move(residentialBuilding)); // Add to global vector
+                buildingManager.addBuilding(resbuildings.back().get());
+                
+                std::cout << "Residential building " << name << " added.\n";
+                break;
+            }
+            case 3: {
+                // Add Citizen to Residential Building
+                if (populationManager.getCitizens().empty()) {
+                    std::cout << "No citizens available. Please create citizens first.\n";
+                    break;
+                }
+                if (resbuildings.empty()) {
+                    std::cout << "No residential buildings available. Please create buildings first.\n";
+                    break;
+                }
+
+                std::cout << "Available Citizens:\n";
+                int index = 1;
+                for (const auto& citizen : populationManager.getCitizens()) {
+                    std::cout << index++ << ". " << citizen->getName() << "\n";
+                }
+
+                std::cout << "Select a citizen to add: ";
+                int citizenChoice;
+                std::cin >> citizenChoice;
+
+                if (citizenChoice < 1 || citizenChoice > populationManager.getCitizens().size()) {
+                    std::cout << "Invalid citizen choice.\n";
+                    break;
+                }
+
+                std::cout << "Available Residential Buildings:\n";
+                index = 1;
+                for (const auto& building : resbuildings) {
+                    std::cout << index++ << ". " << building->getName() << "\n";
+                }
+
+                std::cout << "Select a building to add the citizen to: ";
+                int buildingChoice;
+                std::cin >> buildingChoice;
+
+                if (buildingChoice < 1 || buildingChoice > resbuildings.size()) {
+                    std::cout << "Invalid building choice.\n";
+                    break;
+                }
+
+                auto citizen = populationManager.getCitizens()[citizenChoice - 1];
+                auto& building = resbuildings[buildingChoice - 1];
+                building->addCitizen(citizen.get());
+                std::cout << "Citizen " << citizen->getName() << " added to " << building->getName() << ".\n";
+                break;
+            }
+        case 4: {
+    // Set Tax Rates
+    double taxRate;
+    std::cout << "Enter new overall tax rate (0-100%): ";
+    std::cin >> taxRate;
+
+    SetTaxCommand setTaxCommand(&government, taxRate);
+    setTaxCommand.execute();
+    std::cout << "Overall tax rate set to " << taxRate << "%.\n";
+
+    char taxType;
+    double rate;
+    std::cout << "Set specific tax rates.\n";
+    std::cout << "Enter tax type (I - Income, P - Property, S - Sales): ";
+    std::cin >> taxType;
+    std::cout << "Enter tax rate for this type (0-100%): ";
+    std::cin >> rate;
+
+    std::shared_ptr<TaxType> tax;
+    if (taxType == 'I' || taxType == 'i') {
+        tax = std::make_shared<Income>(5000, rate / 100.0, 'I');
+    } else if (taxType == 'P' || taxType == 'p') {
+        double municipalLevy, additionalFees;
+        std::cout << "Enter municipal levy: ";
+        std::cin >> municipalLevy;
+        std::cout << "Enter additional fees: ";
+        std::cin >> additionalFees;
+        tax = std::make_shared<Property>(rate / 100.0, municipalLevy, additionalFees);
+    } else if (taxType == 'S' || taxType == 's') {
+        double environmentalLevy, serviceFee;
+        std::cout << "Enter environmental levy: ";
+        std::cin >> environmentalLevy;
+        std::cout << "Enter service fee: ";
+        std::cin >> serviceFee;
+        tax = std::make_shared<Sales>(rate / 100.0, environmentalLevy, serviceFee);
+    } else {
+        std::cout << "Invalid tax type.\n";
+        break;
+    }
+
+    government.getTaxSystem()->addSharedTaxRate(tax);
+    std::cout << "Tax rate for type " << taxType << " set to " << rate << "%.\n";
+    break;
+}
+            case 5: {
+                // Set Citizen Income and Job
+                if (populationManager.getCitizens().empty()) {
+                    std::cout << "No citizens available. Please create citizens first.\n";
+                    break;
+                }
+
+                std::cout << "Available Citizens:\n";
+                int index = 1;
+                for (const auto& citizen : populationManager.getCitizens()) {
+                    std::cout << index++ << ". " << citizen->getName() << "\n";
+                }
+
+                std::cout << "Select a citizen to set income and job: ";
+                int citizenChoice;
+                std::cin >> citizenChoice;
+
+                if (citizenChoice < 1 || citizenChoice > populationManager.getCitizens().size()) {
+                    std::cout << "Invalid citizen choice.\n";
+                    break;
+                }
+
+                double incomeAmount;
+                double taxRate;
+                std::string jobTitle;
+                std::cout << "Enter income amount: ";
+                std::cin >> incomeAmount;
+                std::cout << "Enter income tax rate (0-100%): ";
+                std::cin >> taxRate;
+                std::cout << "Enter job title: ";
+                std::cin.ignore();
+                std::getline(std::cin, jobTitle);
+
+                auto income = std::make_shared<Income>(incomeAmount,taxRate / 100.0,'I');
+                auto citizen = populationManager.getCitizens()[citizenChoice - 1];
+                auto job = std::make_shared<Jobs>(jobTitle, incomeAmount);
+                citizen->setIncome(income);
+                citizen->setJob(job);
+                citizen->setBankBalance(citizen->getBankBalance() + incomeAmount);
+                std::cout << "Income and job set for " << citizen->getName() << ".\n";
+                break;
+            }
+            case 6: {
+                // Collect Taxes
+                if(resbuildings.empty() && comBuildings.empty()){
+                    std::cout << "No buildings available. Please create buildings first.\n";
+                    break;
+                }
+
+                std::cout << "Available ResBuildings:\n";
+                int index = 1;
+                for (const auto& building : resbuildings) {
+                    std::cout << index++ << ". " << building->getName() << " (" << building->getType() << ")\n";
+                }
+                int resBuildingCount = index - 1;
+
+                std::cout << "Available comBuildings:\n";
+                for (const auto& building : comBuildings) {
+                    std::cout << index++ << ". " << building->getName() << " (" << building->getType() << ")\n";
+                }
+
+                std::cout << "Select a building to collect taxes from: ";
+                int buildingChoice;
+                std::cin >> buildingChoice;
+
+                if (buildingChoice < 1 || buildingChoice > resBuildingCount + comBuildings.size()) {
+                    std::cout << "Invalid building choice.\n";
+                    break;
+                }
+
+                char taxType;
+                std::cout << "Enter tax type to collect (I - Income, P - Property, S - Sales): ";
+                std::cin >> taxType;
+
+                std::shared_ptr<Building> building;
+                if (buildingChoice <= resBuildingCount) {
+                    building = resbuildings[buildingChoice - 1];
+                } else {
+                    building = comBuildings[buildingChoice - resBuildingCount - 1];
+                }
+                
+                government.getTaxSystem()->collectTaxes(building.get(), taxType);
+
+                std::cout << "Taxes collected from " << building->getName() << ".\n";
+                break;
+            }
+            case 7: {
+                // Create Business
+                std::string name;
+                double revenue, taxRate;
+                std::cout << "Enter business name: ";
+                std::cin.ignore();
+                std::getline(std::cin, name);
+                std::cout << "Enter revenue: ";
+                std::cin >> revenue;
+                std::cout << "Enter tax rate (0-100%): ";
+                std::cin >> taxRate;
+
+                auto business = std::make_shared<Business>(revenue, taxRate / 100.0, name);
+                std::cout << "Business " << name << " created.\n";
+                // Store business in some collection if needed
+                // For simplicity, we'll add it directly to a building in option 9
+                break;
+            }
+            case 8: {
+                // Create Commercial Building
+                CommercialBuildingBuilder builder;
+                std::string name;
+                float area;
+                int floors, capacity;
+                float citizenSatisfaction, economicGrowth, resourceConsumption;
+
+                std::cout << "Enter building name: ";
+                std::cin.ignore();
+                std::getline(std::cin, name);
+                std::cout << "Enter area: ";
+                std::cin >> area;
+                std::cout << "Enter number of floors: ";
+                std::cin >> floors;
+                std::cout << "Enter capacity: ";
+                std::cin >> capacity;
+                std::cout << "Enter citizen satisfaction impact: ";
+                std::cin >> citizenSatisfaction;
+                std::cout << "Enter economic growth impact: ";
+                std::cin >> economicGrowth;
+                std::cout << "Enter resource consumption: ";
+                std::cin >> resourceConsumption;
+
+                builder.setName(name)
+                       .setArea(area)
+                       .setFloors(floors)
+                       .setCapacity(capacity)
+                       .setCitizenSatisfaction(citizenSatisfaction)
+                       .setEconomicGrowth(economicGrowth)
+                       .setResourceConsumption(resourceConsumption);
+
+                auto commercialBuilding = builder.build();
+                comBuildings.push_back(std::move(commercialBuilding)); // Add to global vector
+                buildingManager.addBuilding(comBuildings.back().get());
+
+                std::cout << "Commercial building " << name << " added.\n";
+                break;
+            }
+            case 9: {
+                // Add Business to Commercial Building
+                if (comBuildings.empty()) {
+                    std::cout << "No commercial buildings available.\n";
+                    break;
+                }
+
+                std::string businessName;
+                double revenue, taxRate;
+                std::cout << "Enter business name: ";
+                std::cin.ignore();
+                std::getline(std::cin, businessName);
+                std::cout << "Enter revenue: ";
+                std::cin >> revenue;
+                std::cout << "Enter tax rate (0-100%): ";
+                std::cin >> taxRate;
+
+                auto business = std::make_shared<Business>(revenue, taxRate / 100.0, businessName);
+
+                std::cout << "Available Commercial Buildings:\n";
+                int index = 1;
+                for (const auto& building : comBuildings) {
+                    std::cout << index++ << ". " << building->getName() << "\n";
+                }
+
+                std::cout << "Select a building to add the business to: ";
+                int buildingChoice;
+                std::cin >> buildingChoice;
+
+                if (buildingChoice < 1 || buildingChoice > comBuildings.size()) {
+                    std::cout << "Invalid building choice.\n";
+                    break;
+                }
+
+                auto building = comBuildings[buildingChoice - 1];
+                building->addBusiness(business);
+                std::cout << "Business " << business->getName() << " added to " << building->getName() << ".\n";
+                break;
+            }
+         case 10: {
+    // Check impact of taxes
+    std::cout << "Checking impact of taxes...\n";
+
+    // Iterate through each tax type in the taxRates map
+    for (const auto& taxRatePair : government.getTaxSystem()->getTaxRates()) {
+        char taxType = taxRatePair.first;
+        std::shared_ptr<TaxType> tax = taxRatePair.second;
+
+        if (taxType == 'I' || taxType == 'i') {
+            // Check impact on residential buildings for income tax
+            for (const auto& building : resbuildings) {
+                government.getTaxSystem()->checkImpact(building.get(), tax);
+            }
+        } else if (taxType == 'P' || taxType == 'p') {
+            // Check impact on residential and commercial buildings for property tax
+            for (const auto& building : resbuildings) {
+                government.getTaxSystem()->checkImpact(building.get(), tax);
+            }
+            for (const auto& building : comBuildings) {
+                government.getTaxSystem()->checkImpact(building.get(), tax);
+            }
+        } else if (taxType == 'S' || taxType == 's') {
+            // Check impact on commercial buildings for sales tax
+            for (const auto& building : comBuildings) {
+                government.getTaxSystem()->checkImpact(building.get(), tax);
+            }
+        } else {
+            std::cout << "Unknown tax type: " << taxType << "\n";
+        }
+    }
+    break;
+}    case 11: {
+                running = false;
+                break;
+            }
+            default:
+                std::cout << "Invalid option.\n";
+                break;
         }
     }
 }
