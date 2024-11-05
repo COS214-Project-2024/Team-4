@@ -72,7 +72,6 @@ public:
         std::cout << "11. Building Management\n";
         std::cout << "12. Financial Management\n";
         std::cout << "13. Manage Tax System\n";
-        std::cout << "14. Exit\n";
     }
 
     void run() {
@@ -121,9 +120,7 @@ public:
                 case 13:
                     manageTaxSystem();
                     break;
-                case 14:
-                    std::cout << "Exiting the simulation.\n";
-                    return;
+                    
                 default:
                     std::cout << "Invalid choice. Try again.\n";
             }
