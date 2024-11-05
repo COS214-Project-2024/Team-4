@@ -29,6 +29,17 @@ class Transportation {
     private:
         TrafficFlow *state; ///< Pointer to the current traffic flow state.
         char type; ///< Type of transportation.
+
+        /**
+         * @brief Pure virtual function to calculate the commute time.
+         * 
+         * This function must be overridden by any derived class to provide
+         * the specific implementation for calculating the commute time.
+         * 
+         * @return float The calculated commute time.
+         */
+        virtual float commuteTime() = 0;
+
     public:
         /**
          * @brief Constructor for the Transportation class.
@@ -40,15 +51,6 @@ class Transportation {
          */
         Transportation(char state, char type);
 
-        /**
-         * @brief Pure virtual function to calculate the commute time.
-         * 
-         * This function must be overridden by any derived class to provide
-         * the specific implementation for calculating the commute time.
-         * 
-         * @return float The calculated commute time.
-         */
-        virtual float commuteTime() = 0;
 
         /**
          * @brief Gets the current traffic flow.

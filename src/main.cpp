@@ -97,7 +97,7 @@ int main() {
     std::cout << "============================GOVT2========================" << std::endl;
     testGOVF1();
     std::cout << "\033[1;32m============================TRANSPORTATION========================\033[0m" << std::endl;
-    // TRANSPORTATION_TEST();
+    TRANSPORTATION_TEST();
     std::cout << "\033[1;32mAll tests completed.\033[0m\n";
   
     return 0;
@@ -554,12 +554,80 @@ void TRANSPORTATION_TEST(){
     transportManager.createPassengerTrain('P', "Train4");
     transportManager.createTaxi('N', "Taxi1", "Company_2", 2);
     transportManager.createComercialAirport('P', "Airport3");
-    transportManager.createCargoAirport('P', "Airport4");
+    transportManager.createCargoAirport('P', "Airport4"); 
 
-    
-    CityTraverser it(transportManager.getTransportation(0));
+    std::cout << BOLD << BG_GREEN << "UNIT TEST 1" << RESET << std::endl << std::endl;
 
-    Transportation* x = nullptr;
+    Transportation* y = nullptr;
+
+    for(int x = 0; x < 16; x++){
+        y = transportManager.getTransportation(x);
+        if(y != nullptr){
+            std::cout << BOLD << "Transportation " << x << " is " << RESET << GREEN << y->getType() << RESET << std::endl;        
+        }
+    }
+
+    std::cout << std::endl << std::endl <<  BOLD << BG_GREEN << "UNIT TEST 2" << RESET << std::endl << std::endl;
+
+    for(int x = 0; x < 16; x++){
+        y = transportManager.getTransportation(x);
+        switch(y->getType()){
+            case 'H':{
+                Highway *tmp = static_cast<Highway*>(y);
+                std::cout << BOLD << tmp->getRoadName() << " is " << RESET << GREEN << "Highway and Commute Time is " << tmp->calculateCommute() << RESET << std::endl;
+                break;
+            }
+            
+            case 'I':{
+                InsideRoad *tmp1 = static_cast<InsideRoad*>(y);
+                std::cout << BOLD << tmp1->getRoadName() << " is " << RESET << GREEN << "Inside Road and Commute Time is " << tmp1->commuteTime() << RESET << std::endl;
+                break;
+            }
+
+            case 'B':{
+                Bus *tmp2 = static_cast<Bus*>(y);
+                std::cout << BOLD << tmp2->getRoute() << " is " << RESET << GREEN << "Bus and Commute Time is " << tmp2->commuteTime() << RESET << std::endl;
+                break;
+            }
+            
+            case 'T':{
+                Taxi* tmp3 = static_cast<Taxi*>(y);
+                std::cout << BOLD << tmp3->getTaxiCompany() << " is " << RESET << GREEN << "Taxi and Commute Time is " << tmp3->commuteTime() << RESET << std::endl;
+                break;
+            }
+
+            case 'F':{
+                FreightTrain *tmp4 = static_cast<FreightTrain*>(y);
+                std::cout << BOLD << tmp4->getLine() << " is " << RESET << GREEN << "Freight Train and Commute Time is " << tmp4->commuteTime() << RESET << std::endl;
+                break;
+            }
+
+            case 'P':{
+                PassengerTrain *tmp5 = static_cast<PassengerTrain*>(y);
+                std::cout << BOLD << tmp5->getLine() << " is " << RESET << GREEN << "Passenger Train and Commute Time is " << tmp5->commuteTime() << RESET << std::endl;
+                break;
+            }
+
+            case 'A':{
+                ComercialAirport *tmp6 = static_cast<ComercialAirport*>(y);
+                std::cout << BOLD << tmp6->getName() << " is " << RESET << GREEN << "Comercial Airport and Commute Time is " << tmp6->commuteTime() << RESET << std::endl;
+                break;
+            }
+
+            case 'C':{
+                CargoAirport *tmp7 = static_cast<CargoAirport*>(y);
+                std::cout << BOLD << tmp7->getName() << " is " << RESET << GREEN << "Cargo Airport and Commute Time is " << tmp7->commuteTime() << RESET << std::endl;
+                break;
+            }
+
+            default:{
+                std::cout << BOLD << BG_RED << "UNIT TEST 2 FAILED" << RESET << std::endl;
+            }
+
+        }
+
+
+    }
 
 }
 
